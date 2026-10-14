@@ -1,0 +1,634 @@
+/* First Reading is an edition, not another estate microsite.
+   Screen typography, pagination and page turns form an independent reading room.
+   The full unabridged source stays in accessible HTML, including without JS. */
+:root {
+  color-scheme: light;
+  --book-paper:#f4f0e7;
+  --book-outer:#ddd8cf;
+  --book-ink:#26241f;
+  --book-muted:#777168;
+  --book-rule:#c7c1b6;
+  --book-accent:#7a5a35;
+  --book-text-size:1.13rem;
+  --leaf-width: min(100%, 720px);
+}
+* { box-sizing:border-box; }
+html { -webkit-text-size-adjust:100%; }
+body.book-app { background:var(--book-paper); color:var(--book-ink); margin:0; font-family: Iowan Old Style, Charter, Georgia, serif; }
+button,a { -webkit-tap-highlight-color:transparent; }
+button {font:inherit;}
+a {color:inherit;}
+a:focus-visible,button:focus-visible,input:focus-visible,.book-viewport:focus-visible {outline:2px solid var(--book-accent); outline-offset:3px;}
+.book-skip {position:absolute;left:12px;top:-100px;background:var(--book-paper);padding:1rem;z-index:60;}
+.book-skip:focus {top:10px;}
+.book-toolbar { min-height:62px; width:100%;padding:8px max(18px,env(safe-area-inset-left)) 8px max(18px,env(safe-area-inset-right)); display:grid;grid-template-columns:1fr 1fr 1fr; align-items:center; border-bottom:1px solid var(--book-rule); background:var(--book-paper); color:var(--book-ink);gap:12px;}
+.book-back {display:inline-flex;align-items:center;gap:.55rem;width:max-content;max-width:100%;text-decoration:none;font:500 .77rem/1.2 system-ui,sans-serif;letter-spacing:.02em;}
+.book-back span:first-child{font-size:1.3rem;}
+.book-identity { display:flex;justify-content:center;align-items:center;gap:.5rem;white-space:nowrap;font:600 .65rem/1.4 ui-monospace,Menlo,monospace;letter-spacing:.16em;}
+.book-symbol{font-size:1.1rem;line-height:1;}
+.book-tools {display:flex;justify-content:flex-end;gap:.4rem;}
+.book-tools button{border:1px solid transparent;border-radius:4px;padding:.55rem .75rem;background:none;color:var(--book-ink);font:500 .76rem system-ui,sans-serif;cursor:pointer;}
+.book-tools button:hover,.book-tools button:focus-visible{border-color:var(--book-rule);}
+.book-main {min-height:calc(100svh - 137px);padding:1rem max(8px,env(safe-area-inset-left)) 1rem max(8px,env(safe-area-inset-right));background:var(--book-outer);}
+.book-leaf-frame {max-width:800px;margin:auto;min-height:calc(100svh - 170px);background:var(--book-paper);box-shadow:0 1px 10px rgb(0 0 0 / .06);}
+.book-viewport{height:calc(100svh - 171px);min-height:320px;overflow:auto;overscroll-behavior-x:contain;scrollbar-width:none;}
+.book-viewport::-webkit-scrollbar{display:none;}
+.book-flow{padding:clamp(25px,5vw,56px);width:100%;}
+.book-cover,.book-preface,.book-chapter,.book-end{margin-bottom:5rem;}
+.book-cover{min-height:66vh;display:flex;flex-direction:column;justify-content:space-between;}
+.book-cover-top{display:flex;justify-content:space-between;gap:1rem;font:600 .59rem/1.7 ui-monospace,Menlo,monospace;letter-spacing:.18em;border-bottom:1px solid var(--book-rule);padding-bottom:.8rem;}
+.book-cover-center{padding-block:3rem 2rem;text-align:center;}
+.cover-mark{font-size:2.3rem;color:var(--book-accent);}
+.book-imprint{font:.62rem/1.8 ui-monospace,Menlo,monospace;letter-spacing:.17em;margin:1.6rem auto;}
+.book-cover h1{font-weight:400;font-size:clamp(4rem,9vw,6.7rem);line-height:.99;letter-spacing:-.06em;margin:0 0 2rem;}
+.book-cover h1 span{color:var(--book-accent);}
+.book-cover-subtitle{font-size:clamp(1.14rem,2.2vw,1.5rem);line-height:1.4;max-width:22ch;margin:auto;}
+.book-cover-foot{border-top:1px solid var(--book-rule);padding-top:.8rem;font:.63rem/2 ui-monospace,Menlo,monospace;letter-spacing:.07em;}
+.book-ordinal{display:flex;justify-content:space-between;gap:1rem;color:var(--book-muted);font:600 .64rem/1.5 ui-monospace,Menlo,monospace;letter-spacing:.12em;text-transform:uppercase;}
+.book-preface,.book-chapter,.book-end{max-width:64ch;margin-inline:auto;}
+.book-preface h2,.book-end h2{font-weight:400;line-height:1.08;font-size:clamp(2.5rem,6vw,4.8rem);letter-spacing:-.04em;}
+.book-preface p:not(.book-ordinal),.book-end p{font-size:var(--book-text-size);line-height:1.7;}
+.book-preface-note{margin-top:3rem;border-top:1px solid var(--book-rule);padding-top:1rem;color:var(--book-muted);font: .69rem/1.9 ui-monospace,Menlo,monospace!important;letter-spacing:.05em;}
+.book-chapter-heading{break-inside:avoid;page-break-inside:avoid;padding-bottom:1.3rem;}
+.book-chapter-heading h2{font-weight:400;font-size:clamp(2.25rem,5.4vw,4.45rem);line-height:1.11;letter-spacing:-.043em;margin:1.25rem 0 1rem;overflow-wrap:anywhere;}
+.book-chapter-meta{font:.66rem/1.6 ui-monospace,Menlo,monospace;letter-spacing:.075em;color:var(--book-muted);}
+.book-chapter-meta span{margin-inline:.5rem;}
+.book-prose{font-size:var(--book-text-size);line-height:1.78;hyphens:auto;overflow-wrap:break-word;}
+.book-prose p{margin:0 0 1.1em;orphans:2;widows:2;}
+.book-image-sequence{margin:1rem 0 2.4rem;}
+.book-image-sequence .reading-image-sequence{display:block!important;break-inside:auto;border:0;margin:0;padding:0;}
+.book-image-sequence .reading-original-figure{break-inside:avoid;page-break-inside:avoid; margin:0 auto 1.5rem;min-width:0;}
+.book-image-sequence .reading-original-figure img{display:block;width:auto;height:auto;max-width:100%;max-height:36vh;margin:0 auto;object-fit:contain;object-position:center;}
+.book-image-sequence .reading-original-figure figcaption{margin:.6rem 0 0;color:var(--book-muted);font:.59rem/1.5 ui-monospace,Menlo,monospace;text-align:center;}
+.book-source-note{border-top:1px solid var(--book-rule);padding-top:1rem;margin-top:3rem;color:var(--book-muted);font:.62rem/1.6 ui-monospace,Menlo,monospace;letter-spacing:.05em;}
+.book-end{min-height:58vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;}
+.book-end a{text-decoration:none;border-bottom:1px solid var(--book-accent);padding-bottom:5px;}
+.book-pagination{min-height:75px;background:var(--book-paper);display:grid;grid-template-columns:1fr minmax(150px,400px) 1fr;gap:12px;align-items:center;padding:8px max(15px,env(safe-area-inset-left)) 8px max(15px,env(safe-area-inset-right));border-top:1px solid var(--book-rule);}
+.book-pagination button{padding:.75rem .9rem;background:none;border:0;color:var(--book-ink);font:.77rem system-ui,sans-serif;display:flex;gap:.6rem;align-items:center;cursor:pointer;}
+.book-pagination #book-next{justify-self:end;}
+.book-pagination button:disabled{opacity:.24;cursor:default;}
+.book-progress{display:flex;flex-direction:column;gap:.4rem;align-items:center;min-width:0;color:var(--book-muted);font:.61rem/1.4 ui-monospace,Menlo,monospace;letter-spacing:.06em;}
+#book-location{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;text-align:center;color:var(--book-ink);}
+.book-progress-track{height:2px;width:100%;background:var(--book-rule);overflow:hidden;}
+#book-progress-fill{height:100%;background:var(--book-accent);display:block;width:0;}
+.book-dialog{border:1px solid var(--book-rule);background:var(--book-paper);color:var(--book-ink);box-shadow:0 8px 50px rgb(0 0 0 / .16);padding:1.25rem clamp(1rem,4vw,2.5rem);max-height:calc(100dvh - 32px);width:min(640px,calc(100vw - 32px));}
+.book-dialog::backdrop{background:rgb(26 23 18 / .67);}
+.book-dialog-head{display:flex;align-items:start;justify-content:space-between;gap:12px;border-bottom:1px solid var(--book-rule);padding-bottom:1rem;}
+.book-dialog-head small{font:.61rem/1.5 ui-monospace,Menlo,monospace;letter-spacing:.14em;color:var(--book-muted);}
+.book-dialog-head h2{margin:.2rem 0 0;font-size:2.2rem;font-weight:400;letter-spacing:-.04em;}
+.book-dialog-head button{font-size:2rem;border:0;background:none;color:var(--book-ink);cursor:pointer;}
+.book-contents-dialog nav{max-height:62vh;overflow:auto;margin-top:1.2rem;}
+.book-toc-list{list-style:none;margin:0;padding:0;}
+.book-toc-list li{margin:0;border-bottom:1px solid var(--book-rule);}
+.book-toc-list a{display:grid;grid-template-columns:2.8rem minmax(0,1fr) 4.5rem;align-items:baseline;text-decoration:none;gap:.6rem;padding:.72rem .2rem;}
+.book-toc-list a:hover,.book-toc-list a[aria-current="location"]{color:var(--book-accent);}
+.toc-number,.toc-voice{font:.68rem ui-monospace,Menlo,monospace;color:var(--book-muted);}
+.toc-title{font:1.05rem Georgia,serif;}
+.book-toc-list .toc-voice{text-align:right;}
+.book-appearance-dialog{width:min(440px,calc(100vw - 32px));}
+.book-type-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:2rem 0;}
+.book-type-row span,.book-theme-control legend{font:.78rem system-ui,sans-serif;}
+.book-adjust{display:flex;align-items:center;gap:.55rem;}
+.book-adjust button{background:none;border:1px solid var(--book-rule);width:3rem;height:2.8rem;cursor:pointer;color:var(--book-ink);}
+.book-adjust output{min-width:3rem;text-align:center;font:.67rem ui-monospace,Menlo,monospace;}
+.book-theme-control{display:flex;gap:1.5rem;border:0;border-top:1px solid var(--book-rule);padding:1.5rem 0;}
+.book-theme-control legend{padding-top:1.1rem;}
+.book-theme-control label{font:.85rem system-ui,sans-serif;}
+.book-appearance-dialog p{color:var(--book-muted);font-size:.85rem;line-height:1.65;}
+body.book-app[data-book-theme="night"] {--book-paper:#201e1b;--book-outer:#151412;--book-ink:#ede8db;--book-muted:#b2aa9e;--book-rule:#49453d;--book-accent:#d2b078;color-scheme:dark;}
+@media (max-width:600px) {
+  .book-toolbar{grid-template-columns:1fr auto 1fr;min-height:54px;padding:6px 12px;}
+  .book-identity{font-size:.55rem;}
+  .book-back{font-size:.72rem;}
+  .book-tools{gap:0;}
+  .book-tools button{font-size:.7rem;padding:.5rem;}
+  .book-main{min-height:calc(100svh - 119px);padding:0;}
+  .book-leaf-frame{box-shadow:none;min-height:calc(100svh - 119px);}
+  .book-viewport{height:calc(100svh - 120px);min-height:280px;}
+  .book-flow{padding:1.35rem 1.5rem;}
+  .book-pagination{min-height:65px;grid-template-columns:55px minmax(0,1fr) 55px;gap:7px;}
+  .book-pagination button{padding:.65rem .2rem;}
+  .book-pagination button span:last-child:not(:first-child){display:none;}
+  .book-pagination #book-next span:first-child{display:none;}
+  .book-cover h1{font-size:3.9rem;}
+  .book-image-sequence .reading-original-figure img{max-height:35vh;}
+}
+@media print {
+ .book-toolbar,.book-pagination,.book-dialog{display:none!important;}
+ .book-main{padding:0;background:white;}
+ .book-leaf-frame,.book-viewport{height:auto!important;max-height:none;overflow:visible;box-shadow:none;}
+ .book-flow{height:auto!important;columns:auto!important;padding:0;}
+ .book-cover,.book-preface,.book-chapter,.book-end{break-before:page;page-break-before:always;}
+ .book-image-sequence .reading-original-figure img{max-height:16cm;}
+}
+@media(prefers-reduced-motion:reduce){.book-viewport{scroll-behavior:auto!important;}}
+/* Each image is an indivisible page object. Browser column fragmentation must
+   never separate an image from its caption or cause a crop. */
+.book-opener-art,.book-art-leaf{min-width:0;}
+.book-opener-art figure,.book-art-leaf figure{margin:0;break-inside:avoid;}
+.book-opener-art img,.book-art-leaf img{
+  display:block;margin:0 auto;width:auto;height:auto;max-width:100%;object-fit:contain;
+}
+.book-opener-art img{max-height:36vh;}
+.book-art-leaf img{max-height:65vh;}
+.book-opener-art figcaption,.book-art-leaf figcaption{
+  margin-top:.55rem;color:var(--book-muted);font:.6rem/1.5 ui-monospace,Menlo,monospace;text-align:center;
+}
+.book-chapter-text{max-width:64ch;margin:0 auto 5rem;}
+@media(max-width:600px){.book-opener-art img{max-height:32vh}.book-art-leaf img{max-height:55vh}}
+@media print{
+ .book-chapter-text,.book-art-leaf{break-before:page;page-break-before:always;}
+}
+
+.book-source-note a{color:var(--book-accent);text-decoration:none;border-bottom:1px solid var(--book-rule);margin-left:.7rem;}
+
+/* =============================================================
+   LINOTYPE — measured Druckfahnen / A-series paper
+   This supersedes browser multicolumn pagination. Each accepted sheet
+   has fixed, auditable bounds; spreads only appear at viable widths.
+   ============================================================= */
+body.book-app.reader-ready .book-main,
+body.book-app.linotype-boot .book-main {
+  padding:10px 8px; display:flex; justify-content:center; align-items:center;
+  overflow:hidden; min-height:calc(100svh - 137px);
+}
+body.book-app.reader-ready .book-leaf-frame,
+body.book-app.linotype-boot .book-leaf-frame {
+  max-width:none; width:100%; min-height:0; background:none;
+  box-shadow:none; display:flex; align-items:center; justify-content:center;
+}
+body.book-app.reader-ready .book-viewport,
+body.book-app.linotype-boot .book-viewport {
+  width:100%; height:calc(100svh - 157px); min-height:360px;
+  overflow:hidden; position:relative; display:flex; align-items:center;
+  justify-content:center;
+}
+body.book-app.reader-ready .book-flow,
+body.book-app.linotype-boot .book-flow { display:none; }
+.linotype-stage {
+  --sheet-w:490px; --sheet-h:693px; --sheet-gutter:18px;
+  width:var(--stage-base-w); height:var(--sheet-h); display:flex; gap:var(--sheet-gutter);
+  justify-content:center; align-items:center; min-width:0; position:relative;
+  transform:scale(var(--sheet-scale));transform-origin:center;flex:0 0 auto;
+}
+.linotype-stage[data-mode="measure"] {
+  width:var(--sheet-w);height:auto;position:absolute;
+  left:-100000px;top:0;display:flex;flex-direction:column;
+  align-items:stretch;justify-content:flex-start;gap:0;
+  opacity:0;pointer-events:none;transform:none;
+}
+.linotype-blank {
+  width:var(--sheet-w); height:var(--sheet-h); flex:0 0 var(--sheet-w);
+}
+.linotype-sheet {
+  width:var(--sheet-w); height:var(--sheet-h); flex:0 0 var(--sheet-w);
+  padding:var(--sheet-inset-y) var(--sheet-side);
+  display:flex; flex-direction:column; min-width:0;min-height:0;
+  background:var(--book-paper);color:var(--book-ink);
+  box-shadow:0 2px 13px rgb(0 0 0 / .10);
+  font-kerning:normal;
+  font-feature-settings:"kern" 1, "liga" 1, "onum" 1;
+  text-rendering:optimizeLegibility;
+  position:relative; overflow:visible;
+}
+.linotype-stage[data-mode="spread"] .linotype-sheet[data-verso="left"] {
+  box-shadow:-5px 2px 10px rgb(0 0 0 / .08), inset -9px 0 14px -16px rgb(0 0 0 /.3);
+}
+.linotype-stage[data-mode="spread"] .linotype-sheet[data-verso="right"] {
+  box-shadow:5px 2px 10px rgb(0 0 0 / .08), inset 9px 0 14px -16px rgb(0 0 0 /.3);
+}
+.linotype-running,.linotype-folio {
+  display:flex; justify-content:space-between; flex:none;
+  color:var(--book-muted);font:500 9px/1.25 ui-monospace,Menlo,monospace;
+  letter-spacing:.09em;white-space:nowrap;
+}
+.linotype-running {min-height:14px;padding-bottom:8px;border-bottom:1px solid var(--book-rule);}
+.linotype-folio {min-height:14px;padding-top:9px;border-top:1px solid var(--book-rule);margin-top:8px;}
+.linotype-area {
+  flex:1 1 0%; min-width:0;min-height:0;
+  overflow:visible; position:relative;
+}
+.linotype-text .linotype-area {
+  font-family:"Iowan Old Style","Palatino Linotype",Palatino,Charter,Georgia,serif;
+  font-size:var(--sheet-font);line-height:1.49;
+  letter-spacing:.001em;
+  hyphens:auto;overflow-wrap:break-word;
+  font-variant-numeric:oldstyle-nums;
+}
+.linotype-text .linotype-area p {
+  margin:0 0 .76em;
+  orphans:3;widows:3;
+  max-width:100%; font-size:inherit;line-height:inherit;
+  text-align:left;
+}
+.linotype-text .book-source-note {
+  border-top:1px solid var(--book-rule);
+  padding-top:.6rem;margin-top:1.1rem;
+  font:9px/1.5 ui-monospace,Menlo,monospace;
+  color:var(--book-muted);
+}
+.linotype-sheet .linotype-content {
+  margin:0;max-width:none;min-height:0;
+  width:100%;height:auto;max-height:100%;
+}
+.linotype-cover .linotype-area,.linotype-end .linotype-area {
+  display:flex;align-items:stretch;justify-content:center;
+}
+.linotype-cover .linotype-content,.linotype-end .linotype-content {
+  height:100%;min-height:0;display:flex;flex-direction:column;
+  justify-content:space-between;
+}
+.linotype-cover .book-cover-center{padding:clamp(12px,2vh,22px) 0;}
+.linotype-cover .book-cover h1,.linotype-cover h1{
+  font-size:clamp(38px,calc(var(--sheet-w) * .115),68px);
+  margin:0 0 .45em;letter-spacing:-.045em;line-height:1.01;
+  overflow-wrap:break-word;
+}
+.linotype-cover .book-cover-subtitle{
+  font-size:clamp(15px,calc(var(--sheet-w) * .041),22px);
+}
+.linotype-cover .book-cover-top{
+  font-size:8px;letter-spacing:.06em;
+}
+.linotype-cover .book-imprint {font-size:9px;margin:.7rem 0;}
+.linotype-cover .book-cover-foot {font-size:9px;}
+.linotype-cover .cover-mark,.linotype-end .cover-mark{font-size:clamp(25px,7vh,48px);}
+.linotype-preface .linotype-area{
+  font-size:var(--sheet-font);
+  line-height:1.5;
+}
+.linotype-preface .book-preface h2{font-size:clamp(28px,calc(var(--sheet-w) * .08),43px);margin:.6em 0;}
+.linotype-preface .linotype-area>p {
+  font-family:"Iowan Old Style",Palatino,Georgia,serif;
+  font-size:inherit;line-height:1.5;margin:0 0 .85em;
+}
+.linotype-preface .linotype-content p:not(.book-ordinal) {
+  font-size:inherit;line-height:1.5;margin:0 0 .9em;
+}
+.linotype-preface .book-preface-note{
+  font-size:9px!important;line-height:1.5!important;
+}
+.linotype-opener .linotype-area {
+  display:flex;flex-direction:column;gap:clamp(10px,2.4vh,24px);
+}
+.linotype-opener .book-chapter-heading{
+  flex:none; min-height:0; margin:0;padding:0;
+}
+.linotype-opener .book-chapter-heading h2{
+  font:400 clamp(21px,calc(var(--sheet-w) * .066),41px)/1.11
+    "Iowan Old Style",Palatino,Georgia,serif;
+  letter-spacing:-.035em; margin:.25em 0 .3em;
+  overflow-wrap:anywhere;
+}
+.linotype-opener .book-chapter-meta{margin:0;line-height:1.35;font-size:9px;}
+.linotype-opener .book-ordinal{font-size:9px;line-height:1.3;}
+.linotype-plate .linotype-area,.linotype-opener .linotype-image-frame{
+  display:flex;min-height:0;
+}
+.linotype-plate .linotype-area{align-items:center;justify-content:center;}
+.linotype-image-frame {
+  width:100%;flex:1 1 auto;min-height:0;
+  display:flex;align-items:center;justify-content:center;
+}
+.linotype-image-frame figure {
+  margin:0; padding:clamp(5px,1.2vh,12px);
+  width:100%;max-width:100%;min-width:0;
+  display:flex;flex-direction:column;align-items:center;
+  justify-content:center;gap:7px;
+  border:1px solid var(--book-rule);
+  box-shadow:inset 0 0 0 4px color-mix(in srgb,var(--book-rule) 10%,transparent);
+  break-inside:avoid;
+}
+.linotype-image-frame[data-aspect="landscape"] figure{
+  max-width:100%;aspect-ratio:1.618 / 1; /* Golden surrounding frame */
+}
+.linotype-image-frame[data-aspect="portrait"] figure{
+  max-width:min(100%,calc(var(--sheet-w) * .67));
+  aspect-ratio:1 / 1.618;
+}
+.linotype-image-frame img {
+  display:block;width:auto;height:auto;max-width:100%;
+  object-fit:contain;object-position:center;min-height:0;
+}
+.linotype-image-frame figcaption{
+  margin:0;max-width:100%;text-align:center;
+  color:var(--book-muted);font:9px/1.35 ui-monospace,Menlo,monospace;
+  overflow-wrap:anywhere;
+}
+.linotype-end .book-end h2{font-size:clamp(26px,calc(var(--sheet-w)*.072),45px);}
+.linotype-end .book-end{min-height:0;height:100%;margin:0;}
+body.book-app.reader-ready .book-main{height:calc(100svh - 137px);}
+body.book-app.reader-ready .book-pagination{height:75px;}
+@media(max-width:600px) {
+ body.book-app.reader-ready .book-main{height:calc(100svh - 119px);padding:4px;}
+ body.book-app.reader-ready .book-viewport{height:calc(100svh - 127px);}
+ .linotype-sheet{box-shadow:0 1px 8px rgb(0 0 0 / .08);}
+ .linotype-running,.linotype-folio{font-size:8px;}
+}
+@media print {
+ .linotype-stage{display:none!important;}
+ .book-app.reader-ready .book-flow{display:block!important;}
+ .book-app.reader-ready .book-leaf-frame,.book-app.reader-ready .book-viewport {
+   display:block!important;overflow:visible!important;height:auto!important;
+ }
+}
+@media(max-width:600px) {
+ body.book-app.linotype-boot .book-main {height:calc(100svh - 119px);padding:4px;min-height:0;}
+ body.book-app.linotype-boot .book-viewport {height:calc(100svh - 127px);}
+}
+body.book-app.reader-ready .book-main,body.book-app.linotype-boot .book-main{min-height:0;}
+/* The proof workbench is a vertical stack: its flex basis must use sheet
+   HEIGHT, while the visible spread's horizontal flex basis uses sheet WIDTH. */
+.linotype-stage[data-mode="measure"] .linotype-sheet{flex:0 0 var(--sheet-h);}
+@media (max-width:600px){
+ body.book-app.reader-ready .book-pagination{height:65px;min-height:65px;}
+}
+
+/* Independent press proof. The author chooses when to approve the edition. */
+.book-tools .book-proof-link{align-self:center;text-decoration:none;padding:.55rem .65rem;font:500 .75rem system-ui,sans-serif;border-bottom:1px solid var(--book-rule);white-space:nowrap;}
+@media(max-width:600px){.book-tools .book-proof-link{font-size:.65rem;padding:.35rem;}}
+
+/* Linotype typographic register: editorial provenance is subsidiary to prose.
+   Specificity intentionally exceeds .linotype-text .linotype-area p,
+   which otherwise enlarged the source note to full running-text size. */
+.linotype-text .linotype-area p.book-source-note{
+  margin-top:1.05em;
+  margin-bottom:.65em;
+  padding-top:.65em;
+  border-top:1px solid var(--book-rule);
+  color:var(--book-muted);
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:clamp(9px,calc(var(--sheet-font) * .57),10.8px);
+  font-weight:400;
+  line-height:1.55;
+  letter-spacing:.025em;
+  text-align:left;
+  font-variant-numeric:tabular-nums;
+  hyphens:none;
+  overflow-wrap:break-word;
+}
+.linotype-text .linotype-area p.book-source-note a{
+  display:inline-block;
+  margin-left:.4em;
+  font-size:inherit;
+  line-height:inherit;
+  letter-spacing:inherit;
+  white-space:nowrap;
+}
+/* Page-turn effects are decorative overlays, never pagination authority.
+   The finished page underneath exists and remains interactive. */
+.linotype-turn-ghost{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:3;
+  pointer-events:none;
+  overflow:visible;
+  will-change:transform,opacity;
+  transform-style:preserve-3d;
+  perspective:1100px;
+}
+.linotype-turn-ghost .linotype-stage{
+  pointer-events:none;
+  flex:0 0 auto;
+}
+
+/* Fountain Press: a touch-controlled paper proof, not a WebKit scroll.
+   The manuscript remains stationary until the release threshold accepts it. */
+.book-app.reader-ready .book-viewport{
+  touch-action:pan-y;
+}
+.linotype-drag-preview{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  pointer-events:none;
+  z-index:4;
+  perspective:1300px;
+  overflow:hidden;
+  isolation:isolate;
+}
+.linotype-drag-incoming,.linotype-drag-outgoing{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  pointer-events:none;
+  transform-style:preserve-3d;
+  will-change:transform,opacity;
+}
+.linotype-drag-incoming{opacity:.74;z-index:1;}
+.linotype-drag-outgoing{
+  opacity:1;
+  z-index:2;
+  backface-visibility:hidden;
+}
+.linotype-drag-preview .linotype-stage{
+  flex:0 0 auto;
+  pointer-events:none;
+}
+.linotype-drag-fold{
+  position:absolute;
+  top:0;
+  right:9%;
+  bottom:0;
+  width:15%;
+  opacity:0;
+  background:linear-gradient(90deg,transparent,rgba(51,43,29,.09),rgba(255,254,249,.18));
+  pointer-events:none;
+  mix-blend-mode:multiply;
+}
+body[data-turn-motion="drag"] .book-viewport{
+  cursor:grabbing;
+}
+@media(prefers-reduced-motion:reduce){
+ .linotype-drag-preview,.linotype-turn-ghost{display:none!important;}
+}
+
+/* An opaque page genuinely covers the next page until it is lifted.
+   The real accepted leaves are hidden only during the temporary paper proof,
+   avoiding layered, translucent duplicate text on tablet spreads. */
+.linotype-drag-preview{background:transparent;}
+.linotype-drag-incoming{opacity:1;}
+.linotype-drag-outgoing{opacity:1;backface-visibility:visible;}
+.linotype-drag-fold{
+  right:0;
+  width:19%;
+  background:linear-gradient(90deg,transparent 0%,rgba(46,38,25,.11) 55%,rgba(255,253,247,.32) 100%);
+}
+/* In a two-page spread the hinge is the leaf's spine, not the spread itself. */
+.linotype-drag-outgoing .linotype-stage{
+  transform-style:preserve-3d;
+  perspective:1100px;
+}
+.linotype-drag-outgoing .linotype-sheet{
+  transform-style:preserve-3d;
+  backface-visibility:hidden;
+  will-change:transform;
+}
+.linotype-drag-fold{
+  z-index:1;
+  right:0;
+  top:0;
+  bottom:0;
+  height:100%;
+}
+
+/* Paper slide, not a wooden hinge. No perspective, no 3D page rotation.
+   A subtle shaded vertical roll travels with the sliding sheet. */
+.linotype-drag-preview,
+.linotype-drag-outgoing .linotype-stage,
+.linotype-drag-outgoing .linotype-sheet{
+  perspective:none;
+  transform-style:flat;
+}
+.linotype-drag-outgoing .linotype-sheet{
+  backface-visibility:visible;
+  box-shadow:0 3px 12px rgba(46,38,25,.14);
+}
+.linotype-drag-fold{
+  top:0;
+  bottom:0;
+  height:100%;
+  right:0;
+  width:clamp(18px,5.5%,39px);
+  opacity:.12;
+  background:linear-gradient(90deg,transparent 0%,rgba(48,40,29,.025) 32%,rgba(48,40,29,.105) 73%,rgba(251,249,240,.48) 100%);
+  mix-blend-mode:normal;
+  pointer-events:none;
+}
+.linotype-sheet[data-paper-direction="previous"] .linotype-drag-fold{
+  right:auto;
+  left:0;
+  background:linear-gradient(90deg,rgba(251,249,240,.48),rgba(48,40,29,.105) 27%,rgba(48,40,29,.025) 68%,transparent);
+}
+
+
+/* Typographic line-break admission for the independent Linotype reader.
+   Use real interword spaces; never invent a hyphen within an author's word.
+   Protect short concluding phrases from orphan punctuation and one-word
+   stranded closing lines. All source text remains byte-identical. */
+.linotype-text .linotype-area,
+.linotype-text .linotype-area p{
+  hyphens:none;
+  -webkit-hyphens:none;
+  word-break:normal;
+  overflow-wrap:normal;
+  text-wrap:pretty;
+}
+.linotype-text .linotype-area .linotype-keep-tail{
+  white-space:nowrap;
+  hyphens:none;
+  word-break:keep-all;
+}
+
+/* VERGIL — standing prologue, a system-persona prompt set as literary material.
+   Its internal newlines are intentional. Never turn source instruction into bullets. */
+.book-vergil .vergil-imprint{
+  font:600 .64rem/1.7 ui-monospace,Menlo,monospace;
+  color:var(--book-muted);letter-spacing:.13em;
+  border-bottom:1px solid var(--book-rule);padding-bottom:1.1em;margin-bottom:2em;
+}
+.book-vergil .vergil-block{
+  white-space:pre-line;
+  text-wrap:pretty;
+  overflow-wrap:break-word;
+  orphans:3;widows:3;
+}
+.book-vergil .vergil-mantra,
+.book-vergil .vergil-credo,
+.book-vergil .vergil-cadence,
+.book-vergil .vergil-registers{
+  font-style:normal;
+  font-family:"Iowan Old Style",Palatino,Georgia,serif;
+  padding:.45em 0 .45em 1.6em;
+  border-left:1px solid var(--book-accent);
+  line-height:1.8;
+  letter-spacing:.008em;
+}
+.book-vergil .vergil-credo{font-style:italic;border-left-width:2px}
+.book-vergil .vergil-mantra{margin-block:1.8em 2.1em}
+.linotype-preface[data-source-id="book-vergil"] .linotype-area>p.vergil-block{
+  font-size:var(--sheet-font);
+  line-height:1.55;
+  white-space:pre-line;
+  margin:0 0 1.05em;
+}
+.linotype-preface[data-source-id="book-vergil"] .linotype-area>p.vergil-mantra,
+.linotype-preface[data-source-id="book-vergil"] .linotype-area>p.vergil-credo,
+.linotype-preface[data-source-id="book-vergil"] .linotype-area>p.vergil-cadence,
+.linotype-preface[data-source-id="book-vergil"] .linotype-area>p.vergil-registers{
+  border-left:1px solid var(--book-accent);
+  padding:.22em 0 .22em 1.2em;
+  margin:1.15em 0 1.3em;
+  line-height:1.7;
+}
+.linotype-preface[data-source-id="book-vergil"] .linotype-area>p.vergil-imprint{
+  font:600 9px/1.5 ui-monospace,Menlo,monospace;
+  letter-spacing:.09em;
+  padding-bottom:1em;
+}
+
+/* The original preface generic paragraph rule must never enlarge the folio rubric. */
+.linotype-preface[data-source-id="book-vergil"] .linotype-area>p.book-ordinal{
+  display:flex;justify-content:space-between;align-items:baseline;gap:1rem;
+  font:600 9px/1.45 ui-monospace,Menlo,monospace;
+  letter-spacing:.14em;color:var(--book-muted);
+  border-bottom:1px solid var(--book-rule);padding-bottom:.9em;margin-bottom:1.8em;
+}
+.linotype-preface[data-source-id="book-vergil"] .linotype-area>h2{
+  font:400 clamp(30px,calc(var(--sheet-w)*.073),41px)/1.1
+  "Iowan Old Style",Palatino,Georgia,serif;
+  letter-spacing:-.045em;margin:.25em 0 .65em;
+}
+
+/* A quiet, bounded title while the real paper measurements settle in Safari.
+   With JavaScript disabled, .linotype-boot is never set: source HTML remains readable. */
+body.book-app.linotype-boot .book-viewport::before{
+  content:"FIRST READING";
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--book-muted);
+  font:600 10px/1.5 ui-monospace,Menlo,monospace;
+  letter-spacing:.18em;
+  pointer-events:none;
+}
+
+/* First-paint admission: the manuscript never flashes as a scrolling HTML
+   document or as a provisional single leaf before Safari settles its metrics.
+   This only applies when the head bootstrap executed; no-JS HTML is readable. */
+html.book-hydrating,
+html.book-hydrating body.book-app {
+  height:100%;
+  overflow:hidden;
+}
+html.book-hydrating body.book-app .book-toolbar,
+html.book-hydrating body.book-app .book-main,
+html.book-hydrating body.book-app .book-pagination {
+  visibility:hidden;
+}
+html.book-hydrating body.book-app::after {
+  content:"FIRST READING";
+  position:fixed;inset:0;z-index:90;
+  display:grid;place-items:center;
+  background:var(--book-paper);color:var(--book-muted);
+  font:600 10px/1.6 ui-monospace,Menlo,monospace;
+  letter-spacing:.2em;
+  pointer-events:none;
+}
+@media print {
+  html.book-hydrating,
+  html.book-hydrating body.book-app {height:auto;overflow:visible}
+  html.book-hydrating body.book-app .book-toolbar,
+  html.book-hydrating body.book-app .book-main,
+  html.book-hydrating body.book-app .book-pagination {visibility:visible}
+  html.book-hydrating body.book-app::after {display:none}
+}

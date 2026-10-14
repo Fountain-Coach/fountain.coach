@@ -1,0 +1,16 @@
+{
+  "name": "@fountain-coach/fountain-coach-essays",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Author-owned Fountain Coach essays composed with Linotype",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fountain-Coach/fountain.coach.git"
+  },
+  "scripts": {
+    "check": "python3 scripts/verify_essay_edition.py",
+    "book:build": "python3 scripts/build_essay_edition.py --linotype-source ../solstice.fountain.coach/site",
+    "book:browser": "node scripts/verify_essay_browser.mjs"
+  }
+}

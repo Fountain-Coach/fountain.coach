@@ -1,0 +1,128 @@
+{
+  "schema": "fountain.press.linotype.essay-edition.v1",
+  "title": "Fountain Coach — Essays",
+  "sourceRepository": "Fountain-Coach/fountain.coach",
+  "sourceRoot": "site/essays/",
+  "upstreamLinotypeRepository": "Fountain-Coach/solstice.fountain.coach",
+  "upstreamRevision": "bb365cae73dacd1558345690bc5c77126891c27b",
+  "runtime": [
+    {
+      "file": "book.css",
+      "upstreamSHA256": "56e6780326e06fe63b48f8bfa2f46076c814bbc25b807d9bcb5237748c319693",
+      "projectedSHA256": "56e6780326e06fe63b48f8bfa2f46076c814bbc25b807d9bcb5237748c319693"
+    },
+    {
+      "file": "book-boot.js",
+      "upstreamSHA256": "c7fe0672a6697423d331670fe1c873d51399510a7f5b658b86c37a772d04a661",
+      "projectedSHA256": "c7fe0672a6697423d331670fe1c873d51399510a7f5b658b86c37a772d04a661"
+    },
+    {
+      "file": "reading-layout-policy.js",
+      "upstreamSHA256": "f098b7faf814fc7faa027bc5a5b9a24969dc181064beebbe7a4597ba335f001b",
+      "projectedSHA256": "f098b7faf814fc7faa027bc5a5b9a24969dc181064beebbe7a4597ba335f001b"
+    },
+    {
+      "file": "linotype-engine.js",
+      "upstreamSHA256": "3c79e0fd8776eba32c83b55d195256f5a834cc11d852541dc20db1c2c76718cb",
+      "projectedSHA256": "007370b5229070a87cab40fc0798c79fef36e6823d48c9c634df0c3126ecd7dc"
+    },
+    {
+      "file": "mobile-page-navigation.js",
+      "upstreamSHA256": "fc5631543ec2269fcd536bafaf54c7f477a5d5253dbaf3296edcbc4402acd829",
+      "projectedSHA256": "fc5631543ec2269fcd536bafaf54c7f477a5d5253dbaf3296edcbc4402acd829"
+    },
+    {
+      "file": "mobile-page-navigation.css",
+      "upstreamSHA256": "b485292a2ef38f02298f9b2a124706bd179fa9502e7188de6f463c85da578327",
+      "projectedSHA256": "b485292a2ef38f02298f9b2a124706bd179fa9502e7188de6f463c85da578327"
+    },
+    {
+      "file": "book.js",
+      "upstreamSHA256": "f4d6be5bb7bc3711a654357a8669964f84d82cf7d9c1319ec5fb95089340d244",
+      "projectedSHA256": "57b0ddd828b019e8e6bcc7accdb808bcb82ed3590604ad3de4487a55d7f084ae"
+    }
+  ],
+  "essays": [
+    {
+      "id": "teatro-an-unfinished-composition",
+      "title": "Teatro — An Unfinished Composition",
+      "sourcePath": "essays/teatro-an-unfinished-composition/index.html",
+      "sourceSHA256": "5f77e58bbb59d0802d5b8b0ee48ecea1bbea7d44ebf4b73e3107363b7b95bad8",
+      "publishedSource": "https://fountain.coach/essays/teatro-an-unfinished-composition/",
+      "originalParagraphs": 22,
+      "paragraphsSHA256": "2ab6fa84f8cd166a19535fa0ebe6e0755734bf9cfd379377c4ca15209f3b435c",
+      "sectionHeadings": [
+        "The person is not in the middle",
+        "A score instead of an answer",
+        "Memory does not reproduce the past",
+        "Theatre before theatre",
+        "The machine enters the field",
+        "An unfinished composition"
+      ],
+      "originalFigures": 1,
+      "images": [
+        {
+          "path": "assets/teatro-score-memory-vector-human-condition.svg",
+          "sha256": "226e3440690dd8cbeb331c4f3f62ee002fa0bc0e6007fcdf8431f1f578d115e2"
+        }
+      ]
+    },
+    {
+      "id": "semantic-compilation-the-archive-is-not-the-edition",
+      "title": "Semantic Compilation — The Archive Is Not the Edition",
+      "sourcePath": "essays/semantic-compilation-the-archive-is-not-the-edition/index.html",
+      "sourceSHA256": "485d2514a8692bff998180b6ad5e5442bc3db4e66d222f89c3f1865a2fd0a2c1",
+      "publishedSource": "https://fountain.coach/essays/semantic-compilation-the-archive-is-not-the-edition/",
+      "originalParagraphs": 24,
+      "paragraphsSHA256": "5435150e1240659ad8a750ef8680878a7883029c6513626c44c2030ca7f32777",
+      "sectionHeadings": [
+        "What it would mean to compile meaning",
+        "The source must survive the interpretation",
+        "An interpretable machine, not an automatic author",
+        "The rail is a map of responsibilities",
+        "The edition is an argument, not a harvest"
+      ],
+      "originalFigures": 1,
+      "images": [
+        {
+          "path": "assets/semantic-compilation-estate-rail.svg",
+          "sha256": "977c636ba6570781b2ea8e34983ae2db0be83bd93986343a99d84e37f4304c02"
+        }
+      ]
+    },
+    {
+      "id": "reframe-and-the-business-value-of-the-estate",
+      "title": "Reframe and the Business Value of the Estate",
+      "sourcePath": "essays/reframe-and-the-business-value-of-the-estate/index.html",
+      "sourceSHA256": "c43fa422d8a60627b44900a1f1da5ca6e8a8955be1a0f95fafb0575ef4a6762a",
+      "publishedSource": "https://fountain.coach/essays/reframe-and-the-business-value-of-the-estate/",
+      "originalParagraphs": 31,
+      "paragraphsSHA256": "c6f554052e95315f3005902ffdb0821879699c3ca272891bbc744dfb5f7c3e85",
+      "sectionHeadings": [],
+      "originalFigures": 3,
+      "images": [
+        {
+          "path": "assets/address-landscape.png",
+          "sha256": "e826794efe5fefda45f644930ed44239d9ab4b6550015aa221da5612958026b2"
+        },
+        {
+          "path": "assets/estate-landscape.png",
+          "sha256": "8e444b976461fdf9b278a8702eef07ec74d532f617496da37c52d33c8b806451"
+        },
+        {
+          "path": "assets/exchange-landscape.png",
+          "sha256": "ae34a3ee42263c8beebea303cd8dd97eb5ccbedd328dc864ace907a0a1015721"
+        }
+      ]
+    }
+  ],
+  "readingOrder": [
+    "teatro-an-unfinished-composition",
+    "semantic-compilation-the-archive-is-not-the-edition",
+    "reframe-and-the-business-value-of-the-estate"
+  ],
+  "originalFigures": 5,
+  "originalParagraphs": 77,
+  "status": "source-candidate-not-publicly-deployed",
+  "reader": "measured-first-reading-linotype-engine"
+}
