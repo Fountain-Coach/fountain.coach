@@ -52,3 +52,38 @@ and non-overflow. The original essay source itself does not move.
 **The current source is an unpublished candidate.** The public domain
 continues to serve the previous homepage until a separately authorized,
 source-pinned EstatePublisher publication and public HTTPS read-back.
+
+
+## Editions are the public entrance (source edition candidate)
+
+**fountain.coach/** lands in the **Editions catalogue**, byte-identical to
+**/editions/**. The catalogue owns the editorial navigation only; the Fountain
+Coach rail enters its **/editions/essays/** volume, and the other two
+fronts point into the independently owned First Reading and Teatro editions.
+An edition may contain one or more **sub-editions** without ceasing to be an
+edition itself. This is a hierarchical publication model, not a tree of dummy
+marketing pages.
+
+- `/editions/` — catalogue and hierarchy, also the domain root
+- `/editions/essays/` — complete Linotype collection, three essays, five plates
+- `/editions/essays/teatro-an-unfinished-composition/` — independent full essay
+- `/editions/essays/semantic-compilation-the-archive-is-not-the-edition/` — independent full essay
+- `/editions/essays/reframe-and-the-business-value-of-the-estate/` — independent full essay
+
+The original source texts at `/essays/…` are preserved byte-for-byte;
+sub-editions are complete **source-linked editions**, not snippets or
+anchors masquerading as books. Every sub-edition gets its own cover, contents,
+measured page composition, URL, folio and device-local reading state. The
+book renderer is still the measured First Reading Linotype engine.
+
+`npm run book:build` composes the source hierarchy deterministically from
+published essays and the pinned First Reading runtime. `npm run check`
+compares every complete source paragraph and original image and ensures the
+source-file inventory is exact. `npm run book:browser` verifies both the
+collection and all three independently composed sub-editions in simulated
+iPad and phone viewports.
+
+The old `/essays/` collection is retained as an **original source archive**;
+it is no longer the front door. The Company Status link stays with mandatory
+legal footer references. Publication of the new hierarchy is **staging-only**
+until independently governed production promotion.

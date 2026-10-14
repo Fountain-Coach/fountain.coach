@@ -13,3 +13,10 @@
 body.book-app.reader-ready .book-pagination{height:88px}
 body.book-app.reader-ready .book-main{height:calc(100svh - 151px)}
 body.book-app.reader-ready .book-viewport{height:calc(100svh - 160px)}}
+
+.edition-rail{display:flex;align-items:center;justify-content:center;gap:clamp(5px,1.2vw,16px);font:600 10px/1.5 ui-monospace,Menlo,monospace;white-space:nowrap}
+.edition-rail a{text-decoration:none;color:var(--book-muted);border-bottom:1px solid transparent}
+.edition-rail a[aria-current="page"]{color:var(--book-ink);border-color:var(--book-ink)}
+.book-cover h1.subedition-title{font-size:clamp(29px,calc(var(--sheet-w)*.073),47px);line-height:1.09;overflow-wrap:anywhere}
+@media(max-width:800px){.edition-rail{gap:6px;font-size:9px}.edition-rail a{max-width:9ch;overflow:hidden;text-overflow:ellipsis}}
+@media(max-width:500px){.edition-rail a{max-width:5ch}.edition-rail{font-size:8px}}

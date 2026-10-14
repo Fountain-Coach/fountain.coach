@@ -1,5 +1,5 @@
 {
-  "schema": "fountain.press.linotype.essay-edition.v1",
+  "schema": "fountain.press.linotype.essay-edition.v2",
   "title": "Fountain Coach — Essays",
   "sourceRepository": "Fountain-Coach/fountain.coach",
   "sourceRoot": "site/essays/",
@@ -39,7 +39,7 @@
     {
       "file": "book.js",
       "upstreamSHA256": "f4d6be5bb7bc3711a654357a8669964f84d82cf7d9c1319ec5fb95089340d244",
-      "projectedSHA256": "57b0ddd828b019e8e6bcc7accdb808bcb82ed3590604ad3de4487a55d7f084ae"
+      "projectedSHA256": "6bedbc449d3dad266c49b30fcc55df06b061e9ee1cf218d10636e223ca5cfa00"
     }
   ],
   "essays": [
@@ -65,7 +65,9 @@
           "path": "assets/teatro-score-memory-vector-human-condition.svg",
           "sha256": "226e3440690dd8cbeb331c4f3f62ee002fa0bc0e6007fcdf8431f1f578d115e2"
         }
-      ]
+      ],
+      "editionPath": "editions/essays/teatro-an-unfinished-composition/",
+      "parentEdition": "editions/essays/"
     },
     {
       "id": "semantic-compilation-the-archive-is-not-the-edition",
@@ -88,7 +90,9 @@
           "path": "assets/semantic-compilation-estate-rail.svg",
           "sha256": "977c636ba6570781b2ea8e34983ae2db0be83bd93986343a99d84e37f4304c02"
         }
-      ]
+      ],
+      "editionPath": "editions/essays/semantic-compilation-the-archive-is-not-the-edition/",
+      "parentEdition": "editions/essays/"
     },
     {
       "id": "reframe-and-the-business-value-of-the-estate",
@@ -113,7 +117,9 @@
           "path": "assets/exchange-landscape.png",
           "sha256": "ae34a3ee42263c8beebea303cd8dd97eb5ccbedd328dc864ace907a0a1015721"
         }
-      ]
+      ],
+      "editionPath": "editions/essays/reframe-and-the-business-value-of-the-estate/",
+      "parentEdition": "editions/essays/"
     }
   ],
   "readingOrder": [
@@ -124,5 +130,33 @@
   "originalFigures": 5,
   "originalParagraphs": 77,
   "status": "source-candidate-not-publicly-deployed",
-  "reader": "measured-first-reading-linotype-engine"
+  "reader": "measured-first-reading-linotype-engine",
+  "editionPath": "editions/essays/",
+  "cataloguePath": "editions/",
+  "rootLanding": "editions/",
+  "subEditions": [
+    {
+      "id": "teatro-an-unfinished-composition",
+      "path": "editions/essays/teatro-an-unfinished-composition/",
+      "parent": "editions/essays/"
+    },
+    {
+      "id": "semantic-compilation-the-archive-is-not-the-edition",
+      "path": "editions/essays/semantic-compilation-the-archive-is-not-the-edition/",
+      "parent": "editions/essays/"
+    },
+    {
+      "id": "reframe-and-the-business-value-of-the-estate",
+      "path": "editions/essays/reframe-and-the-business-value-of-the-estate/",
+      "parent": "editions/essays/"
+    }
+  ],
+  "editionHierarchy": [
+    "editions/",
+    "editions/essays/",
+    "editions/essays/teatro-an-unfinished-composition/",
+    "editions/essays/semantic-compilation-the-archive-is-not-the-edition/",
+    "editions/essays/reframe-and-the-business-value-of-the-estate/"
+  ],
+  "publicationRule": "A rail points to its edition; nested editions are independent complete Linotype readers."
 }

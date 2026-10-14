@@ -3,14 +3,15 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "Author-owned Fountain Coach essays composed with Linotype",
+  "description": "Git-owned edition catalogue with nested, verbatim Linotype essays",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Fountain-Coach/fountain.coach.git"
   },
   "scripts": {
     "check": "python3 scripts/verify_essay_edition.py",
-    "book:build": "python3 scripts/build_essay_edition.py --linotype-source ../solstice.fountain.coach/site",
-    "book:browser": "node scripts/verify_essay_browser.mjs"
+    "book:build": "python3 scripts/build_edition_hierarchy.py --linotype-source ../solstice.fountain.coach/site",
+    "book:browser": "node scripts/verify_essay_browser.mjs && node scripts/verify_editions_browser.mjs",
+    "edition:browser": "node scripts/verify_editions_browser.mjs"
   }
 }

@@ -1,5 +1,5 @@
 const chrome="http://127.0.0.1:9237";
-const base=process.env.ESSAY_BASE_URL||"http://127.0.0.1:8199/";
+const base=process.env.ESSAY_BASE_URL||"http://127.0.0.1:8199/editions/essays/";
 const pause=n=>new Promise(r=>setTimeout(r,n));
 async function run(label,width,height){
  const target=await(await fetch(chrome+"/json/new?about:blank",{method:"PUT"})).json();

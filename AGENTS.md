@@ -29,3 +29,21 @@
   measured book geometry, iPad spreads and phone reading.
 - Status remains legal-footer material; First Reading and Teatro are the other
   two estate front doors. Git commit is not public publication.
+
+
+## Editions hierarchy (authoritative root)
+
+- Do not put the essays book at `/`: both `/` and `/editions/` must show the
+  same *editions catalogue*.
+- Every editorial rail destination is an edition: Fountain Coach enters
+  `/editions/essays/`; First Reading enters its accepted published edition;
+  Teatro enters its independently owned performance edition.
+- An edition can contain full, independently paginated sub-editions. The
+  three original authored essays are currently the Essays sub-editions.
+- `scripts/build_edition_hierarchy.py` is the top-level deterministic
+  producer; it consumes the older source-bound book builder without
+  changing the original published essays under `site/essays/`.
+- Source-owner HTML at `/essays/` is immutable for source SHA checks.
+  Any WLAN-only rail remapping belongs in Fountain-Coach/estate staging.
+- Validate the catalogue and every nested reader with `npm run check` and
+  `npm run book:browser` before source promotion.

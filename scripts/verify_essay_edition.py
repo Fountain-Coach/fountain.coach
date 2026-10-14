@@ -1,58 +1,94 @@
 #!/usr/bin/env python3
-"""Read-only proof of the essay-focused Linotype edition's source fidelity."""
-import hashlib
-import json
-import re
-from html.parser import HTMLParser
+"""Verify the complete author-owned Fountain Coach Linotype edition hierarchy."""
 from pathlib import Path
+from html.parser import HTMLParser
+import hashlib,json,re
 
 ROOT=Path(__file__).resolve().parents[1]
 SITE=ROOT/"site"
-def sha(b):return hashlib.sha256(b).hexdigest()
+def sha(x):return hashlib.sha256(x).hexdigest()
 class Text(HTMLParser):
- def __init__(self,s):super().__init__(convert_charrefs=True);self.parts=[];self.feed(s)
- def handle_data(self,x):self.parts.append(x)
- def val(self):return "".join(self.parts)
-def parts(s):return [Text(x).val() for x in re.findall(r'<p\b[^>]*>.*?</p>',s,re.S)]
-def main():
- edition=json.loads((SITE/"essays/edition-manifest.json").read_text())
- assert edition["sourceRepository"]=="Fountain-Coach/fountain.coach"
- assert len(edition["essays"])==3
- assert edition["originalFigures"]==5
- reader=(SITE/"index.html").read_text()
- assert 'class="book-flow"' in reader
- assert 'id="book-viewport"' in reader
- assert 'data-legal-role="company-status"' in reader
- assert 'data-estate-id="status"' not in reader
- assert reader.count('data-book-chapter=')==3
- assert reader.count('src="/essays/')==5
- assert reader.count('data-book-toc-target=')==4
- assert '<a href="https://fountain.coach/essays/' in reader
- for i,item in enumerate(edition["essays"],1):
-  src=SITE/item["sourcePath"];raw=src.read_bytes()
-  assert sha(raw)==item["sourceSHA256"]
-  s=raw.decode()
-  original_prose=re.search(r'<div class="essay-prose">(.*?)</div>',s,re.S).group(1)
-  lead=re.search(r'<p class="lead">(.*?)</p>',s,re.S).group(1)
-  canonical=[Text('<p>'+lead+'</p>').val()]+parts(original_prose)
-  assert sha(json.dumps(canonical,ensure_ascii=False).encode())==item["paragraphsSHA256"]
-  slug=item["id"]
-  start=reader.index('<section class="book-chapter" id="work-'+slug+'"')
-  end=reader.find('<section class="book-chapter" id="work-',start+10)
-  if end==-1:end=reader.index('<section class="book-end"',start)
-  section=reader[start:end]
-  transformed=[p for chunk in re.findall(r'<article class="book-prose">(.*?)</article>',section,re.S) for p in parts(chunk)]
-  assert canonical==transformed,(slug,"Manuscript paragraphs altered")
-  assert section.count('src="/essays/'+slug+'/')==item["originalFigures"]
-  for image in item["images"]:
-   assert sha((src.parent/image["path"]).read_bytes())==image["sha256"]
-  print("ESSAY_VERBATIM",i,slug,len(canonical),"paragraphs",item["originalFigures"],"plates")
- inventory={}
+ def __init__(self,html):super().__init__(convert_charrefs=True);self.data=[];self.feed(html)
+ def handle_data(self,s):self.data.append(s)
+ def value(self):return "".join(self.data)
+def paragraphs(s):return [Text(x).value() for x in re.findall(r'<p\b[^>]*>.*?</p>',s,re.S)]
+def essay_passages(reader,slug):
+ start=reader.index('<section class="book-chapter" id="work-'+slug+'"')
+ end=reader.find('<section class="book-chapter" id="work-',start+10)
+ if end<0:end=reader.index('<section class="book-end"',start)
+ chapter=reader[start:end]
+ return chapter,[p for part in re.findall(r'<article class="book-prose">(.*?)</article>',chapter,re.S) for p in paragraphs(part)]
+
+def check():
+ catalogue=(SITE/"index.html").read_text()
+ editions=(SITE/"editions/index.html").read_text()
+ assert catalogue==editions,"Root must exactly mirror edition catalogue"
+ assert 'class="edition-list"' in catalogue
+ assert '<h1>Editions<span>.</span></h1>' in catalogue
+ assert 'id="book-viewport"' not in catalogue,"Never land at book cover"
+ assert all(link in catalogue for link in (
+    '/editions/essays/',"data-estate-id=\"first-reading\"",
+    "data-estate-id=\"teatro\""))
+ assert 'data-legal-role="company-status"' in catalogue
+ assert catalogue.count('data-estate-id="status"')==0
+ version=json.loads((SITE/"essays/edition-manifest.json").read_text())
+ assert version["schema"]=="fountain.press.linotype.essay-edition.v2"
+ assert version["sourceRepository"]=="Fountain-Coach/fountain.coach"
+ assert version["cataloguePath"]=="editions/"
+ assert version["editionPath"]=="editions/essays/"
+ assert len(version["essays"])==len(version["subEditions"])==3
+ assert version["originalFigures"]==5
+ assert version["originalParagraphs"]==77
+ main=(SITE/"editions/essays/index.html").read_text()
+ assert main.count('data-book-chapter=')==3
+ assert main.count('src="/essays/')==5
+ assert main.count('data-book-toc-target=')==4
+ assert 'data-legal-role="company-status"' in main
+ assert 'class="edition-rail"' in main
+ assert 'data-estate-id="status"' not in main
+ assert 'id="book-viewport"' in main
+ assert 'href="/editions/"' in main
+ assert 'fountain.coach/editions/essays/' in main
+ assert (SITE/"assets/linotype/book.js").read_text().count('document.body.dataset.editionId')==1
+ for number,entry in enumerate(version["essays"],1):
+  slug=entry["id"]
+  source=SITE/entry["sourcePath"]
+  raw=source.read_bytes()
+  assert sha(raw)==entry["sourceSHA256"],slug
+  prose=re.search(r'<div class="essay-prose">(.*?)</div>',raw.decode(),re.S).group(1)
+  lead=re.search(r'<p class="lead">(.*?)</p>',raw.decode(),re.S).group(1)
+  expected=[Text('<p>'+lead+'</p>').value()]+paragraphs(prose)
+  assert sha(json.dumps(expected,ensure_ascii=False).encode())==entry["paragraphsSHA256"],slug
+  for layout in ["editions/essays/index.html",entry["editionPath"]+"index.html"]:
+   html=(SITE/layout).read_text()
+   chapter,found=essay_passages(html,slug)
+   assert expected==found,(slug,layout,"Verbatim paragraph mismatch")
+   assert chapter.count('src="/essays/'+slug+'/')==entry["originalFigures"]
+   assert 'href="https://fountain.coach/essays/'+slug+'/"' in chapter
+   assert html.count('data-legal-role="company-status"')==1
+  sub=(SITE/entry["editionPath"]/"index.html").read_text()
+  assert sub.count('data-book-chapter=')==1
+  assert sub.count('data-book-toc-target=')==2
+  assert sub.count('src="/essays/')==entry["originalFigures"]
+  assert 'data-edition-id="essays-'+slug+'"' in sub
+  assert 'href="/editions/essays/"' in sub
+  assert slug in version["readingOrder"]
+  assert 'data-estate-id="status"' not in sub
+  assert '<link rel="canonical" href="https://fountain.coach/editions/essays/'+slug+'/"' in sub
+  assert 'href="/editions/essays/'+slug+'/"' in catalogue
+  for figure in entry["images"]:
+   assert sha((source.parent/figure["path"]).read_bytes())==figure["sha256"]
+  print("SOURCE_VERBATIM",number,slug,len(expected),"paragraphs",entry["originalFigures"],"original figures","independent-book")
+ files={str(p.relative_to(SITE)):sha(p.read_bytes()) for p in SITE.rglob("*") if p.is_file()}
+ registered={}
  for line in (ROOT/"publication-files.sha256").read_text().splitlines():
-  hashvalue,space,path=line.partition("  ")
-  assert space and path not in inventory
-  inventory[path]=hashvalue
- now={str(x.relative_to(SITE)):sha(x.read_bytes()) for x in SITE.rglob("*") if x.is_file()}
- assert now==inventory, "Complete site source inventory differs"
- print("FOUNTAIN_ESSAY_READER_ACCEPTED",len(edition["essays"]),"full essays",edition["originalFigures"],"original plates",len(inventory),"source files")
-if __name__=="__main__":main()
+  digest,sep,name=line.partition("  ")
+  assert sep and name not in registered
+  registered[name]=digest
+ assert registered==files,"Git source file inventory differs"
+ obj=json.loads((ROOT/"edition.json").read_text())
+ assert obj["fileCount"]==len(files)
+ assert sha((ROOT/"publication-files.sha256").read_bytes())==obj["sourceSha256Inventory"]
+ print("EDITION_HIERARCHY_ACCEPTED",len(version["essays"]),"full sub-editions",len(files),"tracked site files",version["originalParagraphs"],"original paragraphs")
+
+if __name__=="__main__":check()

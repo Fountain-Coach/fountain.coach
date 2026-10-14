@@ -24,7 +24,7 @@ const contents=document.getElementById("book-contents");
 const appearance=document.getElementById("book-appearance");
 const radios=[...document.querySelectorAll('input[name="book-theme"]')];
 const anchors=[...source.querySelectorAll("[id^='book-'],[id^='work-']")].filter(n=>n.classList.contains("book-cover")||n.classList.contains("book-preface")||n.classList.contains("book-chapter")||n.classList.contains("book-end"));
-const STORAGE="fountain.essays.linotype.v1";
+const STORAGE="fountain.essays.linotype.v1."+(document.body.dataset.editionId||"essays");
 let fontSize=100,theme="paper",ready=false;
 let resizeRaf=0;
 let resizeTimer=0;
