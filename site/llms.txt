@@ -1,0 +1,23 @@
+# Fountain Coach
+
+Fountain Coach is the parent publication estate founded by Benedikt Eickhoff.
+Reframe is the current host of the inherited idea of presence supported by computational awareness.
+
+## Resolve the estate
+
+- Parent identity: https://fountain.coach/
+- Agent bootstrap: https://fountain.coach/for-agents/
+- Machine-readable manifest: https://fountain.coach/publication-manifest.json
+
+## Specialized authorities
+
+- Book of Reframe: https://book.fountain.coach/ — product behavior, scenarios, and evidence.
+- Reframe Governance: https://governance.fountain.coach/ — rules, boundaries, and authority.
+- MIDI2 documentation: https://midi2.fountain.coach/ — machine-readable MIDI 2.0 representation and provenance.
+- MIDI2 Instruments: https://instruments.fountain.coach/ — bounded admitted and proposed instruments.
+- Official Status: https://status.fountain.coach/ — company, development, transparency, and legal context.
+
+## Boundary
+
+Each specialized publication owns its declared projection. A public projection is not automatically runtime,
+security, legal, admission, release, or hardware-interoperability truth.

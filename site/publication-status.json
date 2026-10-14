@@ -1,0 +1,12 @@
+{
+  "state": "not-established",
+  "detail": "No correlated EstatePublisher mirror receipt is currently published.",
+  "target": "",
+  "scope": "complete-declared-estate",
+  "sequence": null,
+  "correlationID": null,
+  "routeDiffs": [],
+  "transferredFileCount": 0,
+  "updatedAt": "",
+  "readOnly": true
+}

@@ -1,0 +1,14 @@
+{
+  "schema": "fountain.estate.public-source.v1",
+  "host": "fountain.coach",
+  "canonical": "https://fountain.coach/",
+  "publicationRoot": "site/",
+  "repository": "Fountain-Coach/fountain.coach",
+  "capturedAt": "2026-10-14T10:30:08Z",
+  "publicationState": "verified-live-publication-baseline",
+  "fileCount": 59,
+  "indexPages": 8,
+  "sourceSha256Inventory": "954d19e103567fcd4c08cc905d62bfc25ddbffc1a4d91eeba29aa31d0f664065",
+  "sourceNote": "Entire known local public site route inventory re-fetched via live HTTPS; initial Git revision is a snapshot, not an automated deployment.",
+  "deployControl": "EstatePublisher exact-host, authorized release and complete independent HTTPS readback"
+}

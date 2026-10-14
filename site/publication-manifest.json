@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "host": "fountain.coach",
+  "publicationState": "published",
+  "role": "parent-estate-identity",
+  "sourceRouteManifest": "route-manifest.json",
+  "socialImage": "https://fountain.coach/assets/fountain-coach-logo.png",
+  "publisher": {
+    "name": "Benedikt Eickhoff",
+    "role": "founder",
+    "brand": "Fountain Coach",
+    "location": "Berlin, Germany",
+    "githubIdentity": "https://github.com/Contexter",
+    "organization": "https://github.com/Fountain-Coach"
+  },
+  "lineage": {
+    "historicalName": "FountainAI",
+    "historicalStatus": "retired-product-name",
+    "inheritedIdea": "presence-supported-by-computational-awareness",
+    "currentHost": "Reframe"
+  },
+  "publications": [
+    {"name": "The Book of Reframe", "url": "https://book.fountain.coach/", "role": "human-reference"},
+    {"name": "Reframe Governance", "url": "https://governance.fountain.coach/", "role": "governance-authority"},
+    {"name": "Fountain Coach MIDI2 Instruments", "url": "https://instruments.fountain.coach/", "role": "instrument-catalog"},
+    {"name": "Fountain Coach Status", "url": "https://status.fountain.coach/", "role": "official-status"},
+    {"name": "Fountain Coach Agent Bootstrap", "url": "https://fountain.coach/for-agents/", "role": "estate-machine-readable-entry-point"},
+    {"name": "Solstice — Writing Source", "url": "https://works.benedikt-eickhoff.de/solstice/", "role": "writer-owned-source-and-editions"},
+    {"name": "Why the Estate Matters", "url": "https://fountain.coach/essays/reframe-and-the-business-value-of-the-estate/", "role": "authored-economic-hypothesis"}
+  ],
+  "claimBoundary": "The TLD explains identity and lineage; specialized publications own their respective claims."
+}

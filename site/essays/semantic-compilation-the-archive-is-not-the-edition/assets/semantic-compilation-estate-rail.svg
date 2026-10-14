@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img">
+<title>Semantic Compilation — Solstice in the Fountain Coach estate</title>
+<desc>The estate navigation includes Solstice. Below, source texts enter an interpretive editorial plan and become a versioned edition.</desc>
+<style>.mono{font-family:Menlo,Consolas,monospace}.serif{font-family:Georgia,serif}.ink{fill:#28251f}.dim{fill:#68645e}.red{fill:#b65e36}.line{stroke:#34312c;stroke-width:1;fill:none}.fine{stroke:#aaa398;stroke-width:1;fill:none}.dash{stroke:#aaa398;stroke-width:1;stroke-dasharray:3 6;fill:none}</style>
+<rect x="0" y="0" width="1200" height="630" fill="#f5f0e7"/>
+<rect x="24" y="24" width="1152" height="581" fill="none" stroke="#34312c" stroke-width="1"/>
+<text class="serif ink" x="47" y="52" font-size="18" letter-spacing="2">FOUNTAIN COACH</text>
+<text class="mono dim" x="48" y="74" font-size="10" letter-spacing="1.5">PUBLICATION ESTATE</text>
+<path d="M47 95H1153" class="line"/>
+<g transform="translate(358 40)" fill="none" stroke="#34312c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12 12 4l10 8v10h-6v-7H8v7H2Z"/></g>
+<text class="mono dim" x="370" y="84" font-size="8" text-anchor="middle">ESTATE</text>
+<g transform="translate(451 40)" fill="none" stroke="#34312c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h14a3 3 0 0 1 3 3v15H7a4 4 0 0 1-4-4Zm0 0v14a4 4 0 0 0 4 4"/></g>
+<text class="mono dim" x="463" y="84" font-size="8" text-anchor="middle">BOOK</text>
+<g transform="translate(544 40)" fill="none" stroke="#34312c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 5 4 8 8 10 4-2 8-5 8-10V6Z"/></g>
+<text class="mono dim" x="556" y="84" font-size="8" text-anchor="middle">GOVERNANCE</text>
+<g transform="translate(637 40)" fill="none" stroke="#34312c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6h20M2 12h20M2 18h20M6 4v4m6 2v4m6 2v4"/></g>
+<text class="mono dim" x="649" y="84" font-size="8" text-anchor="middle">MIDI2</text>
+<g transform="translate(730 40)" fill="none" stroke="#34312c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v14a3 3 0 1 0 3 3M6 7h11m0 0v10a3 3 0 1 0 3 3M17 7V4"/></g>
+<text class="mono dim" x="742" y="84" font-size="8" text-anchor="middle">INSTRUMENTS</text>
+<g transform="translate(823 40)" fill="none" stroke="#34312c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 15h4v7H2zm8-6h4v13h-4zm8-7h4v20h-4z"/></g>
+<text class="mono dim" x="835" y="84" font-size="8" text-anchor="middle">STATUS</text>
+<g transform="translate(916 40)" fill="none" stroke="#34312c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5h20M4 5v17m16-17v17M2 22h20M7 5c0 6 2 7 5 9 3-2 5-3 5-9"/></g>
+<text class="mono dim" x="928" y="84" font-size="8" text-anchor="middle">TEATRO</text>
+<g transform="translate(1009 40)" fill="none" stroke="#34312c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m3 3 19 9-8 2-4 8Z"/></g>
+<text class="mono dim" x="1021" y="84" font-size="8" text-anchor="middle">POINTER</text>
+<rect x="1093" y="29" width="63" height="62" fill="none" stroke="#b65e36"/>
+<path d="M1111.0 52.0 L1137.0 52.0" stroke="#b65e36" stroke-width="1.8" stroke-linecap="round" fill="none"/><path d="M1124.0 39.0 L1124.0 65.0" stroke="#b65e36" stroke-width="1.8" stroke-linecap="round" fill="none"/><path d="M1114.8 42.8 L1133.2 61.2" stroke="#b65e36" stroke-width="1.8" stroke-linecap="round" fill="none"/><path d="M1114.8 61.2 L1133.2 42.8" stroke="#b65e36" stroke-width="1.8" stroke-linecap="round" fill="none"/><circle cx="1124" cy="52" r="3.4" fill="none" stroke="#b65e36" stroke-width="1.6"/>
+<text class="mono red" x="1124" y="84" font-size="9" text-anchor="middle">SOLSTICE</text>
+<text class="mono dim" x="49" y="139" font-size="10" letter-spacing="1">PLATE 03 / THE WRITER-OWNED SOURCE ENTERS THE ESTATE</text>
+<text class="serif ink" x="49" y="181" font-size="34" >Semantic Compilation</text>
+<text class="serif dim" x="50" y="208" font-size="15" >A proposed interpretation. An approved, reproducible publication.</text>
+<path d="M48 225H1152" class="fine"/>
+<text class="mono ink" x="48" y="258" font-size="13" >01 / SOURCE</text>
+<text class="mono dim" x="48" y="278" font-size="10" >690 INDEXED POSTS</text>
+<rect x="48" y="296" width="262" height="232" class="line"/>
+<text class="mono ink" x="397" y="258" font-size="13" >02 / EDITORIAL PLAN</text>
+<text class="mono dim" x="397" y="278" font-size="10" >INTERPRETATION / AUTHORIAL AUTHORITY</text>
+<rect x="397" y="296" width="386" height="232" class="line"/>
+<text class="mono ink" x="896" y="258" font-size="13" >03 / EDITION</text>
+<text class="mono dim" x="896" y="278" font-size="10" >30 SELECTED WORKS</text>
+<rect x="896" y="296" width="254" height="232" class="line"/>
+<rect x="68" y="322" width="192" height="190" fill="#f5f0e7" stroke="#aaa398"/>
+<rect x="80" y="311" width="192" height="190" fill="#f5f0e7" stroke="#aaa398"/>
+<rect x="92" y="300" width="192" height="190" fill="#f5f0e7" stroke="#aaa398"/>
+<path d="M111 338h133" class="fine"/>
+<path d="M111 352h162" class="fine"/>
+<path d="M111 367h106" class="fine"/>
+<path d="M111 395h148" class="fine"/>
+<path d="M111 409h168" class="fine"/>
+<path d="M111 423h121" class="fine"/>
+<path d="M111 450h156" class="fine"/>
+<rect x="115" y="373" width="56" height="15" fill="none" stroke="#365d69"/>
+<path d="M245.0 472.0 L265.0 472.0" stroke="#365d69" stroke-width="1.8" stroke-linecap="round" fill="none"/><path d="M255.0 462.0 L255.0 482.0" stroke="#365d69" stroke-width="1.8" stroke-linecap="round" fill="none"/><path d="M247.9 464.9 L262.1 479.1" stroke="#365d69" stroke-width="1.8" stroke-linecap="round" fill="none"/><path d="M247.9 479.1 L262.1 464.9" stroke="#365d69" stroke-width="1.8" stroke-linecap="round" fill="none"/><circle cx="255" cy="472" r="3.4" fill="none" stroke="#365d69" stroke-width="1.6"/>
+<text class="mono dim" x="49" y="552" font-size="9" >SOURCE TEXT / IMAGES / DATES / VOICES</text>
+<path d="M422 349C495 322 533 417 633 373" fill="none" stroke="#365d69" stroke-width="1.25"/>
+<path d="M422 379C495 352 533 446 633 412" fill="none" stroke="#365d69" stroke-width="1.25"/>
+<path d="M422 409C495 382 533 484 633 389" fill="none" stroke="#365d69" stroke-width="1.25"/>
+<path d="M422 438C495 411 533 411 633 450" fill="none" stroke="#365d69" stroke-width="1.25"/>
+<path d="M422 467C495 440 533 457 633 425" fill="none" stroke="#365d69" stroke-width="1.25"/>
+<circle cx="632" cy="373" r="3.3" fill="#b65e36"/>
+<circle cx="632" cy="389" r="3.3" fill="#b65e36"/>
+<circle cx="632" cy="412" r="3.3" fill="#b65e36"/>
+<circle cx="632" cy="425" r="3.3" fill="#b65e36"/>
+<circle cx="632" cy="450" r="3.3" fill="#b65e36"/>
+<text class="mono dim" x="417" y="325" font-size="10" >READ</text>
+<text class="mono dim" x="536" y="325" font-size="10" >RELATE</text>
+<text class="mono dim" x="682" y="325" font-size="10" >DECIDE</text>
+<path d="M526 338v169m142-169v169" class="fine"/>
+<path d="M682 373h77" class="fine"/>
+<path d="M682 399h77" class="fine"/>
+<path d="M682 428h77" class="fine"/>
+<path d="M682 454h77" class="fine"/>
+<text class="mono dim" x="417" y="488" font-size="9" >NOT A RANKING FUNCTION</text>
+<text class="mono dim" x="399" y="552" font-size="9" >CANDIDATES / CONTRADICTIONS / OMISSIONS</text>
+<rect x="921" y="310" width="188" height="188" fill="#f5f0e7" stroke="#aaa398"/>
+<rect x="929" y="318" width="188" height="188" fill="#f5f0e7" stroke="#aaa398"/>
+<rect x="937" y="326" width="188" height="188" fill="#f5f0e7" stroke="#aaa398"/>
+<text class="mono ink" x="953" y="362" font-size="17" >SOLSTICE</text>
+<path d="M953 377h152" class="fine"/>
+<path d="M1005.0 418.0 L1055.0 418.0" stroke="#b65e36" stroke-width="1.8" stroke-linecap="round" fill="none"/><path d="M1030.0 393.0 L1030.0 443.0" stroke="#b65e36" stroke-width="1.8" stroke-linecap="round" fill="none"/><path d="M1012.3 400.3 L1047.7 435.7" stroke="#b65e36" stroke-width="1.8" stroke-linecap="round" fill="none"/><path d="M1012.3 435.7 L1047.7 400.3" stroke="#b65e36" stroke-width="1.8" stroke-linecap="round" fill="none"/><circle cx="1030" cy="418" r="3.4" fill="none" stroke="#b65e36" stroke-width="1.6"/>
+<text class="serif ink" x="953" y="473" font-size="18" >First Reading</text>
+<text class="mono dim" x="953" y="492" font-size="9" >SOURCE-GROUNDED EDITION</text>
+<text class="mono dim" x="897" y="552" font-size="9" >EDITION / DIGESTS / VERSIONED RELEASE</text>
+<path d="M328 417h49m-11-7 11 7-11 7M801 417h75m-11-7 11 7-11 7" class="line"/>
+<path d="M48 568H1152" class="line"/>
+<text class="mono dim" x="49" y="589" font-size="10" >THE CHRONOLOGY IS NOT THE NARRATIVE. THE EDITION IS AN AUTHORIAL DECISION.</text>
+</svg>

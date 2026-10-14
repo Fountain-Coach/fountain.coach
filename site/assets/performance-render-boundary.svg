@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-labelledby="title desc">
+<title id="title">The narrow real-time boundary</title>
+<desc id="desc">A three-part editorial sequence: preparation enters a narrow host-clocked render lane, while services remain outside the audio callback.</desc>
+<rect width="1200" height="750" fill="#f4f7f9"/>
+<path d="M120 384H1080" stroke="#c9d2d9" stroke-width="2"/>
+<g stroke="#273746" stroke-width="3" stroke-linejoin="round">
+  <rect x="82" y="188" width="280" height="310" rx="24" fill="#fff"/>
+  <rect x="432" y="120" width="336" height="448" rx="28" fill="#273746"/>
+  <rect x="838" y="188" width="280" height="310" rx="24" fill="#fff"/>
+  <path d="M362 384h70M768 384h70" stroke="#a24f3b" stroke-width="4"/>
+  <path d="m414 367 18 17-18 17M820 367l18 17-18 17" fill="none" stroke="#a24f3b" stroke-width="4"/>
+  <path d="M505 360c25-55 51 55 76 0s51 55 76 0 51 55 76 0" fill="none" stroke="#d9a05d" stroke-width="5" stroke-linecap="round"/>
+</g>
+<g font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" fill="#273746">
+  <text x="120" y="235" font-size="15" letter-spacing="3" fill="#8b6f3f">BEFORE THE CALLBACK</text>
+  <text x="120" y="300" font-size="34" font-weight="700">prepare</text>
+  <text x="120" y="360" font-size="20" fill="#64727c">Csound</text>
+  <text x="120" y="397" font-size="20" fill="#64727c">sample data</text>
+  <text x="120" y="434" font-size="20" fill="#64727c">scene relations</text>
+  <text x="120" y="471" font-size="20" fill="#64727c">governed state</text>
+  <text x="600" y="177" text-anchor="middle" font-size="15" letter-spacing="3" fill="#f4f7f9">HOST-CLOCKED LANE</text>
+  <text x="600" y="250" text-anchor="middle" font-size="38" font-weight="700" fill="#fff">render</text>
+  <text x="600" y="300" text-anchor="middle" font-size="20" fill="#dbe4e9">bounded · deterministic · immediate</text>
+  <text x="600" y="458" text-anchor="middle" font-size="20" fill="#fff">audio buffers · MIDI events</text>
+  <text x="880" y="235" font-size="13" letter-spacing="2" fill="#8b6f3f">OUTSIDE THE CALLBACK</text>
+  <text x="880" y="300" font-size="34" font-weight="700">defer</text>
+  <text x="880" y="360" font-size="20" fill="#64727c">FountainStore</text>
+  <text x="880" y="397" font-size="20" fill="#64727c">network / auth</text>
+  <text x="880" y="434" font-size="20" fill="#64727c">model inference</text>
+  <text x="880" y="471" font-size="20" fill="#64727c">corpus analysis</text>
+</g>
+</svg>

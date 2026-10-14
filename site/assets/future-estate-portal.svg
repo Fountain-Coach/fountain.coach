@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Memory Vector · Teatro Score</title>
+  <desc id="desc">A day moves from morning intention through remembered relations into an evening performance, presented as a governed scenario portal.</desc>
+  <rect width="1200" height="630" fill="#f3efe7"/>
+  <g fill="none" stroke="#c9bda9" stroke-width="2"><path d="M78 492H1122"/><path d="M140 492C230 214 398 104 600 104s370 110 460 388" stroke="#a45d43" stroke-width="3"/><path d="M140 492C250 344 398 272 600 272s350 72 460 220" stroke-dasharray="7 12"/><path d="M600 78V540" stroke-dasharray="4 14"/><circle cx="600" cy="314" r="142" stroke="#a45d43" stroke-width="3"/><circle cx="600" cy="314" r="112"/></g>
+  <circle cx="963" cy="124" r="42" fill="#c58a55" opacity=".8"/><g fill="#c58a55" opacity=".35"><circle cx="963" cy="124" r="66"/><circle cx="963" cy="124" r="94" fill="none" stroke="#c58a55" stroke-width="2"/></g>
+  <g fill="#27231f" font-family="Georgia, 'Times New Roman', serif" text-anchor="middle"><text x="600" y="286" font-size="34" font-weight="700">Memory Vector</text><text x="600" y="326" font-size="34" font-weight="700">· Teatro Score</text></g>
+  <g fill="#7b6643" font-family="Courier New, monospace" font-size="14" letter-spacing="2" text-anchor="middle"><text x="600" y="366">A PROVINCIAL ALLEGORY OF THE DAY</text><text x="600" y="390">MEMORY · SCENARIO · RELATION · PERFORMANCE</text></g>
+  <g fill="#f3efe7" stroke="#a45d43" stroke-width="2"><rect x="68" y="430" width="188" height="92" rx="2"/><rect x="506" y="42" width="188" height="74" rx="2"/><rect x="944" y="430" width="188" height="92" rx="2"/></g>
+  <g fill="#27231f" font-family="Courier New, monospace" text-anchor="middle"><text x="162" y="458" font-size="13" fill="#7b6643" letter-spacing="2">MORNING</text><text x="162" y="486" font-size="19">INTENTION</text><text x="162" y="507" font-size="12">a work begins</text><text x="600" y="72" font-size="13" fill="#7b6643" letter-spacing="2">NOON</text><text x="600" y="98" font-size="18">SCENARIO + FCIS</text><text x="1038" y="458" font-size="13" fill="#7b6643" letter-spacing="2">EVENING</text><text x="1038" y="486" font-size="19">PERFORMANCE</text><text x="1038" y="507" font-size="12">touch · sound · stage</text></g>
+  <g fill="#a45d43"><path d="m270 476 18-10v20zM930 476l-18-10v20zM600 128l-10 18h20z"/></g>
+  <g fill="#7b6643" font-family="Courier New, monospace" font-size="12" text-anchor="middle"><text x="600" y="572">CHAPTER 135 · A DAY LEAVES A PLAYABLE TRACE</text><text x="600" y="594">FOUNTAIN COACH · FUTURE ESTATE PORTAL</text></g>
+</svg>

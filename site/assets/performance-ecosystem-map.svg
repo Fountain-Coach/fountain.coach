@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-labelledby="title desc">
+<title id="title">One authored state, many performance views</title>
+<desc id="desc">An editorial field showing Reframe and AUM at opposite edges, Fountain Instruments in the centre, and FountainStore as the governing ground.</desc>
+<rect width="1200" height="750" fill="#f4f7f9"/>
+<path d="M90 585H1110" stroke="#c9d2d9" stroke-width="2"/>
+<path d="M178 420C310 320 396 300 505 346M695 346C804 300 890 320 1022 420" fill="none" stroke="#a24f3b" stroke-width="4" stroke-linecap="round" stroke-dasharray="2 17"/>
+<g stroke="#273746" stroke-width="3" stroke-linejoin="round">
+  <rect x="72" y="118" width="290" height="235" rx="26" fill="#fff"/>
+  <rect x="838" y="118" width="290" height="235" rx="26" fill="#fff"/>
+  <rect x="425" y="172" width="350" height="310" rx="30" fill="#273746"/>
+  <rect x="110" y="535" width="980" height="96" rx="22" fill="#e9eef1"/>
+  <path d="M600 222v208" stroke="#d9a05d" stroke-width="3"/>
+  <circle cx="600" cy="320" r="72" fill="#d9a05d"/>
+  <circle cx="600" cy="320" r="26" fill="#fff"/>
+  <circle cx="510" cy="405" r="23" fill="#fff"/>
+  <circle cx="690" cy="405" r="23" fill="#fff"/>
+</g>
+<g font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" fill="#273746">
+  <text x="108" y="166" font-size="16" letter-spacing="3" fill="#8b6f3f">AUTHORED HOST</text>
+  <text x="108" y="225" font-size="48" font-weight="700">Reframe</text>
+  <text x="108" y="264" font-size="20" fill="#64727c">writing · reading · staging</text>
+  <text x="874" y="166" font-size="16" letter-spacing="3" fill="#8b6f3f">REFERENCE HOST</text>
+  <text x="874" y="225" font-size="48" font-weight="700">AUM</text>
+  <text x="874" y="264" font-size="20" fill="#64727c">iPadOS · interoperability</text>
+  <text x="600" y="208" text-anchor="middle" font-size="15" letter-spacing="3" fill="#f4f7f9">FOUNTAIN INSTRUMENTS</text>
+  <text x="600" y="463" text-anchor="middle" font-size="22" font-weight="700" fill="#f4f7f9">one authored state</text>
+  <text x="510" y="412" text-anchor="middle" font-size="17" fill="#273746">MIDI2</text>
+  <text x="690" y="412" text-anchor="middle" font-size="17" fill="#273746">AUv3</text>
+  <text x="145" y="576" font-size="15" letter-spacing="3" fill="#8b6f3f">GOVERNING GROUND</text>
+  <text x="145" y="612" font-size="25" font-weight="700">FountainStore</text>
+  <text x="450" y="612" font-size="19" fill="#64727c">identity · state · authority</text>
+</g>
+</svg>

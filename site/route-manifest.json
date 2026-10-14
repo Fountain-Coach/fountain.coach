@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "host": "fountain.coach",
+  "routes": [
+    {
+      "pathPrefix": "",
+      "sourceRoot": ".",
+      "publicPaths": [
+        "/index.html"
+      ]
+    }
+  ]
+}

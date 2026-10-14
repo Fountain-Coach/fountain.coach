@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-labelledby="title desc">
+<title id="title">The listening stage</title>
+<desc id="desc">A quiet central listening stage surrounded by Ear, Voice, Csound, and Sampler, with Reframe and Teatro framing the performance.</desc>
+<rect width="1200" height="750" fill="#f4f7f9"/>
+<path d="M160 585H1040" stroke="#c9d2d9" stroke-width="2"/>
+<path d="M600 175V570M292 375H908" stroke="#c9d2d9" stroke-width="2" stroke-dasharray="3 13"/>
+<g stroke="#273746" stroke-width="3" stroke-linejoin="round">
+  <ellipse cx="600" cy="375" rx="224" ry="190" fill="#fff"/>
+  <path d="M510 375c22-68 44 68 66 0s44 68 66 0 44 68 66 0" fill="none" stroke="#a24f3b" stroke-width="4" stroke-linecap="round"/>
+  <rect x="470" y="302" width="260" height="146" rx="22" fill="#273746"/>
+  <circle cx="394" cy="250" r="58" fill="#d9a05d"/>
+  <circle cx="806" cy="250" r="58" fill="#d9a05d"/>
+  <circle cx="394" cy="500" r="58" fill="#d9a05d"/>
+  <circle cx="806" cy="500" r="58" fill="#d9a05d"/>
+</g>
+<g font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" fill="#273746" text-anchor="middle">
+  <text x="600" y="90" font-size="15" letter-spacing="3" fill="#8b6f3f">AUTHORING HOST</text>
+  <text x="600" y="124" font-size="27" font-weight="700">Reframe</text>
+  <text x="600" y="382" font-size="14" letter-spacing="3" fill="#f4f7f9">DRAMATURGICAL</text>
+  <text x="600" y="416" font-size="27" font-weight="700" fill="#fff">listening stage</text>
+  <text x="394" y="257" font-size="20" font-weight="700">Ear</text>
+  <text x="806" y="257" font-size="20" font-weight="700">Voice</text>
+  <text x="394" y="507" font-size="20" font-weight="700">Csound</text>
+  <text x="806" y="507" font-size="20" font-weight="700">Sampler</text>
+  <text x="600" y="644" font-size="15" letter-spacing="3" fill="#8b6f3f">PERFORMANCE HOST</text>
+  <text x="600" y="680" font-size="27" font-weight="700">Teatro</text>
+  <text x="102" y="382" font-size="16" letter-spacing="3" fill="#8b6f3f">MIDI1 / AUDIO</text>
+  <text x="1098" y="382" font-size="16" letter-spacing="3" fill="#8b6f3f">MIDI2</text>
+</g>
+</svg>

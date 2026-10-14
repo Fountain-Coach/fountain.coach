@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">TEATRO SCORE — MEMORY VECTOR</title>
+  <desc id="desc">Seven sequential movements trace the human condition from field and presence through memory, relation, machine, attention, and unfinished form.</desc>
+  <style>
+    .paper{fill:#f5f0e7}.ink{fill:#27231f}.muted{fill:#706a60}.rule{stroke:#27231f;stroke-width:1;fill:none}.fine{stroke:#706a60;stroke-width:1;fill:none}.dash{stroke:#706a60;stroke-width:1;stroke-dasharray:5 6;fill:none}.label{font:14px 'Courier New',monospace;letter-spacing:1px}.small{font:11px 'Courier New',monospace;letter-spacing:.7px}.serif{font:18px Georgia,serif}
+  </style>
+  <rect class="paper" width="1200" height="630"/>
+  <g transform="scale(1 .9)">
+  <rect class="rule" x="22" y="22" width="1156" height="656"/>
+  <text class="ink label" x="48" y="58">TEATRO SCORE — MEMORY VECTOR</text>
+  <text class="muted small" x="48" y="82">PLATE 01 — HUMAN CONDITION</text>
+  <path class="fine" d="M48 102H1152"/>
+  <g transform="translate(48 126)">
+    <path class="fine" d="M157 0V508M315 0V508M473 0V508M631 0V508M789 0V508M947 0V508"/>
+    <g transform="translate(0)"><text class="muted small" x="0" y="22">01</text><text class="ink label" x="0" y="54">SELF /</text><text class="ink label" x="0" y="74">FIELD</text><ellipse class="fine" cx="72" cy="190" rx="53" ry="34"/><circle class="ink" cx="72" cy="190" r="5"/><path class="dash" d="M72 155V225M19 190H125"/></g>
+    <g transform="translate(158)"><text class="muted small" x="0" y="22">02</text><text class="ink label" x="0" y="54">PRESENCE /</text><text class="ink label" x="0" y="74">ABSENCE</text><path class="rule" d="M48 210h50v6H48zM54 216v48m38-48v48M42 264h62"/><path class="fine" d="M72 130V188M72 280v80"/></g>
+    <g transform="translate(316)"><text class="muted small" x="0" y="22">03</text><text class="ink label" x="0" y="54">MEMORY /</text><text class="ink label" x="0" y="74">VECTOR</text><path class="dash" d="M18 300C48 250 66 230 86 194S112 130 134 100"/><path class="rule" d="m124 99 12 0-7 10"/><circle class="ink" cx="18" cy="300" r="4"/><circle class="ink" cx="134" cy="100" r="4"/><path class="fine" d="M18 340H134"/></g>
+    <g transform="translate(474)"><text class="muted small" x="0" y="22">04</text><text class="ink label" x="0" y="54">BOUNDARY /</text><text class="ink label" x="0" y="74">RELATION</text><rect class="fine" x="31" y="136" width="82" height="190"/><path class="rule" d="M0 231h144"/><circle class="ink" cx="24" cy="231" r="5"/><circle class="ink" cx="120" cy="231" r="5"/><path class="dash" d="M29 231h86"/></g>
+    <g transform="translate(632)"><text class="muted small" x="0" y="22">05</text><text class="ink label" x="0" y="54">MACHINE /</text><text class="ink label" x="0" y="74">WITNESS</text><rect class="rule" x="38" y="164" width="70" height="70"/><circle class="fine" cx="73" cy="199" r="18"/><path class="fine" d="M73 132v32m0 70v32M5 199h33m70 0h33"/><path class="dash" d="M0 290C38 252 110 252 145 290"/></g>
+    <g transform="translate(790)"><text class="muted small" x="0" y="22">06</text><text class="ink label" x="0" y="54">ATTENTION /</text><text class="ink label" x="0" y="74">AUTHORITY</text><circle class="rule" cx="72" cy="196" r="39"/><circle class="ink" cx="72" cy="196" r="6"/><path class="fine" d="M72 132v25m0 78v25M8 196h25m78 0h25"/><path class="dash" d="M24 310h96"/></g>
+    <g transform="translate(948)"><text class="muted small" x="0" y="22">07</text><text class="ink label" x="0" y="54">FORM /</text><text class="ink label" x="0" y="74">UNFINISHED</text><path class="rule" d="M20 290 50 174l35 74 27-116"/><path class="fine" d="M20 290h122M50 174l35 74"/><path class="dash" d="M20 340h38m18 0h22m16 0h27"/></g>
+    <path class="fine" d="M0 508H1104"/>
+    <text class="muted small" x="0" y="536">A TRAJECTORY, NOT A PORTRAIT · THE LAST RELATION REMAINS OPEN</text>
+  </g>
+  </g>
+</svg>
