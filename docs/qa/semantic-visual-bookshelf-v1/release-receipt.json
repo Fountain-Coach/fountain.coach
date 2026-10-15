@@ -1,0 +1,31 @@
+{
+  "schema": "fountain.press.wlan-fixture-release-receipt.v1",
+  "release": "20261015-semantic-visual-bookshelf-v1",
+  "date": "2026-10-15",
+  "stagingOrigin": "http://192.168.8.249:8180",
+  "fixtureRoute": "/fixtures/semantic-visual-bookshelf/",
+  "sourceOwner": "Fountain-Coach/fountain.coach",
+  "sourceCommit": "e28282ab317e7f4c1f8ef33d043be5ba3af631e0",
+  "rendererOwner": "Fountain-Coach/fountain-press",
+  "rendererCommit": "2dc1eebed4b7badfa76ed97d182f80feadbe7070",
+  "published": false,
+  "previousReleasePreserved": "20261015-first-readings-identity-v38",
+  "previousReleaseUnchangedExceptAddedFixture": true,
+  "tests": {
+    "visualBrowser": [
+      "ipad-portrait",
+      "ipad-landscape",
+      "phone-portrait"
+    ],
+    "v38Regression": [
+      "ipad-portrait",
+      "ipad-landscape",
+      "phone-portrait"
+    ],
+    "sourceIntegrity": "PASS",
+    "sourceArtworkDigests": "PASS",
+    "unknownDeepLinkRefusal": "PASS",
+    "returnedToExactParent": "PASS"
+  },
+  "approval": "native iPad Safari visual proof pending"
+}

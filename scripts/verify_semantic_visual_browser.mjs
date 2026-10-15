@@ -109,6 +109,7 @@ async function scenario(label, width, height) {
     await key("Escape");
     await wait('document.body?.dataset.collectionId==="essays" && location.hash==="#work-' + slug + '"');
     await navigate(ROUTE);
+    await wait(loaded(".shelf-book img"));
     await click(workSelector("first-readings"));
     await wait('document.body?.dataset.collectionId==="first-readings"');
     await wait(loaded(".shelf-book img"));

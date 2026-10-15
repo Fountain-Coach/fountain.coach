@@ -34,8 +34,8 @@ original artwork is retained, not regenerated or redacted.
 - Production publication: NOT ATTEMPTED
 - Native iPad Safari editorial proof: PENDING
 
-The PNGs stored here are original, unaltered browser screenshots from these
-three target geometries. They show the retained one-tone bookshelf grid, logo,
+The PNGs stored here are original, unaltered screenshots from the live
+Ubuntu WLAN staging release in these three target geometries. They show the retained one-tone bookshelf grid, logo,
 source covers, image-only reading surface, and navigation controls.
 
 ## Important REA qualification
@@ -44,3 +44,9 @@ Our earlier REA scan supplied technical observations of Obsidian's main
 process (e.g. `vault-open`) but did not prove its internal note-link
 navigation. Here the testable learning is the explicit collection boundary,
 not an assertion that reverse-engineered Obsidian internals were reused.
+
+## Release receipt
+
+The source-pinned WLAN release, browser verification matrix, and pending Safari
+author approval are recorded in `release-receipt.json`. The original V38
+First Readings browser journey also passed without modification.
