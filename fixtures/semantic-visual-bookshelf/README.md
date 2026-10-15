@@ -70,3 +70,46 @@ Recognizability of a specific work is expressly *not* claimed. The user can
 assess whether the structure is legible on a physical iPad.
 
 Preview route: `/fixtures/semantic-visual-bookshelf/` (WLAN, noindex).
+
+
+## Integrated reading experience — V5
+
+The Bookshelf does not disappear when a book opens. On iPad, a narrow
+context rail remains beside the page; on phone the same structure becomes a
+horizontal rail above it. The rail contains:
+
+- the existing unmarked publisher circle, reactive as the *return to the
+  containing space* operation rather than a new close/X symbol;
+- geometrically identical miniature book positions, with the currently open
+  book selected by its containing-space color; and
+- direct links to other books within the current space, never to editorial
+  names or a Score.
+
+Opening a book establishes an **encounter**: anonymous object identity,
+containing-space identity, selected sibling position, physical paper, page
+address and reversible parent route. The book object remains the same under
+both containing colors, without a fabricated identifying image.
+
+Every reader has three blank leaves of a constant A-series-like paper
+proportion (width/height approximately 1/1.414). This is an intentionally
+content-free fixture, not a text renderer, extracted reading or image gallery.
+The three blank pages allow testing reader semantics without importing
+content-derived meaning. Paper occupies the main focus, with a subtle
+stacked-edge cue and a colored left boundary that comes exclusively from the
+containing space.
+
+**Physical turning:** a horizontal pointer gesture previews a small
+translation and transparency change. Releasing before 34% of the displayed
+leaf width gently returns it to rest. Crossing 34% commits exactly one page
+and uses a soft settling transition with no bounce. Buttons, keyboard
+arrows, browser history, direct page URLs, unknown-page refusal and reduced
+motion preserve the same state authority. The current page is always
+defined by its bounded deep-link address, never by the animation.
+
+The optional cross-document cover expansion was deliberately excluded:
+it caused unreliable navigation in the test browser. This milestone proves
+the integrated reading context and in-reader movement; it does *not* claim
+that a cover physically morphs into its full page across documents.
+
+The separate original-authored Fountain Press reader remains unchanged.
+Native iPad Safari editorial proof is still required.

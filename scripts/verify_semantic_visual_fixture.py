@@ -55,6 +55,15 @@ def check():
         assert 'data-object-token="'+digest(key)+'"' in html
         assert html.count('class="visual-page"')==3
         assert 'href="'+encounter["parent"]+'#work-'+key+'"' in html
+        assert 'class="reader-context"' in html
+        assert 'class="reader-parent-circle visual-return"' in html
+        assert html.count('<li class="reader-member')==len(next(x for x in g["spaces"] if x["id"]==space)["members"])
+        assert html.count('class="reader-member is-current"')==1
+        assert 'class="reader-paper-assembly"' in html
+        assert 'class="reader-focus"' in html
+        assert 'data-transition="rest"' in html
+        assert 'aria-label="Return to containing space"' in html
+        assert '<a class="visual-return"' not in html
     assert sorted([x["space"] for x in g["encounters"] if x["object"]=="o-02"])==["s-01","s-02"]
     for file in OUT.rglob("index.html"):
         html=file.read_text().lower()
@@ -64,6 +73,16 @@ def check():
     css=(OUT/"visual.css").read_text()
     assert "--scope-zero:#357f7d" in css and "--scope-one:#b66e48" in css
     assert ".structural-spaces-state .shelf-spaces" in css
+    assert ".reader-context" in css and ".reader-members" in css
+    assert ".reader-paper-assembly" in css
+    assert ".visual-reader .visual-book-frame" in css
+    assert "aspect-ratio:1 / 1.414" in css
+    assert 'data-transition="settling"' in css
     assert '.visual-reader[data-space-position="0"]' in css
+    reader_js=(OUT/"visual-reader.js").read_text()
+    assert "DRAG_THRESHOLD=.34" in reader_js
+    assert 'frame.dataset.transition="drag"' in reader_js
+    assert 'history.pushState' in reader_js
+    assert 'matchMedia("(prefers-reduced-motion: reduce)")' in reader_js
     print("SPATIAL_BOOKSHELF_PASS 2 containing fields 3 anonymous books 4 memberships; color follows scope, no names or artwork")
 if __name__=="__main__":check()

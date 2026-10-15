@@ -8,7 +8,7 @@
   "publicationState": "source-candidate-editions-hierarchy-not-publicly-deployed",
   "fileCount": 92,
   "indexPages": 22,
-  "sourceSha256Inventory": "44b1421086c3d6f04a84ccacc43d15650ba00f02eafa9c7cba94424d29569860",
+  "sourceSha256Inventory": "785bc61af45edc0f4a78f6971a7fb5f1763729bc9ec3d29a98ec33a35d5cf006",
   "sourceNote": "Entire known local public site route inventory re-fetched via live HTTPS; initial Git revision is a snapshot, not an automated deployment.",
   "deployControl": "EstatePublisher exact-host, authorized release and complete independent HTTPS readback",
   "baselineGitCommit": "420be0ca655d2262ec987934c0dc573cbb11eefd",

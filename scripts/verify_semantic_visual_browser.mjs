@@ -79,8 +79,8 @@ async function scenario(label,width,height){
   await wait('document.body?.dataset.objectId==="o-02" && document.body?.dataset.spaceId==="s-01"');
   await wait('getComputedStyle(document.querySelector(".visual-page")).borderLeftWidth==="7px"');
   await wait('document.querySelector("#visual-book")?.dataset.invalid==="false"');
-  const readerOne=await ev('({token:document.body.dataset.objectToken,color:getComputedStyle(document.querySelector(".visual-page")).borderLeftColor,parent:document.querySelector(".visual-return").getAttribute("href"),leaves:document.querySelectorAll(".visual-page").length,images:document.querySelectorAll("img").length})');
-  if(readerOne.color!==root.colors[0]||readerOne.leaves!==3||readerOne.images||!readerOne.parent.endsWith("/spaces/s-01/#work-o-02"))throw Error("Reader failed membership "+JSON.stringify(readerOne));
+  const readerOne=await ev('({token:document.body.dataset.objectToken,color:getComputedStyle(document.querySelector(".visual-page")).borderLeftColor,parent:document.querySelector(".visual-return").getAttribute("href"),leaves:document.querySelectorAll(".visual-page").length,images:document.querySelectorAll("img").length,siblings:document.querySelectorAll(".reader-member").length,current:document.querySelectorAll(".reader-member.is-current").length,rail:!!document.querySelector(".reader-context"),closeIcon:!!document.querySelector(".visual-return svg"),pageRatio:(()=>{const r=document.querySelector(".visual-page").getBoundingClientRect();return r.width/r.height})(),overflow:document.documentElement.scrollWidth>innerWidth+1})');
+  if(readerOne.color!==root.colors[0]||readerOne.leaves!==3||readerOne.images||readerOne.siblings!==3||readerOne.current!==1||!readerOne.rail||readerOne.closeIcon||Math.abs(readerOne.pageRatio-1/1.414)>.015||readerOne.overflow||!readerOne.parent.endsWith("/spaces/s-01/#work-o-02"))throw Error("Reader failed membership "+JSON.stringify(readerOne));
   await shot("blank-reader-0");
   await key("ArrowRight");
   await wait('location.hash==="#plate-2" && !document.querySelector("#plate-2").hidden');
@@ -88,10 +88,20 @@ async function scenario(label,width,height){
   await ev("history.back()");
   await wait('location.hash==="" && !document.querySelector("#plate-1").hidden');
   const box=await ev('document.querySelector("#visual-book").getBoundingClientRect().toJSON()');
-  const x=box.x+box.width*.75,y=box.y+box.height*.5;
+  const x=box.x+box.width*.78,y=box.y+box.height*.5;
+  // A tentative page turn must settle back unless the real page threshold
+  // is crossed. This is tested independently of the committed swipe.
   await cmd("Input.dispatchMouseEvent",{type:"mousePressed",x,y,button:"left",clickCount:1});
-  await cmd("Input.dispatchMouseEvent",{type:"mouseMoved",x:x-105,y,button:"left"});
-  await cmd("Input.dispatchMouseEvent",{type:"mouseReleased",x:x-135,y,button:"left",clickCount:1});
+  await cmd("Input.dispatchMouseEvent",{type:"mouseMoved",x:x-box.width*.12,y,button:"left"});
+  if(!(await ev('document.querySelector("#visual-book").dataset.transition==="drag" && document.querySelector("#visual-book").style.transform.includes("translate3d")')))
+    throw Error("Physical book did not follow tentative drag");
+  await cmd("Input.dispatchMouseEvent",{type:"mouseReleased",x:x-box.width*.12,y,button:"left",clickCount:1});
+  await wait('location.hash==="" && !document.querySelector("#plate-1").hidden');
+  await wait('document.querySelector("#visual-book").dataset.transition==="rest"');
+  // Crossing 34% of a displayed leaf commits the gesture.
+  await cmd("Input.dispatchMouseEvent",{type:"mousePressed",x,y,button:"left",clickCount:1});
+  await cmd("Input.dispatchMouseEvent",{type:"mouseMoved",x:x-box.width*.42,y,button:"left"});
+  await cmd("Input.dispatchMouseEvent",{type:"mouseReleased",x:x-box.width*.42,y,button:"left",clickCount:1});
   await wait('location.hash==="#plate-2"');
   await nav(ROUTE+"spaces/s-01/objects/o-02/#plate-99");
   await wait('document.querySelector("#visual-book")?.dataset.invalid==="true"');
@@ -99,6 +109,18 @@ async function scenario(label,width,height){
   await nav(ROUTE+"spaces/s-01/objects/o-02/#plate-3");
   await wait('!document.querySelector("#plate-3").hidden');
   await key("Escape");
+  await wait('document.body?.dataset.collectionId==="s-01" && location.hash==="#work-o-02"');
+  // A reader is still in its Bookshelf: neighbors are navigable in the rail.
+  await click(book("o-02"));
+  await wait('document.body?.dataset.objectId==="o-02"');
+  await wait(hit('.reader-member-mark[href$="/o-01/"]'));
+  await click('.reader-member-mark[href$="/o-01/"]');
+  await wait('document.body?.dataset.objectId==="o-01" && document.body?.dataset.spaceId==="s-01"');
+  if(await ev('document.querySelectorAll(".reader-member.is-current").length')!==1)
+    throw Error("Neighboring book did not become selected");
+  await click('.reader-member-mark[href$="/o-02/"]');
+  await wait('document.body?.dataset.objectId==="o-02" && document.body?.dataset.spaceId==="s-01"');
+  await click(".reader-parent-circle");
   await wait('document.body?.dataset.collectionId==="s-01" && location.hash==="#work-o-02"');
   await click(".publisher-circle-return");
   await wait('location.pathname==='+JSON.stringify(ROUTE)+' && !document.body.dataset.collectionId');
@@ -116,6 +138,8 @@ async function scenario(label,width,height){
   if(readerOne.token!==readerTwo.token||readerTwo.color!==root.colors[1]||
      !readerTwo.parent.endsWith("/spaces/s-02/#work-o-02"))throw Error("Shared object identity/context invalid "+JSON.stringify(readerTwo));
   await shot("blank-reader-1");
+  if(await ev('document.querySelectorAll(".reader-member").length')!==1)
+    throw Error("Context strip leaked unrelated shelf members");
   await click(".visual-return");
   await wait('document.body?.dataset.collectionId==="s-02" && location.hash==="#work-o-02"');
   await ev('document.querySelector(".publisher-circle-return").focus()');

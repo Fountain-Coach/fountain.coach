@@ -45,12 +45,19 @@ def book_slot(key,space):
     return dict(id=key,title=key,author="anonymous",edition="Object",
                 reader=path,source_revision=token(key),host="fountain",status="wlan-proof")
 
-def blank_book(space,position,key):
+def blank_book(space,position,key,members):
     parent=BASE+"spaces/"+space+"/#work-"+key
     leaves=''.join('<section class="visual-page" id="plate-'+str(n)+
                    '" role="group" aria-label="Blank test leaf '+str(n)+' of '+str(LEAF_COUNT)+'"'+
                    ('' if n==1 else ' hidden')+'></section>' for n in range(1,LEAF_COUNT+1))
-    back='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>'
+    # The small publisher circle and membership row are the original
+    # containing space, carried directly into the reading experience.
+    membership=''.join(
+        '<li class="reader-member'+(' is-current' if peer==key else '')+'">'+
+        ('<span class="reader-member-mark" aria-current="true" aria-label="Current book"></span>'
+         if peer==key else
+         '<a class="reader-member-mark" href="'+BASE+'spaces/'+space+'/objects/'+peer+'/" aria-label="Open neighboring book"></a>')+
+        '</li>' for peer in members)
     prev='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m7-7-7 7 7 7"/></svg>'
     next_='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>'
     return f'''<!doctype html>
@@ -64,14 +71,21 @@ def blank_book(space,position,key):
  data-space-id="{escape(space)}" data-space-position="{position}" data-page-count="{LEAF_COUNT}"
  data-object-token="{token(key)}">
 <main class="visual-reader-main" aria-label="Anonymous blank reading">
-<a class="visual-return" href="{parent}" aria-label="Return to containing space">{back}</a>
-<div class="visual-book-frame" id="visual-book" aria-label="Content-free reading leaves">{leaves}</div>
+<aside class="reader-context" aria-label="Containing space and book position">
+<a class="reader-parent-circle visual-return" href="{parent}" aria-label="Return to containing space"></a>
+<nav class="reader-members" aria-label="Books in the containing space"><ol>{membership}</ol></nav>
+</aside>
+<section class="reader-focus" aria-label="Open book">
+<div class="reader-paper-assembly">
+<div class="visual-book-frame" id="visual-book" aria-label="Content-free reading leaves" data-transition="rest">{leaves}</div>
+</div>
 <nav class="visual-reader-controls" aria-label="Page navigation">
 <button type="button" id="visual-previous" aria-label="Previous blank leaf" disabled>{prev}</button>
 <div class="visual-track" role="progressbar" aria-label="Position in test sequence"
  aria-valuemin="1" aria-valuemax="{LEAF_COUNT}" aria-valuenow="1"><span class="visual-progress-fill"></span></div>
 <button type="button" id="visual-next" aria-label="Next blank leaf">{next_}</button>
 </nav><p class="visual-assistive" id="visual-status" aria-live="polite"></p>
+</section>
 </main></body></html>'''
 
 def main():
@@ -103,7 +117,7 @@ def main():
             entries.append(entry)
             target=OUT/"spaces"/space/"objects"/key
             target.mkdir(parents=True,exist_ok=True)
-            (target/"index.html").write_text(blank_book(space,position,key))
+            (target/"index.html").write_text(blank_book(space,position,key,members))
             graph["encounters"].append(dict(space=space,position=position,object=key,
                                              route=entry["reader"],parent=path,
                                              token=token(key),testLeaves=LEAF_COUNT))
