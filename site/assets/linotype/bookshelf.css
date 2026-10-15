@@ -1,7 +1,7 @@
 @import url("./identity-circle.css");
 /* Fountain Press Bookshelf: a populated row within a visibly open editorial grid.
    Inspired by the Instruments catalogue's vacant slots, not its chrome/theme. */
-:root{color-scheme:light;--outer:#dfd9ce;--ink:#292520;--rule:#d6cfc2;--vacant:#b7afa3}
+:root{color-scheme:light;--outer:#dfd9ce;--ink:#292520;--rule:#d6cfc2;--vacant:#b7afa3;--bookshelf-slot-radius:22.37%}
 *{box-sizing:border-box}
 html{min-height:100%;background:var(--outer)}
 body.bookshelf-state{margin:0;min-height:100svh;color:var(--ink);background:var(--outer);font-family:"Iowan Old Style",Georgia,serif}
@@ -15,10 +15,12 @@ body.bookshelf-state{margin:0;min-height:100svh;color:var(--ink);background:var(
 .shelf-item,.bookshelf-empty{min-width:0;aspect-ratio:1}
 .shelf-item{position:relative;display:grid;place-items:center;min-height:0}
 .shelf-book{position:absolute;inset:0;display:grid;place-items:center;width:100%;height:100%;color:inherit;text-decoration:none;outline-offset:3px}
-.shelf-book:focus-visible{outline:2px solid var(--ink);border-radius:15%}
-.shelf-cover{display:grid;place-items:center;height:88%;max-width:90%;aspect-ratio:.73;overflow:hidden;background:#f7f2e8;border:1px solid var(--rule);padding:8%;box-shadow:1px 5px 12px #352c271b}
+/* Occupied and empty thumbnails share the same square, rounded lattice. */
+.shelf-book:focus-visible{outline:2px solid var(--ink);border-radius:var(--bookshelf-slot-radius)}
+.shelf-cover{display:grid;place-items:center;width:100%;height:100%;aspect-ratio:1;min-width:0;min-height:0;overflow:hidden;border-radius:var(--bookshelf-slot-radius);background:#f7f2e8;border:1px solid var(--rule);padding:9%;box-shadow:1px 5px 12px #352c271b}
+/* Keep the actual source art whole; the thumbnail frame, not the cover, is square. */
 .shelf-cover img{display:block;width:100%;height:100%;min-width:0;min-height:0;object-fit:contain}
-.bookshelf-empty{border:1px dashed var(--vacant);border-radius:22.37%;background:transparent;opacity:.72;pointer-events:none}
+.bookshelf-empty{border:1px dashed var(--vacant);border-radius:var(--bookshelf-slot-radius);background:transparent;opacity:.72;pointer-events:none}
 @media(hover:hover) and (prefers-reduced-motion:no-preference){
 .shelf-cover{transition:box-shadow .18s ease}
 .shelf-book:hover .shelf-cover{box-shadow:1px 6px 17px #352c2735}

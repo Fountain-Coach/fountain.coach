@@ -71,3 +71,12 @@ owned by Fountain Press, matching Teatro's Play/Stop button. The circle is
 quiet and inert, not a new logo or navigation link. Include the Press-owned
 `identity-circle.css` in deterministic site output; never independently
 implement or override it in the Fountain Coach domain.
+
+## Publisher thumbnail geometry
+
+An admitted publication is represented by a clickable **rounded square**,
+identical in dimensions and corner radius to its unoccupied neighboring grid
+slot. The original (often portrait) cover art sits inside, source-faithful,
+using `object-fit:contain`; it must not replace the square thumbnail boundary.
+The circle is reserved for the publisher logo. These geometry rules are
+implemented once in Fountain Press; this owner only publishes its copies.
