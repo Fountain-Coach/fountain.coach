@@ -1,0 +1,10 @@
+/* Fountain Press identity circle: publisher mark and Play/Stop are kin. */
+:root{
+  --fc-identity-circle-radius:50%;
+  --fc-identity-circle-stroke:1px;
+  --fc-identity-circle-outline:color-mix(in srgb,currentColor 35%,transparent);
+}
+.fc-identity-circle{
+  border-radius:var(--fc-identity-circle-radius);
+  border:var(--fc-identity-circle-stroke) solid var(--fc-identity-circle-outline);
+}

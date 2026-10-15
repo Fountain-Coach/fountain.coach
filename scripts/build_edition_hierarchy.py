@@ -123,6 +123,7 @@ def build_estate_grid():
     css = SITE / "assets/linotype/bookshelf.css"
     css.parent.mkdir(parents=True, exist_ok=True)
     shutil.copyfile(press / "bookshelf.css", css)
+    shutil.copyfile(press / "identity-circle.css", css.parent / "identity-circle.css")
     assert "background:transparent;box-shadow:none;" in css.read_text()
     artworks = {
         "fountain-coach": "fountain-coach-edition.png",

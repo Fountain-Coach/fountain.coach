@@ -1,3 +1,4 @@
+@import url("./identity-circle.css");
 /* Fountain Press Bookshelf: a populated row within a visibly open editorial grid.
    Inspired by the Instruments catalogue's vacant slots, not its chrome/theme. */
 :root{color-scheme:light;--outer:#dfd9ce;--ink:#292520;--rule:#d6cfc2;--vacant:#b7afa3}

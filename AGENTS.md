@@ -63,3 +63,11 @@
 - `scripts/build_edition_hierarchy.py` owns this deterministic projection.
   The estate registry may only rewrite the three canonical outbound book
   links in disposable WLAN staging; public promotion remains separately gated.
+
+## Logo's circular identity
+
+The authentic logo is displayed in the shared `fc-identity-circle` geometry
+owned by Fountain Press, matching Teatro's Play/Stop button. The circle is
+quiet and inert, not a new logo or navigation link. Include the Press-owned
+`identity-circle.css` in deterministic site output; never independently
+implement or override it in the Fountain Coach domain.
