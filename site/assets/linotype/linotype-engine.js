@@ -134,7 +134,7 @@ class Linotype {
     const area=document.createElement("div");area.className="linotype-area";
     const folio=document.createElement("div");folio.className="linotype-folio";
     const n=this.leaves.length+1;
-    folio.innerHTML='<span>SOLSTICE · ESSAYS</span><span>'+String(n).padStart(3,"0")+'</span>';
+    folio.innerHTML='<span>'+(document.body.dataset.editionId==='essays-teatro-an-unfinished-composition'?'FIRST READINGS · AN UNFINISHED COMPOSITION':'FOUNTAIN COACH · ESSAYS')+'</span><span>'+String(n).padStart(3,"0")+'</span>';
     el.append(heading,area,folio);
     el.style.width=this.css.width+"px";
     el.style.height=this.css.height+"px";
@@ -216,7 +216,7 @@ class Linotype {
   }
   standard(section,type){
     const id=section.id;
-    const sheet=this.leaf(type,id,id==="book-vergil"?"VERGIL · PROLOGUE":"ESSAYS");
+    const sheet=this.leaf(type,id,id==="book-vergil"?"VERGIL · PROLOGUE":(document.body.dataset.editionId==="essays-teatro-an-unfinished-composition"?"FIRST READINGS":"ESSAYS"));
     const contents=immutable(section);
     contents.removeAttribute("id");
     contents.classList.add("linotype-content");

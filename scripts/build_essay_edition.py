@@ -130,6 +130,14 @@ def main(owner):
    modified=modified.replace(old,new)
    modified=modified.replace(b'SOLSTICE \\xc2\\xb7 FIRST READING',b'FOUNTAIN COACH \\xc2\\xb7 ESSAYS')
    modified=modified.replace(b'FIRST READING',b'ESSAYS')
+   old_folio="'<span>SOLSTICE · ESSAYS</span><span>'".encode()
+   new_folio="'<span>'+(document.body.dataset.editionId==='essays-teatro-an-unfinished-composition'?'FIRST READINGS · AN UNFINISHED COMPOSITION':'FOUNTAIN COACH · ESSAYS')+'</span><span>'".encode()
+   assert modified.count(old_folio)==1
+   modified=modified.replace(old_folio,new_folio)
+   old_running='const sheet=this.leaf(type,id,id==="book-vergil"?"VERGIL · PROLOGUE":"ESSAYS");'.encode()
+   new_running='const sheet=this.leaf(type,id,id==="book-vergil"?"VERGIL · PROLOGUE":(document.body.dataset.editionId==="essays-teatro-an-unfinished-composition"?"FIRST READINGS":"ESSAYS"));'.encode()
+   assert modified.count(old_running)==1
+   modified=modified.replace(old_running,new_running)
   elif file=="book.js":
    modified=modified.replace(b'solstice.first-reading.linotype.v2',b'fountain.essays.linotype.v1')
    modified=modified.replace(b'First Reading',b'Essays')

@@ -71,6 +71,8 @@ def format_reader(source,canonical,title,edition_id,back_url,back_label,selected
    result=result.replace('data-edition-id="essays-teatro-an-unfinished-composition"',
       'data-edition-id="essays-teatro-an-unfinished-composition" data-edition-entry-anchor="book-cover"',1)
    assert result.count('id="book-flow"')==1
+   result=result.replace(NAV,'<div class="work-reading-identity" aria-label="Current publication">FIRST READINGS · AN UNFINISHED COMPOSITION</div>',1)
+   assert 'class="edition-rail"' not in result
   toc='<nav aria-label="Chapters"><ol class="book-toc-list"><li><a data-book-toc-target="cover" href="#book-cover"><span class="toc-number">·</span><span class="toc-title">Cover</span></a></li><li><a data-book-toc-target="'+selected["id"]+'" href="#work-'+selected["id"]+'"><span class="toc-number">'+str(selected["number"]).zfill(2)+'</span><span class="toc-title">'+escape(selected["title"])+'</span></a></li></ol></nav>'
   result,n=re.subn(r'<nav aria-label="Chapters"><ol class="book-toc-list">.*?</ol></nav>',lambda _:toc,result,flags=re.S)
   assert n==1
@@ -135,7 +137,7 @@ def build_first_readings_collection(version):
     collection_book=dict(id=entry['id'],title=entry['title'],author='Benedikt Eickhoff',
        edition='First Readings — source-authenticated work',reader=destination,cover_image=asset,
        source_revision=entry['sourceSHA256'],
-       host='fountain',status='wlan-proof')
+       host='fountain',status='wlan-proof',cover_title='An Unfinished Composition')
     rendered=render_bookshelf(title='First Readings',imprint='First Readings',
        books=[collection_book],css_url='/assets/linotype/bookshelf.css',
        logo_url='/assets/fountain-coach-logo-transparent.png',
@@ -210,6 +212,7 @@ def build_estate_grid():
         revision=sha(admitted.read_bytes())
         books.append(dict(id=identity, title=title, author="Benedikt Eickhoff",
                           edition=edition, reader=reader, cover_image=art,
+                          cover_title=('First Readings' if identity=='first-reading' else 'Essays'),
                           source_revision=revision, host=host, status=status))
     return render_bookshelf(title="Fountain Coach", imprint="Fountain Coach",
                             books=books, css_url="/assets/linotype/bookshelf.css",
@@ -270,9 +273,10 @@ def main():
 .edition-rail a[aria-current="page"]{color:var(--book-ink);border-color:var(--book-ink)}
 .book-cover h1.subedition-title{font-size:clamp(29px,calc(var(--sheet-w)*.073),47px);line-height:1.09;overflow-wrap:anywhere}
 .work-identity-cover .book-cover-center{padding:clamp(8px,1.8vh,18px) 0}
-.work-identity-cover .work-cover-art{display:block;width:min(100%,200px);height:clamp(44px,8vh,70px);margin:0 auto;background:transparent url('/essays/teatro-an-unfinished-composition/assets/teatro-score-memory-vector-human-condition.svg') center/contain no-repeat}
+.work-identity-cover .work-cover-art{display:block;width:min(100%,260px);height:clamp(68px,12vh,110px);margin:0 auto;background:transparent url('/essays/teatro-an-unfinished-composition/assets/teatro-score-memory-vector-human-condition.svg') center/contain no-repeat}
 .work-identity-cover .subedition-title{font-size:clamp(26px,calc(var(--sheet-w)*.074),44px)!important;line-height:1.09;text-wrap:balance}
 .work-identity-cover .book-cover-foot a{color:inherit;text-decoration:none;border-bottom:1px solid var(--book-rule)}
+.work-reading-identity{justify-self:center;align-self:center;white-space:nowrap;max-width:100%;overflow:hidden;text-overflow:ellipsis;font:600 clamp(8px,1.1vw,11px)/1.4 ui-monospace,Menlo,monospace;letter-spacing:.06em}
 @media(max-width:800px){.edition-rail{gap:6px;font-size:9px}.edition-rail a{max-width:9ch;overflow:hidden;text-overflow:ellipsis}}
 @media(max-width:500px){.edition-rail a{max-width:5ch}.edition-rail{font-size:8px}}
 """)

@@ -25,20 +25,25 @@ async function proof(label,width,height){
  await cmd('Page.enable');await cmd('Runtime.enable');await cmd('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:width<600});
  await cmd('Page.navigate',{url:root+'/'});
  await wait('document.querySelectorAll(".shelf-book").length===2');
- const estate=await ev('({links:document.querySelectorAll(".shelf-book").length,empty:document.querySelectorAll(".bookshelf-empty").length,label:document.querySelector("[data-book-id=first-reading] a")?.getAttribute("aria-label"),teatro:!!document.querySelector("[data-book-id=teatro]")})');
- if(estate.empty!==20||estate.teatro||!estate.label?.includes('First Readings'))throw Error('Estate category confusion '+JSON.stringify(estate));
+ const estate=await ev('({links:document.querySelectorAll(".shelf-book").length,empty:document.querySelectorAll(".bookshelf-empty").length,label:document.querySelector("[data-book-id=first-reading] a")?.getAttribute("aria-label"),teatro:!!document.querySelector("[data-book-id=teatro]"),coverName:document.querySelector("[data-book-id=first-reading] .shelf-cover-name")?.textContent})');
+ if(estate.empty!==20||estate.teatro||estate.coverName!=='First Readings'||!estate.label?.includes('First Readings'))throw Error('Estate category confusion '+JSON.stringify(estate));
  await shot('estate');await click('[data-book-id=first-reading] a.shelf-book');
- await wait('location.pathname==="/collections/first-readings/"');
- const collection=await ev('({title:document.querySelector(".bookshelf-collection-masthead h1")?.textContent,work:document.querySelector("[data-book-id=teatro-an-unfinished-composition] img")?.getAttribute("src"),parent:document.querySelector(".bookshelf-collection-masthead a")?.getAttribute("href"),slot:!!document.getElementById("work-teatro-an-unfinished-composition")})');
- if(collection.title!=='First Readings'||collection.work!==art||!collection.slot||collection.parent!=='/')throw Error('Collection identity failure '+JSON.stringify(collection));
+ await wait('location.pathname==="/collections/first-readings/" && document.body?.dataset.collectionId==="first-readings" && !!document.getElementById("work-teatro-an-unfinished-composition")');
+ const collection=await ev('({title:document.querySelector(".bookshelf-collection-masthead h1")?.textContent,work:document.querySelector("[data-book-id=teatro-an-unfinished-composition] img")?.getAttribute("src"),parent:document.querySelector(".bookshelf-collection-masthead a")?.getAttribute("href"),slot:!!document.getElementById("work-teatro-an-unfinished-composition"),coverName:document.querySelector("[data-book-id=teatro-an-unfinished-composition] .shelf-cover-name")?.textContent})');
+ if(collection.title!=='First Readings'||collection.coverName!=='An Unfinished Composition'||collection.work!==art||!collection.slot||collection.parent!=='/')throw Error('Collection identity failure '+JSON.stringify(collection));
  await shot('collection');await click('[data-book-id=teatro-an-unfinished-composition] a.shelf-book');
  await wait('location.pathname.includes("/editions/essays/teatro-an-unfinished-composition/")&&document.body?.dataset.bookReady==="true"');
- const cover=await ev('(()=>{let leaf=document.querySelector(".linotype-stage .linotype-sheet");let img=leaf?.querySelector(".work-cover-art");return {page:leaf?.dataset.sourceId,title:leaf?.querySelector("h1")?.textContent,image:img?getComputedStyle(img).backgroundImage:null,visible:!!img?.getClientRects().length,back:document.querySelector("a.book-back")?.getAttribute("href"),overflow:document.documentElement.scrollWidth>innerWidth+1}})()');
- if(cover.page!=='book-cover'||!cover.visible||!cover.image.includes(art)||!cover.title.includes('An Unfinished Composition')||cover.back!=='/collections/first-readings/'||cover.overflow)throw Error('Unrecognizable opening '+JSON.stringify(cover));
- await shot('work-cover');await click('#book-next');await nap(240);
+ const cover=await ev('(()=>{let leaf=document.querySelector(".linotype-stage .linotype-sheet");let img=leaf?.querySelector(".work-cover-art");return {page:leaf?.dataset.sourceId,title:leaf?.querySelector("h1")?.textContent,image:img?getComputedStyle(img).backgroundImage:null,visible:!!img?.getClientRects().length,back:document.querySelector("a.book-back")?.getAttribute("href"),heading:document.querySelector(".work-reading-identity")?.textContent,folio:leaf?.querySelector(".linotype-folio")?.textContent,overflow:document.documentElement.scrollWidth>innerWidth+1}})()');
+ if(cover.page!=='book-cover'||!cover.visible||!cover.image.includes(art)||!cover.title.includes('An Unfinished Composition')||!cover.heading?.includes('AN UNFINISHED COMPOSITION')||!cover.folio?.includes('FIRST READINGS')||cover.back!=='/collections/first-readings/'||cover.overflow)throw Error('Unrecognizable opening '+JSON.stringify(cover));
+ await shot('work-cover');
+ if(width<600){
+  await cmd('Input.dispatchKeyEvent',{type:'keyDown',key:'ArrowRight',code:'ArrowRight',windowsVirtualKeyCode:39});
+  await cmd('Input.dispatchKeyEvent',{type:'keyUp',key:'ArrowRight',code:'ArrowRight',windowsVirtualKeyCode:39});
+ }else await click('#book-next');
+ await nap(240);
  const reading=await ev('({source:document.querySelector(".linotype-stage .linotype-sheet")?.dataset.sourceId,back:document.querySelector("a.book-back")?.getAttribute("href")})');
  if(reading.source==='book-cover'||reading.back!=='/collections/first-readings/')throw Error('Reading identity lost '+JSON.stringify(reading));
- await shot('reading');await click('a.book-back');await wait('location.pathname==="/collections/first-readings/"');
+ await shot('reading');await click('a.book-back');await wait('location.pathname==="/collections/first-readings/" && document.body?.dataset.collectionId==="first-readings" && !!document.getElementById("work-teatro-an-unfinished-composition")');
  await ev('history.back()');await wait('location.pathname.includes("/editions/essays/teatro-an-unfinished-composition/")');
  console.log('FIRST_READINGS_JOURNEY_PASS',label,JSON.stringify({estate,collection,cover,reading,history:true}));
  }finally{ws.close();await fetch(chrome+'/json/close/'+tab.id).catch(()=>{})}
