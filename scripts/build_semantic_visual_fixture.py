@@ -118,12 +118,14 @@ def main():
         html=render(title="Structural collection",imprint="Fountain Coach",books=entries,
                     css_url=SHELF_CSS,logo_url=None,logo_mode="unmarked",
                     cover_mode="unmarked",collection_title=collection_id,
-                    collection_parent=BASE,collection_id=collection_id)
+                    collection_parent=BASE,collection_id=collection_id,
+                    parent_navigation="publisher-circle")
         dest=OUT/"collections"/collection_id
         dest.mkdir(parents=True,exist_ok=True)
         (dest/"index.html").write_text(wrap(html))
     root=render(title="Structural Bookshelf",imprint="Fountain Coach",books=parents,
-                css_url=SHELF_CSS,logo_url=None,logo_mode="unmarked",cover_mode="unmarked")
+                css_url=SHELF_CSS,logo_url=None,logo_mode="unmarked",cover_mode="unmarked",
+                parent_navigation="publisher-circle")
     (OUT/"index.html").write_text(wrap(root))
     (OUT/"fixture.json").write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+"\n")
     for file in OUT.rglob("index.html"):

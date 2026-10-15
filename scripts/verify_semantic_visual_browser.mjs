@@ -53,7 +53,7 @@ async function scenario(label, width, height) {
     await command("Input.dispatchMouseEvent", { type: "mouseReleased", x, y, button: "left", clickCount: 1 });
   };
   const key = async key => {
-    const code = key === "ArrowRight" ? 39 : key === "ArrowLeft" ? 37 : 27;
+    const code = key === "ArrowRight" ? 39 : key === "ArrowLeft" ? 37 : key === "Enter" ? 13 : 27;
     await command("Input.dispatchKeyEvent", { type: "keyDown", key, code: key, windowsVirtualKeyCode: code });
     await command("Input.dispatchKeyEvent", { type: "keyUp", key, code: key, windowsVirtualKeyCode: code });
   };
@@ -68,18 +68,24 @@ async function scenario(label, width, height) {
     await command("Emulation.setDeviceMetricsOverride", { width, height, deviceScaleFactor: 1, mobile: width < 600 });
     await navigate(ROUTE);
     await wait(ready(".shelf-book"));
-    const root = await evaluate('({books:document.querySelectorAll(".shelf-book").length,empties:document.querySelectorAll(".bookshelf-empty").length,logo:!!document.querySelector(".bookshelf-brand img"),art:document.querySelectorAll("img").length,emptyCovers:[...document.querySelectorAll(".shelf-cover")].every(x=>x.childElementCount===0 && !x.textContent.trim()),labels:document.querySelectorAll(".shelf-cover-name").length,overflow:document.documentElement.scrollWidth>innerWidth})');
-    if (root.books !== 2 || root.empties !== 20 || root.logo || root.art || !root.emptyCovers || root.labels || root.overflow) throw new Error("Root visual shelf invalid " + JSON.stringify(root));
+    const root = await evaluate('({books:document.querySelectorAll(".shelf-book").length,empties:document.querySelectorAll(".bookshelf-empty").length,logo:!!document.querySelector(".bookshelf-brand img"),art:document.querySelectorAll("img").length,emptyCovers:[...document.querySelectorAll(".shelf-cover")].every(x=>x.childElementCount===0 && !x.textContent.trim()),rootCircleLink:!!document.querySelector(".publisher-circle-return"),labels:document.querySelectorAll(".shelf-cover-name").length,overflow:document.documentElement.scrollWidth>innerWidth})');
+    if (root.books !== 2 || root.empties !== 20 || root.logo || root.art || !root.emptyCovers || root.rootCircleLink || root.labels || root.overflow) throw new Error("Root visual shelf invalid " + JSON.stringify(root));
     await shot("estate");
     await click(workSelector("essays"));
     await wait('document.body?.dataset.collectionId==="essays"');
     await wait(ready(".shelf-book"));
     // Remote HTTP can expose the DOM before the external style has loaded.
     // Do not accept default CSS as evidence of a visible semantic label.
-    await wait('document.querySelector(".bookshelf-collection-masthead h1")?.getBoundingClientRect().width<=1 && getComputedStyle(document.querySelector(".bookshelf-collection-masthead a")).fontSize==="0px"');
-    const essays = await evaluate('({books:document.querySelectorAll(".shelf-book").length,empties:document.querySelectorAll(".bookshelf-empty").length,collection:document.body.dataset.collectionId,art:document.querySelectorAll("img").length,unmarked:[...document.querySelectorAll(".shelf-cover")].every(x=>x.childElementCount===0),headingWidth:document.querySelector(".bookshelf-collection-masthead h1")?.getBoundingClientRect().width,backFont:getComputedStyle(document.querySelector(".bookshelf-collection-masthead a")).fontSize,labels:document.querySelectorAll(".shelf-cover-name").length})');
-    if (essays.books !== 3 || essays.empties !== 20 || essays.labels || essays.art || !essays.unmarked || essays.headingWidth>1 || essays.backFont!=="0px") throw new Error("Essay collection invalid " + JSON.stringify(essays));
+    await wait('document.querySelector(".bookshelf-collection-masthead")?.getBoundingClientRect().width<=1 && !!document.querySelector(".publisher-circle-return") && getComputedStyle(document.querySelector(".publisher-circle-return")).cursor==="pointer"');
+    const essays = await evaluate('({books:document.querySelectorAll(".shelf-book").length,empties:document.querySelectorAll(".bookshelf-empty").length,collection:document.body.dataset.collectionId,art:document.querySelectorAll("img").length,unmarked:[...document.querySelectorAll(".shelf-cover")].every(x=>x.childElementCount===0),headingWidth:document.querySelector(".bookshelf-collection-masthead")?.getBoundingClientRect().width,circleParent:document.querySelector(".publisher-circle-return")?.getAttribute("href"),circleCursor:getComputedStyle(document.querySelector(".publisher-circle-return")).cursor,extraArrow:!!document.querySelector(".bookshelf-collection-masthead a"),labels:document.querySelectorAll(".shelf-cover-name").length})');
+    if (essays.books !== 3 || essays.empties !== 20 || essays.labels || essays.art || !essays.unmarked || essays.headingWidth>1 || essays.circleParent!==ROUTE || essays.circleCursor!=="pointer" || essays.extraArrow) throw new Error("Essay collection invalid " + JSON.stringify(essays));
     await shot("essays");
+    await click(".publisher-circle-return");
+    await wait('location.pathname===' + JSON.stringify(ROUTE) + ' && !document.body.dataset.collectionId');
+    await wait(ready(".shelf-book"));
+    await click(workSelector("essays"));
+    await wait('document.body?.dataset.collectionId==="essays"');
+    await wait(ready(".publisher-circle-return"));
     await click(workSelector(slug));
     await wait('document.body?.dataset.workId===' + JSON.stringify(slug));
     await wait(ready(".visual-page:not([hidden])"));
@@ -125,6 +131,12 @@ async function scenario(label, width, height) {
     await shot("first-reading-visual");
     await click(".visual-return");
     await wait('document.body?.dataset.collectionId==="first-readings" && location.hash==="#work-' + teatro + '"');
+    await wait(ready(".publisher-circle-return"));
+    await evaluate('document.querySelector(".publisher-circle-return").focus()');
+    if (!await evaluate('document.activeElement?.classList.contains("publisher-circle-return")')) throw Error("Publisher circle must be keyboard focusable");
+    await key("Enter");
+    await wait('location.pathname===' + JSON.stringify(ROUTE) + ' && !document.body.dataset.collectionId');
+    if (await evaluate('!!document.querySelector(".publisher-circle-return")')) throw Error("Publisher circle must be inert at the root");
     console.log("STRUCTURAL_BOOKSHELF_BROWSER_PASS", label, JSON.stringify({ root, essays, first, invalid, hearing, history: true, keyboard: true, pointer: true }));
   } finally {
     ws.close();

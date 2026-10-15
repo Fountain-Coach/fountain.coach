@@ -67,12 +67,23 @@ body.visual-reader{margin:0;min-height:100svh;background:#dfd9ce;color:#292520;
 }
 
 
-/* Same visual removal for a collection under the strict ablation state. */
-.neutral-ablation .bookshelf-collection-masthead{min-height:36px;margin-bottom:8px}
-.neutral-ablation .bookshelf-collection-masthead h1{position:absolute!important;width:1px!important;
- height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;
- clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
-.neutral-ablation .bookshelf-collection-masthead a{display:inline-flex;align-items:center;
- justify-content:center;width:44px;height:44px;font-size:0;letter-spacing:0;border:0}
-.neutral-ablation .bookshelf-collection-masthead a::before{
- content:"←";font:400 27px/1 system-ui,sans-serif}
+/* The unmarked publisher circle, in its existing grid position, is the
+   single return affordance below root. No independent header or top arrow. */
+.neutral-ablation .bookshelf-collection-masthead{
+ position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+ clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.neutral-ablation .bookshelf-collection-masthead h1{
+ font:inherit;margin:0}
+.neutral-ablation .publisher-circle-action{border:1px solid #aca397;
+ border-radius:50%;transition:border-color .16s ease,box-shadow .16s ease}
+.neutral-ablation .publisher-circle-return{display:grid;place-items:center;
+ width:100%;height:100%;border-radius:50%;color:inherit;text-decoration:none;
+ cursor:pointer;outline-offset:4px;-webkit-tap-highlight-color:transparent}
+.neutral-ablation .publisher-circle-return:focus-visible{outline:2px solid #292520}
+.neutral-ablation .publisher-circle-action:has(.publisher-circle-return:hover){
+ border-color:#494038;box-shadow:inset 0 0 0 3px #49403815}
+.neutral-ablation .publisher-circle-action:has(.publisher-circle-return:active){
+ border-color:#292520;box-shadow:inset 0 0 0 5px #49403827}
+@media(prefers-reduced-motion:reduce){
+ .neutral-ablation .publisher-circle-action{transition:none}
+}

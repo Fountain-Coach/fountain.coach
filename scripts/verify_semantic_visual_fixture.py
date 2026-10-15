@@ -50,11 +50,18 @@ def check():
         assert html.count('class="shelf-book"')==len(c["works"])
         assert html.count('class="shelf-cover shelf-cover-unmarked"')==len(c["works"])
         assert html.count('class="bookshelf-empty" aria-hidden="true"')==20
-        assert 'href="'+BASE+'"' in html
+        assert html.count('class="publisher-circle-return" href="'+BASE+'"')==1
+        assert html.count('class="bookshelf-brand fc-identity-circle publisher-circle-action"')==1
+        assert 'bookshelf-collection-masthead"><a' not in html
+        assert '← FOUNTAIN COACH' not in html
+        assert html.count('href="'+BASE+'"')==1
     root=(OUT/"index.html").read_text()
     assert root.count('class="shelf-book"')==2
     assert root.count('class="shelf-cover shelf-cover-unmarked"')==2
     assert root.count('class="bookshelf-empty" aria-hidden="true"')==20
+    assert 'class="publisher-circle-return"' not in root
+    assert 'publisher-circle-action' not in root
+    assert root.count('class="bookshelf-brand fc-identity-circle"')==1
     for p in OUT.rglob("index.html"):
         page=p.read_text()
         assert '<img' not in page and 'shelf-cover-name' not in page

@@ -12,7 +12,7 @@ as a semantic demonstration; its evidence remains only as audit history.
 V2 removes all rendered source artwork and logos, visible text, headings,
 cover-name captions, badges, bespoke colors, scores and content-dependent
 layout. Occupied cells are visually identical. Empty cells are equally
-generic but remain inert. The circular publisher-position cell is unmarked.
+generic but remain inert. The circular publisher-position cell is unmarked. It remains inert on the root shelf, but becomes the sole reactive parent-return link inside each collection. No separate top arrow is rendered.
 
 Every source-admitted work opens a geometrically identical three-leaf blank
 reader, irrespective of how many paragraphs or images the original contains.
@@ -39,6 +39,10 @@ cover and three content-independent blank pages.
 With the identity signals removed, can the Bookshelf *itself* communicate
 publication, collection, work, containment and reading? Is it possible to
 navigate it as a publication architecture rather than a gallery?
+
+The publisher circle owns the relationship to the parent: no second masthead
+arrow or invented icon points outside the grid. Its reactive state is a
+function of the current collection context, not of any Score or work image.
 
 This is **not answered by a passing browser test**. The software can prove
 that two structurally identical tiles lead to different canonical collections,
