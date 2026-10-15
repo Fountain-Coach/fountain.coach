@@ -1,0 +1,106 @@
+{
+  "schema": "fountain.press.semantic-visual-bookshelf.fixture.v1",
+  "published": false,
+  "status": "wlan-proof",
+  "sourceOwner": "Fountain-Coach/fountain.coach",
+  "runtimeOwner": "Fountain-Coach/fountain-press",
+  "scope": "visual-only; metadata remains authoritative",
+  "sourceManifests": {
+    "essaysSHA256": "2dda0529a16065d26add8b9c58bf692f535bc6a0109a9ed7e2b5d8cf1875429b",
+    "firstReadingsSHA256": "8cbaa8cf73400602d0d61520f18d3b8f2e7885e2570981e941a6184b29d91314"
+  },
+  "collections": [
+    {
+      "id": "essays",
+      "path": "/fixtures/semantic-visual-bookshelf/collections/essays/",
+      "cover": "/assets/estate-bookshelf/fountain-coach-edition.png",
+      "coverSHA256": "e826794efe5fefda45f644930ed44239d9ab4b6550015aa221da5612958026b2",
+      "works": [
+        "teatro-an-unfinished-composition",
+        "semantic-compilation-the-archive-is-not-the-edition",
+        "reframe-and-the-business-value-of-the-estate"
+      ]
+    },
+    {
+      "id": "first-readings",
+      "path": "/fixtures/semantic-visual-bookshelf/collections/first-readings/",
+      "cover": "/assets/estate-bookshelf/first-reading-ink.png",
+      "coverSHA256": "274dab8c594e399585fa5238364f25e95fc7ffa3808eaef872de406ec79f745f",
+      "works": [
+        "teatro-an-unfinished-composition"
+      ]
+    }
+  ],
+  "works": [
+    {
+      "collection": "essays",
+      "reader": "/fixtures/semantic-visual-bookshelf/collections/essays/works/teatro-an-unfinished-composition/",
+      "id": "teatro-an-unfinished-composition",
+      "title": "Teatro — An Unfinished Composition",
+      "sourceSHA256": "5f77e58bbb59d0802d5b8b0ee48ecea1bbea7d44ebf4b73e3107363b7b95bad8",
+      "sourcePath": "essays/teatro-an-unfinished-composition/index.html",
+      "images": [
+        {
+          "path": "/essays/teatro-an-unfinished-composition/assets/teatro-score-memory-vector-human-condition.svg",
+          "sha256": "226e3440690dd8cbeb331c4f3f62ee002fa0bc0e6007fcdf8431f1f578d115e2",
+          "alt": "Original authored illustration from Teatro — An Unfinished Composition"
+        }
+      ]
+    },
+    {
+      "collection": "essays",
+      "reader": "/fixtures/semantic-visual-bookshelf/collections/essays/works/semantic-compilation-the-archive-is-not-the-edition/",
+      "id": "semantic-compilation-the-archive-is-not-the-edition",
+      "title": "Semantic Compilation — The Archive Is Not the Edition",
+      "sourceSHA256": "485d2514a8692bff998180b6ad5e5442bc3db4e66d222f89c3f1865a2fd0a2c1",
+      "sourcePath": "essays/semantic-compilation-the-archive-is-not-the-edition/index.html",
+      "images": [
+        {
+          "path": "/essays/semantic-compilation-the-archive-is-not-the-edition/assets/semantic-compilation-estate-rail.svg",
+          "sha256": "977c636ba6570781b2ea8e34983ae2db0be83bd93986343a99d84e37f4304c02",
+          "alt": "Original authored illustration from Semantic Compilation — The Archive Is Not the Edition"
+        }
+      ]
+    },
+    {
+      "collection": "essays",
+      "reader": "/fixtures/semantic-visual-bookshelf/collections/essays/works/reframe-and-the-business-value-of-the-estate/",
+      "id": "reframe-and-the-business-value-of-the-estate",
+      "title": "Reframe and the Business Value of the Estate",
+      "sourceSHA256": "c43fa422d8a60627b44900a1f1da5ca6e8a8955be1a0f95fafb0575ef4a6762a",
+      "sourcePath": "essays/reframe-and-the-business-value-of-the-estate/index.html",
+      "images": [
+        {
+          "path": "/essays/reframe-and-the-business-value-of-the-estate/assets/address-landscape.png",
+          "sha256": "e826794efe5fefda45f644930ed44239d9ab4b6550015aa221da5612958026b2",
+          "alt": "Original authored illustration from Reframe and the Business Value of the Estate"
+        },
+        {
+          "path": "/essays/reframe-and-the-business-value-of-the-estate/assets/estate-landscape.png",
+          "sha256": "8e444b976461fdf9b278a8702eef07ec74d532f617496da37c52d33c8b806451",
+          "alt": "Original authored illustration from Reframe and the Business Value of the Estate"
+        },
+        {
+          "path": "/essays/reframe-and-the-business-value-of-the-estate/assets/exchange-landscape.png",
+          "sha256": "ae34a3ee42263c8beebea303cd8dd97eb5ccbedd328dc864ace907a0a1015721",
+          "alt": "Original authored illustration from Reframe and the Business Value of the Estate"
+        }
+      ]
+    },
+    {
+      "collection": "first-readings",
+      "reader": "/fixtures/semantic-visual-bookshelf/collections/first-readings/works/teatro-an-unfinished-composition/",
+      "id": "teatro-an-unfinished-composition",
+      "title": "Teatro — An Unfinished Composition",
+      "sourceSHA256": "5f77e58bbb59d0802d5b8b0ee48ecea1bbea7d44ebf4b73e3107363b7b95bad8",
+      "sourcePath": "essays/teatro-an-unfinished-composition/index.html",
+      "images": [
+        {
+          "path": "/essays/teatro-an-unfinished-composition/assets/teatro-score-memory-vector-human-condition.svg",
+          "sha256": "226e3440690dd8cbeb331c4f3f62ee002fa0bc0e6007fcdf8431f1f578d115e2",
+          "alt": "Original authored illustration from Teatro — An Unfinished Composition"
+        }
+      ]
+    }
+  ]
+}

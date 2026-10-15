@@ -12,6 +12,9 @@
     "check": "python3 scripts/verify_essay_edition.py",
     "book:build": "python3 scripts/build_edition_hierarchy.py --linotype-source ../solstice.fountain.coach/site",
     "book:browser": "node scripts/verify_estate_grid.mjs && node scripts/verify_essay_browser.mjs && node scripts/verify_editions_browser.mjs",
-    "edition:browser": "node scripts/verify_estate_grid.mjs && node scripts/verify_editions_browser.mjs"
+    "edition:browser": "node scripts/verify_estate_grid.mjs && node scripts/verify_editions_browser.mjs",
+    "fixture:build": "npm run book:build && python3 scripts/build_semantic_visual_fixture.py && npm run book:build && python3 scripts/verify_semantic_visual_fixture.py",
+    "fixture:check": "npm run check && python3 scripts/verify_semantic_visual_fixture.py",
+    "fixture:browser": "node scripts/verify_semantic_visual_browser.mjs"
   }
 }
