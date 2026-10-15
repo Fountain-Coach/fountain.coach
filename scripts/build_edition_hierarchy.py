@@ -51,6 +51,11 @@ def format_reader(source,canonical,title,edition_id,back_url,back_label,selected
   cover_end=result.index('  <aside id="book-page-atlas"')
   # Four closing containers are identical to the admitted First Reading.
   chunks=selected["chapter"]
+  if selected["id"]=="teatro-an-unfinished-composition":
+   # The standalone First Readings work must not inherit omnibus numbering.
+   old_ordinal='<p class="book-ordinal">THE CONDITION<span>01 / 03</span></p>'
+   assert chunks.count(old_ordinal)==1
+   chunks=chunks.replace(old_ordinal,'<p class="book-ordinal">FIRST READINGS<span>THE CONDITION</span></p>',1)
   subcover='<section class="book-cover" id="book-cover" aria-label="'+escape(selected["title"],quote=True)+'"><div class="book-cover-top"><span>FOUNTAIN COACH</span><span>ESSAYS · SUB-EDITION '+str(selected["number"]).zfill(2)+'</span></div><div class="book-cover-center"><span class="cover-mark" aria-hidden="true">✳</span><p class="book-imprint">'+escape(selected["label"])+'</p><h1 class="subedition-title">'+escape(selected["title"])+'</h1><p class="book-cover-subtitle">Benedikt Eickhoff</p></div><p class="book-cover-foot">COMPLETE ORIGINAL ESSAY · '+str(selected["figureCount"])+' ORIGINAL PLATE'+('S' if selected["figureCount"]!=1 else '')+'<br><a href="/editions/essays/">All essays →</a></p></section>'
   if selected["id"]=="teatro-an-unfinished-composition":
    # Cover art is a source-attested editorial projection. The work is the
@@ -65,6 +70,8 @@ def format_reader(source,canonical,title,edition_id,back_url,back_label,selected
    subcover=subcover.replace('<a href="/editions/essays/">All essays →</a>',
         '<a href="/collections/first-readings/#work-teatro-an-unfinished-composition" aria-label="Return to First Readings collection">← FIRST READINGS</a>',1)
   end='<section class="book-end" id="book-end"><span class="cover-mark" aria-hidden="true">✳</span><p>FOUNTAIN COACH · ESSAYS</p><h2>End of essay.</h2><a href="/editions/essays/">All three essays →</a></section>'
+  if selected["id"]=="teatro-an-unfinished-composition":
+   end='<section class="book-end" id="book-end"><p>FIRST READINGS</p><h2>End of reading.</h2><a href="/collections/first-readings/#work-teatro-an-unfinished-composition">Return to the collection →</a></section>'
   content=subcover+'\n'+chunks+'\n'+end+'\n'
   result=result[:cover_start]+content+'</div>\n</div>\n</div>\n'+result[cover_end:]
   if selected['id']=='teatro-an-unfinished-composition':
@@ -273,7 +280,7 @@ def main():
 .edition-rail a[aria-current="page"]{color:var(--book-ink);border-color:var(--book-ink)}
 .book-cover h1.subedition-title{font-size:clamp(29px,calc(var(--sheet-w)*.073),47px);line-height:1.09;overflow-wrap:anywhere}
 .work-identity-cover .book-cover-center{padding:clamp(8px,1.8vh,18px) 0}
-.work-identity-cover .work-cover-art{display:block;width:min(100%,260px);height:clamp(68px,12vh,110px);margin:0 auto;background:transparent url('/essays/teatro-an-unfinished-composition/assets/teatro-score-memory-vector-human-condition.svg') center/contain no-repeat}
+.work-identity-cover .work-cover-art{display:block;width:min(100%,370px);height:clamp(100px,20vh,185px);margin:0 auto;background:transparent url('/essays/teatro-an-unfinished-composition/assets/teatro-score-memory-vector-human-condition.svg') center/contain no-repeat}
 .work-identity-cover .subedition-title{font-size:clamp(26px,calc(var(--sheet-w)*.074),44px)!important;line-height:1.09;text-wrap:balance}
 .work-identity-cover .book-cover-foot a{color:inherit;text-decoration:none;border-bottom:1px solid var(--book-rule)}
 .work-reading-identity{justify-self:center;align-self:center;white-space:nowrap;max-width:100%;overflow:hidden;text-overflow:ellipsis;font:600 clamp(8px,1.1vw,11px)/1.4 ui-monospace,Menlo,monospace;letter-spacing:.06em}

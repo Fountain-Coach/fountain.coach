@@ -93,6 +93,10 @@ def check():
  assert 'data-legal-role="company-status"' in main
  assert 'class="edition-rail"' in main
  assert 'data-estate-id="status"' not in main
+ assert 'id="book-type-button"' not in main
+ css=(SITE/'assets/linotype/essays.css').read_text()
+ assert '.book-legal{grid-column:1/-1;grid-row:2;' in css
+ assert 'body.book-app.reader-ready .book-pagination{height:90px;' in css
  assert 'id="book-viewport"' in main
  assert 'href="/editions/"' in main
  assert 'fountain.coach/editions/essays/' in main
@@ -118,7 +122,14 @@ def check():
   assert sub.count('data-book-toc-target=')==2
   assert sub.count('src="/essays/')==entry["originalFigures"]
   assert 'data-edition-id="essays-'+slug+'"' in sub
-  assert 'href="/editions/essays/"' in sub
+  if slug=='teatro-an-unfinished-composition':
+   assert '<p class="book-ordinal">FIRST READINGS<span>THE CONDITION</span></p>' in sub
+   assert '<p class="book-ordinal">THE CONDITION<span>01 / 03</span></p>' not in sub
+   assert '<p>FIRST READINGS</p><h2>End of reading.</h2>' in sub
+   assert 'href="/collections/first-readings/#work-teatro-an-unfinished-composition"' in sub
+  else:
+   assert 'href="/editions/essays/"' in sub
+  assert 'id="book-type-button"' not in sub
   assert slug in version["readingOrder"]
   assert 'data-estate-id="status"' not in sub
   assert '<link rel="canonical" href="https://fountain.coach/editions/essays/'+slug+'/"' in sub

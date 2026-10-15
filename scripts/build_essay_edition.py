@@ -83,6 +83,10 @@ def main(owner):
  html=html.replace('href="../../" aria-label="Leave First Reading and return to Solstice"','href="/essays/" aria-label="Original Fountain Coach essay source"')
  html=html.replace('<span>Solstice</span></a>','<span>Source Essays</span></a>').replace('<span>FIRST READING</span></div>','<span>FOUNTAIN COACH · ESSAYS</span></div>')
  html=html.replace('<a href="proof/" class="book-proof-link" aria-label="Open the accepted Fountain Press page proof">Druckfahne ↗</a>','')
+ # Fixed authorial typography: never project the inherited appearance control.
+ appearance_button='<button type="button" id="book-type-button" aria-label="Reading appearance" aria-haspopup="dialog">Aa</button>'
+ assert html.count(appearance_button)==1
+ html=html.replace('    '+appearance_button+'\n','')
  html=html.replace('<small>SOLSTICE · FIRST READING</small>','<small>FOUNTAIN COACH · ESSAYS</small>').replace('id="book-location" aria-live="off">First Reading','id="book-location" aria-live="off">Essays')
  html=html.replace('All source images are shown in full.','All five original plates are shown in full.')
  html=html.replace('<link rel="canonical" href="https://works.benedikt-eickhoff.de/solstice/editions/first-reading/">','<link rel="canonical" href="https://fountain.coach/">')
@@ -148,16 +152,19 @@ def main(owner):
 .book-prose .essay-lead{font-style:italic}
 .book-prose .source-line{font-size:.75em}
 .book-chapter-text .essay-boundary{border-top:1px solid var(--book-rule);font:12px/1.5 Georgia,serif;padding:1em 0}
-.book-pagination{grid-template-columns:55px minmax(0,1fr) minmax(0,1fr) 55px}
-.book-legal{grid-column:2;grid-row:1;display:block;align-self:center;text-align:center;font:9px/1.5 ui-monospace,Menlo,monospace;color:var(--book-muted)}
+.book-pagination{grid-template-columns:minmax(70px,1fr) minmax(0,400px) minmax(70px,1fr);grid-template-rows:minmax(30px,1fr) auto;row-gap:2px}
+.book-legal{grid-column:1/-1;grid-row:2;justify-self:center;align-self:center;max-width:100%;text-align:center;font:9px/1.35 ui-monospace,Menlo,monospace;color:var(--book-muted)}
 .book-legal a{text-decoration:none;border-bottom:1px solid var(--book-rule)}
-.book-progress{grid-column:3;grid-row:1}#book-prev{grid-column:1;grid-row:1}#book-next{grid-column:4;grid-row:1}
-@media(max-width:680px){.book-pagination{grid-template-columns:55px 1fr 55px}
-.book-progress{grid-column:2;grid-row:1}.book-legal{grid-column:2;grid-row:2;font-size:8px;line-height:1.2}
+.book-progress{grid-column:2;grid-row:1}#book-prev{grid-column:1;grid-row:1}#book-next{grid-column:3;grid-row:1}
+body.book-app.reader-ready .book-pagination{height:90px;min-height:90px}
+body.book-app.reader-ready .book-main{height:calc(100svh - 152px)}
+body.book-app.reader-ready .book-viewport{height:calc(100svh - 160px)}
+@media(max-width:680px){.book-pagination{grid-template-columns:55px minmax(0,1fr) 55px;gap:2px 5px}
+.book-progress{grid-column:2;grid-row:1}.book-legal{grid-column:1/-1;grid-row:2;font-size:8px;line-height:1.35}
 #book-next{grid-column:3;grid-row:1}
-body.book-app.reader-ready .book-pagination{height:88px}
-body.book-app.reader-ready .book-main{height:calc(100svh - 151px)}
-body.book-app.reader-ready .book-viewport{height:calc(100svh - 160px)}}
+body.book-app.reader-ready .book-pagination{height:94px;min-height:94px}
+body.book-app.reader-ready .book-main{height:calc(100svh - 148px)}
+body.book-app.reader-ready .book-viewport{height:calc(100svh - 156px)}}
 ''')
  (SITE/"index.html").write_text(html)
  version=dict(schema="fountain.press.linotype.essay-edition.v1",title="Fountain Coach — Essays",
