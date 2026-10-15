@@ -1,0 +1,31 @@
+{
+  "schema": "fountain.press.structural-ablation.proof.v2",
+  "experiment": "bookshelf-semantics-without-source-identity-markers",
+  "release": "20261015-semantic-structural-ablation-v2",
+  "route": "/fixtures/semantic-visual-bookshelf/",
+  "address": "http://192.168.8.249:8180/fixtures/semantic-visual-bookshelf/",
+  "sourceImplementationCommit": "e464029",
+  "fountainPressCommit": "50e93e5",
+  "publicPublished": false,
+  "sourceImagesRendered": 0,
+  "sourceTextRendered": 0,
+  "originalV38Unchanged": true,
+  "passes": {
+    "browser": [
+      "ipad-portrait",
+      "ipad-landscape",
+      "phone-portrait"
+    ],
+    "originalV38": [
+      "ipad-portrait",
+      "ipad-landscape",
+      "phone-portrait"
+    ],
+    "sourceHashVerification": true,
+    "parentNavigation": true,
+    "unknownPageRefusal": true,
+    "threeIdenticalNeutralLeaves": true
+  },
+  "perceptualSemantics": "NOT ESTABLISHED: identical anonymous tiles cannot visibly identify the individual collection/work",
+  "authorApproval": "pending iPad Safari visual judgement"
+}

@@ -43,7 +43,7 @@ async function scenario(label, width, height) {
   };
   const navigate = async url => {
     await command("Page.navigate", { url: BASE + url });
-    await wait("location.pathname===" + JSON.stringify(url.split("#")[0]));
+    await wait("location.pathname===" + JSON.stringify(url.split("#")[0]) + " && document.readyState==='complete'");
   };
   const click = async selector => {
     const rect = await evaluate("document.querySelector(" + JSON.stringify(selector) + ")?.getBoundingClientRect().toJSON()");
@@ -74,6 +74,9 @@ async function scenario(label, width, height) {
     await click(workSelector("essays"));
     await wait('document.body?.dataset.collectionId==="essays"');
     await wait(ready(".shelf-book"));
+    // Remote HTTP can expose the DOM before the external style has loaded.
+    // Do not accept default CSS as evidence of a visible semantic label.
+    await wait('document.querySelector(".bookshelf-collection-masthead h1")?.getBoundingClientRect().width<=1 && getComputedStyle(document.querySelector(".bookshelf-collection-masthead a")).fontSize==="0px"');
     const essays = await evaluate('({books:document.querySelectorAll(".shelf-book").length,empties:document.querySelectorAll(".bookshelf-empty").length,collection:document.body.dataset.collectionId,art:document.querySelectorAll("img").length,unmarked:[...document.querySelectorAll(".shelf-cover")].every(x=>x.childElementCount===0),headingWidth:document.querySelector(".bookshelf-collection-masthead h1")?.getBoundingClientRect().width,backFont:getComputedStyle(document.querySelector(".bookshelf-collection-masthead a")).fontSize,labels:document.querySelectorAll(".shelf-cover-name").length})');
     if (essays.books !== 3 || essays.empties !== 20 || essays.labels || essays.art || !essays.unmarked || essays.headingWidth>1 || essays.backFont!=="0px") throw new Error("Essay collection invalid " + JSON.stringify(essays));
     await shot("essays");

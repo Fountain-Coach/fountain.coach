@@ -39,3 +39,10 @@ browser proof does not claim perceptual semantic legibility.
 
 Test route (WLAN only): `/fixtures/semantic-visual-bookshelf/`.
 The PNGs here document the strict neutral hypothesis, not source identity.
+
+## Live release
+
+WLAN V2 active: `20261015-semantic-structural-ablation-v2`. Its three
+end-to-end Chrome geometry probes and all three V38 regressions passed.
+The attached screenshots are taken against the actual live WLAN release,
+not a hypothetical mock. `release-receipt.json` records the proof.
