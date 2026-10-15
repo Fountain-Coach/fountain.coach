@@ -67,6 +67,7 @@ def check():
  assert 'aria-label="Return to First Readings collection"' in work
  assert 'data-edition-entry-anchor="book-cover"' in work
  assert 'body.dataset.editionEntryAnchor||prefs.anchor' in (SITE/'assets/linotype/book.js').read_text()
+ assert '(hash||body.dataset.editionEntryAnchor)?0:' in (SITE/'assets/linotype/book.js').read_text()
  assert identity['singularFirstReadingPreserved'] == front['first-reading']['entryEditionUrl']
  detailed=(SITE/"editions/catalogue/index.html").read_text()
  assert 'class="edition-list"' in detailed

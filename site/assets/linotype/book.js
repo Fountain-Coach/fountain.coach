@@ -508,7 +508,7 @@ const startBook=()=>{
  if(bookStarted)return;
  bookStarted=true;
  clearTimeout(startupLimit);
- compose({anchor:requested,offset:hash?0:Number(prefs.pageWithin)||0});
+ compose({anchor:requested,offset:(hash||body.dataset.editionEntryAnchor)?0:Number(prefs.pageWithin)||0});
  document.documentElement.classList.remove("book-hydrating");
 };
 const onResourcesReady=()=>{

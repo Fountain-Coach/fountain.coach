@@ -253,6 +253,10 @@ def main():
  new_entry='const requested=hash&&document.getElementById(hash)?hash:(body.dataset.editionEntryAnchor||prefs.anchor||"book-cover");'
  assert js.count(old_entry)==1
  js=js.replace(old_entry,new_entry)
+ old_offset='compose({anchor:requested,offset:hash?0:Number(prefs.pageWithin)||0});'
+ new_offset='compose({anchor:requested,offset:(hash||body.dataset.editionEntryAnchor)?0:Number(prefs.pageWithin)||0});'
+ assert js.count(old_offset)==1
+ js=js.replace(old_offset,new_offset)
  p.write_text(js)
  runtime=next(x for x in version["runtime"] if x["file"]=="book.js")
  runtime["projectedSHA256"]=sha(p.read_bytes())
