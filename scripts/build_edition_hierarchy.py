@@ -203,9 +203,11 @@ def build_estate_grid():
             reader = front["entryEditionUrl"]
         art = "/assets/estate-bookshelf/" + artworks[identity]
         assert (SITE / art.lstrip("/")).is_file(), art
-        source_repo = ROOT.parent / ("solstice.fountain.coach" if identity == "first-reading" else
-                                     "teatro.fountain.coach" if identity == "teatro" else "fountain.coach")
-        revision = subprocess.check_output(["git", "-C", str(source_repo), "rev-parse", "HEAD"], text=True).strip()
+        # A cover binds to its actual publication/collection content, not a
+        # changing Git HEAD or a machine-dependent staging build revision.
+        admitted=(SITE/'collections/first-readings/collection.json' if identity=='first-reading'
+                  else SITE/'essays/edition-manifest.json')
+        revision=sha(admitted.read_bytes())
         books.append(dict(id=identity, title=title, author="Benedikt Eickhoff",
                           edition=edition, reader=reader, cover_image=art,
                           source_revision=revision, host=host, status=status))
