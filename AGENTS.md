@@ -54,8 +54,10 @@
   Bookshelf implementation, never an independent or duplicated shelf UI.
 - The four first-row cells are the authentic Fountain Coach mark and the
   three admitted books: Essays, First Reading, Teatro. All images are
-  original source-owned assets. No iOS app-icon treatments, empty slots,
-  extra titles, invented publications or separate action buttons.
+  original source-owned assets. The remaining cells are visible, lightly dashed
+  **empty slots**, modeled on the Instruments catalogue grid, with no links
+  or invented publication identities. No iOS app-icon treatments, extra
+  titles, invented publications, or separate action buttons.
 - The prior detailed catalogue is preserved at `/editions/catalogue/`
   without losing nested essay edition routes and original manuscripts.
 - `scripts/build_edition_hierarchy.py` owns this deterministic projection.

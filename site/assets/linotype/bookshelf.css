@@ -1,27 +1,27 @@
-/* Fountain Press / Estate catalogue: one continuous field, four real cells. */
-:root{color-scheme:light;--outer:#dfd9ce;--ink:#292520;--rule:#d6cfc2}
+/* Fountain Press Bookshelf: a populated row within a visibly open editorial grid.
+   Inspired by the Instruments catalogue's vacant slots, not its chrome/theme. */
+:root{color-scheme:light;--outer:#dfd9ce;--ink:#292520;--rule:#d6cfc2;--vacant:#b7afa3}
 *{box-sizing:border-box}
 html{min-height:100%;background:var(--outer)}
 body.bookshelf-state{margin:0;min-height:100svh;color:var(--ink);background:var(--outer);font-family:"Iowan Old Style",Georgia,serif}
 .book-skip{position:absolute;left:12px;top:-80px;z-index:4;background:var(--outer);color:var(--ink);padding:12px}
 .book-skip:focus{top:12px}
-.bookshelf-main{max-width:1150px;min-height:100svh;margin-inline:auto;padding:clamp(28px,7vw,94px) clamp(18px,5vw,64px);display:grid;align-content:center}
-.bookshelf-paper{width:100%;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(15px,2.8vw,33px);align-items:start;background:transparent;box-shadow:none;}
-.bookshelf-brand{display:grid;place-items:start center;min-width:0;align-self:start}
-.bookshelf-brand img{display:block;width:clamp(88px,9vw,124px);height:auto;aspect-ratio:1;object-fit:contain;transform:translateY(-16.95652174%)}
+.bookshelf-main{max-width:1320px;min-height:100svh;margin-inline:auto;padding:clamp(20px,4vw,44px) clamp(16px,3vw,44px)}
+.bookshelf-paper{width:100%;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:clamp(10px,1.5vw,18px);align-items:start;background:transparent;box-shadow:none;}
+.bookshelf-brand{aspect-ratio:1;display:grid;place-items:center;min-width:0}
+.bookshelf-brand img{display:block;width:clamp(66px,7vw,108px);height:auto;aspect-ratio:1;object-fit:contain}
 .bookshelf-books{display:contents;list-style:none;padding:0;margin:0}
-.shelf-item{min-width:0}
-.shelf-book{display:block;width:100%;color:inherit;text-decoration:none;outline-offset:5px}
-.shelf-book:focus-visible{outline:2px solid var(--ink)}
-.shelf-cover{display:grid;place-items:center;width:100%;aspect-ratio:.73;overflow:hidden;background:#f7f2e8;border:1px solid var(--rule);padding:9%;box-shadow:1px 5px 12px #352c271b}
+.shelf-item,.bookshelf-empty{min-width:0;aspect-ratio:1}
+.shelf-item{position:relative;display:grid;place-items:center;min-height:0}
+.shelf-book{position:absolute;inset:0;display:grid;place-items:center;width:100%;height:100%;color:inherit;text-decoration:none;outline-offset:3px}
+.shelf-book:focus-visible{outline:2px solid var(--ink);border-radius:15%}
+.shelf-cover{display:grid;place-items:center;height:88%;max-width:90%;aspect-ratio:.73;overflow:hidden;background:#f7f2e8;border:1px solid var(--rule);padding:8%;box-shadow:1px 5px 12px #352c271b}
 .shelf-cover img{display:block;width:100%;height:100%;min-width:0;min-height:0;object-fit:contain}
+.bookshelf-empty{border:1px dashed var(--vacant);border-radius:22.37%;background:transparent;opacity:.72;pointer-events:none}
 @media(hover:hover) and (prefers-reduced-motion:no-preference){
 .shelf-cover{transition:box-shadow .18s ease}
 .shelf-book:hover .shelf-cover{box-shadow:1px 6px 17px #352c2735}
 }
-@media(max-width:760px){
-.bookshelf-main{align-content:start;padding-top:clamp(35px,8vw,70px)}
-.bookshelf-paper{grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(18px,5vw,34px)}
-.bookshelf-brand img{width:104px}
-}
-@media print{.bookshelf-main{min-height:0}}
+@media(max-width:1200px){.bookshelf-paper{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:720px){.bookshelf-paper{grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(12px,3vw,18px)}.bookshelf-brand img{width:clamp(66px,11vw,88px)}}
+@media print{.bookshelf-main{min-height:0}.bookshelf-empty{display:none}}

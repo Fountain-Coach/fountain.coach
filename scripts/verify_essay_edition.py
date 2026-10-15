@@ -27,6 +27,7 @@ def check():
  assert 'class="bookshelf-paper"' in catalogue
  assert catalogue.count('class="shelf-item"')==3
  assert catalogue.count('class="shelf-cover"')==3
+ assert catalogue.count('class="bookshelf-empty" aria-hidden="true"')==20
  assert catalogue.count('class="bookshelf-brand"')==1
  assert catalogue.count('class="shelf-book"')==3
  assert '<h1' not in catalogue and 'id="book-viewport"' not in catalogue
