@@ -103,6 +103,18 @@ def build_catalogue(manifest):
  <a href="https://governance.fountain.coach/legal/">Legal notices</a> · <a href="https://governance.fountain.coach/privacy/">Privacy</a></nav></footer></body></html>
  '''
 
+def build_estate_grid():
+    """One field, source-owned logo and three admitted cover thumbnails."""
+    items=(
+      ('fountain-coach','/editions/essays/','fountain-coach-edition.png','Fountain Coach - Essays'),
+      ('first-reading',FIRST,'first-reading-ink.png','First Reading - Solstice'),
+      ('teatro',TEATRO,'teatro-score-memory-vector-human-condition.svg','Teatro - First Hearing'),
+    )
+    tiles=''.join('<li class="shelf-entry" data-edition-id="'+key+'"><a href="'+url+'" aria-label="Open '+escape(label,quote=True)+'"><span class="shelf-cover"><img src="/assets/estate-bookshelf/'+img+'" alt="" loading="eager" decoding="async"></span></a></li>' for key,url,img,label in items)
+    return '''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="color-scheme" content="light"><meta name="robots" content="noindex,nofollow"><meta http-equiv="Content-Security-Policy" content="default-src 'none';style-src 'self';img-src 'self';base-uri 'none';form-action 'none';frame-ancestors 'none'"><title>Fountain Coach - Editions</title><meta name="description" content="Fountain Coach editions: Essays, First Reading, Teatro."><link rel="icon" type="image/png" href="/assets/fountain-coach-logo-transparent.png"><link rel="stylesheet" href="/assets/estate-bookshelf.css"></head>
+<body class="estate-landing"><a class="skip-link" href="#editions">Skip to editions</a><main class="shelf-main" id="editions" aria-label="Fountain Coach estate editions"><ul class="shelf-grid"><li class="shelf-brand"><img src="/assets/fountain-coach-logo-transparent.png" alt="Fountain Coach - open hand and spring" width="124" height="124"></li>'''+tiles+'''</ul></main></body></html>
+'''
+
 def main():
  parser=argparse.ArgumentParser()
  parser.add_argument("--linotype-source",type=Path,required=True)
@@ -150,7 +162,12 @@ def main():
 @media(max-width:500px){.edition-rail a{max-width:5ch}.edition-rail{font-size:8px}}
 """)
  # Source essay HTML is immutable; stage-only link projection changes the rail.
- index=build_catalogue(version)
+ # Preserve the previous detailed editions catalogue at its own route.
+ catalogue=build_catalogue(version).replace('href="/editions/"','href="/editions/catalogue/"').rstrip()+"\n"
+ detailed=ED/"catalogue"
+ detailed.mkdir(parents=True,exist_ok=True)
+ (detailed/"index.html").write_text(catalogue)
+ index=build_estate_grid()
  (ED/"index.html").write_text(index)
  MAIN.write_text(index)
  (SITE/"assets/editions.css").write_text("""*{box-sizing:border-box}
@@ -200,6 +217,7 @@ body{margin:0}a{color:inherit}a:focus-visible{outline:2px solid #aa6c37;outline-
   "editionPath":"editions/essays/",
   "cataloguePath":"editions/",
   "rootLanding":"editions/",
+  "legacyDetailedCatalogue":"editions/catalogue/",
   "subEditions":[{"id":a["id"],"path":a["editionPath"],"parent":"editions/essays/"} for a in version["essays"]],
   "editionHierarchy":["editions/","editions/essays/"]+[x["editionPath"] for x in version["essays"]],
   "publicationRule":"A rail points to its edition; nested editions are independent complete Linotype readers."

@@ -11,7 +11,7 @@
   "scripts": {
     "check": "python3 scripts/verify_essay_edition.py",
     "book:build": "python3 scripts/build_edition_hierarchy.py --linotype-source ../solstice.fountain.coach/site",
-    "book:browser": "node scripts/verify_essay_browser.mjs && node scripts/verify_editions_browser.mjs",
-    "edition:browser": "node scripts/verify_editions_browser.mjs"
+    "book:browser": "node scripts/verify_estate_grid.mjs && node scripts/verify_essay_browser.mjs && node scripts/verify_editions_browser.mjs",
+    "edition:browser": "node scripts/verify_estate_grid.mjs && node scripts/verify_editions_browser.mjs"
   }
 }

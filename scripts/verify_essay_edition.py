@@ -23,14 +23,24 @@ def check():
  catalogue=(SITE/"index.html").read_text()
  editions=(SITE/"editions/index.html").read_text()
  assert catalogue==editions,"Root must exactly mirror edition catalogue"
- assert 'class="edition-list"' in catalogue
- assert '<h1>Editions<span>.</span></h1>' in catalogue
- assert 'id="book-viewport"' not in catalogue,"Never land at book cover"
- assert all(link in catalogue for link in (
-    '/editions/essays/',"data-estate-id=\"first-reading\"",
-    "data-estate-id=\"teatro\""))
- assert 'data-legal-role="company-status"' in catalogue
- assert catalogue.count('data-estate-id="status"')==0
+ assert 'class="shelf-grid"' in catalogue
+ assert catalogue.count('class="shelf-entry"')==3
+ assert catalogue.count('class="shelf-cover"')==3
+ assert catalogue.count('class="shelf-brand"')==1
+ assert '<h1' not in catalogue and 'id="book-viewport"' not in catalogue
+ assert 'class="instrument-slot"' not in catalogue
+ assert all(url in catalogue for url in ('/editions/essays/',
+   'https://works.benedikt-eickhoff.de/solstice/editions/first-reading/',
+   'https://teatro.fountain.coach/'))
+ detailed=(SITE/"editions/catalogue/index.html").read_text()
+ assert 'class="edition-list"' in detailed
+ assert '<h1>Editions<span>.</span></h1>' in detailed
+ assert 'data-legal-role="company-status"' in detailed
+ assert 'data-estate-id="status"' not in detailed
+ for asset in ('fountain-coach-edition.png','first-reading-ink.png',
+    'teatro-score-memory-vector-human-condition.svg'):
+  assert (SITE/'assets/estate-bookshelf'/asset).is_file()
+ assert sha((SITE/'assets/fountain-coach-logo-transparent.png').read_bytes()) == '8c5fad1c3db56138d5959da75991dc8034a0be537ce46da6ffcc0d9655e7f729'
  version=json.loads((SITE/"essays/edition-manifest.json").read_text())
  assert version["schema"]=="fountain.press.linotype.essay-edition.v2"
  assert version["sourceRepository"]=="Fountain-Coach/fountain.coach"
@@ -75,7 +85,7 @@ def check():
   assert slug in version["readingOrder"]
   assert 'data-estate-id="status"' not in sub
   assert '<link rel="canonical" href="https://fountain.coach/editions/essays/'+slug+'/"' in sub
-  assert 'href="/editions/essays/'+slug+'/"' in catalogue
+  assert 'href="/editions/essays/'+slug+'/"' in detailed
   for figure in entry["images"]:
    assert sha((source.parent/figure["path"]).read_bytes())==figure["sha256"]
   print("SOURCE_VERBATIM",number,slug,len(expected),"paragraphs",entry["originalFigures"],"original figures","independent-book")

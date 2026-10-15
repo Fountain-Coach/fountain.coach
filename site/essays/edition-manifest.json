@@ -134,6 +134,7 @@
   "editionPath": "editions/essays/",
   "cataloguePath": "editions/",
   "rootLanding": "editions/",
+  "legacyDetailedCatalogue": "editions/catalogue/",
   "subEditions": [
     {
       "id": "teatro-an-unfinished-composition",

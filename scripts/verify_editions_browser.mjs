@@ -54,7 +54,7 @@ async function caseStudy(label,width,height,slug,plates){
 for(const path of ["/","/editions/","/editions/essays/",...works.map(w=>"/editions/essays/"+w[0]+"/")]){
  const r=await fetch(base+path);
  if(r.status!==200)throw Error("Missing edition route "+path+" "+r.status);
- if(path==="/"){const html=await r.text();if(!html.includes('class="edition-list"')||html.includes('id="book-viewport"'))throw Error("Root is not editions catalogue");}
+ if(path==="/"){const html=await r.text();if(!html.includes('class="shelf-grid"')||html.includes('id="book-viewport"'))throw Error("Root is not estate thumbnail grid");}
 }
 for(const [label,w,h] of [["iPad landscape",1180,820],["iPad portrait",820,1180],["phone portrait",390,844]]){
  for(const [slug,plates] of works){

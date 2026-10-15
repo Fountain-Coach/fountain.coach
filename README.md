@@ -87,3 +87,14 @@ The old `/essays/` collection is retained as an **original source archive**;
 it is no longer the front door. The Company Status link stays with mandatory
 legal footer references. Publication of the new hierarchy is **staging-only**
 until independently governed production promotion.
+
+## Edition-thumbnail grid
+
+The estate entrance at `/` mirrors `/editions/`. Inspired by the real
+Instruments catalogue grid, it now displays just the original hand/spring
+mark and the three source-authorized edition images. There are no empty
+icon placeholders or secondary title blocks. The previous detailed
+editions catalogue remains at `/editions/catalogue/`; the three complete
+original essays and their standalone Linotype readers remain unchanged.
+The owning repository builds and verifies the grid, while LAN-only URL
+substitution occurs in the Estate registry staging pipeline.
