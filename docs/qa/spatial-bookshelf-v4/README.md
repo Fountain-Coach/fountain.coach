@@ -23,3 +23,11 @@ PNG witnesses are captured from the browser at three form factors.
 This proves mechanics, not perception or author approval.
 
 Actual Safari iPad evaluation remains pending.
+
+## Active candidate and proof
+
+The activated, source-pinned Ubuntu release is `20261015-spatial-bookshelf-v4`.
+The actual WLAN Chrome journeys passed on three device viewports; the previous V38
+First Readings journeys also passed all three viewports. Screenshots and the
+`release-receipt.json` reflect that live state. Perceptual approval on native
+iPad Safari remains an independent author decision.

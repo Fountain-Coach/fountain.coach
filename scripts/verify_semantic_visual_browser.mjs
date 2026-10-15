@@ -78,6 +78,7 @@ async function scenario(label,width,height){
   await click(book("o-02"));
   await wait('document.body?.dataset.objectId==="o-02" && document.body?.dataset.spaceId==="s-01"');
   await wait('getComputedStyle(document.querySelector(".visual-page")).borderLeftWidth==="7px"');
+  await wait('document.querySelector("#visual-book")?.dataset.invalid==="false"');
   const readerOne=await ev('({token:document.body.dataset.objectToken,color:getComputedStyle(document.querySelector(".visual-page")).borderLeftColor,parent:document.querySelector(".visual-return").getAttribute("href"),leaves:document.querySelectorAll(".visual-page").length,images:document.querySelectorAll("img").length})');
   if(readerOne.color!==root.colors[0]||readerOne.leaves!==3||readerOne.images||!readerOne.parent.endsWith("/spaces/s-01/#work-o-02"))throw Error("Reader failed membership "+JSON.stringify(readerOne));
   await shot("blank-reader-0");
@@ -109,6 +110,8 @@ async function scenario(label,width,height){
   await shot("inside-space-1");
   await click(book("o-02"));
   await wait('document.body?.dataset.objectId==="o-02" && document.body?.dataset.spaceId==="s-02"');
+  await wait('getComputedStyle(document.querySelector(".visual-page")).borderLeftWidth==="7px"');
+  await wait('document.querySelector("#visual-book")?.dataset.invalid==="false"');
   const readerTwo=await ev('({token:document.body.dataset.objectToken,color:getComputedStyle(document.querySelector(".visual-page")).borderLeftColor,parent:document.querySelector(".visual-return").getAttribute("href")})');
   if(readerOne.token!==readerTwo.token||readerTwo.color!==root.colors[1]||
      !readerTwo.parent.endsWith("/spaces/s-02/#work-o-02"))throw Error("Shared object identity/context invalid "+JSON.stringify(readerTwo));

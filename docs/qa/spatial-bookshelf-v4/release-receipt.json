@@ -1,0 +1,35 @@
+{
+  "schema": "fountain.press.spatial-bookshelf-wlan-proof.v4",
+  "release": "20261015-spatial-bookshelf-v4",
+  "sourceCommit": "0caa563f443ac39add375f2208ad46aac45b5142",
+  "rendererCommit": "0d1dd2de4dd0f2f0d77ed2f76afee382de722a4d",
+  "stage": "http://192.168.8.249:8180/fixtures/semantic-visual-bookshelf/",
+  "productionPublished": false,
+  "visualData": {
+    "editorialNames": false,
+    "sourceImages": false,
+    "sourceManifests": false,
+    "meaningFromNames": false,
+    "rootFields": 2,
+    "uniqueBooks": 3,
+    "membershipEncounters": 4,
+    "colorEncoding": "current containing space"
+  },
+  "regression": {
+    "spatialBrowser": [
+      "ipad-portrait",
+      "ipad-landscape",
+      "phone-portrait"
+    ],
+    "originalV38": [
+      "ipad-portrait",
+      "ipad-landscape",
+      "phone-portrait"
+    ],
+    "publisherCircle": "root inert and parent reactive",
+    "sharedObject": "identical opaque token in two colored contexts",
+    "unknownLeafRefusal": "PASS",
+    "history": "PASS"
+  },
+  "nativeSafariAuthorReview": "pending"
+}
