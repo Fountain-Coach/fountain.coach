@@ -142,6 +142,16 @@ def main(owner):
    new_running='const sheet=this.leaf(type,id,id==="book-vergil"?"VERGIL · PROLOGUE":(document.body.dataset.editionId==="essays-teatro-an-unfinished-composition"?"FIRST READINGS":"ESSAYS"));'.encode()
    assert modified.count(old_running)==1
    modified=modified.replace(old_running,new_running)
+   # Plate/opener and continuation leaves also need the admitted edition
+   # identity; replacing only the first sheet leaves an "ESSAYS" header.
+   old_default='leaf(type,sectionId,chapterLabel="ESSAYS"){'.encode()
+   new_default='leaf(type,sectionId,chapterLabel=(document.body.dataset.editionId==="essays-teatro-an-unfinished-composition"?"FIRST READINGS":"ESSAYS")){'.encode()
+   assert modified.count(old_default)==1
+   modified=modified.replace(old_default,new_default)
+   old_continuation='page=this.leaf(type,id,isVergil?"VERGIL · PROLOGUE":"ESSAYS");'.encode()
+   new_continuation='page=this.leaf(type,id,isVergil?"VERGIL · PROLOGUE":(document.body.dataset.editionId==="essays-teatro-an-unfinished-composition"?"FIRST READINGS":"ESSAYS"));'.encode()
+   assert modified.count(old_continuation)==1
+   modified=modified.replace(old_continuation,new_continuation)
   elif file=="book.js":
    modified=modified.replace(b'solstice.first-reading.linotype.v2',b'fountain.essays.linotype.v1')
    modified=modified.replace(b'First Reading',b'Essays')

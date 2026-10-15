@@ -125,7 +125,7 @@ class Linotype {
     this.css.viewportWidth=w;
     this.css.viewportHeight=h;
   }
-  leaf(type,sectionId,chapterLabel="ESSAYS"){
+  leaf(type,sectionId,chapterLabel=(document.body.dataset.editionId==="essays-teatro-an-unfinished-composition"?"FIRST READINGS":"ESSAYS")){
     const el=document.createElement("section");
     el.className="linotype-sheet linotype-"+type;
     el.dataset.sourceId=sectionId;
@@ -231,7 +231,7 @@ class Linotype {
         const nodes=[...section.children];
         for(const node of nodes){
           if(!this.appendPiece(page,immutable(node))){
-            page=this.leaf(type,id,isVergil?"VERGIL · PROLOGUE":"ESSAYS");
+            page=this.leaf(type,id,isVergil?"VERGIL · PROLOGUE":(document.body.dataset.editionId==="essays-teatro-an-unfinished-composition"?"FIRST READINGS":"ESSAYS"));
             if(!this.appendPiece(page,immutable(node))){
               if(isVergil&&node.matches("p.vergil-block"))
                 page=this.appendParagraph(page,node,id,"VERGIL · PROLOGUE","preface");
