@@ -1,3 +1,5 @@
+**REJECTED AS SEMANTIC EVIDENCE (V1).** This visual fixture borrowed Scores and source artwork as identity markers; it therefore did not test whether the Bookshelf has intrinsic semantics. Preserved only as audit history. The content-independent replacement is documented in `docs/qa/semantic-structural-ablation-v2/`.
+
 # First Semantic Visual Bookshelf fixture — October 15, 2026
 
 **Source owner:** Fountain-Coach/fountain.coach

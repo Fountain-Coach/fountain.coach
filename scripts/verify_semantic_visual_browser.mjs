@@ -61,34 +61,33 @@ async function scenario(label, width, height) {
     const result = await command("Page.captureScreenshot", { format: "png", captureBeyondViewport: false });
     fs.writeFileSync(path.join(OUTPUT, label + "-" + step + ".png"), Buffer.from(result.result.data, "base64"));
   };
-  const loaded = selector => "(()=>{const images=[...document.querySelectorAll(" + JSON.stringify(selector) +
-    ")];return images.length>0&&images.every(image=>image.complete&&image.naturalWidth>0)})()";
+  const ready = selector => "!!document.querySelector(" + JSON.stringify(selector) + ")";
   try {
     await command("Page.enable");
     await command("Runtime.enable");
     await command("Emulation.setDeviceMetricsOverride", { width, height, deviceScaleFactor: 1, mobile: width < 600 });
     await navigate(ROUTE);
-    await wait(loaded(".shelf-book img"));
-    const root = await evaluate('({books:document.querySelectorAll(".shelf-book").length,empties:document.querySelectorAll(".bookshelf-empty").length,logo:!!document.querySelector(".bookshelf-brand img")?.naturalWidth,labels:document.querySelectorAll(".shelf-cover-name").length,overflow:document.documentElement.scrollWidth>innerWidth})');
-    if (root.books !== 2 || root.empties !== 20 || !root.logo || root.labels || root.overflow) throw new Error("Root visual shelf invalid " + JSON.stringify(root));
+    await wait(ready(".shelf-book"));
+    const root = await evaluate('({books:document.querySelectorAll(".shelf-book").length,empties:document.querySelectorAll(".bookshelf-empty").length,logo:!!document.querySelector(".bookshelf-brand img"),art:document.querySelectorAll("img").length,emptyCovers:[...document.querySelectorAll(".shelf-cover")].every(x=>x.childElementCount===0 && !x.textContent.trim()),labels:document.querySelectorAll(".shelf-cover-name").length,overflow:document.documentElement.scrollWidth>innerWidth})');
+    if (root.books !== 2 || root.empties !== 20 || root.logo || root.art || !root.emptyCovers || root.labels || root.overflow) throw new Error("Root visual shelf invalid " + JSON.stringify(root));
     await shot("estate");
     await click(workSelector("essays"));
     await wait('document.body?.dataset.collectionId==="essays"');
-    await wait(loaded(".shelf-book img"));
-    const essays = await evaluate('({books:document.querySelectorAll(".shelf-book").length,empties:document.querySelectorAll(".bookshelf-empty").length,collection:document.body.dataset.collectionId,labels:document.querySelectorAll(".shelf-cover-name").length})');
-    if (essays.books !== 3 || essays.empties !== 20 || essays.labels) throw new Error("Essay collection invalid " + JSON.stringify(essays));
+    await wait(ready(".shelf-book"));
+    const essays = await evaluate('({books:document.querySelectorAll(".shelf-book").length,empties:document.querySelectorAll(".bookshelf-empty").length,collection:document.body.dataset.collectionId,art:document.querySelectorAll("img").length,unmarked:[...document.querySelectorAll(".shelf-cover")].every(x=>x.childElementCount===0),headingWidth:document.querySelector(".bookshelf-collection-masthead h1")?.getBoundingClientRect().width,backFont:getComputedStyle(document.querySelector(".bookshelf-collection-masthead a")).fontSize,labels:document.querySelectorAll(".shelf-cover-name").length})');
+    if (essays.books !== 3 || essays.empties !== 20 || essays.labels || essays.art || !essays.unmarked || essays.headingWidth>1 || essays.backFont!=="0px") throw new Error("Essay collection invalid " + JSON.stringify(essays));
     await shot("essays");
     await click(workSelector(slug));
     await wait('document.body?.dataset.workId===' + JSON.stringify(slug));
-    await wait(loaded(".visual-page:not([hidden]) img"));
-    const first = await evaluate('({count:document.querySelectorAll(".visual-page").length,shown:document.querySelectorAll(".visual-page:not([hidden])").length,source:document.body.dataset.sourceSha256,collection:document.body.dataset.collectionId,back:document.querySelector(".visual-return")?.getAttribute("href"),prose:document.querySelectorAll("article,.book-prose,.shelf-cover-name").length,overflow:document.documentElement.scrollWidth>innerWidth})');
+    await wait(ready(".visual-page:not([hidden])"));
+    const first = await evaluate('({count:document.querySelectorAll(".visual-page").length,shown:document.querySelectorAll(".visual-page:not([hidden])").length,source:document.body.dataset.sourceSha256,collection:document.body.dataset.collectionId,back:document.querySelector(".visual-return")?.getAttribute("href"),prose:document.querySelectorAll("article,.book-prose,.shelf-cover-name,img").length,overflow:document.documentElement.scrollWidth>innerWidth})');
     if (first.count !== 3 || first.shown !== 1 || first.collection !== "essays" ||
         !first.back.endsWith("/collections/essays/#work-" + slug) || first.prose || first.overflow ||
         !/^[a-f0-9]{64}$/.test(first.source)) throw new Error("Visual reader invalid " + JSON.stringify(first));
     await shot("reader-first");
     await key("ArrowRight");
     await wait('location.hash==="#plate-2" && document.querySelector("#plate-2")?.hidden===false');
-    await wait(loaded(".visual-page:not([hidden]) img"));
+    await wait(ready(".visual-page:not([hidden])"));
     await shot("reader-second");
     await evaluate("history.back()");
     await wait('document.querySelector("#plate-1")?.hidden===false && location.hash===""');
@@ -109,21 +108,21 @@ async function scenario(label, width, height) {
     await key("Escape");
     await wait('document.body?.dataset.collectionId==="essays" && location.hash==="#work-' + slug + '"');
     await navigate(ROUTE);
-    await wait(loaded(".shelf-book img"));
+    await wait(ready(".shelf-book"));
     await click(workSelector("first-readings"));
     await wait('document.body?.dataset.collectionId==="first-readings"');
-    await wait(loaded(".shelf-book img"));
+    await wait(ready(".shelf-book"));
     await shot("first-readings");
     await click(workSelector(teatro));
     await wait('document.body?.dataset.workId===' + JSON.stringify(teatro));
-    await wait(loaded(".visual-page:not([hidden]) img"));
-    const hearing = await evaluate('({collection:document.body.dataset.collectionId,count:document.querySelectorAll(".visual-page").length,source:document.querySelector(".visual-page")?.dataset.assetSha256,parent:document.querySelector(".visual-return")?.getAttribute("href"),next:document.querySelector("#visual-next").disabled})');
-    if (hearing.collection !== "first-readings" || hearing.count !== 1 || !hearing.next ||
+    await wait(ready(".visual-page:not([hidden])"));
+    const hearing = await evaluate('({collection:document.body.dataset.collectionId,count:document.querySelectorAll(".visual-page").length,source:document.body.dataset.sourceSha256,parent:document.querySelector(".visual-return")?.getAttribute("href"),next:document.querySelector("#visual-next").disabled})');
+    if (hearing.collection !== "first-readings" || hearing.count !== 3 || hearing.next ||
         !hearing.parent.endsWith("/collections/first-readings/#work-" + teatro)) throw new Error("Nested identity invalid " + JSON.stringify(hearing));
     await shot("first-reading-visual");
     await click(".visual-return");
     await wait('document.body?.dataset.collectionId==="first-readings" && location.hash==="#work-' + teatro + '"');
-    console.log("VISUAL_BOOKSHELF_BROWSER_PASS", label, JSON.stringify({ root, essays, first, invalid, hearing, history: true, keyboard: true, pointer: true }));
+    console.log("STRUCTURAL_BOOKSHELF_BROWSER_PASS", label, JSON.stringify({ root, essays, first, invalid, hearing, history: true, keyboard: true, pointer: true }));
   } finally {
     ws.close();
     await fetch(CDP + "/json/close/" + tab.id).catch(() => {});

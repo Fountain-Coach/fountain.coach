@@ -52,3 +52,27 @@ body.visual-reader{margin:0;min-height:100svh;background:#dfd9ce;color:#292520;
  .visual-progress-fill{transition:transform .18s ease}
  .visual-fixture .shelf-cover{transition:box-shadow .18s ease}
 }
+
+
+/* Strict ablation: not a single source image, title, icon, or logo in a tile. */
+.neutral-ablation .shelf-cover-unmarked{background:#f7f2e8;border:1px solid var(--rule);
+ box-shadow:1px 5px 12px #352c271b;min-width:0;min-height:0}
+.neutral-ablation .bookshelf-brand{background:transparent}
+.neutral-ablation .bookshelf-brand.fc-identity-circle{border:1px solid #aca397;border-radius:50%}
+.neutral-ablation .visual-page{background:#f7f2e8;border:1px solid #ded7ca;
+ box-shadow:0 2px 11px #352c2712;max-width:720px;max-height:100%;
+ aspect-ratio:1 / 1.414;justify-self:center;align-self:center}
+@media(max-width:720px){
+ .neutral-ablation .visual-page{width:min(100%,calc((100svh - 150px)/1.414));height:auto}
+}
+
+
+/* Same visual removal for a collection under the strict ablation state. */
+.neutral-ablation .bookshelf-collection-masthead{min-height:36px;margin-bottom:8px}
+.neutral-ablation .bookshelf-collection-masthead h1{position:absolute!important;width:1px!important;
+ height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;
+ clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+.neutral-ablation .bookshelf-collection-masthead a{display:inline-flex;align-items:center;
+ justify-content:center;width:44px;height:44px;font-size:0;letter-spacing:0;border:0}
+.neutral-ablation .bookshelf-collection-masthead a::before{
+ content:"←";font:400 27px/1 system-ui,sans-serif}
