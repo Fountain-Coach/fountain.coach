@@ -1,73 +1,85 @@
 {
-  "schema": "fountain.press.semantic-structural-ablation.v2",
+  "schema": "fountain.press.spatial-bookshelf.fixture.v4",
+  "source": "anonymous structural experiment; no editorial collection or work names",
   "published": false,
-  "release": "wlan-proof",
-  "sourceOwner": "Fountain-Coach/fountain.coach",
-  "rendererOwner": "Fountain-Coach/fountain-press",
-  "hypothesis": "Can the bookshelf encode hierarchy and reversible reading without content markers?",
   "displayPolicy": {
     "visibleImages": 0,
     "visibleText": 0,
-    "coverTitles": 0,
-    "sourceImageDependence": false,
-    "leafCount": 3,
-    "leafCountIndependentOfSource": true
+    "sourceContent": false,
+    "coloredBy": "containing-space-position",
+    "leafCount": 3
   },
-  "sourceManifests": {
-    "essaysSHA256": "2dda0529a16065d26add8b9c58bf692f535bc6a0109a9ed7e2b5d8cf1875429b",
-    "firstReadingsSHA256": "8cbaa8cf73400602d0d61520f18d3b8f2e7885e2570981e941a6184b29d91314"
-  },
-  "collections": [
+  "objects": [
     {
-      "id": "essays",
+      "id": "o-01",
+      "token": "e4002107bbfd420cdf3a2e0d786241c8f71a417ee5373dfe22a7c2d5b2769fc7"
+    },
+    {
+      "id": "o-02",
+      "token": "fdc5d4641d1c584ff81509e02b67a2d0d12bdbde28c7ceb6080019146f862e1e"
+    },
+    {
+      "id": "o-03",
+      "token": "47aae904f283ae8194498767d42e631a161b5bd0bb6ce6f586604db9c7fb102c"
+    }
+  ],
+  "spaces": [
+    {
+      "id": "s-01",
+      "position": 0,
       "parent": "/fixtures/semantic-visual-bookshelf/",
-      "path": "/fixtures/semantic-visual-bookshelf/collections/essays/",
-      "works": [
-        "teatro-an-unfinished-composition",
-        "semantic-compilation-the-archive-is-not-the-edition",
-        "reframe-and-the-business-value-of-the-estate"
+      "route": "/fixtures/semantic-visual-bookshelf/spaces/s-01/",
+      "members": [
+        "o-01",
+        "o-02",
+        "o-03"
       ]
     },
     {
-      "id": "first-readings",
+      "id": "s-02",
+      "position": 1,
       "parent": "/fixtures/semantic-visual-bookshelf/",
-      "path": "/fixtures/semantic-visual-bookshelf/collections/first-readings/",
-      "works": [
-        "teatro-an-unfinished-composition"
+      "route": "/fixtures/semantic-visual-bookshelf/spaces/s-02/",
+      "members": [
+        "o-02"
       ]
     }
   ],
   "encounters": [
     {
-      "collection": "essays",
-      "workId": "teatro-an-unfinished-composition",
-      "parent": "/fixtures/semantic-visual-bookshelf/collections/essays/",
-      "route": "/fixtures/semantic-visual-bookshelf/collections/essays/works/teatro-an-unfinished-composition/",
-      "sourceSHA256": "5f77e58bbb59d0802d5b8b0ee48ecea1bbea7d44ebf4b73e3107363b7b95bad8",
+      "space": "s-01",
+      "position": 0,
+      "object": "o-01",
+      "route": "/fixtures/semantic-visual-bookshelf/spaces/s-01/objects/o-01/",
+      "parent": "/fixtures/semantic-visual-bookshelf/spaces/s-01/",
+      "token": "e4002107bbfd420cdf3a2e0d786241c8f71a417ee5373dfe22a7c2d5b2769fc7",
       "testLeaves": 3
     },
     {
-      "collection": "essays",
-      "workId": "semantic-compilation-the-archive-is-not-the-edition",
-      "parent": "/fixtures/semantic-visual-bookshelf/collections/essays/",
-      "route": "/fixtures/semantic-visual-bookshelf/collections/essays/works/semantic-compilation-the-archive-is-not-the-edition/",
-      "sourceSHA256": "485d2514a8692bff998180b6ad5e5442bc3db4e66d222f89c3f1865a2fd0a2c1",
+      "space": "s-01",
+      "position": 0,
+      "object": "o-02",
+      "route": "/fixtures/semantic-visual-bookshelf/spaces/s-01/objects/o-02/",
+      "parent": "/fixtures/semantic-visual-bookshelf/spaces/s-01/",
+      "token": "fdc5d4641d1c584ff81509e02b67a2d0d12bdbde28c7ceb6080019146f862e1e",
       "testLeaves": 3
     },
     {
-      "collection": "essays",
-      "workId": "reframe-and-the-business-value-of-the-estate",
-      "parent": "/fixtures/semantic-visual-bookshelf/collections/essays/",
-      "route": "/fixtures/semantic-visual-bookshelf/collections/essays/works/reframe-and-the-business-value-of-the-estate/",
-      "sourceSHA256": "c43fa422d8a60627b44900a1f1da5ca6e8a8955be1a0f95fafb0575ef4a6762a",
+      "space": "s-01",
+      "position": 0,
+      "object": "o-03",
+      "route": "/fixtures/semantic-visual-bookshelf/spaces/s-01/objects/o-03/",
+      "parent": "/fixtures/semantic-visual-bookshelf/spaces/s-01/",
+      "token": "47aae904f283ae8194498767d42e631a161b5bd0bb6ce6f586604db9c7fb102c",
       "testLeaves": 3
     },
     {
-      "collection": "first-readings",
-      "workId": "teatro-an-unfinished-composition",
-      "parent": "/fixtures/semantic-visual-bookshelf/collections/first-readings/",
-      "route": "/fixtures/semantic-visual-bookshelf/collections/first-readings/works/teatro-an-unfinished-composition/",
-      "sourceSHA256": "5f77e58bbb59d0802d5b8b0ee48ecea1bbea7d44ebf4b73e3107363b7b95bad8",
+      "space": "s-02",
+      "position": 1,
+      "object": "o-02",
+      "route": "/fixtures/semantic-visual-bookshelf/spaces/s-02/objects/o-02/",
+      "parent": "/fixtures/semantic-visual-bookshelf/spaces/s-02/",
+      "token": "fdc5d4641d1c584ff81509e02b67a2d0d12bdbde28c7ceb6080019146f862e1e",
       "testLeaves": 3
     }
   ]

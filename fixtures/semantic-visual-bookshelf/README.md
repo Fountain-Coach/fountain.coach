@@ -1,68 +1,72 @@
-# Structural Bookshelf Ablation V2 — no content markers
+# Spatial Bookshelf V4 — contained meaning without borrowed names
 
-**Status:** Experimental, unpublished, identity-perception unverified.
+**Experimental, unpublished, not yet human-approved on iPad Safari.**
 
-## Correction to V1
+## Semantics
 
-V1 was not a semantic test. It treated Score images and original artwork as
-recognition cues, then declared success when the artwork and navigation worked.
-That conflated authorship content with publication identity. V1 is rejected
-as a semantic demonstration; its evidence remains only as audit history.
+A space is not a book. It is a containing region with membership and a
+destination. Books are distinct objects: only books have rounded-square
+occupied cells. Empty places remain non-interactive.
 
-V2 removes all rendered source artwork and logos, visible text, headings,
-cover-name captions, badges, bespoke colors, scores and content-dependent
-layout. Occupied cells are visually identical. Empty cells are equally
-generic but remain inert. The circular publisher-position cell is unmarked. It remains inert on the root shelf, but becomes the sole reactive parent-return link inside each collection. No separate top arrow is rendered.
+A color belongs to the **currently containing region**, not a title,
+genre, document, author, source artwork, Score, or permanent identity.
+Color is assigned only by structural sibling position. A book visited
+through one region inherits that region's color; the same book opened
+through another region carries that different context color while
+preserving the identical opaque object token.
 
-Every source-admitted work opens a geometrically identical three-leaf blank
-reader, irrespective of how many paragraphs or images the original contains.
-Leaves do not claim to represent the original work. They are identical test
-surfaces for back/forward/parent/hierarchy/page operations. Reader navigation
-icons are controls, not identity signals.
+The publisher position is a circular structural landmark. At root it
+is inert. Inside a region the same circle is the sole reactive way to
+return to the containing Bookshelf; no separate arrow is emitted.
 
-## What remains
+### What the fixture contains
 
-The Fountain Press renderer constructs the grid itself (not a new frontend).
-The *hidden* semantic model retains identity, parent collection, stable work
-source SHA-256, admitted destination, ordered membership, and returning to
-the source parent. Work membership is legitimately shared between Essays
-and First Readings; the two contexts do not overwrite one another. Accessible
-labels remain so this test doesn't gratuitously break assistive use.
+- Two anonymous containing regions with distinct colors and physical bounds.
+- Three distinct anonymous books; one book is present in both regions.
+- Four membership encounters, each with a reversible containing route.
+- Every book has three identical blank test leaves, unrelated to source.
+- Zero image tags, zero Score-derived cover/identity, zero authored prose,
+  no source publication names, and no source file dependency.
+- Opaque identifiers (e.g. `s-01` and `o-02`) are transport keys only.
+  They contain no editorial meaning and are not shown on the screen.
 
-In particular there are **zero img tags in the fixture**. The builder never
-receives cover images, Score references, alt text of plates, image counts or
-artistically interpreted material. Its only display rule is a uniform neutral
-cover and three content-independent blank pages.
+This is intentionally a **grammar test**. Passing routes and color propagation
+does not prove readers know what a particular anonymous book means.
 
-## Experimental question
+## Spatial grammar and behavior
 
-With the identity signals removed, can the Bookshelf *itself* communicate
-publication, collection, work, containment and reading? Is it possible to
-navigate it as a publication architecture rather than a gallery?
+Root: circular publisher landmark + colored, wide containing fields showing
+miniature membership silhouettes. The fields are not book-sized rectangles.
+Each area has an assigned hue and depicts only occupancy. Activating a field
+enters that space.
 
-The publisher circle owns the relationship to the parent: no second masthead
-arrow or invented icon points outside the grid. Its reactive state is a
-function of the current collection context, not of any Score or work image.
+Inside: that hue tints the spatial region, circular parent control, and
+small markings on its member book cells. Empty places are not books.
+Opening a book enters a neutral blank reader and retains the containing
+region's hue as a structural edge and progress mark.
 
-This is **not answered by a passing browser test**. The software can prove
-that two structurally identical tiles lead to different canonical collections,
-but it cannot prove users can recognize which collection is which. That
-perceptual distinction is the actual evaluation.
+The same anonymous object is encountered through both spaces; the object's
+token is constant while the parent destination and hue change. Browser
+Back, pointer swipes, keyboard navigation, invalid-address refusal, and
+return to the containing space remain operational.
 
-## Reproduce
+## Tests
 
-`npm run fixture:build` builds this *separate* source-owned fixture and
-reconstructs the publisher's source inventory.
+`npm run fixture:build` regenerates the static projection.
+`npm run fixture:check` checks anonymous structure, memberships, provenance
+tokens, no source asset strings, no image/text pollution, and color rules.
+`npm run fixture:browser` checks the full interaction across iPad portrait,
+iPad landscape, and phone portrait.
 
-`npm run fixture:check` verifies work identities, source fingerprints,
-parent relations and absence of any visible content assets.
+Reusable renderer: Fountain Press `render_bookshelf(spaces=...)` draws
+actual containing regions instead of smuggling space links into the list of
+books. Original publication mode and V38 source content are unchanged.
 
-`npm run fixture:browser` verifies iPad/phone navigation, Back, pages, touch
-and keyboard, unknown address refusal, zero cover content and hidden
-collection labels.
+## Editorial question
 
-Route: `/fixtures/semantic-visual-bookshelf/`
+Does the visible containment structure itself carry enough meaning?
+Color now conveys belonging/relationship, **not what the objects are**.
+Recognizability of a specific work is expressly *not* claimed. The user can
+assess whether the structure is legible on a physical iPad.
 
-This route is a disposable WLAN preview, never a published edition. Source
-essays, original artwork, existing V38 routes and public estate remain intact.
-Native iPad Safari visual review and semantic interpretation are pending.
+Preview route: `/fixtures/semantic-visual-bookshelf/` (WLAN, noindex).

@@ -1,83 +1,69 @@
 #!/usr/bin/env python3
-"""Contract test: meaning must survive total removal of artwork and prose."""
+"""Verify the conceptual, name-free Bookshelf grammar."""
 from pathlib import Path
-import hashlib, json
-
+import hashlib,json
 ROOT=Path(__file__).resolve().parents[1]
-SITE=ROOT/"site"
+OUT=ROOT/"site/fixtures/semantic-visual-bookshelf"
 BASE="/fixtures/semantic-visual-bookshelf/"
-OUT=SITE/BASE.lstrip("/")
-
-def sha(path):
-    return hashlib.sha256(path.read_bytes()).hexdigest()
-
+def digest(key):
+    return hashlib.sha256(("structural-bookshelf:anonymous:"+key).encode()).hexdigest()
 def check():
-    m=json.loads((OUT/"fixture.json").read_text())
-    assert m["schema"]=="fountain.press.semantic-structural-ablation.v2"
-    assert m["published"] is False
-    assert m["displayPolicy"]==dict(
-        visibleImages=0,visibleText=0,coverTitles=0,sourceImageDependence=False,
-        leafCount=3,leafCountIndependentOfSource=True)
-    assert m["sourceManifests"]==dict(
-        essaysSHA256=sha(SITE/"essays/edition-manifest.json"),
-        firstReadingsSHA256=sha(SITE/"collections/first-readings/collection.json"))
-    assert [c["id"] for c in m["collections"]]==["essays","first-readings"]
-    assert [len(c["works"]) for c in m["collections"]]==[3,1]
-    assert len(m["encounters"])==4
-    source=json.loads((SITE/"essays/edition-manifest.json").read_text())
-    work_by_id={w["id"]:w for w in source["essays"]}
-    assert len(work_by_id)==3
-    assert [e["workId"] for e in m["encounters"] if e["collection"]=="essays"]==source["readingOrder"]
-    first=json.loads((SITE/"collections/first-readings/collection.json").read_text())
-    assert [e["workId"] for e in m["encounters"] if e["collection"]=="first-readings"]==[first["works"][0]["workId"]]
-    for e in m["encounters"]:
-        work=work_by_id[e["workId"]]
-        assert e["sourceSHA256"]==work["sourceSHA256"]==sha(SITE/work["sourcePath"])
-        assert e["testLeaves"]==3
-        assert e["parent"]==BASE+"collections/"+e["collection"]+"/"
-        page=(SITE/e["route"].lstrip("/")/"index.html").read_text()
-        assert 'data-work-id="'+e["workId"]+'"' in page
-        assert 'data-source-sha256="'+e["sourceSHA256"]+'"' in page
-        assert 'data-collection-id="'+e["collection"]+'"' in page
-        assert page.count('class="visual-page"')==3
-        assert 'href="'+e["parent"]+'#work-'+e["workId"]+'"' in page
-        assert 'id="visual-next"' in page and 'id="visual-previous"' in page
-        assert 'data-page-count="3"' in page
-        assert not any(t in page for t in ('<img','<article','data-asset-sha256','<h1','essay-prose'))
-    for c in m["collections"]:
-        html=(SITE/c["path"].lstrip("/")/"index.html").read_text()
-        assert 'data-collection-id="'+c["id"]+'"' in html
-        assert html.count('class="shelf-book"')==len(c["works"])
-        assert html.count('class="shelf-cover shelf-cover-unmarked"')==len(c["works"])
-        assert html.count('class="bookshelf-empty" aria-hidden="true"')==20
-        assert html.count('class="publisher-circle-return" href="'+BASE+'"')==1
-        assert html.count('class="bookshelf-brand fc-identity-circle publisher-circle-action"')==1
-        assert 'bookshelf-collection-masthead"><a' not in html
-        assert '← FOUNTAIN COACH' not in html
-        assert html.count('href="'+BASE+'"')==1
+    g=json.loads((OUT/"fixture.json").read_text())
+    assert g["schema"]=="fountain.press.spatial-bookshelf.fixture.v4"
+    assert g["published"] is False
+    assert g["source"].startswith("anonymous structural experiment")
+    assert g["displayPolicy"]==dict(visibleImages=0,visibleText=0,sourceContent=False,
+                                    coloredBy="containing-space-position",leafCount=3)
+    assert [x["id"] for x in g["objects"]]==["o-01","o-02","o-03"]
+    assert {x["id"]:x["token"] for x in g["objects"]}=={x:digest(x) for x in ("o-01","o-02","o-03")}
+    assert [(x["id"],x["position"],x["members"]) for x in g["spaces"]]==[
+        ("s-01",0,["o-01","o-02","o-03"]),
+        ("s-02",1,["o-02"])]
+    assert len(g["encounters"])==4
     root=(OUT/"index.html").read_text()
-    assert root.count('class="shelf-book"')==2
-    assert root.count('class="shelf-cover shelf-cover-unmarked"')==2
-    assert root.count('class="bookshelf-empty" aria-hidden="true"')==20
+    assert root.count('class="shelf-space-item"')==2
+    assert root.count('class="shelf-space"')==2
+    assert root.count('class="shelf-book"')==0
+    assert root.count('class="shelf-space-member"')==4
+    assert root.count('class="shelf-space-vacancy"')==4
+    assert root.count('class="bookshelf-empty"')==0
+    assert 'data-space-ordinal="0"' in root and 'data-space-ordinal="1"' in root
     assert 'class="publisher-circle-return"' not in root
-    assert 'publisher-circle-action' not in root
     assert root.count('class="bookshelf-brand fc-identity-circle"')==1
-    for p in OUT.rglob("index.html"):
-        page=p.read_text()
-        assert '<img' not in page and 'shelf-cover-name' not in page
-        assert 'data-asset-sha256' not in page
-        assert 'src="/essays' not in page and 'alt="Original' not in page
-        assert '<p>First' not in page and '<h2>' not in page
-    assert not any(k in m for k in ("images","arts","coverArtwork","covers"))
+    for space in g["spaces"]:
+        path=OUT/"spaces"/space["id"]/"index.html"
+        html=path.read_text()
+        assert 'data-space-position="'+str(space["position"])+'"' in html
+        assert 'data-collection-id="'+space["id"]+'"' in html
+        assert html.count('class="shelf-book"')==len(space["members"])
+        assert html.count('class="bookshelf-empty"')==20
+        assert 'class="publisher-circle-return" href="'+BASE+'"' in html
+        assert 'bookshelf-collection-masthead"><a' not in html
+        assert html.count('class="shelf-space-item"')==0
+        for item in space["members"]:
+            assert 'data-book-id="'+item+'"' in html
+    for encounter in g["encounters"]:
+        key=encounter["object"]
+        space=encounter["space"]
+        assert encounter["token"]==digest(key)
+        assert encounter["parent"]==BASE+"spaces/"+space+"/"
+        assert encounter["route"]==encounter["parent"]+"objects/"+key+"/"
+        html=(ROOT/"site"/encounter["route"].lstrip("/")/"index.html").read_text()
+        assert 'data-object-id="'+key+'"' in html
+        assert 'data-space-id="'+space+'"' in html
+        assert 'data-space-position="'+str(encounter["position"])+'"' in html
+        assert 'data-object-token="'+digest(key)+'"' in html
+        assert html.count('class="visual-page"')==3
+        assert 'href="'+encounter["parent"]+'#work-'+key+'"' in html
+    assert sorted([x["space"] for x in g["encounters"] if x["object"]=="o-02"])==["s-01","s-02"]
+    for file in OUT.rglob("index.html"):
+        html=file.read_text().lower()
+        for prohibited in ("<img","essays","teatro","score","first readings","work-cover"):
+            assert prohibited not in html,(file,prohibited)
+    assert not (OUT/"collections").exists()
     css=(OUT/"visual.css").read_text()
-    assert ".shelf-cover-unmarked" in css and ".visual-page" in css
-    js=(OUT/"visual-reader.js").read_text()
-    assert "history.pushState" in js and "popstate" in js and "pointerup" in js
-    assert len({e["route"] for e in m["encounters"]})==4
-    duplicated=[e for e in m["encounters"] if e["workId"]=="teatro-an-unfinished-composition"]
-    assert len(duplicated)==2 and duplicated[0]["sourceSHA256"]==duplicated[1]["sourceSHA256"]
-    assert duplicated[0]["parent"]!=duplicated[1]["parent"]
-    print("STRUCTURAL_BOOKSHELF_ABLATION_PASS: zero source images, zero visible prose, identical 3-page neutral reader, 2 collections, 4 context-bound encounters")
-
-if __name__=="__main__":
-    check()
+    assert "--scope-zero:#357f7d" in css and "--scope-one:#b66e48" in css
+    assert ".structural-spaces-state .shelf-spaces" in css
+    assert '.visual-reader[data-space-position="0"]' in css
+    print("SPATIAL_BOOKSHELF_PASS 2 containing fields 3 anonymous books 4 memberships; color follows scope, no names or artwork")
+if __name__=="__main__":check()

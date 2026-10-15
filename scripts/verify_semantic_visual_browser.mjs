@@ -1,150 +1,128 @@
 #!/usr/bin/env node
-/* Browser proof for the original-image semantic Bookshelf fixture. */
+/* Test anonymous space, membership, inherited color, and navigation. */
 import fs from "node:fs";
 import path from "node:path";
-const BASE = process.env.VISUAL_FIXTURE_BASE || "http://127.0.0.1:8199";
-const ROUTE = "/fixtures/semantic-visual-bookshelf/";
-const CDP = process.env.CHROME_CDP || "http://127.0.0.1:9237";
-const OUTPUT = process.env.VISUAL_FIXTURE_CAPTURE || "/tmp/semantic-visual-bookshelf";
-fs.mkdirSync(OUTPUT, { recursive: true });
-const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
-const slug = "reframe-and-the-business-value-of-the-estate";
-const teatro = "teatro-an-unfinished-composition";
-const workSelector = id => '[data-book-id="' + id + '"] a.shelf-book';
-async function scenario(label, width, height) {
-  const tab = await (await fetch(CDP + "/json/new?about:blank", { method: "PUT" })).json();
-  const ws = new WebSocket(tab.webSocketDebuggerUrl);
-  await new Promise(resolve => ws.addEventListener("open", resolve, { once: true }));
-  let counter = 0;
-  const pending = new Map();
-  ws.addEventListener("message", event => {
-    const message = JSON.parse(event.data);
-    if (pending.has(message.id)) {
-      pending.get(message.id)(message);
-      pending.delete(message.id);
-    }
-  });
-  const command = (method, params = {}) => new Promise(resolve => {
-    const id = ++counter;
-    pending.set(id, resolve);
-    ws.send(JSON.stringify({ id, method, params }));
-  });
-  const evaluate = async expression => {
-    const response = await command("Runtime.evaluate", { expression, returnByValue: true, awaitPromise: true });
-    if (response.result.exceptionDetails) throw new Error(JSON.stringify(response.result.exceptionDetails));
-    return response.result.result.value;
-  };
-  const wait = async expression => {
-    for (let attempt = 0; attempt < 90; attempt++) {
-      if (await evaluate(expression)) return;
-      await sleep(150);
-    }
-    throw new Error("Wait timed out: " + expression);
-  };
-  const navigate = async url => {
-    await command("Page.navigate", { url: BASE + url });
-    await wait("location.pathname===" + JSON.stringify(url.split("#")[0]) + " && document.readyState==='complete'");
-  };
-  const click = async selector => {
-    // An HTTP navigation may report its new route before layout has a hit target.
-    await wait("(()=>{const r=document.querySelector(" + JSON.stringify(selector) + ")?.getBoundingClientRect();return !!r&&r.width>=16&&r.height>=16})()");
-    const rect = await evaluate("document.querySelector(" + JSON.stringify(selector) + ")?.getBoundingClientRect().toJSON()");
-    if (!rect || rect.width < 16 || rect.height < 16) throw new Error("Invisible click target " + selector);
-    const x = rect.x + rect.width / 2, y = rect.y + rect.height / 2;
-    await command("Input.dispatchMouseEvent", { type: "mousePressed", x, y, button: "left", clickCount: 1 });
-    await command("Input.dispatchMouseEvent", { type: "mouseReleased", x, y, button: "left", clickCount: 1 });
-  };
-  const key = async key => {
-    const code = key === "ArrowRight" ? 39 : key === "ArrowLeft" ? 37 : key === "Enter" ? 13 : 27;
-    await command("Input.dispatchKeyEvent", { type: "keyDown", key, code: key, windowsVirtualKeyCode: code });
-    await command("Input.dispatchKeyEvent", { type: "keyUp", key, code: key, windowsVirtualKeyCode: code });
-  };
-  const shot = async step => {
-    const result = await command("Page.captureScreenshot", { format: "png", captureBeyondViewport: false });
-    fs.writeFileSync(path.join(OUTPUT, label + "-" + step + ".png"), Buffer.from(result.result.data, "base64"));
-  };
-  const ready = selector => "!!document.querySelector(" + JSON.stringify(selector) + ")";
-  try {
-    await command("Page.enable");
-    await command("Runtime.enable");
-    await command("Emulation.setDeviceMetricsOverride", { width, height, deviceScaleFactor: 1, mobile: width < 600 });
-    await navigate(ROUTE);
-    await wait(ready(".shelf-book"));
-    const root = await evaluate('({books:document.querySelectorAll(".shelf-book").length,empties:document.querySelectorAll(".bookshelf-empty").length,logo:!!document.querySelector(".bookshelf-brand img"),art:document.querySelectorAll("img").length,emptyCovers:[...document.querySelectorAll(".shelf-cover")].every(x=>x.childElementCount===0 && !x.textContent.trim()),rootCircleLink:!!document.querySelector(".publisher-circle-return"),labels:document.querySelectorAll(".shelf-cover-name").length,overflow:document.documentElement.scrollWidth>innerWidth})');
-    if (root.books !== 2 || root.empties !== 20 || root.logo || root.art || !root.emptyCovers || root.rootCircleLink || root.labels || root.overflow) throw new Error("Root visual shelf invalid " + JSON.stringify(root));
-    await shot("estate");
-    await click(workSelector("essays"));
-    await wait('document.body?.dataset.collectionId==="essays"');
-    await wait(ready(".shelf-book"));
-    // Remote HTTP can expose the DOM before the external style has loaded.
-    // Do not accept default CSS as evidence of a visible semantic label.
-    await wait('document.querySelector(".bookshelf-collection-masthead")?.getBoundingClientRect().width<=1 && !!document.querySelector(".publisher-circle-return") && getComputedStyle(document.querySelector(".publisher-circle-return")).cursor==="pointer"');
-    const essays = await evaluate('({books:document.querySelectorAll(".shelf-book").length,empties:document.querySelectorAll(".bookshelf-empty").length,collection:document.body.dataset.collectionId,art:document.querySelectorAll("img").length,unmarked:[...document.querySelectorAll(".shelf-cover")].every(x=>x.childElementCount===0),headingWidth:document.querySelector(".bookshelf-collection-masthead")?.getBoundingClientRect().width,circleParent:document.querySelector(".publisher-circle-return")?.getAttribute("href"),circleCursor:getComputedStyle(document.querySelector(".publisher-circle-return")).cursor,extraArrow:!!document.querySelector(".bookshelf-collection-masthead a"),labels:document.querySelectorAll(".shelf-cover-name").length})');
-    if (essays.books !== 3 || essays.empties !== 20 || essays.labels || essays.art || !essays.unmarked || essays.headingWidth>1 || essays.circleParent!==ROUTE || essays.circleCursor!=="pointer" || essays.extraArrow) throw new Error("Essay collection invalid " + JSON.stringify(essays));
-    await shot("essays");
-    await click(".publisher-circle-return");
-    await wait('location.pathname===' + JSON.stringify(ROUTE) + ' && !document.body.dataset.collectionId');
-    await wait('document.querySelector("[data-book-id=essays] a.shelf-book")?.getBoundingClientRect().width>16');
-    await click(workSelector("essays"));
-    await wait('document.body?.dataset.collectionId==="essays"');
-    await wait(ready(".publisher-circle-return"));
-    await click(workSelector(slug));
-    await wait('document.body?.dataset.workId===' + JSON.stringify(slug));
-    await wait(ready(".visual-page:not([hidden])"));
-    const first = await evaluate('({count:document.querySelectorAll(".visual-page").length,shown:document.querySelectorAll(".visual-page:not([hidden])").length,source:document.body.dataset.sourceSha256,collection:document.body.dataset.collectionId,back:document.querySelector(".visual-return")?.getAttribute("href"),prose:document.querySelectorAll("article,.book-prose,.shelf-cover-name,img").length,overflow:document.documentElement.scrollWidth>innerWidth})');
-    if (first.count !== 3 || first.shown !== 1 || first.collection !== "essays" ||
-        !first.back.endsWith("/collections/essays/#work-" + slug) || first.prose || first.overflow ||
-        !/^[a-f0-9]{64}$/.test(first.source)) throw new Error("Visual reader invalid " + JSON.stringify(first));
-    await shot("reader-first");
-    await key("ArrowRight");
-    await wait('location.hash==="#plate-2" && document.querySelector("#plate-2")?.hidden===false');
-    await wait(ready(".visual-page:not([hidden])"));
-    await shot("reader-second");
-    await evaluate("history.back()");
-    await wait('document.querySelector("#plate-1")?.hidden===false && location.hash===""');
-    const box = await evaluate('document.querySelector("#visual-book").getBoundingClientRect().toJSON()');
-    const y = box.y + box.height / 2, start = Math.min(box.right - 35, box.x + box.width * 0.75);
-    await command("Input.dispatchMouseEvent", { type: "mousePressed", x: start, y, button: "left", clickCount: 1 });
-    await command("Input.dispatchMouseEvent", { type: "mouseMoved", x: start - 110, y, button: "left" });
-    await command("Input.dispatchMouseEvent", { type: "mouseReleased", x: start - 130, y, button: "left", clickCount: 1 });
-    await wait('location.hash==="#plate-2"');
-    await click("#visual-next");
-    await wait('location.hash==="#plate-3" && document.querySelector("#visual-next").disabled');
-    await navigate(ROUTE + "collections/essays/works/" + slug + "/#plate-99");
-    await wait('document.querySelector("#visual-book")?.dataset.invalid==="true"');
-    const invalid = await evaluate('({shown:document.querySelectorAll(".visual-page:not([hidden])").length,next:document.querySelector("#visual-next").disabled,prev:document.querySelector("#visual-previous").disabled})');
-    if (invalid.shown || !invalid.next || !invalid.prev) throw new Error("Unknown plate silently admitted");
-    await navigate(ROUTE + "collections/essays/works/" + slug + "/#plate-3");
-    await wait('document.querySelector("#plate-3")?.hidden===false');
-    await key("Escape");
-    await wait('document.body?.dataset.collectionId==="essays" && location.hash==="#work-' + slug + '"');
-    await navigate(ROUTE);
-    await wait(ready(".shelf-book"));
-    await click(workSelector("first-readings"));
-    await wait('document.body?.dataset.collectionId==="first-readings"');
-    await wait(ready(".shelf-book"));
-    await shot("first-readings");
-    await click(workSelector(teatro));
-    await wait('document.body?.dataset.workId===' + JSON.stringify(teatro));
-    await wait(ready(".visual-page:not([hidden])"));
-    const hearing = await evaluate('({collection:document.body.dataset.collectionId,count:document.querySelectorAll(".visual-page").length,source:document.body.dataset.sourceSha256,parent:document.querySelector(".visual-return")?.getAttribute("href"),next:document.querySelector("#visual-next").disabled})');
-    if (hearing.collection !== "first-readings" || hearing.count !== 3 || hearing.next ||
-        !hearing.parent.endsWith("/collections/first-readings/#work-" + teatro)) throw new Error("Nested identity invalid " + JSON.stringify(hearing));
-    await shot("first-reading-visual");
-    await click(".visual-return");
-    await wait('document.body?.dataset.collectionId==="first-readings" && location.hash==="#work-' + teatro + '"');
-    await wait(ready(".publisher-circle-return"));
-    await evaluate('document.querySelector(".publisher-circle-return").focus()');
-    if (!await evaluate('document.activeElement?.classList.contains("publisher-circle-return")')) throw Error("Publisher circle must be keyboard focusable");
-    await key("Enter");
-    await wait('location.pathname===' + JSON.stringify(ROUTE) + ' && !document.body.dataset.collectionId');
-    if (await evaluate('!!document.querySelector(".publisher-circle-return")')) throw Error("Publisher circle must be inert at the root");
-    console.log("STRUCTURAL_BOOKSHELF_BROWSER_PASS", label, JSON.stringify({ root, essays, first, invalid, hearing, history: true, keyboard: true, pointer: true }));
-  } finally {
-    ws.close();
-    await fetch(CDP + "/json/close/" + tab.id).catch(() => {});
+const BASE=process.env.VISUAL_FIXTURE_BASE||"http://127.0.0.1:8199";
+const ROUTE="/fixtures/semantic-visual-bookshelf/";
+const CDP=process.env.CHROME_CDP||"http://127.0.0.1:9237";
+const OUTPUT=process.env.VISUAL_FIXTURE_CAPTURE||"/tmp/spatial-bookshelf";
+fs.mkdirSync(OUTPUT,{recursive:true});
+const delay=ms=>new Promise(r=>setTimeout(r,ms));
+const book=id=>'[data-book-id="'+id+'"] a.shelf-book';
+const space=id=>'[data-space-id="'+id+'"] a.shelf-space';
+async function scenario(label,width,height){
+ const tab=await (await fetch(CDP+"/json/new?about:blank",{method:"PUT"})).json();
+ const ws=new WebSocket(tab.webSocketDebuggerUrl);
+ await new Promise(r=>ws.addEventListener("open",r,{once:true}));
+ let seq=0;
+ const pending=new Map();
+ ws.addEventListener("message",e=>{
+  const response=JSON.parse(e.data);
+  if(pending.has(response.id)){
+   pending.get(response.id)(response);pending.delete(response.id);
   }
+ });
+ const cmd=(method,params={})=>new Promise(r=>{
+  const id=++seq;pending.set(id,r);
+  ws.send(JSON.stringify({id,method,params}));
+ });
+ const ev=async expression=>{
+  const x=await cmd("Runtime.evaluate",{expression,returnByValue:true,awaitPromise:true});
+  if(x.result.exceptionDetails)throw Error(JSON.stringify(x.result.exceptionDetails));
+  return x.result.result.value;
+ };
+ const wait=async condition=>{
+  for(let n=0;n<90;n++){if(await ev(condition))return;await delay(150)}
+  throw Error("Wait timed out: "+condition);
+ };
+ const nav=async route=>{
+  await cmd("Page.navigate",{url:BASE+route});
+  await wait("location.pathname==="+JSON.stringify(route.split("#")[0])+" && document.readyState==='complete'");
+ };
+ const hit=sel=>"(()=>{const r=document.querySelector("+JSON.stringify(sel)+")?.getBoundingClientRect();return !!r&&r.width>15&&r.height>15})()";
+ const click=async sel=>{
+  await wait(hit(sel));
+  await ev("document.querySelector("+JSON.stringify(sel)+").scrollIntoView({block:'center',inline:'nearest',behavior:'instant'})");
+  await wait(hit(sel));
+  const r=await ev("document.querySelector("+JSON.stringify(sel)+").getBoundingClientRect().toJSON()");
+  const x=r.x+r.width/2,y=r.y+r.height/2;
+  await cmd("Input.dispatchMouseEvent",{type:"mousePressed",x,y,button:"left",clickCount:1});
+  await cmd("Input.dispatchMouseEvent",{type:"mouseReleased",x,y,button:"left",clickCount:1});
+ };
+ const key=async name=>{
+  const k=name==="Enter"?13:name==="ArrowRight"?39:name==="ArrowLeft"?37:27;
+  await cmd("Input.dispatchKeyEvent",{type:"keyDown",key:name,code:name,windowsVirtualKeyCode:k});
+  await cmd("Input.dispatchKeyEvent",{type:"keyUp",key:name,code:name,windowsVirtualKeyCode:k});
+ };
+ const shot=async name=>{
+  const r=await cmd("Page.captureScreenshot",{format:"png",captureBeyondViewport:false});
+  fs.writeFileSync(path.join(OUTPUT,label+"-"+name+".png"),Buffer.from(r.result.data,"base64"));
+ };
+ try{
+  await cmd("Page.enable");await cmd("Runtime.enable");
+  await cmd("Emulation.setDeviceMetricsOverride",{width,height,deviceScaleFactor:1,mobile:width<600});
+  await nav(ROUTE);
+  await wait(hit(space("s-01")));await wait(hit(space("s-02")));
+  await wait('getComputedStyle(document.querySelector("[data-space-id=s-01] .shelf-space")).borderLeftWidth==="7px"');
+  const root=await ev('(()=>{const a=[...document.querySelectorAll(".shelf-space")];return {spaces:a.length,books:document.querySelectorAll(".shelf-book").length,images:document.querySelectorAll("img").length,rootBack:!!document.querySelector(".publisher-circle-return"),members:a.map(x=>x.querySelectorAll(".shelf-space-member").length),colors:a.map(x=>getComputedStyle(x).borderLeftColor),ratios:a.map(x=>+(x.getBoundingClientRect().width/x.getBoundingClientRect().height).toFixed(2)),overflow:document.documentElement.scrollWidth>innerWidth+1}})()');
+  if(root.spaces!==2||root.books||root.images||root.rootBack||
+     root.members.join(",")!=="3,1"||root.colors[0]===root.colors[1]||
+     root.ratios.some(x=>x<=1)||root.overflow)throw Error("Containing fields invalid "+JSON.stringify(root));
+  await shot("containing-fields");
+  await click(space("s-01"));
+  await wait('document.body?.dataset.spacePosition==="0" && document.body?.dataset.collectionId==="s-01"');
+  await wait(hit(book("o-02")));
+  const one=await ev('({books:document.querySelectorAll(".shelf-book").length,empties:document.querySelectorAll(".bookshelf-empty").length,color:getComputedStyle(document.querySelector(".bookshelf-paper")).borderLeftColor,parent:document.querySelector(".publisher-circle-return")?.getAttribute("href"),extraArrow:!!document.querySelector(".bookshelf-collection-masthead a"),overflow:document.documentElement.scrollWidth>innerWidth+1})');
+  if(one.books!==3||one.empties!==20||one.color!==root.colors[0]||one.parent!==ROUTE||one.extraArrow||one.overflow)throw Error("Scope 0 invalid "+JSON.stringify(one));
+  await shot("inside-space-0");
+  await click(book("o-02"));
+  await wait('document.body?.dataset.objectId==="o-02" && document.body?.dataset.spaceId==="s-01"');
+  await wait('getComputedStyle(document.querySelector(".visual-page")).borderLeftWidth==="7px"');
+  const readerOne=await ev('({token:document.body.dataset.objectToken,color:getComputedStyle(document.querySelector(".visual-page")).borderLeftColor,parent:document.querySelector(".visual-return").getAttribute("href"),leaves:document.querySelectorAll(".visual-page").length,images:document.querySelectorAll("img").length})');
+  if(readerOne.color!==root.colors[0]||readerOne.leaves!==3||readerOne.images||!readerOne.parent.endsWith("/spaces/s-01/#work-o-02"))throw Error("Reader failed membership "+JSON.stringify(readerOne));
+  await shot("blank-reader-0");
+  await key("ArrowRight");
+  await wait('location.hash==="#plate-2" && !document.querySelector("#plate-2").hidden');
+  await shot("second-blank-leaf");
+  await ev("history.back()");
+  await wait('location.hash==="" && !document.querySelector("#plate-1").hidden');
+  const box=await ev('document.querySelector("#visual-book").getBoundingClientRect().toJSON()');
+  const x=box.x+box.width*.75,y=box.y+box.height*.5;
+  await cmd("Input.dispatchMouseEvent",{type:"mousePressed",x,y,button:"left",clickCount:1});
+  await cmd("Input.dispatchMouseEvent",{type:"mouseMoved",x:x-105,y,button:"left"});
+  await cmd("Input.dispatchMouseEvent",{type:"mouseReleased",x:x-135,y,button:"left",clickCount:1});
+  await wait('location.hash==="#plate-2"');
+  await nav(ROUTE+"spaces/s-01/objects/o-02/#plate-99");
+  await wait('document.querySelector("#visual-book")?.dataset.invalid==="true"');
+  if(await ev('document.querySelectorAll(".visual-page:not([hidden])").length'))throw Error("Unknown leaf admitted");
+  await nav(ROUTE+"spaces/s-01/objects/o-02/#plate-3");
+  await wait('!document.querySelector("#plate-3").hidden');
+  await key("Escape");
+  await wait('document.body?.dataset.collectionId==="s-01" && location.hash==="#work-o-02"');
+  await click(".publisher-circle-return");
+  await wait('location.pathname==='+JSON.stringify(ROUTE)+' && !document.body.dataset.collectionId');
+  await click(space("s-02"));
+  await wait('document.body?.dataset.spacePosition==="1" && document.body?.dataset.collectionId==="s-02"');
+  await wait(hit(book("o-02")));
+  const two=await ev('({books:document.querySelectorAll(".shelf-book").length,color:getComputedStyle(document.querySelector(".bookshelf-paper")).borderLeftColor})');
+  if(two.books!==1||two.color!==root.colors[1])throw Error("Scope 1 invalid "+JSON.stringify(two));
+  await shot("inside-space-1");
+  await click(book("o-02"));
+  await wait('document.body?.dataset.objectId==="o-02" && document.body?.dataset.spaceId==="s-02"');
+  const readerTwo=await ev('({token:document.body.dataset.objectToken,color:getComputedStyle(document.querySelector(".visual-page")).borderLeftColor,parent:document.querySelector(".visual-return").getAttribute("href")})');
+  if(readerOne.token!==readerTwo.token||readerTwo.color!==root.colors[1]||
+     !readerTwo.parent.endsWith("/spaces/s-02/#work-o-02"))throw Error("Shared object identity/context invalid "+JSON.stringify(readerTwo));
+  await shot("blank-reader-1");
+  await click(".visual-return");
+  await wait('document.body?.dataset.collectionId==="s-02" && location.hash==="#work-o-02"');
+  await ev('document.querySelector(".publisher-circle-return").focus()');
+  await key("Enter");
+  await wait('location.pathname==='+JSON.stringify(ROUTE)+' && !document.body.dataset.collectionId');
+  if(await ev('!!document.querySelector(".publisher-circle-return")'))throw Error("Root circle must be inert");
+  console.log("SPATIAL_BOOKSHELF_BROWSER_PASS",label,JSON.stringify({root,one,two,readerOne,readerTwo,history:true,pointer:true,keyboard:true}));
+ }finally{
+  ws.close();
+  await fetch(CDP+"/json/close/"+tab.id).catch(()=>{});
+ }
 }
-for (const shape of [["ipad-portrait", 820, 1180], ["ipad-landscape", 1180, 820], ["phone-portrait", 390, 844]]) {
-  await scenario(...shape);
-}
+for(const shape of [["ipad-portrait",820,1180],["ipad-landscape",1180,820],["phone-portrait",390,844]])await scenario(...shape);

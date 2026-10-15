@@ -87,3 +87,72 @@ body.visual-reader{margin:0;min-height:100svh;background:#dfd9ce;color:#292520;
 @media(prefers-reduced-motion:reduce){
  .neutral-ablation .publisher-circle-action{transition:none}
 }
+
+
+/* Spatial grammar: a containing space is a field of related books,
+   never a fourth book-shaped tile. Colors code scope/parentage, not names. */
+:root{--scope-zero:#357f7d;--scope-one:#b66e48}
+.structural-spaces-state .bookshelf-paper{
+ display:flex;align-items:flex-start;flex-wrap:wrap;gap:clamp(16px,3vw,30px)}
+.structural-spaces-state .bookshelf-brand{flex:0 0 clamp(92px,13vw,150px)}
+.structural-spaces-state .bookshelf-books{display:none}
+.structural-spaces-state .shelf-spaces{
+ display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+ flex:1 1 560px;gap:clamp(16px,3vw,30px);list-style:none;padding:0;margin:0;min-width:0}
+.structural-spaces-state .shelf-space-item{min-width:0;--scope-color:var(--scope-zero)}
+.structural-spaces-state .shelf-space-item:nth-child(2){--scope-color:var(--scope-one)}
+.structural-spaces-state .shelf-space{display:flex;min-height:230px;align-items:center;
+ padding:clamp(16px,2vw,24px);border-left:7px solid var(--scope-color);
+ border-bottom:1px solid color-mix(in srgb,var(--scope-color) 35%,transparent);
+ background:color-mix(in srgb,var(--scope-color) 10%,transparent);
+ text-decoration:none;color:inherit;outline-offset:4px}
+.structural-spaces-state .shelf-space:focus-visible{outline:2px solid var(--scope-color)}
+.structural-spaces-state .shelf-space-members{
+ display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:clamp(9px,1vw,14px);width:100%;max-width:210px}
+.structural-spaces-state .shelf-space-member,
+.structural-spaces-state .shelf-space-vacancy{
+ display:block;aspect-ratio:1;border-radius:22.37%;
+ border:1px solid color-mix(in srgb,var(--scope-color) 30%,#ded7ca)}
+.structural-spaces-state .shelf-space-member{background:#f7f2e8;
+ box-shadow:1px 4px 9px #352c2714}
+.structural-spaces-state .shelf-space-vacancy{background:transparent;
+ border-style:dashed;opacity:.7}
+@media(hover:hover){
+ .structural-spaces-state .shelf-space:hover{background:color-mix(in srgb,var(--scope-color) 16%,transparent)}
+}
+.neutral-ablation.collection-state[data-space-position="0"],
+.visual-reader[data-space-position="0"]{--scope-color:var(--scope-zero)}
+.neutral-ablation.collection-state[data-space-position="1"],
+.visual-reader[data-space-position="1"]{--scope-color:var(--scope-one)}
+.neutral-ablation.collection-state .bookshelf-paper{
+ padding:clamp(10px,2vw,18px);
+ background:color-mix(in srgb,var(--scope-color) 7%,transparent);
+ border-left:7px solid var(--scope-color)}
+.neutral-ablation.collection-state .bookshelf-brand.fc-identity-circle{
+ border-color:var(--scope-color)}
+.neutral-ablation.collection-state .shelf-cover-unmarked{
+ border-color:color-mix(in srgb,var(--scope-color) 30%,#ded7ca);
+ position:relative}
+.neutral-ablation.collection-state .shelf-cover-unmarked::after{
+ content:"";position:absolute;bottom:10%;height:3px;width:48%;
+ background:var(--scope-color);opacity:.7;border-radius:3px}
+.visual-reader[data-space-position] .visual-page{border-left:7px solid var(--scope-color)}
+.visual-reader[data-space-position] .visual-track .visual-progress-fill{
+ background:var(--scope-color)}
+.visual-reader[data-space-position] .visual-return:focus-visible{
+ outline-color:var(--scope-color)}
+@media(max-width:760px){
+ .structural-spaces-state .bookshelf-paper{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+ .structural-spaces-state .bookshelf-brand{grid-column:1/-1;justify-self:start;
+ width:clamp(90px,26vw,140px)}
+ .structural-spaces-state .shelf-spaces{grid-column:1/-1;display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr))}
+ .structural-spaces-state .shelf-space{min-height:170px;padding:12px}
+ .structural-spaces-state .shelf-space-members{max-width:160px}
+}
+@media(max-width:460px){
+ .structural-spaces-state .shelf-spaces{grid-template-columns:1fr}
+ .structural-spaces-state .shelf-space{min-height:125px}
+ .structural-spaces-state .shelf-space-members{grid-template-columns:repeat(4,minmax(0,1fr));max-width:none}
+}
