@@ -104,16 +104,56 @@ def build_catalogue(manifest):
  '''
 
 def build_estate_grid():
-    """One field, source-owned logo and three admitted cover thumbnails."""
-    items=(
-      ('fountain-coach','/editions/essays/','fountain-coach-edition.png','Fountain Coach - Essays'),
-      ('first-reading',FIRST,'first-reading-ink.png','First Reading - Solstice'),
-      ('teatro',TEATRO,'teatro-score-memory-vector-human-condition.svg','Teatro - First Hearing'),
-    )
-    tiles=''.join('<li class="shelf-entry" data-edition-id="'+key+'"><a href="'+url+'" aria-label="Open '+escape(label,quote=True)+'"><span class="shelf-cover"><img src="/assets/estate-bookshelf/'+img+'" alt="" loading="eager" decoding="async"></span></a></li>' for key,url,img,label in items)
-    return '''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="color-scheme" content="light"><meta name="robots" content="noindex,nofollow"><meta http-equiv="Content-Security-Policy" content="default-src 'none';style-src 'self';img-src 'self';base-uri 'none';form-action 'none';frame-ancestors 'none'"><title>Fountain Coach - Editions</title><meta name="description" content="Fountain Coach editions: Essays, First Reading, Teatro."><link rel="icon" type="image/png" href="/assets/fountain-coach-logo-transparent.png"><link rel="stylesheet" href="/assets/estate-bookshelf.css"></head>
-<body class="estate-landing"><a class="skip-link" href="#editions">Skip to editions</a><main class="shelf-main" id="editions" aria-label="Fountain Coach estate editions"><ul class="shelf-grid"><li class="shelf-brand"><img src="/assets/fountain-coach-logo-transparent.png" alt="Fountain Coach - open hand and spring" width="124" height="124"></li>'''+tiles+'''</ul></main></body></html>
-'''
+    """Project the estate manifest through Fountain Press, not a second UI.
+
+    Edition routes live in the Git-owned estate registry. The three cover
+    images are locally admitted, source-owned assets, not generated art.
+    """
+    import shutil
+    from urllib.parse import urljoin
+
+    estate = json.loads((ROOT.parent / "estate/manifest.json").read_text())
+    fronts = sorted(estate["frontDoors"], key=lambda item: item["rank"])
+    assert [item["id"] for item in fronts] == ["fountain-coach", "first-reading", "teatro"]
+    press = ROOT.parent.parent / "fountain-press/runtime"
+    assert (press / "bookshelf.py").is_file() and (press / "bookshelf.css").is_file()
+    sys.path.insert(0, str(press))
+    from bookshelf import render_bookshelf
+
+    css = SITE / "assets/linotype/bookshelf.css"
+    css.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copyfile(press / "bookshelf.css", css)
+    assert "background:transparent;box-shadow:none;" in css.read_text()
+    artworks = {
+        "fountain-coach": "fountain-coach-edition.png",
+        "first-reading": "first-reading-ink.png",
+        "teatro": "teatro-score-memory-vector-human-condition.svg",
+    }
+    identities = {
+        "fountain-coach": ("Fountain Coach", "FOUNTAIN COACH · ESSAYS", "fountain", "wlan-proof"),
+        "first-reading": ("First Reading", "FIRST READING", "solstice", "public-live"),
+        "teatro": ("Teatro — First Hearing", "TEATRO · FIRST HEARING", "teatro", "wlan-proof"),
+    }
+    books = []
+    for front in fronts:
+        identity = front["id"]
+        title, edition, host, status = identities[identity]
+        if identity == "teatro":
+            # The edition opens its book, not another bookshelf at Teatro /.
+            reader = urljoin(front["url"], front["firstHearing"]["readerPath"].lstrip("/"))
+        else:
+            reader = front["entryEditionUrl"]
+        art = "/assets/estate-bookshelf/" + artworks[identity]
+        assert (SITE / art.lstrip("/")).is_file(), art
+        source_repo = ROOT.parent / ("solstice.fountain.coach" if identity == "first-reading" else
+                                     "teatro.fountain.coach" if identity == "teatro" else "fountain.coach")
+        revision = subprocess.check_output(["git", "-C", str(source_repo), "rev-parse", "HEAD"], text=True).strip()
+        books.append(dict(id=identity, title=title, author="Benedikt Eickhoff",
+                          edition=edition, reader=reader, cover_image=art,
+                          source_revision=revision, host=host, status=status))
+    return render_bookshelf(title="Fountain Coach", imprint="Fountain Coach",
+                            books=books, css_url="/assets/linotype/bookshelf.css",
+                            logo_url="/assets/fountain-coach-logo-transparent.png")
 
 def main():
  parser=argparse.ArgumentParser()

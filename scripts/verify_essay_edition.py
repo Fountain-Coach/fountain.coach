@@ -23,15 +23,26 @@ def check():
  catalogue=(SITE/"index.html").read_text()
  editions=(SITE/"editions/index.html").read_text()
  assert catalogue==editions,"Root must exactly mirror edition catalogue"
- assert 'class="shelf-grid"' in catalogue
- assert catalogue.count('class="shelf-entry"')==3
+ assert 'data-linotype-state="bookshelf"' in catalogue
+ assert 'class="bookshelf-paper"' in catalogue
+ assert catalogue.count('class="shelf-item"')==3
  assert catalogue.count('class="shelf-cover"')==3
- assert catalogue.count('class="shelf-brand"')==1
+ assert catalogue.count('class="bookshelf-brand"')==1
+ assert catalogue.count('class="shelf-book"')==3
  assert '<h1' not in catalogue and 'id="book-viewport"' not in catalogue
  assert 'class="instrument-slot"' not in catalogue
- assert all(url in catalogue for url in ('/editions/essays/',
-   'https://works.benedikt-eickhoff.de/solstice/editions/first-reading/',
-   'https://teatro.fountain.coach/'))
+ assert 'class="bookshelf-wordmark"' not in catalogue
+ assert 'class="shelf-miniature"' not in catalogue
+ assert 'class="shelf-item-caption"' not in catalogue
+ front={x['id']:x for x in json.loads((ROOT.parent/'estate/manifest.json').read_text())['frontDoors']}
+ expected=[front['fountain-coach']['entryEditionUrl'],
+           front['first-reading']['entryEditionUrl'],
+           front['teatro']['url'].rstrip('/')+front['teatro']['firstHearing']['readerPath']]
+ for href in expected:
+  assert 'href="'+href+'"' in catalogue,href
+ css=(SITE/'assets/linotype/bookshelf.css').read_bytes()
+ assert css==(ROOT.parent.parent/'fountain-press/runtime/bookshelf.css').read_bytes()
+ assert b'background:transparent;box-shadow:none;' in css
  detailed=(SITE/"editions/catalogue/index.html").read_text()
  assert 'class="edition-list"' in detailed
  assert '<h1>Editions<span>.</span></h1>' in detailed

@@ -50,9 +50,8 @@
 
 ## Edition grid root (15 October 2026)
 
-- The estate landing `/` and `/editions/` share one actual image-thumbnail grid,
-  inspired by the responsive grid density of instruments.fountain.coach but
-  never conflating MIDI2 instruments with authored book editions.
+- The estate landing `/` and `/editions/` share the genuine Fountain Press
+  Bookshelf implementation, never an independent or duplicated shelf UI.
 - The four first-row cells are the authentic Fountain Coach mark and the
   three admitted books: Essays, First Reading, Teatro. All images are
   original source-owned assets. No iOS app-icon treatments, empty slots,
