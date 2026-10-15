@@ -44,3 +44,11 @@ The parent path comes from the admitted collection model.
 The browser witnesses in this directory cover iPad portrait, landscape and
 phone portrait against WLAN staging. `release-receipt.json` records the
 release and test gates.
+
+## Live candidate evidence
+
+The active Ubuntu WLAN release is `20261015-publisher-circle-navigation-v3`.
+Its iPad/phone browser acceptance passed pointer and keyboard parent returns,
+no external top arrow, inert root circle, and the V38 regressions.
+`release-receipt.json` records the pinned two-repository release pair.
+Human iPad Safari judgement is intentionally not marked accepted.

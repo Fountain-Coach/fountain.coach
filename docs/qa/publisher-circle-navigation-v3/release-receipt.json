@@ -1,0 +1,36 @@
+{
+  "schema": "fountain.press.publisher-circle-navigation-proof.v1",
+  "release": "20261015-publisher-circle-navigation-v3",
+  "date": "2026-10-15",
+  "route": "/fixtures/semantic-visual-bookshelf/",
+  "address": "http://192.168.8.249:8180/fixtures/semantic-visual-bookshelf/",
+  "sourceOwner": "Fountain-Coach/fountain.coach",
+  "sourceCommit": "4376e1248cdf7dc2f36bb6c0b0b259d9d9f6edc1",
+  "rendererOwner": "Fountain-Coach/fountain-press",
+  "rendererCommit": "53d8710220ee0361290d943ab2e02f7b64c4476a",
+  "productionPublished": false,
+  "tests": {
+    "publisherCirclePointer": [
+      "ipad-portrait",
+      "ipad-landscape",
+      "phone-portrait"
+    ],
+    "publisherCircleKeyboardEnter": [
+      "ipad-portrait",
+      "ipad-landscape",
+      "phone-portrait"
+    ],
+    "topArrowAbsent": true,
+    "rootCircleInert": true,
+    "circleParentContext": true,
+    "noImages": true,
+    "noVisibleWorkTitles": true,
+    "originalV38Regression": [
+      "ipad-portrait",
+      "ipad-landscape",
+      "phone-portrait"
+    ],
+    "sourceInventory": "77 author paragraphs, 5 original figures, unchanged"
+  },
+  "visualAcceptance": "pending actual iPad Safari author review"
+}

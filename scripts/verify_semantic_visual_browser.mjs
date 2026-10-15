@@ -46,6 +46,8 @@ async function scenario(label, width, height) {
     await wait("location.pathname===" + JSON.stringify(url.split("#")[0]) + " && document.readyState==='complete'");
   };
   const click = async selector => {
+    // An HTTP navigation may report its new route before layout has a hit target.
+    await wait("(()=>{const r=document.querySelector(" + JSON.stringify(selector) + ")?.getBoundingClientRect();return !!r&&r.width>=16&&r.height>=16})()");
     const rect = await evaluate("document.querySelector(" + JSON.stringify(selector) + ")?.getBoundingClientRect().toJSON()");
     if (!rect || rect.width < 16 || rect.height < 16) throw new Error("Invisible click target " + selector);
     const x = rect.x + rect.width / 2, y = rect.y + rect.height / 2;
@@ -82,7 +84,7 @@ async function scenario(label, width, height) {
     await shot("essays");
     await click(".publisher-circle-return");
     await wait('location.pathname===' + JSON.stringify(ROUTE) + ' && !document.body.dataset.collectionId');
-    await wait(ready(".shelf-book"));
+    await wait('document.querySelector("[data-book-id=essays] a.shelf-book")?.getBoundingClientRect().width>16');
     await click(workSelector("essays"));
     await wait('document.body?.dataset.collectionId==="essays"');
     await wait(ready(".publisher-circle-return"));
