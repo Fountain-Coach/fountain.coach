@@ -33,3 +33,12 @@ quality. An actual reading-content experience remains a separate proof.
   was excluded after a navigation reliability failure.
 
 See the adjacent screenshots and release receipt for the staged result.
+
+## Live WLAN release
+
+The current release is `20261015-integrated-reading-v5`. Its screenshot
+proofs come from the actual WLAN endpoint. All three integrated-journey
+viewports and all three original V38 regressions passed. The source
+publisher was not changed, nor were the real original reader routes.
+The pending native Safari author evaluation is deliberately not conflated
+with these automated tests. See `release-receipt.json`.

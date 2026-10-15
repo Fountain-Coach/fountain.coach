@@ -1,0 +1,48 @@
+{
+  "schema": "fountain.press.integrated-reading-wlan-proof.v5",
+  "release": "20261015-integrated-reading-v5",
+  "address": "http://192.168.8.249:8180/fixtures/semantic-visual-bookshelf/",
+  "sourceCommit": "f28f2feee96313b67d783e37a4c62bf18a73c18d",
+  "sharedFountainPressCommit": "0d1dd2de4dd0f2f0d77ed2f76afee382de722a4d",
+  "publicPublished": false,
+  "V4RollbackAvailable": true,
+  "editorialSourceUnchanged": true,
+  "sourceContentRendered": false,
+  "visual": {
+    "membershipRail": true,
+    "circleIsParent": true,
+    "neighborNavigation": true,
+    "paperAspectRatio": 0.707,
+    "containingSpaceColorInherited": true,
+    "threeBlankLeaves": true,
+    "noCoverImages": true,
+    "noEditorLabels": true
+  },
+  "physicalTurning": {
+    "thresholdFraction": 0.34,
+    "reversiblePreview": true,
+    "noBounce": true,
+    "reducedMotionRespected": true,
+    "addressAuthority": "hash"
+  },
+  "tests": {
+    "integratedBrowser": [
+      "ipad-portrait",
+      "ipad-landscape",
+      "phone-portrait"
+    ],
+    "previousV38Reader": [
+      "ipad-portrait",
+      "ipad-landscape",
+      "phone-portrait"
+    ],
+    "browserBack": true,
+    "keyboard": true,
+    "parentCircle": true,
+    "siblingLinks": true,
+    "unknownPageRefusal": true,
+    "sourceIntegrity": true
+  },
+  "crossDocumentMorph": "not included: experimentally unreliable",
+  "nativeIPadSafariApproval": "pending"
+}
