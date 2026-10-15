@@ -52,9 +52,25 @@ def format_reader(source,canonical,title,edition_id,back_url,back_label,selected
   # Four closing containers are identical to the admitted First Reading.
   chunks=selected["chapter"]
   subcover='<section class="book-cover" id="book-cover" aria-label="'+escape(selected["title"],quote=True)+'"><div class="book-cover-top"><span>FOUNTAIN COACH</span><span>ESSAYS · SUB-EDITION '+str(selected["number"]).zfill(2)+'</span></div><div class="book-cover-center"><span class="cover-mark" aria-hidden="true">✳</span><p class="book-imprint">'+escape(selected["label"])+'</p><h1 class="subedition-title">'+escape(selected["title"])+'</h1><p class="book-cover-subtitle">Benedikt Eickhoff</p></div><p class="book-cover-foot">COMPLETE ORIGINAL ESSAY · '+str(selected["figureCount"])+' ORIGINAL PLATE'+('S' if selected["figureCount"]!=1 else '')+'<br><a href="/editions/essays/">All essays →</a></p></section>'
+  if selected["id"]=="teatro-an-unfinished-composition":
+   # Cover art is a source-attested editorial projection. The work is the
+   # publication; the Teatro instrument and its Score are not the book ID.
+   art='/essays/teatro-an-unfinished-composition/assets/teatro-score-memory-vector-human-condition.svg'
+   subcover=subcover.replace('class="book-cover"','class="book-cover work-identity-cover"',1)
+   subcover=subcover.replace('<span class="cover-mark" aria-hidden="true">✳</span>',
+        '<span class="cover-mark work-cover-art" aria-hidden="true"></span>',1)
+   subcover=subcover.replace('ESSAYS · SUB-EDITION 01','FIRST READINGS',1)
+   subcover=subcover.replace('<p class="book-imprint">THE CONDITION</p>',
+        '<p class="book-imprint">FIRST READINGS · AUTHORED WORK</p>',1)
+   subcover=subcover.replace('<a href="/editions/essays/">All essays →</a>',
+        '<a href="/collections/first-readings/#work-teatro-an-unfinished-composition" aria-label="Return to First Readings collection">← FIRST READINGS</a>',1)
   end='<section class="book-end" id="book-end"><span class="cover-mark" aria-hidden="true">✳</span><p>FOUNTAIN COACH · ESSAYS</p><h2>End of essay.</h2><a href="/editions/essays/">All three essays →</a></section>'
   content=subcover+'\n'+chunks+'\n'+end+'\n'
   result=result[:cover_start]+content+'</div>\n</div>\n</div>\n'+result[cover_end:]
+  if selected['id']=='teatro-an-unfinished-composition':
+   result=result.replace('data-edition-id="essays-teatro-an-unfinished-composition"',
+      'data-edition-id="essays-teatro-an-unfinished-composition" data-edition-entry-anchor="book-cover"',1)
+   assert result.count('id="book-flow"')==1
   toc='<nav aria-label="Chapters"><ol class="book-toc-list"><li><a data-book-toc-target="cover" href="#book-cover"><span class="toc-number">·</span><span class="toc-title">Cover</span></a></li><li><a data-book-toc-target="'+selected["id"]+'" href="#work-'+selected["id"]+'"><span class="toc-number">'+str(selected["number"]).zfill(2)+'</span><span class="toc-title">'+escape(selected["title"])+'</span></a></li></ol></nav>'
   result,n=re.subn(r'<nav aria-label="Chapters"><ol class="book-toc-list">.*?</ol></nav>',lambda _:toc,result,flags=re.S)
   assert n==1
@@ -103,6 +119,40 @@ def build_catalogue(manifest):
  <a href="https://governance.fountain.coach/legal/">Legal notices</a> · <a href="https://governance.fountain.coach/privacy/">Privacy</a></nav></footer></body></html>
  '''
 
+def build_first_readings_collection(version):
+    """An identifiable collection of admitted works, not a Teatro instrument."""
+    import shutil
+    press=ROOT.parent.parent/'fountain-press/runtime'
+    sys.path.insert(0,str(press))
+    from bookshelf import render_bookshelf
+    asset='/essays/teatro-an-unfinished-composition/assets/teatro-score-memory-vector-human-condition.svg'
+    image=SITE/asset.lstrip('/')
+    entry=next(x for x in version['essays'] if x['id']=='teatro-an-unfinished-composition')
+    assert hashlib.sha256(image.read_bytes()).hexdigest()==entry['images'][0]['sha256']
+    assert len([x for x in version['essays'] if x['id']=='teatro-an-unfinished-composition'])==1
+    destination='https://fountain.coach/'+entry['editionPath']
+    collection=SITE/'collections/first-readings';collection.mkdir(parents=True,exist_ok=True)
+    collection_book=dict(id=entry['id'],title=entry['title'],author='Benedikt Eickhoff',
+       edition='First Readings — source-authenticated work',reader=destination,cover_image=asset,
+       source_revision=entry['sourceSHA256'],
+       host='fountain',status='wlan-proof')
+    rendered=render_bookshelf(title='First Readings',imprint='First Readings',
+       books=[collection_book],css_url='/assets/linotype/bookshelf.css',
+       logo_url='/assets/fountain-coach-logo-transparent.png',
+       collection_title='First Readings',collection_parent='/')
+    (collection/'index.html').write_text(rendered)
+    manifest=dict(schema='fountain.press.collection.v1',identity='first-readings',
+       title='First Readings',publisher='Fountain-Coach/fountain.coach',
+       canonical='https://fountain.coach/collections/first-readings/',
+       sourceStatus='WLAN editorial candidate',coverAsset='/assets/estate-bookshelf/first-reading-ink.png',
+       workCount=1,works=[dict(workId=entry['id'],title=entry['title'],editionPath=entry['editionPath'],
+        coverArtwork=asset,coverArtworkSHA256=entry['images'][0]['sha256'],
+        sourceSHA256=entry['sourceSHA256'],sourceParagraphs=entry['originalParagraphs'])],
+       singularFirstReadingPreserved='https://works.benedikt-eickhoff.de/solstice/editions/first-reading/',
+       hearingStatus='no First Hearings publication admitted')
+    (collection/'collection.json').write_text(json.dumps(manifest,indent=2,ensure_ascii=False)+'\n')
+    return manifest
+
 def build_estate_grid():
     """Project the estate manifest through Fountain Press, not a second UI.
 
@@ -132,16 +182,23 @@ def build_estate_grid():
     }
     identities = {
         "fountain-coach": ("Fountain Coach", "FOUNTAIN COACH · ESSAYS", "fountain", "wlan-proof"),
-        "first-reading": ("First Reading", "FIRST READING", "solstice", "public-live"),
+        "first-reading": ("First Readings", "FIRST READINGS · COLLECTION", "fountain", "wlan-proof"),
         "teatro": ("Teatro — First Hearing", "TEATRO · FIRST HEARING", "teatro", "wlan-proof"),
     }
+    # Teatro belongs to the tool estate, not a bookshelf publication.
+    visible=[f for f in fronts if f['id'] in estate['publishingShelves']['topLevelCollectionIds']]
+    assert [f['id'] for f in visible]==['fountain-coach','first-reading']
+    assert not next(f for f in fronts if f['id']=='teatro')['publishingShelfVisible']
     books = []
-    for front in fronts:
+    for front in visible:
         identity = front["id"]
         title, edition, host, status = identities[identity]
         if identity == "teatro":
             # The edition opens its book, not another bookshelf at Teatro /.
             reader = urljoin(front["url"], front["firstHearing"]["readerPath"].lstrip("/"))
+        elif identity == "first-reading":
+            reader = front["collectionUrl"]
+            assert front["collectionSourceRepo"]=="Fountain-Coach/fountain.coach"
         else:
             reader = front["entryEditionUrl"]
         art = "/assets/estate-bookshelf/" + artworks[identity]
@@ -177,9 +234,11 @@ def main():
             number=i+1,figureCount=entry["originalFigures"],chapter=units[i])
   target=BOOK/entry["id"]
   target.mkdir(exist_ok=True)
+  parent='/collections/first-readings/' if entry['id']=='teatro-an-unfinished-composition' else '/editions/essays/'
+  parent_label='First Readings' if entry['id']=='teatro-an-unfinished-composition' else 'Essays'
   stand=format_reader(book,"https://fountain.coach/editions/essays/"+entry["id"]+"/",
                     "Fountain Coach — "+entry["title"],
-                    "essays-"+entry["id"],"/editions/essays/","Essays",selected=leaf)
+                    "essays-"+entry["id"],parent,parent_label,selected=leaf)
   (target/"index.html").write_text(stand)
   entry["editionPath"]="editions/essays/"+entry["id"]+"/"
   entry["parentEdition"]="editions/essays/"
@@ -189,7 +248,12 @@ def main():
  old='const STORAGE="fountain.essays.linotype.v1";'
  new='const STORAGE="fountain.essays.linotype.v1."+(document.body.dataset.editionId||"essays");'
  assert old in js
- p.write_text(js.replace(old,new))
+ js=js.replace(old,new)
+ old_entry='const requested=hash&&document.getElementById(hash)?hash:prefs.anchor||"book-cover";'
+ new_entry='const requested=hash&&document.getElementById(hash)?hash:(body.dataset.editionEntryAnchor||prefs.anchor||"book-cover");'
+ assert js.count(old_entry)==1
+ js=js.replace(old_entry,new_entry)
+ p.write_text(js)
  runtime=next(x for x in version["runtime"] if x["file"]=="book.js")
  runtime["projectedSHA256"]=sha(p.read_bytes())
  style=SITE/"assets/linotype/essays.css"
@@ -199,6 +263,10 @@ def main():
 .edition-rail a{text-decoration:none;color:var(--book-muted);border-bottom:1px solid transparent}
 .edition-rail a[aria-current="page"]{color:var(--book-ink);border-color:var(--book-ink)}
 .book-cover h1.subedition-title{font-size:clamp(29px,calc(var(--sheet-w)*.073),47px);line-height:1.09;overflow-wrap:anywhere}
+.work-identity-cover .book-cover-center{padding:clamp(8px,1.8vh,18px) 0}
+.work-identity-cover .work-cover-art{display:block;width:min(100%,200px);height:clamp(44px,8vh,70px);margin:0 auto;background:transparent url('/essays/teatro-an-unfinished-composition/assets/teatro-score-memory-vector-human-condition.svg') center/contain no-repeat}
+.work-identity-cover .subedition-title{font-size:clamp(26px,calc(var(--sheet-w)*.074),44px)!important;line-height:1.09;text-wrap:balance}
+.work-identity-cover .book-cover-foot a{color:inherit;text-decoration:none;border-bottom:1px solid var(--book-rule)}
 @media(max-width:800px){.edition-rail{gap:6px;font-size:9px}.edition-rail a{max-width:9ch;overflow:hidden;text-overflow:ellipsis}}
 @media(max-width:500px){.edition-rail a{max-width:5ch}.edition-rail{font-size:8px}}
 """)
@@ -208,6 +276,7 @@ def main():
  detailed=ED/"catalogue"
  detailed.mkdir(parents=True,exist_ok=True)
  (detailed/"index.html").write_text(catalogue)
+ collections=build_first_readings_collection(version)
  index=build_estate_grid()
  (ED/"index.html").write_text(index)
  MAIN.write_text(index)
@@ -273,7 +342,8 @@ body{margin:0}a{color:inherit}a:focus-visible{outline:2px solid #aa6c37;outline-
   sourceSha256Inventory=sha(inventory.encode()),
   publicationState="source-candidate-editions-hierarchy-not-publicly-deployed",
   editorialEdition="editions/essays/",editionCatalogue="editions/",
-  nestedEditionCount=3)
+  nestedEditionCount=3,firstReadingsCollection="collections/first-readings/",
+  firstReadingsWorkCount=collections["workCount"])
  edition.write_text(json.dumps(obj,indent=2,ensure_ascii=False)+"\n")
  print("EDITIONS_HIERARCHY_COMPILED",len(version["subEditions"]),"nested editions",
        version["originalParagraphs"],"original paragraphs",version["originalFigures"],"figures")

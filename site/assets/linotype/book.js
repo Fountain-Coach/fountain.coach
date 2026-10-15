@@ -499,7 +499,7 @@ body.dataset.bookTheme=theme;
 radios.find(r=>r.value===theme).checked=true;
 document.getElementById("book-font-value").value=fontSize+"%";
 const hash=decodeURIComponent(location.hash.slice(1));
-const requested=hash&&document.getElementById(hash)?hash:prefs.anchor||"book-cover";
+const requested=hash&&document.getElementById(hash)?hash:(body.dataset.editionEntryAnchor||prefs.anchor||"book-cover");
 // The first visible leaf must already have its final font, image and viewport
 // geometry. Start on load/font readiness (not requestAnimationFrame: Safari
 // throttles that in background tabs). A bounded timer guarantees fallback.

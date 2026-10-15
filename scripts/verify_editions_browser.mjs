@@ -33,7 +33,7 @@ async function caseStudy(label,width,height,slug,plates){
    status=await evaluate("document.body?.dataset.bookReady||'waiting'");
    if(status==="true"||status==="fallback")break;
   }
-  if(status!=="true")throw Error("fallback: "+await evaluate("document.body?.dataset.bookError||''")+" exceptions "+errors.join(" "));
+  if(status!=="true")throw Error("fallback: "+JSON.stringify(await evaluate("({error:document.body?.dataset.bookError,status:document.body?.dataset.bookReady,chapter:document.body?.dataset.bookChapter,pages:document.body?.dataset.bookPageCount,cover:document.querySelector('.book-cover')?.outerHTML.slice(0,500)})"))+" exceptions "+errors.join(" "));
   const state=async()=>await evaluate("(() => {const v=document.getElementById('book-viewport');const s=document.querySelector('.linotype-stage .linotype-sheet');return {chapters:document.querySelectorAll('[data-book-chapter]').length,images:document.querySelectorAll('#book-flow img').length,pages:Number(document.body.dataset.bookPageCount),mode:document.body.dataset.bookMode,edition:document.body.dataset.editionId,folio:document.getElementById('book-page-count').textContent,overX:document.documentElement.scrollWidth>innerWidth+1,overY:document.documentElement.scrollHeight>innerHeight+1,paper:s?.getBoundingClientRect().toJSON(),area:v?.getBoundingClientRect().toJSON()}})()");
   const a=await state();
   console.log("COMPOSED",label,slug,JSON.stringify(a));
@@ -58,6 +58,8 @@ for(const path of ["/","/editions/","/editions/essays/",...works.map(w=>"/editio
 }
 for(const [label,w,h] of [["iPad landscape",1180,820],["iPad portrait",820,1180],["phone portrait",390,844]]){
  for(const [slug,plates] of works){
+  if(process.env.BROWSER_CASE_ID && slug!==process.env.BROWSER_CASE_ID)continue;
+  if(process.env.BROWSER_VIEWPORT && label!==process.env.BROWSER_VIEWPORT)continue;
   try {await caseStudy(label,w,h,slug,plates)}
   catch(e){console.error("FAIL",label,slug,String(e));process.exitCode=1}
  }

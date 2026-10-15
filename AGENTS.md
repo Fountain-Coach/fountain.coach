@@ -80,3 +80,13 @@ slot. The original (often portrait) cover art sits inside, source-faithful,
 using `object-fit:contain`; it must not replace the square thumbnail boundary.
 The circle is reserved for the publisher logo. These geometry rules are
 implemented once in Fountain Press; this owner only publishes its copies.
+
+## First Readings collection acceptance candidate — 15 October 2026
+
+The pinned [Fountain Press publication identity contract](https://github.com/Fountain-Coach/fountain-press/blob/main/docs/publication-identity-and-cover-navigation.md) governs the first real shelf-to-work proof. The source owner publishes an editioned collection at `/collections/first-readings/`, which currently contains precisely one source-digest-admitted work: `teatro-an-unfinished-composition`. It is **not the Teatro authoring instrument** and not a fictitious hearing.
+
+The Estate shelf renders only two populated publication slots: Essays and First Readings. The absent First Hearings has an actual empty slot, not a counterfeit cover. The original Solstice singular First Reading reader is preserved at its canonical URL, without changing its identity. Legacy Teatro tool and beta routes remain usable without being promoted as publications.
+
+The source-owned Score artwork is explicitly admitted as the *visual cover artwork projection* of this first work, not as the work's identity or mandatory opening. The same artwork is present in the collection's rounded-square cover and visually on the Linotype opening cover. A reader can move to the full, unchanged 22-paragraph work, then back to the parent collection. Other essays retain the conventional Linotype reader. No narration or First Hearings edition has been published.
+
+Browser acceptance requires `npm run book:browser` plus `node scripts/verify_first_readings_journey.mjs` on the served WLAN endpoints, screenshot comparison across iPad portrait/landscape and phone, source digests and keyboard/Back navigation. The work's native iPad Safari aesthetic acceptance is still a separate editorial decision.

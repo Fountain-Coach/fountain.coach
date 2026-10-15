@@ -6,9 +6,9 @@
   "repository": "Fountain-Coach/fountain.coach",
   "capturedAt": "2026-10-14T10:30:08Z",
   "publicationState": "source-candidate-editions-hierarchy-not-publicly-deployed",
-  "fileCount": 80,
-  "indexPages": 14,
-  "sourceSha256Inventory": "12a4f0d558f3428a3a3ff054279ed67f4cd5dc21faad6288e8dd1a06c73c64c8",
+  "fileCount": 82,
+  "indexPages": 15,
+  "sourceSha256Inventory": "95c8a6ad7dd2910d73986adf8520bf681ce61f41c947171934e030de98b41524",
   "sourceNote": "Entire known local public site route inventory re-fetched via live HTTPS; initial Git revision is a snapshot, not an automated deployment.",
   "deployControl": "EstatePublisher exact-host, authorized release and complete independent HTTPS readback",
   "baselineGitCommit": "420be0ca655d2262ec987934c0dc573cbb11eefd",
@@ -25,5 +25,7 @@
   "sourceOnly": "This commit is NOT a production release; live HTTPS is still separately witnessed.",
   "editorialEdition": "editions/essays/",
   "editionCatalogue": "editions/",
-  "nestedEditionCount": 3
+  "nestedEditionCount": 3,
+  "firstReadingsCollection": "collections/first-readings/",
+  "firstReadingsWorkCount": 1
 }

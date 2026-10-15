@@ -1,0 +1,23 @@
+{
+  "schema": "fountain.press.collection.v1",
+  "identity": "first-readings",
+  "title": "First Readings",
+  "publisher": "Fountain-Coach/fountain.coach",
+  "canonical": "https://fountain.coach/collections/first-readings/",
+  "sourceStatus": "WLAN editorial candidate",
+  "coverAsset": "/assets/estate-bookshelf/first-reading-ink.png",
+  "workCount": 1,
+  "works": [
+    {
+      "workId": "teatro-an-unfinished-composition",
+      "title": "Teatro — An Unfinished Composition",
+      "editionPath": "editions/essays/teatro-an-unfinished-composition/",
+      "coverArtwork": "/essays/teatro-an-unfinished-composition/assets/teatro-score-memory-vector-human-condition.svg",
+      "coverArtworkSHA256": "226e3440690dd8cbeb331c4f3f62ee002fa0bc0e6007fcdf8431f1f578d115e2",
+      "sourceSHA256": "5f77e58bbb59d0802d5b8b0ee48ecea1bbea7d44ebf4b73e3107363b7b95bad8",
+      "sourceParagraphs": 22
+    }
+  ],
+  "singularFirstReadingPreserved": "https://works.benedikt-eickhoff.de/solstice/editions/first-reading/",
+  "hearingStatus": "no First Hearings publication admitted"
+}

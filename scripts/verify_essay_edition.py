@@ -25,13 +25,14 @@ def check():
  assert catalogue==editions,"Root must exactly mirror edition catalogue"
  assert 'data-linotype-state="bookshelf"' in catalogue
  assert 'class="bookshelf-paper"' in catalogue
- assert catalogue.count('class="shelf-item"')==3
- assert catalogue.count('class="shelf-cover"')==3
+ assert catalogue.count('class="shelf-item"')==2
+ assert catalogue.count('class="shelf-cover"')==2
  assert catalogue.count('class="bookshelf-empty" aria-hidden="true"')==20
  assert catalogue.count('class="bookshelf-brand fc-identity-circle"')==1
  assert '@import url("./identity-circle.css")' in (SITE/'assets/linotype/bookshelf.css').read_text()
  assert (SITE/'assets/linotype/identity-circle.css').read_bytes()==(ROOT.parent.parent/'fountain-press/runtime/identity-circle.css').read_bytes()
- assert catalogue.count('class="shelf-book"')==3
+ assert catalogue.count('class="shelf-book"')==2
+ assert 'data-preview-host="teatro"' not in catalogue
  assert '<h1' not in catalogue and 'id="book-viewport"' not in catalogue
  assert 'class="instrument-slot"' not in catalogue
  assert 'class="bookshelf-wordmark"' not in catalogue
@@ -39,13 +40,34 @@ def check():
  assert 'class="shelf-item-caption"' not in catalogue
  front={x['id']:x for x in json.loads((ROOT.parent/'estate/manifest.json').read_text())['frontDoors']}
  expected=[front['fountain-coach']['entryEditionUrl'],
-           front['first-reading']['entryEditionUrl'],
-           front['teatro']['url'].rstrip('/')+front['teatro']['firstHearing']['readerPath']]
+           front['first-reading']['collectionUrl'],
+           ]
  for href in expected:
   assert 'href="'+href+'"' in catalogue,href
  css=(SITE/'assets/linotype/bookshelf.css').read_bytes()
  assert css==(ROOT.parent.parent/'fountain-press/runtime/bookshelf.css').read_bytes()
  assert b'background:transparent;box-shadow:none;' in css
+ collection=(SITE/'collections/first-readings/index.html').read_text()
+ identity=json.loads((SITE/'collections/first-readings/collection.json').read_text())
+ assert identity['schema']=='fountain.press.collection.v1'
+ assert identity['identity']=='first-readings' and identity['workCount']==1
+ assert identity['works'][0]['workId']=='teatro-an-unfinished-composition'
+ assert collection.count('class="shelf-book"')==1 and collection.count('class="shelf-cover"')==1
+ assert collection.count('class="bookshelf-empty" aria-hidden="true"')==20
+ assert '<h1>First Readings</h1>' in collection
+ assert 'href="/" aria-label="Return to Fountain Coach bookshelf"' in collection
+ assert 'href="https://fountain.coach/editions/essays/teatro-an-unfinished-composition/"' in collection
+ assert 'data-book-id="teatro-an-unfinished-composition"' in collection
+ assert identity['works'][0]['coverArtworkSHA256']==sha((SITE/identity['works'][0]['coverArtwork'].lstrip('/')).read_bytes())
+ work=(SITE/'editions/essays/teatro-an-unfinished-composition/index.html').read_text()
+ assert 'class="book-cover work-identity-cover"' in work
+ assert work.count('src="'+identity['works'][0]['coverArtwork']+'"')==1
+ assert identity['works'][0]['coverArtwork'] in (SITE/'assets/linotype/essays.css').read_text()
+ assert 'href="/collections/first-readings/#work-teatro-an-unfinished-composition"' in work
+ assert 'aria-label="Return to First Readings collection"' in work
+ assert 'data-edition-entry-anchor="book-cover"' in work
+ assert 'body.dataset.editionEntryAnchor||prefs.anchor' in (SITE/'assets/linotype/book.js').read_text()
+ assert identity['singularFirstReadingPreserved'] == front['first-reading']['entryEditionUrl']
  detailed=(SITE/"editions/catalogue/index.html").read_text()
  assert 'class="edition-list"' in detailed
  assert '<h1>Editions<span>.</span></h1>' in detailed
