@@ -1,0 +1,25 @@
+:root{color-scheme:light;--paper:#dfd9ce;--ink:#292520;--line:#bbb1a2}
+*{box-sizing:border-box}
+html{background:var(--paper)}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Iowan Old Style",Baskerville,Georgia,serif}
+a{color:inherit}
+a:focus-visible{outline:2px solid #956e4a;outline-offset:4px}
+.article{max-width:930px;margin:auto;padding:clamp(25px,4.5vw,68px) clamp(20px,4vw,56px) 100px}
+.up{font:11px/1.6 ui-monospace,Menlo,monospace;letter-spacing:.04em;text-decoration:none;border-bottom:1px solid var(--line)}
+.label{font:11px/1.5 ui-monospace,Menlo,monospace;letter-spacing:.1em;text-transform:uppercase;color:#70685f;margin-top:58px}
+h1{max-width:18ch;font-size:clamp(40px,6vw,69px);line-height:1.07;font-weight:400;letter-spacing:-.028em;margin:18px 0 20px}
+.deck{font-size:clamp(19px,2.5vw,27px);line-height:1.42;font-style:italic;max-width:34ch;margin:0 0 42px}
+figure{margin:0 0 48px}
+figure img{display:block;width:100%;height:auto;border:1px solid var(--line)}
+figcaption{font:13px/1.5 "Iowan Old Style",Georgia,serif;color:#675e54;margin-top:12px;max-width:78ch}
+.prose{font-size:clamp(18px,2vw,20px);line-height:1.66;max-width:67ch}
+.prose p{margin:0 0 1.16em;orphans:3;widows:3;hyphens:auto;text-align:left}
+hr{height:1px;background:var(--line);border:0;margin:56px 0 46px}
+h2{font-size:clamp(31px,4vw,47px);font-weight:400;line-height:1.19;margin:15px 0 16px}
+.publication p{font-size:18px;line-height:1.57;max-width:68ch}
+.links{display:flex;gap:18px 30px;flex-wrap:wrap;margin:26px 0}
+.links a{font:12px/1.8 ui-monospace,Menlo,monospace;text-decoration:none;border-bottom:1px solid currentColor}
+.embed{width:100%;height:min(83vh,890px);min-height:500px;background:#f9f8f5;border:1px solid var(--line)}
+.note{font-size:13px!important;color:#6b6258;margin:19px 0}
+footer{padding:30px 0;border-top:1px solid var(--line);margin-top:55px;font:11px/1.9 ui-monospace,Menlo,monospace;color:#6b6258}
+@media(max-width:700px){.label{margin-top:36px}.embed{height:64vh;min-height:360px}}
