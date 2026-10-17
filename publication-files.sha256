@@ -37,7 +37,7 @@ f481b18337dd3e0901ee3d8ba550b3dcc0f9b8f9128bc893e26cf39aa80313c3  editions/essay
 a30fd54a36966f1b9644a62f946df4fc31b916ead096dde73291260eb09b681e  editions/essays/teatro-an-unfinished-composition/index.html
 c33a6606a595b7401619e311de8c5ec3c2f8b80239515db923b343444ed73290  editions/index.html
 2dda0529a16065d26add8b9c58bf692f535bc6a0109a9ed7e2b5d8cf1875429b  essays/edition-manifest.json
-6d5f1c98f2c50c93ce29b39fecc2f6774230c8cc283e0a4c2062f5a46bde4292  essays/index.html
+b0a8d2f4b1ea07f0c38b6a927c2e7904eb19fa1ceba386aabc63bfc7746513b5  essays/index.html
 e826794efe5fefda45f644930ed44239d9ab4b6550015aa221da5612958026b2  essays/reframe-and-the-business-value-of-the-estate/assets/address-landscape.png
 ba8f8abca7a0cd42d8835a13dfdcd04840b9dfad45c86ac5599b854e8273539e  essays/reframe-and-the-business-value-of-the-estate/assets/estate-evolution.png
 8e444b976461fdf9b278a8702eef07ec74d532f617496da37c52d33c8b806451  essays/reframe-and-the-business-value-of-the-estate/assets/estate-landscape.png
@@ -50,6 +50,11 @@ c43fa422d8a60627b44900a1f1da5ca6e8a8955be1a0f95fafb0575ef4a6762a  essays/reframe
 485d2514a8692bff998180b6ad5e5442bc3db4e66d222f89c3f1865a2fd0a2c1  essays/semantic-compilation-the-archive-is-not-the-edition/index.html
 226e3440690dd8cbeb331c4f3f62ee002fa0bc0e6007fcdf8431f1f578d115e2  essays/teatro-an-unfinished-composition/assets/teatro-score-memory-vector-human-condition.svg
 5f77e58bbb59d0802d5b8b0ee48ecea1bbea7d44ebf4b73e3107363b7b95bad8  essays/teatro-an-unfinished-composition/index.html
+ca2628cd98b5ebdc18816c510729d997f0539882b03949104bf94a2354389dd0  essays/to-read-is-not-to-remember/assets/bookshelf-ipad-landscape-test.png
+cd4c8ec73b288edb64a69151af13dcd382ed657e7c57b55173a7c5161a54e503  essays/to-read-is-not-to-remember/editorial-introduction.md
+23698ad0b7abb97188df28663bc55d5f711fb07d4eb7947b47a8467dde06b9c0  essays/to-read-is-not-to-remember/index.html
+40acb5ce4d5f9434180604e4bd024e64423a4e97087c6c9d9e1ab534adada5ca  essays/to-read-is-not-to-remember/source.md
+9c8abd38a0963970f6a8721f89c6281ecaff3994c722985a38232e8afb4be41f  essays/to-read-is-not-to-remember/to-read-is-not-to-remember.pdf
 8d6b6c8dc2bc17cab0d4d201a0ad11f8e1e388b1a394299b664575a71f8bf6d5  fixtures/semantic-visual-bookshelf/fixture.json
 ec10c11469b857f5effb79c3ac1a901899a64b9782beec8d83dad152794b710b  fixtures/semantic-visual-bookshelf/index.html
 51f195a6bbbf928d55230632f5bbb6b71faef093f5ff753cd223fb2f0aa31904  fixtures/semantic-visual-bookshelf/spaces/s-01/index.html
