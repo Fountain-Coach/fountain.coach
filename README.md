@@ -9,6 +9,18 @@ The former midi2-gpu-fabric/estate/sites/fountain.coach is a downstream integrat
 
 The editorial estate has only three public fronts: Fountain Coach, First Reading and Teatro. Other domains remain supporting, legal, reference or archival surfaces. No GitHub CI, raw host deployment or secrets.
 
+## Static essay publication — one command (Chapter 158)
+
+The Git-owned essay publisher has one narrow, verified source contract and one release operation. It is currently admitted only for `/essays/the-composable-book/` and the corresponding `/essays/` card, not for unrelated site paths or other domains.
+
+```sh
+npm run essays:check      # 9 synthetic release/rollback tests + source fidelity
+npm run essays:prepare    # read-only comparison against live Caddy and gallery
+npm run essays:publish    # fixed-host SSH release, atomic activation, public SHA-256 witnesses
+```
+
+Source must be clean and committed before `essays:publish`. The exact host, release roots and scope are fixed; a changed Caddy configuration, missing predecessor, changed gallery content or missing deployment identity fails closed. The previous immutable release remains available for rollback. The script reports `PUBLISHED_HTTPS_VERIFIED` only after exact-byte HTTPS checks for all changed files and preservation of five existing public sibling routes. See `docs/product/one-command-static-essay-publication-20261018.md`. This implementation uses the Chapter 158 static-release exception; it does not depend on a remote FountainStore/FCIS session. A Git push is never publication.
+
 ## Product writing — The Composable Book (source candidate, 18 October 2026)
 
 The separate new product essay, **The Composable Book — A book that can become what its writer imagines**, is source-owned at `content/product-essays/the-composable-book.md`. Its deterministic HTML, product writing index, editable SVG editorial plates and Open Graph illustration are under `site/essays/` (`/essays/` and `/essays/the-composable-book/`). It is independent of the three original, byte-attested essays; no fourth source essay has been inserted into the Linotype edition.

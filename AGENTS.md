@@ -6,7 +6,7 @@
 - Do not use the old Hetzner Git domain as source authority.
 - A Git push never deploys content.
 - Do not reverse-copy derived estate HTML over the canonical source.
-- Publication needs typed exact-host EstatePublisher and independent public read-back.
+- Immutable static essays follow Governance Chapter 158: the author approves the exact Git-owned source; `npm run essays:publish` packages, validates, delivers through verified SSH, atomically activates on Caddy, preserves rollback and requires exact-byte public HTTPS readback. FountainStore mirroring, FCIS host enrollment and MIDI2 runtime are not prerequisites. Other operations retain their own authorities.
 - Three editorial fronts only: Fountain Coach, First Reading, Teatro.
 
 ## Independent product essay — The Composable Book (18 October 2026)

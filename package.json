@@ -18,6 +18,9 @@
     "fixture:browser": "node scripts/verify_semantic_visual_browser.mjs",
     "product:build": "python3 scripts/build_product_essay.py",
     "product:check": "python3 scripts/verify_product_essay.py",
-    "product:browser": "node scripts/verify_product_essay_browser.mjs"
+    "product:browser": "node scripts/verify_product_essay_browser.mjs",
+    "essays:check": "python3 -m unittest discover -s scripts -p test_essays_publication.py -v && python3 scripts/verify_product_essay.py && python3 scripts/verify_essay_edition.py",
+    "essays:prepare": "python3 scripts/publish_essays.py --prepare-only",
+    "essays:publish": "python3 scripts/publish_essays.py"
   }
 }
