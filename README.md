@@ -11,7 +11,7 @@ The editorial estate has only three public fronts: Fountain Coach, First Reading
 
 ## Product writing — The Composable Book (source candidate, 18 October 2026)
 
-The separate new product essay, **The Composable Book — A book that can become what its writer imagines**, is source-owned at `content/product-essays/the-composable-book.md`. Its deterministic HTML, product writing index, editable SVG editorial plates and Open Graph illustration are under `site/product/` (`/product/` and `/product/the-composable-book/`). It is independent of the three original, byte-attested essays; no fourth source essay has been inserted into the Linotype edition.
+The separate new product essay, **The Composable Book — A book that can become what its writer imagines**, is source-owned at `content/product-essays/the-composable-book.md`. Its deterministic HTML, product writing index, editable SVG editorial plates and Open Graph illustration are under `site/essays/` (`/essays/` and `/essays/the-composable-book/`). It is independent of the three original, byte-attested essays; no fourth source essay has been inserted into the Linotype edition.
 
 ```sh
 npm run product:build

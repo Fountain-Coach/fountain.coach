@@ -11,12 +11,12 @@
 
 ## Independent product essay — The Composable Book (18 October 2026)
 
-- The **separate** product essay is sourced from `content/product-essays/the-composable-book.md`; `scripts/build_product_essay.py` deterministically projects `/product/` and `/product/the-composable-book/` with four source-controlled SVG plates and a social card.
+- The **separate** product essay is sourced from `content/product-essays/the-composable-book.md`; `scripts/build_product_essay.py` deterministically projects `/essays/` and `/essays/the-composable-book/` with four source-controlled SVG plates and a social card; the existing `/essays/` collection index gains one source-owned gallery card while the three original essay pages remain byte-identical.
 - It is **not** a fourth original essay of the established three-work Linotype edition. Do not add it to `site/essays/edition-manifest.json`, alter the three existing source essay pages, or change the edition table of contents to accommodate it.
 - Keep links publicly reachable for anonymous readers: private Fountain Coach GitHub implementations belong in local provenance notes, not public hyperlink targets. Public governance chapters, First Reading, Teatro and essays are suitable editorial references when they are reachable.
 - `npm run product:build`, `npm run product:check` and `npm run product:browser` verify source projection, inventory/provenance, and real desktop/iPad/phone layouts. The browser verifier requires a local Chrome DevTools endpoint and local static site server; see `docs/product/composable-book-essay-publication-20261018.md`.
 - New site files require regenerating `publication-files.sha256`, `edition.json` file count and SHA inventory. Preserve the SHA-guarded 77 original paragraphs and five figures. No GitHub CI or unapproved runtime scripting.
-- This route is **source-candidate** until exact-host, path-scoped EstatePublisher acceptance, scoped approval, remote FountainStore readback and independent public HTTPS digest establish publication. A source push, candidate preview or static server is not a publication receipt.
+- This route is **source-candidate** until authorized exact-host static publication and independent public HTTPS digest establish publication. Chapter 158 permits authenticated SSH as a bounded static-release transport, with immutable release, atomic activation, rollback and public readback; FountainStore/FCIS application runtime is not a prerequisite. A source push, candidate preview or static server is not a publication receipt.
 
 ## Essay edition authority
 

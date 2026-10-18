@@ -9,9 +9,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "content/product-essays/the-composable-book.md"
-OUT = ROOT / "site/product/the-composable-book/index.html"
-HUB = ROOT / "site/product/index.html"
-BASE = "https://fountain.coach/product/the-composable-book/"
+OUT = ROOT / "site/essays/the-composable-book/index.html"
+COLLECTION = ROOT / "site/essays/index.html"
+BASE = "https://fountain.coach/essays/the-composable-book/"
 TITLE = "The Composable Book"
 DESC = ("A book that can become what its writer imagines. Reframe, Composer, "
         "the DOM, and governed semantic languages across platforms.")
@@ -128,7 +128,7 @@ def build():
 </head>
 <body>
 <a class="skip" href="#essay">Skip to essay</a>
-<header class="book-header"><a class="identity" href="/" aria-label="Fountain Coach editions"><img src="/assets/fountain-coach-logo-transparent.png" alt="" width="30" height="30"><span>FOUNTAIN COACH</span></a><nav aria-label="Publication navigation"><a href="https://works.benedikt-eickhoff.de/solstice/editions/first-reading/">First Reading</a><a href="/essays/">Essays</a><a href="/product/">Product writing</a></nav></header>
+<header class="book-header"><a class="identity" href="/" aria-label="Fountain Coach editions"><img src="/assets/fountain-coach-logo-transparent.png" alt="" width="30" height="30"><span>FOUNTAIN COACH</span></a><nav aria-label="Publication navigation"><a href="https://works.benedikt-eickhoff.de/solstice/editions/first-reading/">First Reading</a><a href="/essays/">Essays</a><a href="/essays/">Collection</a></nav></header>
 <main id="essay">
   <div class="essay-cover">
     <p class="overline">PRODUCT ESSAY <span>·</span> OCTOBER 2026</p>
@@ -152,7 +152,32 @@ def build():
 """
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(document, encoding="utf-8")
-    HUB.write_text(f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Product Writing — Fountain Coach</title><meta name="description" content="Product writing about Reframe and the composable book."><link rel="canonical" href="https://fountain.coach/product/"><link rel="stylesheet" href="/product/the-composable-book/assets/essay.css"></head><body><a class="skip" href="#product">Skip to product writing</a><header class="book-header"><a class="identity" href="/"><img src="/assets/fountain-coach-logo-transparent.png" alt="" width="30" height="30"><span>FOUNTAIN COACH</span></a><nav aria-label="Publication navigation"><a href="https://works.benedikt-eickhoff.de/solstice/editions/first-reading/">First Reading</a><a href="/essays/">Essays</a></nav></header><main class="product-index" id="product"><p class="overline">PRODUCT WRITING / REFRAME</p><h1>Product writing</h1><p>Essays on what Reframe might become, linked to existing code, governance and witnessed implementation. These are not additions to the three source-owned essays of the Linotype edition.</p><article><a href="/product/the-composable-book/"><img src="/product/the-composable-book/assets/01-book-spread.svg" width="1400" height="840" alt="One continuous book spread with reading on the left and Composer on the right"></a><p class="overline">PRODUCT ESSAY / 2026</p><h2><a href="/product/the-composable-book/">The Composable Book</a></h2><p>{html.escape(DESC)}</p></article><p><a href="/essays/">Three original essays →</a> &nbsp; <a href="https://works.benedikt-eickhoff.de/solstice/editions/first-reading/">First Reading →</a></p></main></body></html>""", encoding="utf-8")
+    # The collection index is source-owned; add the new product essay card, without
+    # modifying the three existing original essay cards or their source pages.
+    collection=COLLECTION.read_text(encoding="utf8")
+    gallery_end='</div><nav class="essay-pagination"'
+    if collection.count(gallery_end)!=1:
+        raise ValueError("Essay collection gallery shape drift")
+    marker='data-essay-route="/essays/the-composable-book/"'
+    new_card=(
+      '<article class="essay-gallery-card" '+marker+'>'
+      '<a class="essay-gallery-image" href="/essays/the-composable-book/">'
+      '<img src="/essays/the-composable-book/assets/cover.png" width="1200" height="630" '
+      'alt="The Composable Book: continuous cream folio, source reading and Composer in dialogue"></a>'
+      '<div class="essay-gallery-copy"><div class="eyebrow">PRODUCT ESSAY · REFRAME</div>'
+      '<h3><a href="/essays/the-composable-book/">The Composable Book</a></h3>'
+      '<p>A book that can become what its writer imagines: Composer, semantic languages and DOM-backed forms.</p>'
+      '</div></article>'
+    )
+    if marker not in collection:
+        original_gallery_open='<div class="essay-gallery" data-essay-gallery data-page-size="6" aria-label="Essay illustration gallery">'
+        if collection.count(original_gallery_open)!=1:
+            raise ValueError("Essay gallery opening shape drift")
+        collection=collection.replace(original_gallery_open,original_gallery_open+new_card,1)
+        collection=collection.replace('Page 1 of 1','Page 1 of 1')
+        COLLECTION.write_text(collection,encoding="utf8")
+    elif collection.count(marker)!=1:
+        raise ValueError("Duplicated Composable Book collection card")
     print(f"PRODUCT_ESSAY_RENDERED sections={len(sections)} figures={len(figures)} paragraphs={paragraphs} bytes={OUT.stat().st_size}")
 if __name__ == "__main__":
     build()

@@ -6,9 +6,9 @@
   "repository": "Fountain-Coach/fountain.coach",
   "capturedAt": "2026-10-14T10:30:08Z",
   "publicationState": "source-candidate-editions-hierarchy-not-publicly-deployed",
-  "fileCount": 100,
-  "indexPages": 24,
-  "sourceSha256Inventory": "1255f8801b87e6609c0c0a8b986b5d8301fd7d1d37ee386aee43bf185b01e3f3",
+  "fileCount": 99,
+  "indexPages": 23,
+  "sourceSha256Inventory": "6a16976d527cc18bfbba1dd4c7e883cd62476c064038a0d5732d1c082e36face",
   "sourceNote": "Entire known local public site route inventory re-fetched via live HTTPS; initial Git revision is a snapshot, not an automated deployment.",
   "deployControl": "EstatePublisher exact-host, authorized release and complete independent HTTPS readback",
   "baselineGitCommit": "420be0ca655d2262ec987934c0dc573cbb11eefd",
@@ -31,13 +31,16 @@
   "productEssay": {
     "id": "the-composable-book",
     "title": "The Composable Book",
-    "route": "/product/the-composable-book/",
+    "route": "/essays/the-composable-book/",
     "source": "content/product-essays/the-composable-book.md",
     "publicationState": "source-candidate",
     "illustrations": 4,
     "independentOfOriginalLinotypeEssays": true,
     "requiresExactHostEstatePublisher": true,
     "sourceSHA256": "216ebfdeec33c3f32c8eb5ed5a690c993d46e2db3f9242b4c19c303ad202d0e2",
-    "htmlSHA256": "a834edab0a3c455dab9a559d2bdfba211dca4d839cbf70e00a1707bada33caf0"
+    "htmlSHA256": "888b115646a980616770f4f7e0842f3acc84b21a8fc54049af7e1f5dfa30e690",
+    "collectionRoute": "/essays/",
+    "collectionSHA256": "30bf86c2c53e299cf60fe76410fd2fbd2c3257a08e10769c6fa2ef51ba6bfcbb",
+    "collectionPredecessorSHA256": "13fdce014422b18ef5f98ae18070f437dfd90b1bef8a8b159e6569413e322aad"
   }
 }

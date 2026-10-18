@@ -29,7 +29,7 @@ async function inspect(name,width,height){
   try {
     await cmd("Runtime.enable");await cmd("Page.enable");
     await cmd("Emulation.setDeviceMetricsOverride",{width,height,deviceScaleFactor:1,mobile:width<550});
-    await cmd("Page.navigate",{url:origin+"/product/the-composable-book/"});
+    await cmd("Page.navigate",{url:origin+"/essays/the-composable-book/"});
     await wait(350);
     // Lazy illustrations below the fold must be explicitly decoded before fidelity assertions.
     await evalJS(`Promise.all([...document.querySelectorAll('.editorial-plate img')].map(async img => {img.loading='eager';try{await img.decode()}catch{};return img.naturalWidth}))`);

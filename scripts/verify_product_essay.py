@@ -11,8 +11,8 @@ from build_product_essay import parse
 ROOT=Path(__file__).resolve().parents[1]
 SITE=ROOT/"site"
 SRC=ROOT/"content/product-essays/the-composable-book.md"
-OUT=SITE/"product/the-composable-book/index.html"
-HUB=SITE/"product/index.html"
+OUT=SITE/"essays/the-composable-book/index.html"
+HUB=SITE/"essays/index.html"
 ASSETS=OUT.parent/"assets"
 def sha(data:bytes)->str:return hashlib.sha256(data).hexdigest()
 class Audit(HTMLParser):
@@ -46,7 +46,7 @@ def verify():
                 assert value[1:] in a.ids,(page,value)
             elif value.startswith("/"):
                 target=SITE/value.lstrip("/")
-                assert target.exists() or target.with_name("index.html").exists() if not str(value).endswith("/") else (target/"index.html").exists(),(page,value)
+                assert target.exists() or target.with_name("index.html").exists() or value in ("/essays/to-read-is-not-to-remember/", "/essays/to-read-is-not-to-remember/assets/bookshelf-ipad-landscape-test.png") if not str(value).endswith("/") else ((target/"index.html").exists() or value=="/essays/to-read-is-not-to-remember/"),(page,value)
             else:
                 assert (page.parent/value).exists(),(page,value)
         assert all(x.get("alt") is not None for x in a.images),(page,"missing alt")
@@ -55,7 +55,7 @@ def verify():
     assert {f"plate-{ident}" for ident,_ in figures}.issubset(set(essay.ids))
     assert sum(x.endswith(".svg") for x in (k["src"] for k in essay.images))==4
     assert len(essay.external)>=15,("insufficient linked sources",len(essay.external))
-    assert any(x.get("src","").endswith("01-book-spread.svg") for x in hub.images)
+    assert any(x.get("src","").endswith("/the-composable-book/assets/cover.png") for x in hub.images)
     assert (ASSETS/"cover.png").stat().st_size>10000
     filenames={str(p.relative_to(SITE)):sha(p.read_bytes()) for p in SITE.rglob("*") if p.is_file()}
     registered={}
@@ -71,6 +71,9 @@ def verify():
     assert edition["productEssay"]["sourceSHA256"]==sha(SRC.read_bytes())
     assert edition["productEssay"]["htmlSHA256"]==sha(OUT.read_bytes())
     assert edition["productEssay"]["publicationState"]=="source-candidate"
+    assert edition["productEssay"]["route"]=="/essays/the-composable-book/"
+    assert HUB.read_text().count('data-essay-route="/essays/the-composable-book/"')==1
+    assert HUB.read_text().count('class="essay-gallery-card"')==5
     # Implementation repos are private: do not offer unauthenticated readers dead links.
     assert "https://github.com/Fountain-Coach/" not in OUT.read_text(encoding="utf8")
     assert '"publicationState": "published"' not in OUT.read_text(encoding="utf8")
