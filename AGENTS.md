@@ -16,7 +16,7 @@
 - Keep links publicly reachable for anonymous readers: private Fountain Coach GitHub implementations belong in local provenance notes, not public hyperlink targets. Public governance chapters, First Reading, Teatro and essays are suitable editorial references when they are reachable.
 - `npm run product:build`, `npm run product:check` and `npm run product:browser` verify source projection, inventory/provenance, and real desktop/iPad/phone layouts. The browser verifier requires a local Chrome DevTools endpoint and local static site server; see `docs/product/composable-book-essay-publication-20261018.md`.
 - New site files require regenerating `publication-files.sha256`, `edition.json` file count and SHA inventory. Preserve the SHA-guarded 77 original paragraphs and five figures. No GitHub CI or unapproved runtime scripting.
-- This route is **source-candidate** until authorized exact-host static publication and independent public HTTPS digest establish publication. Chapter 158 permits authenticated SSH as a bounded static-release transport, with immutable release, atomic activation, rollback and public readback; FountainStore/FCIS application runtime is not a prerequisite. A source push, candidate preview or static server is not a publication receipt.
+- This essay is **published**, with terminal source-revision/HTTPS digest evidence in `docs/product/receipts/composable-book-production-20261018.json`. The `edition.json` source-candidate value is the historical authored artifact state, not the live publication state. Chapter 158 permits authenticated SSH as a bounded static-release transport, with immutable release, atomic activation, rollback and public readback; FountainStore/FCIS application runtime is not a prerequisite. A source push, candidate preview or static server alone is not a publication receipt.
 
 ## Essay edition authority
 
@@ -52,8 +52,7 @@
 - `scripts/build_edition_hierarchy.py` is the top-level deterministic
   producer; it consumes the older source-bound book builder without
   changing the original published essays under `site/essays/`.
-- Source-owner HTML at `/essays/` is immutable for source SHA checks.
-  Any WLAN-only rail remapping belongs in Fountain-Coach/estate staging.
+- Source-owned original essay bodies and illustrations remain SHA-protected. The `/essays/` *collection index* may grow by an exactly diffed, source-owned card under Chapter 158, preserving every previously published card. Any WLAN-only rail remapping belongs in Fountain-Coach/estate staging.
 - Validate the catalogue and every nested reader with `npm run check` and
   `npm run book:browser` before source promotion.
 

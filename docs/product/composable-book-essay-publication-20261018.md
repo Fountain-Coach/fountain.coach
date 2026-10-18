@@ -1,6 +1,6 @@
 # The Composable Book — product essay source and publication gate
 
-18 October 2026 · Source candidate, **NOT a public production publication**.
+18 October 2026 · **Published** after the source-candidate phase. The original candidate notes below are historical evidence; the authoritative terminal receipt is `docs/product/receipts/composable-book-production-20261018.json` and the live route is `https://fountain.coach/essays/the-composable-book/`. Source commit `b2d8c28`, immutable release `static-composable-44fc5d4e8c4bc6`; exact SHA-256 public witnesses cover all eight changed files plus five existing sibling routes. A subsequent read-only run returned `ALREADY_PUBLISHED_HTTPS_VERIFIED` with no host mutation. This Chapter 158 static release used verified SSH transport and preserved the 17 October predecessor.
 
 ## Source authority and authorship
 

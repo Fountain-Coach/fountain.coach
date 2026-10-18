@@ -5,23 +5,23 @@ Role: Public Fountain Coach identity; one of three front-door editorial identiti
 
 Status: verified-live-publication-baseline
 
-The former midi2-gpu-fabric/estate/sites/fountain.coach is a downstream integration copy, not an independent editor. Git source is not a public deployment. Source review, a pinned derived checkout, separate EstatePublisher authorization, release receipt and live HTTPS read-back are required.
+The former midi2-gpu-fabric/estate/sites/fountain.coach is a downstream integration copy, not an independent editor. Git source is not a public deployment. Source review, a pinned commit, a scoped immutable static release, retained rollback and independent live HTTPS readback are required. Under Chapter 158, secure SSH can carry approved static release bytes without a distributed application runtime.
 
-The editorial estate has only three public fronts: Fountain Coach, First Reading and Teatro. Other domains remain supporting, legal, reference or archival surfaces. No GitHub CI, raw host deployment or secrets.
+The editorial estate has only three public fronts: Fountain Coach, First Reading and Teatro. Other domains remain supporting, legal, reference or archival surfaces. No GitHub CI, unscoped host deployment, or credentials stored in Git.
 
 ## Static essay publication — one command (Chapter 158)
 
 The Git-owned essay publisher has one narrow, verified source contract and one release operation. It is currently admitted only for `/essays/the-composable-book/` and the corresponding `/essays/` card, not for unrelated site paths or other domains.
 
 ```sh
-npm run essays:check      # 9 synthetic release/rollback tests + source fidelity
+npm run essays:check      # 11 synthetic release/rollback/idempotence tests + source fidelity
 npm run essays:prepare    # read-only comparison against live Caddy and gallery
 npm run essays:publish    # fixed-host SSH release, atomic activation, public SHA-256 witnesses
 ```
 
 Source must be clean and committed before `essays:publish`. The exact host, release roots and scope are fixed; a changed Caddy configuration, missing predecessor, changed gallery content or missing deployment identity fails closed. The previous immutable release remains available for rollback. The script reports `PUBLISHED_HTTPS_VERIFIED` only after exact-byte HTTPS checks for all changed files and preservation of five existing public sibling routes. See `docs/product/one-command-static-essay-publication-20261018.md`. This implementation uses the Chapter 158 static-release exception; it does not depend on a remote FountainStore/FCIS session. A Git push is never publication.
 
-## Product writing — The Composable Book (source candidate, 18 October 2026)
+## Product writing — The Composable Book (published 18 October 2026)
 
 The separate new product essay, **The Composable Book — A book that can become what its writer imagines**, is source-owned at `content/product-essays/the-composable-book.md`. Its deterministic HTML, product writing index, editable SVG editorial plates and Open Graph illustration are under `site/essays/` (`/essays/` and `/essays/the-composable-book/`). It is independent of the three original, byte-attested essays; no fourth source essay has been inserted into the Linotype edition.
 
@@ -35,7 +35,7 @@ npm run check
 
 The product essay links outward to publicly readable governance chapters, the original essay source URLs, First Reading, Teatro, MDN, React and Vite. Private implementation source identities and exact commits are kept in `docs/product/composable-book-essay-publication-20261018.md` rather than dead links on the public page. Its claims explicitly distinguish native Mac evidence from proposed Linux GUI, iPad parity, general DSL authoring and DOM composition capabilities.
 
-**Not yet publicly published:** local/browser acceptance and a Git commit do not replace the signed exact-host, path-scoped EstatePublisher operation with owner approval, remote Store receipt and independent HTTPS readback. No Caddy/SSH fallback is authorized.
+**Published and independently verified:** [The Composable Book](https://fountain.coach/essays/the-composable-book/) entered the live `/essays/` collection under immutable Caddy release `static-composable-44fc5d4e8c4bc6` from source commit `b2d8c28`. All eight changed paths and five existing sibling routes passed exact-byte HTTPS readback. The accepted terminal receipt is in `docs/product/receipts/composable-book-production-20261018.json`. Static SSH delivery is permitted by Chapter 158; it does not use the application's remote Store synchronization. The source-candidate metadata in `edition.json` describes the source artifact before deployment; the separate terminal receipt establishes public status.
 
 ## Essays as the public edition (Linotype candidate)
 

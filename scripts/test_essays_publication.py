@@ -72,6 +72,27 @@ class PublishingContractTests(unittest.TestCase):
             **overrides
         )
 
+    def test_idempotent_publish_verifies_live_bytes_without_host_mutation(self):
+        from unittest.mock import patch
+        mapping = {"/" + key: value for key, value in self.files.items()}
+        with patch.object(local, "https", side_effect=lambda path: mapping[path]):
+            result = local.already_published(
+                self.files, self.files[local.COLLECTION], self.folder / "no-receipt.json"
+            )
+        self.assertEqual(result["state"], "ALREADY_PUBLISHED_HTTPS_VERIFIED")
+        self.assertTrue(result["noHostMutation"])
+        self.assertEqual(len(result["verifiedSHA256"]), 8)
+
+    def test_idempotent_publish_refuses_public_byte_drift(self):
+        from unittest.mock import patch
+        mapping = {"/" + key: value for key, value in self.files.items()}
+        mapping["/" + local.ARTICLE] = b"modified"
+        with patch.object(local, "https", side_effect=lambda path: mapping[path]):
+            with self.assertRaisesRegex(local.PublicationStopped, "public bytes differ"):
+                local.already_published(
+                    self.files, self.files[local.COLLECTION], self.folder / "no-receipt.json"
+                )
+
     def test_identical_reproducible_artifact(self):
         data, manifest = local.package(
             "deadbeef" * 5, "releases/static-previous",

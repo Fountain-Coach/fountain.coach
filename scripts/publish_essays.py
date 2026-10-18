@@ -248,6 +248,38 @@ def deploy(prepared: bytes, manifest: dict, *, files: dict[str, bytes],
     return completed
 
 
+def already_published(files: dict[str, bytes], live_collection: bytes,
+                      receipt_path: Path) -> dict | None:
+    """Idempotent no-op for a site already serving exactly these reviewed bytes."""
+    if live_collection != files[COLLECTION]:
+        return None
+    checked = {}
+    for path, expected in files.items():
+        actual = https("/" + path)
+        if actual != expected:
+            raise PublicationStopped(
+                "Collection claims this essay but its public bytes differ: /" + path
+            )
+        checked["/" + path] = sha(actual)
+    known = {}
+    if receipt_path.is_file():
+        known = json.loads(receipt_path.read_text())
+        for sibling in PUBLIC_SIBLINGS:
+            original = known.get("httpsWitness", {}).get(sibling)
+            if original and sha(https(sibling)) != original:
+                raise PublicationStopped("Previously accepted sibling changed: " + sibling)
+    return {
+        "state": "ALREADY_PUBLISHED_HTTPS_VERIFIED",
+        "host": "fountain.coach",
+        "route": "/essays/the-composable-book/",
+        "release": known.get("release", "not-read-from-public-HTML"),
+        "publishedSourceRevision": known.get("sourceRevision", "read-back-not-declared"),
+        "files": len(files),
+        "verifiedSHA256": checked,
+        "noHostMutation": True,
+    }
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--prepare-only", action="store_true", help="Read-only host preflight and deterministic artifact")
@@ -259,6 +291,13 @@ def main() -> None:
     # The public predecessor is verified both in the HTTPS view and against the
     # production exact symlink and Caddy config before activation.
     live_collection = https("/essays/")
+    receipt_for_idempotency = args.receipt
+    if not receipt_for_idempotency.is_file():
+        receipt_for_idempotency = REPO / "docs/product/receipts/composable-book-production-20261018.json"
+    already = already_published(files, live_collection, receipt_for_idempotency)
+    if already is not None:
+        print(json.dumps(already, indent=2, sort_keys=True))
+        return
     predecessor, caddy = remote_profile()
     prior = {route: sha(https(route)) for route in PUBLIC_SIBLINGS}
     artifact, manifest = package(identity["sourceRevision"], predecessor, caddy,
