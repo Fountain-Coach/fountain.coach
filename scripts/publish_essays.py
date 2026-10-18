@@ -100,8 +100,10 @@ def source_files() -> dict[str, bytes]:
     from project_home_essay import baseline, project_home
     # Never overwrite the separately owned future Bookshelf at site/index.html.
     records["index.html"] = project_home(baseline())
-    if ARTICLE not in records or len(records) != 9:
-        raise PublicationStopped("Expected exactly nine fixed-path publication files")
+    # One admitted shared navigation asset; no other site routes or assets.
+    records["assets/estate-core.js"] = (SITE / "assets/estate-core.js").read_bytes()
+    if ARTICLE not in records or len(records) != 10:
+        raise PublicationStopped("Expected exactly ten fixed-path publication files")
     return records
 
 
@@ -154,12 +156,16 @@ def remote_profile() -> tuple[str, bytes]:
 
 def package(revision: str, predecessor: str, caddy: bytes,
             current_collection: bytes, files: dict[str, bytes],
-            current_home: bytes | None = None) -> tuple[bytes, dict]:
+            current_home: bytes | None = None,
+            current_asset: bytes | None = None) -> tuple[bytes, dict]:
     from project_home_essay import baseline, check_home
     check_collection(files[COLLECTION], current_collection)
     if current_home is None:
         current_home = baseline()
-    check_home(files["index.html"], current_home)
+    if current_asset is None:
+        current_asset = https("/assets/estate-core.js")
+    if current_home != files["index.html"]:
+        check_home(files["index.html"], current_home)
     manifest = {
         "schemaVersion": 1,
         "publicationState": "candidate",
@@ -171,6 +177,7 @@ def package(revision: str, predecessor: str, caddy: bytes,
         "predecessorCaddySHA256": sha(caddy),
         "predecessorCollectionSHA256": sha(current_collection),
         "predecessorHomeSHA256": sha(current_home),
+        "predecessorEstateCoreSHA256": sha(current_asset),
         "files": [
             {"path": name, "bytes": len(data), "sha256": sha(data)}
             for name, data in sorted(files.items())
@@ -270,7 +277,7 @@ def already_published(files: dict[str, bytes], live_collection: bytes,
             # A newly revised essay or its homepage entry is a legitimate
             # successor to the already published collection. Its exact
             # predecessor is checked by the immutable release preflight.
-            if path in ("index.html", ARTICLE):
+            if path in ("index.html", ARTICLE, "assets/estate-core.js"):
                 return None
             raise PublicationStopped(
                 "Existing published asset differs unexpectedly: /" + path
@@ -307,6 +314,7 @@ def main() -> None:
     # production exact symlink and Caddy config before activation.
     live_collection = https("/essays/")
     live_home = https("/")
+    live_asset = https("/assets/estate-core.js")
     receipt_for_idempotency = args.receipt
     if not receipt_for_idempotency.is_file():
         receipt_for_idempotency = REPO / "docs/product/receipts/composable-book-production-20261018.json"
@@ -317,7 +325,8 @@ def main() -> None:
     predecessor, caddy = remote_profile()
     prior = {route: sha(https(route)) for route in PUBLIC_SIBLINGS}
     artifact, manifest = package(identity["sourceRevision"], predecessor, caddy,
-                                 live_collection, files, current_home=live_home)
+                                 live_collection, files, current_home=live_home,
+                                 current_asset=live_asset)
     if args.prepare_only:
         print(json.dumps({
             "state": "PREPARED_NOT_PUBLISHED",

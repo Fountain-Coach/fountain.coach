@@ -58,11 +58,13 @@ def read_archive(archive: Path, expected_sha: str):
         raise Refused("manifest/file inventory mismatch")
     for record in m["files"]:
         name = record["path"]
-        if not (name in ("index.html", "essays/index.html") or name.startswith("essays/the-composable-book/")):
+        if not (name in ("index.html", "essays/index.html", "assets/estate-core.js") or name.startswith("essays/the-composable-book/")):
             raise Refused("release contains an unrelated route")
         data = entries[name]
         if len(data) != record["bytes"] or digest(data) != record["sha256"]:
             raise Refused("declared file digest mismatch: " + name)
+    if "assets/estate-core.js" not in entries:
+        raise Refused("shared estate navigation source missing")
     if "index.html" not in entries:
         raise Refused("Source-owned homepage integration missing")
     if "essays/the-composable-book/index.html" not in entries:
@@ -114,9 +116,25 @@ def preflight(root: Path, config: Path, manifest: dict, entries: dict[str, bytes
     import re
     new_home = entries["index.html"]
     card = re.compile(rb'<article class="estate-card essay-entry" data-essay-feature="the-composable-book">.*?</article>', re.S)
-    restored, changed = card.subn(b"", new_home)
-    if changed != 1 or restored != home_before:
-        raise Refused("homepage was changed beyond one admitted essay entry")
+    if new_home != home_before:
+        restored, changed = card.subn(b"", new_home)
+        if changed != 1 or restored != home_before:
+            raise Refused("homepage was changed beyond one admitted essay entry")
+    original_asset = (prior / "assets/estate-core.js").read_bytes()
+    if digest(original_asset) != manifest.get("predecessorEstateCoreSHA256"):
+        raise Refused("shared navigation predecessor changed")
+    corrected_asset = entries["assets/estate-core.js"]
+    # The only admitted change is removal of the forced top-of-page block.
+    # All other estate behavior and link navigation must be byte-identical.
+    suffix = b"  const suffix = '.localhost';"
+    if (original_asset.count(suffix) != 1 or corrected_asset.count(suffix) != 1
+            or not original_asset.startswith(b"(() => {\n  // A route without an authored fragment")
+            or not corrected_asset.startswith(b"(() => {\n  // A book must retain its reader's place.")
+            or original_asset[original_asset.index(suffix):] != corrected_asset[corrected_asset.index(suffix):]
+            or b"scrollRestoration = 'manual'" not in original_asset
+            or b"scrollRestoration = 'manual'" in corrected_asset
+            or b"window.scrollTo({top: 0" in corrected_asset):
+        raise Refused("shared navigation differs beyond history restoration")
     old = (prior / "essays/index.html").read_bytes()
     if digest(old) != manifest["predecessorCollectionSHA256"]:
         raise Refused("live essays collection has changed; reconcile first")

@@ -1,18 +1,8 @@
 (() => {
-  // A route without an authored fragment is a reading surface, not a resume
-  // target. Prevent browser scroll restoration from reopening long pages at
-  // the footer or at a previously captured viewport position. Explicit
-  // fragments (including #main) retain their normal anchor semantics.
-  if (!window.location.hash) {
-    if ('scrollRestoration' in window.history) window.history.scrollRestoration = 'manual';
-    const openAtReadingStart = () => window.scrollTo({top: 0, left: 0, behavior: 'instant'});
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', openAtReadingStart, {once: true});
-    } else {
-      openAtReadingStart();
-    }
-    window.addEventListener('pageshow', openAtReadingStart, {once: true});
-  }
+  // A book must retain its reader's place. Leave history restoration under
+  // the browser's authority: Back/Forward returns to the previous scroll
+  // position, while fresh links and fragment targets use native semantics.
+  // Do not reset scroll on pageshow or opt into manual scroll restoration.
 
   const suffix = '.localhost';
   const currentHost = window.location.hostname.endsWith(suffix)

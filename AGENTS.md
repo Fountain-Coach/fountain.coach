@@ -99,9 +99,15 @@ The source-owned Score artwork is explicitly admitted as the *visual cover artwo
 
 Browser acceptance requires `npm run book:browser` plus `node scripts/verify_first_readings_journey.mjs` on the served WLAN endpoints, screenshot comparison across iPad portrait/landscape and phone, source digests and keyboard/Back navigation. The work's native iPad Safari aesthetic acceptance is still a separate editorial decision.
 
+## Browser history is reader continuity — 18 October
+
+- Never set `history.scrollRestoration = 'manual'` or force `scrollTo(0,0)` during `pageshow` for the shared estate. The browser owns scroll restoration for Back/Forward and ordinary links; authored fragment targets work natively.
+- Source `site/assets/estate-core.js` is the only admitted shared navigation file for the narrow scroll-fix release. Changes require a pinned predecessor SHA and byte-identical verification of every unrelated navigation behavior; see `docs/product/browser-history-restoration-20261018.md`.
+- Browser acceptance must exercise real link navigation + browser Back with native `history.scrollRestoration === 'auto'` and compare the returned scroll positions for the homepage, essay collection and long article. `npm run essays:history` implements the regression witness.
+
 ## Live estate shell integration — 18 October
 
 - The current public `/` homepage differs from the planned Bookshelf at `site/index.html`. They are separate revisions. Do not replace the live portal with the unadmitted bookshelf during an essay publication.
 - `scripts/project_home_essay.py` owns the one featured essay card projected from a pinned live homepage predecessor; it does not change `site/index.html`. It refuses any unrelated source mutation.
 - `scripts/build_product_essay.py` derives the shared estate navigation rail and legal footer from the already source-owned `site/essays/index.html`, with current breadcrumbs and full outbound estate links. Do not invent an independent product header or duplicate the website menu.
-- Publishing The Composable Book changes only live `/`, `/essays/the-composable-book/` and its assets. The `essays/` collection and all other sources remain byte-identical. Verify both article and homepage by exact public HTTPS readback.
+- The 18 October codex integration changed only live `/`, `/essays/the-composable-book/` and its assets. The subsequent Back/Forward correction adds only the source-owned shared `/assets/estate-core.js` to the immutable release scope. All page HTML, `essays/` and other existing source files remain byte-identical. Verify both the corrected JavaScript and unchanged page digests by public HTTPS readback.

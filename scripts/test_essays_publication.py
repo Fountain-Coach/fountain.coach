@@ -36,8 +36,11 @@ class PublishingContractTests(unittest.TestCase):
             b'<article data-essay-route="/essays/reframe-and-the-business-value-of-the-estate/"></article>'
         )
         (self.predecessor / "essays/index.html").write_bytes(self.old_collection)
-        from project_home_essay import baseline
-        (self.predecessor / "index.html").write_bytes(baseline())
+        from project_home_essay import baseline, project_home
+        (self.predecessor / "index.html").write_bytes(project_home(baseline()))
+        self.original_asset = (local.REPO / "content/deployment-baselines/estate-core-scroll-before-20261018.js").read_bytes()
+        (self.predecessor / "assets").mkdir()
+        (self.predecessor / "assets/estate-core.js").write_bytes(self.original_asset)
         (self.root / "current").symlink_to("releases/static-previous")
         self.caddy = self.folder / "Caddyfile"
         self.caddy.write_text(
@@ -60,6 +63,7 @@ class PublishingContractTests(unittest.TestCase):
         self.archive, self.manifest = local.package(
             "deadbeef" * 5, "releases/static-previous",
             self.caddy.read_bytes(), self.old_collection, self.files,
+            current_home=self.files["index.html"], current_asset=self.original_asset,
         )
         self.path = self.folder / "archive.tar.gz"
         self.path.write_bytes(self.archive)
@@ -83,7 +87,7 @@ class PublishingContractTests(unittest.TestCase):
             )
         self.assertEqual(result["state"], "ALREADY_PUBLISHED_HTTPS_VERIFIED")
         self.assertTrue(result["noHostMutation"])
-        self.assertEqual(len(result["verifiedSHA256"]), 9)
+        self.assertEqual(len(result["verifiedSHA256"]), 10)
 
     def test_idempotent_publish_refuses_public_byte_drift(self):
         from unittest.mock import patch
@@ -95,6 +99,15 @@ class PublishingContractTests(unittest.TestCase):
                 local.already_published(
                     self.files, self.files[local.COLLECTION], self.folder / "no-receipt.json"
                 )
+
+    def test_revised_shared_navigation_is_not_mistaken_for_duplicate_publish(self):
+        from unittest.mock import patch
+        mapping = {"/" if key == "index.html" else "/" + key: value for key, value in self.files.items()}
+        mapping["/assets/estate-core.js"] = self.original_asset
+        with patch.object(local, "https", side_effect=lambda path: mapping[path]):
+            self.assertIsNone(local.already_published(
+                self.files, self.files[local.COLLECTION], self.folder / "no-receipt.json"
+            ))
 
     def test_revised_essay_is_not_mistaken_for_duplicate_publish(self):
         from unittest.mock import patch
@@ -108,11 +121,12 @@ class PublishingContractTests(unittest.TestCase):
     def test_identical_reproducible_artifact(self):
         data, manifest = local.package(
             "deadbeef" * 5, "releases/static-previous",
-            self.caddy.read_bytes(), self.old_collection, self.files
+            self.caddy.read_bytes(), self.old_collection, self.files,
+            current_home=self.files["index.html"], current_asset=self.original_asset,
         )
         self.assertEqual(self.archive, data)
         self.assertEqual(self.manifest, manifest)
-        self.assertEqual(len(manifest["files"]), 9)
+        self.assertEqual(len(manifest["files"]), 10)
 
     def test_reject_changed_sibling_gallery(self):
         with self.assertRaises(local.PublicationStopped):
@@ -133,6 +147,7 @@ class PublishingContractTests(unittest.TestCase):
                          (self.predecessor / "essays/to-read-is-not-to-remember/index.html").read_text())
         self.assertEqual((current / "essays/index.html").read_bytes(), self.files[local.COLLECTION])
         self.assertEqual((current / "index.html").read_bytes(), self.files["index.html"])
+        self.assertEqual((current / "assets/estate-core.js").read_bytes(), self.files["assets/estate-core.js"])
         self.assertEqual((current / "essays/the-composable-book/index.html").read_bytes(),
                          self.files[local.ARTICLE])
         self.assertIn("/essays/the-composable-book/*", self.caddy.read_text())
@@ -163,6 +178,25 @@ class PublishingContractTests(unittest.TestCase):
         with self.assertRaisesRegex(remote.Refused, "live essays collection has changed"):
             self.do_activate()
         self.assertEqual(os.readlink(self.root / "current"), "releases/static-previous")
+
+    def test_refuse_navigation_drift(self):
+        (self.predecessor / "assets/estate-core.js").write_bytes(self.original_asset + b'// changed')
+        with self.assertRaisesRegex(remote.Refused, "shared navigation predecessor changed"):
+            self.do_activate()
+        self.assertEqual(os.readlink(self.root / "current"), "releases/static-previous")
+
+    def test_refuse_unrelated_navigation_changes(self):
+        tampered = self.files["assets/estate-core.js"].replace(b"const suffix = '.localhost';", b"const suffix = '.changed';")
+        self.assertNotEqual(tampered, self.files["assets/estate-core.js"])
+        altered_files = dict(self.files, **{"assets/estate-core.js": tampered})
+        data, _ = local.package("bad" * 13 + "b", "releases/static-previous",
+                                self.caddy.read_bytes(), self.old_collection, altered_files,
+                                current_home=self.files["index.html"], current_asset=self.original_asset)
+        path = self.folder / "unrelated-change.tar.gz"
+        path.write_bytes(data)
+        with self.assertRaisesRegex(remote.Refused, "shared navigation differs beyond history restoration"):
+            remote.activate(path, local.sha(data), root=self.root, config=self.caddy,
+                            validate=lambda _: None, reload=lambda: None)
 
     def test_refuse_caddy_drift(self):
         self.caddy.write_text(self.caddy.read_text() + "# unrelated edit\n")
