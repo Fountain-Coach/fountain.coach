@@ -38,7 +38,7 @@ class PublishingContractTests(unittest.TestCase):
         (self.predecessor / "essays/index.html").write_bytes(self.old_collection)
         from project_home_essay import baseline, project_home
         (self.predecessor / "index.html").write_bytes(project_home(baseline()))
-        self.original_asset = (local.REPO / "content/deployment-baselines/estate-core-scroll-before-20261018.js").read_bytes()
+        self.original_asset = (local.REPO / "content/deployment-baselines/estate-core-native-before-macos-repair-20261018.js").read_bytes()
         (self.predecessor / "assets").mkdir()
         (self.predecessor / "assets/estate-core.js").write_bytes(self.original_asset)
         (self.root / "current").symlink_to("releases/static-previous")
@@ -194,7 +194,7 @@ class PublishingContractTests(unittest.TestCase):
                                 current_home=self.files["index.html"], current_asset=self.original_asset)
         path = self.folder / "unrelated-change.tar.gz"
         path.write_bytes(data)
-        with self.assertRaisesRegex(remote.Refused, "shared navigation differs beyond history restoration"):
+        with self.assertRaisesRegex(remote.Refused, "shared navigation differs beyond macOS Safari history repair"):
             remote.activate(path, local.sha(data), root=self.root, config=self.caddy,
                             validate=lambda _: None, reload=lambda: None)
 

@@ -1,8 +1,12 @@
 (() => {
-  // A book must retain its reader's place. Leave history restoration under
-  // the browser's authority: Back/Forward returns to the previous scroll
-  // position, while fresh links and fragment targets use native semantics.
-  // Do not reset scroll on pageshow or opt into manual scroll restoration.
+  // A book must retain its reader's place. Earlier site revisions set
+  // scrollRestoration to "manual"; macOS Safari can retain that setting on
+  // an existing history entry even after the old script has been replaced.
+  // Restore native Back/Forward behavior explicitly, without moving the page.
+  if ('scrollRestoration' in window.history &&
+      window.history.scrollRestoration !== 'auto') {
+    window.history.scrollRestoration = 'auto';
+  }
 
   const suffix = '.localhost';
   const currentHost = window.location.hostname.endsWith(suffix)

@@ -111,3 +111,9 @@ Browser acceptance requires `npm run book:browser` plus `node scripts/verify_fir
 - `scripts/project_home_essay.py` owns the one featured essay card projected from a pinned live homepage predecessor; it does not change `site/index.html`. It refuses any unrelated source mutation.
 - `scripts/build_product_essay.py` derives the shared estate navigation rail and legal footer from the already source-owned `site/essays/index.html`, with current breadcrumbs and full outbound estate links. Do not invent an independent product header or duplicate the website menu.
 - The 18 October codex integration changed only live `/`, `/essays/the-composable-book/` and its assets. The subsequent Back/Forward correction adds only the source-owned shared `/assets/estate-core.js` to the immutable release scope. All page HTML, `essays/` and other existing source files remain byte-identical. Verify both the corrected JavaScript and unchanged page digests by public HTTPS readback.
+
+## macOS Safari existing-tab recovery — 18 October
+
+- Removing the old `manual` scroll-restoration assignment is not sufficient: a previously loaded WebKit history entry may retain that value. Set `history.scrollRestoration='auto'` explicitly **only if not already auto**, without `scrollTo`, and let the browser own Back/Forward.
+- Before promoting that change, test with actual macOS Safari: simulate an inherited `manual` mode, reload the page, prove it becomes `auto`, then follow a cross-domain governance link and Back without losing scroll position. `npm run essays:safari` uses native Safari WebDriver for this contract.
+- The immutable route-scoped publisher verifies SHA-pinned predecessor `estate-core-native-before-macos-repair-20261018.js` and byte-identical remainder of the common estate JavaScript. Do not widen its permitted asset or route scope.

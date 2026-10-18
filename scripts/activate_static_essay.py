@@ -124,17 +124,19 @@ def preflight(root: Path, config: Path, manifest: dict, entries: dict[str, bytes
     if digest(original_asset) != manifest.get("predecessorEstateCoreSHA256"):
         raise Refused("shared navigation predecessor changed")
     corrected_asset = entries["assets/estate-core.js"]
-    # The only admitted change is removal of the forced top-of-page block.
-    # All other estate behavior and link navigation must be byte-identical.
+    # Only repair Safari's persisted legacy manual history entry. Everything
+    # after the unchanged first semantic estate declaration must match exactly.
     suffix = b"  const suffix = '.localhost';"
     if (original_asset.count(suffix) != 1 or corrected_asset.count(suffix) != 1
-            or not original_asset.startswith(b"(() => {\n  // A route without an authored fragment")
+            or not original_asset.startswith(b"(() => {\n  // A book must retain its reader's place.")
             or not corrected_asset.startswith(b"(() => {\n  // A book must retain its reader's place.")
             or original_asset[original_asset.index(suffix):] != corrected_asset[corrected_asset.index(suffix):]
-            or b"scrollRestoration = 'manual'" not in original_asset
+            or b"window.history.scrollRestoration = 'auto';" in original_asset
+            or corrected_asset.count(b"window.history.scrollRestoration = 'auto';") != 1
+            or b"window.history.scrollRestoration !== 'auto'" not in corrected_asset
             or b"scrollRestoration = 'manual'" in corrected_asset
             or b"window.scrollTo({top: 0" in corrected_asset):
-        raise Refused("shared navigation differs beyond history restoration")
+        raise Refused("shared navigation differs beyond macOS Safari history repair")
     old = (prior / "essays/index.html").read_bytes()
     if digest(old) != manifest["predecessorCollectionSHA256"]:
         raise Refused("live essays collection has changed; reconcile first")
