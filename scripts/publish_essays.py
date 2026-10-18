@@ -37,7 +37,6 @@ PUBLIC_SIBLINGS = (
     "/essays/semantic-compilation-the-archive-is-not-the-edition/",
     "/essays/reframe-and-the-business-value-of-the-estate/",
     "/essays/teatro-an-unfinished-composition/",
-    "/",
 )
 SSH_OPTIONS = ("-o", "BatchMode=yes", "-o", "StrictHostKeyChecking=yes",
                "-o", "ConnectTimeout=12")
@@ -98,8 +97,11 @@ def source_files() -> dict[str, bytes]:
         for p in (SITE / "essays/the-composable-book").rglob("*") if p.is_file()
     )
     records = {name: (SITE / name).read_bytes() for name in names}
-    if ARTICLE not in records or len(records) != 8:
-        raise PublicationStopped("Expected exactly eight source-owned publication files")
+    from project_home_essay import baseline, project_home
+    # Never overwrite the separately owned future Bookshelf at site/index.html.
+    records["index.html"] = project_home(baseline())
+    if ARTICLE not in records or len(records) != 9:
+        raise PublicationStopped("Expected exactly nine fixed-path publication files")
     return records
 
 
@@ -119,6 +121,8 @@ def check_collection(candidate: bytes, live: bytes) -> None:
     before.feed(live.decode("utf8"))
     after.feed(candidate.decode("utf8"))
     expected = "/essays/the-composable-book/"
+    if candidate == live:
+        return
     if (expected in before.entries or after.entries.count(expected) != 1 or
             len(after.entries) != len(before.entries) + 1 or
             [x for x in after.entries if x != expected] != before.entries):
@@ -149,8 +153,13 @@ def remote_profile() -> tuple[str, bytes]:
 
 
 def package(revision: str, predecessor: str, caddy: bytes,
-            current_collection: bytes, files: dict[str, bytes]) -> tuple[bytes, dict]:
+            current_collection: bytes, files: dict[str, bytes],
+            current_home: bytes | None = None) -> tuple[bytes, dict]:
+    from project_home_essay import baseline, check_home
     check_collection(files[COLLECTION], current_collection)
+    if current_home is None:
+        current_home = baseline()
+    check_home(files["index.html"], current_home)
     manifest = {
         "schemaVersion": 1,
         "publicationState": "candidate",
@@ -161,6 +170,7 @@ def package(revision: str, predecessor: str, caddy: bytes,
         "predecessor": predecessor,
         "predecessorCaddySHA256": sha(caddy),
         "predecessorCollectionSHA256": sha(current_collection),
+        "predecessorHomeSHA256": sha(current_home),
         "files": [
             {"path": name, "bytes": len(data), "sha256": sha(data)}
             for name, data in sorted(files.items())
@@ -185,10 +195,10 @@ def package(revision: str, predecessor: str, caddy: bytes,
 def witness(files: dict[str, bytes], *, previous_siblings: dict[str, str]) -> dict:
     observed = {}
     for name, value in files.items():
-        actual = https("/" + name)
+        actual = https("/" if name == "index.html" else "/" + name)
         if actual != value:
             raise PublicationStopped("Public byte mismatch: /" + name)
-        observed["/" + name] = sha(actual)
+        observed["/" if name == "index.html" else "/" + name] = sha(actual)
     for route, previous_digest in previous_siblings.items():
         actual = https(route)
         if sha(actual) != previous_digest:
@@ -255,12 +265,17 @@ def already_published(files: dict[str, bytes], live_collection: bytes,
         return None
     checked = {}
     for path, expected in files.items():
-        actual = https("/" + path)
+        actual = https("/" if path == "index.html" else "/" + path)
         if actual != expected:
+            # A newly revised essay or its homepage entry is a legitimate
+            # successor to the already published collection. Its exact
+            # predecessor is checked by the immutable release preflight.
+            if path in ("index.html", ARTICLE):
+                return None
             raise PublicationStopped(
-                "Collection claims this essay but its public bytes differ: /" + path
+                "Existing published asset differs unexpectedly: /" + path
             )
-        checked["/" + path] = sha(actual)
+        checked["/" if path == "index.html" else "/" + path] = sha(actual)
     known = {}
     if receipt_path.is_file():
         known = json.loads(receipt_path.read_text())
@@ -291,6 +306,7 @@ def main() -> None:
     # The public predecessor is verified both in the HTTPS view and against the
     # production exact symlink and Caddy config before activation.
     live_collection = https("/essays/")
+    live_home = https("/")
     receipt_for_idempotency = args.receipt
     if not receipt_for_idempotency.is_file():
         receipt_for_idempotency = REPO / "docs/product/receipts/composable-book-production-20261018.json"
@@ -301,7 +317,7 @@ def main() -> None:
     predecessor, caddy = remote_profile()
     prior = {route: sha(https(route)) for route in PUBLIC_SIBLINGS}
     artifact, manifest = package(identity["sourceRevision"], predecessor, caddy,
-                                 live_collection, files)
+                                 live_collection, files, current_home=live_home)
     if args.prepare_only:
         print(json.dumps({
             "state": "PREPARED_NOT_PUBLISHED",

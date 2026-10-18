@@ -36,6 +36,8 @@ class PublishingContractTests(unittest.TestCase):
             b'<article data-essay-route="/essays/reframe-and-the-business-value-of-the-estate/"></article>'
         )
         (self.predecessor / "essays/index.html").write_bytes(self.old_collection)
+        from project_home_essay import baseline
+        (self.predecessor / "index.html").write_bytes(baseline())
         (self.root / "current").symlink_to("releases/static-previous")
         self.caddy = self.folder / "Caddyfile"
         self.caddy.write_text(
@@ -74,24 +76,34 @@ class PublishingContractTests(unittest.TestCase):
 
     def test_idempotent_publish_verifies_live_bytes_without_host_mutation(self):
         from unittest.mock import patch
-        mapping = {"/" + key: value for key, value in self.files.items()}
+        mapping = {"/" if key == "index.html" else "/" + key: value for key, value in self.files.items()}
         with patch.object(local, "https", side_effect=lambda path: mapping[path]):
             result = local.already_published(
                 self.files, self.files[local.COLLECTION], self.folder / "no-receipt.json"
             )
         self.assertEqual(result["state"], "ALREADY_PUBLISHED_HTTPS_VERIFIED")
         self.assertTrue(result["noHostMutation"])
-        self.assertEqual(len(result["verifiedSHA256"]), 8)
+        self.assertEqual(len(result["verifiedSHA256"]), 9)
 
     def test_idempotent_publish_refuses_public_byte_drift(self):
         from unittest.mock import patch
-        mapping = {"/" + key: value for key, value in self.files.items()}
-        mapping["/" + local.ARTICLE] = b"modified"
+        mapping = {"/" if key == "index.html" else "/" + key: value for key, value in self.files.items()}
+        asset = "/essays/the-composable-book/assets/01-book-spread.svg"
+        mapping[asset] = b"modified"
         with patch.object(local, "https", side_effect=lambda path: mapping[path]):
-            with self.assertRaisesRegex(local.PublicationStopped, "public bytes differ"):
+            with self.assertRaisesRegex(local.PublicationStopped, "published asset differs"):
                 local.already_published(
                     self.files, self.files[local.COLLECTION], self.folder / "no-receipt.json"
                 )
+
+    def test_revised_essay_is_not_mistaken_for_duplicate_publish(self):
+        from unittest.mock import patch
+        mapping = {"/" if key == "index.html" else "/" + key: value for key, value in self.files.items()}
+        mapping["/"] = b"previous homepage"
+        with patch.object(local, "https", side_effect=lambda path: mapping[path]):
+            self.assertIsNone(local.already_published(
+                self.files, self.files[local.COLLECTION], self.folder / "no-receipt.json"
+            ))
 
     def test_identical_reproducible_artifact(self):
         data, manifest = local.package(
@@ -100,7 +112,7 @@ class PublishingContractTests(unittest.TestCase):
         )
         self.assertEqual(self.archive, data)
         self.assertEqual(self.manifest, manifest)
-        self.assertEqual(len(manifest["files"]), 8)
+        self.assertEqual(len(manifest["files"]), 9)
 
     def test_reject_changed_sibling_gallery(self):
         with self.assertRaises(local.PublicationStopped):
@@ -108,8 +120,8 @@ class PublishingContractTests(unittest.TestCase):
                 self.old_collection + b'<article data-essay-route="/essays/the-composable-book/"></article>',
                 self.old_collection.replace(b"to-read-is-not-to-remember", b"new-overwritten")
             )
-        with self.assertRaises(local.PublicationStopped):
-            local.check_collection(self.old_collection, self.old_collection)
+        # Unchanged, already published collection is accepted for a later article update.
+        local.check_collection(self.old_collection, self.old_collection)
 
     def test_immutable_activation_and_rollback(self):
         receipt = self.do_activate()
@@ -120,6 +132,7 @@ class PublishingContractTests(unittest.TestCase):
         self.assertEqual((current / "essays/to-read-is-not-to-remember/index.html").read_text(),
                          (self.predecessor / "essays/to-read-is-not-to-remember/index.html").read_text())
         self.assertEqual((current / "essays/index.html").read_bytes(), self.files[local.COLLECTION])
+        self.assertEqual((current / "index.html").read_bytes(), self.files["index.html"])
         self.assertEqual((current / "essays/the-composable-book/index.html").read_bytes(),
                          self.files[local.ARTICLE])
         self.assertIn("/essays/the-composable-book/*", self.caddy.read_text())
@@ -131,6 +144,14 @@ class PublishingContractTests(unittest.TestCase):
         self.assertEqual(os.readlink(self.root / "current"), "releases/static-previous")
         self.assertNotIn("/essays/the-composable-book/*", self.caddy.read_text())
         self.assertEqual(len(self.reloads), 2)
+
+    def test_refuse_unrelated_homepage_mutation(self):
+        from project_home_essay import baseline, project_home, check_home
+        original = baseline()
+        candidate = project_home(original)
+        check_home(candidate, original)
+        with self.assertRaisesRegex(ValueError, "not exactly the admitted essay card"):
+            check_home(candidate.replace(b"Fountain Coach", b"Other Company", 1), original)
 
     def test_refuse_tampered_archive_before_effect(self):
         with self.assertRaises(remote.Refused):

@@ -51,7 +51,13 @@ def verify():
                 assert (page.parent/value).exists(),(page,value)
         assert all(x.get("alt") is not None for x in a.images),(page,"missing alt")
     essay,hub=pages
-    assert len(essay.images)==5,("four plates + brand",len(essay.images))
+    assert len(essay.images)>=6,("four plates + shared estate header/footer",len(essay.images))
+    html_text=OUT.read_text()
+    assert 'class="site-header"' in html_text and 'class="breadcrumbs"' in html_text
+    assert 'data-estate-id="teatro"' in html_text and 'class="footer-footnotes"' in html_text
+    assert html_text.count('class="book-header"')==0
+    from project_home_essay import baseline, project_home, check_home
+    check_home(project_home(baseline()),baseline())
     assert {f"plate-{ident}" for ident,_ in figures}.issubset(set(essay.ids))
     assert sum(x.endswith(".svg") for x in (k["src"] for k in essay.images))==4
     assert len(essay.external)>=15,("insufficient linked sources",len(essay.external))

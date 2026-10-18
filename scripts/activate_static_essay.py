@@ -58,11 +58,13 @@ def read_archive(archive: Path, expected_sha: str):
         raise Refused("manifest/file inventory mismatch")
     for record in m["files"]:
         name = record["path"]
-        if not (name == "essays/index.html" or name.startswith("essays/the-composable-book/")):
+        if not (name in ("index.html", "essays/index.html") or name.startswith("essays/the-composable-book/")):
             raise Refused("release contains an unrelated route")
         data = entries[name]
         if len(data) != record["bytes"] or digest(data) != record["sha256"]:
             raise Refused("declared file digest mismatch: " + name)
+    if "index.html" not in entries:
+        raise Refused("Source-owned homepage integration missing")
     if "essays/the-composable-book/index.html" not in entries:
         raise Refused("article entry absent")
     if "essays/the-composable-book/assets/cover.png" not in entries:
@@ -105,6 +107,16 @@ def preflight(root: Path, config: Path, manifest: dict, entries: dict[str, bytes
     if ((root / link).resolve(strict=True) != prior or
             not prior.is_relative_to((root / "releases").resolve(strict=True))):
         raise Refused("current symlink resolves outside release directory")
+    home_before = (prior / "index.html").read_bytes()
+    if digest(home_before) != manifest.get("predecessorHomeSHA256"):
+        raise Refused("homepage predecessor changed; rebuild against live state")
+    from html.parser import HTMLParser
+    import re
+    new_home = entries["index.html"]
+    card = re.compile(rb'<article class="estate-card essay-entry" data-essay-feature="the-composable-book">.*?</article>', re.S)
+    restored, changed = card.subn(b"", new_home)
+    if changed != 1 or restored != home_before:
+        raise Refused("homepage was changed beyond one admitted essay entry")
     old = (prior / "essays/index.html").read_bytes()
     if digest(old) != manifest["predecessorCollectionSHA256"]:
         raise Refused("live essays collection has changed; reconcile first")

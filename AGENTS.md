@@ -98,3 +98,10 @@ The Estate shelf renders only two populated publication slots: Essays and First 
 The source-owned Score artwork is explicitly admitted as the *visual cover artwork projection* of this first work, not as the work's identity or mandatory opening. The same artwork is present in the collection's rounded-square cover and visually on the Linotype opening cover. A reader can move to the full, unchanged 22-paragraph work, then back to the parent collection. Other essays retain the conventional Linotype reader. No narration or First Hearings edition has been published.
 
 Browser acceptance requires `npm run book:browser` plus `node scripts/verify_first_readings_journey.mjs` on the served WLAN endpoints, screenshot comparison across iPad portrait/landscape and phone, source digests and keyboard/Back navigation. The work's native iPad Safari aesthetic acceptance is still a separate editorial decision.
+
+## Live estate shell integration — 18 October
+
+- The current public `/` homepage differs from the planned Bookshelf at `site/index.html`. They are separate revisions. Do not replace the live portal with the unadmitted bookshelf during an essay publication.
+- `scripts/project_home_essay.py` owns the one featured essay card projected from a pinned live homepage predecessor; it does not change `site/index.html`. It refuses any unrelated source mutation.
+- `scripts/build_product_essay.py` derives the shared estate navigation rail and legal footer from the already source-owned `site/essays/index.html`, with current breadcrumbs and full outbound estate links. Do not invent an independent product header or duplicate the website menu.
+- Publishing The Composable Book changes only live `/`, `/essays/the-composable-book/` and its assets. The `essays/` collection and all other sources remain byte-identical. Verify both article and homepage by exact public HTTPS readback.

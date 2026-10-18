@@ -150,6 +150,41 @@ def build():
 </footer>
 </body></html>
 """
+    # Derive the domain-wide estate frame from the published source-owned
+    # collection, not an independently invented page masthead. Keep the
+    # editorial body as the book's own restrained typographic projection.
+    shell = COLLECTION.read_text(encoding="utf-8")
+    shared_header = re.search(r'<header class="site-header" role="banner">.*?</header>', shell, re.S)
+    shared_footer = re.search(r'<footer id="footer".*?</footer>', shell, re.S)
+    if not shared_header or not shared_footer:
+        raise ValueError("Fountain Coach estate shell unavailable")
+    document, n = re.subn(r'<header class="book-header">.*?</header>',
+                          lambda _: shared_header.group(), document, count=1, flags=re.S)
+    if n != 1:
+        raise ValueError("Composer essay header projection drift")
+    document, n = re.subn(r'<footer class="book-footer">.*?</footer>',
+                          lambda _: shared_footer.group(), document, count=1, flags=re.S)
+    if n != 1:
+        raise ValueError("Composer essay footer projection drift")
+    document = document.replace('<body>', '<body class="composable-book">', 1)
+    document = document.replace('data-publication-state="source-candidate"',
+                                'data-publication-state="published"', 1)
+    document = document.replace('<a class="skip" href="#essay">Skip to essay</a>',
+                                '<a class="skip-link" href="#essay">Skip to essay</a>', 1)
+    document = document.replace('<main id="essay">',
+        '<main id="essay" class="composable-publication">'
+        '<nav class="breadcrumbs" aria-label="Breadcrumb"><ol>'
+        '<li><a class="breadcrumb-root" href="/">'
+        '<img src="/assets/fountain-coach-logo-transparent.png" alt="Fountain Coach logo">'
+        '<span>Fountain Coach</span></a></li>'
+        '<li><a href="/essays/">Essays</a></li>'
+        '<li aria-current="page">The Composable Book</li></ol></nav>', 1)
+    document = document.replace('<link rel="stylesheet" href="assets/essay.css">',
+        '<link rel="icon" type="image/png" href="/assets/fountain-coach-logo-transparent.png">'
+        '<link rel="stylesheet" href="/assets/site.css">'
+        '<link rel="stylesheet" href="/assets/estate-core.css">'
+        '<script src="/assets/estate-core.js" defer></script>'
+        '<link rel="stylesheet" href="assets/essay.css">', 1)
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(document, encoding="utf-8")
     # The collection index is source-owned; add the new product essay card, without

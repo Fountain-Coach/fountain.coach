@@ -126,3 +126,7 @@ editions catalogue remains at `/editions/catalogue/`; the three complete
 original essays and their standalone Linotype readers remain unchanged.
 The owning repository builds and verifies the grid, while LAN-only URL
 substitution occurs in the Estate registry staging pipeline.
+
+### Domain integration of The Composable Book (18 October)
+
+The release additionally projects Fountain Coach's shared estate rail, breadcrumbs and legal footer onto the article, and inserts a source-pinned link into the *already published homepage*. The existing planned Bookshelf in `site/index.html` is **not** published or replaced by this targeted deployment. Its separate UX acceptance remains independent. The public homepage feature is derived by `scripts/project_home_essay.py` from its exact-byte archived predecessor and is accepted only if every other byte is unchanged. A publication receipt must attest both homepage and essay digests.
