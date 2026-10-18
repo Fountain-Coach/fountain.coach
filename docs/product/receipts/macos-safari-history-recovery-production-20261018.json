@@ -1,0 +1,31 @@
+{
+  "archiveSHA256": "5d26171ac25d66e97345a11581aa4c49e7a4f4a0cb091e932ef0bf7a6d264fdc",
+  "caddyBackup": "/etc/caddy/Caddyfile.before-composable-5d26171ac25d66",
+  "files": 10,
+  "host": "fountain.coach",
+  "httpsWitness": {
+    "/": "deee2ab39eac56511989f624911e3274db1aba657c197ce235f82a3353b13ca9",
+    "/assets/estate-core.js": "020f32d995828892cd86e38edf190b02fadbfe34e2dad00cacfc6a5b8e8feec9",
+    "/essays/index.html": "30bf86c2c53e299cf60fe76410fd2fbd2c3257a08e10769c6fa2ef51ba6bfcbb",
+    "/essays/reframe-and-the-business-value-of-the-estate/": "61347bfa4dab160f0068d484fbb594ee3d8a8ee0dd82bb5ff16ebc342a84e490",
+    "/essays/semantic-compilation-the-archive-is-not-the-edition/": "da6aba17c04cacc3280b2ee58ab1f1eebe48a0dccd475e5a150ef3234b524a0d",
+    "/essays/teatro-an-unfinished-composition/": "a791d1042e94be6779fc02511b551be3dcf8dae1cb97a6952c7684386cab4f75",
+    "/essays/the-composable-book/assets/01-book-spread.svg": "4693b91ee8c90b637649161d00d4332a3133c6688cca7961b819b20d76b84a3d",
+    "/essays/the-composable-book/assets/02-composition.svg": "6a237b1fed685f5ad41f2d31b2dbde51328058cf6efea97fe03965e337552de8",
+    "/essays/the-composable-book/assets/03-one-book-many-hosts.svg": "94d86d2c15d0a9c14a4e963b461a18636a4ff238e3ad51939c1e5fc35e3ed04e",
+    "/essays/the-composable-book/assets/04-semantic-ledger.svg": "8dac2881905f6ca89129e459b59f7c8ca57fd45177674e87193fdd2e653a5f01",
+    "/essays/the-composable-book/assets/cover.png": "6a1b90a402b9e704688ab81f598b89d2c29ab98b619ca100d0c8323d8e5a4840",
+    "/essays/the-composable-book/assets/essay.css": "05b3915a0f37d5f83df06af31081bfe661c7b792c8a83c2c4f952c7f03b4011c",
+    "/essays/the-composable-book/index.html": "e69e87294edb6f2faf7b86279af8c7951e75c7a458c79d540a3faa689f8eec54",
+    "/essays/to-read-is-not-to-remember/": "23698ad0b7abb97188df28663bc55d5f711fb07d4eb7947b47a8467dde06b9c0"
+  },
+  "newCollectionSHA256": "30bf86c2c53e299cf60fe76410fd2fbd2c3257a08e10769c6fa2ef51ba6bfcbb",
+  "newEssaySHA256": "e69e87294edb6f2faf7b86279af8c7951e75c7a458c79d540a3faa689f8eec54",
+  "predecessor": "releases/static-composable-966fda4b634744",
+  "predecessorCaddySHA256": "f09c5c4589a2028d133e1be477d4350d3143ce78d703359a06fd32306e67f9a0",
+  "publishedAt": "2026-10-18T07:58:47.878075+00:00",
+  "release": "static-composable-5d26171ac25d66",
+  "route": "/essays/the-composable-book/",
+  "sourceRevision": "aa8a128d2d565e85e306ca3f2c40c39599ba733b",
+  "state": "PUBLISHED_HTTPS_VERIFIED"
+}
