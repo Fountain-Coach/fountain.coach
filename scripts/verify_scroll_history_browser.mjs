@@ -57,6 +57,8 @@ async function caseOf(startPath,selector,desiredScroll){
 }
 try {
   await cmd('Page.enable');await cmd('Runtime.enable');
+  // Never let a previously warmed QA browser validate stale pre-release JS.
+  await cmd('Network.enable');await cmd('Network.setCacheDisabled',{cacheDisabled:true});
   const width=Number(process.env.SCROLL_TEST_WIDTH||1050);
   const height=Number(process.env.SCROLL_TEST_HEIGHT||740);
   await cmd('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:width<600});
