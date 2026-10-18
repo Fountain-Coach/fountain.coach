@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 820" role="img" aria-labelledby="t d">
+<title id="t">One canonical book across platforms</title><desc id="d">At top one versioned canonical book node. Three arrows lead to desktop facing spread, an adaptive single-page tablet, and a Linux browser GUI. A lower headless runtime bar preserves source identity and operations without pages.</desc>
+<rect width="1400" height="820" fill="#f2eee5"/><rect x="28" y="28" width="1344" height="764" fill="none" stroke="#584f45"/>
+<text x="73" y="78" font-family="monospace" letter-spacing="3" font-size="14" fill="#74695e">III / PORTABILITY</text>
+<rect x="446" y="117" width="508" height="116" rx="1" fill="#fbf9f3" stroke="#746a5e"/><text x="700" y="159" text-anchor="middle" font-family="Georgia,serif" font-size="31" fill="#302d2a">One canonical book</text><text x="700" y="194" text-anchor="middle" font-family="monospace" font-size="12" letter-spacing="1.3" fill="#8b5945">IDENTITY / REVISION / RELATIONS / CONSENT</text>
+<g stroke="#a2674d" fill="none" stroke-width="1.3"><path d="M700 233v58H253v67M700 291v67M700 291h445v67"/></g>
+<g fill="#a2674d"><circle cx="253" cy="359" r="3"/><circle cx="700" cy="359" r="3"/><circle cx="1145" cy="359" r="3"/></g>
+<text x="253" y="396" text-anchor="middle" font-family="monospace" font-size="15" fill="#6c6256">MAC / FACING LEAVES</text>
+<rect x="78" y="421" width="350" height="220" fill="#fcfaf5" stroke="#746a5e"/>
+<path d="M253 421v220" stroke="#87796a"/><rect x="243" y="421" width="20" height="220" fill="#a9a092" opacity=".18"/>
+<g stroke="#867f73" opacity=".48" stroke-width="1.3"><path d="M101 464h123M101 487h129M101 511h105M101 535h129M101 559h118"/><path d="M283 467h125M283 488h106M283 528h121M283 551h112"/></g>
+<text x="700" y="396" text-anchor="middle" font-family="monospace" font-size="15" fill="#6c6256">IPAD / ADAPTIVE LEAF</text>
+<rect x="610" y="417" width="180" height="228" rx="11" fill="#e6e0d5" stroke="#6d665c" stroke-width="2"/><rect x="624" y="434" width="152" height="193" fill="#fcfaf5"/>
+<g stroke="#80786d" opacity=".55" stroke-width="1.3"><path d="M647 466h104M647 487h94M647 508h104M647 529h99M647 550h104M647 571h85"/></g><circle cx="699" cy="635" r="3" fill="#8b8278"/>
+<text x="1145" y="396" text-anchor="middle" font-family="monospace" font-size="15" fill="#6c6256">LINUX / BROWSER GUI</text>
+<rect x="963" y="421" width="364" height="220" rx="4" fill="#fcfaf5" stroke="#746a5e"/><path d="M963 453h364" stroke="#81786a"/><circle cx="986" cy="437" r="4" fill="#a2674d"/><circle cx="1001" cy="437" r="4" fill="#b6ab9a"/><circle cx="1016" cy="437" r="4" fill="#b6ab9a"/>
+<rect x="986" y="475" width="304" height="143" fill="none" stroke="#a49b8d"/><path d="M1138 475v143" stroke="#bcb4a6"/><g stroke="#8d8375" opacity=".57" stroke-width="1.3"><path d="M1004 498h111M1004 521h104M1004 543h112M1155 499h109M1155 522h113M1155 545h99"/></g>
+<path d="M700 646v25" stroke="#a2674d"/><rect x="74" y="682" width="1252" height="67" fill="#e9e3d9" stroke="#84796d"/>
+<text x="96" y="710" font-family="monospace" font-size="12" letter-spacing="1" fill="#8b5945">LINUX / HEADLESS</text><text x="96" y="731" font-family="Georgia,serif" font-size="19" fill="#4a4037">The same semantic contracts and governed effects, with no graphical page required.</text>
+</svg>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 840" role="img" aria-labelledby="t d">
+<title id="t">One book, two facing leaves</title><desc id="d">A continuous open cream folio. Admitted prose appears on the left, a restrained writer-model conversation on the right, and a recessed symmetrical central binding joins them.</desc>
+<defs><linearGradient id="fold"><stop offset="0" stop-color="#ede8dd" stop-opacity="0"/><stop offset=".39" stop-color="#aaa397" stop-opacity=".16"/><stop offset=".5" stop-color="#81796c" stop-opacity=".23"/><stop offset=".61" stop-color="#aaa397" stop-opacity=".16"/><stop offset="1" stop-color="#ede8dd" stop-opacity="0"/></linearGradient><filter id="soft"><feGaussianBlur stdDeviation="15"/></filter></defs>
+<rect width="1400" height="840" fill="#f2eee5"/><rect x="29" y="29" width="1342" height="782" fill="none" stroke="#554f46" stroke-width="1"/>
+<text x="80" y="83" font-family="monospace" font-size="14" letter-spacing="3" fill="#756d61">FOUNTAIN COACH / REFRAME</text><text x="1320" y="83" text-anchor="end" font-family="monospace" font-size="14" fill="#756d61">I / THE CODEX</text>
+<rect x="120" y="144" width="1160" height="598" rx="2" fill="#a79d8c" opacity=".20" filter="url(#soft)"/>
+<rect x="119" y="131" width="1162" height="600" fill="#fcfaf4" stroke="#9e9587" stroke-width="1.2"/>
+<path d="M700 131v600" stroke="#8b8172" stroke-width=".7" opacity=".18"/>
+<rect x="655" y="132" width="90" height="598" fill="url(#fold)"/>
+<path d="M146 152v554M1254 152v554" stroke="#a59b8b" opacity=".25"/>
+<text x="175" y="191" font-family="monospace" letter-spacing="2" font-size="12" fill="#736d61">VERSO / READING</text><text x="1228" y="191" text-anchor="end" font-family="monospace" letter-spacing="2" font-size="12" fill="#736d61">RECTO / COMPOSER</text>
+<text x="175" y="272" font-family="Georgia,serif" font-size="42" fill="#302d29">The work</text><text x="175" y="324" font-family="Georgia,serif" font-size="42" fill="#302d29">remains a book.</text>
+<g stroke="#837c71" stroke-width="2" opacity=".42"><path d="M175 377h390M175 411h370M175 445h401M175 479h346M175 513h399M175 547h365M175 581h385"/></g>
+<text x="175" y="665" font-family="monospace" font-size="12" fill="#9b523f">SOURCE REVISION · ADMITTED</text>
+<text x="786" y="264" font-family="monospace" font-size="12" letter-spacing="1.6" fill="#9b523f">WRITER</text><text x="786" y="303" font-family="Georgia,serif" font-size="26" fill="#332f2b">What if the margin could speak?</text>
+<path d="M786 338h400" stroke="#a39b8d" stroke-width="1" opacity=".7"/>
+<text x="786" y="380" font-family="monospace" font-size="12" letter-spacing="1.6" fill="#9b523f">MODEL</text><text x="786" y="422" font-family="Georgia,serif" font-size="23" fill="#332f2b">We can compose that relation,</text><text x="786" y="456" font-family="Georgia,serif" font-size="23" fill="#332f2b">without changing the source yet.</text>
+<path d="M786 494h400" stroke="#a39b8d" stroke-width="1" opacity=".7"/>
+<text x="786" y="574" font-family="Georgia,serif" font-size="21" font-style="italic" fill="#706a60">A proposed page form…</text><path d="M786 615h398" stroke="#6a645a" stroke-width=".9"/><text x="786" y="651" font-family="monospace" font-size="12" fill="#746d61">CONVERSATION · NOT YET A MUTATION</text>
+<text x="700" y="782" text-anchor="middle" font-family="monospace" font-size="13" letter-spacing="1.7" fill="#696257">ONE WORK / ONE BINDING / TWO RELATED LEAVES</text>
+</svg>

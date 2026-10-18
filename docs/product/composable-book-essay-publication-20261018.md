@@ -1,0 +1,55 @@
+# The Composable Book — product essay source and publication gate
+
+18 October 2026 · Source candidate, **NOT a public production publication**.
+
+## Source authority and authorship
+
+- Git owner: `Fountain-Coach/fountain.coach`, branch `feature/composable-book-product-essay`. Source text: `content/product-essays/the-composable-book.md`; deterministic generator: `scripts/build_product_essay.py`; final HTML route: `site/product/the-composable-book/index.html`, hub: `site/product/index.html`. The four SVG plates are directly source-owned, text-addressable and have descriptive labels; `assets/cover.png` is their derived public preview card.
+- **Product essay**, not fourth entry in the earlier three independently authored Essays/Linotype sub-editions. No `site/essays/*`, existing source-authored paragraph or five original figure files were changed.
+- The essay distinguishes **verified** Mac R26/R28 book-spread functionality and stage/portal code from **unverified** cross-platform parity, arbitrary runtime-authored DSL support and Composer-driven DOM component creation.
+- The public essay uses public governance chapters rather than private source-code URLs because those GitHub paths returned anonymous HTTP 404 in our audit. Implementation provenance remains here, not falsely available public links:
+  - Native R28 `midi2-gpu-fabric` commit `7219b08`, branch `feature/reframe-codex-native-facing-spread`.
+  - R27 mediation `0ba30e3` and cross-DSL scenario refactor `7cf8788`, pinned DSL decision `e59190b`.
+  - Teatro Stage Web on `midi2-gpu-fabric` branch `codex/teatro-r12-moving-puppet-fallback-20261014`, `apps/teatro-stage-web` (React 18 / Vite 5 / Csound 7 beta / Three).
+  - Domain Reasoning Portal from private `Fountain-Coach/domain-reasoning`, `portal/` (React 19 / Vite 7 / structured DOM document).
+- Public, independently reachable commentary sources are Chapters 58, 83, 93, 108, 115, 122, 124, 151 at `https://governance.fountain.coach/chapters/...`; the original source essays; First Reading; Teatro; MDN; react.dev; vite.dev.
+
+## Editorial projection and independently witnessed local QA
+
+The Markdown source is parsed by a deterministic stdlib Python script. Four original technical SVG plates explain (1) the continuous codex, (2) open intention → typed relation → composed DOM/audio projection, (3) one book across Mac, iPad, Linux GUI and headless, and (4) FountainStore semantic revision separate from DOM projection. The site is editorially measured in cream/ink/monospaced captions and restrained Georgia typography, not a promotional card layout.
+
+Required clean rebuild:
+
+```sh
+npm run product:build
+npm run product:check
+npm run check
+```
+
+For real responsive browser acceptance on the Mac:
+
+```sh
+python3 -m http.server 8207 --bind 127.0.0.1 --directory site
+"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new --remote-debugging-port=9347 --user-data-dir=/tmp/composable-book-devtools-profile about:blank
+npm run product:browser
+```
+
+Set `ESSAY_BASE_URL`, `CHROME_DEBUG_URL`, or `ESSAY_PROOF_DIR` to override defaults. These processes are local test harnesses, **not** an admitted publisher. Witnesses reside on the Mac at `/tmp/composable-book-qa/{desktop,ipad-portrait,ipad-landscape,phone,book-plate}.png` and were visually inspected. Explicit DevTools device-metric overrides proved zero horizontal overflow at 1440×980, 820×1180, 1180×820, and 390×844. Every in-page anchor resolves; 8 independent section identities, all four SVG illustrations, one semantic heading, and SVG decode passed. The desktop plate stays clear of the contents rail. A static-source check confirms the new essay is 42 content paragraphs and the original three-essay edition retains **77 untouched authorial paragraphs and five original plates**. `publication-files.sha256` and `edition.json` capture all site files and their digests.
+
+Public link audit (anonymous `curl -L`): normal governance chapters, MDN, React, Vite, Teatro, First Reading, `fountain.coach/` and the original essays returned HTTP 200. Private GitHub source URLs returned 404 and were omitted from HTML in favor of public governance and this local provenance record. Candidate route `https://fountain.coach/product/the-composable-book/` returns **404** until separately published; similarly the source-owner `/editions/` proposal was not assumed publicly live and is not linked from the product essay.
+
+## Required separate publication transaction
+
+The real native `EstatePublisher` is available at `/Volumes/DockerDisk/Development/solstice-caddy-20261012/apps/estate-publisher/.build/arm64-apple-macosx/debug/EstatePublisher`. Its `--help` enumerates `--preflight`, `--prepare-publication`, `--publish`, and Golden Key session operations. **The CLI is not an authorization**. Chapter [134 — EstatePublisher Is the Publication Authority](https://governance.fountain.coach/chapters/134-estatepublisher-publication-authority/) requires:
+
+1. Reviewed, pinned Git source and complete native direct-static route projection for **exact host** `fountain.coach` and **path prefix** `/product/` only; the three existing editorial fronts and historical essay sources are excluded.
+2. Contract-coherent local preflight, explicit FountainStore admission and inspected semantic diff; no unreviewed direct Caddy/SSH/rsync publication.
+3. Source-revision-bound, expiring scoped approval through SecretStore and Golden Key session.
+4. Native `estate.publication.sync` terminal receipt, authenticated remote FountainStore selected-path manifest and bytes readback, and independent public HTTPS digest/canonical/asset verification.
+5. Only after (4): update publication state to `published`, record exact published revision/receipt and public link; until then source remains `source-candidate`.
+
+If any requirement is missing, record **BLOCKED — publication proof incomplete**. Do not use `FountainStoreEstatePublisher` as a workaround; it only updates a local publication manifest. No alternate upload or raw host mutation.
+
+## Claim boundary
+
+This product essay is a completed **locally checked editorial candidate**. It does not claim the Linux graphical client, iPad Composer, user-authored arbitrary DSL execution or DOM-authoring instrument is implemented. It also does not claim that this essay was published to the public domain. A reviewer should evaluate typography and argument independently of test status before authorizing production publication.

@@ -9,6 +9,22 @@ The former midi2-gpu-fabric/estate/sites/fountain.coach is a downstream integrat
 
 The editorial estate has only three public fronts: Fountain Coach, First Reading and Teatro. Other domains remain supporting, legal, reference or archival surfaces. No GitHub CI, raw host deployment or secrets.
 
+## Product writing — The Composable Book (source candidate, 18 October 2026)
+
+The separate new product essay, **The Composable Book — A book that can become what its writer imagines**, is source-owned at `content/product-essays/the-composable-book.md`. Its deterministic HTML, product writing index, editable SVG editorial plates and Open Graph illustration are under `site/product/` (`/product/` and `/product/the-composable-book/`). It is independent of the three original, byte-attested essays; no fourth source essay has been inserted into the Linotype edition.
+
+```sh
+npm run product:build
+npm run product:check
+# with a local static site server and headless Chrome CDP, as documented in docs/product/
+npm run product:browser
+npm run check
+```
+
+The product essay links outward to publicly readable governance chapters, the original essay source URLs, First Reading, Teatro, MDN, React and Vite. Private implementation source identities and exact commits are kept in `docs/product/composable-book-essay-publication-20261018.md` rather than dead links on the public page. Its claims explicitly distinguish native Mac evidence from proposed Linux GUI, iPad parity, general DSL authoring and DOM composition capabilities.
+
+**Not yet publicly published:** local/browser acceptance and a Git commit do not replace the signed exact-host, path-scoped EstatePublisher operation with owner approval, remote Store receipt and independent HTTPS readback. No Caddy/SSH fallback is authorized.
+
 ## Essays as the public edition (Linotype candidate)
 
 The original site entrance has been replaced **in Git source**, not yet

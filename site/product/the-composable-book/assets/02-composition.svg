@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 810" role="img" aria-labelledby="t d">
+<title id="t">From an open proposal to a governed composition</title><desc id="d">Three sections show a writer's proposal about three voices, a semantic graph with distinct voice identities, and a document projection with marginal voice and a sound score. A thin line marks required validation and authorization.</desc>
+<rect width="1400" height="810" fill="#f2eee5"/><rect x="29" y="29" width="1342" height="752" fill="none" stroke="#544e45"/><text x="74" y="81" font-family="monospace" font-size="14" letter-spacing="3" fill="#766e60">II / COMPOSITION</text>
+<g stroke="#a9a194" fill="none"><path d="M74 138h1252M74 685h1252"/><path d="M496 147v517M935 147v517"/></g>
+<text x="94" y="177" font-family="monospace" font-size="12" letter-spacing="2" fill="#8b523e">01 / OPEN INTENTION</text>
+<text x="94" y="256" font-family="Georgia,serif" font-size="33" fill="#332d28">“Let this paragraph</text><text x="94" y="299" font-family="Georgia,serif" font-size="33" fill="#332d28">unfold into</text><text x="94" y="342" font-family="Georgia,serif" font-size="33" fill="#332d28">three voices.”</text>
+<text x="94" y="419" font-family="Georgia,serif" font-size="22" font-style="italic" fill="#6c655b">The writer need not know</text><text x="94" y="450" font-family="Georgia,serif" font-size="22" font-style="italic" fill="#6c655b">the rendering component.</text>
+<text x="520" y="177" font-family="monospace" font-size="12" letter-spacing="2" fill="#8b523e">02 / DECLARED SEMANTICS</text>
+<g fill="#fcfaf3" stroke="#756d61" stroke-width="1.4"><circle cx="610" cy="320" r="44"/><circle cx="809" cy="251" r="44"/><circle cx="809" cy="403" r="44"/></g>
+<g font-family="monospace" font-size="17" fill="#352f29" text-anchor="middle"><text x="610" y="327">V1</text><text x="809" y="258">V2</text><text x="809" y="410">V3</text></g>
+<g stroke="#8d5946" stroke-width="2" fill="none"><path d="M654 309L764 267"/><path d="M655 335L763 391"/><path d="M809 296v62"/></g>
+<text x="719" y="264" font-family="monospace" font-size="11" fill="#895844" transform="rotate(-21 719 264)">IN MARGIN</text>
+<text x="720" y="378" font-family="monospace" font-size="11" fill="#895844">FOLLOWS</text>
+<text x="529" y="496" font-family="monospace" font-size="13" fill="#746c61">ENTITIES / RELATIONS / TIME</text>
+<text x="529" y="526" font-family="Georgia,serif" font-size="22" fill="#494137">All identities must resolve.</text><text x="529" y="559" font-family="Georgia,serif" font-size="22" fill="#494137">Nothing executes by analogy.</text>
+<text x="960" y="177" font-family="monospace" font-size="12" letter-spacing="2" fill="#8b523e">03 / PROPOSED PAGE</text>
+<rect x="960" y="212" width="360" height="398" fill="#fdfbf5" stroke="#897f70"/>
+<g stroke="#8d8578" stroke-width="1.5" opacity=".54"><path d="M980 277h215M980 309h215M980 340h208M980 371h215M980 403h214M980 434h214"/></g>
+<path d="M1225 248v232" stroke="#a89c88"/><g fill="#965b44"><rect x="1239" y="277" width="6" height="41"/><rect x="1253" y="277" width="6" height="64"/><rect x="1267" y="277" width="6" height="24"/></g><text x="1239" y="360" font-family="monospace" font-size="11" fill="#6d655a">V2</text>
+<path d="M981 523h299" stroke="#6c665d"/><circle cx="1039" cy="523" r="7" fill="#915740"/><path d="M1068 523v-18M1111 523v-35M1153 523v-15M1195 523v-31" stroke="#915740" stroke-width="2"/>
+<text x="966" y="640" font-family="monospace" font-size="13" fill="#746c61">DOM / AUDIO / TYPOGRAPHY</text>
+<text x="74" y="725" font-family="monospace" font-size="13" letter-spacing="1.2" fill="#766e60">PROPOSAL</text><path d="M185 720h894" stroke="#956347" stroke-width="1.2"/><path d="m1076 715 10 5-10 5" fill="none" stroke="#956347"/><text x="1100" y="725" font-family="monospace" font-size="13" fill="#766e60">VALIDATE / AUTHORIZE</text>
+</svg>
