@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify the original essay plate and source-bound, private audio references."""
+"""Verify the approved original synthetic essay audio and its source-bound page."""
 from pathlib import Path
 import hashlib, json, re, xml.etree.ElementTree as ET
 ROOT=Path(__file__).resolve().parents[1]
@@ -35,7 +35,8 @@ m=re.search(r'<script type="application/json" id="ear-sing-audio-manifest">(.*?)
 assert m
 v=json.loads(m.group(1))
 assert v["schema"]=="satzfunk.essay-listening.v1"
-assert v["release"]=="wlan-research-only"
+assert v["release"]=="public-original-synthetic-v1"
+assert v["publicationGrant"]=="Fountain-Coach-Ear-Sing-2026-10-25"
 assert v["referenceHumanVoice"] is False
 assert v["qualifiedSinging"] is False
 assert v["earRecognizedLyrics"] is False
@@ -51,6 +52,7 @@ for t in v["takes"]:
  assert t["media"]=="media/sing-"+t["id"]+"-compare.m4a"
  assert t["durationSeconds"]==5.2 and t["sampleRate"]==48000
  assert [c["atSeconds"] for c in t["comments"]]==[0,1.15,2.15,3.35]
- assert not (BASE/t["media"]).exists(),"private audio must remain outside public Git"
-print("EAR_SING_SOURCE_ACCEPTED",len(v["takes"]),"original audio references",
+ assert (BASE/t["media"]).is_file(),"author-approved original sound absent"
+ assert hashlib.sha256((BASE/t["media"]).read_bytes()).hexdigest()==t["deliverySHA256"],"published AAC source mismatch"
+print("EAR_SING_PUBLIC_SOURCE_ACCEPTED",len(v["takes"]),"source-owned synthetic audio files",
  "plate",hashlib.sha256(PNG.read_bytes()).hexdigest())

@@ -1,6 +1,7 @@
 // SatzfunkPlayer: reusable source-bound audio-annotation adapter.
 // This is an editorial player projection, not audio recognition or publication.
-// Consumer is Fountain Coach's private Ear/Sing essay; source rights stay with Sing.
+// Consumer is Fountain Coach's Ear/Sing essay. Private research and separately
+// author-approved public synthetic audition share exact original audio identities.
 const HEX=/^[a-f0-9]{64}$/;
 const EXPECTED="sing.synthetic.sustained-la-mi-na.v1";
 // Frozen original Sing evidence and separately admitted AAC listening derivatives.
@@ -23,10 +24,20 @@ const privateOrigin=origin=>{
     );
   }catch{return false}
 };
+const AUTHOR_RELEASE="Fountain-Coach-Ear-Sing-2026-10-25";
+const publicOrigin=origin=>{
+  try {
+    const url=new URL(origin);
+    return url.origin==="https://fountain.coach";
+  }catch{return false}
+};
 export function bindEssayListening(manifest,origin){
-  if(!privateOrigin(origin))throw new TypeError("Private owner WLAN or localhost required; no public media release");
+  const privateAudition=manifest?.release==="wlan-research-only"&&privateOrigin(origin);
+  const publicAudition=manifest?.release==="public-original-synthetic-v1"&&
+    manifest?.publicationGrant===AUTHOR_RELEASE&&publicOrigin(origin);
+  if(!privateAudition&&!publicAudition)
+    throw new TypeError("Essay origin and release authority mismatch");
   if(manifest?.schema!=="satzfunk.essay-listening.v1"||
-    manifest.release!=="wlan-research-only"||
     manifest.sourceId!==EXPECTED||
     manifest.referenceHumanVoice===true||
     manifest.qualifiedSinging!==false||
@@ -58,7 +69,7 @@ export function bindEssayListening(manifest,origin){
     audio.set(t.id,Object.freeze({...t,comments:Object.freeze(comments)}));
   }
   if(ids.size!==3)throw new TypeError("One plain, articulated and expressive witness required");
-  return Object.freeze({sourceId:EXPECTED,release:"wlan-research-only",takes:audio});
+  return Object.freeze({sourceId:EXPECTED,release:manifest.release,takes:audio});
 }
 export function listeningCitation(binding,takeId,atSeconds,comment=""){
   const t=binding?.takes?.get(takeId);
@@ -86,7 +97,7 @@ export function mountEssayListening(root,loc=globalThis.location){
     const source=root.getElementById("ear-sing-audio-manifest");
     binding=bindEssayListening(JSON.parse(source.textContent),loc.origin);
   }catch(err){
-    status.textContent="This audio is a private staging witness only. "+err.message;
+    status.textContent="Source-bound listening unavailable. "+err.message;
     return null;
   }
   const audio=node.querySelector("audio");
