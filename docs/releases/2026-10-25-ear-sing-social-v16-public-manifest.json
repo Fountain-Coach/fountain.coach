@@ -1,0 +1,149 @@
+{
+  "files" : [
+    {
+      "path" : "\/assets\/estate-core.js",
+      "sha256" : "020f32d995828892cd86e38edf190b02fadbfe34e2dad00cacfc6a5b8e8feec9"
+    },
+    {
+      "path" : "\/assets\/estate-shell-d9a170d82a21d19b.css",
+      "sha256" : "d9a170d82a21d19be5d155c19f3591e670bf8988c230e8c7737493937c40bb8b"
+    },
+    {
+      "path" : "\/assets\/estate-shell-logo-8c5fad1c3db56138.png",
+      "sha256" : "8c5fad1c3db56138d5959da75991dc8034a0be537ce46da6ffcc0d9655e7f729"
+    },
+    {
+      "path" : "\/assets\/estate-shell-logo.png",
+      "sha256" : "8c5fad1c3db56138d5959da75991dc8034a0be537ce46da6ffcc0d9655e7f729"
+    },
+    {
+      "path" : "\/assets\/estate-shell-state-4139f6eec4e0f8d7.js",
+      "sha256" : "4139f6eec4e0f8d737c768d1e4f5572c91430598f6ecf2523d3ea2437d6e1d5b"
+    },
+    {
+      "path" : "\/assets\/estate-shell-state.js",
+      "sha256" : "4139f6eec4e0f8d737c768d1e4f5572c91430598f6ecf2523d3ea2437d6e1d5b"
+    },
+    {
+      "path" : "\/assets\/site.css",
+      "sha256" : "6aba1927f4b60e6942ee4f2f19e14ad039d0af93fa4aa1809c9b38300842c9fd"
+    },
+    {
+      "path" : "\/essays\/index.html",
+      "sha256" : "2bc59e22be03701dd63bd53e80bd82fe636faf08fc34a6bab80a5886272b892c"
+    },
+    {
+      "path" : "\/essays\/semantic-compilation-the-archive-is-not-the-edition\/assets\/semantic-compilation-estate-rail.png",
+      "sha256" : "93d25f0f207fd67169cb930ce718f1e1b9cb8d768e4c4b9a7be6f715ab53f2b9"
+    },
+    {
+      "path" : "\/essays\/semantic-compilation-the-archive-is-not-the-edition\/assets\/semantic-compilation-estate-rail.svg",
+      "sha256" : "977c636ba6570781b2ea8e34983ae2db0be83bd93986343a99d84e37f4304c02"
+    },
+    {
+      "path" : "\/essays\/semantic-compilation-the-archive-is-not-the-edition\/index.html",
+      "sha256" : "da6aba17c04cacc3280b2ee58ab1f1eebe48a0dccd475e5a150ef3234b524a0d"
+    },
+    {
+      "path" : "\/essays\/the-composable-book\/assets\/01-book-spread.svg",
+      "sha256" : "4693b91ee8c90b637649161d00d4332a3133c6688cca7961b819b20d76b84a3d"
+    },
+    {
+      "path" : "\/essays\/the-composable-book\/assets\/02-composition.svg",
+      "sha256" : "6a237b1fed685f5ad41f2d31b2dbde51328058cf6efea97fe03965e337552de8"
+    },
+    {
+      "path" : "\/essays\/the-composable-book\/assets\/03-one-book-many-hosts.svg",
+      "sha256" : "94d86d2c15d0a9c14a4e963b461a18636a4ff238e3ad51939c1e5fc35e3ed04e"
+    },
+    {
+      "path" : "\/essays\/the-composable-book\/assets\/04-semantic-ledger.svg",
+      "sha256" : "8dac2881905f6ca89129e459b59f7c8ca57fd45177674e87193fdd2e653a5f01"
+    },
+    {
+      "path" : "\/essays\/the-composable-book\/assets\/cover.png",
+      "sha256" : "6a1b90a402b9e704688ab81f598b89d2c29ab98b619ca100d0c8323d8e5a4840"
+    },
+    {
+      "path" : "\/essays\/the-composable-book\/assets\/essay.css",
+      "sha256" : "05b3915a0f37d5f83df06af31081bfe661c7b792c8a83c2c4f952c7f03b4011c"
+    },
+    {
+      "path" : "\/essays\/the-composable-book\/index.html",
+      "sha256" : "e69e87294edb6f2faf7b86279af8c7951e75c7a458c79d540a3faa689f8eec54"
+    },
+    {
+      "path" : "\/essays\/the-ear-that-learns\/assets\/essay-listening.mjs",
+      "sha256" : "6bea43701e82e67d41f40c02d98dec9f445f18189fe856a657197083280aac33"
+    },
+    {
+      "path" : "\/essays\/the-ear-that-learns\/assets\/listening-room.png",
+      "sha256" : "d07e55ebed5b0e9100a86191099b686c8c1802770b292c358d86208911dd269e"
+    },
+    {
+      "path" : "\/essays\/the-ear-that-learns\/assets\/listening-room.svg",
+      "sha256" : "972a143be61a414583ab6d6bacc03f8ccb22f3c6b75a1c5aa64d3b97a530c5d7"
+    },
+    {
+      "path" : "\/essays\/the-ear-that-learns\/index.html",
+      "sha256" : "c7d6f85a2562e56dffa4b5319a9df218a22154a41c6022a7510dc3d22a097a11"
+    },
+    {
+      "path" : "\/essays\/the-ear-that-learns\/media\/sing-articulated-compare.m4a",
+      "sha256" : "c27fe2ee9bd757b4b1d82aeb3f1ea82f7ff24b1b03741cc77408ebc1638cc807"
+    },
+    {
+      "path" : "\/essays\/the-ear-that-learns\/media\/sing-expressive-compare.m4a",
+      "sha256" : "acf902889e00a37bb832864ff826a612b468fb49900db8de02682cbefd6ab68f"
+    },
+    {
+      "path" : "\/essays\/the-ear-that-learns\/media\/sing-plain-compare.m4a",
+      "sha256" : "83b45c232a05abea5c3fe5fd25bee71630ce86e66eae78b9817cd60fd9ee8c21"
+    },
+    {
+      "path" : "\/essays\/to-read-is-not-to-remember\/assets\/bookshelf-ipad-landscape-test.png",
+      "sha256" : "ca2628cd98b5ebdc18816c510729d997f0539882b03949104bf94a2354389dd0"
+    },
+    {
+      "path" : "\/essays\/to-read-is-not-to-remember\/editorial-introduction.md",
+      "sha256" : "cd4c8ec73b288edb64a69151af13dcd382ed657e7c57b55173a7c5161a54e503"
+    },
+    {
+      "path" : "\/essays\/to-read-is-not-to-remember\/index.html",
+      "sha256" : "23698ad0b7abb97188df28663bc55d5f711fb07d4eb7947b47a8467dde06b9c0"
+    },
+    {
+      "path" : "\/essays\/to-read-is-not-to-remember\/source.md",
+      "sha256" : "40acb5ce4d5f9434180604e4bd024e64423a4e97087c6c9d9e1ab534adada5ca"
+    },
+    {
+      "path" : "\/essays\/to-read-is-not-to-remember\/to-read-is-not-to-remember.pdf",
+      "sha256" : "9c8abd38a0963970f6a8721f89c6281ecaff3994c722985a38232e8afb4be41f"
+    },
+    {
+      "path" : "\/index.html",
+      "sha256" : "9814fc24e3018c36f310f0bc8da3ccaa3251e0100404be3da0b7dad8e7c02309"
+    },
+    {
+      "path" : "\/publication-manifest.json",
+      "sha256" : "a103ff38d8e5c2a41878936d6a65bff13a52a3287dc860126a449daa7b1a9d81"
+    },
+    {
+      "path" : "\/release-manifest.json",
+      "sha256" : "f08c38427614df8f19cf5754eb09c15d6d22e753594064556e1c8cfe01f52bbe"
+    }
+  ],
+  "previousReleaseID" : "estate-20261025-v15-ear-sing-61f264d",
+  "publicHost" : "fountain.coach",
+  "publicWitnessPaths" : [
+    "\/index.html",
+    "\/essays\/index.html",
+    "\/essays\/the-ear-that-learns\/index.html",
+    "\/essays\/the-ear-that-learns\/assets\/listening-room.png",
+    "\/essays\/the-ear-that-learns\/assets\/essay-listening.mjs",
+    "\/essays\/the-ear-that-learns\/media\/sing-articulated-compare.m4a",
+    "\/essays\/the-composable-book\/index.html"
+  ],
+  "releaseID" : "estate-20261025-v16-ear-sing-social-124c9fa",
+  "sourceRevision" : "124c9fabc310dcf35a8c23bd5018efb3126c4394"
+}

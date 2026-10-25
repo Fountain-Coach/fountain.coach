@@ -22,13 +22,13 @@
   ],
   "retainedSourceRoutes": "site/essays/ and original figures remain verbatim",
   "previousLiveSnapshotTag": "baseline-captured-20261014",
-  "sourceOnly": "Source-owned release of The Ear That Learns and 3 original synthetic sound examples independently verified active over HTTPS on 25 October 2026; other source assets remain separate candidate/editorial work.",
+  "sourceOnly": "Public v16 preview correction verified: the essay's first original illustration is now its Open Graph and Twitter card image; same PNG bytes, no new art or body change.",
   "editorialEdition": "editions/essays/",
   "editionCatalogue": "editions/",
   "nestedEditionCount": 3,
   "firstReadingsCollection": "collections/first-readings/",
   "firstReadingsWorkCount": 1,
-  "lastVerifiedPublicRelease": "estate-20261025-v15-ear-sing-61f264d",
-  "lastVerifiedPublicSourceRevision": "61f264d39615c66a3c5bd9e8359979c3c5c23575",
-  "publicReceipt": "docs/releases/2026-10-25-ear-sing-v15-public-receipt.json"
+  "lastVerifiedPublicRelease": "estate-20261025-v16-ear-sing-social-124c9fa",
+  "lastVerifiedPublicSourceRevision": "124c9fabc310dcf35a8c23bd5018efb3126c4394",
+  "publicReceipt": "docs/releases/2026-10-25-ear-sing-social-v16-public-receipt.json"
 }

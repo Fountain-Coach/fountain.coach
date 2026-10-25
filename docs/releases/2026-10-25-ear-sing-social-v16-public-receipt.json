@@ -1,0 +1,41 @@
+{
+  "activated" : true,
+  "detail" : "Exact published bytes verified independently via HTTPS",
+  "previousReleaseID" : "estate-20261025-v15-ear-sing-61f264d",
+  "publicHost" : "fountain.coach",
+  "recordedAt" : 814615775.703635,
+  "releaseID" : "estate-20261025-v16-ear-sing-social-124c9fa",
+  "sourceInventorySHA256" : "ff424dec0bfe9142b48e563d516c601c966132f4f2ad7fe1d8746e2a5dd6f8a4",
+  "sourceRevision" : "124c9fabc310dcf35a8c23bd5018efb3126c4394",
+  "state" : "active",
+  "verifiedPublicFiles" : [
+    {
+      "path" : "\/index.html",
+      "sha256" : "9814fc24e3018c36f310f0bc8da3ccaa3251e0100404be3da0b7dad8e7c02309"
+    },
+    {
+      "path" : "\/essays\/index.html",
+      "sha256" : "2bc59e22be03701dd63bd53e80bd82fe636faf08fc34a6bab80a5886272b892c"
+    },
+    {
+      "path" : "\/essays\/the-ear-that-learns\/index.html",
+      "sha256" : "c7d6f85a2562e56dffa4b5319a9df218a22154a41c6022a7510dc3d22a097a11"
+    },
+    {
+      "path" : "\/essays\/the-ear-that-learns\/assets\/listening-room.png",
+      "sha256" : "d07e55ebed5b0e9100a86191099b686c8c1802770b292c358d86208911dd269e"
+    },
+    {
+      "path" : "\/essays\/the-ear-that-learns\/assets\/essay-listening.mjs",
+      "sha256" : "6bea43701e82e67d41f40c02d98dec9f445f18189fe856a657197083280aac33"
+    },
+    {
+      "path" : "\/essays\/the-ear-that-learns\/media\/sing-articulated-compare.m4a",
+      "sha256" : "c27fe2ee9bd757b4b1d82aeb3f1ea82f7ff24b1b03741cc77408ebc1638cc807"
+    },
+    {
+      "path" : "\/essays\/the-composable-book\/index.html",
+      "sha256" : "e69e87294edb6f2faf7b86279af8c7951e75c7a458c79d540a3faa689f8eec54"
+    }
+  ]
+}

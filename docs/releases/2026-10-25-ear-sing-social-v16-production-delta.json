@@ -1,0 +1,20 @@
+{
+  "sourceCommit": "124c9fabc310dcf35a8c23bd5018efb3126c4394",
+  "previousRelease": "estate-20261025-v15-ear-sing-61f264d",
+  "release": "estate-20261025-v16-ear-sing-social-124c9fa",
+  "unchangedFiles": 31,
+  "modified": {
+    "essays/the-ear-that-learns/index.html": {
+      "before": "a27b0e28ea18ba4e7c9dfd8f1722fd2e77af3a6936b7499b052690a44b54fda5",
+      "after": "c7d6f85a2562e56dffa4b5319a9df218a22154a41c6022a7510dc3d22a097a11"
+    },
+    "release-manifest.json": {
+      "before": "5adbdb46a98edf744fb83b2b404a2d22a3172182a50377e862dd5762a5c205b7",
+      "after": "f08c38427614df8f19cf5754eb09c15d6d22e753594064556e1c8cfe01f52bbe"
+    }
+  },
+  "added": [],
+  "deleted": [],
+  "socialImageUnchanged": "d07e55ebed5b0e9100a86191099b686c8c1802770b292c358d86208911dd269e",
+  "publicPreviewImage": "https://fountain.coach/essays/the-ear-that-learns/assets/listening-room.png"
+}
