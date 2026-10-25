@@ -171,15 +171,6 @@ h3 { font-size:1.05rem; }
 .essay-gallery-card { min-width:0; border-top:2px solid var(--ink); }
 .essay-gallery-image { display:block; margin-top:1rem; border:1px solid var(--line); background:var(--surface); }
 .essay-gallery-image img { display:block; width:100%; aspect-ratio:12/7; object-fit:cover; }
-/* Ear / Sing: typographic plate, not an invented recording or album cover. */
-.ear-sing-plate{display:flex;flex-direction:column;justify-content:space-between;gap:2rem;min-height:clamp(240px,38vw,440px);padding:clamp(20px,4vw,44px);border:1px solid var(--line);background:var(--surface);color:var(--ink)}
-.ear-sing-plate-overline,.ear-sing-plate-caption{font:600 clamp(.65rem,.9vw,.8rem)/1.4 ui-monospace,Menlo,monospace;letter-spacing:.12em}
-.ear-sing-plate strong{font:400 clamp(2rem,5.4vw,5.7rem)/1.05 Georgia,"Times New Roman",serif;letter-spacing:-.045em;text-wrap:balance}
-.ear-sing-plate-caption{letter-spacing:.025em;font-weight:400;color:var(--muted)}
-.essay-gallery-image.ear-sing-plate{aspect-ratio:12/7;min-height:0;gap:1rem;text-decoration:none}
-.essay-gallery-image.ear-sing-plate strong{font-size:clamp(1.65rem,3.2vw,3rem)}
-.essay-gallery-image.ear-sing-plate:hover strong{text-decoration:underline;text-underline-offset:.13em}
-.essay-gallery-image.ear-sing-plate:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 .essay-gallery-copy { padding:1rem 0 1.5rem; min-width:0; }
 .essay-gallery-copy h3 { margin:.4rem 0 .7rem; font:500 clamp(1.35rem,2.4vw,2.1rem)/1.08 Georgia,"Times New Roman",serif; overflow-wrap:anywhere; }
 .essay-gallery-copy h3 a { color:var(--ink); text-decoration:none; }
@@ -193,3 +184,45 @@ h3 { font-size:1.05rem; }
 .teatro-score-figure img { aspect-ratio: 1200 / 630; object-fit: contain; background: #f5f0e7; border: 1px solid var(--line); }
 .teatro-score-figure figcaption { max-width: 68ch; }
 @media (max-width: 640px) { .essay-header h1 { max-width: none; } .essay-figure { margin-block: 2rem; } }
+
+
+/* Ear / Sing: authored 04 listening-room plate and SatzfunkPlayer time annotation. */
+.essay-hero-illustration { aspect-ratio:3 / 2; width:100%; object-fit:contain; border:1px solid var(--line); background:#f5f1e7; }
+.essay-gallery-card[data-essay-route="/essays/the-ear-that-learns/"] .essay-gallery-image img { aspect-ratio:12 / 7; object-fit:contain; background:#f5f1e7; }
+.essay-listening-panel { max-width:78rem; margin:3.3rem auto; padding:clamp(1rem,2.6vw,2.25rem); border:1px solid var(--line); background:var(--surface); }
+.essay-listening-heading { display:flex; justify-content:space-between; align-items:end; flex-wrap:wrap; gap:.7rem 1.5rem; padding-bottom:1.4rem; border-bottom:1px solid var(--line); }
+.essay-listening-heading h2 { font:500 clamp(1.7rem,3vw,2.5rem)/1.16 Georgia,"Times New Roman",serif; margin:.4rem 0 0; }
+.listening-duration,.essay-audio-source,.essay-audio-status,.essay-note-actions span { color:var(--muted);font: .74rem/1.5 ui-monospace,Menlo,monospace; }
+.essay-take-tabs {display:flex;flex-wrap:wrap;gap:.5rem; padding:1.3rem 0;}
+.essay-take-tabs button { background:transparent; color:var(--ink); border:1px solid var(--line); font:600 .78rem/1.3 ui-monospace,Menlo,monospace; padding:.65rem .9rem; cursor:pointer; }
+.essay-take-tabs button:hover,.essay-take-tabs button.is-selected {border-color:var(--accent);color:var(--accent);background:var(--surface-secondary,var(--surface));}
+.essay-take-tabs button:focus-visible,.essay-timed-cues button:focus-visible,.essay-note-actions button:focus-visible {outline:2px solid var(--accent); outline-offset:3px;}
+.essay-listening-layout {display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.16fr);gap:clamp(1rem,3vw,2.8rem);align-items:start;}
+.essay-audio-machine {border-top:1px solid var(--ink);padding-top:1rem; min-width:0;}
+.essay-audio-machine h3,.essay-audio-annotations h3 {font:500 clamp(1.15rem,2vw,1.4rem)/1.2 Georgia,"Times New Roman",serif; margin:0 0 .6rem;}
+.essay-audio-machine p,.essay-audio-annotations p {font-size:.93rem;line-height:1.6;color:var(--muted);margin:0 0 1rem;}
+.essay-audio-machine audio {display:block;width:100%;max-width:100%;min-height:54px;margin:1.1rem 0;border-radius:0;}
+.essay-audio-source {display:flex;flex-direction:column;gap:.2rem;border-top:1px solid var(--line);padding-top:.8rem;}
+.essay-audio-source strong {color:var(--ink);font-weight:600;}
+.essay-audio-machine .essay-audio-status {margin-top:.9rem;min-height:2rem;font-size:.72rem;}
+.essay-audio-annotations {border-top:1px solid var(--ink);padding-top:1rem;min-width:0;}
+.essay-timed-cues {margin:.8rem 0 0;padding:0;list-style:none;}
+.essay-timed-cues li {display:grid;grid-template-columns:5.3rem 1fr;gap:.75rem;align-items:start;border-bottom:1px solid var(--line);padding:.75rem 0;font-size:.91rem;line-height:1.55;}
+.essay-timed-cues li[data-kind="ear-measurement"] span {color:var(--ink);}
+.essay-timed-cues li span {color:var(--muted);}
+.essay-timed-cues button {appearance:none;min-width:0;background:transparent;border:0;border-left:2px solid var(--line);padding:.15rem .2rem .2rem .5rem;color:var(--ink);cursor:pointer;text-align:left;font:600 .74rem/1.3 ui-monospace,Menlo,monospace;}
+.essay-timed-cues button.is-current,.essay-timed-cues button:hover {border-left-color:var(--accent);color:var(--accent);}
+.essay-reader-note {margin-top:1.4rem;border-top:1px solid var(--line);padding-top:1.4rem;}
+.essay-reader-note label {display:block;font:500 1.2rem/1.25 Georgia,"Times New Roman",serif;margin-bottom:.4rem;}
+.essay-reader-note .quiet {color:var(--muted);font-size:.85rem;max-width:60ch;margin:0 0 .8rem;}
+.essay-reader-note textarea {box-sizing:border-box;display:block;width:100%;max-width:100%;background:transparent;border:1px solid var(--line);color:var(--ink);padding:.7rem .8rem;font:inherit;resize:vertical;}
+.essay-note-actions {display:flex;flex-wrap:wrap;gap:.75rem 1.5rem;align-items:center;margin:.8rem 0;}
+.essay-note-actions button {border:1px solid var(--ink);padding:.55rem .85rem;cursor:pointer;background:transparent;color:var(--ink);font:.81rem/1.3 ui-monospace,Menlo,monospace;}
+.essay-note-actions button:hover {color:var(--accent);border-color:var(--accent);}
+.essay-reader-note [hidden] {display:none!important;}
+.essay-prose a[href*="take="] {text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:.18em;}
+@media(max-width:750px) {
+ .essay-listening-layout{grid-template-columns:1fr;gap:1.75rem}
+ .essay-timed-cues li{grid-template-columns:4.6rem 1fr;gap:.5rem}
+ .essay-listening-heading{align-items:start}
+}

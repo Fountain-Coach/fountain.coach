@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1536" height="1024" viewBox="0 0 1536 1024" role="img" aria-labelledby="title desc">
+<title id="title">The listening room</title>
+<desc id="desc">A technical architectural engraving in cream, charcoal and vermilion: a score and resonator face a listening instrument across a shared rehearsal room. Figure 04, Hearing / Rehearsal.</desc>
+<defs>
+<pattern id="paper" width="39" height="39" patternUnits="userSpaceOnUse"><circle cx="6" cy="8" r=".55" fill="#786a59" opacity=".2"/></pattern>
+<pattern id="hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(-25)"><path d="M0 0V10" stroke="#39352e" stroke-width=".75" opacity=".35"/></pattern>
+<pattern id="floor" width="29" height="29" patternUnits="userSpaceOnUse"><path d="M0 29L29 0" stroke="#9c9181" stroke-width=".6" opacity=".2"/></pattern>
+</defs>
+<rect width="1536" height="1024" fill="#f5f1e7"/>
+<rect width="1536" height="1024" fill="url(#paper)"/>
+<rect x="25" y="25" width="1486" height="974" fill="none" stroke="#262621" stroke-width="2.2"/>
+<!-- Architectural left and right walls and continuous floor -->
+<path d="M242 557L758 267L1293 563L779 857Z" fill="#e4dfd3" stroke="#282621" stroke-width="2.8"/>
+<path d="M242 557L758 267L1293 563L779 857Z" fill="url(#floor)"/>
+<path d="M242 557V347L758 55V267Z" fill="#f4f1e8" stroke="#2f2c26" stroke-width="2.5"/>
+<path d="M758 267V55L1293 352V563Z" fill="#dad6cb" stroke="#2f2c26" stroke-width="2.5"/>
+<path d="M254 548V354L758 72L1281 360V553" fill="none" stroke="#8d8677" stroke-width="1.1"/>
+<path d="M242 557v13l537 299 514-294v-12" fill="none" stroke="#2f2c26" stroke-width="1.7"/>
+<path d="M242 570l537 299 514-294" fill="none" stroke="#49453c" stroke-width="1.2"/>
+<!-- A music stand with a real four-note/three-syllable notation -->
+<path d="M430 450l148-84 158 89-149 84z" fill="#fbf8f0" stroke="#302d27" stroke-width="2"/>
+<path d="M430 450v69l157 89v-69zm157 89v69l149-84v-69z" fill="#d8d3c6" stroke="#302d27" stroke-width="1.75"/>
+<path d="M462 450l118-69 123 70-117 66z" fill="#faf7ec" stroke="#46413b" stroke-width="1.5"/>
+<g fill="none" stroke="#34312a" stroke-width="1.2">
+<path d="M490 450l164-93M498 463l164-93M506 476l164-93M514 489l164-93M522 502l164-93"/>
+</g>
+<g fill="#302c27" stroke="#302c27" stroke-width="1.3">
+<ellipse cx="543" cy="432" rx="9" ry="5" transform="rotate(-30 543 432)"/>
+<ellipse cx="575" cy="426" rx="9" ry="5" transform="rotate(-30 575 426)"/>
+<ellipse cx="608" cy="408" rx="9" ry="5" transform="rotate(-30 608 408)"/>
+<ellipse cx="640" cy="400" rx="9" ry="5" transform="rotate(-30 640 400)"/>
+<path d="M551 428v-47M583 422v-45M616 404v-42M648 396v-47" fill="none"/>
+</g>
+<!-- A source transducer and its visible cavity -->
+<path d="M481 583l109-62 67 38-112 65z" fill="#f7f5ed" stroke="#2c2925" stroke-width="2"/>
+<path d="M481 583v62l64 37v-58zm64 41v58l112-65v-58z" fill="#d6d1c4" stroke="#2c2925" stroke-width="1.6"/>
+<path d="M512 580l35-20 39 22-36 20z" fill="url(#hatch)" stroke="#302b26" stroke-width="1.4"/>
+<path d="M517 578l29-16 34 18-31 18z" fill="none" stroke="#49443b" stroke-width="1.4"/>
+<!-- Two unfixed paths cross the air between sound and hearing -->
+<g fill="none" stroke="#37322b" stroke-width="1.6">
+<path d="M652 598Q714 556 778 572T933 598" stroke-dasharray="3 9"/>
+<path d="M646 619Q721 571 780 591T924 622" stroke-dasharray="3 9"/>
+<path d="M641 643Q720 600 779 614T914 642" stroke-dasharray="3 9"/>
+</g>
+<path d="M761 366L969 482V716L761 599Z" fill="#fff9e9" fill-opacity=".24" stroke="#5c5449" stroke-width="1.75"/>
+<path d="M771 382v214l190 105V489z" stroke="#aca18f" stroke-width=".85" fill="none"/>
+<path d="M735 637l40-23 44 25-45 27z" fill="#b93e32" stroke="#873027" stroke-width="1.4"/>
+<!-- An ear-shaped listening cavity on a small instrument, not a person -->
+<path d="M953 568l128-73 106 61-129 72z" fill="#f8f5ed" stroke="#302e29" stroke-width="2.1"/>
+<path d="M953 568v72l105 59v-71zm105 60v71l129-73v-70z" fill="#d8d4c9" stroke="#302e29" stroke-width="1.7"/>
+<path d="M1019 544l66-37 54 31-69 39z" fill="#eae6db" stroke="#454038" stroke-width="1.45"/>
+<g transform="translate(1082 545) skewY(17)" fill="none" stroke="#302d27" stroke-width="2.5">
+<path d="M0-42C-29-54-51-28-51 1c0 29 22 31 23 51 1 16 20 25 35 12 14-16 3-33-11-34-16-2-9-16 4-19 25-6 22-43 0-53z"/>
+<path d="M-6-23c-23-6-30 10-24 29 6 10 28 6 27 27 0 9-11 18-20 10"/>
+<path d="M-11-2c-11-3-19 8-13 16"/>
+</g>
+<!-- Reference cards on the wall -->
+<path d="M1101 351l88 49v155l-88-49z" fill="#ede8dc" stroke="#474238" stroke-width="1.5"/>
+<path d="M1115 379l57 32m-57-11 57 32m-57-11 57 32m-57-11 57 32" fill="none" stroke="#736b5c" stroke-width="1.1"/>
+<!-- Pencil witnesses and measured labels -->
+<g fill="none" stroke="#777164" stroke-width="1.1">
+<path d="M322 673l454 251m12-57 460-263" stroke-dasharray="2 11"/>
+<path d="M339 713l432 245m16-60 427-242" opacity=".45"/>
+</g>
+<g fill="#343129" font-family="monospace" font-size="19" letter-spacing="4.3">
+<text transform="translate(433 683) rotate(27)">SING</text>
+<text transform="translate(1114 750) rotate(-29)">EAR</text>
+</g>
+<path d="M366 918H1170" stroke="#403b34" stroke-width="1.3"/>
+<text x="768" y="954" text-anchor="middle" fill="#332f29" font-family="monospace" font-size="25" letter-spacing="8">04  HEARING / REHEARSAL</text>
+</svg>
