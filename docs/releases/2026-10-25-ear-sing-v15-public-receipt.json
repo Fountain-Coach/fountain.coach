@@ -1,0 +1,53 @@
+{
+  "activated" : true,
+  "detail" : "Exact published bytes verified independently via HTTPS",
+  "previousReleaseID" : "estate-20261024-v14-satzfunk-reel-estate",
+  "publicHost" : "fountain.coach",
+  "recordedAt" : 814613581.343111,
+  "releaseID" : "estate-20261025-v15-ear-sing-61f264d",
+  "sourceInventorySHA256" : "4dccffb81d22b7f32a1247e6c6c21a2c7ba8339bcf2be791227126162a51c97d",
+  "sourceRevision" : "61f264d39615c66a3c5bd9e8359979c3c5c23575",
+  "state" : "active",
+  "verifiedPublicFiles" : [
+    {
+      "path" : "\/index.html",
+      "sha256" : "9814fc24e3018c36f310f0bc8da3ccaa3251e0100404be3da0b7dad8e7c02309"
+    },
+    {
+      "path" : "\/essays\/index.html",
+      "sha256" : "2bc59e22be03701dd63bd53e80bd82fe636faf08fc34a6bab80a5886272b892c"
+    },
+    {
+      "path" : "\/essays\/the-ear-that-learns\/index.html",
+      "sha256" : "a27b0e28ea18ba4e7c9dfd8f1722fd2e77af3a6936b7499b052690a44b54fda5"
+    },
+    {
+      "path" : "\/assets\/site.css",
+      "sha256" : "6aba1927f4b60e6942ee4f2f19e14ad039d0af93fa4aa1809c9b38300842c9fd"
+    },
+    {
+      "path" : "\/essays\/the-ear-that-learns\/assets\/listening-room.png",
+      "sha256" : "d07e55ebed5b0e9100a86191099b686c8c1802770b292c358d86208911dd269e"
+    },
+    {
+      "path" : "\/essays\/the-ear-that-learns\/assets\/essay-listening.mjs",
+      "sha256" : "6bea43701e82e67d41f40c02d98dec9f445f18189fe856a657197083280aac33"
+    },
+    {
+      "path" : "\/essays\/the-ear-that-learns\/media\/sing-plain-compare.m4a",
+      "sha256" : "83b45c232a05abea5c3fe5fd25bee71630ce86e66eae78b9817cd60fd9ee8c21"
+    },
+    {
+      "path" : "\/essays\/the-ear-that-learns\/media\/sing-articulated-compare.m4a",
+      "sha256" : "c27fe2ee9bd757b4b1d82aeb3f1ea82f7ff24b1b03741cc77408ebc1638cc807"
+    },
+    {
+      "path" : "\/essays\/the-ear-that-learns\/media\/sing-expressive-compare.m4a",
+      "sha256" : "acf902889e00a37bb832864ff826a612b468fb49900db8de02682cbefd6ab68f"
+    },
+    {
+      "path" : "\/essays\/the-composable-book\/index.html",
+      "sha256" : "e69e87294edb6f2faf7b86279af8c7951e75c7a458c79d540a3faa689f8eec54"
+    }
+  ]
+}
