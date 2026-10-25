@@ -37,6 +37,19 @@ def check():
  assert 'class="instrument-slot"' not in catalogue
  assert 'class="bookshelf-wordmark"' not in catalogue
  assert 'class="shelf-miniature"' not in catalogue
+ # Original books remain the same; supporting editorial navigation is not a cover.
+ assert catalogue.count('class="bookshelf-pathways"') == 1
+ for path in ('/essays/', '/essays/the-ear-that-learns/', 'https://instruments.fountain.coach/'):
+  assert 'href="' + path + '"' in catalogue
+ assert (SITE/'assets/essay-pathways.css').is_file()
+ article=(SITE/'essays/the-ear-that-learns/index.html').read_text()
+ assert '<h1>The Ear That Learns</h1>' in article
+ assert 'href="https://instruments.fountain.coach/#ear"' in article
+ assert 'href="https://instruments.fountain.coach/#sing"' in article
+ assert article.count('<h2>') >= 5
+ gallery=(SITE/'essays/index.html').read_text()
+ assert gallery.count('data-essay-route="/essays/the-ear-that-learns/"') == 1
+ assert gallery.count('href="/essays/the-ear-that-learns/"') >= 2
  assert 'class="shelf-item-caption"' not in catalogue
  front={x['id']:x for x in json.loads((ROOT.parent/'estate/manifest.json').read_text())['frontDoors']}
  expected=[front['fountain-coach']['entryEditionUrl'],

@@ -221,9 +221,21 @@ def build_estate_grid():
                           edition=edition, reader=reader, cover_image=art,
                           cover_title=('First Readings' if identity=='first-reading' else 'Essays'),
                           source_revision=revision, host=host, status=status))
-    return render_bookshelf(title="Fountain Coach", imprint="Fountain Coach",
-                            books=books, css_url="/assets/linotype/bookshelf.css",
-                            logo_url="/assets/fountain-coach-logo-transparent.png")
+    rendered = render_bookshelf(title="Fountain Coach", imprint="Fountain Coach",
+                                books=books, css_url="/assets/linotype/bookshelf.css",
+                                logo_url="/assets/fountain-coach-logo-transparent.png")
+    # Non-book paths stay outside the Press-owned cover lattice; Bookshelf
+    # membership and the number of authentic/empty slots never change.
+    paths = ('<nav class="bookshelf-pathways" aria-label="Writing and instruments">'
+             '<a href="/essays/">Essays</a>'
+             '<a href="/essays/the-ear-that-learns/">The Ear That Learns</a>'
+             '<a href="https://instruments.fountain.coach/">Instruments · Ear &amp; Sing</a>'
+             '</nav>')
+    assert rendered.count('<div class="bookshelf-paper">') == 1
+    assert rendered.count('</head>') == 1
+    rendered = rendered.replace('<div class="bookshelf-paper">', paths + '<div class="bookshelf-paper">', 1)
+    rendered = rendered.replace('</head>', '<link rel="stylesheet" href="/assets/essay-pathways.css">\n</head>', 1)
+    return rendered
 
 def main():
  parser=argparse.ArgumentParser()

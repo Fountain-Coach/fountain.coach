@@ -171,6 +171,15 @@ h3 { font-size:1.05rem; }
 .essay-gallery-card { min-width:0; border-top:2px solid var(--ink); }
 .essay-gallery-image { display:block; margin-top:1rem; border:1px solid var(--line); background:var(--surface); }
 .essay-gallery-image img { display:block; width:100%; aspect-ratio:12/7; object-fit:cover; }
+/* Ear / Sing: typographic plate, not an invented recording or album cover. */
+.ear-sing-plate{display:flex;flex-direction:column;justify-content:space-between;gap:2rem;min-height:clamp(240px,38vw,440px);padding:clamp(20px,4vw,44px);border:1px solid var(--line);background:var(--surface);color:var(--ink)}
+.ear-sing-plate-overline,.ear-sing-plate-caption{font:600 clamp(.65rem,.9vw,.8rem)/1.4 ui-monospace,Menlo,monospace;letter-spacing:.12em}
+.ear-sing-plate strong{font:400 clamp(2rem,5.4vw,5.7rem)/1.05 Georgia,"Times New Roman",serif;letter-spacing:-.045em;text-wrap:balance}
+.ear-sing-plate-caption{letter-spacing:.025em;font-weight:400;color:var(--muted)}
+.essay-gallery-image.ear-sing-plate{aspect-ratio:12/7;min-height:0;gap:1rem;text-decoration:none}
+.essay-gallery-image.ear-sing-plate strong{font-size:clamp(1.65rem,3.2vw,3rem)}
+.essay-gallery-image.ear-sing-plate:hover strong{text-decoration:underline;text-underline-offset:.13em}
+.essay-gallery-image.ear-sing-plate:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 .essay-gallery-copy { padding:1rem 0 1.5rem; min-width:0; }
 .essay-gallery-copy h3 { margin:.4rem 0 .7rem; font:500 clamp(1.35rem,2.4vw,2.1rem)/1.08 Georgia,"Times New Roman",serif; overflow-wrap:anywhere; }
 .essay-gallery-copy h3 a { color:var(--ink); text-decoration:none; }

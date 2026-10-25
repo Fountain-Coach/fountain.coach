@@ -13,7 +13,8 @@ intro=(page/"editorial-introduction.md").read_text()
 render=subprocess.run(["pandoc","--from=markdown+smart","--to=html5","--wrap=none"],input=intro,text=True,capture_output=True,check=True).stdout
 assert render in h,"Published editorial must be exact source Markdown projection"
 assert collection.count('data-essay-route="/essays/'+slug+'/"')==1
-assert collection.count('class="essay-gallery-card"')==4
+assert collection.count('class="essay-gallery-card"')==5
+assert collection.count('data-essay-route="/essays/the-ear-that-learns/"')==1
 assert h.count('<object class="pdf-frame"')==1
 assert h.count('href="to-read-is-not-to-remember.pdf"')==3
 assert '<meta property="og:image:alt"' in h and 'application/ld+json' in h

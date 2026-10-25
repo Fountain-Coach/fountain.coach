@@ -1,0 +1,7 @@
+/* Supporting paths beside the authentic Fountain Press Bookshelf.
+   These are editorial links, not book covers or new publication identities. */
+.bookshelf-pathways{display:flex;flex-wrap:wrap;gap:.65rem 1.6rem;align-items:baseline;margin:0 0 clamp(20px,3vw,32px);border-bottom:1px solid var(--rule);padding:0 0 12px}
+.bookshelf-pathways a{font:500 clamp(12px,1.3vw,15px)/1.6 "Iowan Old Style",Georgia,serif;letter-spacing:.01em;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--vacant)}
+.bookshelf-pathways a:hover{border-color:currentColor}
+.bookshelf-pathways a:focus-visible{outline:2px solid var(--ink);outline-offset:4px}
+@media(max-width:720px){.bookshelf-pathways{column-gap:1.15rem;row-gap:.5rem}}
