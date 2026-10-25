@@ -16,6 +16,13 @@ assert PNG.stat().st_size>30000
 assert PNG.read_bytes()[:4].hex()=="89504e47"
 assert "ear-sing-plate" not in CSS
 assert ".essay-hero-illustration" in CSS and ".essay-timed-cues" in CSS
+# Automatic OS dark mode has dark --paper/--ink but an inherited light
+# --surface. Neither the panel nor its selected tabs may use that token.
+assert "--listening-panel-bg:var(--surface)" in CSS
+assert ':root:not([data-theme="light"]) .essay-listening-panel { --listening-panel-bg:var(--paper); }' in CSS
+assert ':root[data-theme="dark"] .essay-listening-panel { --listening-panel-bg:var(--paper); }' in CSS
+assert "background:var(--listening-panel-bg)" in CSS
+assert ".essay-reader-note textarea::placeholder { color:var(--muted); opacity:1; }" in CSS
 assert 'src="assets/listening-room.png"' in HTML
 assert 'src="assets/essay-listening.mjs"' in HTML
 assert GALLERY.count('data-essay-route="/essays/the-ear-that-learns/"')==1
