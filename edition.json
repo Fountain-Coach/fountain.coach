@@ -8,7 +8,7 @@
   "publicationState": "ear-sing-public-production-verified-2026-10-25",
   "fileCount": 105,
   "indexPages": 24,
-  "sourceSha256Inventory": "23e650d8c06028b40a38c77de04b0e912037705b419748c05101dfc53cf508bd",
+  "sourceSha256Inventory": "bccd5416107355b8945336096973d3006b664c3049711679e7a72e8bc7511bc3",
   "sourceNote": "Entire known local public site route inventory re-fetched via live HTTPS; initial Git revision is a snapshot, not an automated deployment.",
   "deployControl": "EstatePublisher exact-host, authorized release and complete independent HTTPS readback",
   "baselineGitCommit": "420be0ca655d2262ec987934c0dc573cbb11eefd",

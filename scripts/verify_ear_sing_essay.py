@@ -24,6 +24,29 @@ assert ':root[data-theme="dark"] .essay-listening-panel { --listening-panel-bg:v
 assert "background:var(--listening-panel-bg)" in CSS
 assert ".essay-reader-note textarea::placeholder { color:var(--muted); opacity:1; }" in CSS
 assert 'src="assets/listening-room.png"' in HTML
+# Publication contract: the FIRST illustration in the article is its social
+# image. Social previews must not silently fall back to the site logo or use a
+# differently manufactured asset; both Facebook OG and Twitter/X point to it.
+canonical="https://fountain.coach/essays/the-ear-that-learns/"
+first=re.search('<article[^>]*>.*?<img[^>]*src="([^"]+)"[^>]*alt="([^"]+)"',HTML,re.S)
+assert first,"First article illustration must be present"
+first_src,first_alt=first.groups()
+assert first_src=="assets/listening-room.png"
+social_image=canonical+first_src
+def meta(key,attribute="property"):
+ matches=re.findall('<meta '+attribute+'="'+re.escape(key)+'" content="([^"]*)"',HTML)
+ assert len(matches)==1,(key,matches)
+ return matches[0]
+assert meta("og:image")==social_image
+assert meta("og:image:secure_url")==social_image
+assert meta("og:image:alt")==first_alt
+assert meta("og:image:type")=="image/png"
+assert meta("twitter:image","name")==social_image
+assert meta("twitter:image:alt","name")==first_alt
+assert meta("twitter:card","name")=="summary_large_image"
+assert meta("twitter:title","name")==meta("og:title")
+assert meta("twitter:description","name")==meta("og:description")
+assert (int(meta("og:image:width")),int(meta("og:image:height")))==(1536,1024)
 assert 'src="assets/essay-listening.mjs"' in HTML
 assert GALLERY.count('data-essay-route="/essays/the-ear-that-learns/"')==1
 assert 'src="/essays/the-ear-that-learns/assets/listening-room.png"' in GALLERY
