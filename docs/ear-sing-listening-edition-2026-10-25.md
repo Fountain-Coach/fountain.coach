@@ -22,7 +22,7 @@ The three preview `.m4a` files are separately encoded high-quality AAC-LC **deri
 
 ## Existing semantic player, direct sound comments
 
-Software owner: [SatzfunkPlayer `1e621411dc412ab2482a9e6df9a6054145ddfa43`](https://github.com/Fountain-Coach/SatzfunkPlayer/commit/1e621411dc412ab2482a9e6df9a6054145ddfa43) with `src/essay-listening.mjs`, six new core tests and 102 passing overall tests. Exact source file SHA-256 `dacec22a5454bc5481fb40163ce387b55deb2c093af6e69e648f65fd2c03af4c` is checked into Fountain Coach as a **byte-identical, same-origin static projection** for the essay (not a fork or second player authority).
+Software owner: [SatzfunkPlayer `0d2ee25da224b71a24e997a4050805f157970d0c`](https://github.com/Fountain-Coach/SatzfunkPlayer/commit/0d2ee25da224b71a24e997a4050805f157970d0c) with `src/essay-listening.mjs`, six new core tests and 102 passing overall tests. Exact source file SHA-256 `c1e305f0886df66ee602d829b8ec61e27ff6a614d9d0cbbfb5f8c82bef7cfa6f` is checked into Fountain Coach as a **byte-identical, same-origin static projection** for the essay (not a fork or second player authority).
 
 The player uses one native HTML audio element, selection of the three take identities, seek-to-comment observations at 0.00, 1.15, 2.15 and 3.35 seconds, and a reader comment that can be copied with exact sample identifier, original WAV checksum and source position. No comment persistence, upload, live AI inference, invented transcript, autoplay or automatic publication exists. On private WLAN HTTP, if Safari denies clipboard API, a selected text field provides manual copy. A direct link with `?take=articulated&t=2.15#listening-exhibit` selects the actual recorded moment without autoplay.
 

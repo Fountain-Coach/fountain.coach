@@ -148,9 +148,19 @@ export function mountEssayListening(root,loc=globalThis.location){
       notes.append(entry);buttons.push(seek);
     }
     if(at!==null){
-      const move=()=>{audio.currentTime=Math.max(0,Math.min(take.durationSeconds,at));highlight()};
+      // Seeking on the first metadata event may race a browser's initial
+      // media-element reset. Reassert the exact position at canplay without
+      // starting playback, including after an already-cached preload.
+      const target=Math.max(0,Math.min(take.durationSeconds,at));
+      const move=()=>{
+        if(audio.readyState<1)return;
+        audio.currentTime=target;
+        highlight();
+      };
+      audio.addEventListener("loadedmetadata",move,{once:true});
+      audio.addEventListener("loadeddata",move,{once:true});
+      audio.addEventListener("canplay",move,{once:true});
       if(audio.readyState>=1)move();
-      else audio.addEventListener("loadedmetadata",move,{once:true});
     }
     status.textContent="Sing AAC audition from pinned original PCM · "+take.label+
       " · synthetic exercise only, no singer/lyric qualification.";

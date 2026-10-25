@@ -8,7 +8,7 @@
   "publicationState": "source-candidate-ear-sing-essay-awaiting-public-release",
   "fileCount": 102,
   "indexPages": 24,
-  "sourceSha256Inventory": "230cab205697820bd1f26ae2f379882e44739656e2abf190ad8704c973d78909",
+  "sourceSha256Inventory": "63d16455a28efac0ebd426861581cee4e397c46c3aa384e1d36ec6436dcc1ed2",
   "sourceNote": "Entire known local public site route inventory re-fetched via live HTTPS; initial Git revision is a snapshot, not an automated deployment.",
   "deployControl": "EstatePublisher exact-host, authorized release and complete independent HTTPS readback",
   "baselineGitCommit": "420be0ca655d2262ec987934c0dc573cbb11eefd",
