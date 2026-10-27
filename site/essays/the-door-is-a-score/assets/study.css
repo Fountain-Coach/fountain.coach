@@ -1,0 +1,16 @@
+.door-study{border-block:1px solid var(--line,#b9afa1);margin:2.4rem 0;padding:1.5rem 0;color:inherit}
+.door-study h2{margin-top:.4rem}.door-directions{display:flex;flex-wrap:wrap;gap:.55rem;margin:1rem 0}
+.door-study button,.door-study .door-download{font:inherit;min-height:44px;padding:.55rem .85rem;border:1px solid currentColor;border-radius:3px;background:transparent;color:inherit;cursor:pointer}
+.door-study button[aria-pressed=true]{background:#443a32;color:#fff8ed;border-color:#443a32}
+.door-study button:focus-visible,.door-study a:focus-visible{outline:3px solid #b74624;outline-offset:4px}
+.door-study button:disabled{opacity:.5;cursor:default}.door-study audio{width:100%;display:block;margin:1rem 0}
+.door-sentence{font-family:Georgia,serif;font-size:clamp(1.2rem,3vw,1.65rem);line-height:1.6;margin:1.4rem 0 .6rem}
+.door-engine-actions{display:flex;flex-wrap:wrap;align-items:center;gap:.7rem;margin:1rem 0}
+.door-study [role=status]{min-height:3em;line-height:1.5}.door-study details{margin-top:1rem}.door-study summary{cursor:pointer;padding:.6rem 0}
+.door-study .door-source{font-size:.92rem;line-height:1.6;max-width:70ch}.door-study a{overflow-wrap:anywhere}
+.door-study .door-note{margin:.4rem 0 1rem;line-height:1.65}.door-study .door-small{font-size:.9rem}
+.essay-prose .source-notes{font-size:.95rem;line-height:1.8}.essay-prose .source-notes li{margin:.6rem 0}
+.door-study figure{margin:1rem 0}.door-study img{max-width:100%;height:auto}
+@media(prefers-color-scheme:dark){.door-study button[aria-pressed=true]{background:#eee6d8;color:#241f1b;border-color:#eee6d8}}
+html[data-theme=dark] .door-study button[aria-pressed=true]{background:#eee6d8;color:#241f1b;border-color:#eee6d8}
+@media(max-width:480px){.door-directions{display:grid;grid-template-columns:1fr}.door-engine-actions{align-items:stretch}.door-engine-actions button{flex:1 1 45%}}

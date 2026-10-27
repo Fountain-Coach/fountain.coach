@@ -1,0 +1,88 @@
+{
+  "kind": "authored-csound-sound-study",
+  "engine": "@csound/browser",
+  "packageVersion": "7.0.0",
+  "engineVersion": 7000,
+  "sourceURL": "https://opengameart.org/content/100-cc0-metal-and-wood-sfx",
+  "sourceAuthor": "rubberduck",
+  "sourceLicense": "CC0-1.0",
+  "renderRights": "Fountain Coach authored sound studies; source recordings remain CC0-1.0",
+  "sourceArchiveSHA256": "be6eba63b03409ac0c77787a956b1503a7c186403d04aef9725c52644a4b7878",
+  "engineBundleSHA256": "c86c69291326fa3d64872f430ca9a06324a94c96db373d6bd207fdd4e5a3fc9e",
+  "scoreSHA256": "50d6e7e80e5bd0374bed5d8a8bc761b551782019a1596b383c5f0acceb111ab0",
+  "noPerTakeNormalization": true,
+  "semanticModelExecuted": false,
+  "openAIVoiceExecuted": false,
+  "nativeTeatroAdmission": false,
+  "midi2Dispatched": false,
+  "publicRelease": false,
+  "sources": [
+    {
+      "originalFilename": "keys_01.ogg",
+      "retainedAsset": "keys.ogg",
+      "originalSHA256": "8bc33b2545a8bd9c1b0e2c47665c6bb9ca981ab972415f66a2d468d0b4921a5a",
+      "pcmAsset": "keys.wav",
+      "pcmSHA256": "285dc534784012190bf96419273bdbc8fdcef9426b53f8220410bab6f6405ab6"
+    },
+    {
+      "originalFilename": "wood_squeak_01.ogg",
+      "retainedAsset": "wood-hinge.ogg",
+      "originalSHA256": "c6c90e02993b2e044937f344351b417aeff6841aa4cd683f208d85ececf23392",
+      "pcmAsset": "wood-hinge.wav",
+      "pcmSHA256": "6eb0d47107e6bb94aa475763930319d51112192a5e4c4c99840cfe10d6d7020e"
+    },
+    {
+      "originalFilename": "wood_close_01.ogg",
+      "retainedAsset": "wood-close.ogg",
+      "originalSHA256": "e4cbbaa6331b42a32cc3a63d643f4849c65c39a45e7c57d568eb1790619af06d",
+      "pcmAsset": "wood-close.wav",
+      "pcmSHA256": "b2e848557252ecb3ef128765e52afe56c978c8b25b0d7c687edc6566c710b675"
+    }
+  ],
+  "renders": [
+    {
+      "id": "present",
+      "wavSHA256": "02fb5f20ebe35abdef7d4d85aa2a615e4dc546ac2bf995b28a9565473056850a",
+      "mp3SHA256": "ffcd129b4da0925dff99875e04be533c3e9f728dad9291169214485a4f773788",
+      "sampleRate": 48000,
+      "channels": 2,
+      "durationSeconds": 14.0,
+      "peak": 0.371246337890625,
+      "rms": 0.007013957054807087,
+      "lateRmsAfter5_5Seconds": 1.1698469989462466e-05
+    },
+    {
+      "id": "beyond",
+      "wavSHA256": "2f8878b457b6760f7bdaeb573b65e8c0fb6c3dcbe8c60c64e138caec5ef1fe2e",
+      "mp3SHA256": "b9d1d07040e8b538e01bcb0c813a2906c01fd98d4623fa669c993b403bdf16c6",
+      "sampleRate": 48000,
+      "channels": 2,
+      "durationSeconds": 14.0,
+      "peak": 0.139068603515625,
+      "rms": 0.002275912560245948,
+      "lateRmsAfter5_5Seconds": 3.674545241200336e-05
+    },
+    {
+      "id": "memory",
+      "wavSHA256": "04420548eb2f4b0e0afb9d77955a2609a604536e8461c5b15c524f493241e73a",
+      "mp3SHA256": "4030bc4a876f858423d1c747bb3730cf790985afb22999c7c7d49f51ceeb182c",
+      "sampleRate": 48000,
+      "channels": 2,
+      "durationSeconds": 14.0,
+      "peak": 0.194061279296875,
+      "rms": 0.00550270169346182,
+      "lateRmsAfter5_5Seconds": 0.004257934555567769
+    },
+    {
+      "id": "withheld",
+      "wavSHA256": "3f7e199977fb4db3184658263a1c1e94529eb570c8730122a60149eae4ee8778",
+      "mp3SHA256": "3bef2108ef74029d5fcc6f9002afd8ea025881932bede889af872d2d3b405ddf",
+      "sampleRate": 48000,
+      "channels": 2,
+      "durationSeconds": 14.0,
+      "peak": 0.266021728515625,
+      "rms": 0.002800431843683294,
+      "lateRmsAfter5_5Seconds": 0.0
+    }
+  ]
+}

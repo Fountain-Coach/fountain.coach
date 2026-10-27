@@ -9,7 +9,7 @@
     "url": "git+https://github.com/Fountain-Coach/fountain.coach.git"
   },
   "scripts": {
-    "check": "python3 scripts/verify_essay_edition.py && python3 scripts/verify_reading_continuity_essay.py && python3 scripts/verify_ear_sing_essay.py",
+    "check": "python3 scripts/verify_essay_edition.py && python3 scripts/verify_reading_continuity_essay.py && python3 scripts/verify_ear_sing_essay.py && python3 scripts/door-score/verify.py",
     "book:build": "python3 scripts/build_edition_hierarchy.py --linotype-source ../solstice.fountain.coach/site",
     "book:browser": "node scripts/verify_estate_grid.mjs && node scripts/verify_essay_browser.mjs && node scripts/verify_editions_browser.mjs",
     "edition:browser": "node scripts/verify_estate_grid.mjs && node scripts/verify_editions_browser.mjs",

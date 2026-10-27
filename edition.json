@@ -6,9 +6,9 @@
   "repository": "Fountain-Coach/fountain.coach",
   "capturedAt": "2026-10-14T10:30:08Z",
   "publicationState": "ear-sing-public-production-verified-2026-10-25",
-  "fileCount": 105,
-  "indexPages": 24,
-  "sourceSha256Inventory": "bccd5416107355b8945336096973d3006b664c3049711679e7a72e8bc7511bc3",
+  "fileCount": 129,
+  "indexPages": 25,
+  "sourceSha256Inventory": "e5050414ad51079eff4536e37a65d8443eab0e61caa42358259026054915c567",
   "sourceNote": "Entire known local public site route inventory re-fetched via live HTTPS; initial Git revision is a snapshot, not an automated deployment.",
   "deployControl": "EstatePublisher exact-host, authorized release and complete independent HTTPS readback",
   "baselineGitCommit": "420be0ca655d2262ec987934c0dc573cbb11eefd",
@@ -30,5 +30,12 @@
   "firstReadingsWorkCount": 1,
   "lastVerifiedPublicRelease": "estate-20261025-v16-ear-sing-social-124c9fa",
   "lastVerifiedPublicSourceRevision": "124c9fabc310dcf35a8c23bd5018efb3126c4394",
-  "publicReceipt": "docs/releases/2026-10-25-ear-sing-social-v16-public-receipt.json"
+  "publicReceipt": "docs/releases/2026-10-25-ear-sing-social-v16-public-receipt.json",
+  "pendingEssayCandidate": {
+    "route": "/essays/the-door-is-a-score/",
+    "title": "The Door Is a Score",
+    "date": "2026-10-27",
+    "state": "source-candidate-not-published",
+    "audio": "four authored Csound renders and a live Csound sound study; no automated semantic model, OpenAI narration or MIDI2 dispatch"
+  }
 }
