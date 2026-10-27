@@ -14,3 +14,5 @@
 @media(prefers-color-scheme:dark){.door-study button[aria-pressed=true]{background:#eee6d8;color:#241f1b;border-color:#eee6d8}}
 html[data-theme=dark] .door-study button[aria-pressed=true]{background:#eee6d8;color:#241f1b;border-color:#eee6d8}
 @media(max-width:480px){.door-directions{display:grid;grid-template-columns:1fr}.door-engine-actions{align-items:stretch}.door-engine-actions button{flex:1 1 45%}}
+
+.door-opening-score{margin:1.5rem 0 2.5rem}.door-opening-score img{display:block;width:100%;height:auto}.door-opening-score figcaption{font-size:.85rem;line-height:1.55;margin-top:.7rem;max-width:80ch;color:inherit}

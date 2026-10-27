@@ -48,8 +48,9 @@ def build():
     prefix=re.sub(r'(<meta (?:name|property)="(?:description|og:description|twitter:description)" content=")[^"]*(">)',lambda m:m[1]+escape(DESCRIPTION,quote=True)+m[2],prefix)
     prefix=re.sub(r'<script type="application/ld\+json">.*?</script>',lambda _:'<script type="application/ld+json">'+json.dumps({'@context':'https://schema.org','@type':'Article','headline':TITLE,'description':DESCRIPTION,'mainEntityOfPage':CANONICAL,'dateCreated':'2026-10-27','author':{'@type':'Organization','name':'Fountain Coach'},'publisher':{'@type':'Organization','name':'Fountain Coach'}})+'</script>',prefix,flags=re.S)
     alt='Measured waveforms of four Csound performances, showing the returning closing in memory and its absence in the withheld version.'
-    image=CANONICAL+'assets/listening-score.png'
-    meta=''.join(f'<meta property="{k}" content="{v}">' for k,v in [('og:image',image),('og:image:secure_url',image),('og:image:type','image/png'),('og:image:width','1536'),('og:image:height','768'),('og:image:alt',alt)])+f'<meta name="twitter:image" content="{image}"><meta name="twitter:image:alt" content="{alt}">'
+    social_alt='Teatro graphic score: orange impacts and returning traces cross black spatial planes; a narrow threshold and a wide open interval hold the action in suspense.'
+    image=CANONICAL+'assets/teatro-door-score.png'
+    meta=''.join(f'<meta property="{k}" content="{v}">' for k,v in [('og:image',image),('og:image:secure_url',image),('og:image:type','image/png'),('og:image:width','1774'),('og:image:height','887'),('og:image:alt',social_alt)])+f'<meta name="twitter:image" content="{image}"><meta name="twitter:image:alt" content="{social_alt}">'
     prefix=prefix.replace('</head>',meta+'<link rel="stylesheet" href="assets/study.css"></head>')
     body=(ROOT/'scripts/door-score/essay-body.html').read_text()
     # The graph is a source-derived listening aid, not a new illustrative identity.
@@ -59,8 +60,9 @@ def build():
     gallery=ROOT/'site/essays/index.html';s=gallery.read_text()
     marker='data-essay-route="/essays/the-door-is-a-score/"'
     if marker not in s:
-        card=f'<article class="essay-gallery-card" {marker}><a class="essay-gallery-image" href="/essays/the-door-is-a-score/" aria-label="Read The Door Is a Score"><img src="/essays/the-door-is-a-score/assets/listening-score.png" width="1536" height="768" alt="{alt}"></a><div class="essay-gallery-copy"><div class="eyebrow">LISTENING ESSAY · OCTOBER 2026</div><h3><a href="/essays/the-door-is-a-score/">The Door Is a Score</a></h3><p>Geräuschemachen, semantic reading, and four audible Csound directions from one open sound source.</p></div></article>'
+        card=f'<article class="essay-gallery-card" {marker}><a class="essay-gallery-image" href="/essays/the-door-is-a-score/" aria-label="Read The Door Is a Score"><img src="/essays/the-door-is-a-score/assets/teatro-door-score.png" width="1774" height="887" alt="{social_alt}"></a><div class="essay-gallery-copy"><div class="eyebrow">LISTENING ESSAY · OCTOBER 2026</div><h3><a href="/essays/the-door-is-a-score/">The Door Is a Score</a></h3><p>Geräuschemachen, semantic reading, and four audible Csound directions from one open sound source.</p></div></article>'
         s=s.replace('data-page-size="6">','data-page-size="6">'+card,1);gallery.write_text(s)
+    gallery.write_text(gallery.read_text().replace('/essays/the-door-is-a-score/assets/listening-score.png', '/essays/the-door-is-a-score/assets/teatro-door-score.png').replace('width="1536" height="768" alt="'+alt+'"', 'width="1774" height="887" alt="'+social_alt+'"'))
     print('Built essay route, credited audio evidence and one collection entry; existing essays preserved.')
 
 if __name__=='__main__':build()

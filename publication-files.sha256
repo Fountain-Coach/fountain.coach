@@ -38,7 +38,7 @@ f481b18337dd3e0901ee3d8ba550b3dcc0f9b8f9128bc893e26cf39aa80313c3  editions/essay
 a30fd54a36966f1b9644a62f946df4fc31b916ead096dde73291260eb09b681e  editions/essays/teatro-an-unfinished-composition/index.html
 9af36e1702f2cde682e28ff5495a78333423c75221c61d5ae0efd92bfeb5bcde  editions/index.html
 2dda0529a16065d26add8b9c58bf692f535bc6a0109a9ed7e2b5d8cf1875429b  essays/edition-manifest.json
-6fd8db8eebec0b92b0c679677b7ae0db07cd4fd90968cbf7e545a49d28f9800c  essays/index.html
+ac21add4c35f944667aa741d48caa040f41553047b34bcfbdd64543c74f830a7  essays/index.html
 e826794efe5fefda45f644930ed44239d9ab4b6550015aa221da5612958026b2  essays/reframe-and-the-business-value-of-the-estate/assets/address-landscape.png
 ba8f8abca7a0cd42d8835a13dfdcd04840b9dfad45c86ac5599b854e8273539e  essays/reframe-and-the-business-value-of-the-estate/assets/estate-evolution.png
 8e444b976461fdf9b278a8702eef07ec74d532f617496da37c52d33c8b806451  essays/reframe-and-the-business-value-of-the-estate/assets/estate-landscape.png
@@ -63,7 +63,8 @@ c91e0ef6fa81116b634928609f6168d7bc4ed050a90b006cd3a9699feaca9a40  essays/the-doo
 ffcd129b4da0925dff99875e04be533c3e9f728dad9291169214485a4f773788  essays/the-door-is-a-score/assets/present.mp3
 02fb5f20ebe35abdef7d4d85aa2a615e4dc546ac2bf995b28a9565473056850a  essays/the-door-is-a-score/assets/present.wav
 50d6e7e80e5bd0374bed5d8a8bc761b551782019a1596b383c5f0acceb111ab0  essays/the-door-is-a-score/assets/score.mjs
-a717712e105d157d86243eaae6aaff5cd3f84f064809b4849dcffc3d08196415  essays/the-door-is-a-score/assets/study.css
+7ed44511c2af8deca3874453b09cd987c44e497c9227e647016e5e5c6495d6e2  essays/the-door-is-a-score/assets/study.css
+47791d9ac527641ae7b2cfe7ffe7111a99b9e39afaf89b28e53d4fa3d44cd4bb  essays/the-door-is-a-score/assets/teatro-door-score.png
 85b4d8deec70c1d7fdae19752d6284dade435904f7d7f8d2b2c1fc2ce3fe2eb1  essays/the-door-is-a-score/assets/vendor/CSOUND_CORE_LICENSE
 3f3adbdc06d616ccfd85151124dddca09fcf324494f72d549db961b6b088c9b5  essays/the-door-is-a-score/assets/vendor/LICENSE
 d0be724a19ab4c3d3c0f4cbe41e5eafa2dd530ec0e0dbaca4b0901d6b13feda7  essays/the-door-is-a-score/assets/vendor/THIRD_PARTY.md
@@ -74,7 +75,7 @@ e4cbbaa6331b42a32cc3a63d643f4849c65c39a45e7c57d568eb1790619af06d  essays/the-doo
 b2e848557252ecb3ef128765e52afe56c978c8b25b0d7c687edc6566c710b675  essays/the-door-is-a-score/assets/wood-close.wav
 c6c90e02993b2e044937f344351b417aeff6841aa4cd683f208d85ececf23392  essays/the-door-is-a-score/assets/wood-hinge.ogg
 6eb0d47107e6bb94aa475763930319d51112192a5e4c4c99840cfe10d6d7020e  essays/the-door-is-a-score/assets/wood-hinge.wav
-15c82436f82eeafb8a93e3f982ee24bfa17ab3bee1c5f3d832c52fb1de0886d1  essays/the-door-is-a-score/index.html
+c24403e5f0e2a86a76dad122d456c5390763fd5c161519482ec935992618693b  essays/the-door-is-a-score/index.html
 6bea43701e82e67d41f40c02d98dec9f445f18189fe856a657197083280aac33  essays/the-ear-that-learns/assets/essay-listening.mjs
 d07e55ebed5b0e9100a86191099b686c8c1802770b292c358d86208911dd269e  essays/the-ear-that-learns/assets/listening-room.png
 972a143be61a414583ab6d6bacc03f8ccb22f3c6b75a1c5aa64d3b97a530c5d7  essays/the-ear-that-learns/assets/listening-room.svg
