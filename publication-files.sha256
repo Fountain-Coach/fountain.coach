@@ -4,7 +4,7 @@
 274dab8c594e399585fa5238364f25e95fc7ffa3808eaef872de406ec79f745f  assets/estate-bookshelf/first-reading-ink.png
 e826794efe5fefda45f644930ed44239d9ab4b6550015aa221da5612958026b2  assets/estate-bookshelf/fountain-coach-edition.png
 226e3440690dd8cbeb331c4f3f62ee002fa0bc0e6007fcdf8431f1f578d115e2  assets/estate-bookshelf/teatro-score-memory-vector-human-condition.svg
-31baf2864046acf1885c49ccff40869d0dfbc9da63a2af674aecf218b8f8dbfe  assets/estate-core.css
+70e2f638ca42b0b8a4f0dc26fd002ea239b5a4a8528e1d8f3aa876b02ca59772  assets/estate-core.css
 d3c54081b69c0a3b62483100015dabc2bf69467d2903742909019b88a77cd869  assets/estate-core.js
 8c5fad1c3db56138d5959da75991dc8034a0be537ce46da6ffcc0d9655e7f729  assets/fountain-coach-logo-transparent.png
 43dd2978b994fab08176a3ee88ec81c6b8b791a327976449ff990b20627ea8cb  assets/fountain-logo.png
@@ -64,6 +64,7 @@ ffcd129b4da0925dff99875e04be533c3e9f728dad9291169214485a4f773788  essays/the-doo
 02fb5f20ebe35abdef7d4d85aa2a615e4dc546ac2bf995b28a9565473056850a  essays/the-door-is-a-score/assets/present.wav
 50d6e7e80e5bd0374bed5d8a8bc761b551782019a1596b383c5f0acceb111ab0  essays/the-door-is-a-score/assets/score.mjs
 7ed44511c2af8deca3874453b09cd987c44e497c9227e647016e5e5c6495d6e2  essays/the-door-is-a-score/assets/study.css
+b9bc81910e2fb270dbf1c281b1ca59a1d874291617d9bc19ae32322ccd088fef  essays/the-door-is-a-score/assets/teatro-door-score-social-v2.jpg
 47791d9ac527641ae7b2cfe7ffe7111a99b9e39afaf89b28e53d4fa3d44cd4bb  essays/the-door-is-a-score/assets/teatro-door-score.png
 85b4d8deec70c1d7fdae19752d6284dade435904f7d7f8d2b2c1fc2ce3fe2eb1  essays/the-door-is-a-score/assets/vendor/CSOUND_CORE_LICENSE
 3f3adbdc06d616ccfd85151124dddca09fcf324494f72d549db961b6b088c9b5  essays/the-door-is-a-score/assets/vendor/LICENSE
@@ -75,7 +76,7 @@ e4cbbaa6331b42a32cc3a63d643f4849c65c39a45e7c57d568eb1790619af06d  essays/the-doo
 b2e848557252ecb3ef128765e52afe56c978c8b25b0d7c687edc6566c710b675  essays/the-door-is-a-score/assets/wood-close.wav
 c6c90e02993b2e044937f344351b417aeff6841aa4cd683f208d85ececf23392  essays/the-door-is-a-score/assets/wood-hinge.ogg
 6eb0d47107e6bb94aa475763930319d51112192a5e4c4c99840cfe10d6d7020e  essays/the-door-is-a-score/assets/wood-hinge.wav
-de9a6fe65ad4d607d44e9fc9ae2c70ffb1b7de5bb2ab9d4d0921ceea1de82ea3  essays/the-door-is-a-score/index.html
+1cdbca31c1685d4146aa05c35cad79558c83aaacb56dde1674178f9efcd7251a  essays/the-door-is-a-score/index.html
 6bea43701e82e67d41f40c02d98dec9f445f18189fe856a657197083280aac33  essays/the-ear-that-learns/assets/essay-listening.mjs
 d07e55ebed5b0e9100a86191099b686c8c1802770b292c358d86208911dd269e  essays/the-ear-that-learns/assets/listening-room.png
 972a143be61a414583ab6d6bacc03f8ccb22f3c6b75a1c5aa64d3b97a530c5d7  essays/the-ear-that-learns/assets/listening-room.svg

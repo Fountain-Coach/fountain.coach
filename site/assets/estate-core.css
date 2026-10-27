@@ -523,3 +523,10 @@ img, svg { max-width: 100%; }
     overflow-y: hidden !important;
   }
 }
+
+/* Estate reading reel: reveal destinations and never truncate the edition on tablets. */
+@media (max-width: 62rem) {
+ .estate-nav.site-nav[data-site-nav] { flex-wrap: wrap !important; overflow: visible !important; gap: .35rem !important; padding-block: .55rem !important; }
+ .estate-nav.site-nav .estate-icon { flex: 0 1 auto !important; width: auto !important; min-width: 5.75rem !important; padding: .45rem .65rem !important; gap: .3rem !important; }
+ .estate-nav.site-nav .estate-icon span { position: static !important; width: auto !important; height: auto !important; margin: 0 !important; padding: 0 !important; clip: auto !important; overflow: visible !important; white-space: nowrap !important; font-size: .71rem !important; }
+}
