@@ -1,8 +1,12 @@
 # fountain.coach - owning Git source
 
+## Composable Book Linotype stylesheet recovery — WLAN v58
+
+The staged `/essays/the-composable-book/` route inherited a missing route-local `assets/essay.css` from v56 into v57. Although its HTML and shared chrome passed, the stylesheet returned 404, which destroyed the original essay typography and plate layout. The exact 7,393-byte stylesheet was independently recovered from the currently published `https://fountain.coach/essays/the-composable-book/assets/essay.css` and checked in at `site/essays/the-composable-book/assets/essay.css` (SHA-256 `05b3915a0f37d5f83df06af31081bfe661c7b792c8a83c2c4f952c7f03b4011c`). Staging v58 restores **only this CSS asset**, preserving every v57 HTML body and asset; original CSS production remains unchanged. The complete published essay body is still a production-baseline projection rather than a falsely claimed separately authored Git source. `npm run check` now asserts the exact source-owned stylesheet and 107-file inventory.
+
 ## Current private WLAN staging projection — 28 October 2026
 
-The writer-approved root and Essays reading room are now active on the owner WLAN at [Fountain Coach staging](http://192.168.8.50:8200/estate/); v57 has passed all 509 stage HTML route readbacks and 30 Chrome viewport checks. The staging provenance and route report are governed by the companion Fountain-Coach/estate branch. **This is not a public HTTPS promotion.** The editorial Git source and its original Linotype editions remain authoritative for their content.
+The writer-approved root and Essays reading room are now active on the owner WLAN at [Fountain Coach staging](http://192.168.8.50:8200/estate/); v58 retains all 509 verified stage HTML routes and restores the Composable Book stylesheet (v57 remains rollback-ready). The staging provenance and route report are governed by the companion Fountain-Coach/estate branch. **This is not a public HTTPS promotion.** The editorial Git source and its original Linotype editions remain authoritative for their content.
 
 ## Adopted author-led entrance — 28 October 2026
 

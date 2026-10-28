@@ -94,6 +94,17 @@ def check():
     for slug in ("the-door-is-a-score", "the-ear-that-learns", "the-composable-book",
                  "reframe-and-the-business-value-of-the-estate"):
         assert f'href="/essays/{slug}/"' in (SITE/"index.html").read_text(), slug
+    # A source-owned essay stylesheet was missing from the v56/v57 stage,
+    # even though its HTML route passed the global chrome audit. Preserve
+    # the exact published CSS independently of the global estate shell.
+    from hashlib import sha256
+    css=SITE/"essays/the-composable-book/assets/essay.css"
+    assert css.is_file(), "The Composable Book source stylesheet must be present"
+    styling=css.read_text(encoding="utf-8")
+    assert ".essay-body-grid" in styling and ".editorial-plate" in styling
+    edition=json.loads((ROOT/"edition.json").read_text())
+    assert sha256(css.read_bytes()).hexdigest()==edition["publicOnlyEssayAssetRecovery"]["publishedCSSSHA256"]
+    print("COMPOSABLE_BOOK_CSS_SOURCE_ACCEPTED",len(css.read_bytes()),"bytes")
     print("EDITORIAL_ENTRANCES_ACCEPTED",len(h.features),"features",len(e.gallery),"gallery works")
 
 if __name__ == "__main__":

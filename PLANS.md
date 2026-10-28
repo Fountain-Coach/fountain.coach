@@ -1,5 +1,9 @@
 # Editorial release plan — 28 October 2026
 
+## Route-specific Linotype repair — 28 October 2026
+
+The Composable Book article was incorrectly unstyled because its page-local `assets/essay.css` was absent from v56/v57. The public owner HTTPS served the original CSS with HTTP 200 (7,393 bytes, SHA-256 `05b3915…`) and the stage route returned 404 with MIME refusal. The original file has now been source-recovered and staged as v58 on `192.168.8.50:8200` without altering the article HTML. Chrome checks exercised mobile (390), iPad-like (820) and desktop (1280) sizes including real image decoding and table-of-contents anchors. V57 remains the rollback release; production is unchanged. The estate companion branch owns the typed v58 receipt and live route-specific CSS regression check.
+
 ## Successful owner-WLAN staging — 28 October 2026
 
 The stage previously marked not accepted below is now active as v57, `shared-shell-20261028-v57-author-led-aa38389`, assembled from the checked Git source and the verified v56 predecessor. Full remote SHA inventory 1,138 files, 509 independently served routes PASS, 30 live Chrome viewport checks PASS. v56 is retained for rollback; the public HTTPS estate remains unchanged. Complete route report and receipt are in the private Mac-mini staging receipt root and described in the estate source branch.

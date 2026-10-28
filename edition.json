@@ -5,10 +5,10 @@
   "publicationRoot": "site/",
   "repository": "Fountain-Coach/fountain.coach",
   "capturedAt": "2026-10-14T10:30:08Z",
-  "publicationState": "source-candidate-author-led-20261028-not-staged",
-  "fileCount": 106,
+  "publicationState": "source-candidate-author-led-20261028-staged-wlan-v58-not-public",
+  "fileCount": 107,
   "indexPages": 24,
-  "sourceSha256Inventory": "79a14abe3650cfaa65546783b9a99a17fda6787deb81845a855fdea93aed360b",
+  "sourceSha256Inventory": "1d4b9463708359e77dae61b9d6736268e9d4c18e299767a47ca62c77024260a6",
   "sourceNote": "Entire known local public site route inventory re-fetched via live HTTPS; initial Git revision is a snapshot, not an automated deployment.",
   "deployControl": "EstatePublisher exact-host, authorized release and complete independent HTTPS readback",
   "baselineGitCommit": "420be0ca655d2262ec987934c0dc573cbb11eefd",
@@ -34,5 +34,16 @@
   "rootLanding": "/",
   "editorialSourceBranch": "editorial/2026-10-28-author-led-estate",
   "editorialSourceDate": "2026-10-28",
-  "publiclyPublishedNewEssays": "The Door Is a Score and The Composable Book verified on public HTTPS; their full HTML/media bytes are not present in this Git source; staging must overlay the verified production baseline and must not drop those routes."
+  "publiclyPublishedNewEssays": "The Door Is a Score and The Composable Book verified on public HTTPS; their full HTML/media bytes are not present in this Git source; staging must overlay the verified production baseline and must not drop those routes.",
+  "publicOnlyEssayAssetRecovery": {
+    "route": "/essays/the-composable-book/",
+    "assetPath": "site/essays/the-composable-book/assets/essay.css",
+    "sourceProductionURL": "https://fountain.coach/essays/the-composable-book/assets/essay.css",
+    "publishedCSSSHA256": "05b3915a0f37d5f83df06af31081bfe661c7b792c8a83c2c4f952c7f03b4011c",
+    "publishedCSSBytes": 7393,
+    "provenance": "Observed current production HTTPS CSS, retained byte-identical in Git and owner-WLAN stage v58",
+    "articleHTMLSourceStatus": "Production and WLAN article body preserved, not yet part of this pinned owning-Git source snapshot",
+    "stageRelease": "shared-shell-20261028-v58-composable-css-05b3915",
+    "productionMutation": false
+  }
 }
