@@ -8,7 +8,7 @@
   "publicationState": "source-candidate-author-led-20261028-not-staged",
   "fileCount": 106,
   "indexPages": 24,
-  "sourceSha256Inventory": "95093e08b8fdc85c98e88b7831cc19f49364d01d5a3de0db066646d6fda6bceb",
+  "sourceSha256Inventory": "79a14abe3650cfaa65546783b9a99a17fda6787deb81845a855fdea93aed360b",
   "sourceNote": "Entire known local public site route inventory re-fetched via live HTTPS; initial Git revision is a snapshot, not an automated deployment.",
   "deployControl": "EstatePublisher exact-host, authorized release and complete independent HTTPS readback",
   "baselineGitCommit": "420be0ca655d2262ec987934c0dc573cbb11eefd",
