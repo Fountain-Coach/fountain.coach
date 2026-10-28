@@ -1,16 +1,20 @@
 # fountain.coach - owning Git source
 
+## Current private WLAN staging projection — 28 October 2026
+
+The writer-approved root and Essays reading room are now active on the owner WLAN at [Fountain Coach staging](http://192.168.8.50:8200/estate/); v57 has passed all 509 stage HTML route readbacks and 30 Chrome viewport checks. The staging provenance and route report are governed by the companion Fountain-Coach/estate branch. **This is not a public HTTPS promotion.** The editorial Git source and its original Linotype editions remain authoritative for their content.
+
 ## Adopted author-led entrance — 28 October 2026
 
 **The root website presents one independent author and developer, not a staffed institution.** Its four essay-hero illustrations are authentic source-owned artwork. /essays/ is the complete seven-work reading room, and /editions/ retains the authentic Fountain Press Bookshelf. The older edition-first sections below record historical proposals and are not current root authority.
 
-Canonical nine-entry reel: Estate, Book, Governance, MIDI2, Instruments, Teatro, Satzfunk, Works, Solstice. Status is footer-only. The two currently published essays The Door Is a Score and The Composable Book lack complete HTML/media in this older Git snapshot; the verified production baseline and accepted WLAN v56 assets must be preserved during staging. This branch is a candidate only; it has not been activated.
+Canonical nine-entry reel: Estate, Book, Governance, MIDI2, Instruments, Teatro, Satzfunk, Works, Solstice. Status is footer-only. The two currently published essays The Door Is a Score and The Composable Book lack complete HTML/media in this older Git snapshot; the verified public baseline and admitted WLAN v56 assets were preserved in the independently accepted v57 staging projection. This branch remains a draft for review; public HTTPS remains unchanged.
 
 
 GitHub source authority for fountain.coach and its site/ publishing tree.
 Role: Public Fountain Coach identity; one of three front-door editorial identities
 
-Status: independent author-led Git source candidate; not staged or publicly released (28 October 2026)
+Status: author-led Git source staged on owner WLAN as v57; not publicly released (28 October 2026)
 
 The former midi2-gpu-fabric/estate/sites/fountain.coach is a downstream integration copy, not an independent editor. Git source is not a public deployment. Source review, a pinned derived checkout, separate EstatePublisher authorization, release receipt and live HTTPS read-back are required.
 

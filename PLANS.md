@@ -1,5 +1,9 @@
 # Editorial release plan — 28 October 2026
 
+## Successful owner-WLAN staging — 28 October 2026
+
+The stage previously marked not accepted below is now active as v57, `shared-shell-20261028-v57-author-led-aa38389`, assembled from the checked Git source and the verified v56 predecessor. Full remote SHA inventory 1,138 files, 509 independently served routes PASS, 30 live Chrome viewport checks PASS. v56 is retained for rollback; the public HTTPS estate remains unchanged. Complete route report and receipt are in the private Mac-mini staging receipt root and described in the estate source branch.
+
 ## Observed goal and finite acceptance
 
 Author approved **Fountain Coach as an independent one-person software and publishing practice**. Present a few real essays through their original hero illustrations at `/`; make `/essays/` the complete reading room next door; preserve the genuine Fountain Press Bookshelf at `/editions/`. Carry this semantic distinction consistently through the entire registered estate. Stage one immutable candidate on the already registered owner-WLAN Ubuntu staging machine, document every owned route, and independently check accessible masthead, full canonical nine-entry reel and footer on all routes. **No public production promotion is requested.**
