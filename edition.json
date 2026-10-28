@@ -5,15 +5,15 @@
   "publicationRoot": "site/",
   "repository": "Fountain-Coach/fountain.coach",
   "capturedAt": "2026-10-14T10:30:08Z",
-  "publicationState": "ear-sing-public-production-verified-2026-10-25",
-  "fileCount": 105,
+  "publicationState": "source-candidate-author-led-20261028-staged-wlan-v58-not-public",
+  "fileCount": 107,
   "indexPages": 24,
-  "sourceSha256Inventory": "bccd5416107355b8945336096973d3006b664c3049711679e7a72e8bc7511bc3",
+  "sourceSha256Inventory": "1d4b9463708359e77dae61b9d6736268e9d4c18e299767a47ca62c77024260a6",
   "sourceNote": "Entire known local public site route inventory re-fetched via live HTTPS; initial Git revision is a snapshot, not an automated deployment.",
   "deployControl": "EstatePublisher exact-host, authorized release and complete independent HTTPS readback",
   "baselineGitCommit": "420be0ca655d2262ec987934c0dc573cbb11eefd",
   "baselineTag": "baseline-captured-20261014",
-  "editorialIntent": "Three front doors with Company Status exclusively in mandatory footer legals; not publicly deployed.",
+  "editorialIntent": "One-person independent software and publishing practice; root is editorial identity and four source-owned essay heroes; /essays/ is complete seven-essay gallery; /editions/ retains Fountain Press Bookshelf. Public production unchanged.",
   "sourceEditionRole": "Three original authored essays form the Fountain Coach editorial public entrance; remaining older site shell remains in Git history",
   "sourceReadingOrder": [
     "teatro-an-unfinished-composition",
@@ -30,5 +30,20 @@
   "firstReadingsWorkCount": 1,
   "lastVerifiedPublicRelease": "estate-20261025-v16-ear-sing-social-124c9fa",
   "lastVerifiedPublicSourceRevision": "124c9fabc310dcf35a8c23bd5018efb3126c4394",
-  "publicReceipt": "docs/releases/2026-10-25-ear-sing-social-v16-public-receipt.json"
+  "publicReceipt": "docs/releases/2026-10-25-ear-sing-social-v16-public-receipt.json",
+  "rootLanding": "/",
+  "editorialSourceBranch": "editorial/2026-10-28-author-led-estate",
+  "editorialSourceDate": "2026-10-28",
+  "publiclyPublishedNewEssays": "The Door Is a Score and The Composable Book verified on public HTTPS; their full HTML/media bytes are not present in this Git source; staging must overlay the verified production baseline and must not drop those routes.",
+  "publicOnlyEssayAssetRecovery": {
+    "route": "/essays/the-composable-book/",
+    "assetPath": "site/essays/the-composable-book/assets/essay.css",
+    "sourceProductionURL": "https://fountain.coach/essays/the-composable-book/assets/essay.css",
+    "publishedCSSSHA256": "05b3915a0f37d5f83df06af31081bfe661c7b792c8a83c2c4f952c7f03b4011c",
+    "publishedCSSBytes": 7393,
+    "provenance": "Observed current production HTTPS CSS, retained byte-identical in Git and owner-WLAN stage v58",
+    "articleHTMLSourceStatus": "Production and WLAN article body preserved, not yet part of this pinned owning-Git source snapshot",
+    "stageRelease": "shared-shell-20261028-v58-composable-css-05b3915",
+    "productionMutation": false
+  }
 }

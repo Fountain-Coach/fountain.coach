@@ -1,0 +1,36 @@
+/* Fountain Coach: authored, source-owned front door. Keep the shared Publication Core
+   and all original essay plates. This CSS changes only the editorial landing body. */
+.author-landing { max-width: 80rem; padding-bottom: clamp(4rem,9vw,8rem); }
+.author-introduction { padding: clamp(2rem,7vw,6rem) 0 clamp(3rem,7vw,6rem); max-width: 65rem; }
+.author-landing .eyebrow { font: 650 .72rem/1.5 var(--estate-mono,ui-monospace,monospace); letter-spacing: .13em; text-transform: uppercase; color: var(--estate-muted,var(--muted)); }
+.author-introduction h1 { margin: .45rem 0 1rem; font-family: var(--estate-display,Georgia,serif); font-size: clamp(3.7rem,10vw,8.6rem); font-weight: 450; line-height: .98; letter-spacing: -.065em; }
+.author-period { color: var(--estate-signal,#a45d43); }
+.author-introduction .author-lead { max-width: 44rem; font: 450 clamp(1.5rem,3.4vw,2.9rem)/1.15 var(--estate-display,Georgia,serif); letter-spacing: -.035em; }
+.author-introduction > p:not(.eyebrow):not(.author-lead) { max-width: 53rem; font-size: clamp(1.06rem,1.8vw,1.25rem); line-height: 1.7; }
+.author-entrances { margin-top: clamp(1.8rem,4vw,3rem); padding-top: 1rem; border-top: 1px solid var(--estate-line,var(--line)); display: flex; flex-wrap: wrap; gap: .9rem 2rem; }
+.author-entrances a { display: inline-flex; gap: .5rem; align-items: baseline; min-height: 2.75rem; padding: .65rem 0; font-size: 1rem; text-decoration-thickness: 1px; color: var(--estate-ink,var(--ink)); }
+.author-featured, .author-practice { border-top: 1px solid var(--estate-line,var(--line)); padding-top: clamp(2rem,4vw,4rem); }
+.author-featured .section-heading { margin-bottom: clamp(1.6rem,3vw,2.5rem); }
+.author-featured .section-heading h2, .author-practice h2 { margin: .3rem 0 0; font: 450 clamp(2rem,5vw,4.3rem)/1.08 var(--estate-display,Georgia,serif); letter-spacing: -.04em; }
+.author-featured .section-heading p { max-width: 32rem; }
+.author-feature-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: clamp(1.5rem,3vw,3rem); }
+.author-feature-grid .essay-gallery-card { min-width: 0; }
+.author-feature-grid .essay-gallery-image { display: block; overflow: hidden; }
+.author-feature-grid .essay-gallery-image img { aspect-ratio: 3 / 2; width: 100%; height: auto; object-fit: contain; background: var(--estate-panel,var(--surface)); }
+.author-feature-grid .essay-gallery-copy h3 { margin: .3rem 0 .65rem; }
+.author-feature-grid .essay-gallery-copy > p:not(.eyebrow) { max-width: 38rem; }
+.author-reading-link { text-align: right; margin: 1.2rem 0 clamp(3rem,6vw,5rem); }
+.author-reading-link a { min-height: 2.75rem; display: inline-flex; gap: .5rem; align-items: center; font-weight: 600; }
+.author-practice-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); column-gap: clamp(2rem,5vw,5rem); row-gap: 1.5rem; margin: clamp(1.5rem,4vw,3rem) 0; }
+.author-practice-grid article { border-top: 2px solid var(--estate-ink,var(--ink)); padding-top: .65rem; }
+.author-practice-grid h3 { margin: 0 0 .45rem; font: 450 clamp(1.25rem,2.2vw,1.7rem)/1.2 var(--estate-display,Georgia,serif); }
+.author-practice-grid h3 a { color: inherit; text-decoration-thickness: 1px; }
+.author-practice-grid p { max-width: 36rem; margin-top: .35rem; color: var(--estate-muted,var(--muted)); }
+.author-outro { border-top: 1px solid var(--estate-line,var(--line)); max-width: 55rem; margin-top: 3rem; padding-top: 2rem; }
+.author-outro p:first-child { font: 450 clamp(1.14rem,2vw,1.45rem)/1.55 var(--estate-display,Georgia,serif); }
+@media(max-width: 680px) {
+ .author-introduction h1 { overflow-wrap: anywhere; }
+ .author-feature-grid, .author-practice-grid { grid-template-columns: 1fr; }
+ .author-reading-link { text-align: left; }
+}
+@media(prefers-reduced-motion:reduce) { .author-landing * { scroll-behavior: auto; } }

@@ -2,6 +2,7 @@
 import fs from 'node:fs';
 const chrome='http://127.0.0.1:9237';
 const base=process.env.ESTATE_BASE_URL||'http://127.0.0.1:8199';
+// The Bookshelf is an edition, not the author's homepage.
 const manifest=JSON.parse(fs.readFileSync(new URL('../../estate/manifest.json',import.meta.url),'utf8'));
 const fronts=[...manifest.frontDoors].sort((a,b)=>a.rank-b.rank);
 const expected=[fronts[0].entryEditionUrl,fronts[1].collectionUrl];
@@ -17,7 +18,7 @@ async function test(label,width,height,cols){
  try{
   await cmd('Runtime.enable');await cmd('Page.enable');
   await cmd('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:width<600});
-  await cmd('Page.navigate',{url:base+'/'});await wait(550);
+  await cmd('Page.navigate',{url:base+'/editions/'});await wait(550);
   await cmd('Input.dispatchKeyEvent',{type:'keyDown',key:'Tab',code:'Tab',windowsVirtualKeyCode:9});
   await cmd('Input.dispatchKeyEvent',{type:'keyUp',key:'Tab',code:'Tab',windowsVirtualKeyCode:9});
   const state=await evalJS(`(()=>{const paper=document.querySelector('.bookshelf-paper');const covers=[...document.querySelectorAll('.shelf-cover img')];const anchors=[...document.querySelectorAll('.shelf-book')];const g=getComputedStyle(paper);const b=getComputedStyle(document.body);const parent=getComputedStyle(document.querySelector('.bookshelf-main'));const logo=document.querySelectorAll('.bookshelf-brand img');anchors[0]?.focus();const focus=getComputedStyle(anchors[0]);return {grid:!!paper,columns:g.gridTemplateColumns.split(' ').length,covers:covers.length,loaded:covers.every(x=>x.complete&&x.naturalWidth>0),links:anchors.map(a=>a.getAttribute('href')),names:anchors.map(a=>a.getAttribute('aria-label')),logo:logo.length,logoLoaded:[...logo].every(x=>x.complete&&x.naturalWidth>0),brandCircle:document.querySelector('.bookshelf-brand').classList.contains('fc-identity-circle'),brandRadius:getComputedStyle(document.querySelector('.bookshelf-brand')).borderTopLeftRadius,brandStroke:getComputedStyle(document.querySelector('.bookshelf-brand')).borderTopWidth,overflow:document.documentElement.scrollWidth>innerWidth+1,colors:[getComputedStyle(document.documentElement).backgroundColor,b.backgroundColor,parent.backgroundColor,g.backgroundColor],shadow:g.boxShadow,borders:[...document.querySelectorAll('.shelf-cover')].map(x=>getComputedStyle(x).borderTopWidth),focus:focus.outlineStyle,secondary:document.querySelectorAll('h1,h2,footer,.bookshelf-wordmark,.shelf-item-caption,.shelf-miniature,.shelf-cover-title,.bookshelf-pagination').length,topLinks:document.querySelectorAll('main a').length,emptySlots:document.querySelectorAll('.bookshelf-empty[aria-hidden="true"]').length,emptyBorder:getComputedStyle(document.querySelector('.bookshelf-empty')).borderTopStyle,emptyLinks:document.querySelectorAll('.bookshelf-empty a').length,thumbs:[...document.querySelectorAll('.shelf-cover')].map(e=>{const r=e.getBoundingClientRect(),s=getComputedStyle(e),p=e.closest('.shelf-item').getBoundingClientRect();return {w:r.width,h:r.height,slotW:p.width,slotH:p.height,radius:s.borderTopLeftRadius,imageFit:getComputedStyle(e.querySelector('img')).objectFit}}),emptyRadius:getComputedStyle(document.querySelector('.bookshelf-empty')).borderTopLeftRadius}})()`);

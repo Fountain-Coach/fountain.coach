@@ -20,9 +20,16 @@ def essay_passages(reader,slug):
  return chapter,[p for part in re.findall(r'<article class="book-prose">(.*?)</article>',chapter,re.S) for p in paragraphs(part)]
 
 def check():
- catalogue=(SITE/"index.html").read_text()
- editions=(SITE/"editions/index.html").read_text()
- assert catalogue==editions,"Root must exactly mirror edition catalogue"
+ root=(SITE/"index.html").read_text()
+ catalogue=(SITE/"editions/index.html").read_text()
+ assert root!=catalogue,"The independent author-led front door must not be the Bookshelf"
+ assert 'name="fountain:publication-role" content="author-led estate identity"' in root
+ assert 'href="/essays/"' in root and 'href="https://works.benedikt-eickhoff.de/"' in root
+ assert root.count('class="essay-gallery-card"')==4
+ assert 'class="bookshelf-paper"' not in root
+ assert 'data-legal-role="company-status"' in root
+ assert 'id="main"' in root and 'class="skip-link"' in root
+ editions=catalogue
  assert 'data-linotype-state="bookshelf"' in catalogue
  assert 'class="bookshelf-paper"' in catalogue
  assert catalogue.count('class="shelf-item"')==2
