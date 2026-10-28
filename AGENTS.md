@@ -1,5 +1,11 @@
 # fountain.coach Git ownership
 
+## Approved editorial decision — 28 October 2026
+
+The Fountain Coach parent identity is one author's independent software and publishing practice. The homepage makes that authorship visible and features four original essay illustrations; `/essays/` is the complete reading room next door. The independent Fountain Press Bookshelf stays at `/editions/`. Chapter 92's publisher/authority map and Chapter 127's direct-static Publication Core remain applicable.
+
+Use the current `Fountain-Coach/estate/navigation/canonical-reel.v1.json` for the complete headmast/reel identity and the estate legal-footer requirements; the Status destination remains footer-only. All route changes preserve source ownership, rights and source text. Publicly live articles whose media are absent from this Git candidate must be retained from the verified production baseline when assembling an immutable staging candidate; never publish a stale Git tree over newer public work. Source, stage and production are separate authorities.
+
 - GitHub owner: Fountain-Coach/fountain.coach.
 - Canonical source: site/ and edition.json.
 - Preserve rights, status and historical source content.
@@ -11,9 +17,7 @@
 
 ## Essay edition authority
 
-- Fountain Coach's primary site `site/index.html` is an essay-first
-  Linotype reader. Retain **all three** complete authored essays and five
-  original illustrations from `site/essays/`.
+- Fountain Coach's primary `site/index.html` is the approved one-person editorial identity and four authentic essay heroes. `/essays/` is the complete seven-work illustrated reading room. Preserve all complete original Linotype essays, texts and plates at `/editions/essays/` and their source-owned routes.
 - Editorial order: Teatro, Semantic Compilation, Reframe and Business Value.
   Do not invent new connective essays, claims, technical specifications,
   pseudo-governance or filler chapters to inflate the book.
@@ -22,8 +26,7 @@
   publication inventory and link. `scripts/verify_essay_browser.mjs`
   checks actual responsive book composition.
 - Original essay pages are retained as source-specific URLs and legal/provenance
-  references. The former promotional homepage lives in Git history; don't
-  restore it as the front door without separate author approval.
+  references. The former future-facing portal lives in Git history; do not restore it as the front door.
 - The runtime comes from the accepted First Reading source owner. Any
   adaptation must preserve prose, original images, source identities,
   measured book geometry, iPad spreads and phone reading.
@@ -31,10 +34,9 @@
   two estate front doors. Git commit is not public publication.
 
 
-## Editions hierarchy (authoritative root)
+## Editions hierarchy (independent of author-led root)
 
-- Do not put the essays book at `/`: both `/` and `/editions/` must show the
-  same *editions catalogue*.
+- `/` is a separately authored landing for the independent practice. `/editions/` remains the authentic Fountain Press editions catalogue, not a duplicate homepage.
 - Every editorial rail destination is an edition: Fountain Coach enters
   `/editions/essays/`; First Reading enters its accepted published edition;
   Teatro enters its independently owned performance edition.
@@ -48,10 +50,9 @@
 - Validate the catalogue and every nested reader with `npm run check` and
   `npm run book:browser` before source promotion.
 
-## Edition grid root (15 October 2026)
+## Edition grid at /editions/ (historic 15 October acceptance, retained)
 
-- The estate landing `/` and `/editions/` share the genuine Fountain Press
-  Bookshelf implementation, never an independent or duplicated shelf UI.
+- `/editions/` uses the genuine Fountain Press Bookshelf. The editorial homepage does not duplicate its grid or invent book identities.
 - The four first-row cells are the authentic Fountain Coach mark and the
   three admitted books: Essays, First Reading, Teatro. All images are
   original source-owned assets. The remaining cells are visible, lightly dashed
@@ -60,9 +61,7 @@
   titles, invented publications, or separate action buttons.
 - The prior detailed catalogue is preserved at `/editions/catalogue/`
   without losing nested essay edition routes and original manuscripts.
-- `scripts/build_edition_hierarchy.py` owns this deterministic projection.
-  The estate registry may only rewrite the three canonical outbound book
-  links in disposable WLAN staging; public promotion remains separately gated.
+- `scripts/build_edition_hierarchy.py` owns the `/editions/` projection, never `site/index.html`. The editor-approved root and adjacent gallery are verified by `scripts/verify_author_landing.py`. The estate registry may rewrite canonical outbound edition links only in disposable WLAN staging; public promotion remains separate.
 
 ## Logo's circular identity
 
