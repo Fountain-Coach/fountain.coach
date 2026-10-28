@@ -308,7 +308,8 @@ def main():
  collections=build_first_readings_collection(version)
  index=build_estate_grid()
  (ED/"index.html").write_text(index)
- MAIN.write_text(index)
+ # The estate identity at / is an independently authored editorial entrance.
+ # Do not overwrite it with the edition catalogue during a book build.
  (SITE/"assets/editions.css").write_text("""*{box-sizing:border-box}
 :root{color-scheme:light;background:#eeeae0;color:#26231d;font-family:"Iowan Old Style",Charter,Georgia,serif}
 body{margin:0}a{color:inherit}a:focus-visible{outline:2px solid #aa6c37;outline-offset:4px}
@@ -355,7 +356,9 @@ body{margin:0}a{color:inherit}a:focus-visible{outline:2px solid #aa6c37;outline-
   "schema":"fountain.press.linotype.essay-edition.v2",
   "editionPath":"editions/essays/",
   "cataloguePath":"editions/",
-  "rootLanding":"editions/",
+  "rootLanding":"/",
+  "editionCatalogue":"editions/",
+  "editorialRoot":"independent-founder-led-landing",
   "legacyDetailedCatalogue":"editions/catalogue/",
   "subEditions":[{"id":a["id"],"path":a["editionPath"],"parent":"editions/essays/"} for a in version["essays"]],
   "editionHierarchy":["editions/","editions/essays/"]+[x["editionPath"] for x in version["essays"]],
