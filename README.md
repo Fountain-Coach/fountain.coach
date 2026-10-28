@@ -1,15 +1,22 @@
 # fountain.coach - owning Git source
 
+## Adopted author-led entrance — 28 October 2026
+
+**The root website presents one independent author and developer, not a staffed institution.** Its four essay-hero illustrations are authentic source-owned artwork. /essays/ is the complete seven-work reading room, and /editions/ retains the authentic Fountain Press Bookshelf. The older edition-first sections below record historical proposals and are not current root authority.
+
+Canonical nine-entry reel: Estate, Book, Governance, MIDI2, Instruments, Teatro, Satzfunk, Works, Solstice. Status is footer-only. The two currently published essays The Door Is a Score and The Composable Book lack complete HTML/media in this older Git snapshot; the verified production baseline and accepted WLAN v56 assets must be preserved during staging. This branch is a candidate only; it has not been activated.
+
+
 GitHub source authority for fountain.coach and its site/ publishing tree.
 Role: Public Fountain Coach identity; one of three front-door editorial identities
 
-Status: verified-live-publication-baseline
+Status: independent author-led Git source candidate; not staged or publicly released (28 October 2026)
 
 The former midi2-gpu-fabric/estate/sites/fountain.coach is a downstream integration copy, not an independent editor. Git source is not a public deployment. Source review, a pinned derived checkout, separate EstatePublisher authorization, release receipt and live HTTPS read-back are required.
 
 The editorial estate has only three public fronts: Fountain Coach, First Reading and Teatro. Other domains remain supporting, legal, reference or archival surfaces. No GitHub CI, raw host deployment or secrets.
 
-## Essays as the public edition (Linotype candidate)
+## Historical: essay-first Linotype proposal (retained as a complete edition)
 
 The original site entrance has been replaced **in Git source**, not yet
 on production HTTPS, with a full Linotype book of the existing essays.
@@ -54,17 +61,16 @@ continues to serve the previous homepage until a separately authorized,
 source-pinned EstatePublisher publication and public HTTPS read-back.
 
 
-## Editions are the public entrance (source edition candidate)
+## Historical: editions-as-root proposal, superseded by the writer
 
-**fountain.coach/** lands in the **Editions catalogue**, byte-identical to
-**/editions/**. The catalogue owns the editorial navigation only; the Fountain
+Historical candidate: fountain.coach/ was proposed as a duplicate of /editions/. The **28 October author decision supersedes this**: / is the author-led editorial homepage, /essays/ the neighboring reading room, /editions/ the independent catalogue. The catalogue owns the editorial navigation only; the Fountain
 Coach rail enters its **/editions/essays/** volume, and the other two
 fronts point into the independently owned First Reading and Teatro editions.
 An edition may contain one or more **sub-editions** without ceasing to be an
 edition itself. This is a hierarchical publication model, not a tree of dummy
 marketing pages.
 
-- `/editions/` — catalogue and hierarchy, also the domain root
+- `/editions/` — catalogue and hierarchy, not the domain root
 - `/editions/essays/` — complete Linotype collection, three essays, five plates
 - `/editions/essays/teatro-an-unfinished-composition/` — independent full essay
 - `/editions/essays/semantic-compilation-the-archive-is-not-the-edition/` — independent full essay
@@ -90,7 +96,7 @@ until independently governed production promotion.
 
 ## Edition-thumbnail grid
 
-The estate entrance at `/` mirrors `/editions/`. Inspired by the real
+Historical design: the estate entrance at / mirrored /editions/. The approved 28 October editorial homepage does not mirror it. Inspired by the real
 Instruments catalogue grid, it now displays just the original hand/spring
 mark and the three source-authorized edition images. There are no empty
 icon placeholders or secondary title blocks. The previous detailed
