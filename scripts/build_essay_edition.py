@@ -21,7 +21,7 @@ class Text(HTMLParser):
  def handle_data(self,s):self.parts.append(s)
  def get(self):return "".join(self.parts)
 def text(s):return Text(s).get()
-def main(owner):
+def main(owner,output=None):
  template=(owner/"editions/first-reading/index.html").read_text()
  assets=owner/"assets"
  entries=[];chapters=[]
@@ -176,7 +176,7 @@ body.book-app.reader-ready .book-pagination{height:94px;min-height:94px}
 body.book-app.reader-ready .book-main{height:calc(100svh - 148px)}
 body.book-app.reader-ready .book-viewport{height:calc(100svh - 156px)}}
 ''')
- (SITE/"index.html").write_text(html)
+ (Path(output) if output else SITE/"index.html").write_text(html)
  version=dict(schema="fountain.press.linotype.essay-edition.v1",title="Fountain Coach — Essays",
   sourceRepository="Fountain-Coach/fountain.coach",sourceRoot="site/essays/",
   upstreamLinotypeRepository="Fountain-Coach/solstice.fountain.coach",
@@ -190,5 +190,5 @@ body.book-app.reader-ready .book-viewport{height:calc(100svh - 156px)}}
  print("ESSAYS_LINOTYPE_COMPOSED",len(entries),"essays",version["originalParagraphs"],"paragraphs",version["originalFigures"],"figures",version["upstreamRevision"])
 
 if __name__=="__main__":
- p=argparse.ArgumentParser();p.add_argument("--linotype-source",type=Path,required=True);args=p.parse_args()
- main(args.linotype_source.resolve())
+ p=argparse.ArgumentParser();p.add_argument("--linotype-source",type=Path,required=True);p.add_argument("--output",type=Path);args=p.parse_args()
+ main(args.linotype_source.resolve(),args.output)

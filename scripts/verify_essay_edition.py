@@ -23,12 +23,13 @@ def check():
  root=(SITE/"index.html").read_text()
  catalogue=(SITE/"editions/index.html").read_text()
  assert root!=catalogue,"The independent author-led front door must not be the Bookshelf"
- assert 'name="fountain:publication-role" content="author-led estate identity"' in root
+ assert 'content="writer-approved reader-first living Essays edition"' in root
  assert 'href="/essays/"' in root and 'href="https://works.benedikt-eickhoff.de/"' in root
- assert root.count('class="essay-gallery-card"')==4
+ assert root.count('data-book-chapter=')==7
+ assert 'data-edition-entry-anchor="work-the-door-is-a-score"' in root
  assert 'class="bookshelf-paper"' not in root
  assert 'data-legal-role="company-status"' in root
- assert 'id="main"' in root and 'class="skip-link"' in root
+ assert 'id="book-pages"' in root and 'class="book-skip"' in root
  editions=catalogue
  assert 'data-linotype-state="bookshelf"' in catalogue
  assert 'class="bookshelf-paper"' in catalogue

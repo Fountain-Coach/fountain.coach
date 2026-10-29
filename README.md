@@ -1,5 +1,12 @@
 # fountain.coach - owning Git source
 
+## Reader-first living Essays — next landing scenario (29 October 2026)
+
+The new source-owned parent entrance is the **Fountain Press measured reading experience**, not another cover-grid or institution-style portal. It presents seven previously published essay works as one continuing book. Each has a stable work anchor and its original published URL. The latest verified authored work is always the first visible reading leaf and first chapter, including when the reader selects alternative **Listening**, **Books & memory** or **Reframe & estate** chapter sequences. Dates are never guessed. The Contents reader links also lead to Solstice, Teatro, Book of Reframe, the Press editions and Works.
+
+Original essays, sound experiments and full scholarly PDFs remain authoritative at their published source routes; the Linotype book is a derived, source-pinned reading composition, not a rewritten article or new publication identity. Original illustrated media are reused. The previous author-led gallery homepage is available as the source-bound `/scenarios/author-led/` comparison. Build and verify rules are in `scripts/build_living_essays_reader.py`, `editorial/living-essays-reader-source.json` and the companion estate staging source. The build starts from the seven independently witnessed staging-v58 article digests and requires explicit source renewal when those published bytes change. Public production has not been authorized.
+
+
 ## Composable Book Linotype stylesheet recovery — WLAN v58
 
 The staged `/essays/the-composable-book/` route inherited a missing route-local `assets/essay.css` from v56 into v57. Although its HTML and shared chrome passed, the stylesheet returned 404, which destroyed the original essay typography and plate layout. The exact 7,393-byte stylesheet was independently recovered from the currently published `https://fountain.coach/essays/the-composable-book/assets/essay.css` and checked in at `site/essays/the-composable-book/assets/essay.css` (SHA-256 `05b3915a0f37d5f83df06af31081bfe661c7b792c8a83c2c4f952c7f03b4011c`). Staging v58 restores **only this CSS asset**, preserving every v57 HTML body and asset; original CSS production remains unchanged. The complete published essay body is still a production-baseline projection rather than a falsely claimed separately authored Git source. `npm run check` now asserts the exact source-owned stylesheet and 107-file inventory.

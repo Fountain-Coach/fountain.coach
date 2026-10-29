@@ -1,0 +1,91 @@
+{
+  "schema": "fountain.coach.reader-first-source-plan.v1",
+  "baseRelease": "shared-shell-20261028-v58-composable-css-05b3915",
+  "sourceOwner": "Fountain-Coach/fountain.coach",
+  "latest": "the-door-is-a-score",
+  "latestWrittenAt": "2026-10-27",
+  "allPublishedEssayCount": 7,
+  "sourceWorks": [
+    {
+      "id": "the-door-is-a-score",
+      "source": "estate/essays/the-door-is-a-score/index.html",
+      "sourceSHA256": "2ec1fb52a8416acf406e514f6b89199085b16eee4d1b6953b823a24d08515cdd",
+      "textSHA256": "89581317045386545fcd253f72f7fb8f6e679031f6bcf3cae103980e64f66ff9",
+      "written": "2026-10-27",
+      "images": 2,
+      "originalCharacters": 12780
+    },
+    {
+      "id": "the-ear-that-learns",
+      "source": "estate/essays/the-ear-that-learns/index.html",
+      "sourceSHA256": "20f7f3190129ef8642df99f781d24d5e5bf2b8b234bcf71a9da447bbb0fb368e",
+      "textSHA256": "219bb827684645b584b9b01b3d72536df9f46dc9529350fd666d7dcf67cde1dd",
+      "written": "2026-10-25",
+      "images": 1,
+      "originalCharacters": 11732
+    },
+    {
+      "id": "the-composable-book",
+      "source": "estate/essays/the-composable-book/index.html",
+      "sourceSHA256": "4cc4bcca6f1d2bc5e4b50aa434e225254102368b7d63ddd46c9181a840889206",
+      "textSHA256": "88f9a9e2420bab51f3b56e1a24f32d84ffb46483ccb78518c5beb1efee0776ac",
+      "written": null,
+      "images": 4,
+      "originalCharacters": 13144
+    },
+    {
+      "id": "to-read-is-not-to-remember",
+      "source": "estate/essays/to-read-is-not-to-remember/index.html",
+      "sourceSHA256": "2eb20df27e4b1a85c2c531f061a712f2aaf66f792df5cda518bb14b62d0822b3",
+      "textSHA256": "080eaf4aa8b431e65bb765dcee427d914753a3a4e9883197a2c51d4a647f0481",
+      "written": "2026-10-17",
+      "images": 1,
+      "originalCharacters": 3861
+    },
+    {
+      "id": "semantic-compilation-the-archive-is-not-the-edition",
+      "source": "estate/essays/semantic-compilation-the-archive-is-not-the-edition/index.html",
+      "sourceSHA256": "039353e54f31132d481039617bdea8af238a2cb2d1cba592ea9cd5cc4eb3502f",
+      "textSHA256": "00264bf066fffb00b687e882bdf852a8d75b98914961190c0c6dca5a03ba46c9",
+      "written": null,
+      "images": 1,
+      "originalCharacters": 11400
+    },
+    {
+      "id": "teatro-an-unfinished-composition",
+      "source": "estate/essays/teatro-an-unfinished-composition/index.html",
+      "sourceSHA256": "1a0def6b37d2259a59b5eaa52be997fb759b4e4f6eb2828b4edfea04469ee393",
+      "textSHA256": "5b07f29163ec73a5982382f70b775cb288e9d420730aeb4419d44a23ae3f81a8",
+      "written": null,
+      "images": 1,
+      "originalCharacters": 7203
+    },
+    {
+      "id": "reframe-and-the-business-value-of-the-estate",
+      "source": "estate/essays/reframe-and-the-business-value-of-the-estate/index.html",
+      "sourceSHA256": "a6b9291950c59288c7755dd9861dc892700143556e55b54f1bbf1258325529c0",
+      "textSHA256": "aa492b1abbee8f013d6e1271fade1bf8372f68296fe4723f109d33aba3d8679c",
+      "written": null,
+      "images": 3,
+      "originalCharacters": 11218
+    }
+  ],
+  "chapterOrder": [
+    "the-door-is-a-score",
+    "the-ear-that-learns",
+    "the-composable-book",
+    "to-read-is-not-to-remember",
+    "semantic-compilation-the-archive-is-not-the-edition",
+    "teatro-an-unfinished-composition",
+    "reframe-and-the-business-value-of-the-estate"
+  ],
+  "semanticPathways": [
+    "recent",
+    "sound",
+    "reading",
+    "systems"
+  ],
+  "bookHTMLSHA256": "89bfb18eec66ad917654da3b5ccbc068375e29dfcb20d520e13aab695209192e",
+  "stageActivated": false,
+  "publicReleased": false
+}

@@ -1,0 +1,68 @@
+{
+  "schema": "fountain.coach.living-essays-editorial-plan.v1",
+  "writer": "Benedikt Eickhoff",
+  "latest": "the-door-is-a-score",
+  "verifiedWrittenAt": "2026-10-27",
+  "role": "Source-bound editable editorial plan; public essays remain separate authored works",
+  "undatedPolicy": "No inferred dates; retain observed publication order as fallback",
+  "works": [
+    {
+      "id": "the-door-is-a-score",
+      "written": "2026-10-27",
+      "tags": [
+        "sound",
+        "performance"
+      ]
+    },
+    {
+      "id": "the-ear-that-learns",
+      "written": "2026-10-25",
+      "tags": [
+        "sound",
+        "listening"
+      ]
+    },
+    {
+      "id": "the-composable-book",
+      "written": null,
+      "tags": [
+        "reading",
+        "composing"
+      ]
+    },
+    {
+      "id": "to-read-is-not-to-remember",
+      "written": "2026-10-17",
+      "tags": [
+        "reading",
+        "memory"
+      ]
+    },
+    {
+      "id": "semantic-compilation-the-archive-is-not-the-edition",
+      "written": null,
+      "tags": [
+        "reading",
+        "systems"
+      ]
+    },
+    {
+      "id": "teatro-an-unfinished-composition",
+      "written": null,
+      "published": "2026-09-15",
+      "tags": [
+        "performance",
+        "theatre"
+      ]
+    },
+    {
+      "id": "reframe-and-the-business-value-of-the-estate",
+      "written": null,
+      "published": "2026-09-13",
+      "tags": [
+        "systems",
+        "economics"
+      ]
+    }
+  ]
+}
