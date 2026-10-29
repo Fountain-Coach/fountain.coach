@@ -148,7 +148,7 @@ def build_first_readings_collection(version):
     rendered=render_bookshelf(title='First Readings',imprint='First Readings',
        books=[collection_book],css_url='/assets/linotype/bookshelf.css',
        logo_url='/assets/fountain-coach-logo-transparent.png',
-       collection_title='First Readings',collection_parent='/')
+       collection_title='First Readings',collection_parent='/',root_href='/',app_surface=True)
     (collection/'index.html').write_text(rendered)
     manifest=dict(schema='fountain.press.collection.v1',identity='first-readings',
        title='First Readings',publisher='Fountain-Coach/fountain.coach',
@@ -221,20 +221,17 @@ def build_estate_grid():
                           edition=edition, reader=reader, cover_image=art,
                           cover_title=('First Readings' if identity=='first-reading' else 'Essays'),
                           source_revision=revision, host=host, status=status))
-    rendered = render_bookshelf(title="Fountain Coach", imprint="Fountain Coach",
+    rendered = render_bookshelf(title="Bookshelf", imprint="Fountain Coach",
                                 books=books, css_url="/assets/linotype/bookshelf.css",
-                                logo_url="/assets/fountain-coach-logo-transparent.png")
-    # Non-book paths stay outside the Press-owned cover lattice; Bookshelf
-    # membership and the number of authentic/empty slots never change.
-    paths = ('<nav class="bookshelf-pathways" aria-label="Writing and instruments">'
-             '<a href="/essays/">Essays</a>'
-             '<a href="/essays/the-ear-that-learns/">The Ear That Learns</a>'
-             '<a href="https://instruments.fountain.coach/">Instruments · Ear &amp; Sing</a>'
-             '</nav>')
+                                logo_url="/assets/fountain-coach-logo-transparent.png",
+                                root_href="/", app_surface=True)
+    # The bookshelf IS the application surface. Publication references and
+    # individual works retain their own source-owned routes; no surrounding
+    # website header, footer or explanatory prose is generated here.
     assert rendered.count('<div class="bookshelf-paper">') == 1
-    assert rendered.count('</head>') == 1
-    rendered = rendered.replace('<div class="bookshelf-paper">', paths + '<div class="bookshelf-paper">', 1)
-    rendered = rendered.replace('</head>', '<link rel="stylesheet" href="/assets/essay-pathways.css">\n</head>', 1)
+    assert 'class="book-app bookshelf-state app-surface"' in rendered
+    assert rendered.count('class="shelf-cover-name"') == len(books)
+    assert 'class="bookshelf-pathways"' not in rendered
     return rendered
 
 def main():
