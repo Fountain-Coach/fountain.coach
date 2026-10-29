@@ -1,5 +1,9 @@
 # fountain.coach Git ownership
 
+## Reframe public Reader naming — author correction, 29 October 2026
+
+The intended public `fountain.coach/` entrance is the free Reframe **Reader / Bookshelf**, not a separate “Estate”, “Editorial”, or renamed “Works” category. **Remove the terms “Estate” and “Editorial” as public navigation destinations or site branding** in a new or edited Reader source projection, including accessible names, document title/description, breadcrumbs and social metadata. Preserve quotations inside the actual authored source texts, original source/rights attribution and all old deep routes. “Editorial” remains legitimate for internal editorial acts, not the visitor's destination. The publisher is Fountain Coach; `benedikt-eickhoff.de` identifies the human author. Historical local paths, `EstatePublisher`, source ownership/authority and the staging runtime stay unchanged until separately reviewed migration and actual deployment proof. This decision is recorded in Reframe ADR-007 and R27 and the downstream `Fountain-Coach/estate` publication decision; it does not itself change live bytes.
+
 - GitHub owner: Fountain-Coach/fountain.coach.
 - Canonical source: site/ and edition.json.
 - Preserve rights, status and historical source content.
