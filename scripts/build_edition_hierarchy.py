@@ -15,6 +15,7 @@ import json
 import re
 import subprocess
 import sys
+import tempfile
 
 ROOT=Path(__file__).resolve().parents[1]
 SITE=ROOT/"site"
@@ -242,8 +243,10 @@ def main():
  parser.add_argument("--linotype-source",type=Path,required=True)
  args=parser.parse_args()
  builder=ROOT/"scripts/build_essay_edition.py"
- subprocess.run([sys.executable,str(builder),"--linotype-source",str(args.linotype_source)],check=True)
- book=MAIN.read_text()
+ with tempfile.TemporaryDirectory(prefix="fountain-press-edition-") as tmp:
+  output=Path(tmp)/"compiled.html"
+  subprocess.run([sys.executable,str(builder),"--linotype-source",str(args.linotype_source),"--output",str(output)],check=True)
+  book=output.read_text()
  version=json.loads(ORIGINAL.read_text())
  # The first step creates the edition at site/index.html. Move into its
  # actual versioned path before writing the editions catalogue.

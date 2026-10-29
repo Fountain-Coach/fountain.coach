@@ -1,0 +1,113 @@
+/* The reader-first estate homepage is a Linotype book, not a cover grid.
+ * The shared estate shell remains separate; this styles the authored reader. */
+body.book-app[data-reading-scenario="one-continuing-book"]{
+  --book-accent:#9e6248;
+  --book-paper:#f6f1e7;
+  --book-outer:#e6e0d6;
+  --book-ink:#26241f;
+  --book-muted:#777168;
+}
+body.book-app[data-reading-scenario="one-continuing-book"][data-book-theme="night"]{
+  --book-paper:#201e1b;
+  --book-outer:#151412;
+  --book-ink:#ede8db;
+  --book-muted:#b2aa9e;
+  --book-rule:#49453d;
+  --book-accent:#d2b078;
+}
+body.book-app .book-toolbar{position:relative;z-index:4;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);}
+body.book-app .book-identity{margin:0;font-size:clamp(9px,1.1vw,12px);letter-spacing:.12em;text-align:center;justify-self:center;color:var(--book-ink)}
+body.book-app .book-tools{align-items:center;gap:clamp(4px,1vw,16px)}
+.living-path-label{display:flex;align-items:center;gap:7px;white-space:nowrap;font:600 10px/1.5 ui-monospace,Menlo,monospace;letter-spacing:.03em}
+.living-path-label select{min-width:0;max-width:190px;border:1px solid var(--book-rule);border-radius:3px;padding:8px 20px 8px 9px;background:var(--book-paper);color:var(--book-ink);font:500 12px/1.3 system-ui,sans-serif;cursor:pointer}
+.living-path-label select:focus-visible{outline:2px solid var(--book-accent);outline-offset:2px}
+.book-prose img{max-width:100%;height:auto;object-fit:contain}
+.book-prose figure{max-width:100%;min-width:0;margin:1.5em auto 2.2em;break-inside:avoid-page;page-break-inside:avoid}
+.book-prose figure img{display:block;width:auto;max-height:min(42vh,370px);margin:0 auto}
+.book-prose figcaption{font:400 .68rem/1.55 ui-monospace,Menlo,monospace;color:var(--book-muted);text-align:center;margin:.5rem auto;max-width:75ch}
+.book-prose .essay-prose{display:block}
+.book-prose h2,.book-prose h3{font-weight:450;line-height:1.23;margin:1.5em 0 .7em}
+.book-prose a:not(.book-original-exhibit-link){text-underline-offset:3px;text-decoration-thickness:1px}
+.book-prose .book-source-note,.book-original-exhibit-note{border-top:1px solid var(--book-rule);padding-top:1em;margin:2em 0;color:var(--book-muted);font:.73rem/1.6 ui-monospace,Menlo,monospace}
+.book-prose .essay-boundary,.book-prose .essay-claim{border-left:2px solid var(--book-rule);padding:.5em 1em;margin:1.7em 0;color:var(--book-muted);font-size:.85em}
+.book-prose audio{display:block;width:100%;max-width:100%;margin:1.5em 0}
+.book-prose img,.book-prose video,.book-prose svg{max-width:100%}
+.book-chapter-heading{max-width:65ch}
+.book-chapter-heading h2{text-wrap:balance}
+.book-dialog .living-other-works,.book-contents-rail .living-other-works{padding:1.1rem .65rem;border-top:1px solid var(--book-rule);margin-top:1.6rem}
+.living-other-works h3{font:600 .69rem/1.5 ui-monospace,Menlo,monospace;letter-spacing:.11em;text-transform:uppercase;color:var(--book-muted);margin:.2rem 0 1rem}
+.living-other-works nav{display:grid;gap:0}
+.living-other-works nav a{display:block;padding:.64rem 0;border-bottom:1px solid var(--book-rule);text-decoration:none;font:400 .95rem/1.4 Iowan Old Style,Charter,Georgia,serif}
+.living-other-works nav a:hover,.living-other-works nav a:focus-visible{color:var(--book-accent)}
+.book-toc-list .toc-title{overflow-wrap:anywhere}
+.book-toc-list .toc-voice{white-space:normal;font-size:.55rem;max-width:8ch}
+body.book-app .book-main{padding-top:clamp(8px,1.5vw,18px)}
+body.book-app .book-progress{min-width:0}
+@media(max-width:720px){
+  .living-path-label{font-size:0;gap:0}
+  .living-path-label select{font-size:11px;max-width:120px;padding:7px 17px 7px 5px}
+  body.book-app .book-toolbar{grid-template-columns:auto minmax(0,1fr) auto;padding:7px max(8px,env(safe-area-inset-left))}
+  body.book-app .book-identity{font-size:9px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:100%}
+  body.book-app .book-back{font-size:10px;gap:3px}
+  body.book-app .book-tools{gap:0}
+  body.book-app .book-tools button{padding:.55rem}
+}
+@media(max-width:440px){
+  .living-path-label select{max-width:94px;font-size:10px}
+  body.book-app .book-identity{max-width:86px;font-size:9px}
+  body.book-app .book-back span:last-child{display:none}
+}
+@media(prefers-reduced-motion:reduce){.book-prose *,body.book-app .book-tools *{scroll-behavior:auto!important}}
+
+/* Keep the real page-turn controls inside the initial reading viewport.
+ * Press's standalone viewport assumptions do not include EstateShell height. */
+body.book-app[data-reading-scenario="one-continuing-book"] .book-main {
+  height:calc(100dvh - var(--living-estate-header,185px) - var(--living-toolbar,62px) - var(--living-pager,90px) - 17px);
+  min-height:340px;
+  color:var(--book-ink);
+}
+body.book-app[data-reading-scenario="one-continuing-book"] .book-leaf-frame {
+  min-height:0;
+  height:100%;
+}
+body.book-app[data-reading-scenario="one-continuing-book"] .book-viewport{
+  height:100%;
+  min-height:0;
+}
+body.book-app[data-reading-scenario="one-continuing-book"] .book-pagination,
+body.book-app[data-reading-scenario="one-continuing-book"] #book-toc-button,
+body.book-app[data-reading-scenario="one-continuing-book"] .book-chapter-heading h2,
+body.book-app[data-reading-scenario="one-continuing-book"] .book-progress,
+body.book-app[data-reading-scenario="one-continuing-book"] .book-main {
+  color:var(--book-ink);
+}
+body.book-app[data-reading-scenario="one-continuing-book"] .linotype-opener h2{
+  color:var(--book-ink);
+}
+
+/* The estate's broad heading/button selectors are dark-shell rules; they
+ * must not wash out titles and controls on Press's light paper leaves. */
+body.book-app[data-reading-scenario="one-continuing-book"] .linotype-opener .book-chapter-heading h2,
+body.book-app[data-reading-scenario="one-continuing-book"] .book-contents-rail h2,
+body.book-app[data-reading-scenario="one-continuing-book"] #book-toc-button {
+  color:#26241f !important;
+}
+body.book-app[data-reading-scenario="one-continuing-book"][data-book-theme="night"] .linotype-opener .book-chapter-heading h2,
+body.book-app[data-reading-scenario="one-continuing-book"][data-book-theme="night"] .book-contents-rail h2,
+body.book-app[data-reading-scenario="one-continuing-book"][data-book-theme="night"] #book-toc-button {
+  color:#ede8db !important;
+}
+
+/* Press mobile atlas still works, but lives beneath the estate masthead.
+ * Reserve the masthead instead of its standalone-only 54px equation. */
+@media(max-width:650px){
+ body.book-app[data-reading-scenario="one-continuing-book"][data-device-navigation="phone"].reader-ready .book-main,
+ body.book-app[data-reading-scenario="one-continuing-book"][data-device-navigation="phone"].linotype-boot .book-main {
+   height:calc(100dvh - var(--living-estate-header,230px) - var(--living-toolbar,54px));
+   min-height:0;
+ }
+ body.book-app[data-reading-scenario="one-continuing-book"] .book-identity .living-title-long{display:none}
+ body.book-app[data-reading-scenario="one-continuing-book"] .book-identity{max-width:none;white-space:nowrap}
+}
+
+.book-dialog .living-other-works{margin-top:1.4rem;border-top:1px solid var(--book-rule);padding-top:1rem}

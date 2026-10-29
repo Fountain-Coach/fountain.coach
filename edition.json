@@ -5,10 +5,10 @@
   "publicationRoot": "site/",
   "repository": "Fountain-Coach/fountain.coach",
   "capturedAt": "2026-10-14T10:30:08Z",
-  "publicationState": "source-candidate-author-led-20261028-staged-wlan-v58-not-public",
-  "fileCount": 107,
-  "indexPages": 24,
-  "sourceSha256Inventory": "1d4b9463708359e77dae61b9d6736268e9d4c18e299767a47ca62c77024260a6",
+  "publicationState": "source-candidate-reader-first-20261029-WLAN-only",
+  "fileCount": 111,
+  "indexPages": 26,
+  "sourceSha256Inventory": "02d9403663bb54260b3cdc3c9043d21606188ad9cb82edfbbee4b3f5fe903b26",
   "sourceNote": "Entire known local public site route inventory re-fetched via live HTTPS; initial Git revision is a snapshot, not an automated deployment.",
   "deployControl": "EstatePublisher exact-host, authorized release and complete independent HTTPS readback",
   "baselineGitCommit": "420be0ca655d2262ec987934c0dc573cbb11eefd",
@@ -45,5 +45,20 @@
     "articleHTMLSourceStatus": "Production and WLAN article body preserved, not yet part of this pinned owning-Git source snapshot",
     "stageRelease": "shared-shell-20261028-v58-composable-css-05b3915",
     "productionMutation": false
+  },
+  "editorialRoot": "living-essays-reader",
+  "readerFirst": {
+    "currentChapter": "the-door-is-a-score",
+    "semanticPaths": [
+      "recent",
+      "sound",
+      "reading",
+      "systems"
+    ],
+    "workCount": 7,
+    "alternativeRoot": "scenarios/author-led/",
+    "publishedOriginalsRetained": true,
+    "wlanStageOnly": true,
+    "sourceReceipt": "editorial/living-essays-reader-source.json"
   }
 }

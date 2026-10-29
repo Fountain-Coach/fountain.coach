@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check the author-led homepage and adjacent Essays collection against the
+"""Check the reader-first homepage, original author scenario and Essays collection against the
 adopted canonical estate reel. Source checks are not staging or Safari proof.
 """
 from html.parser import HTMLParser
@@ -38,9 +38,9 @@ class Shell(HTMLParser):
             self.footers += 1
         inside = lambda name, value: any(name == k and value == v.get(k) for k, v in self.stack)
         nav = any(t == "nav" and "estate-nav" in v.get("class", "").split() for t, v in self.stack)
-        foot = any(t == "footer" for t, _ in self.stack)
+        foot = any(t == "footer" and ("footer" in v.get("class","").split() or v.get("role") == "contentinfo" or v.get("id") == "footer") for t, v in self.stack)
         if tag == "a":
-            if "skip-link" in class_names and a.get("href") == "#main": self.skip = True
+            if ("skip-link" in class_names and a.get("href") == "#main") or ("book-skip" in class_names and a.get("href") == "#book-pages"): self.skip = True
             if nav and a.get("data-estate-id"): self.reel.append((a["data-estate-id"], a.get("href")))
             if foot: self.footer_links.append(a.get("href", ""))
         if tag == "button" and nav and "estate-info" in class_names: self.info = True
@@ -63,7 +63,7 @@ def check():
     reel = json.loads(REEL.read_text())
     expected = [(e["id"], e["url"]) for e in reel["entries"]]
     assert len(expected) == 9, "Require the current adopted nine-entry reel"
-    pages = [("home", SITE/"index.html"), ("essays", SITE/"essays/index.html")]
+    pages = [("home", SITE/"index.html"), ("essays", SITE/"essays/index.html"),("author-led",SITE/"scenarios/author-led/index.html")]
     parsed = {}
     for label, path in pages:
         source = path.read_text(encoding="utf8")
@@ -84,12 +84,16 @@ def check():
     h, e = parsed["home"], parsed["essays"]
     assert h.reel == e.reel
     assert h.footer_links == e.footer_links, "Both entrances must share the same footer route graph"
-    assert len(h.features) == 4, "Landing selects four real essays"
+    assert len(parsed["author-led"].features)==4, "The preserved author-led scenario retains its four real essays"
+    assert len(h.features)==0, "The reader-first home is a measured book, not a gallery"
     assert len(e.gallery) == 7, "The complete public gallery has seven works"
     assert len(set(e.gallery)) == len(e.gallery)
-    assert h.meta["fountain:publication-role"] == "author-led estate identity"
+    assert h.meta["fountain:publication-role"] == "writer-approved reader-first living Essays edition"
+    assert parsed["author-led"].meta["fountain:publication-role"] == "author-led estate identity"
     assert e.meta["fountain:publication-role"] == "essay collection index"
     assert "href=\"/editions/\"" in (SITE/"index.html").read_text()
+    assert (SITE/"index.html").read_text().count("data-book-chapter=")==7
+    assert 'data-edition-entry-anchor="work-the-door-is-a-score"' in (SITE/"index.html").read_text()
     assert "data-linotype-state=\"bookshelf\"" in (SITE/"editions/index.html").read_text()
     for slug in ("the-door-is-a-score", "the-ear-that-learns", "the-composable-book",
                  "reframe-and-the-business-value-of-the-estate"):
@@ -105,7 +109,7 @@ def check():
     edition=json.loads((ROOT/"edition.json").read_text())
     assert sha256(css.read_bytes()).hexdigest()==edition["publicOnlyEssayAssetRecovery"]["publishedCSSSHA256"]
     print("COMPOSABLE_BOOK_CSS_SOURCE_ACCEPTED",len(css.read_bytes()),"bytes")
-    print("EDITORIAL_ENTRANCES_ACCEPTED",len(h.features),"features",len(e.gallery),"gallery works")
+    print("READER_FIRST_ENTRANCES_ACCEPTED",7,"book chapters",len(e.gallery),"gallery works",4,"preserved gallery heroes")
 
 if __name__ == "__main__":
     check()

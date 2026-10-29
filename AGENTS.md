@@ -1,5 +1,9 @@
 # fountain.coach Git ownership
 
+## Current reader-first editorial decision — 29 October 2026
+
+The parent homepage opens a continuous seven-chapter Linotype Essays book. The latest attested writing is chapter one in every reader-selected semantic order. Original essays and media remain separately owned at their published routes. The previous four-hero landing is preserved at /scenarios/author-led/, the article gallery at /essays/, and the original independent Press Bookshelf at /editions/. The writer-approved source is pinned at commit 5ec8c5490c8a1fe2b4a941185ecb3f415a7bdfdd. Staging v59 is an owner-WLAN preview, not a production publication. The October 28 decision below is historic.
+
 ## Approved editorial decision — 28 October 2026
 
 The Fountain Coach parent identity is one author's independent software and publishing practice. The homepage makes that authorship visible and features four original essay illustrations; `/essays/` is the complete reading room next door. The independent Fountain Press Bookshelf stays at `/editions/`. Chapter 92's publisher/authority map and Chapter 127's direct-static Publication Core remain applicable.
