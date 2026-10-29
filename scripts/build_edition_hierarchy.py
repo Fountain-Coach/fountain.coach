@@ -84,6 +84,7 @@ def format_reader(source,canonical,title,edition_id,back_url,back_label,selected
     raise ValueError('Reader cannot claim unverified collection membership')
    result=result.replace('data-edition-id="essays-teatro-an-unfinished-composition"',
       'data-edition-id="essays-teatro-an-unfinished-composition" data-edition-entry-anchor="book-cover"',1)
+   result=result.replace('data-edition-entry-anchor="book-cover"', 'data-edition-entry-anchor="book-cover" data-containing-space-id="first-readings" data-containing-space-tone="teal" data-containing-source-sha256="'+presentation['collectionSHA256']+'"',1)
    assert result.count('id="book-flow"')==1
    result=result.replace(NAV,'<div class="work-reading-identity" aria-label="Current publication">FIRST READINGS · AN UNFINISHED COMPOSITION</div>',1)
    assert 'class="edition-rail"' not in result
