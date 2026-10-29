@@ -1,5 +1,9 @@
 # fountain.coach - owning Git source
 
+## Intended public Reader source for two domain names — 29 October 2026
+
+**`fountain.coach` and `benedikt-eickhoff.de` are now directed to become two entrances to ONE Reframe Reader / Bookshelf, with this repository's `site/` as the single intended source-built public publication.** This supersedes the older two separate company/personal publication frontends, without mutating either live site or private manuscripts. Author/About, Fountain Coach publisher identity, works and editions are different semantic relationships **inside the same Reader**. Original book/edition/Governance/instrument owners remain separate; the original personal source and all previous public routes are preserved pending separately authorized and independently verified host/asset/redirect work. The shared-source architectural decision is Reframe ADR-008; the public source/host decision is `Fountain-Coach/estate/docs/decisions/2026-10-29-one-reader-two-domains.md`. DNS/TLS/SEO/MX, current staging and public release have not been changed by this documentation.
+
 GitHub source authority for fountain.coach and its site/ publishing tree.
 Role: Public Fountain Coach identity; one of three front-door editorial identities
 
