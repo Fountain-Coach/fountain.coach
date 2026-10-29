@@ -75,6 +75,13 @@ def format_reader(source,canonical,title,edition_id,back_url,back_label,selected
   content=subcover+'\n'+chunks+'\n'+end+'\n'
   result=result[:cover_start]+content+'</div>\n</div>\n</div>\n'+result[cover_end:]
   if selected['id']=='teatro-an-unfinished-composition':
+   presentation=json.loads((SITE/'collections/first-readings/containment-presentation.v1.json').read_text())
+   collection_source=SITE/'collections/first-readings/collection.json'
+   if sha(collection_source.read_bytes())!=presentation['collectionSHA256']:
+    raise ValueError('Reader color cannot outlive containing-space revision')
+   source_members=[x['workId'] for x in json.loads(collection_source.read_text())['works']]
+   if source_members!=presentation['memberWorkIDs'] or source_members!=[selected['id']]:
+    raise ValueError('Reader cannot claim unverified collection membership')
    result=result.replace('data-edition-id="essays-teatro-an-unfinished-composition"',
       'data-edition-id="essays-teatro-an-unfinished-composition" data-edition-entry-anchor="book-cover"',1)
    assert result.count('id="book-flow"')==1
