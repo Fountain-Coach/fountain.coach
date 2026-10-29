@@ -153,15 +153,23 @@ def build_first_readings_collection(version):
        edition='First Readings — source-authenticated work',reader=destination,cover_image=asset,
        source_revision=entry['sourceSHA256'],
        host='fountain',status='wlan-proof',cover_title='An Unfinished Composition')
+    manifest=dict(schema='fountain.press.collection.v1',identity='first-readings',
+       title='First Readings',publisher='Fountain-Coach/fountain.coach',
+       canonical='https://fountain.coach/collections/first-readings/',
+       sourceStatus='WLAN editorial candidate',coverAsset='/assets/estate-bookshelf/first-reading-ink.png',
+       workCount=1,works=[dict(workId=entry['id'],title=entry['title'],editionPath=entry['editionPath'],
+        coverArtwork=asset,coverArtworkSHA256=entry['images'][0]['sha256'],
+        sourceSHA256=entry['sourceSHA256'],sourceParagraphs=entry['originalParagraphs'])],
+       singularFirstReadingPreserved='https://works.benedikt-eickhoff.de/solstice/editions/first-reading/',
+       hearingStatus='no First Hearings publication admitted')
+    manifest_bytes=(json.dumps(manifest,indent=2,ensure_ascii=False)+'\n').encode('utf-8')
     # Color is authorized only by the exact existing collection/membership.
     presentation=json.loads((collection/'containment-presentation.v1.json').read_text())
-    manifest_file=collection/'collection.json'
     if presentation['identity']!='first-readings' or presentation['tone']!='teal':
         raise ValueError('Undeclared collection presentation')
-    if sha(manifest_file.read_bytes())!=presentation['collectionSHA256']:
+    if sha(manifest_bytes)!=presentation['collectionSHA256']:
         raise ValueError('Containing color source revision mismatch')
-    membership=json.loads(manifest_file.read_text())
-    member_ids=[work['workId'] for work in membership['works']]
+    member_ids=[work['workId'] for work in manifest['works']]
     if member_ids!=presentation['memberWorkIDs'] or member_ids!=[collection_book['id']]:
         raise ValueError('Containing-space membership is not source-grounded')
     context=dict(id=presentation['identity'],members=member_ids,
@@ -172,16 +180,7 @@ def build_first_readings_collection(version):
        collection_title='First Readings',collection_parent='/',collection_id='first-readings',
        root_href='/',app_surface=True,containing_context=context)
     (collection/'index.html').write_text(rendered)
-    manifest=dict(schema='fountain.press.collection.v1',identity='first-readings',
-       title='First Readings',publisher='Fountain-Coach/fountain.coach',
-       canonical='https://fountain.coach/collections/first-readings/',
-       sourceStatus='WLAN editorial candidate',coverAsset='/assets/estate-bookshelf/first-reading-ink.png',
-       workCount=1,works=[dict(workId=entry['id'],title=entry['title'],editionPath=entry['editionPath'],
-        coverArtwork=asset,coverArtworkSHA256=entry['images'][0]['sha256'],
-        sourceSHA256=entry['sourceSHA256'],sourceParagraphs=entry['originalParagraphs'])],
-       singularFirstReadingPreserved='https://works.benedikt-eickhoff.de/solstice/editions/first-reading/',
-       hearingStatus='no First Hearings publication admitted')
-    (collection/'collection.json').write_text(json.dumps(manifest,indent=2,ensure_ascii=False)+'\n')
+    (collection/'collection.json').write_bytes(manifest_bytes)
     return manifest
 
 def build_estate_grid():
