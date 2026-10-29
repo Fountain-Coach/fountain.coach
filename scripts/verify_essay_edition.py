@@ -35,6 +35,7 @@ def check():
  assert 'data-preview-host="teatro"' not in catalogue
  assert '<h1 class="press-visually-hidden">Bookshelf</h1>' in catalogue and 'id="book-viewport"' not in catalogue
  assert 'class="book-app bookshelf-state app-surface"' in catalogue
+ assert 'data-containing-space-tone=' not in catalogue  # neutral Reader root
  assert 'class="instrument-slot"' not in catalogue
  assert 'class="bookshelf-wordmark"' not in catalogue
  assert 'class="shelf-miniature"' not in catalogue
@@ -68,10 +69,17 @@ def check():
  assert identity['schema']=='fountain.press.collection.v1'
  assert identity['identity']=='first-readings' and identity['workCount']==1
  assert identity['works'][0]['workId']=='teatro-an-unfinished-composition'
+ presentation=json.loads((SITE/'collections/first-readings/containment-presentation.v1.json').read_text())
+ assert sha((SITE/'collections/first-readings/collection.json').read_bytes())==presentation['collectionSHA256']
+ assert presentation['memberWorkIDs']==[work['workId'] for work in identity['works']]
+ assert presentation['tone']=='teal'
+ assert 'data-containing-space-id="first-readings"' in collection
+ assert 'data-containing-space-tone="teal"' in collection
+ assert 'data-containing-source-sha256="'+presentation['collectionSHA256']+'"' in collection
  assert collection.count('class="shelf-book"')==1 and collection.count('class="shelf-cover"')==1
  assert collection.count('class="bookshelf-empty" aria-hidden="true"')==20
  assert '<h1 class="press-visually-hidden">First Readings</h1>' in collection
- assert 'class="book-app bookshelf-state collection-state app-surface"' in collection
+ assert 'class="book-app bookshelf-state collection-state app-surface containing-context"' in collection
  assert 'href="/" aria-label="Go to Reader root — Bookshelf"' in collection
  assert 'bookshelf-collection-masthead' not in collection
  assert 'href="https://fountain.coach/editions/essays/teatro-an-unfinished-composition/"' in collection
@@ -84,6 +92,8 @@ def check():
  assert 'href="/collections/first-readings/#work-teatro-an-unfinished-composition"' in work
  assert 'aria-label="Return to First Readings collection"' in work
  assert 'data-edition-entry-anchor="book-cover"' in work
+ assert 'data-containing-space-tone="teal"' in work
+ assert 'data-containing-source-sha256="'+presentation['collectionSHA256']+'"' in work
  assert 'body.dataset.editionEntryAnchor||prefs.anchor' in (SITE/'assets/linotype/book.js').read_text()
  assert '(hash||body.dataset.editionEntryAnchor)?0:' in (SITE/'assets/linotype/book.js').read_text()
  assert identity['singularFirstReadingPreserved'] == front['first-reading']['entryEditionUrl']
