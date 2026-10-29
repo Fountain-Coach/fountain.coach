@@ -33,15 +33,18 @@ def check():
  assert (SITE/'assets/linotype/identity-circle.css').read_bytes()==(ROOT.parent.parent/'fountain-press/runtime/identity-circle.css').read_bytes()
  assert catalogue.count('class="shelf-book"')==2
  assert 'data-preview-host="teatro"' not in catalogue
- assert '<h1' not in catalogue and 'id="book-viewport"' not in catalogue
+ assert '<h1 class="press-visually-hidden">Bookshelf</h1>' in catalogue and 'id="book-viewport"' not in catalogue
+ assert 'class="book-app bookshelf-state app-surface"' in catalogue
  assert 'class="instrument-slot"' not in catalogue
  assert 'class="bookshelf-wordmark"' not in catalogue
  assert 'class="shelf-miniature"' not in catalogue
- # Original books remain the same; supporting editorial navigation is not a cover.
- assert catalogue.count('class="bookshelf-pathways"') == 1
- for path in ('/essays/', '/essays/the-ear-that-learns/', 'https://instruments.fountain.coach/'):
-  assert 'href="' + path + '"' in catalogue
- assert (SITE/'assets/essay-pathways.css').is_file()
+ # No visible website chrome surrounds the source-owned rounded-square slots.
+ assert 'class="bookshelf-pathways"' not in catalogue
+ assert 'class="reframe-reader-heading"' not in catalogue
+ assert '<footer' not in catalogue
+ assert '<nav' not in catalogue
+ assert '<h1 class="press-visually-hidden">Bookshelf</h1>' in catalogue
+ assert (SITE/'assets/essay-pathways.css').is_file()  # historical reader asset stays source-owned
  article=(SITE/'essays/the-ear-that-learns/index.html').read_text()
  assert '<h1>The Ear That Learns</h1>' in article
  assert 'href="https://instruments.fountain.coach/#ear"' in article
@@ -67,8 +70,10 @@ def check():
  assert identity['works'][0]['workId']=='teatro-an-unfinished-composition'
  assert collection.count('class="shelf-book"')==1 and collection.count('class="shelf-cover"')==1
  assert collection.count('class="bookshelf-empty" aria-hidden="true"')==20
- assert '<h1>First Readings</h1>' in collection
- assert 'href="/" aria-label="Return to Fountain Coach bookshelf"' in collection
+ assert '<h1 class="press-visually-hidden">First Readings</h1>' in collection
+ assert 'class="book-app bookshelf-state collection-state app-surface"' in collection
+ assert 'href="/" aria-label="Go to Reader root — Bookshelf"' in collection
+ assert 'bookshelf-collection-masthead' not in collection
  assert 'href="https://fountain.coach/editions/essays/teatro-an-unfinished-composition/"' in collection
  assert 'data-book-id="teatro-an-unfinished-composition"' in collection
  assert identity['works'][0]['coverArtworkSHA256']==sha((SITE/identity['works'][0]['coverArtwork'].lstrip('/')).read_bytes())
