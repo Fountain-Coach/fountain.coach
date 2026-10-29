@@ -161,7 +161,8 @@ def build_first_readings_collection(version):
     rendered=render_bookshelf(title='First Readings',imprint='First Readings',
        books=[collection_book],css_url='/assets/linotype/bookshelf.css',
        logo_url='/assets/fountain-coach-logo-transparent.png',
-       collection_title='First Readings',collection_parent='/',root_href='/',app_surface=True)
+       collection_title='First Readings',collection_parent='/',collection_id='first-readings',
+       root_href='/',app_surface=True,containing_context=context)
     (collection/'index.html').write_text(rendered)
     manifest=dict(schema='fountain.press.collection.v1',identity='first-readings',
        title='First Readings',publisher='Fountain-Coach/fountain.coach',
