@@ -1,0 +1,20 @@
+{
+  "schema": "fountain.press.containing-space-presentation.v1",
+  "state": "author-directed-WLAN-review-not-new-admission",
+  "identity": "first-readings",
+  "collectionSource": "site/collections/first-readings/collection.json",
+  "collectionSHA256": "8cbaa8cf73400602d0d61520f18d3b8f2e7885e2570981e941a6184b29d91314",
+  "memberWorkIDs": [
+    "teatro-an-unfinished-composition"
+  ],
+  "tone": "teal",
+  "colorMeaning": "current containing-space membership only; not book title/genre/cover; root neutral",
+  "evidence": {
+    "sourceRelationship": "Existing First Readings collection and its one source-authored member",
+    "visualDirection": "Writer's 15 October 2026 spatial color reference reaffirmed 29 October 2026",
+    "r21": "Fountain-Coach/Reframe/scenarios/021-basic-entrance-and-situated-estate.md",
+    "r28": "Fountain-Coach/Reframe/scenarios/028-one-reader-wlan-first-bookshelf.md",
+    "nativeStoreColorAssignment": "not-independently-read",
+    "publicPublication": false
+  }
+}
