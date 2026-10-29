@@ -145,6 +145,19 @@ def build_first_readings_collection(version):
        edition='First Readings — source-authenticated work',reader=destination,cover_image=asset,
        source_revision=entry['sourceSHA256'],
        host='fountain',status='wlan-proof',cover_title='An Unfinished Composition')
+    # Color is authorized only by the exact existing collection/membership.
+    presentation=json.loads((collection/'containment-presentation.v1.json').read_text())
+    manifest_file=collection/'collection.json'
+    if presentation['identity']!='first-readings' or presentation['tone']!='teal':
+        raise ValueError('Undeclared collection presentation')
+    if sha(manifest_file.read_bytes())!=presentation['collectionSHA256']:
+        raise ValueError('Containing color source revision mismatch')
+    membership=json.loads(manifest_file.read_text())
+    member_ids=[work['workId'] for work in membership['works']]
+    if member_ids!=presentation['memberWorkIDs'] or member_ids!=[collection_book['id']]:
+        raise ValueError('Containing-space membership is not source-grounded')
+    context=dict(id=presentation['identity'],members=member_ids,
+                 source_sha256=presentation['collectionSHA256'],tone=presentation['tone'])
     rendered=render_bookshelf(title='First Readings',imprint='First Readings',
        books=[collection_book],css_url='/assets/linotype/bookshelf.css',
        logo_url='/assets/fountain-coach-logo-transparent.png',
