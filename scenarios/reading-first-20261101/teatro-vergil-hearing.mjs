@@ -80,7 +80,7 @@ async function install() {
   display.setAttribute("aria-live","off");
   display.setAttribute("aria-label","Vergil reading position");
   display.className = "teatro-vergil-clock";
-  display.textContent = "0:00 / " + time(edition.recording.duration);
+  display.textContent = "0:00 / " + time(Math.round(edition.recording.duration));
   controls.insertBefore(display,document.getElementById("next-page"));
 
   const update = () => {
@@ -94,7 +94,7 @@ async function install() {
     button.setAttribute("aria-label",(playing ? "Pause" : "Read")+
       " Teatro aloud with the AI-generated Vergil voice");
     display.textContent = time(player.state.currentTime) +
-      " / " + time(edition.recording.duration);
+      " / " + time(Math.round(edition.recording.duration));
   };
   button.addEventListener("click",() => {
     if (!active()) return;
