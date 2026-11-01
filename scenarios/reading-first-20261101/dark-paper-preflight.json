@@ -1,0 +1,36 @@
+{
+  "origin": "https://192.168.8.50:8243",
+  "intercepted": true,
+  "results": [
+    {
+      "profile": "landscape",
+      "illustrations": 37,
+      "darkPlate": "rgb(245, 242, 233)",
+      "sourceStable": true,
+      "sourceFolioPlate": {
+        "paper": "rgb(245, 242, 233)",
+        "filter": "none"
+      },
+      "accessibility": {
+        "name": "Read Reframe and the Business Value of the Estate in Essays",
+        "tag": "BUTTON",
+        "tabIndex": 0
+      },
+      "errors": []
+    },
+    {
+      "profile": "phone",
+      "illustrations": 37,
+      "darkPlate": "rgb(245, 242, 233)",
+      "sourceStable": true,
+      "sourceFolioPlate": null,
+      "accessibility": {
+        "name": "Read Reframe and the Business Value of the Estate in Essays",
+        "tag": "BUTTON",
+        "tabIndex": 0
+      },
+      "errors": []
+    }
+  ],
+  "errors": 0
+}

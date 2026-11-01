@@ -1,4 +1,4 @@
-:root{--bg:#f5f2e9;--paper:#f5f2e9;--ink:#171816;--muted:#62665f;--line:#c9c8c0;--focus:#0b57d0;color-scheme:light;font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;color:var(--ink);background:var(--bg)}
+:root{--bg:#f5f2e9;--paper:#f5f2e9;--art-paper:#f5f2e9;--ink:#171816;--muted:#62665f;--line:#c9c8c0;--focus:#0b57d0;color-scheme:light;font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;color:var(--ink);background:var(--bg)}
 :root[data-theme="dark"]{--bg:#111510;--paper:#111510;--ink:#f0eee5;--muted:#b9bdb4;--line:#484e46;--focus:#91b7ff;color-scheme:dark}
 *{box-sizing:border-box}
 html,body{height:100%;margin:0}
@@ -259,7 +259,7 @@ html:not(.js) body{height:auto;overflow:auto}html:not(.js) .reading-shell{height
 }
 .reader-gallery-square{
  display:grid;place-items:center;width:100%;aspect-ratio:1 / 1;
- padding:8px;border:1px solid var(--line);background:transparent;overflow:hidden;
+ padding:8px;border:1px solid var(--line);background:var(--art-paper);overflow:hidden;
 }
 .reader-gallery-square img{
  display:block;width:100%;height:100%;object-fit:contain;
@@ -269,6 +269,12 @@ html:not(.js) body{height:auto;overflow:auto}html:not(.js) .reading-shell{height
  font:normal .87rem/1.32 "Iowan Old Style",Palatino,Georgia,serif;
  overflow-wrap:anywhere;
 }
+/* Preserve source artwork as a print plate, rather than guessing a dark
+   variant from transparent pixels or applying a destructive CSS inversion. */
+.page-viewport .linotype-area :is(.teatro-score,.frame-essay-hero,.frame-integrated-figure,.frame-reading-figure) img{
+ background:var(--art-paper);filter:none;
+}
+.reader-gallery-square img{filter:none}
 .reader-gallery-item:hover .reader-gallery-square{border-color:var(--ink)}
 .reader-gallery-item:focus-visible,.reader-collection-open:focus-visible{
  outline:3px solid var(--focus);outline-offset:2px;
