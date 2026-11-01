@@ -1,0 +1,34 @@
+{
+  "schema": "fountain.press.essay-abstracts.v1",
+  "editorialStatus": "WLAN stage draft, not a modification of the original published manuscripts",
+  "items": {
+    "the-door-is-a-score": {
+      "summary": "A recorded closing door is not yet a dramatic action. Its meaning depends on a reading of place, intention and silence. This essay traces the craft of the Geräuschemacher from early radio practice to a source-bound listening study, where voice and performed sound become distinct but related ways of interpreting a written scene.",
+      "share": "source-image"
+    },
+    "the-ear-that-learns": {
+      "summary": "A five-second phrase exposes the difference between generating a note and hearing a syllable. Sing can render a timed score; Ear must attend to the resulting sound without merely recognizing what the score already says. Through actual rehearsal takes, this essay asks what evidence makes an artificial listener capable of learning from a performance.",
+      "share": "source-image"
+    },
+    "the-composable-book": {
+      "summary": "A digital book is not a pair of paper-colored application panels. It is a continuity between reading, writing and the forms a work can take. This essay develops Reframe’s composable book as a source-bound edition in which prose, scores, conversation and executable instruments can coexist without surrendering the page as their shared frame.",
+      "share": "source-image"
+    },
+    "to-read-is-not-to-remember": {
+      "summary": "A plausible interpretation is not evidence that a machine has read an entire book. Reading unfolds through time, reconsideration and contradictions that exceed any single model session. From Reframe’s encounters with Ulysses, this essay distinguishes retained information from the continuity of inquiry, and asks how interpretations can remain inspectable when the intelligence doing the reading changes.",
+      "share": "opening-page"
+    },
+    "semantic-compilation-the-archive-is-not-the-edition": {
+      "summary": "A chronological archive preserves when something was written; it cannot decide which arrangement becomes a book. Using the Solstice archive and its first published reading, this essay asks how a writer might compile source texts, images and recurring motifs into a defensible edition while keeping editorial judgment, provenance and alternative interpretations visible.",
+      "share": "source-image"
+    },
+    "teatro-an-unfinished-composition": {
+      "summary": "Human experience rarely arrives as a finished story. Memory, bodies, absence, language and machines coexist before any plot can explain them. Teatro begins with that unfinished field and offers the score as a way to compose relations in time and space: a form that can hold uncertainty, stage attention and leave interpretation open.",
+      "share": "source-image"
+    },
+    "reframe-and-the-business-value-of-the-estate": {
+      "summary": "The personal web once offered writers an address; platforms offered distribution. Agents now need something beyond a page: identifiable sources, permissions, capabilities and actions they can interpret and use. This essay considers whether Reframe’s greater value lies in an independently governed, agent-addressable estate rather than in a writing application alone.",
+      "share": "source-image"
+    }
+  }
+}

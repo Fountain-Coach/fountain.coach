@@ -190,3 +190,24 @@ html:not(.js) body{height:auto;overflow:auto}html:not(.js) .reading-shell{height
 .page-viewport .linotype-area .teatro-score figcaption{text-align:left;max-width:100%;}
 @media(max-width:550px){.reader-scroll-surface{padding:18px 18px 10px}
  .reader-shelf-book{flex-basis:85%}.reader-contents-entry{padding:12px 1px;}}
+
+/* Essay editorial hierarchy: argument first, illustrated reference second. */
+.page-viewport .linotype-area .frame-essay-abstract{
+ font-family:"Iowan Old Style",Palatino,Georgia,serif;
+ font-size:clamp(1.01em,1.65vw,1.16em)!important;
+ line-height:1.54!important;
+ margin:.45em 0 0!important;
+ letter-spacing:0;
+ font-weight:400;
+}
+.page-viewport .linotype-area .frame-essay-hero{
+ display:grid;justify-items:center;max-width:100%;margin:0 auto;
+ gap:.45em;break-inside:avoid;
+}
+.page-viewport .linotype-area .frame-essay-hero img{
+ display:block;object-fit:contain;min-height:0!important;
+ max-width:100%;
+}
+.page-viewport .linotype-area .frame-essay-hero figcaption{
+ text-align:left;font-size:.65em;max-width:100%;
+}

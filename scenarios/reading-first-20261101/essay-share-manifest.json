@@ -1,0 +1,70 @@
+{
+  "schema": "fountain.press.essay-share-art.v1",
+  "status": "private-WLAN-candidate",
+  "note": "One human-readable composition; unchanged source image where suitable; otherwise an actual page screenshot. No claim of public social crawler access.",
+  "essays": {
+    "the-door-is-a-score": {
+      "reader": "#/read/essay--the-door-is-a-score",
+      "abstract": "A recorded closing door is not yet a dramatic action. Its meaning depends on a reading of place, intention and silence. This essay traces the craft of the Geräuschemacher from early radio practice to a source-bound listening study, where voice and performed sound become distinct but related ways of interpreting a written scene.",
+      "art": {
+        "type": "original-source-image",
+        "path": "/estate/essays/the-door-is-a-score/assets/teatro-door-score.png",
+        "alt": "Teatro graphic score: orange impacts and returning traces cross black spatial planes; a narrow threshold and a wide open interval hold the action in suspense."
+      }
+    },
+    "the-ear-that-learns": {
+      "reader": "#/read/essay--the-ear-that-learns",
+      "abstract": "A five-second phrase exposes the difference between generating a note and hearing a syllable. Sing can render a timed score; Ear must attend to the resulting sound without merely recognizing what the score already says. Through actual rehearsal takes, this essay asks what evidence makes an artificial listener capable of learning from a performance.",
+      "art": {
+        "type": "original-source-image",
+        "path": "/estate/essays/the-ear-that-learns/assets/listening-room.png",
+        "alt": "Architectural isometric engraving of a music score and sound source facing a listening instrument across an open rehearsal room, with one vermilion mark and figure caption 04 HEARING / REHEARSAL."
+      }
+    },
+    "the-composable-book": {
+      "reader": "#/read/essay--the-composable-book",
+      "abstract": "A digital book is not a pair of paper-colored application panels. It is a continuity between reading, writing and the forms a work can take. This essay develops Reframe’s composable book as a source-bound edition in which prose, scores, conversation and executable instruments can coexist without surrendering the page as their shared frame.",
+      "art": {
+        "type": "original-source-image",
+        "path": "/estate/essays/the-composable-book/assets/01-book-spread.svg",
+        "alt": "An open book is one composition. Reading and Composer meet at its binding; neither page is a docked application window."
+      }
+    },
+    "to-read-is-not-to-remember": {
+      "reader": "#/read/essay--to-read-is-not-to-remember",
+      "abstract": "A plausible interpretation is not evidence that a machine has read an entire book. Reading unfolds through time, reconsideration and contradictions that exceed any single model session. From Reframe’s encounters with Ulysses, this essay distinguishes retained information from the continuity of inquiry, and asks how interpretations can remain inspectable when the intelligence doing the reading changes.",
+      "art": {
+        "type": "actual-typeset-page-preview",
+        "path": "/estate/assets/essay-share/did-the-machine-actually-read-the-book.png",
+        "alt": "Typeset opening spread of Did the Machine Actually Read the Book? showing its title, argument and original essay typography"
+      }
+    },
+    "semantic-compilation-the-archive-is-not-the-edition": {
+      "reader": "#/read/essay--semantic-compilation-the-archive-is-not-the-edition",
+      "abstract": "A chronological archive preserves when something was written; it cannot decide which arrangement becomes a book. Using the Solstice archive and its first published reading, this essay asks how a writer might compile source texts, images and recurring motifs into a defensible edition while keeping editorial judgment, provenance and alternative interpretations visible.",
+      "art": {
+        "type": "original-source-image",
+        "path": "/estate/essays/semantic-compilation-the-archive-is-not-the-edition/assets/semantic-compilation-estate-rail.svg",
+        "alt": "The Fountain Coach estate navigation rail admits the eight-point Solstice mark above a three-part diagram: an archive, an interpretive editorial plan, and a reading edition."
+      }
+    },
+    "teatro-an-unfinished-composition": {
+      "reader": "#/read/essay--teatro-an-unfinished-composition",
+      "abstract": "Human experience rarely arrives as a finished story. Memory, bodies, absence, language and machines coexist before any plot can explain them. Teatro begins with that unfinished field and offers the score as a way to compose relations in time and space: a form that can hold uncertainty, stage attention and leave interpretation open.",
+      "art": {
+        "type": "original-source-image",
+        "path": "/estate/essays/teatro-an-unfinished-composition/assets/teatro-score-memory-vector-human-condition.svg",
+        "alt": "Teatro Score Memory Vector: seven sequential movements from field and presence to an unfinished form"
+      }
+    },
+    "reframe-and-the-business-value-of-the-estate": {
+      "reader": "#/read/essay--reframe-and-the-business-value-of-the-estate",
+      "abstract": "The personal web once offered writers an address; platforms offered distribution. Agents now need something beyond a page: identifiable sources, permissions, capabilities and actions they can interpret and use. This essay considers whether Reframe’s greater value lies in an independently governed, agent-addressable estate rather than in a writing application alone.",
+      "art": {
+        "type": "original-source-image",
+        "path": "/estate/essays/reframe-and-the-business-value-of-the-estate/assets/address-landscape.png",
+        "alt": "Minimal isometric room with an archive, open threshold, and held red mark representing a personal address"
+      }
+    }
+  }
+}

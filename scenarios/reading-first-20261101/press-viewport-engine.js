@@ -315,7 +315,7 @@ class Linotype {
     frame.append(immutable(figure));
     leaf.area.append(frame);
     const title=q(".book-chapter-heading",leaf.area);
-    if(figure?.classList.contains("teatro-score")){
+    if(figure?.classList.contains("teatro-score")||figure?.classList.contains("frame-essay-hero")){
       // FCIS Largest Balanced Fit: measure the *real* source aspect ratio
       // against the remaining folio after the title/caption, never against
       // a generic 190px thumbnail or a decorative portrait/landscape box.
@@ -347,7 +347,8 @@ class Linotype {
         size();
       }
       if(!this.fits(leaf.area))throw Error("Oversize Score "+sourceId);
-      figureEl.dataset.scoreFit="balanced";
+      if(figure.classList.contains("teatro-score"))figureEl.dataset.scoreFit="balanced";
+      else figureEl.dataset.essayHeroFit="balanced";
       return;
     }
     // WebKit can report a transient zero-height heading before its font/layout
@@ -505,7 +506,7 @@ class Linotype {
       const expected=paragraphs.join("");
       const received=this.leaves.filter(x=>x.sourceId===id &&
           (x.type==="text" || (x.type==="opener" && !x.area.querySelector(".linotype-image-frame figure"))))
-        .flatMap(x=>[...x.area.querySelectorAll(":scope > p:not(.book-source-note)")])
+        .flatMap(x=>[...x.area.querySelectorAll(":scope > p:not(.book-source-note):not(.frame-essay-abstract)")])
         .map(x=>x.textContent).join("");
       if(expected!==received)throw Error("Source text lost in pagination: "+id);
     }

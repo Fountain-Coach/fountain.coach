@@ -3,13 +3,16 @@
 const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto');
 const puppeteer=require('/opt/homebrew/lib/node_modules/@wonderwhy-er/desktop-commander/node_modules/puppeteer');
 const W=__dirname;
+const abstracts=JSON.parse(fs.readFileSync(path.join(W,'essay-abstracts.json'),'utf8'));
+if(abstracts.schema!=='fountain.press.essay-abstracts.v1'||Object.keys(abstracts.items).length!==7)throw Error('Essay abstract inventory mismatch');
 const sources={teatro:fs.readFileSync(path.join(W,'original-teatro.html'),'utf8'),essays:fs.readFileSync(path.join(W,'original-essays-continuing.html'),'utf8'),first:fs.readFileSync(path.join(W,'original-first-readings.html'),'utf8')};
 (async()=>{
  const browser=await puppeteer.launch({headless:true,executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',args:['--no-sandbox']});
  const page=await browser.newPage();
  const answer=await page.evaluate(input=>{
   const parse=x=>new DOMParser().parseFromString(x,'text/html');
-  const es=parse(input.essays),tr=parse(input.teatro),first=parse(input.first);
+  const es=parse(input.sources.essays),tr=parse(input.sources.teatro),first=parse(input.sources.first);
+  const abstracts=input.abstracts.items;
   const esc=t=>String(t).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
   const allow=new Set(['em','strong','b','i','code','sup','sub','cite','span','small','q']);
   const referenceCatalog=[];
@@ -61,7 +64,7 @@ const sources={teatro:fs.readFileSync(path.join(W,'original-teatro.html'),'utf8'
     if(slug!=='the-door-is-a-score')return '';
     return '<figure class="frame-press-av" data-press-media="satzfunk-player.recorded-directions.v1" data-keep-with-anchor="previous" data-source-block="door.av.recorded"><satzfunk-player label="Four performed directions of the door closing"></satzfunk-player><p class="press-av-status" role="status"></p><figcaption>Four authored recordings · fourteen seconds each · source score and interpretation retained.</figcaption></figure>';
   }
-  function buildChapter(node,slug,title){
+  function buildChapter(node,slug,title,{essay=false}={}){
    currentReferenceScope=slug;
    const items=[];
    let scan=node.nextElementSibling,number=0,paragraphs=0,figures=0;
@@ -99,7 +102,39 @@ const sources={teatro:fs.readFileSync(path.join(W,'original-teatro.html'),'utf8'
     }
     scan=scan.nextElementSibling;
    }
-   const c='<section class="book-chapter" id="work-'+esc(slug)+'"><div class="book-chapter-heading"><h2 data-source-block="'+esc(slug)+'.title">'+esc(title)+'</h2></div></section><section class="book-chapter-text"><article class="book-prose">'+items.join('')+'</article></section>';
+   // Essays are argued before they are illustrated. A stage-owned editorial
+   // abstract is visibly distinct from the unchanged author manuscript.
+   const entry=essay?abstracts[slug]:null;
+   if(essay&&(!entry||entry.summary.trim().length<130||!['source-image','opening-page'].includes(entry.share)))
+     throw Error('Missing authored editorial abstract: '+slug);
+   let hero='';
+   if(essay){
+     const at=items.findIndex(item=>item.startsWith('<figure class="frame-reading-figure'));
+     if(at<0)throw Error('No original essay illustration: '+slug);
+     const figure=items.splice(at,1)[0];
+     if(entry.share==='source-image'){
+       hero='<section class="book-art-leaf">'+figure.replace('class="frame-reading-figure','class="frame-reading-figure frame-essay-hero').replace(' frame-integrated-figure','')+'</section>';
+     }else{
+       // Screenshot is documentation within the argument, not promotional art.
+       // Its shareable image is the true typeset abstract-page preview.
+       const after=items.findIndex((x,i)=>i>=8&&x.startsWith('<p'));
+       items.splice(Math.max(0,after),0,figure);
+     }
+   }
+   // One published essay repeats its literal title in the original prose.
+   // Lift that authenticated source block into the existing heading instead
+   // of printing a second identical title within the opening composition.
+   let headingBlock=slug+'.title';
+   if(essay&&slug==='to-read-is-not-to-remember'){
+     const originalTitle=items[0]||'';
+     const identity=originalTitle.match(/data-source-block="([^"]+)"/);
+     if(!identity||!identity[1].startsWith(slug+'.p')||
+        !originalTitle.includes(esc(title)))throw Error('Original title block has changed');
+     headingBlock=identity[1];
+     items.shift();
+   }
+   const abstract=entry?'<p class="frame-essay-abstract" data-editorial-role="abstract" data-source-block="editorial.abstract.'+esc(slug)+'" data-source-from="0" data-source-to="'+entry.summary.length+'">'+esc(entry.summary)+'</p>':'';
+   const c='<section class="book-chapter" id="work-'+esc(slug)+'"><div class="book-chapter-heading"><h2 data-source-block="'+esc(headingBlock)+'">'+esc(title)+'</h2>'+abstract+'</div></section>'+hero+'<section class="book-chapter-text"><article class="book-prose">'+items.join('')+'</article></section>';
    currentReferenceScope=null;
    return {slug,title,html:c,paragraphs,figures,characters:node.parentElement?.textContent?.length||0};
   }
@@ -111,7 +146,7 @@ const sources={teatro:fs.readFileSync(path.join(W,'original-teatro.html'),'utf8'
   for(const section of es.querySelectorAll('#book-flow .book-chapter[data-book-chapter]')){
    const slug=section.dataset.bookChapter, title=section.querySelector('h2')?.textContent?.trim();
    if(!slug||!title)throw Error('Unidentified essay');
-   chunks.push(buildChapter(section,slug,title));
+   chunks.push(buildChapter(section,slug,title,{essay:true}));
   }
   if(chunks.length!==8)throw Error('Expected one Teatro + seven Essays, got '+chunks.length);
   const tCover=first.querySelector('[data-book-id="teatro-an-unfinished-composition"] img')?.getAttribute('src');
@@ -141,7 +176,7 @@ const sources={teatro:fs.readFileSync(path.join(W,'original-teatro.html'),'utf8'
     noteCount:referenceCatalog.length
   };
   return out;
- },sources);
+ },{sources,abstracts});
  await browser.close();
  const summary=answer.chapters;
  console.log(JSON.stringify({summary,sourceCover:answer.sourceCover},null,2));
