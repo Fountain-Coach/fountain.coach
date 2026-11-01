@@ -1,0 +1,136 @@
+{
+  "replacements": 7,
+  "blankSamples": 0,
+  "layoutTransitions": [
+    "ready",
+    "ready",
+    "ready",
+    "ready",
+    "ready",
+    "ready",
+    "ready",
+    "ready",
+    "ready",
+    "ready",
+    "ready",
+    "ready",
+    "ready",
+    "ready"
+  ],
+  "snapshots": [
+    {
+      "mode": "ready",
+      "collection": "essays",
+      "pages": 2,
+      "selected": [],
+      "compact": true,
+      "footerBottom": 1180,
+      "h": 1180,
+      "readerHeight": 1180,
+      "presentation": null,
+      "trackX": 0
+    },
+    {
+      "mode": "ready",
+      "collection": "essays",
+      "pages": 2,
+      "selected": [],
+      "compact": true,
+      "footerBottom": 1180,
+      "h": 1115,
+      "readerHeight": 1180,
+      "presentation": null,
+      "trackX": 0
+    },
+    {
+      "mode": "ready",
+      "collection": "essays",
+      "pages": 2,
+      "selected": [
+        "solstice-reading-01--2026-01-23-i-keep-moving",
+        "solstice-reading-01--2026-01-23-i-keep-moving"
+      ],
+      "compact": true,
+      "footerBottom": 1040,
+      "h": 1040,
+      "readerHeight": 1040,
+      "presentation": "contents",
+      "trackX": 0
+    },
+    {
+      "mode": "ready",
+      "collection": "essays",
+      "pages": 2,
+      "selected": [
+        "solstice-reading-01--2026-01-23-i-keep-moving",
+        "solstice-reading-01--2026-01-23-i-keep-moving"
+      ],
+      "compact": false,
+      "footerBottom": 820,
+      "h": 820,
+      "readerHeight": 820,
+      "presentation": "contents",
+      "trackX": 0
+    },
+    {
+      "mode": "ready",
+      "collection": "essays",
+      "pages": 2,
+      "selected": [
+        "solstice-reading-01--2026-01-23-i-keep-moving",
+        "solstice-reading-01--2026-01-23-i-keep-moving"
+      ],
+      "compact": true,
+      "footerBottom": 1180,
+      "h": 1180,
+      "readerHeight": 1180,
+      "presentation": "contents",
+      "trackX": 0
+    }
+  ],
+  "events": [
+    [
+      "resize",
+      820,
+      1180
+    ],
+    [
+      "visual",
+      820,
+      1180
+    ],
+    [
+      "resize",
+      888,
+      1040
+    ],
+    [
+      "visual",
+      888,
+      1040
+    ],
+    [
+      "resize",
+      1180,
+      820
+    ],
+    [
+      "visual",
+      1180,
+      820
+    ],
+    [
+      "resize",
+      820,
+      1180
+    ],
+    [
+      "visual",
+      820,
+      1180
+    ]
+  ],
+  "baseSelected": "solstice-reading-01--2026-01-23-i-keep-moving",
+  "errors": [],
+  "intercepted": false
+}

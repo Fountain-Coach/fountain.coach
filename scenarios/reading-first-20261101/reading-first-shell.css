@@ -8,7 +8,7 @@ button,a,select{-webkit-tap-highlight-color:transparent}
 button:focus-visible,a:focus-visible,select:focus-visible,[tabindex]:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
 .skip{position:fixed;top:10px;left:10px;background:var(--ink);color:var(--bg);padding:8px 12px;z-index:100;transform:translateY(-180%)}.skip:focus{transform:none}
 .sr-only{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important}
-.reading-shell{height:var(--reader-height,100dvh);width:100%;display:grid;grid-template-rows:50px minmax(0,1fr);padding:0 max(14px,env(safe-area-inset-right)) 0 max(14px,env(safe-area-inset-left));overflow:clip}
+.reading-shell{height:100dvh;width:100%;display:grid;grid-template-rows:50px minmax(0,1fr);padding:0 max(14px,env(safe-area-inset-right)) 0 max(14px,env(safe-area-inset-left));overflow:clip}
 .app-header{min-height:50px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
 .brand{display:inline-flex;gap:8px;align-items:center;text-decoration:none;color:var(--ink);font-size:1.07rem;letter-spacing:-.035em}.brand img{width:32px;height:32px;object-fit:contain}:root[data-theme="dark"] .brand img{filter:invert(1)}
 .icon-only{display:grid;place-items:center;width:44px;height:44px;border:0;background:none;cursor:pointer;font-size:1.25rem}

@@ -72,6 +72,7 @@ const compactPresentation={essays:'contents','first-readings':'contents'};
 let shelfOriginWork=null;
 let openAtEnd=null;
 let engine=null,signature='',frame=0,pointer=null,volume='library',ready=false,entryUrl=null;
+let resizeDelay=0,shelfReflowing=false,shelfReflowTimer=0;
 const positions=new Map();
 const saved=(()=>{try{return localStorage.getItem('fountain-reader-theme')}catch{return null}})();
 const systemDark=window.matchMedia?.('(prefers-color-scheme: dark)').matches;
@@ -201,6 +202,17 @@ function recordSurfaceOffset(){
  else if(isContents(volume))surfaceOffsets[volume]=area.scrollTop;
 }
 function compactBookshelf(){return window.matchMedia('(max-width:900px)').matches;}
+// A browser orientation change produces many transient viewport measurements.
+// Preserve semantic book identity while CSS responds, and reconcile only after
+// dimensions settle. Do not recreate the source-bearing Bookshelf DOM.
+function stabilizeBookshelfLayout(){
+ if(volume!=='library'||!viewport.querySelector('.reader-bookshelf'))return;
+ for(const id of collectionOrder){
+  showCollectionPresentation(id,compactPresentation[id],{restore:true});
+ }
+ shelfSnapTo(activeCollection);
+ shelfReflowing=false;
+}
 function shelfTrack(){return viewport.querySelector('.reader-bookshelf .reader-scroll-region');}
 function updateShelfButtons(){
  if(volume!=='library')return;
@@ -375,6 +387,7 @@ function renderSurface(){
   },{passive:false});
   let scrollFrame=0;
   scroll.addEventListener('scroll',()=>{
+   if(shelfReflowing)return;
    if(scrollFrame)cancelAnimationFrame(scrollFrame);
    scrollFrame=requestAnimationFrame(()=>{
     const pages=[...scroll.querySelectorAll('.reader-collection-page')];
@@ -447,7 +460,12 @@ function loadImage(src){
 }
 async function compose(){
  const token=++compositionToken,targetVolume=volume;
- if(isSurface(volume)){renderSurface();return;}
+ if(isSurface(volume)){
+  const current=viewport.querySelector('.reader-scroll-surface');
+  if(!current||viewport.dataset.volume!==volume)renderSurface();
+  else if(volume==='library')stabilizeBookshelfLayout();
+  return;
+ }
  counter.hidden=false;
  const width=viewport.clientWidth,height=viewport.clientHeight;
  if(width<120||height<100)return;
@@ -490,11 +508,26 @@ async function compose(){
   counter.textContent='Unavailable';
  }
 }
-function schedule(){cancelAnimationFrame(frame);frame=requestAnimationFrame(()=>{void compose();});}
+function schedule({resize=false}={}){
+ if(resize){
+  // The visual viewport may change repeatedly while Safari rotates or its
+  // toolbars animate. Coalesce the entire burst into one settled update.
+  clearTimeout(resizeDelay);
+  if(volume==='library')shelfReflowing=true;
+  resizeDelay=setTimeout(()=>{
+   frame=requestAnimationFrame(()=>{void compose();});
+  },180);
+  return;
+ }
+ clearTimeout(resizeDelay);
+ cancelAnimationFrame(frame);
+ frame=requestAnimationFrame(()=>{void compose();});
+}
 function openVolume(name,{navigate=true,resume=false,fromEnd=false}={}){
  name=entryVolume(name);
  if(fromEnd)openAtEnd=name;
  if(!labels.has(name))return;
+ clearTimeout(resizeDelay);
  recordSurfaceOffset();
  if(engine){const address=engine.anchorAt(engine.current);if(address)positions.set(volume,address);}
  if(navigate){
@@ -557,15 +590,15 @@ viewport.addEventListener('pointerup',event=>{
  if(Math.abs(dx)>65&&Math.abs(dy)<Math.abs(dx)*.45)turn(dx<0?1:-1);
 });
 viewport.addEventListener('pointercancel',()=>pointer=null);
-const resize=new ResizeObserver(schedule);resize.observe(viewport);
-function height(){const v=window.visualViewport;document.documentElement.style.setProperty('--reader-height',(v?.height||innerHeight)+'px');schedule();}
-window.addEventListener('resize',height);
-window.visualViewport?.addEventListener('resize',height);
+const resize=new ResizeObserver(()=>schedule({resize:true}));resize.observe(viewport);
+// CSS 100dvh owns actual device/toolbar height; never pin an old
+// visualViewport.height into a custom property during rotation.
+window.addEventListener('resize',()=>schedule({resize:true}));
 window.addEventListener('popstate',handleHistory);
 window.addEventListener('hashchange',handleHistory);
 document.fonts?.ready.then(schedule);
 const initial=routeFromUrl();
 selectSource(initial);
 const anchored=addressFromUrl();if(anchored)positions.set(initial,anchored);
-height();
+schedule();
 })();
