@@ -1,0 +1,16 @@
+{
+  "schema": "fountain.press.physical-ipad-safari-acceptance.v1",
+  "observedAt": "2026-11-01",
+  "device": "iPad Pro 11-inch (3rd generation)",
+  "os": "iPadOS 26.6.2",
+  "connection": "Apple CoreDevice paired and available, developer mode enabled",
+  "stagingURL": "https://192.168.8.50:8243/estate/#/read/library",
+  "nativeSafariLaunch": "PROVEN: devicectl device process launch --payload-url completed; MobileSafari process observed",
+  "nativeDocumentRender": "UNVERIFIED: no independent physical-screen capture",
+  "nativeTouchNavigation": "UNVERIFIED",
+  "nativeVoiceOver": "UNVERIFIED",
+  "xctestInstallation": "REFUSED: physical iPad free-developer-profile maximum of three installed apps; XCTest runner not installed",
+  "safety": "No existing Reframe or Teatro apps uninstalled or replaced",
+  "desktopAccessibility": "SEPARATE: 15 WebKit axe-core WCAG A/AA scans, zero reported violations, not physical VoiceOver",
+  "publicPublication": false
+}
