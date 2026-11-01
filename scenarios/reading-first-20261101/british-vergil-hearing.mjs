@@ -46,7 +46,7 @@ async function prepare() {
         !hex64.test(edition.recording?.sha256 || "") ||
         edition.text !== text ||
         edition.sourceSHA256 !== await sha256(text) ||
-        !/^\/estate\/media\/vergil-on-continuity\/[a-z0-9-]+\.wav$/.test(edition.recording?.media||"") ||
+        !/^\/estate\/media\/vergil-on-continuity\/[a-z0-9-]+\.mp3$/.test(edition.recording?.media||"") ||
         !Number.isFinite(edition.recording?.duration) ||
         edition.recording.duration <= 0) return;
     const file = await fetch(edition.recording.media,{method:"HEAD",cache:"no-store"});
