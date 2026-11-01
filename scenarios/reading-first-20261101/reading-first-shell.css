@@ -124,3 +124,33 @@ html:not(.js) body{height:auto;overflow:auto}html:not(.js) .reading-shell{height
 .frame-cover-mark{display:block;font:normal clamp(2rem,4.5vw,3.8rem)/1 "Iowan Old Style",Palatino,Georgia,serif;color:var(--ink)}
 .frame-type-cover .frame-cover-name,.frame-book-cover:not(:has(img)) .frame-cover-name{font-size:1em}
 .frame-book-cover figcaption{text-align:center}
+
+/* Book typography: interactive semantics remain; hyperlink decoration does not. */
+.page-viewport .linotype-stage[data-frame="viewport"] .linotype-area a,
+.page-viewport .linotype-stage[data-frame="viewport"] .linotype-area .frame-reference-entry a{
+  color:inherit!important;text-decoration:none!important;border-bottom:0!important;
+  box-shadow:none!important;
+}
+.page-viewport .linotype-area a:hover{
+  background:color-mix(in srgb,var(--ink) 5%,transparent);
+}
+.page-viewport .linotype-area a:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+.frame-shelf-grid{margin-top:1.4em;column-gap:clamp(1rem,4vw,3.5rem)}
+.frame-book-cover:not(:has(img)) a{
+  border:0!important;border-radius:0;background:transparent;
+  padding:1em .4em;min-height:150px;gap:.8em;
+}
+.frame-book-cover:not(:has(img)) a:hover{
+  background:color-mix(in srgb,var(--ink) 4%,transparent);
+}
+.frame-book-cover:not(:has(img)) .frame-cover-mark{
+  font:normal 1rem/1.2 "Iowan Old Style",Palatino,Georgia,serif;color:var(--muted);
+}
+.frame-book-cover:not(:has(img)) .frame-cover-name{
+  font:normal clamp(1.2rem,2.8vw,1.7rem)/1.2 "Iowan Old Style",Palatino,Georgia,serif;
+  letter-spacing:-.025em;
+}
+.frame-edition-imprint{
+  font:normal .85em/1.6 "Iowan Old Style",Palatino,Georgia,serif;
+  color:var(--muted);margin-top:1em!important;
+}

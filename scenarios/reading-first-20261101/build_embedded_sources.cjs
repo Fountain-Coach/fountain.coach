@@ -126,8 +126,8 @@ const sources={teatro:fs.readFileSync(path.join(W,'original-teatro.html'),'utf8'
   const page=(name,body,slug)=>heading(slug,name)+'<section class="book-chapter-text"><article class="book-prose">'+body+'</article></section>';
   const library=page('The Bookshelf','<div class="frame-shelf-grid">'+libraryItems.map(cover).join('')+'</div>','library');
   const firsts=page('First Readings',cover({name:'An Unfinished Composition',detail:'Teatro · Benedikt Eickhoff',target:'teatro',image:tCover}),'first-readings');
-  const essaysItems=chunks.slice(1).reverse().map(c=>'<p class="frame-toc-item"><a href="#/read/essay--'+esc(c.slug)+'" data-reader-target="essay--'+esc(c.slug)+'">'+esc(c.title)+'</a></p>').join('');
-  const essays=page('Essays','<p class="frame-lead">The essays in their authored chronological sequence.</p>'+essaysItems,'essays');
+  // Chapters are encountered by turning pages, not by a hyperlink index.
+  const essays=page('Essays','<p class="frame-edition-imprint">Seven essays · chronological edition</p>','essays');
   const noteItems=referenceCatalog.map(({number,label,href})=>'<p class="frame-reference-entry" data-source-block="door.note.'+number+'"><span class="frame-reference-number">'+number+'.</span> <a href="'+esc(href)+'" target="_blank" rel="noopener noreferrer" aria-label="Open cited source: '+esc(label)+'">'+esc(label)+'</a></p>').join('');
   const notes=page('References','<p class="frame-reference-intro">Sources cited in The Door Is a Score. Opening a source is a deliberate action outside this edition.</p>'+noteItems,'door-references');
   const out={

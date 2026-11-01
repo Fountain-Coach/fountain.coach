@@ -1,0 +1,47 @@
+{
+  "runs": [
+    {
+      "profile": "landscape",
+      "initial": {
+        "volume": "library",
+        "anchors": 2,
+        "linkDecoration": "none",
+        "bookTitles": [
+          "Essays",
+          "Solstice (WT)"
+        ],
+        "heading": "Benedikt Eickhoff"
+      },
+      "first": "Reframe and the Business Value of the Estate",
+      "work": {
+        "title": "Anweisung an den Schmerz",
+        "illustration": 1024,
+        "clipped": false,
+        "underlineCount": 0
+      },
+      "errors": []
+    },
+    {
+      "profile": "phone",
+      "initial": {
+        "volume": "library",
+        "anchors": 2,
+        "linkDecoration": "none",
+        "bookTitles": [
+          "Essays",
+          "Solstice (WT)"
+        ],
+        "heading": "Benedikt Eickhoff"
+      },
+      "first": "Reframe and the Business Value of the Estate",
+      "work": {
+        "title": "Anweisung an den Schmerz",
+        "illustration": 1024,
+        "clipped": false,
+        "underlineCount": 0
+      },
+      "errors": []
+    }
+  ],
+  "failures": 0
+}

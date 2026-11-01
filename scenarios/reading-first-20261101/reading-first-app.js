@@ -32,6 +32,13 @@ for(const [key,template] of templates){
   section.append(option);
  }
 }
+const essaySequence=['essays',...[...templates.keys()].filter(x=>x.startsWith('essay--')).reverse()];
+const solsticeSequence=['solstice','solstice-reading-01',...[...templates.keys()].filter(x=>x.startsWith('solstice-reading-01--'))];
+function adjacentVolume(name,step){
+ const sequence=[essaySequence,solsticeSequence].find(s=>s.includes(name));
+ return sequence?.[sequence.indexOf(name)+step]||null;
+}
+let openAtEnd=null;
 let engine=null,signature='',frame=0,pointer=null,volume='library',ready=false,entryUrl=null;
 const positions=new Map();
 const saved=(()=>{try{return localStorage.getItem('fountain-reader-theme')}catch{return null}})();
@@ -65,7 +72,7 @@ function selectSource(name){
  source.dataset.minLeaves='1';
  volume=name;
  section.value=volume;
- parent.hidden=name==='library';
+ parent.hidden=['library','essays','solstice'].includes(name);
  if(!parent.hidden){const shelf=name==='notes--the-door-is-a-score'?'essay--the-door-is-a-score':name.startsWith('solstice-reading-01--')?'solstice-reading-01':name==='solstice-reading-01'?'solstice':name==='solstice'||name==='essays'?'library':name==='teatro'?'essays':name==='first-readings'?'library':'essays';parent.dataset.readerTarget=shelf;parent.dataset.readerResume=name==='notes--the-door-is-a-score'?'true':'false';parent.textContent=labels.get(shelf);parent.setAttribute('aria-label','Return to '+labels.get(shelf)+' inside the reader');}
  document.title='Benedikt Eickhoff · '+labels.get(volume);
  viewport.setAttribute('aria-label','Paginated '+labels.get(volume));
@@ -131,8 +138,8 @@ function present(target,{write=true,focus=false}={}){
  syncSatzfunkPlayer();
  counter.value=(engine.css.spread&&page+1<engine.pages?String(page+1)+'–'+end:String(page+1))+' / '+engine.pages;
  counter.textContent=counter.value;
- previous.disabled=page===0;
- next.disabled=end>=engine.pages;
+ previous.disabled=page===0&&!adjacentVolume(volume,-1);
+ next.disabled=end>=engine.pages&&!adjacentVolume(volume,1);
  if(write)remember(page);
  status.textContent=(engine.css.spread?'Pages '+(page+1)+' to '+end:'Page '+(page+1))+' of '+engine.pages+'. '+labels.get(volume);
  if(focus){const leaf=engine.leaves[page]?.el;if(leaf){leaf.tabIndex=-1;leaf.focus({preventScroll:true});}}
@@ -175,7 +182,8 @@ async function compose(){
   e.compose();
   let target=0;
   const anchor=positions.get(volume);
-  if(anchor){try{target=e.pageForAnchor(anchor)}catch{positions.delete(volume);}}
+  if(openAtEnd===volume){target=e.pages-1;openAtEnd=null;}
+  else if(anchor){try{target=e.pageForAnchor(anchor)}catch{positions.delete(volume);}}
   present(target,{write:false,focus:focused});
   // Visible media are part of the printed page: a page is not ready while
   // its placed image is an undecoded placeholder.
@@ -196,7 +204,8 @@ async function compose(){
  }
 }
 function schedule(){cancelAnimationFrame(frame);frame=requestAnimationFrame(()=>{void compose();});}
-function openVolume(name,{navigate=true,resume=false}={}){
+function openVolume(name,{navigate=true,resume=false,fromEnd=false}={}){
+ if(fromEnd)openAtEnd=name;
  if(!labels.has(name))return;
  if(engine){const address=engine.anchorAt(engine.current);if(address)positions.set(volume,address);}
  if(navigate){
@@ -223,7 +232,9 @@ next.addEventListener('click',()=>turn(1,true));
 function turn(dir,focus=false){
  if(!engine||viewport.dataset.layout!=='ready')return;
  const target=dir>0?engine.next():engine.prev();
- if(target!==engine.current)present(target,{write:true,focus});
+ if(target!==engine.current){present(target,{write:true,focus});return;}
+ const sibling=adjacentVolume(volume,dir);
+ if(sibling)openVolume(sibling,{fromEnd:dir<0});
 }
 viewport.addEventListener('keydown',event=>{
  if(event.target.closest('a,button,input,select,textarea')||event.altKey||event.ctrlKey||event.metaKey)return;

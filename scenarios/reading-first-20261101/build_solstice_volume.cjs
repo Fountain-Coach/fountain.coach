@@ -85,9 +85,9 @@ if(manifest.edition!=='first-reading'||manifest.publishedWorks!==30||manifest.en
   }
   if(imageCount!==41)throw Error('Incomplete original image inventory '+imageCount);
   const cover=(name,detail,target,mark)=>'<figure class="frame-book-cover frame-type-cover"><a href="#/read/'+esc(target)+'" data-reader-target="'+esc(target)+'" aria-label="Open '+esc(name)+' in this reader"><span aria-hidden="true" class="frame-cover-mark">'+mark+'</span><span class="frame-cover-name">'+esc(name)+'</span></a><figcaption>'+esc(detail)+'</figcaption></figure>';
-  const solstice=heading('Solstice (WT)','solstice')+article(cover('Reading 01','First Reading · published','solstice-reading-01','✳'));
-  const index=inventory.map((item,i)=>'<p class="frame-toc-item" data-source-block="solstice-reading-01.index.'+(i+1)+'"><a data-reader-target="'+esc(item.id)+'" href="#/read/'+esc(item.id)+'">'+(item.kind==='work'?String(i-1).padStart(2,'0')+' · ':'')+esc(item.title)+'</a></p>').join('');
-  const first=heading('First Reading','solstice-reading-01')+article('<p class="frame-lead">Solstice · Reading 01 · 30 works · 41 original images</p>'+index);
+  // Reading 01 opens on the folio itself, not a table of hyperlinked entries.
+  const solstice=heading('Solstice (WT)','solstice')+article('<p class="frame-edition-imprint">Reading 01 · First Reading</p>');
+  const first=heading('First Reading','solstice-reading-01')+article('<p class="frame-edition-imprint">Thirty works · forty-one original illustrations</p>');
   return {templates:{solstice,'solstice-reading-01':first,...templates},inventory,imageCount};
  },{source,manifest});
  await browser.close();

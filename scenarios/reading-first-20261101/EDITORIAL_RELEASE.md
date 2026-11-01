@@ -2,6 +2,12 @@
 
 **Editorial decision, 1 November 2026.** The one reader receives the visitor. It has one author identity (the existing open-hand logo and **Benedikt Eickhoff**) and two authored books, **Essays** and **Solstice (WT)**. The series name is explicitly a *working title*. There are no empty slots, invented future readings, separate media destinations, or third public book.
 
+## Printed navigation, not a web contents page
+
+**Revision on 1 November 2026:** After editorial inspection, reject all underlined on-page navigation and the hyperlink-based tables of contents. The two-book shelf is a composed folio with plain typographic titles. Selecting Essays or Solstice opens the edition's own title leaf; turning a page enters the first authored chapter or numbered reading. Crossing the last folio of one chapter continues directly to the next; turning backward returns to the preceding chapter's last folio. The accessible chapter selector and semantic links remain functional without being painted as a web directory, with explicit visible keyboard focus. The source manuscripts and published Solstice plate identities are unchanged. The original source's optional Contents dialog is not imported into this reader.
+
+**Evidence:** Mac WebKit landscape and phone checked the first-essay and Solstice preface boundaries, reverse turning, undecorated cover and prose links, in-reader identity, and first illustration. The staged SatzfunkPlayer still loaded all four tracks and sought to 2 seconds. This is an observed WLAN reader correction, not a public release or physical-iPad acceptance.
+
 ## Book membership and ordering
 
 **Essays:** seven staged source-bound essays, oldest to newest, using the existing newest-first source index in reverse. Explicit source publication dates are retained where known; missing dates are not fabricated. The essays remain their respective editions within the Fountain Press reader, including the source-owned SatzfunkPlayer in The Door Is a Score. The historical Teatro-based First Readings collection is preserved as a legacy route, but it is not Solstice and not a third shelf book.
