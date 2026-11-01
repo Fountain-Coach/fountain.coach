@@ -1,0 +1,21 @@
+/* Fountain Press: opt-in readable screen frame, not scaled A-series proof.
+   The host supplies a bounded viewport; this owner composes its measured pages. */
+.linotype-stage[data-frame="viewport"]{display:flex;gap:var(--sheet-gutter);width:var(--stage-base-w);height:var(--sheet-h);flex:none;transform:none;position:relative;align-items:stretch;margin:auto;color:var(--ink,#202b25)}
+.linotype-stage[data-frame="viewport"][data-mode="measure"]{position:absolute;top:0;left:0;display:flex;flex-direction:column;align-items:flex-start;visibility:hidden;gap:0}
+.linotype-stage[data-frame="viewport"] .linotype-sheet{flex:none;box-sizing:border-box;display:grid;grid-template-rows:auto minmax(0,1fr) auto;gap:10px;background:var(--paper,#fffef9);border:1px solid var(--line,#ccc);border-radius:3px;padding:var(--sheet-inset-y) var(--sheet-side);font-size:var(--sheet-font);overflow:hidden;min-width:0;min-height:0}
+.linotype-stage[data-frame="viewport"] .linotype-area{display:block;min-width:0;min-height:0;overflow:hidden;font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;font-size:var(--sheet-font);line-height:1.58;overflow-wrap:anywhere;hyphens:none}
+.linotype-stage[data-frame="viewport"] .linotype-running{font-family:inherit;font-size:.75rem;font-weight:600;letter-spacing:.08em;line-height:1.4;margin:0;padding:0 0 7px;border-bottom:1px solid var(--line,#ccc);color:var(--muted,#536053);text-transform:uppercase}
+.linotype-stage[data-frame="viewport"] .linotype-folio{display:flex;justify-content:space-between;font-family:inherit;font-size:.75rem;line-height:1.4;color:var(--muted,#536053);gap:12px}
+.linotype-stage[data-frame="viewport"] .linotype-area p{font-size:inherit;line-height:inherit;margin:0 0 .8em;max-width:none;letter-spacing:normal;white-space:pre-wrap;overflow-wrap:anywhere}
+.linotype-stage[data-frame="viewport"] .linotype-area h2{font-family:inherit;font-size:1.45em;font-weight:400;line-height:1.15;letter-spacing:-.035em;margin:0 0 .65em;overflow-wrap:anywhere}
+.linotype-stage[data-frame="viewport"] .frame-lead{font-size:1.08em!important;line-height:1.45!important}
+.linotype-stage[data-frame="viewport"] .frame-plate{margin:0;padding:0;max-width:100%;display:block}
+.linotype-stage[data-frame="viewport"] .frame-plate svg{width:100%;height:auto;max-height:var(--frame-plate-h);display:block}
+.linotype-stage[data-frame="viewport"] .frame-definition{border-left:2px solid var(--control-line,#687764);padding-left:.7em}
+.linotype-stage[data-frame="viewport"] .frame-takeaway{font-style:italic}
+.linotype-stage[data-frame="viewport"] .frame-source{font-family:system-ui,sans-serif;font-size:.8em!important;line-height:1.5!important}
+.linotype-stage[data-frame="viewport"] .frame-source a{text-decoration:underline;text-underline-offset:3px;display:inline}
+.linotype-stage[data-frame="viewport"] .linotype-blank{flex:none;width:var(--sheet-w);height:var(--sheet-h);background:transparent}
+.linotype-stage[data-frame="viewport"] .linotype-keep-tail{white-space:nowrap}
+@media(prefers-reduced-motion:reduce){.linotype-stage[data-frame="viewport"]{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.linotype-stage[data-frame="viewport"] .linotype-sheet{background:Canvas;color:CanvasText;border-color:CanvasText}.linotype-stage[data-frame="viewport"] :is(.linotype-running,.linotype-folio){color:CanvasText}}

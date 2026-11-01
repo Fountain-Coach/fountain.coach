@@ -1,0 +1,72 @@
+{
+  "stageOnly": true,
+  "sourceSHA256": {
+    "teatro": "281b37e8e1a7a82ad6ac168702a7b687441fb38a6403a6f5629f42f6aa2e0a4a",
+    "essays": "c24303fbe864f48c88c144c06f085f713208475728f8b39512fb1541221b506b",
+    "first": "7190fcb230e5a94b7800fd056b7b1a3d86b921d8981c131adff6b9ae31e24d26"
+  },
+  "chapters": [
+    {
+      "slug": "teatro-an-unfinished-composition",
+      "title": "Teatro — An Unfinished Composition",
+      "paragraphs": 28,
+      "figures": 1
+    },
+    {
+      "slug": "the-door-is-a-score",
+      "title": "The Door Is a Score",
+      "paragraphs": 36,
+      "figures": 2
+    },
+    {
+      "slug": "the-ear-that-learns",
+      "title": "The Ear That Learns",
+      "paragraphs": 48,
+      "figures": 1
+    },
+    {
+      "slug": "the-composable-book",
+      "title": "The Composable Book",
+      "paragraphs": 63,
+      "figures": 4
+    },
+    {
+      "slug": "to-read-is-not-to-remember",
+      "title": "Did the Machine Actually Read the Book?",
+      "paragraphs": 21,
+      "figures": 1
+    },
+    {
+      "slug": "semantic-compilation-the-archive-is-not-the-edition",
+      "title": "Semantic Compilation — The Archive Is Not the Edition",
+      "paragraphs": 30,
+      "figures": 1
+    },
+    {
+      "slug": "teatro-an-unfinished-composition",
+      "title": "Teatro — An Unfinished Composition",
+      "paragraphs": 29,
+      "figures": 1
+    },
+    {
+      "slug": "reframe-and-the-business-value-of-the-estate",
+      "title": "Reframe and the Business Value of the Estate",
+      "paragraphs": 32,
+      "figures": 3
+    }
+  ],
+  "volumes": [
+    "library",
+    "first-readings",
+    "essays",
+    "teatro",
+    "notes--the-door-is-a-score",
+    "essay--the-door-is-a-score",
+    "essay--the-ear-that-learns",
+    "essay--the-composable-book",
+    "essay--to-read-is-not-to-remember",
+    "essay--semantic-compilation-the-archive-is-not-the-edition",
+    "essay--teatro-an-unfinished-composition",
+    "essay--reframe-and-the-business-value-of-the-estate"
+  ]
+}

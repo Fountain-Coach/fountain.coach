@@ -1,0 +1,50 @@
+{
+  "schema": "satzfunk.recorded-essay-rehearsal.v1",
+  "sourceOwner": "Fountain-Coach/fountain.coach",
+  "playerOwner": "Fountain-Coach/SatzfunkPlayer",
+  "scoreSHA256": "50d6e7e80e5bd0374bed5d8a8bc761b551782019a1596b383c5f0acceb111ab0",
+  "status": "WLAN-private-rehearsal-not-public-promotion",
+  "mediaBasePrefix": "/estate/essays/the-door-is-a-score/",
+  "tracks": [
+    {
+      "id": "present",
+      "title": "A careful closing",
+      "media": "/media/present.mp3",
+      "mediaSHA256": "ffcd129b4da0925dff99875e04be533c3e9f728dad9291169214485a4f773788",
+      "sourceSHA256": "50d6e7e80e5bd0374bed5d8a8bc761b551782019a1596b383c5f0acceb111ab0",
+      "duration": 14.0,
+      "publicReleaseAuthorized": false,
+      "privateRehearsalAuthorized": true
+    },
+    {
+      "id": "beyond",
+      "title": "From the next room",
+      "media": "/media/beyond.mp3",
+      "mediaSHA256": "b9d1d07040e8b538e01bcb0c813a2906c01fd98d4623fa669c993b403bdf16c6",
+      "sourceSHA256": "50d6e7e80e5bd0374bed5d8a8bc761b551782019a1596b383c5f0acceb111ab0",
+      "duration": 14.0,
+      "publicReleaseAuthorized": false,
+      "privateRehearsalAuthorized": true
+    },
+    {
+      "id": "memory",
+      "title": "A remembered closing",
+      "media": "/media/memory.mp3",
+      "mediaSHA256": "4030bc4a876f858423d1c747bb3730cf790985afb22999c7c7d49f51ceeb182c",
+      "sourceSHA256": "50d6e7e80e5bd0374bed5d8a8bc761b551782019a1596b383c5f0acceb111ab0",
+      "duration": 14.0,
+      "publicReleaseAuthorized": false,
+      "privateRehearsalAuthorized": true
+    },
+    {
+      "id": "withheld",
+      "title": "The door stays open",
+      "media": "/media/withheld.mp3",
+      "mediaSHA256": "3bef2108ef74029d5fcc6f9002afd8ea025881932bede889af872d2d3b405ddf",
+      "sourceSHA256": "50d6e7e80e5bd0374bed5d8a8bc761b551782019a1596b383c5f0acceb111ab0",
+      "duration": 14.0,
+      "publicReleaseAuthorized": false,
+      "privateRehearsalAuthorized": true
+    }
+  ]
+}

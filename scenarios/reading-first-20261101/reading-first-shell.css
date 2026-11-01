@@ -1,0 +1,115 @@
+:root{--bg:#f5f2e9;--paper:#f5f2e9;--ink:#171816;--muted:#62665f;--line:#c9c8c0;--focus:#0b57d0;color-scheme:light;font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;color:var(--ink);background:var(--bg)}
+:root[data-theme="dark"]{--bg:#111510;--paper:#111510;--ink:#f0eee5;--muted:#b9bdb4;--line:#484e46;--focus:#91b7ff;color-scheme:dark}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{color:var(--ink);background:var(--bg);font-size:1.125rem}
+button,select{font:inherit;color:inherit}
+button,a,select{-webkit-tap-highlight-color:transparent}
+button:focus-visible,a:focus-visible,select:focus-visible,[tabindex]:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+.skip{position:fixed;top:10px;left:10px;background:var(--ink);color:var(--bg);padding:8px 12px;z-index:100;transform:translateY(-180%)}.skip:focus{transform:none}
+.sr-only{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important}
+.reading-shell{height:var(--reader-height,100dvh);width:100%;display:grid;grid-template-rows:50px minmax(0,1fr);padding:0 max(14px,env(safe-area-inset-right)) 0 max(14px,env(safe-area-inset-left));overflow:clip}
+.app-header{min-height:50px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
+.brand{display:inline-flex;gap:8px;align-items:center;text-decoration:none;color:var(--ink);font-size:1.07rem;letter-spacing:-.035em}.brand img{width:32px;height:32px;object-fit:contain}:root[data-theme="dark"] .brand img{filter:invert(1)}
+.icon-only{display:grid;place-items:center;width:44px;height:44px;border:0;background:none;cursor:pointer;font-size:1.25rem}
+.page-frame-reader{min-height:0;min-width:0;display:grid;grid-template-rows:minmax(0,1fr) auto;position:relative;height:100%}
+.page-viewport{min-height:0;min-width:0;position:relative;overflow:hidden;display:flex;align-items:stretch;justify-content:center;touch-action:pan-y pinch-zoom;font-size:1.125rem}
+.frame-type-probe{position:absolute!important;visibility:hidden;pointer-events:none;margin:0;font-size:inherit;line-height:1.58;font-family:"Iowan Old Style",Palatino,Georgia,serif}
+.page-viewport .linotype-stage[data-frame="viewport"]{margin:auto;gap:20px}
+.page-viewport .linotype-stage[data-frame="viewport"] .linotype-sheet{background:transparent;border:0;border-radius:0;box-shadow:none;padding:var(--sheet-inset-y) var(--sheet-side)}
+.page-viewport .linotype-stage[data-frame="viewport"] .linotype-running{border:0;padding:0 0 10px;font-size:.66rem;letter-spacing:.11em;font-weight:650;text-transform:uppercase;color:var(--muted)}
+.page-viewport .linotype-stage[data-frame="viewport"] .linotype-folio{font-size:.68rem;color:var(--muted)}
+.page-viewport .linotype-stage[data-frame="viewport"] .linotype-area{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;line-height:1.58}
+.page-viewport .linotype-stage[data-frame="viewport"] .linotype-area h2[data-source-block="continuity.title"]{font-size:clamp(2.1em,4.8vw,3.5em);line-height:1.02;letter-spacing:-.055em;font-weight:400;margin:.12em 0 .7em}
+.page-viewport .linotype-stage[data-frame="viewport"] .linotype-area .frame-lead{font-size:1.11em!important;line-height:1.48!important}
+.page-viewport .linotype-stage[data-frame="viewport"] .linotype-area .frame-source{font-family:ui-sans-serif,-apple-system,sans-serif;font-size:.76em!important;line-height:1.5!important}
+.frame-controls{min-height:58px;border-top:1px solid var(--line);display:flex;align-items:center;gap:12px;padding:6px max(2px,env(safe-area-inset-right)) max(6px,env(safe-area-inset-bottom))}
+.frame-controls button{border:0;background:transparent;cursor:pointer}
+.frame-controls .page-arrow{height:44px;width:44px;min-width:44px;display:grid;place-items:center;font-size:1.45rem}.frame-controls .page-arrow:disabled{opacity:.23}
+.frame-location{min-width:0;flex:1;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:12px}
+.frame-location label{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+.frame-location select{appearance:none;-webkit-appearance:none;width:100%;height:44px;border:0;background:transparent;color:var(--ink);font-weight:550;font-size:.82rem;padding:0 6px;cursor:pointer;text-overflow:ellipsis}
+.frame-page-count{font-size:.72rem;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+.frame-source-flow{margin:0 auto;max-width:42rem;padding:1.5rem;font:1.14rem/1.7 "Iowan Old Style",Palatino,Georgia,serif}
+.frame-source-flow h2{font-size:2.7rem;font-weight:400}
+html.js .frame-source-flow{display:none!important}
+html:not(.js) .page-viewport,html:not(.js) .frame-controls{display:none}
+html:not(.js) body{height:auto;overflow:auto}html:not(.js) .reading-shell{height:auto;display:block}
+.frame-source-flow a{color:inherit}
+@media(max-width:700px){.reading-shell{grid-template-rows:46px minmax(0,1fr);padding-inline:max(10px,env(safe-area-inset-left))}.app-header{min-height:46px}.brand{font-size:.95rem}.brand img{width:28px;height:28px}.frame-controls{min-height:54px;gap:4px}.frame-location{gap:4px}.frame-location select{font-size:.76rem}.frame-page-count{font-size:.67rem}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+@media(forced-colors:active){.linotype-sheet{color:CanvasText!important;background:Canvas!important}}
+
+/* The Bookshelf and its individual collections are pages, never a second shell. */
+.header-actions{display:flex;align-items:center;gap:7px}
+.brand{border:0;background:none;cursor:pointer;padding:0}
+.header-books{height:44px;min-width:58px;padding:0 9px;background:transparent;border:0;color:var(--ink);font-size:.8rem;font-weight:600;cursor:pointer}
+.frame-shelf-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;align-items:start;margin:.7em 0 1em}
+.frame-book-cover{display:grid;gap:5px;margin:0;min-width:0;max-width:100%;text-align:center}
+.frame-book-cover a{display:grid;align-items:center;justify-items:center;min-width:0;padding:6px;border-radius:8px;text-decoration:none;color:var(--ink);min-height:105px}
+.frame-book-cover a:hover{background:color-mix(in srgb,var(--line) 20%, transparent)}
+.frame-book-cover img{display:block;width:100%;height:165px;min-height:165px;object-fit:contain}
+.frame-book-cover .frame-cover-name{font-family:"Iowan Old Style",Palatino,Georgia,serif;font-size:.88em;line-height:1.2;margin-top:6px}
+.frame-book-cover figcaption{font:500 .64rem/1.45 ui-sans-serif,-apple-system,sans-serif;color:var(--muted)}
+.frame-toc-item{padding:.3em 0;border-bottom:1px solid var(--line)}
+.frame-toc-item a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--muted);text-underline-offset:4px}
+.frame-subheading{font-size:1.15em!important;font-weight:600;margin-top:1em!important}
+.frame-reading-figure{display:grid;justify-items:center;gap:8px;margin:8px 0 14px;max-width:100%}
+.frame-reading-figure img{display:block;max-width:100%;width:100%;height:190px;min-height:190px;object-fit:contain}
+.frame-reading-figure figcaption{font:.65rem/1.35 ui-sans-serif,-apple-system,sans-serif;color:var(--muted);max-width:100%}
+.page-viewport .linotype-stage[data-frame="viewport"] .linotype-area .frame-shelf-grid{line-height:1.25}
+.page-viewport .linotype-stage[data-frame="viewport"] .linotype-area .frame-toc-item{font-size:.95em;line-height:1.42}
+@media(max-width:500px){.frame-shelf-grid{gap:6px}.frame-book-cover img{height:138px;min-height:138px}.frame-reading-figure img{height:150px;min-height:150px}.header-books{min-width:50px;padding-inline:4px}}
+
+/* Fountain Press illustration experiment: a plate is an authored presence
+   within the passage, not a linked media tile. The print column wraps it. */
+.page-viewport .linotype-area .frame-integrated-figure{
+  float:right;display:block;clear:right;
+  width:44%;margin:.2em 0 .55em 1.35em;
+  padding:0;border:0;background:none;
+  max-width:260px;
+}
+.page-viewport .linotype-area .frame-integrated-figure img{
+  display:block;width:100%;height:auto;min-height:0;max-height:none;
+  object-fit:contain;
+}
+.page-viewport .linotype-area .frame-integrated-figure figcaption{
+  text-align:left;margin-top:.28em;font-size:.6em;
+}
+@media (max-width:600px){
+  .page-viewport .linotype-area .frame-integrated-figure{
+    float:none;clear:none;width:100%;max-width:100%;margin:.15em 0 .55em;
+  }
+  .page-viewport .linotype-area .frame-integrated-figure img{max-height:148px;width:100%;height:auto;object-fit:contain}
+}
+/* Editorial references belong to the ink, not browser-default blue. */
+.page-viewport .linotype-stage[data-frame="viewport"] .linotype-area a{color:var(--ink);text-decoration:underline;text-underline-offset:.15em;text-decoration-thickness:1px}
+
+/* SatzfunkPlayer is authored mixed media within the same page.
+   Reserve measured geometry before its transport becomes connected. */
+.frame-press-av{display:block;clear:both;width:100%;margin:.35em 0 .65em;
+  padding:.45em 0 .25em;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  min-height:159px;box-sizing:border-box;break-inside:avoid;}
+.frame-press-av satzfunk-player{display:block;min-height:119px;max-width:100%;color:var(--ink);color-scheme:inherit;
+  font: 500 .82rem/1.4 ui-sans-serif,-apple-system,sans-serif;}
+.frame-press-av satzfunk-player[hidden]{display:none;}
+.frame-press-av figcaption{font:.68rem/1.32 ui-sans-serif,-apple-system,sans-serif;color:var(--muted);margin-top:.25em}
+.frame-press-av .press-av-status{font: .78rem/1.35 ui-sans-serif,-apple-system,sans-serif;color:var(--muted);margin:.4em 0}
+@media(max-width:500px){.frame-press-av{min-height:170px}}
+/* Printed references are quiet signals, not exits from the sentence.
+   Activating a number opens a notes page under the same reader frame. */
+.page-viewport .linotype-area .frame-note-link{
+ color:inherit;text-decoration:none!important;
+}
+.page-viewport .linotype-area .frame-note-link::after{
+ content:attr(data-note-number);font:.60em/1 ui-sans-serif,-apple-system,sans-serif;
+ vertical-align:super;letter-spacing:0;margin-left:.18em;
+ color:var(--muted);
+}
+.page-viewport .linotype-area .frame-note-link:focus-visible{
+ outline:2px solid var(--focus);outline-offset:2px;
+}
+.frame-reference-intro{font-size:.83em!important;line-height:1.4!important;color:var(--muted)}
+.frame-reference-entry{font-size:.78em!important;line-height:1.45!important;padding:0 0 .4em 0;}
+.frame-reference-number{font-family:ui-sans-serif,-apple-system,sans-serif;font-size:.8em;color:var(--muted)}
+.frame-reference-entry a{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
