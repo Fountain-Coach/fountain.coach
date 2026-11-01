@@ -1,0 +1,6 @@
+/* Source-aligned Vergil playback belongs to the existing Reader frame. */
+.header-actions .vergil-prologue-read{white-space:nowrap;max-width:10rem}
+.header-actions .vergil-prologue-read[aria-pressed="true"]{text-decoration:underline;text-underline-offset:.3em}
+.frame-controls .vergil-prologue-clock{font:500 .68rem/1.4 ui-monospace,Menlo,monospace;color:var(--ink,var(--book-ink,currentColor));font-variant-numeric:tabular-nums;white-space:nowrap;align-self:center}
+.vergil-prologue-read[hidden],.vergil-prologue-clock[hidden]{display:none!important}
+@media(max-width:670px){.header-actions .vergil-prologue-read{font-size:.68rem;padding:.35rem .2rem}.frame-controls .vergil-prologue-clock{font-size:.6rem}}
