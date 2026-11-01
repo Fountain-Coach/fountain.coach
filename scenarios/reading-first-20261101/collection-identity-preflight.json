@@ -1,0 +1,466 @@
+{
+  "origin": "https://192.168.8.50:8243",
+  "intercepted": true,
+  "runs": [
+    {
+      "label": "landscape",
+      "initial": {
+        "n": 2,
+        "units": [
+          "essays",
+          "first-readings"
+        ],
+        "ids": [
+          {
+            "id": "essays",
+            "txt": [
+              "essay--reframe-and-the-business-value-of-the-estate",
+              "essay--teatro-an-unfinished-composition",
+              "essay--semantic-compilation-the-archive-is-not-the-edition",
+              "essay--to-read-is-not-to-remember",
+              "essay--the-composable-book",
+              "essay--the-ear-that-learns",
+              "essay--the-door-is-a-score"
+            ],
+            "imgs": [
+              "essay--reframe-and-the-business-value-of-the-estate",
+              "essay--teatro-an-unfinished-composition",
+              "essay--semantic-compilation-the-archive-is-not-the-edition",
+              "essay--to-read-is-not-to-remember",
+              "essay--the-composable-book",
+              "essay--the-ear-that-learns",
+              "essay--the-door-is-a-score"
+            ],
+            "widths": [
+              487.5,
+              487.515625
+            ],
+            "presentations": [
+              {
+                "name": "contents",
+                "hidden": false
+              },
+              {
+                "name": "images",
+                "hidden": false
+              }
+            ]
+          },
+          {
+            "id": "first-readings",
+            "txt": [
+              "solstice-reading-01--vergil",
+              "solstice-reading-01--preface",
+              "solstice-reading-01--2025-12-22-anweisung-an-den-schmerz",
+              "solstice-reading-01--2025-12-23-integration",
+              "solstice-reading-01--2025-12-28-renaturalization",
+              "solstice-reading-01--2026-01-08-vier-aussagen-zum-atherleib",
+              "solstice-reading-01--2026-01-22-three-floors",
+              "solstice-reading-01--2026-01-23-i-keep-moving",
+              "solstice-reading-01--2026-02-04-two-rooms",
+              "solstice-reading-01--2026-02-14-on-a-future-not-yet-drafted",
+              "solstice-reading-01--2026-02-28-no-optimize",
+              "solstice-reading-01--2026-03-16-the-teatre-of-the-mind",
+              "solstice-reading-01--2026-03-20-my-place-in-space",
+              "solstice-reading-01--2026-03-21-muttersprache",
+              "solstice-reading-01--2026-04-22-the-writing-hand",
+              "solstice-reading-01--2026-04-23-who-is-bee",
+              "solstice-reading-01--2026-04-30-about-writing-letters",
+              "solstice-reading-01--2026-05-01-a-score-before-production",
+              "solstice-reading-01--2026-05-25-seitenlicht",
+              "solstice-reading-01--2026-05-30-the-sheet",
+              "solstice-reading-01--2026-06-06-the-sentimental-machine",
+              "solstice-reading-01--2026-06-15-fck-frg-we-all-had-parents",
+              "solstice-reading-01--2026-06-24-prufe-dein-gewicht",
+              "solstice-reading-01--2026-07-21-everything-else-is-illustration",
+              "solstice-reading-01--2026-07-28-bees-journal",
+              "solstice-reading-01--2026-07-31-n-journal",
+              "solstice-reading-01--2026-08-17-the-scissors",
+              "solstice-reading-01--2026-08-19-six-panels",
+              "solstice-reading-01--2026-08-28-the-old-woman",
+              "solstice-reading-01--2026-09-04-the-strawberry",
+              "solstice-reading-01--2026-09-06-leselust",
+              "solstice-reading-01--2026-09-18-object-crossing-voice"
+            ],
+            "imgs": [
+              "solstice-reading-01--2025-12-22-anweisung-an-den-schmerz",
+              "solstice-reading-01--2025-12-23-integration",
+              "solstice-reading-01--2025-12-28-renaturalization",
+              "solstice-reading-01--2026-01-08-vier-aussagen-zum-atherleib",
+              "solstice-reading-01--2026-01-22-three-floors",
+              "solstice-reading-01--2026-01-23-i-keep-moving",
+              "solstice-reading-01--2026-02-04-two-rooms",
+              "solstice-reading-01--2026-02-14-on-a-future-not-yet-drafted",
+              "solstice-reading-01--2026-02-28-no-optimize",
+              "solstice-reading-01--2026-03-16-the-teatre-of-the-mind",
+              "solstice-reading-01--2026-03-20-my-place-in-space",
+              "solstice-reading-01--2026-03-21-muttersprache",
+              "solstice-reading-01--2026-04-22-the-writing-hand",
+              "solstice-reading-01--2026-04-23-who-is-bee",
+              "solstice-reading-01--2026-04-30-about-writing-letters",
+              "solstice-reading-01--2026-05-01-a-score-before-production",
+              "solstice-reading-01--2026-05-25-seitenlicht",
+              "solstice-reading-01--2026-05-30-the-sheet",
+              "solstice-reading-01--2026-06-06-the-sentimental-machine",
+              "solstice-reading-01--2026-06-15-fck-frg-we-all-had-parents",
+              "solstice-reading-01--2026-06-24-prufe-dein-gewicht",
+              "solstice-reading-01--2026-07-21-everything-else-is-illustration",
+              "solstice-reading-01--2026-07-28-bees-journal",
+              "solstice-reading-01--2026-07-31-n-journal",
+              "solstice-reading-01--2026-08-17-the-scissors",
+              "solstice-reading-01--2026-08-19-six-panels",
+              "solstice-reading-01--2026-08-28-the-old-woman",
+              "solstice-reading-01--2026-09-04-the-strawberry",
+              "solstice-reading-01--2026-09-06-leselust",
+              "solstice-reading-01--2026-09-18-object-crossing-voice"
+            ],
+            "widths": [
+              487.5,
+              487.515625
+            ],
+            "presentations": [
+              {
+                "name": "contents",
+                "hidden": false
+              },
+              {
+                "name": "images",
+                "hidden": false
+              }
+            ]
+          }
+        ],
+        "width": 1034,
+        "max": 2068,
+        "footer": 820,
+        "compact": false,
+        "nextDisabled": false
+      },
+      "target": {
+        "index": "first-readings",
+        "left": 0,
+        "nextDisabled": true
+      },
+      "opened": "solstice-reading-01--2026-03-16-the-teatre-of-the-mind",
+      "restored": {
+        "index": "first-readings",
+        "x": 1034,
+        "y": 974,
+        "selection": [
+          "solstice-reading-01--2026-03-16-the-teatre-of-the-mind",
+          "solstice-reading-01--2026-03-16-the-teatre-of-the-mind"
+        ],
+        "presentation": "contents",
+        "footer": 820
+      },
+      "errors": []
+    },
+    {
+      "label": "portrait",
+      "initial": {
+        "n": 2,
+        "units": [
+          "essays",
+          "first-readings"
+        ],
+        "ids": [
+          {
+            "id": "essays",
+            "txt": [
+              "essay--reframe-and-the-business-value-of-the-estate",
+              "essay--teatro-an-unfinished-composition",
+              "essay--semantic-compilation-the-archive-is-not-the-edition",
+              "essay--to-read-is-not-to-remember",
+              "essay--the-composable-book",
+              "essay--the-ear-that-learns",
+              "essay--the-door-is-a-score"
+            ],
+            "imgs": [
+              "essay--reframe-and-the-business-value-of-the-estate",
+              "essay--teatro-an-unfinished-composition",
+              "essay--semantic-compilation-the-archive-is-not-the-edition",
+              "essay--to-read-is-not-to-remember",
+              "essay--the-composable-book",
+              "essay--the-ear-that-learns",
+              "essay--the-door-is-a-score"
+            ],
+            "widths": [
+              690,
+              0
+            ],
+            "presentations": [
+              {
+                "name": "contents",
+                "hidden": false
+              },
+              {
+                "name": "images",
+                "hidden": true
+              }
+            ]
+          },
+          {
+            "id": "first-readings",
+            "txt": [
+              "solstice-reading-01--vergil",
+              "solstice-reading-01--preface",
+              "solstice-reading-01--2025-12-22-anweisung-an-den-schmerz",
+              "solstice-reading-01--2025-12-23-integration",
+              "solstice-reading-01--2025-12-28-renaturalization",
+              "solstice-reading-01--2026-01-08-vier-aussagen-zum-atherleib",
+              "solstice-reading-01--2026-01-22-three-floors",
+              "solstice-reading-01--2026-01-23-i-keep-moving",
+              "solstice-reading-01--2026-02-04-two-rooms",
+              "solstice-reading-01--2026-02-14-on-a-future-not-yet-drafted",
+              "solstice-reading-01--2026-02-28-no-optimize",
+              "solstice-reading-01--2026-03-16-the-teatre-of-the-mind",
+              "solstice-reading-01--2026-03-20-my-place-in-space",
+              "solstice-reading-01--2026-03-21-muttersprache",
+              "solstice-reading-01--2026-04-22-the-writing-hand",
+              "solstice-reading-01--2026-04-23-who-is-bee",
+              "solstice-reading-01--2026-04-30-about-writing-letters",
+              "solstice-reading-01--2026-05-01-a-score-before-production",
+              "solstice-reading-01--2026-05-25-seitenlicht",
+              "solstice-reading-01--2026-05-30-the-sheet",
+              "solstice-reading-01--2026-06-06-the-sentimental-machine",
+              "solstice-reading-01--2026-06-15-fck-frg-we-all-had-parents",
+              "solstice-reading-01--2026-06-24-prufe-dein-gewicht",
+              "solstice-reading-01--2026-07-21-everything-else-is-illustration",
+              "solstice-reading-01--2026-07-28-bees-journal",
+              "solstice-reading-01--2026-07-31-n-journal",
+              "solstice-reading-01--2026-08-17-the-scissors",
+              "solstice-reading-01--2026-08-19-six-panels",
+              "solstice-reading-01--2026-08-28-the-old-woman",
+              "solstice-reading-01--2026-09-04-the-strawberry",
+              "solstice-reading-01--2026-09-06-leselust",
+              "solstice-reading-01--2026-09-18-object-crossing-voice"
+            ],
+            "imgs": [
+              "solstice-reading-01--2025-12-22-anweisung-an-den-schmerz",
+              "solstice-reading-01--2025-12-23-integration",
+              "solstice-reading-01--2025-12-28-renaturalization",
+              "solstice-reading-01--2026-01-08-vier-aussagen-zum-atherleib",
+              "solstice-reading-01--2026-01-22-three-floors",
+              "solstice-reading-01--2026-01-23-i-keep-moving",
+              "solstice-reading-01--2026-02-04-two-rooms",
+              "solstice-reading-01--2026-02-14-on-a-future-not-yet-drafted",
+              "solstice-reading-01--2026-02-28-no-optimize",
+              "solstice-reading-01--2026-03-16-the-teatre-of-the-mind",
+              "solstice-reading-01--2026-03-20-my-place-in-space",
+              "solstice-reading-01--2026-03-21-muttersprache",
+              "solstice-reading-01--2026-04-22-the-writing-hand",
+              "solstice-reading-01--2026-04-23-who-is-bee",
+              "solstice-reading-01--2026-04-30-about-writing-letters",
+              "solstice-reading-01--2026-05-01-a-score-before-production",
+              "solstice-reading-01--2026-05-25-seitenlicht",
+              "solstice-reading-01--2026-05-30-the-sheet",
+              "solstice-reading-01--2026-06-06-the-sentimental-machine",
+              "solstice-reading-01--2026-06-15-fck-frg-we-all-had-parents",
+              "solstice-reading-01--2026-06-24-prufe-dein-gewicht",
+              "solstice-reading-01--2026-07-21-everything-else-is-illustration",
+              "solstice-reading-01--2026-07-28-bees-journal",
+              "solstice-reading-01--2026-07-31-n-journal",
+              "solstice-reading-01--2026-08-17-the-scissors",
+              "solstice-reading-01--2026-08-19-six-panels",
+              "solstice-reading-01--2026-08-28-the-old-woman",
+              "solstice-reading-01--2026-09-04-the-strawberry",
+              "solstice-reading-01--2026-09-06-leselust",
+              "solstice-reading-01--2026-09-18-object-crossing-voice"
+            ],
+            "widths": [
+              690,
+              0
+            ],
+            "presentations": [
+              {
+                "name": "contents",
+                "hidden": false
+              },
+              {
+                "name": "images",
+                "hidden": true
+              }
+            ]
+          }
+        ],
+        "width": 710,
+        "max": 1420,
+        "footer": 1180,
+        "compact": true,
+        "nextDisabled": false
+      },
+      "target": {
+        "index": "first-readings",
+        "left": 0,
+        "nextDisabled": true
+      },
+      "opened": "solstice-reading-01--2026-03-16-the-teatre-of-the-mind",
+      "restored": {
+        "index": "first-readings",
+        "x": 710,
+        "y": 1253,
+        "selection": [
+          "solstice-reading-01--2026-03-16-the-teatre-of-the-mind",
+          "solstice-reading-01--2026-03-16-the-teatre-of-the-mind"
+        ],
+        "presentation": "images",
+        "footer": 1180
+      },
+      "errors": []
+    },
+    {
+      "label": "phone",
+      "initial": {
+        "n": 2,
+        "units": [
+          "essays",
+          "first-readings"
+        ],
+        "ids": [
+          {
+            "id": "essays",
+            "txt": [
+              "essay--reframe-and-the-business-value-of-the-estate",
+              "essay--teatro-an-unfinished-composition",
+              "essay--semantic-compilation-the-archive-is-not-the-edition",
+              "essay--to-read-is-not-to-remember",
+              "essay--the-composable-book",
+              "essay--the-ear-that-learns",
+              "essay--the-door-is-a-score"
+            ],
+            "imgs": [
+              "essay--reframe-and-the-business-value-of-the-estate",
+              "essay--teatro-an-unfinished-composition",
+              "essay--semantic-compilation-the-archive-is-not-the-edition",
+              "essay--to-read-is-not-to-remember",
+              "essay--the-composable-book",
+              "essay--the-ear-that-learns",
+              "essay--the-door-is-a-score"
+            ],
+            "widths": [
+              311,
+              0
+            ],
+            "presentations": [
+              {
+                "name": "contents",
+                "hidden": false
+              },
+              {
+                "name": "images",
+                "hidden": true
+              }
+            ]
+          },
+          {
+            "id": "first-readings",
+            "txt": [
+              "solstice-reading-01--vergil",
+              "solstice-reading-01--preface",
+              "solstice-reading-01--2025-12-22-anweisung-an-den-schmerz",
+              "solstice-reading-01--2025-12-23-integration",
+              "solstice-reading-01--2025-12-28-renaturalization",
+              "solstice-reading-01--2026-01-08-vier-aussagen-zum-atherleib",
+              "solstice-reading-01--2026-01-22-three-floors",
+              "solstice-reading-01--2026-01-23-i-keep-moving",
+              "solstice-reading-01--2026-02-04-two-rooms",
+              "solstice-reading-01--2026-02-14-on-a-future-not-yet-drafted",
+              "solstice-reading-01--2026-02-28-no-optimize",
+              "solstice-reading-01--2026-03-16-the-teatre-of-the-mind",
+              "solstice-reading-01--2026-03-20-my-place-in-space",
+              "solstice-reading-01--2026-03-21-muttersprache",
+              "solstice-reading-01--2026-04-22-the-writing-hand",
+              "solstice-reading-01--2026-04-23-who-is-bee",
+              "solstice-reading-01--2026-04-30-about-writing-letters",
+              "solstice-reading-01--2026-05-01-a-score-before-production",
+              "solstice-reading-01--2026-05-25-seitenlicht",
+              "solstice-reading-01--2026-05-30-the-sheet",
+              "solstice-reading-01--2026-06-06-the-sentimental-machine",
+              "solstice-reading-01--2026-06-15-fck-frg-we-all-had-parents",
+              "solstice-reading-01--2026-06-24-prufe-dein-gewicht",
+              "solstice-reading-01--2026-07-21-everything-else-is-illustration",
+              "solstice-reading-01--2026-07-28-bees-journal",
+              "solstice-reading-01--2026-07-31-n-journal",
+              "solstice-reading-01--2026-08-17-the-scissors",
+              "solstice-reading-01--2026-08-19-six-panels",
+              "solstice-reading-01--2026-08-28-the-old-woman",
+              "solstice-reading-01--2026-09-04-the-strawberry",
+              "solstice-reading-01--2026-09-06-leselust",
+              "solstice-reading-01--2026-09-18-object-crossing-voice"
+            ],
+            "imgs": [
+              "solstice-reading-01--2025-12-22-anweisung-an-den-schmerz",
+              "solstice-reading-01--2025-12-23-integration",
+              "solstice-reading-01--2025-12-28-renaturalization",
+              "solstice-reading-01--2026-01-08-vier-aussagen-zum-atherleib",
+              "solstice-reading-01--2026-01-22-three-floors",
+              "solstice-reading-01--2026-01-23-i-keep-moving",
+              "solstice-reading-01--2026-02-04-two-rooms",
+              "solstice-reading-01--2026-02-14-on-a-future-not-yet-drafted",
+              "solstice-reading-01--2026-02-28-no-optimize",
+              "solstice-reading-01--2026-03-16-the-teatre-of-the-mind",
+              "solstice-reading-01--2026-03-20-my-place-in-space",
+              "solstice-reading-01--2026-03-21-muttersprache",
+              "solstice-reading-01--2026-04-22-the-writing-hand",
+              "solstice-reading-01--2026-04-23-who-is-bee",
+              "solstice-reading-01--2026-04-30-about-writing-letters",
+              "solstice-reading-01--2026-05-01-a-score-before-production",
+              "solstice-reading-01--2026-05-25-seitenlicht",
+              "solstice-reading-01--2026-05-30-the-sheet",
+              "solstice-reading-01--2026-06-06-the-sentimental-machine",
+              "solstice-reading-01--2026-06-15-fck-frg-we-all-had-parents",
+              "solstice-reading-01--2026-06-24-prufe-dein-gewicht",
+              "solstice-reading-01--2026-07-21-everything-else-is-illustration",
+              "solstice-reading-01--2026-07-28-bees-journal",
+              "solstice-reading-01--2026-07-31-n-journal",
+              "solstice-reading-01--2026-08-17-the-scissors",
+              "solstice-reading-01--2026-08-19-six-panels",
+              "solstice-reading-01--2026-08-28-the-old-woman",
+              "solstice-reading-01--2026-09-04-the-strawberry",
+              "solstice-reading-01--2026-09-06-leselust",
+              "solstice-reading-01--2026-09-18-object-crossing-voice"
+            ],
+            "widths": [
+              311,
+              0
+            ],
+            "presentations": [
+              {
+                "name": "contents",
+                "hidden": false
+              },
+              {
+                "name": "images",
+                "hidden": true
+              }
+            ]
+          }
+        ],
+        "width": 331,
+        "max": 662,
+        "footer": 844,
+        "compact": true,
+        "nextDisabled": false
+      },
+      "target": {
+        "index": "first-readings",
+        "left": 0,
+        "nextDisabled": true
+      },
+      "opened": "solstice-reading-01--2026-03-16-the-teatre-of-the-mind",
+      "restored": {
+        "index": "first-readings",
+        "x": 331,
+        "y": 589,
+        "selection": [
+          "solstice-reading-01--2026-03-16-the-teatre-of-the-mind",
+          "solstice-reading-01--2026-03-16-the-teatre-of-the-mind"
+        ],
+        "presentation": "images",
+        "footer": 844
+      },
+      "errors": []
+    }
+  ],
+  "failures": 0
+}
