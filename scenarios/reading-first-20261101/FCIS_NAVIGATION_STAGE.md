@@ -37,3 +37,13 @@ For live acceptance, **repeat on the activated stage without request interceptio
 - **Excluded:** public DNS/Caddy release, unrelated estate domains/routes, production-grade deployment acceptance, new collection membership, dark-art authoring, physical iPad native/VoiceOver certification.
 
 The previous immutable stage release is retained as rollback. Do not infer the named active stage release from this file; inspect the live `current` symlink and both preview services.
+
+
+## Live WLAN readback and activation (1 November 2026)
+
+- **Active immutable release:** `shared-shell-20261101-v92-fcis-organigram-score-fit` on `MacMiniDocker` at `https://192.168.8.50:8243/estate/`. Former v91 remains rollback; existing HTTPS and HTTP preview services were restarted and independently verified active.
+- **Pinned authoring implementation revision:** `Fountain-Coach/fountain.coach@8935793e05a4261f2a8e1c9be42ab98e08cc7d38`. The live stage release includes ten SHA-256-verified changed routes and assets, with all unrelated original paths preserved.
+- **Source/assets readback:** HTTPS TLS trust succeeded (ssl_verify_result=0) for the reader, source-owned stage JS/CSS/engine, First Reading images, plus both Works and Pointer alias entrances. Original First Reading source artwork was not changed.
+- **Unintercepted live WebKit:** three viewport navigation scenarios and 90 published work/viewport compositions passed (no reported browser/pagination/source-image failures). The original SatzfunkPlayer's four recordings, 2-second seek, layout and HTTPS origin passed the focused landscape check.
+- **Evidence:** `/estate/evidence/fcis-navigation-live.json`, `/estate/evidence/fcis-score-corpus-live.json`, `/estate/evidence/fcis-editorial-live-landscape.png`, `/estate/evidence/fcis-score-live-phone.png`, and the source-bound `fcis-reader-release.json` on the active WLAN release. These are independently observed staging facts, not a public publisher receipt.
+- **Still unverified:** native physical iPad Safari/VoiceOver, authored dark-art variants, universal EU accessibility compliance and production publication.
