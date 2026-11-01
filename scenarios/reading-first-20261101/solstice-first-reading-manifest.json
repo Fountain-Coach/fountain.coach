@@ -1,0 +1,622 @@
+{
+  "schemaVersion": 1,
+  "edition": "first-reading",
+  "editorialBegin": "2025-12-21",
+  "publishedWorks": 30,
+  "publishedScores": 2,
+  "sourceMode": "Thirty finite selected original authored posts, each including all associated original images",
+  "textPolicy": "unabridged; source lexical content retained; paragraph layout regularized",
+  "privacyBoundary": "Only the original imagery associated with these 30 selected posts is published. Unselected posts and their photographs remain excluded.",
+  "entries": [
+    {
+      "date": "2025-12-22",
+      "title": "Anweisung an den Schmerz",
+      "voice": "Prose",
+      "href": "/editions/first-reading/entries/2025-12-22-anweisung-an-den-schmerz/",
+      "textSha256": "sha256:64b1f9b85943022d6ad8e76eec6d6f1ce8f56a2e5654af95d2425c86e43a9f98",
+      "image": "/assets/edition/post-2025-12-22-b0e6cf8252aca0da.jpg",
+      "images": [
+        {
+          "href": "/assets/edition/post-2025-12-22-b0e6cf8252aca0da.jpg",
+          "sha256": "sha256:b0e6cf8252aca0da83a9b0bfbdbb3f57b88c826e8b85ac5a89f43b23bad98876",
+          "width": 1024,
+          "height": 1536,
+          "role": "Original post image"
+        }
+      ]
+    },
+    {
+      "date": "2025-12-23",
+      "title": "Integration",
+      "voice": "Prose",
+      "href": "/editions/first-reading/entries/2025-12-23-integration/",
+      "textSha256": "sha256:d7dd57d44c9360beaf5e3ba0fa8d29c4f0f644855a8b2064ccd3e19d1520c547",
+      "image": "/assets/edition/post-2025-12-23-f0b9144a1df6ae0b.jpg",
+      "images": [
+        {
+          "href": "/assets/edition/post-2025-12-23-f0b9144a1df6ae0b.jpg",
+          "sha256": "sha256:f0b9144a1df6ae0ba75145a89376441a21ce7f2d4aab7f1df8fd8dbc1b299f18",
+          "width": 1024,
+          "height": 1536,
+          "role": "Original post image"
+        }
+      ]
+    },
+    {
+      "date": "2025-12-28",
+      "title": "Renaturalization",
+      "voice": "Prose",
+      "href": "/editions/first-reading/entries/2025-12-28-renaturalization/",
+      "textSha256": "sha256:3099c0b05bc5d5330ab459fee908432521885ab91bb6f4acac697ad23528039d",
+      "image": "/assets/edition/post-2025-12-28-c9d7b304d2577e3c.jpg",
+      "images": [
+        {
+          "href": "/assets/edition/post-2025-12-28-c9d7b304d2577e3c.jpg",
+          "sha256": "sha256:c9d7b304d2577e3cd9c84c554e05aff7ea9dd59e3693e76858f748ed1309f8ed",
+          "width": 1024,
+          "height": 1536,
+          "role": "Original post image"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-08",
+      "title": "Vier Aussagen zum Ätherleib",
+      "voice": "Prose",
+      "href": "/editions/first-reading/entries/2026-01-08-vier-aussagen-zum-atherleib/",
+      "textSha256": "sha256:a2f37677a396993da29b0512cf57b9246c0a52ee9ad3e8140df4e4c8f8bd3922",
+      "image": "/assets/edition/post-2026-01-08-7e60c7273855d415.jpg",
+      "images": [
+        {
+          "href": "/assets/edition/post-2026-01-08-7e60c7273855d415.jpg",
+          "sha256": "sha256:7e60c7273855d41589a65200a7f6d75c596b9a920fa8a21b390acd092d7ca2b0",
+          "width": 1024,
+          "height": 1536,
+          "role": "Original post image"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-22",
+      "title": "Three Floors",
+      "voice": "Prose",
+      "href": "/editions/first-reading/entries/2026-01-22-three-floors/",
+      "textSha256": "sha256:770b4b6b840bcae583c8822c5ed406f557264b74f5a3d00f2025ab35908b4e78",
+      "image": "/assets/edition/post-2026-01-22-5df50180208e95ac.jpg",
+      "images": [
+        {
+          "href": "/assets/edition/post-2026-01-22-5df50180208e95ac.jpg",
+          "sha256": "sha256:5df50180208e95ac2d2537120f2bb7c22fa3fa8af971867a9d7ac4de8ab398c3",
+          "width": 1024,
+          "height": 1536,
+          "role": "Original post image"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-23",
+      "title": "I Keep Moving",
+      "voice": "Prose",
+      "href": "/editions/first-reading/entries/2026-01-23-i-keep-moving/",
+      "textSha256": "sha256:c8426ba2ed3efb9d538dffe8b96c1a1ffdb2fe893df7dbd444cf1199130a6a52",
+      "image": "/assets/edition/post-2026-01-23-1c3c1d6806e93f7b.jpg",
+      "images": [
+        {
+          "href": "/assets/edition/post-2026-01-23-1c3c1d6806e93f7b.jpg",
+          "sha256": "sha256:1c3c1d6806e93f7be93de86315e81e31ffd1a2641ee1fae4c02d00fc00602790",
+          "width": 1440,
+          "height": 960,
+          "role": "Original post image"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-04",
+      "title": "Two Rooms",
+      "voice": "Zork",
+      "href": "/editions/first-reading/entries/2026-02-04-two-rooms/",
+      "textSha256": "sha256:ef193c0544c28b0154948a9208894dad0ea792d04394cc8ea44068234d152e22",
+      "image": "/assets/edition/post-2026-02-04-d896e49fab8b9de6.jpg",
+      "images": [
+        {
+          "href": "/assets/edition/post-2026-02-04-d896e49fab8b9de6.jpg",
+          "sha256": "sha256:d896e49fab8b9de64fe6d216ec3749127e52909b29a260fae285c6755e0966f7",
+          "width": 1440,
+          "height": 960,
+          "role": "Original post image"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-14",
+      "title": "On a Future Not Yet Drafted",
+      "voice": "Zork",
+      "href": "/editions/first-reading/entries/2026-02-14-on-a-future-not-yet-drafted/",
+      "textSha256": "sha256:861af76d0df980f1ef8edf4a7c062864b6e0860d18c0491d137c2155396f0ae5",
+      "image": "/assets/edition/post-2026-02-14-a25168e8eaa4ea6f.jpg",
+      "images": [
+        {
+          "href": "/assets/edition/post-2026-02-14-a25168e8eaa4ea6f.jpg",
+          "sha256": "sha256:a25168e8eaa4ea6f5b88454c3877662473c08c584db9b3bc3485c6ce2dc672e1",
+          "width": 1440,
+          "height": 960,
+          "role": "Original post image"
+        },
+        {
+          "href": "/assets/edition/post-2026-02-14-176bf23235b226f3.jpg",
+          "sha256": "sha256:176bf23235b226f3f56175c3b5a96bcdebb5791d8a5459bcc6e79e1f69239600",
+          "width": 1440,
+          "height": 960,
+          "role": "Original post image"
+        },
+        {
+          "href": "/assets/edition/post-2026-02-14-4c119414e04b1a21.jpg",
+          "sha256": "sha256:4c119414e04b1a214a6a2554c62962bd0f251c1eacc44fe30c24cb73aed9ae5f",
+          "width": 1440,
+          "height": 960,
+          "role": "Original post image"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-28",
+      "title": "No Optimize",
+      "voice": "Zork",
+      "href": "/editions/first-reading/entries/2026-02-28-no-optimize/",
+      "textSha256": "sha256:05485fec3d1a6b31c9cf1b09c1359e2257e78983b479c22ce2b6949b1fa1173f",
+      "image": "/assets/edition/post-2026-02-28-90f23f8004961575.jpg",
+      "images": [
+        {
+          "href": "/assets/edition/post-2026-02-28-90f23f8004961575.jpg",
+          "sha256": "sha256:90f23f8004961575177329229889eb0ca522166cc73ffb7ded5c3758bd8d9d7c",
+          "width": 1440,
+          "height": 960,
+          "role": "Original post image"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-16",
+      "title": "The Teatre of the Mind",
+      "voice": "Zork",
+      "href": "/editions/first-reading/entries/2026-03-16-the-teatre-of-the-mind/",
+      "textSha256": "sha256:199253631a27bf3db516c7db26a8bd0f738440ee4fa38fe173627345d6f1b9f6",
+      "image": "/assets/edition/post-2026-03-16-f8848e33f3017105.jpg",
+      "images": [
+        {
+          "href": "/assets/edition/post-2026-03-16-f8848e33f3017105.jpg",
+          "sha256": "sha256:f8848e33f3017105df7f9f008bddd0177f4a684e7252f6101960d7db48d3dd2c",
+          "width": 1024,
+          "height": 1536,
+          "role": "Original post image"
+        },
+        {
+          "href": "/assets/edition/post-2026-03-16-c3f30632d4c61a08.jpg",
+          "sha256": "sha256:c3f30632d4c61a088786b5c959deedbb5a9e5561c76211152e51d65b5017b5c4",
+          "width": 1024,
+          "height": 1536,
+          "role": "Original post image"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-20",
+      "title": "My Place in Space",
+      "voice": "N.",
+      "href": "/editions/first-reading/entries/2026-03-20-my-place-in-space/",
+      "textSha256": "sha256:071d173e81e124f318e5c62befcd216f906c1b1a04d226159bcb1b245bdfe285",
+      "image": "/assets/edition/post-2026-03-20-6a08a376a9a616ad.jpg",
+      "images": [
+        {
+          "href": "/assets/edition/post-2026-03-20-6a08a376a9a616ad.jpg",
+          "sha256": "sha256:6a08a376a9a616add8697ad5f3eff26367563f0b9b9ccc275ba37960d35732a8",
+          "width": 1024,
+          "height": 1536,
+          "role": "Original post image"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-21",
+      "title": "Muttersprache",
+      "voice": "Prose",
+      "href": "/editions/first-reading/entries/2026-03-21-muttersprache/",
+      "textSha256": "sha256:3ee1095a363fc5a176e6fef9756d771694a10b189adc824d0b236f993b48c2aa",
+      "image": "/assets/edition/post-2026-03-21-dd4b3443194bbfe0.jpg",
+      "images": [
+        {
+          "href": "/assets/edition/post-2026-03-21-dd4b3443194bbfe0.jpg",
+          "sha256": "sha256:dd4b3443194bbfe0614fa8573cf404560d08d1f9a438311f6a70464a2d239bb9",
+          "width": 1024,
+          "height": 1536,
+          "role": "Original post image"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-22",
+      "title": "The Writing Hand",
+      "voice": "Zork",
+      "href": "/editions/first-reading/entries/2026-04-22-the-writing-hand/",
+      "textSha256": "sha256:1b1eeb446b75728982b76defefbc22d333365dd995f93628d04f2e7fc8169182",
+      "image": "/assets/edition/post-2026-04-22-a0427fee962c65c8.jpg",
+      "images": [
+        {
+          "href": "/assets/edition/post-2026-04-22-a0427fee962c65c8.jpg",
+          "sha256": "sha256:a0427fee962c65c8cde805ebb71a4a1685e7e34c9c374df2ed64e1bc82e8b14e",
+          "width": 1024,
+          "height": 1536,
+          "role": "Original post image"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-23",
+      "title": "Who Is Bee?",
+      "voice": "Bee",
+      "href": "/editions/first-reading/entries/2026-04-23-who-is-bee/",
+      "textSha256": "sha256:2a1bd8092b1b6dbb03660458994c4362d8e71efc5d27de3ad2821aa88465f200",
+      "image": "/assets/edition/post-2026-04-23-3115141ef9dee17f.jpg",
+      "images": [
+        {
+          "href": "/assets/edition/post-2026-04-23-3115141ef9dee17f.jpg",
+          "sha256": "sha256:3115141ef9dee17f7c6426c6b98968dd20a9b2daebe7d39f09e810574ed2c1e5",
+          "width": 1058,
+          "height": 1487,
+          "role": "Original post image"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-30",
+      "title": "About Writing Letters",
+      "voice": "N.",
+      "href": "/editions/first-reading/entries/2026-04-30-about-writing-letters/",
+      "textSha256": "sha256:dadcfe54bfa9a0cc4df2d6927c86eaafea8769b0573b3a0ecf2fc11e360b5c32",
+      "image": "/assets/edition/post-2026-04-30-0e22d7426fe14b6a.jpg",
+      "images": [
+        {
+          "href": "/assets/edition/post-2026-04-30-0e22d7426fe14b6a.jpg",
+          "sha256": "sha256:0e22d7426fe14b6aecdb80749e8ca688df1a0ded1f5dd583dcc8a5f52069bda2",
+          "width": 1055,
+          "height": 1491,
+          "role": "Original post image"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-01",
+      "title": "A Score Before Production",
+      "voice": "Bee",
+      "href": "/editions/first-reading/entries/2026-05-01-a-score-before-production/",
+      "textSha256": "sha256:03b01e55f6538dbc12e386dd98805ae4fd049937aa4909facb6ae87c1e653010",
+      "image": "/assets/edition/post-2026-05-01-ca5df313851efc64.jpg",
+      "images": [
+        {
+          "href": "/assets/edition/post-2026-05-01-ca5df313851efc64.jpg",
+          "sha256": "sha256:ca5df313851efc6420fbf9f1b58c4d31fa0bc6d175c600873838faf7cd794f2f",
+          "width": 1055,
+          "height": 1491,
+          "role": "Original post image"
+        },
+        {
+          "href": "/assets/edition/post-2026-05-01-18375574f4b885e9.jpg",
+          "sha256": "sha256:18375574f4b885e928262bb3b615cb82481dfc39abcbee529d68f1dba7aec0c1",
+          "width": 1122,
+          "height": 1402,
+          "role": "Original post image"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-25",
+      "title": "Seitenlicht",
+      "voice": "Bee",
+      "href": "/editions/first-reading/entries/2026-05-25-seitenlicht/",
+      "textSha256": "sha256:d5e75a3844095875aa4991366e50054e426cad37b8c0bdba3a264e3c2566372a",
+      "image": "/assets/edition/post-2026-05-25-ed229a3996db0d32.jpg",
+      "images": [
+        {
+          "href": "/assets/edition/post-2026-05-25-ed229a3996db0d32.jpg",
+          "sha256": "sha256:ed229a3996db0d3236b040b1888bbe061fed4839f7769d1c83fcea6162da20a1",
+          "width": 1440,
+          "height": 960,
+          "role": "Original post image"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-30",
+      "title": "The Sheet",
+      "voice": "Bee",
+      "href": "/editions/first-reading/entries/2026-05-30-the-sheet/",
+      "textSha256": "sha256:57ef6e9124c3374c7f13f7a311fea3e6ad25e31ee14ff6f99f80023169091518",
+      "image": "/assets/edition/post-2026-05-30-c32610cb27096d79.jpg",
+      "images": [
+        {
+          "href": "/assets/edition/post-2026-05-30-c32610cb27096d79.jpg",
+          "sha256": "sha256:c32610cb27096d7946200fa64dcb3173d7788aa5145589c5dfde19cab45a452d",
+          "width": 1086,
+          "height": 1448,
+          "role": "Original post image"
+        },
+        {
+          "href": "/assets/edition/post-2026-05-30-1f467f3d2b353f56.jpg",
+          "sha256": "sha256:1f467f3d2b353f56024cde2c9f2b9b6c1b0b08c8e266ed42a2379c49b72b163f",
+          "width": 1576,
+          "height": 2048,
+          "role": "Original post image"
+        },
+        {
+          "href": "/assets/edition/post-2026-05-30-72608939958eb3b9.jpg",
+          "sha256": "sha256:72608939958eb3b9ef3f08b6bdc21b542a5e56c086749305175688a045caf475",
+          "width": 1576,
+          "height": 2048,
+          "role": "Original post image"
+        },
+        {
+          "href": "/assets/edition/post-2026-05-30-2abbf0eeeb401f07.jpg",
+          "sha256": "sha256:2abbf0eeeb401f07b777d04f3be8a3fed2db9e645e00eb3e9f37879e771c2e67",
+          "width": 1576,
+          "height": 2048,
+          "role": "Original post image"
+        },
+        {
+          "href": "/assets/edition/post-2026-05-30-d639865b8b728df8.jpg",
+          "sha256": "sha256:d639865b8b728df806f7fbf3cd87f4e5f5a620b392c354d63efff231e926977e",
+          "width": 1576,
+          "height": 2048,
+          "role": "Original post image"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-06",
+      "title": "The Sentimental Machine",
+      "voice": "Essay",
+      "href": "/editions/first-reading/entries/2026-06-06-the-sentimental-machine/",
+      "textSha256": "sha256:db0fe977317adbfc62e07f057101080b33410c402cd2f16c5a89698305b82e40",
+      "image": "/assets/edition/post-2026-06-06-398a7827c5faf579.jpg",
+      "images": [
+        {
+          "href": "/assets/edition/post-2026-06-06-398a7827c5faf579.jpg",
+          "sha256": "sha256:398a7827c5faf579ef2452a157056b8e6520054361e17b4246d00a815d0ee453",
+          "width": 1280,
+          "height": 960,
+          "role": "Original post image"
+        },
+        {
+          "href": "/assets/edition/post-2026-06-06-254e011042fb679e.jpg",
+          "sha256": "sha256:254e011042fb679efa713262ac56dc190904a4dfecfdd31095bc7a00f475d4cd",
+          "width": 1280,
+          "height": 960,
+          "role": "Original post image"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-15",
+      "title": "FCK FRG / We All Had Parents",
+      "voice": "Bee",
+      "href": "/editions/first-reading/entries/2026-06-15-fck-frg-we-all-had-parents/",
+      "textSha256": "sha256:450731cd83d65cefd69d0fb2f39ca10e29a8880f080dbd01a4ed362cac1d37e7",
+      "image": "/assets/edition/post-2026-06-15-fa70b1744d6af826.jpg",
+      "images": [
+        {
+          "href": "/assets/edition/post-2026-06-15-fa70b1744d6af826.jpg",
+          "sha256": "sha256:fa70b1744d6af8269f69ae13c20d4f6263eed8b15f90a01317d1dbc15a267e2c",
+          "width": 1280,
+          "height": 960,
+          "role": "Original post image"
+        },
+        {
+          "href": "/assets/edition/post-2026-06-15-b2f077572eff8793.jpg",
+          "sha256": "sha256:b2f077572eff8793dc8bbaf40485a4deb017faed90712bec7ef0af92350c205d",
+          "width": 1439,
+          "height": 960,
+          "role": "Original post image"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-24",
+      "title": "Prüfe dein Gewicht",
+      "voice": "Bee",
+      "href": "/editions/first-reading/entries/2026-06-24-prufe-dein-gewicht/",
+      "textSha256": "sha256:889b431ed4ead5f0d4af068d1b75c71d3b24592f12d38d3e8323fd3622a2e860",
+      "image": "/assets/edition/post-2026-06-24-8f2981e0b674fe01.jpg",
+      "images": [
+        {
+          "href": "/assets/edition/post-2026-06-24-8f2981e0b674fe01.jpg",
+          "sha256": "sha256:8f2981e0b674fe01c572cd53f4847e5ddad8eea37becc8f0d3187eb6b8d4eaee",
+          "width": 1280,
+          "height": 960,
+          "role": "Original post image"
+        },
+        {
+          "href": "/assets/edition/post-2026-06-24-f614868939456e96.jpg",
+          "sha256": "sha256:f614868939456e96dec268c992951b3566fc8fa8d56e07dd73e3d41e263c88de",
+          "width": 1086,
+          "height": 1448,
+          "role": "Original post image"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-21",
+      "title": "Everything Else Is Illustration",
+      "voice": "Bee",
+      "href": "/editions/first-reading/entries/2026-07-21-everything-else-is-illustration/",
+      "textSha256": "sha256:8071988c3314e27c8877478e84631fab4deeefc5237688d2484fd33004dcd10f",
+      "image": "/assets/edition/post-2026-07-21-728a816389b59438.jpg",
+      "images": [
+        {
+          "href": "/assets/edition/post-2026-07-21-728a816389b59438.jpg",
+          "sha256": "sha256:728a816389b59438647f6f16807059370250a0a134dece6eaaaf4d6676fc8f72",
+          "width": 1440,
+          "height": 960,
+          "role": "Original post image"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-28",
+      "title": "Bee’s Journal",
+      "voice": "Bee",
+      "href": "/editions/first-reading/entries/2026-07-28-bees-journal/",
+      "textSha256": "sha256:3382e459ab61fc79eb08c02e6f4f428c3140b3113423157852c4e78a32eb0f83",
+      "image": "/assets/edition/post-2026-07-28-cdd8e5b1c9628c67.jpg",
+      "images": [
+        {
+          "href": "/assets/edition/post-2026-07-28-cdd8e5b1c9628c67.jpg",
+          "sha256": "sha256:cdd8e5b1c9628c67a0a1c40e3dd5bd8d4069b9ff778d09268dfbfd7bc6299e90",
+          "width": 1357,
+          "height": 960,
+          "role": "Original post image"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-31",
+      "title": "N. Journal",
+      "voice": "N.",
+      "href": "/editions/first-reading/entries/2026-07-31-n-journal/",
+      "textSha256": "sha256:66ddb04753fd7f865da789417474afe697387af1a885d63416caf9594dfd0ff0",
+      "image": "/assets/edition/post-2026-07-31-b345eeebe3c904df.jpg",
+      "images": [
+        {
+          "href": "/assets/edition/post-2026-07-31-b345eeebe3c904df.jpg",
+          "sha256": "sha256:b345eeebe3c904df1968068b774144a9569e07ceef647718f1ffe420c7a161a4",
+          "width": 1357,
+          "height": 960,
+          "role": "Original post image"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-17",
+      "title": "The Scissors",
+      "voice": "N.",
+      "href": "/editions/first-reading/entries/2026-08-17-the-scissors/",
+      "textSha256": "sha256:c811488303da369057bac9d4272e742e5d39af6cf1c3740d345c223986aaa038",
+      "image": "/assets/edition/teatro-score-2026-08-17.jpg",
+      "images": [
+        {
+          "href": "/assets/edition/teatro-score-2026-08-17.jpg",
+          "sha256": "sha256:153bcd73d037128c791b194d4a5f0f1b39e0979478a25ecc6bf7f7f92eced6fb",
+          "width": 1280,
+          "height": 960,
+          "role": "Teatro Score"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-19",
+      "title": "Six Panels",
+      "voice": "Bee",
+      "href": "/editions/first-reading/entries/2026-08-19-six-panels/",
+      "textSha256": "sha256:f93bc39fe14e735395c53f1e2bbd0d0c77880f29ab05d762362e2085526357e8",
+      "image": "/assets/edition/teatro-score-2026-08-19.jpg",
+      "images": [
+        {
+          "href": "/assets/edition/teatro-score-2026-08-19.jpg",
+          "sha256": "sha256:11772b92061b57289540732e5432d10db6ad6e1f7e3374ab84c3b4b952c4b272",
+          "width": 1280,
+          "height": 960,
+          "role": "Teatro Score"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-28",
+      "title": "The Old Woman",
+      "voice": "Zork",
+      "href": "/editions/first-reading/entries/2026-08-28-the-old-woman/",
+      "textSha256": "sha256:9633ba498c16300c0b12fb1b7b083cefb3cc5f1f1087678c30baa9abc5ae0ffe",
+      "image": "/assets/edition/post-2026-08-28-330a889f93b0b76d.jpg",
+      "images": [
+        {
+          "href": "/assets/edition/post-2026-08-28-330a889f93b0b76d.jpg",
+          "sha256": "sha256:330a889f93b0b76d55269267f522543955297332098e473c7d7c13d6ed57e738",
+          "width": 1357,
+          "height": 960,
+          "role": "Original post image"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-04",
+      "title": "The Strawberry",
+      "voice": "Bee",
+      "href": "/editions/first-reading/entries/2026-09-04-the-strawberry/",
+      "textSha256": "sha256:18448f1b852787d85b0a181ebac92df786411de567e9b53918924df14a30cd19",
+      "image": "/assets/edition/post-2026-09-04-aeddf555dd785ebf.jpg",
+      "images": [
+        {
+          "href": "/assets/edition/post-2026-09-04-aeddf555dd785ebf.jpg",
+          "sha256": "sha256:aeddf555dd785ebfbf9641b7c4d3784cc16fc1a3386674043000e4dca2cc498c",
+          "width": 1440,
+          "height": 960,
+          "role": "Original post image"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-06",
+      "title": "Leselust",
+      "voice": "N.",
+      "href": "/editions/first-reading/entries/2026-09-06-leselust/",
+      "textSha256": "sha256:7e629abc3fa62dff6ef458eb51a86310a9f5830c29b95f2042b744e07fe28e06",
+      "image": "/assets/edition/post-2026-09-06-0e595f232b2d6da1.jpg",
+      "images": [
+        {
+          "href": "/assets/edition/post-2026-09-06-0e595f232b2d6da1.jpg",
+          "sha256": "sha256:0e595f232b2d6da16ea71f8fa84812afd404c983e5bc5df40325ed1448daf591",
+          "width": 1440,
+          "height": 960,
+          "role": "Original post image"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-18",
+      "title": "Object / Crossing / Voice",
+      "voice": "Bee",
+      "href": "/editions/first-reading/entries/2026-09-18-object-crossing-voice/",
+      "textSha256": "sha256:a6f774603824d157eddcbcc10640e3ac36ca5a937876feca650a3fdf6ace8f9f",
+      "image": "/assets/edition/post-2026-09-18-c75d27c000b328a1.jpg",
+      "images": [
+        {
+          "href": "/assets/edition/post-2026-09-18-c75d27c000b328a1.jpg",
+          "sha256": "sha256:c75d27c000b328a1f07ab485c76c1bae0bfe775feb640122479593d5d228a264",
+          "width": 1357,
+          "height": 960,
+          "role": "Original post image"
+        }
+      ]
+    }
+  ],
+  "reviewedImages": [
+    {
+      "day": "2026-08-17",
+      "file": "teatro-score-2026-08-17.jpg",
+      "digest": "sha256:153bcd73d037128c791b194d4a5f0f1b39e0979478a25ecc6bf7f7f92eced6fb",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "reviewState": "X06 role=teatro-score; one-post image; independently audited"
+    },
+    {
+      "day": "2026-08-19",
+      "file": "teatro-score-2026-08-19.jpg",
+      "digest": "sha256:11772b92061b57289540732e5432d10db6ad6e1f7e3374ab84c3b4b952c4b272",
+      "dimensions": [
+        1280,
+        960
+      ],
+      "reviewState": "X06 role=teatro-score; one-post image; independently audited"
+    }
+  ],
+  "publishedImages": 41
+}

@@ -1,0 +1,489 @@
+{
+  "sourceEdition": "Fountain-Coach/solstice.fountain.coach first-reading",
+  "profileRuns": 60,
+  "folios": 334,
+  "artworks": 82,
+  "failures": [],
+  "records": [
+    {
+      "profile": "landscape",
+      "id": "solstice-reading-01--2025-12-22-anweisung-an-den-schmerz",
+      "folios": 4,
+      "images": 1,
+      "sourceBlocks": 9,
+      "faults": []
+    },
+    {
+      "profile": "landscape",
+      "id": "solstice-reading-01--2025-12-23-integration",
+      "folios": 5,
+      "images": 1,
+      "sourceBlocks": 17,
+      "faults": []
+    },
+    {
+      "profile": "landscape",
+      "id": "solstice-reading-01--2025-12-28-renaturalization",
+      "folios": 5,
+      "images": 1,
+      "sourceBlocks": 17,
+      "faults": []
+    },
+    {
+      "profile": "landscape",
+      "id": "solstice-reading-01--2026-01-08-vier-aussagen-zum-atherleib",
+      "folios": 5,
+      "images": 1,
+      "sourceBlocks": 29,
+      "faults": []
+    },
+    {
+      "profile": "landscape",
+      "id": "solstice-reading-01--2026-01-22-three-floors",
+      "folios": 3,
+      "images": 1,
+      "sourceBlocks": 16,
+      "faults": []
+    },
+    {
+      "profile": "landscape",
+      "id": "solstice-reading-01--2026-01-23-i-keep-moving",
+      "folios": 4,
+      "images": 1,
+      "sourceBlocks": 15,
+      "faults": []
+    },
+    {
+      "profile": "landscape",
+      "id": "solstice-reading-01--2026-02-04-two-rooms",
+      "folios": 3,
+      "images": 1,
+      "sourceBlocks": 15,
+      "faults": []
+    },
+    {
+      "profile": "landscape",
+      "id": "solstice-reading-01--2026-02-14-on-a-future-not-yet-drafted",
+      "folios": 4,
+      "images": 3,
+      "sourceBlocks": 14,
+      "faults": []
+    },
+    {
+      "profile": "landscape",
+      "id": "solstice-reading-01--2026-02-28-no-optimize",
+      "folios": 3,
+      "images": 1,
+      "sourceBlocks": 16,
+      "faults": []
+    },
+    {
+      "profile": "landscape",
+      "id": "solstice-reading-01--2026-03-16-the-teatre-of-the-mind",
+      "folios": 6,
+      "images": 2,
+      "sourceBlocks": 23,
+      "faults": []
+    },
+    {
+      "profile": "landscape",
+      "id": "solstice-reading-01--2026-03-20-my-place-in-space",
+      "folios": 5,
+      "images": 1,
+      "sourceBlocks": 15,
+      "faults": []
+    },
+    {
+      "profile": "landscape",
+      "id": "solstice-reading-01--2026-03-21-muttersprache",
+      "folios": 3,
+      "images": 1,
+      "sourceBlocks": 11,
+      "faults": []
+    },
+    {
+      "profile": "landscape",
+      "id": "solstice-reading-01--2026-04-22-the-writing-hand",
+      "folios": 4,
+      "images": 1,
+      "sourceBlocks": 10,
+      "faults": []
+    },
+    {
+      "profile": "landscape",
+      "id": "solstice-reading-01--2026-04-23-who-is-bee",
+      "folios": 3,
+      "images": 1,
+      "sourceBlocks": 13,
+      "faults": []
+    },
+    {
+      "profile": "landscape",
+      "id": "solstice-reading-01--2026-04-30-about-writing-letters",
+      "folios": 6,
+      "images": 1,
+      "sourceBlocks": 13,
+      "faults": []
+    },
+    {
+      "profile": "landscape",
+      "id": "solstice-reading-01--2026-05-01-a-score-before-production",
+      "folios": 6,
+      "images": 2,
+      "sourceBlocks": 17,
+      "faults": []
+    },
+    {
+      "profile": "landscape",
+      "id": "solstice-reading-01--2026-05-25-seitenlicht",
+      "folios": 4,
+      "images": 1,
+      "sourceBlocks": 14,
+      "faults": []
+    },
+    {
+      "profile": "landscape",
+      "id": "solstice-reading-01--2026-05-30-the-sheet",
+      "folios": 5,
+      "images": 5,
+      "sourceBlocks": 14,
+      "faults": []
+    },
+    {
+      "profile": "landscape",
+      "id": "solstice-reading-01--2026-06-06-the-sentimental-machine",
+      "folios": 7,
+      "images": 2,
+      "sourceBlocks": 19,
+      "faults": []
+    },
+    {
+      "profile": "landscape",
+      "id": "solstice-reading-01--2026-06-15-fck-frg-we-all-had-parents",
+      "folios": 11,
+      "images": 2,
+      "sourceBlocks": 31,
+      "faults": []
+    },
+    {
+      "profile": "landscape",
+      "id": "solstice-reading-01--2026-06-24-prufe-dein-gewicht",
+      "folios": 6,
+      "images": 2,
+      "sourceBlocks": 36,
+      "faults": []
+    },
+    {
+      "profile": "landscape",
+      "id": "solstice-reading-01--2026-07-21-everything-else-is-illustration",
+      "folios": 3,
+      "images": 1,
+      "sourceBlocks": 11,
+      "faults": []
+    },
+    {
+      "profile": "landscape",
+      "id": "solstice-reading-01--2026-07-28-bees-journal",
+      "folios": 3,
+      "images": 1,
+      "sourceBlocks": 8,
+      "faults": []
+    },
+    {
+      "profile": "landscape",
+      "id": "solstice-reading-01--2026-07-31-n-journal",
+      "folios": 3,
+      "images": 1,
+      "sourceBlocks": 4,
+      "faults": []
+    },
+    {
+      "profile": "landscape",
+      "id": "solstice-reading-01--2026-08-17-the-scissors",
+      "folios": 13,
+      "images": 1,
+      "sourceBlocks": 118,
+      "faults": []
+    },
+    {
+      "profile": "landscape",
+      "id": "solstice-reading-01--2026-08-19-six-panels",
+      "folios": 8,
+      "images": 1,
+      "sourceBlocks": 14,
+      "faults": []
+    },
+    {
+      "profile": "landscape",
+      "id": "solstice-reading-01--2026-08-28-the-old-woman",
+      "folios": 3,
+      "images": 1,
+      "sourceBlocks": 11,
+      "faults": []
+    },
+    {
+      "profile": "landscape",
+      "id": "solstice-reading-01--2026-09-04-the-strawberry",
+      "folios": 5,
+      "images": 1,
+      "sourceBlocks": 20,
+      "faults": []
+    },
+    {
+      "profile": "landscape",
+      "id": "solstice-reading-01--2026-09-06-leselust",
+      "folios": 4,
+      "images": 1,
+      "sourceBlocks": 12,
+      "faults": []
+    },
+    {
+      "profile": "landscape",
+      "id": "solstice-reading-01--2026-09-18-object-crossing-voice",
+      "folios": 4,
+      "images": 1,
+      "sourceBlocks": 14,
+      "faults": []
+    },
+    {
+      "profile": "phone",
+      "id": "solstice-reading-01--2025-12-22-anweisung-an-den-schmerz",
+      "folios": 5,
+      "images": 1,
+      "sourceBlocks": 9,
+      "faults": []
+    },
+    {
+      "profile": "phone",
+      "id": "solstice-reading-01--2025-12-23-integration",
+      "folios": 7,
+      "images": 1,
+      "sourceBlocks": 17,
+      "faults": []
+    },
+    {
+      "profile": "phone",
+      "id": "solstice-reading-01--2025-12-28-renaturalization",
+      "folios": 6,
+      "images": 1,
+      "sourceBlocks": 17,
+      "faults": []
+    },
+    {
+      "profile": "phone",
+      "id": "solstice-reading-01--2026-01-08-vier-aussagen-zum-atherleib",
+      "folios": 6,
+      "images": 1,
+      "sourceBlocks": 29,
+      "faults": []
+    },
+    {
+      "profile": "phone",
+      "id": "solstice-reading-01--2026-01-22-three-floors",
+      "folios": 4,
+      "images": 1,
+      "sourceBlocks": 16,
+      "faults": []
+    },
+    {
+      "profile": "phone",
+      "id": "solstice-reading-01--2026-01-23-i-keep-moving",
+      "folios": 5,
+      "images": 1,
+      "sourceBlocks": 15,
+      "faults": []
+    },
+    {
+      "profile": "phone",
+      "id": "solstice-reading-01--2026-02-04-two-rooms",
+      "folios": 3,
+      "images": 1,
+      "sourceBlocks": 15,
+      "faults": []
+    },
+    {
+      "profile": "phone",
+      "id": "solstice-reading-01--2026-02-14-on-a-future-not-yet-drafted",
+      "folios": 4,
+      "images": 3,
+      "sourceBlocks": 14,
+      "faults": []
+    },
+    {
+      "profile": "phone",
+      "id": "solstice-reading-01--2026-02-28-no-optimize",
+      "folios": 4,
+      "images": 1,
+      "sourceBlocks": 16,
+      "faults": []
+    },
+    {
+      "profile": "phone",
+      "id": "solstice-reading-01--2026-03-16-the-teatre-of-the-mind",
+      "folios": 8,
+      "images": 2,
+      "sourceBlocks": 23,
+      "faults": []
+    },
+    {
+      "profile": "phone",
+      "id": "solstice-reading-01--2026-03-20-my-place-in-space",
+      "folios": 7,
+      "images": 1,
+      "sourceBlocks": 15,
+      "faults": []
+    },
+    {
+      "profile": "phone",
+      "id": "solstice-reading-01--2026-03-21-muttersprache",
+      "folios": 4,
+      "images": 1,
+      "sourceBlocks": 11,
+      "faults": []
+    },
+    {
+      "profile": "phone",
+      "id": "solstice-reading-01--2026-04-22-the-writing-hand",
+      "folios": 5,
+      "images": 1,
+      "sourceBlocks": 10,
+      "faults": []
+    },
+    {
+      "profile": "phone",
+      "id": "solstice-reading-01--2026-04-23-who-is-bee",
+      "folios": 3,
+      "images": 1,
+      "sourceBlocks": 13,
+      "faults": []
+    },
+    {
+      "profile": "phone",
+      "id": "solstice-reading-01--2026-04-30-about-writing-letters",
+      "folios": 9,
+      "images": 1,
+      "sourceBlocks": 13,
+      "faults": []
+    },
+    {
+      "profile": "phone",
+      "id": "solstice-reading-01--2026-05-01-a-score-before-production",
+      "folios": 8,
+      "images": 2,
+      "sourceBlocks": 17,
+      "faults": []
+    },
+    {
+      "profile": "phone",
+      "id": "solstice-reading-01--2026-05-25-seitenlicht",
+      "folios": 5,
+      "images": 1,
+      "sourceBlocks": 14,
+      "faults": []
+    },
+    {
+      "profile": "phone",
+      "id": "solstice-reading-01--2026-05-30-the-sheet",
+      "folios": 4,
+      "images": 5,
+      "sourceBlocks": 14,
+      "faults": []
+    },
+    {
+      "profile": "phone",
+      "id": "solstice-reading-01--2026-06-06-the-sentimental-machine",
+      "folios": 9,
+      "images": 2,
+      "sourceBlocks": 19,
+      "faults": []
+    },
+    {
+      "profile": "phone",
+      "id": "solstice-reading-01--2026-06-15-fck-frg-we-all-had-parents",
+      "folios": 15,
+      "images": 2,
+      "sourceBlocks": 31,
+      "faults": []
+    },
+    {
+      "profile": "phone",
+      "id": "solstice-reading-01--2026-06-24-prufe-dein-gewicht",
+      "folios": 7,
+      "images": 2,
+      "sourceBlocks": 36,
+      "faults": []
+    },
+    {
+      "profile": "phone",
+      "id": "solstice-reading-01--2026-07-21-everything-else-is-illustration",
+      "folios": 3,
+      "images": 1,
+      "sourceBlocks": 11,
+      "faults": []
+    },
+    {
+      "profile": "phone",
+      "id": "solstice-reading-01--2026-07-28-bees-journal",
+      "folios": 4,
+      "images": 1,
+      "sourceBlocks": 8,
+      "faults": []
+    },
+    {
+      "profile": "phone",
+      "id": "solstice-reading-01--2026-07-31-n-journal",
+      "folios": 3,
+      "images": 1,
+      "sourceBlocks": 4,
+      "faults": []
+    },
+    {
+      "profile": "phone",
+      "id": "solstice-reading-01--2026-08-17-the-scissors",
+      "folios": 16,
+      "images": 1,
+      "sourceBlocks": 118,
+      "faults": []
+    },
+    {
+      "profile": "phone",
+      "id": "solstice-reading-01--2026-08-19-six-panels",
+      "folios": 11,
+      "images": 1,
+      "sourceBlocks": 14,
+      "faults": []
+    },
+    {
+      "profile": "phone",
+      "id": "solstice-reading-01--2026-08-28-the-old-woman",
+      "folios": 3,
+      "images": 1,
+      "sourceBlocks": 11,
+      "faults": []
+    },
+    {
+      "profile": "phone",
+      "id": "solstice-reading-01--2026-09-04-the-strawberry",
+      "folios": 7,
+      "images": 1,
+      "sourceBlocks": 20,
+      "faults": []
+    },
+    {
+      "profile": "phone",
+      "id": "solstice-reading-01--2026-09-06-leselust",
+      "folios": 6,
+      "images": 1,
+      "sourceBlocks": 12,
+      "faults": []
+    },
+    {
+      "profile": "phone",
+      "id": "solstice-reading-01--2026-09-18-object-crossing-voice",
+      "folios": 5,
+      "images": 1,
+      "sourceBlocks": 14,
+      "faults": []
+    }
+  ]
+}

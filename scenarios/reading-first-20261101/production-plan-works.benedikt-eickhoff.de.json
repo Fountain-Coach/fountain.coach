@@ -1,0 +1,19 @@
+{
+  "authority" : "signedArtifact",
+  "buildBoundary" : "localArtifact",
+  "host" : "works.benedikt-eickhoff.de",
+  "kind" : "artifactRelease",
+  "operation" : "estate.static.publish",
+  "pathPrefix" : "",
+  "requiredProof" : [
+    "admitted-static-projection",
+    "named-release-digest",
+    "typed-owner-approval",
+    "immutable-remote-release",
+    "caddy-validation",
+    "public-https",
+    "matching-digest",
+    "rollback"
+  ],
+  "state" : "available"
+}

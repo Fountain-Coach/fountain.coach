@@ -1,0 +1,117 @@
+{
+  "origin": "https://192.168.8.50:8243",
+  "results": [
+    {
+      "name": "landscape",
+      "first": {
+        "brand": "Benedikt Eickhoff",
+        "volume": "library",
+        "books": [
+          {
+            "name": "E\nEssays",
+            "target": "essays"
+          },
+          {
+            "name": "✳\nSolstice (WT)",
+            "target": "solstice"
+          }
+        ],
+        "overflow": false
+      },
+      "essays": [
+        "essay--reframe-and-the-business-value-of-the-estate",
+        "essay--teatro-an-unfinished-composition",
+        "essay--semantic-compilation-the-archive-is-not-the-edition",
+        "essay--to-read-is-not-to-remember",
+        "essay--the-composable-book",
+        "essay--the-ear-that-learns",
+        "essay--the-door-is-a-score"
+      ],
+      "tocLength": 32,
+      "firstWork": {
+        "loaded": true,
+        "originalImage": "/solstice/assets/edition/post-2025-12-22-b0e6cf8252aca0da.jpg",
+        "title": "Anweisung an den Schmerz",
+        "body": "Anweisung an den SchmerzOriginal post image · 2025-12-22\" Anweisung an den Schmerz \"I arrive at the dreamwork by a side door. Not by sleep, not by images thrown",
+        "page": "1–2 / 4",
+        "witness": "unchanged-document"
+      },
+      "errors": []
+    },
+    {
+      "name": "portrait",
+      "first": {
+        "brand": "Benedikt Eickhoff",
+        "volume": "library",
+        "books": [
+          {
+            "name": "E\nEssays",
+            "target": "essays"
+          },
+          {
+            "name": "✳\nSolstice (WT)",
+            "target": "solstice"
+          }
+        ],
+        "overflow": false
+      },
+      "essays": [
+        "essay--reframe-and-the-business-value-of-the-estate",
+        "essay--teatro-an-unfinished-composition",
+        "essay--semantic-compilation-the-archive-is-not-the-edition",
+        "essay--to-read-is-not-to-remember",
+        "essay--the-composable-book",
+        "essay--the-ear-that-learns",
+        "essay--the-door-is-a-score"
+      ],
+      "tocLength": 32,
+      "firstWork": {
+        "loaded": true,
+        "originalImage": "/solstice/assets/edition/post-2025-12-22-b0e6cf8252aca0da.jpg",
+        "title": "Anweisung an den Schmerz",
+        "body": "Anweisung an den SchmerzOriginal post image · 2025-12-22\" Anweisung an den Schmerz \"I arrive at the dreamwork by a side door. Not by sleep, not by images thrown",
+        "page": "1 / 2",
+        "witness": "unchanged-document"
+      },
+      "errors": []
+    },
+    {
+      "name": "phone",
+      "first": {
+        "brand": "Benedikt Eickhoff",
+        "volume": "library",
+        "books": [
+          {
+            "name": "E\nEssays",
+            "target": "essays"
+          },
+          {
+            "name": "✳\nSolstice (WT)",
+            "target": "solstice"
+          }
+        ],
+        "overflow": false
+      },
+      "essays": [
+        "essay--reframe-and-the-business-value-of-the-estate",
+        "essay--teatro-an-unfinished-composition",
+        "essay--semantic-compilation-the-archive-is-not-the-edition",
+        "essay--to-read-is-not-to-remember",
+        "essay--the-composable-book",
+        "essay--the-ear-that-learns",
+        "essay--the-door-is-a-score"
+      ],
+      "tocLength": 32,
+      "firstWork": {
+        "loaded": true,
+        "originalImage": "/solstice/assets/edition/post-2025-12-22-b0e6cf8252aca0da.jpg",
+        "title": "Anweisung an den Schmerz",
+        "body": "Anweisung an den SchmerzOriginal post image · 2025-12-22\" Anweisung an den Schmerz \"I arrive at the dreamwork by a side door. Not by sleep, not by images thrown",
+        "page": "1 / 5",
+        "witness": "unchanged-document"
+      },
+      "errors": []
+    }
+  ],
+  "failures": 0
+}

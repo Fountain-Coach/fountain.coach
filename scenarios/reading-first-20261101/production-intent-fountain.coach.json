@@ -1,0 +1,7 @@
+{
+  "kind": "artifactRelease",
+  "authority": "signedArtifact",
+  "buildBoundary": "localArtifact",
+  "host": "fountain.coach",
+  "pathPrefix": ""
+}

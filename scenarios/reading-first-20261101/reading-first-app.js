@@ -22,17 +22,17 @@ const soundEditionPromise=fetch('/estate/essays/the-door-is-a-score/media/editio
    !/^[a-f0-9]{64}$/.test(m.scoreSHA256)||m.tracks.some(t=>t.sourceSHA256!==m.scoreSHA256))
   throw Error('Invalid authenticated sound study');return m;});
 if(!viewport||!source||!window.SolsticeLinotype) return;
-const sourceContinuity=source.innerHTML;
-const labels=new Map([['continuity','On Continuity'],['library','The Bookshelf'],['essays','Essays — A Book Continually Written'],['first-readings','First Readings'],['teatro','Teatro — An Unfinished Composition'],['notes--the-door-is-a-score','References · The Door Is a Score']]);
+const sourceLibrary=source.innerHTML;
+const labels=new Map([['library','Bookshelf'],['essays','Essays'],['solstice','Solstice (WT)'],['solstice-reading-01','Reading 01 · First Reading'],['first-readings','First Readings (historical)'],['teatro','Teatro — An Unfinished Composition'],['notes--the-door-is-a-score','References · The Door Is a Score']]);
 for(const [key,template] of templates){
- if(key.startsWith('essay--')){
+ if(key.startsWith('essay--')||key.startsWith('solstice-reading-01--')){
   const label=template.content.querySelector('h2')?.textContent?.trim()||key;
   labels.set(key,label);
-  const option=document.createElement('option');option.value=key;option.textContent='Essays · '+label;
+  const option=document.createElement('option');option.value=key;option.textContent=key.startsWith('essay--')?'Essays · '+label:'First Reading · '+label;
   section.append(option);
  }
 }
-let engine=null,signature='',frame=0,pointer=null,volume='continuity',ready=false,entryUrl=null;
+let engine=null,signature='',frame=0,pointer=null,volume='library',ready=false,entryUrl=null;
 const positions=new Map();
 const saved=(()=>{try{return localStorage.getItem('fountain-reader-theme')}catch{return null}})();
 const systemDark=window.matchMedia?.('(prefers-color-scheme: dark)').matches;
@@ -45,7 +45,7 @@ function routeFromUrl(){
  if(match&&labels.has(match[1]))return match[1];
  if(pathname.includes('/collections/first-readings/'))return 'first-readings';
  if(pathname.includes('/bookshelf/'))return 'library';
- return document.body.dataset.initialVolume||'continuity';
+ return document.body.dataset.initialVolume||'library';
 }
 function addressFromUrl(){
  const raw=new URLSearchParams(location.hash.split('?')[1]||'').get('at');
@@ -54,7 +54,7 @@ function addressFromUrl(){
  return at>0&&Number.isSafeInteger(offset)&&offset>=0?{block:raw.slice(0,at),offset}:null;
 }
 function selectSource(name){
- if(name==='continuity')source.innerHTML=sourceContinuity;
+ if(name==='library')source.innerHTML=sourceLibrary;
  else {
   const template=templates.get(name);
   if(!template)throw Error('Unrecognized volume: '+name);
@@ -65,9 +65,9 @@ function selectSource(name){
  source.dataset.minLeaves='1';
  volume=name;
  section.value=volume;
- parent.hidden=!(name==='teatro'||name.startsWith('essay--')||name==='notes--the-door-is-a-score');
- if(!parent.hidden){const shelf=name==='teatro'?'first-readings':name==='notes--the-door-is-a-score'?'essay--the-door-is-a-score':'essays';parent.dataset.readerTarget=shelf;parent.dataset.readerResume=name==='notes--the-door-is-a-score'?'true':'false';parent.textContent=labels.get(shelf);parent.setAttribute('aria-label','Return to '+labels.get(shelf)+' inside the reader');}
- document.title='Fountain Coach · '+labels.get(volume);
+ parent.hidden=name==='library';
+ if(!parent.hidden){const shelf=name==='notes--the-door-is-a-score'?'essay--the-door-is-a-score':name.startsWith('solstice-reading-01--')?'solstice-reading-01':name==='solstice-reading-01'?'solstice':name==='solstice'||name==='essays'?'library':name==='teatro'?'essays':name==='first-readings'?'library':'essays';parent.dataset.readerTarget=shelf;parent.dataset.readerResume=name==='notes--the-door-is-a-score'?'true':'false';parent.textContent=labels.get(shelf);parent.setAttribute('aria-label','Return to '+labels.get(shelf)+' inside the reader');}
+ document.title='Benedikt Eickhoff · '+labels.get(volume);
  viewport.setAttribute('aria-label','Paginated '+labels.get(volume));
 }
 let positionTimer=0,lastPositionWrite=0,pendingPosition=null;
@@ -168,7 +168,7 @@ async function compose(){
   if(token!==compositionToken||targetVolume!==volume)return;
   const focused=viewport.contains(document.activeElement);
   engine?.dispose();engine=null;viewport.replaceChildren();
-  const e=new window.SolsticeLinotype(viewport,source,{pageFrame:true,label:'Measured '+labels.get(volume)+' pages',runningTitle:'Fountain Coach',imprint:'Fountain Coach'});
+  const e=new window.SolsticeLinotype(viewport,source,{pageFrame:true,label:'Measured '+labels.get(volume)+' pages',runningTitle:'Benedikt Eickhoff',imprint:'Benedikt Eickhoff'});
   engine=e;
   // Fixed source-owned image dimensions and reserved Press plate geometry
   // are established before composition; never await offscreen lazy clones.

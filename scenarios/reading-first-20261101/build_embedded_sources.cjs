@@ -117,17 +117,17 @@ const sources={teatro:fs.readFileSync(path.join(W,'original-teatro.html'),'utf8'
   const tCover=first.querySelector('[data-book-id="teatro-an-unfinished-composition"] img')?.getAttribute('src');
   if(!tCover)throw Error('Original First Readings cover absent');
   const libraryItems=[
-   {name:'Essays',detail:'A Book Continually Written',target:'essays',image:'/estate/assets/estate-bookshelf/fountain-coach-edition.png'},
-   {name:'First Readings',detail:'Authored editions',target:'first-readings',image:'/estate/assets/estate-bookshelf/first-reading-ink.png'}
+   {name:'Essays',detail:'Chronological essays',target:'essays',mark:'E'},
+   {name:'Solstice (WT)',detail:'Reading 01 · First Reading',target:'solstice',mark:'✳'}
   ];
-  const cover=({name,detail,target,image})=>
-    '<figure class="frame-book-cover"><a href="#/read/'+esc(target)+'" data-reader-target="'+esc(target)+'" aria-label="Open '+esc(name)+' inside this reader"><img src="'+esc(image)+'" alt="" loading="eager"/><span class="frame-cover-name">'+esc(name)+'</span></a><figcaption>'+esc(detail)+'</figcaption></figure>';
+  const cover=({name,detail,target,image,mark})=>
+    '<figure class="frame-book-cover"><a href="#/read/'+esc(target)+'" data-reader-target="'+esc(target)+'" aria-label="Open '+esc(name)+' inside this reader">'+(image?'<img src="'+esc(image)+'" alt="" loading="eager"/>':'<span class="frame-cover-mark" aria-hidden="true">' +esc(mark||'')+ '</span>')+'<span class="frame-cover-name">'+esc(name)+'</span></a><figcaption>'+esc(detail)+'</figcaption></figure>';
   const heading=(slug,title)=>'<section class="book-chapter" id="work-'+slug+'"><div class="book-chapter-heading"><h2>'+esc(title)+'</h2></div></section>';
   const page=(name,body,slug)=>heading(slug,name)+'<section class="book-chapter-text"><article class="book-prose">'+body+'</article></section>';
   const library=page('The Bookshelf','<div class="frame-shelf-grid">'+libraryItems.map(cover).join('')+'</div>','library');
   const firsts=page('First Readings',cover({name:'An Unfinished Composition',detail:'Teatro · Benedikt Eickhoff',target:'teatro',image:tCover}),'first-readings');
-  const essaysItems=chunks.slice(1).map(c=>'<p class="frame-toc-item"><a href="#/read/essay--'+esc(c.slug)+'" data-reader-target="essay--'+esc(c.slug)+'">'+esc(c.title)+'</a></p>').join('');
-  const essays=page('Essays — A Book Continually Written','<p class="frame-lead">An evolving book. The newest authored chapter opens the reading sequence; the original edition and source addresses remain preserved.</p>'+essaysItems,'essays');
+  const essaysItems=chunks.slice(1).reverse().map(c=>'<p class="frame-toc-item"><a href="#/read/essay--'+esc(c.slug)+'" data-reader-target="essay--'+esc(c.slug)+'">'+esc(c.title)+'</a></p>').join('');
+  const essays=page('Essays','<p class="frame-lead">The essays in their authored chronological sequence.</p>'+essaysItems,'essays');
   const noteItems=referenceCatalog.map(({number,label,href})=>'<p class="frame-reference-entry" data-source-block="door.note.'+number+'"><span class="frame-reference-number">'+number+'.</span> <a href="'+esc(href)+'" target="_blank" rel="noopener noreferrer" aria-label="Open cited source: '+esc(label)+'">'+esc(label)+'</a></p>').join('');
   const notes=page('References','<p class="frame-reference-intro">Sources cited in The Door Is a Score. Opening a source is a deliberate action outside this edition.</p>'+noteItems,'door-references');
   const out={

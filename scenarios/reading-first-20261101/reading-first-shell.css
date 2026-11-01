@@ -113,3 +113,14 @@ html:not(.js) body{height:auto;overflow:auto}html:not(.js) .reading-shell{height
 .frame-reference-entry{font-size:.78em!important;line-height:1.45!important;padding:0 0 .4em 0;}
 .frame-reference-number{font-family:ui-sans-serif,-apple-system,sans-serif;font-size:.8em;color:var(--muted)}
 .frame-reference-entry a{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+
+
+/* The writer's Bookshelf is only two authored books, never empty catalogue slots. */
+.frame-type-cover a,.frame-book-cover:not(:has(img)) a{
+ min-height:148px;border:1px solid var(--line);display:flex;flex-direction:column;
+ justify-content:center;align-items:center;gap:.55em;
+ background:none;color:var(--ink);text-align:center;
+}
+.frame-cover-mark{display:block;font:normal clamp(2rem,4.5vw,3.8rem)/1 "Iowan Old Style",Palatino,Georgia,serif;color:var(--ink)}
+.frame-type-cover .frame-cover-name,.frame-book-cover:not(:has(img)) .frame-cover-name{font-size:1em}
+.frame-book-cover figcaption{text-align:center}

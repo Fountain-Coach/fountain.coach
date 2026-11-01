@@ -1,0 +1,262 @@
+{
+  "sourceOwner": "Fountain-Coach/solstice.fountain.coach",
+  "sourceSHA256": "3704caa5375046a13e54257273725eabc868563b712f89b48de9a4c32af41db6",
+  "manifestSHA256": "169efc13bcab7407c6ff65b52e774d79d740d4fe30b854be7ecbeb5dafdedfde",
+  "reading": "01",
+  "publishedWorks": 30,
+  "images": 41,
+  "inventory": [
+    {
+      "id": "solstice-reading-01--vergil",
+      "title": "Vergil",
+      "kind": "preface",
+      "sourceParagraphs": 40
+    },
+    {
+      "id": "solstice-reading-01--preface",
+      "title": "First Reading — Preface",
+      "kind": "preface",
+      "sourceParagraphs": 5
+    },
+    {
+      "id": "solstice-reading-01--2025-12-22-anweisung-an-den-schmerz",
+      "title": "Anweisung an den Schmerz",
+      "kind": "work",
+      "date": "2025-12-22",
+      "images": 1,
+      "sourceParagraphs": 8
+    },
+    {
+      "id": "solstice-reading-01--2025-12-23-integration",
+      "title": "Integration",
+      "kind": "work",
+      "date": "2025-12-23",
+      "images": 1,
+      "sourceParagraphs": 16
+    },
+    {
+      "id": "solstice-reading-01--2025-12-28-renaturalization",
+      "title": "Renaturalization",
+      "kind": "work",
+      "date": "2025-12-28",
+      "images": 1,
+      "sourceParagraphs": 16
+    },
+    {
+      "id": "solstice-reading-01--2026-01-08-vier-aussagen-zum-atherleib",
+      "title": "Vier Aussagen zum Ätherleib",
+      "kind": "work",
+      "date": "2026-01-08",
+      "images": 1,
+      "sourceParagraphs": 28
+    },
+    {
+      "id": "solstice-reading-01--2026-01-22-three-floors",
+      "title": "Three Floors",
+      "kind": "work",
+      "date": "2026-01-22",
+      "images": 1,
+      "sourceParagraphs": 15
+    },
+    {
+      "id": "solstice-reading-01--2026-01-23-i-keep-moving",
+      "title": "I Keep Moving",
+      "kind": "work",
+      "date": "2026-01-23",
+      "images": 1,
+      "sourceParagraphs": 14
+    },
+    {
+      "id": "solstice-reading-01--2026-02-04-two-rooms",
+      "title": "Two Rooms",
+      "kind": "work",
+      "date": "2026-02-04",
+      "images": 1,
+      "sourceParagraphs": 14
+    },
+    {
+      "id": "solstice-reading-01--2026-02-14-on-a-future-not-yet-drafted",
+      "title": "On a Future Not Yet Drafted",
+      "kind": "work",
+      "date": "2026-02-14",
+      "images": 3,
+      "sourceParagraphs": 13
+    },
+    {
+      "id": "solstice-reading-01--2026-02-28-no-optimize",
+      "title": "No Optimize",
+      "kind": "work",
+      "date": "2026-02-28",
+      "images": 1,
+      "sourceParagraphs": 15
+    },
+    {
+      "id": "solstice-reading-01--2026-03-16-the-teatre-of-the-mind",
+      "title": "The Teatre of the Mind",
+      "kind": "work",
+      "date": "2026-03-16",
+      "images": 2,
+      "sourceParagraphs": 22
+    },
+    {
+      "id": "solstice-reading-01--2026-03-20-my-place-in-space",
+      "title": "My Place in Space",
+      "kind": "work",
+      "date": "2026-03-20",
+      "images": 1,
+      "sourceParagraphs": 14
+    },
+    {
+      "id": "solstice-reading-01--2026-03-21-muttersprache",
+      "title": "Muttersprache",
+      "kind": "work",
+      "date": "2026-03-21",
+      "images": 1,
+      "sourceParagraphs": 10
+    },
+    {
+      "id": "solstice-reading-01--2026-04-22-the-writing-hand",
+      "title": "The Writing Hand",
+      "kind": "work",
+      "date": "2026-04-22",
+      "images": 1,
+      "sourceParagraphs": 9
+    },
+    {
+      "id": "solstice-reading-01--2026-04-23-who-is-bee",
+      "title": "Who Is Bee?",
+      "kind": "work",
+      "date": "2026-04-23",
+      "images": 1,
+      "sourceParagraphs": 12
+    },
+    {
+      "id": "solstice-reading-01--2026-04-30-about-writing-letters",
+      "title": "About Writing Letters",
+      "kind": "work",
+      "date": "2026-04-30",
+      "images": 1,
+      "sourceParagraphs": 12
+    },
+    {
+      "id": "solstice-reading-01--2026-05-01-a-score-before-production",
+      "title": "A Score Before Production",
+      "kind": "work",
+      "date": "2026-05-01",
+      "images": 2,
+      "sourceParagraphs": 16
+    },
+    {
+      "id": "solstice-reading-01--2026-05-25-seitenlicht",
+      "title": "Seitenlicht",
+      "kind": "work",
+      "date": "2026-05-25",
+      "images": 1,
+      "sourceParagraphs": 13
+    },
+    {
+      "id": "solstice-reading-01--2026-05-30-the-sheet",
+      "title": "The Sheet",
+      "kind": "work",
+      "date": "2026-05-30",
+      "images": 5,
+      "sourceParagraphs": 13
+    },
+    {
+      "id": "solstice-reading-01--2026-06-06-the-sentimental-machine",
+      "title": "The Sentimental Machine",
+      "kind": "work",
+      "date": "2026-06-06",
+      "images": 2,
+      "sourceParagraphs": 18
+    },
+    {
+      "id": "solstice-reading-01--2026-06-15-fck-frg-we-all-had-parents",
+      "title": "FCK FRG / We All Had Parents",
+      "kind": "work",
+      "date": "2026-06-15",
+      "images": 2,
+      "sourceParagraphs": 30
+    },
+    {
+      "id": "solstice-reading-01--2026-06-24-prufe-dein-gewicht",
+      "title": "Prüfe dein Gewicht",
+      "kind": "work",
+      "date": "2026-06-24",
+      "images": 2,
+      "sourceParagraphs": 35
+    },
+    {
+      "id": "solstice-reading-01--2026-07-21-everything-else-is-illustration",
+      "title": "Everything Else Is Illustration",
+      "kind": "work",
+      "date": "2026-07-21",
+      "images": 1,
+      "sourceParagraphs": 10
+    },
+    {
+      "id": "solstice-reading-01--2026-07-28-bees-journal",
+      "title": "Bee’s Journal",
+      "kind": "work",
+      "date": "2026-07-28",
+      "images": 1,
+      "sourceParagraphs": 7
+    },
+    {
+      "id": "solstice-reading-01--2026-07-31-n-journal",
+      "title": "N. Journal",
+      "kind": "work",
+      "date": "2026-07-31",
+      "images": 1,
+      "sourceParagraphs": 3
+    },
+    {
+      "id": "solstice-reading-01--2026-08-17-the-scissors",
+      "title": "The Scissors",
+      "kind": "work",
+      "date": "2026-08-17",
+      "images": 1,
+      "sourceParagraphs": 117
+    },
+    {
+      "id": "solstice-reading-01--2026-08-19-six-panels",
+      "title": "Six Panels",
+      "kind": "work",
+      "date": "2026-08-19",
+      "images": 1,
+      "sourceParagraphs": 13
+    },
+    {
+      "id": "solstice-reading-01--2026-08-28-the-old-woman",
+      "title": "The Old Woman",
+      "kind": "work",
+      "date": "2026-08-28",
+      "images": 1,
+      "sourceParagraphs": 10
+    },
+    {
+      "id": "solstice-reading-01--2026-09-04-the-strawberry",
+      "title": "The Strawberry",
+      "kind": "work",
+      "date": "2026-09-04",
+      "images": 1,
+      "sourceParagraphs": 19
+    },
+    {
+      "id": "solstice-reading-01--2026-09-06-leselust",
+      "title": "Leselust",
+      "kind": "work",
+      "date": "2026-09-06",
+      "images": 1,
+      "sourceParagraphs": 11
+    },
+    {
+      "id": "solstice-reading-01--2026-09-18-object-crossing-voice",
+      "title": "Object / Crossing / Voice",
+      "kind": "work",
+      "date": "2026-09-18",
+      "images": 1,
+      "sourceParagraphs": 13
+    }
+  ]
+}
