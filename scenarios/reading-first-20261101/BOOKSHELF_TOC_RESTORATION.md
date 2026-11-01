@@ -11,3 +11,12 @@
 **Environment:** owner-controlled MacMiniDocker stage, current verified predecessor `shared-shell-20261101-v95-dark-art-paper`, authenticated HTTPS `https://192.168.8.50:8243/estate/#/read/library`. Copy v95 immutable files to a distinct v96 stage release, update only the two Press assets, verify source digests, keep rollback and no public production mutation.
 
 **Skill correction:** canonical Linotype collection-gallery prose previously said a collection statement offered an action to open the complete contents. That was precisely the bad indirection. Replace it with the full contents directly on the text surface, not a second page, and keep the image gallery facing it. Source/installed Skill distribution remain separate.
+
+## Live WLAN acceptance (1 November 2026)
+
+- Active release: `shared-shell-20261101-v96-contents-facing-gallery` on the original owner-WLAN HTTPS staging host; v95 remains immutable rollback.
+- Authored change: source commit `aa7689cdfd77ac3202430780e1274d75e41d9130`; source original manuscripts, images and page compositor unchanged; only `reading-first-app.js` and `reading-first-shell.css` changed.
+- The un-intercepted live stage passed `bookshelf-contents-live.json` for three landscape, portrait and phone profiles: Essays **7 visible contents entries** facing **7 images**; First Readings **32 visible contents entries** (two preludes plus thirty works) facing **30 images**, with independent scroll areas, direct title-to-work navigation, parent returning straight to the facing Bookshelf, restored horizontal/index positions and fixed footer.
+- `bookshelf-gallery-live.json` passed all three existing square-gallery navigation and independent image-scroll tests. `dark-paper-live.json` passed its two existing image backing and source-preservation tests. No browser errors in these test sets.
+- The active release receipt `bookshelf-toc-release.json` verifies ten file SHA-256 digests, retained source media and no public release effect. Direct HTTPS readback returned 200 with valid TLS.
+- Physical iPad Safari touch, VoiceOver and full EU accessibility remain unverified for this revision; this evidence is live private WebKit staging only.

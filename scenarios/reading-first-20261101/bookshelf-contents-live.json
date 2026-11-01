@@ -1,0 +1,112 @@
+{
+  "origin": "https://192.168.8.50:8243",
+  "sourceInterception": false,
+  "runs": [
+    {
+      "profile": "landscape",
+      "counts": [
+        {
+          "id": "essays",
+          "count": 7,
+          "scrollable": false
+        },
+        {
+          "id": "first-readings",
+          "count": 32,
+          "scrollable": true
+        }
+      ],
+      "galleries": [
+        {
+          "id": "essays",
+          "count": 7
+        },
+        {
+          "id": "first-readings",
+          "count": 30
+        }
+      ],
+      "at": {
+        "x": 1068,
+        "y": 350
+      },
+      "restored": {
+        "x": 1068,
+        "y": 350,
+        "foot": 820
+      },
+      "errors": []
+    },
+    {
+      "profile": "portrait",
+      "counts": [
+        {
+          "id": "essays",
+          "count": 7,
+          "scrollable": false
+        },
+        {
+          "id": "first-readings",
+          "count": 32,
+          "scrollable": true
+        }
+      ],
+      "galleries": [
+        {
+          "id": "essays",
+          "count": 7
+        },
+        {
+          "id": "first-readings",
+          "count": 30
+        }
+      ],
+      "at": {
+        "x": 735,
+        "y": 350
+      },
+      "restored": {
+        "x": 735,
+        "y": 350,
+        "foot": 1180
+      },
+      "errors": []
+    },
+    {
+      "profile": "phone",
+      "counts": [
+        {
+          "id": "essays",
+          "count": 7,
+          "scrollable": false
+        },
+        {
+          "id": "first-readings",
+          "count": 32,
+          "scrollable": true
+        }
+      ],
+      "galleries": [
+        {
+          "id": "essays",
+          "count": 7
+        },
+        {
+          "id": "first-readings",
+          "count": 30
+        }
+      ],
+      "at": {
+        "x": 690,
+        "y": 350
+      },
+      "restored": {
+        "x": 690,
+        "y": 350,
+        "foot": 844
+      },
+      "errors": []
+    }
+  ],
+  "failures": 0
+}
