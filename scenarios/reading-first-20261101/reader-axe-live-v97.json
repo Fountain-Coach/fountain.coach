@@ -1,0 +1,113 @@
+{
+  "engine": "WebKit",
+  "scanner": "axe-core 4.13.0",
+  "physicaliPad": false,
+  "tests": [
+    {
+      "profile": "landscape-light",
+      "id": "library",
+      "label": "Bookshelf",
+      "violations": [],
+      "incomplete": 1
+    },
+    {
+      "profile": "landscape-light",
+      "id": "essays",
+      "label": "Essays contents",
+      "violations": [],
+      "incomplete": 1
+    },
+    {
+      "profile": "landscape-light",
+      "id": "first-readings",
+      "label": "First Readings contents",
+      "violations": [],
+      "incomplete": 1
+    },
+    {
+      "profile": "landscape-light",
+      "id": "essay--the-door-is-a-score",
+      "label": "Illustrated essay",
+      "violations": [],
+      "incomplete": 1
+    },
+    {
+      "profile": "landscape-light",
+      "id": "solstice-reading-01--2025-12-22-anweisung-an-den-schmerz",
+      "label": "Teatro Score",
+      "violations": [],
+      "incomplete": 1
+    },
+    {
+      "profile": "landscape-dark",
+      "id": "library",
+      "label": "Bookshelf",
+      "violations": [],
+      "incomplete": 1
+    },
+    {
+      "profile": "landscape-dark",
+      "id": "essays",
+      "label": "Essays contents",
+      "violations": [],
+      "incomplete": 1
+    },
+    {
+      "profile": "landscape-dark",
+      "id": "first-readings",
+      "label": "First Readings contents",
+      "violations": [],
+      "incomplete": 1
+    },
+    {
+      "profile": "landscape-dark",
+      "id": "essay--the-door-is-a-score",
+      "label": "Illustrated essay",
+      "violations": [],
+      "incomplete": 1
+    },
+    {
+      "profile": "landscape-dark",
+      "id": "solstice-reading-01--2025-12-22-anweisung-an-den-schmerz",
+      "label": "Teatro Score",
+      "violations": [],
+      "incomplete": 1
+    },
+    {
+      "profile": "phone-dark",
+      "id": "library",
+      "label": "Bookshelf",
+      "violations": [],
+      "incomplete": 1
+    },
+    {
+      "profile": "phone-dark",
+      "id": "essays",
+      "label": "Essays contents",
+      "violations": [],
+      "incomplete": 1
+    },
+    {
+      "profile": "phone-dark",
+      "id": "first-readings",
+      "label": "First Readings contents",
+      "violations": [],
+      "incomplete": 1
+    },
+    {
+      "profile": "phone-dark",
+      "id": "essay--the-door-is-a-score",
+      "label": "Illustrated essay",
+      "violations": [],
+      "incomplete": 1
+    },
+    {
+      "profile": "phone-dark",
+      "id": "solstice-reading-01--2025-12-22-anweisung-an-den-schmerz",
+      "label": "Teatro Score",
+      "violations": [],
+      "incomplete": 1
+    }
+  ],
+  "seriousOrCritical": 0
+}

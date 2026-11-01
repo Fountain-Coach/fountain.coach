@@ -22,3 +22,11 @@ Source: `Fountain-Coach/.github/.codex/skills/linotype-estate-template/`, update
 ## Staging delivery
 
 Private owner WLAN only: preserve immutable `shared-shell-20261101-v96-contents-facing-gallery` as rollback; activate new v97 candidate by copying that release, replacing exactly two source-owned assets, recalculating SHA-256 and atomically switching the existing release symlink. HTTPS and live test readback required. No DNS, production publisher or new daemon.
+
+## Live private staging acceptance
+
+The existing staging server activated immutable release `shared-shell-20261101-v97-one-collection-two-views`, preserving v96 for rollback. Live, un-intercepted Mac WebKit tests against `https://192.168.8.50:8243/estate/#/read/library` passed **three** collection-navigation/adaptive-layout profiles with exactly **two collection units** and shared selection/position persistence, **21** original essay-opening profiles, **two** light/dark original-art tests and **15** axe-core WCAG A/AA browser scans (zero reported violations). Evidence: `collection-identity-live.json`, `essay-abstracts-live.json`, `dark-paper-live.json`, `reader-axe-live-v97.json`.
+
+The original direct-static page `estate/index.html`, Linotype paginator, gallery source manifest and all works are unchanged from v96. The only authored JS/CSS changes are source-owned by Fountain Press at `Fountain-Coach/fountain.coach@22375f6f0307946144ca04d1fd1b30a6b2fcda94`. The existing Linotype skill change was merged as `Fountain-Coach/.github@e69b0b0d069701794f177f0df2831ce2a4243c32` in PR #30 with 64 passing canonical skill tests and catalog SHA-256 `b0d1d3206c7d62269243a64cfcc98398b593ad93dee886d77eaba79b21f27c12`.
+
+Physical iPad Safari touch and native VoiceOver remain unverified, and public production is unaffected. Source review PR #3 remains separate from stage activation and has unresolved conflicts with later public-publication files.
