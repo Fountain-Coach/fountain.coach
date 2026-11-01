@@ -37,6 +37,13 @@ const essaySequence=[...templates.keys()].filter(x=>x.startsWith('essay--')).rev
 const solsticeSequence=[...templates.keys()].filter(x=>x.startsWith('solstice-reading-01--'));
 if(essaySequence.length!==7||solsticeSequence.length!==32)throw Error('Admitted collection inventory changed');
 const contents={essays:essaySequence,'first-readings':solsticeSequence};
+const galleryData=JSON.parse(document.getElementById('reader-gallery-data')?.textContent||'null');
+if(galleryData?.schema!=='fountain.press.bookshelf-gallery.v1')throw Error('Bookshelf gallery source missing');
+const galleries=galleryData.collections;
+if(galleries.essays.length!==7||galleries['first-readings'].length!==30 ||
+ galleries.essays.some((e,i)=>e.id!==essaySequence[i]) ||
+ galleries['first-readings'].some((e,i)=>e.id!==solsticeSequence[i+2]))
+ throw Error('Gallery no longer matches admitted source ordering');
 function entryVolume(name){
  if(name==='solstice'||name==='solstice-reading-01')return 'first-readings';
  return name;
@@ -56,6 +63,7 @@ function adjacentVolume(name,step){
  return sequence[at]|| (at<0?(sequence===essaySequence?'essays':'first-readings'):null);
 }
 const surfaceOffsets={shelf:0,essays:0,'first-readings':0};
+const galleryOffsets={essays:0,'first-readings':0};
 let openAtEnd=null;
 let engine=null,signature='',frame=0,pointer=null,volume='library',ready=false,entryUrl=null;
 const positions=new Map();
@@ -174,7 +182,12 @@ function present(target,{write=true,focus=false}={}){
 function recordSurfaceOffset(){
  const area=viewport.querySelector('.reader-scroll-region');
  if(!area)return;
- if(volume==='library')surfaceOffsets.shelf=area.scrollLeft;
+ if(volume==='library'){
+  surfaceOffsets.shelf=area.scrollLeft;
+  for(const scroller of viewport.querySelectorAll('.reader-gallery-scroll')){
+   galleryOffsets[scroller.dataset.collection]=scroller.scrollTop;
+  }
+ }
  else if(isContents(volume))surfaceOffsets[volume]=area.scrollTop;
 }
 function renderSurface(){
@@ -193,15 +206,64 @@ function renderSurface(){
  scroll.setAttribute('role','region');
  scroll.setAttribute('aria-label',volume==='library'?'Browse books horizontally': 'Scroll '+labels.get(volume)+' contents vertically');
  if(volume==='library'){
-  const books=[['Essays','essays','Seven essays · chronological'],['First Readings','first-readings','Reading 01 — First Reading']];
-  for(const [name,id,detail] of books){
-   const button=document.createElement('button');
-   button.type='button';button.className='reader-shelf-book';
-   button.dataset.readerTarget=id;
-   const heading=document.createElement('span');heading.className='reader-shelf-title';heading.textContent=name;
-   const sub=document.createElement('span');sub.className='reader-shelf-subtitle';sub.textContent=detail;
-   button.append(heading,sub);scroll.append(button);
+  const books=[
+   {title:'Essays',id:'essays',description:'Seven essays in chronological sequence. Each work has a source-owned illustration, or an actual typeset-page preview.',detail:'7 essays · chronological'},
+   {title:'First Readings',id:'first-readings',description:'Reading 01 — First Reading. Thirty published works, each accompanied by original imagery. The complete reading preserves all forty-one source illustrations.',detail:'Reading 01 · 30 works'}
+  ];
+  const savedGalleryOffsets={...galleryOffsets};
+  let galleryRestoreComplete=false;
+  for(const book of books){
+   const statement=document.createElement('section');
+   statement.className='reader-shelf-panel reader-shelf-statement';
+   statement.setAttribute('aria-label',book.title+' collection');
+   const heading=document.createElement('h2');heading.textContent=book.title;
+   const prose=document.createElement('p');prose.textContent=book.description;
+   const link=document.createElement('button');link.type='button';
+   link.className='reader-collection-open';link.dataset.readerTarget=book.id;
+   link.textContent='Read '+book.title;link.setAttribute('aria-label','Open '+book.title+' contents');
+   statement.append(heading,prose,link);scroll.append(statement);
+   const gallery=document.createElement('section');
+   gallery.className='reader-shelf-panel reader-shelf-gallery';
+   gallery.setAttribute('aria-label',book.title+' illustrated contents');
+   const caption=document.createElement('h2');caption.textContent=book.title+' · Images';
+   gallery.append(caption);
+   const vertical=document.createElement('div');
+   vertical.className='reader-gallery-scroll';vertical.tabIndex=0;
+   vertical.dataset.collection=book.id;
+   vertical.setAttribute('role','region');
+   vertical.setAttribute('aria-label',book.title+' illustrated gallery, scroll vertically');
+   const tiles=document.createElement('div');tiles.className='reader-gallery-grid';
+   for(const item of galleries[book.id]){
+    const tile=document.createElement('button');
+    tile.className='reader-gallery-item';tile.type='button';
+    tile.dataset.readerTarget=item.id;
+    tile.setAttribute('aria-label','Read '+labels.get(item.id)+' in '+book.title);
+    const square=document.createElement('span');
+    square.className='reader-gallery-square';
+    const image=document.createElement('img');
+    image.src=item.src;image.alt=item.alt||labels.get(item.id);
+    image.loading=book.id==='essays'?'eager':'lazy';image.decoding='async';
+    square.append(image);
+    const name=document.createElement('span');
+    name.className='reader-gallery-title';
+    name.textContent=labels.get(item.id);
+    tile.append(square,name);tiles.append(tile);
+   }
+   vertical.append(tiles);gallery.append(vertical);scroll.append(gallery);
+   vertical.scrollTop=savedGalleryOffsets[book.id];
+   vertical.addEventListener('scroll',()=>{
+    if(galleryRestoreComplete && vertical.isConnected && volume==='library')galleryOffsets[book.id]=vertical.scrollTop;
+   },{passive:true});
   }
+  // The nested gallery can only restore its scroll after layout has established
+  // a finite scrollHeight. Initial resize/scroll events must not zero the saved offset.
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{
+   if(volume!=='library'||!outer.isConnected)return;
+   for(const vertical of outer.querySelectorAll('.reader-gallery-scroll')){
+    vertical.scrollTop=savedGalleryOffsets[vertical.dataset.collection];
+   }
+   galleryRestoreComplete=true;
+  }));
  }else{
   const entries=contents[volume];
   if(volume==='first-readings'){
@@ -234,11 +296,14 @@ function renderSurface(){
  },{passive:true});
  if(volume==='library'){
   scroll.addEventListener('wheel',event=>{
+   if(event.target.closest('.reader-gallery-scroll'))return;
    if(Math.abs(event.deltaY)>Math.abs(event.deltaX)){
     event.preventDefault();scroll.scrollLeft+=event.deltaY;
    }
   },{passive:false});
   scroll.addEventListener('keydown',event=>{
+   if(event.target.closest('.reader-gallery-scroll')&&
+      (event.key==='ArrowUp'||event.key==='ArrowDown'))return;
    if(event.key==='ArrowRight'||event.key==='ArrowLeft'){
     event.preventDefault();scroll.scrollBy({left:event.key==='ArrowRight'?240:-240,behavior:'smooth'});
    }

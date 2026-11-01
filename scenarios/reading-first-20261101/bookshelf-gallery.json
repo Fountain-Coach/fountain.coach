@@ -1,0 +1,236 @@
+{
+  "schema": "fountain.press.bookshelf-gallery.v1",
+  "source": {
+    "essays": "original-essays-continuing.html / essay-share-manifest.json",
+    "firstReadings": "published solstice-first-reading-source.html / solstice-source-inventory.json"
+  },
+  "order": "published manuscript order",
+  "collections": {
+    "essays": [
+      {
+        "id": "essay--reframe-and-the-business-value-of-the-estate",
+        "src": "/estate/essays/reframe-and-the-business-value-of-the-estate/assets/address-landscape.png",
+        "alt": "Minimal isometric room with an archive, open threshold, and held red mark representing a personal address",
+        "sourceKind": "original-source-image"
+      },
+      {
+        "id": "essay--teatro-an-unfinished-composition",
+        "src": "/estate/essays/teatro-an-unfinished-composition/assets/teatro-score-memory-vector-human-condition.svg",
+        "alt": "Teatro Score Memory Vector: seven sequential movements from field and presence to an unfinished form",
+        "sourceKind": "original-source-image"
+      },
+      {
+        "id": "essay--semantic-compilation-the-archive-is-not-the-edition",
+        "src": "/estate/essays/semantic-compilation-the-archive-is-not-the-edition/assets/semantic-compilation-estate-rail.svg",
+        "alt": "The Fountain Coach estate navigation rail admits the eight-point Solstice mark above a three-part diagram: an archive, an interpretive editorial plan, and a reading edition.",
+        "sourceKind": "original-source-image"
+      },
+      {
+        "id": "essay--to-read-is-not-to-remember",
+        "src": "/estate/assets/essay-share/did-the-machine-actually-read-the-book.png",
+        "alt": "Typeset opening spread of Did the Machine Actually Read the Book? showing its title, argument and original essay typography",
+        "sourceKind": "actual-typeset-page-preview"
+      },
+      {
+        "id": "essay--the-composable-book",
+        "src": "/estate/essays/the-composable-book/assets/01-book-spread.svg",
+        "alt": "An open book is one composition. Reading and Composer meet at its binding; neither page is a docked application window.",
+        "sourceKind": "original-source-image"
+      },
+      {
+        "id": "essay--the-ear-that-learns",
+        "src": "/estate/essays/the-ear-that-learns/assets/listening-room.png",
+        "alt": "Architectural isometric engraving of a music score and sound source facing a listening instrument across an open rehearsal room, with one vermilion mark and figure caption 04 HEARING / REHEARSAL.",
+        "sourceKind": "original-source-image"
+      },
+      {
+        "id": "essay--the-door-is-a-score",
+        "src": "/estate/essays/the-door-is-a-score/assets/teatro-door-score.png",
+        "alt": "Teatro graphic score: orange impacts and returning traces cross black spatial planes; a narrow threshold and a wide open interval hold the action in suspense.",
+        "sourceKind": "original-source-image"
+      }
+    ],
+    "first-readings": [
+      {
+        "id": "solstice-reading-01--2025-12-22-anweisung-an-den-schmerz",
+        "src": "/solstice/assets/edition/post-2025-12-22-b0e6cf8252aca0da.jpg",
+        "alt": "Image 1 of 1 accompanying Anweisung an den Schmerz, 2025-12-22",
+        "sourceKind": "published-Teatro-Score"
+      },
+      {
+        "id": "solstice-reading-01--2025-12-23-integration",
+        "src": "/solstice/assets/edition/post-2025-12-23-f0b9144a1df6ae0b.jpg",
+        "alt": "Image 1 of 1 accompanying Integration, 2025-12-23",
+        "sourceKind": "published-Teatro-Score"
+      },
+      {
+        "id": "solstice-reading-01--2025-12-28-renaturalization",
+        "src": "/solstice/assets/edition/post-2025-12-28-c9d7b304d2577e3c.jpg",
+        "alt": "Image 1 of 1 accompanying Renaturalization, 2025-12-28",
+        "sourceKind": "published-Teatro-Score"
+      },
+      {
+        "id": "solstice-reading-01--2026-01-08-vier-aussagen-zum-atherleib",
+        "src": "/solstice/assets/edition/post-2026-01-08-7e60c7273855d415.jpg",
+        "alt": "Image 1 of 1 accompanying Vier Aussagen zum Ätherleib, 2026-01-08",
+        "sourceKind": "published-Teatro-Score"
+      },
+      {
+        "id": "solstice-reading-01--2026-01-22-three-floors",
+        "src": "/solstice/assets/edition/post-2026-01-22-5df50180208e95ac.jpg",
+        "alt": "Image 1 of 1 accompanying Three Floors, 2026-01-22",
+        "sourceKind": "published-Teatro-Score"
+      },
+      {
+        "id": "solstice-reading-01--2026-01-23-i-keep-moving",
+        "src": "/solstice/assets/edition/post-2026-01-23-1c3c1d6806e93f7b.jpg",
+        "alt": "Image 1 of 1 accompanying I Keep Moving, 2026-01-23",
+        "sourceKind": "published-Teatro-Score"
+      },
+      {
+        "id": "solstice-reading-01--2026-02-04-two-rooms",
+        "src": "/solstice/assets/edition/post-2026-02-04-d896e49fab8b9de6.jpg",
+        "alt": "Image 1 of 1 accompanying Two Rooms, 2026-02-04",
+        "sourceKind": "published-Teatro-Score"
+      },
+      {
+        "id": "solstice-reading-01--2026-02-14-on-a-future-not-yet-drafted",
+        "src": "/solstice/assets/edition/post-2026-02-14-a25168e8eaa4ea6f.jpg",
+        "alt": "Image 1 of 3 accompanying On a Future Not Yet Drafted, 2026-02-14",
+        "sourceKind": "published-Teatro-Score"
+      },
+      {
+        "id": "solstice-reading-01--2026-02-28-no-optimize",
+        "src": "/solstice/assets/edition/post-2026-02-28-90f23f8004961575.jpg",
+        "alt": "Image 1 of 1 accompanying No Optimize, 2026-02-28",
+        "sourceKind": "published-Teatro-Score"
+      },
+      {
+        "id": "solstice-reading-01--2026-03-16-the-teatre-of-the-mind",
+        "src": "/solstice/assets/edition/post-2026-03-16-f8848e33f3017105.jpg",
+        "alt": "Image 1 of 2 accompanying The Teatre of the Mind, 2026-03-16",
+        "sourceKind": "published-Teatro-Score"
+      },
+      {
+        "id": "solstice-reading-01--2026-03-20-my-place-in-space",
+        "src": "/solstice/assets/edition/post-2026-03-20-6a08a376a9a616ad.jpg",
+        "alt": "Image 1 of 1 accompanying My Place in Space, 2026-03-20",
+        "sourceKind": "published-Teatro-Score"
+      },
+      {
+        "id": "solstice-reading-01--2026-03-21-muttersprache",
+        "src": "/solstice/assets/edition/post-2026-03-21-dd4b3443194bbfe0.jpg",
+        "alt": "Image 1 of 1 accompanying Muttersprache, 2026-03-21",
+        "sourceKind": "published-Teatro-Score"
+      },
+      {
+        "id": "solstice-reading-01--2026-04-22-the-writing-hand",
+        "src": "/solstice/assets/edition/post-2026-04-22-a0427fee962c65c8.jpg",
+        "alt": "Image 1 of 1 accompanying The Writing Hand, 2026-04-22",
+        "sourceKind": "published-Teatro-Score"
+      },
+      {
+        "id": "solstice-reading-01--2026-04-23-who-is-bee",
+        "src": "/solstice/assets/edition/post-2026-04-23-3115141ef9dee17f.jpg",
+        "alt": "Image 1 of 1 accompanying Who Is Bee?, 2026-04-23",
+        "sourceKind": "published-Teatro-Score"
+      },
+      {
+        "id": "solstice-reading-01--2026-04-30-about-writing-letters",
+        "src": "/solstice/assets/edition/post-2026-04-30-0e22d7426fe14b6a.jpg",
+        "alt": "Image 1 of 1 accompanying About Writing Letters, 2026-04-30",
+        "sourceKind": "published-Teatro-Score"
+      },
+      {
+        "id": "solstice-reading-01--2026-05-01-a-score-before-production",
+        "src": "/solstice/assets/edition/post-2026-05-01-ca5df313851efc64.jpg",
+        "alt": "Image 1 of 2 accompanying A Score Before Production, 2026-05-01",
+        "sourceKind": "published-Teatro-Score"
+      },
+      {
+        "id": "solstice-reading-01--2026-05-25-seitenlicht",
+        "src": "/solstice/assets/edition/post-2026-05-25-ed229a3996db0d32.jpg",
+        "alt": "Image 1 of 1 accompanying Seitenlicht, 2026-05-25",
+        "sourceKind": "published-Teatro-Score"
+      },
+      {
+        "id": "solstice-reading-01--2026-05-30-the-sheet",
+        "src": "/solstice/assets/edition/post-2026-05-30-c32610cb27096d79.jpg",
+        "alt": "Image 1 of 5 accompanying The Sheet, 2026-05-30",
+        "sourceKind": "published-Teatro-Score"
+      },
+      {
+        "id": "solstice-reading-01--2026-06-06-the-sentimental-machine",
+        "src": "/solstice/assets/edition/post-2026-06-06-398a7827c5faf579.jpg",
+        "alt": "Image 1 of 2 accompanying The Sentimental Machine, 2026-06-06",
+        "sourceKind": "published-Teatro-Score"
+      },
+      {
+        "id": "solstice-reading-01--2026-06-15-fck-frg-we-all-had-parents",
+        "src": "/solstice/assets/edition/post-2026-06-15-fa70b1744d6af826.jpg",
+        "alt": "Image 1 of 2 accompanying FCK FRG / We All Had Parents, 2026-06-15",
+        "sourceKind": "published-Teatro-Score"
+      },
+      {
+        "id": "solstice-reading-01--2026-06-24-prufe-dein-gewicht",
+        "src": "/solstice/assets/edition/post-2026-06-24-8f2981e0b674fe01.jpg",
+        "alt": "Image 1 of 2 accompanying Prüfe dein Gewicht, 2026-06-24",
+        "sourceKind": "published-Teatro-Score"
+      },
+      {
+        "id": "solstice-reading-01--2026-07-21-everything-else-is-illustration",
+        "src": "/solstice/assets/edition/post-2026-07-21-728a816389b59438.jpg",
+        "alt": "Image 1 of 1 accompanying Everything Else Is Illustration, 2026-07-21",
+        "sourceKind": "published-Teatro-Score"
+      },
+      {
+        "id": "solstice-reading-01--2026-07-28-bees-journal",
+        "src": "/solstice/assets/edition/post-2026-07-28-cdd8e5b1c9628c67.jpg",
+        "alt": "Image 1 of 1 accompanying Bee’s Journal, 2026-07-28",
+        "sourceKind": "published-Teatro-Score"
+      },
+      {
+        "id": "solstice-reading-01--2026-07-31-n-journal",
+        "src": "/solstice/assets/edition/post-2026-07-31-b345eeebe3c904df.jpg",
+        "alt": "Image 1 of 1 accompanying N. Journal, 2026-07-31",
+        "sourceKind": "published-Teatro-Score"
+      },
+      {
+        "id": "solstice-reading-01--2026-08-17-the-scissors",
+        "src": "/solstice/assets/edition/teatro-score-2026-08-17.jpg",
+        "alt": "Image 1 of 1 accompanying The Scissors, 2026-08-17",
+        "sourceKind": "published-Teatro-Score"
+      },
+      {
+        "id": "solstice-reading-01--2026-08-19-six-panels",
+        "src": "/solstice/assets/edition/teatro-score-2026-08-19.jpg",
+        "alt": "Image 1 of 1 accompanying Six Panels, 2026-08-19",
+        "sourceKind": "published-Teatro-Score"
+      },
+      {
+        "id": "solstice-reading-01--2026-08-28-the-old-woman",
+        "src": "/solstice/assets/edition/post-2026-08-28-330a889f93b0b76d.jpg",
+        "alt": "Image 1 of 1 accompanying The Old Woman, 2026-08-28",
+        "sourceKind": "published-Teatro-Score"
+      },
+      {
+        "id": "solstice-reading-01--2026-09-04-the-strawberry",
+        "src": "/solstice/assets/edition/post-2026-09-04-aeddf555dd785ebf.jpg",
+        "alt": "Image 1 of 1 accompanying The Strawberry, 2026-09-04",
+        "sourceKind": "published-Teatro-Score"
+      },
+      {
+        "id": "solstice-reading-01--2026-09-06-leselust",
+        "src": "/solstice/assets/edition/post-2026-09-06-0e595f232b2d6da1.jpg",
+        "alt": "Image 1 of 1 accompanying Leselust, 2026-09-06",
+        "sourceKind": "published-Teatro-Score"
+      },
+      {
+        "id": "solstice-reading-01--2026-09-18-object-crossing-voice",
+        "src": "/solstice/assets/edition/post-2026-09-18-c75d27c000b328a1.jpg",
+        "alt": "Image 1 of 1 accompanying Object / Crossing / Voice, 2026-09-18",
+        "sourceKind": "published-Teatro-Score"
+      }
+    ]
+  }
+}

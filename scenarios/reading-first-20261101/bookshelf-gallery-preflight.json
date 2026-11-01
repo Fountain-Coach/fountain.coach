@@ -1,0 +1,88 @@
+{
+  "origin": "https://192.168.8.50:8243",
+  "sourceInterception": true,
+  "profiles": [
+    {
+      "profile": "landscape",
+      "panels": [
+        "text",
+        "gallery",
+        "text",
+        "gallery"
+      ],
+      "counts": [
+        {
+          "name": "essays",
+          "n": 7
+        },
+        {
+          "name": "first-readings",
+          "n": 30
+        }
+      ],
+      "x": 1068,
+      "y": 275,
+      "restored": {
+        "x": 1068,
+        "y": 263,
+        "footer": 820
+      },
+      "errors": []
+    },
+    {
+      "profile": "portrait",
+      "panels": [
+        "text",
+        "gallery",
+        "text",
+        "gallery"
+      ],
+      "counts": [
+        {
+          "name": "essays",
+          "n": 7
+        },
+        {
+          "name": "first-readings",
+          "n": 30
+        }
+      ],
+      "x": 735,
+      "y": 275,
+      "restored": {
+        "x": 735,
+        "y": 209,
+        "footer": 1180
+      },
+      "errors": []
+    },
+    {
+      "profile": "phone",
+      "panels": [
+        "text",
+        "gallery",
+        "text",
+        "gallery"
+      ],
+      "counts": [
+        {
+          "name": "essays",
+          "n": 7
+        },
+        {
+          "name": "first-readings",
+          "n": 30
+        }
+      ],
+      "x": 1035,
+      "y": 275,
+      "restored": {
+        "x": 1035,
+        "y": 185,
+        "footer": 844
+      },
+      "errors": []
+    }
+  ],
+  "errors": 0
+}

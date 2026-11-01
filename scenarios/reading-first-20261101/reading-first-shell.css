@@ -211,3 +211,71 @@ html:not(.js) body{height:auto;overflow:auto}html:not(.js) .reading-shell{height
 .page-viewport .linotype-area .frame-essay-hero figcaption{
  text-align:left;font-size:.65em;max-width:100%;
 }
+
+
+/* FCIS collection gallery alternation: horizontal book sequence,
+   internal vertical square thumbnails, footer remains outside both scrollports. */
+.reader-bookshelf .reader-scroll-region{
+ scroll-snap-type:x mandatory;
+ touch-action:auto;
+ align-items:stretch;
+}
+.reader-shelf-panel{
+ flex:0 0 calc(50% - clamp(7px,1.5vw,17px));
+ min-width:0;max-height:100%;min-height:0;
+ scroll-snap-align:start;
+ display:flex;flex-direction:column;
+ padding:clamp(12px,2vw,28px) clamp(10px,1.6vw,24px);
+ background:none;border:0;color:var(--ink);
+}
+.reader-shelf-panel h2{
+ margin:0 0 20px;font:normal clamp(1.38rem,2.7vw,2.35rem)/1.18 "Iowan Old Style",Palatino,Georgia,serif;
+ letter-spacing:-.025em;
+}
+.reader-shelf-statement{justify-content:center}
+.reader-shelf-statement p{
+ font:normal clamp(1rem,1.8vw,1.3rem)/1.55 "Iowan Old Style",Palatino,Georgia,serif;
+ max-width:33ch;margin:0 0 24px;
+}
+.reader-collection-open{
+ align-self:start;background:none;color:var(--ink);cursor:pointer;
+ border:0;border-top:1px solid var(--line);padding:12px 0;
+ font:normal 1rem/1.3 "Iowan Old Style",Palatino,Georgia,serif;
+}
+.reader-shelf-gallery{padding-bottom:0}
+.reader-gallery-scroll{
+ min-height:0;flex:1;overflow-y:auto;overflow-x:hidden;
+ overscroll-behavior-y:contain;touch-action:pan-y;
+ scrollbar-width:thin;scrollbar-color:var(--muted) transparent;
+}
+.reader-gallery-grid{
+ display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:14px;padding:2px 4px 16px 0;
+}
+.reader-gallery-item{
+ display:flex;flex-direction:column;gap:7px;
+ border:0;background:none;color:var(--ink);padding:0;
+ text-align:left;cursor:pointer;min-width:0;
+}
+.reader-gallery-square{
+ display:grid;place-items:center;width:100%;aspect-ratio:1 / 1;
+ padding:8px;border:1px solid var(--line);background:transparent;overflow:hidden;
+}
+.reader-gallery-square img{
+ display:block;width:100%;height:100%;object-fit:contain;
+ max-width:100%;max-height:100%;
+}
+.reader-gallery-title{
+ font:normal .87rem/1.32 "Iowan Old Style",Palatino,Georgia,serif;
+ overflow-wrap:anywhere;
+}
+.reader-gallery-item:hover .reader-gallery-square{border-color:var(--ink)}
+.reader-gallery-item:focus-visible,.reader-collection-open:focus-visible{
+ outline:3px solid var(--focus);outline-offset:2px;
+}
+@media(max-width:550px){
+ .reader-shelf-panel{flex-basis:100%;padding:14px 8px}
+ .reader-gallery-grid{gap:10px}
+ .reader-gallery-square{padding:5px}
+ .reader-gallery-title{font-size:.76rem}
+}

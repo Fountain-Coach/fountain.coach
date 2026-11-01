@@ -79,5 +79,11 @@ end=page.index(' <div class="page-viewport"',start)
 continuity=page[start:end]
 assert 'continuity.title' in continuity and 'Fountain Coach began with a question about continuity.' in continuity
 page=page[:end]+'<template data-reader-volume="continuity"><div class="book-flow" data-min-leaves="1">'+continuity.split('>',1)[1].rsplit('</div>',1)[0]+'</div></template>\n'+essays+'\n'+solstice+'\n'+page[end:]
+import json
+gallery=json.loads((w/'bookshelf-gallery.json').read_text())
+assert gallery['schema']=='fountain.press.bookshelf-gallery.v1'
+assert len(gallery['collections']['essays'])==7 and len(gallery['collections']['first-readings'])==30
+gallery_json=json.dumps(gallery,ensure_ascii=True,separators=(',',':')).replace('<','\\u003c')
+page=page.replace('<div class="page-viewport"','<script type="application/json" id="reader-gallery-data">'+gallery_json+'</script>\n <div class="page-viewport"',1)
 (w/'index.html').write_text(page)
 print('written manuscript blocks',len(paragraphs),'chars',sum(map(len,paragraphs)))
