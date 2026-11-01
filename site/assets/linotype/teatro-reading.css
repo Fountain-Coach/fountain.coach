@@ -1,0 +1,22 @@
+/* The spoken edition is a control in the book frame, not a second panel. */
+.book-tools .teatro-reading-button { white-space:nowrap; }
+.book-tools .teatro-reading-button[aria-pressed="true"] { border-bottom:1px solid var(--book-accent); }
+.book-tools .teatro-reading-seek {
+  inline-size:clamp(68px,7vw,116px);
+  min-inline-size:0;
+  align-self:center;
+  accent-color:var(--book-accent);
+  cursor:pointer;
+}
+.book-tools .teatro-reading-seek:disabled { opacity:.34; cursor:default; }
+.book-tools .teatro-reading-time {
+  align-self:center;
+  font:500 10px/1.4 ui-monospace,Menlo,monospace;
+  white-space:nowrap;
+  color:var(--book-muted);
+  font-variant-numeric:tabular-nums;
+}
+.teatro-reading-status { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
+@media(max-width:980px){.book-tools .teatro-reading-time{display:none}}
+@media(max-width:740px){.book-tools .teatro-reading-seek{display:none}}
+@media(max-width:470px){.book-tools .teatro-reading-button{font-size:.65rem;padding:.4rem .2rem}}
