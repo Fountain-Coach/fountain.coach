@@ -118,7 +118,7 @@ const sources={teatro:fs.readFileSync(path.join(W,'original-teatro.html'),'utf8'
   if(!tCover)throw Error('Original First Readings cover absent');
   const libraryItems=[
    {name:'Essays',detail:'Chronological essays',target:'essays',mark:'E'},
-   {name:'Solstice (WT)',detail:'Reading 01 · First Reading',target:'solstice',mark:'✳'}
+   {name:'First Readings',detail:'Reading 01 — First Reading',target:'first-readings',mark:''}
   ];
   const cover=({name,detail,target,image,mark})=>
     '<figure class="frame-book-cover"><a href="#/read/'+esc(target)+'" data-reader-target="'+esc(target)+'" aria-label="Open '+esc(name)+' inside this reader">'+(image?'<img src="'+esc(image)+'" alt="" loading="eager"/>':'<span class="frame-cover-mark" aria-hidden="true">' +esc(mark||'')+ '</span>')+'<span class="frame-cover-name">'+esc(name)+'</span></a><figcaption>'+esc(detail)+'</figcaption></figure>';

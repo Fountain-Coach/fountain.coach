@@ -315,6 +315,41 @@ class Linotype {
     frame.append(immutable(figure));
     leaf.area.append(frame);
     const title=q(".book-chapter-heading",leaf.area);
+    if(figure?.classList.contains("teatro-score")){
+      // FCIS Largest Balanced Fit: measure the *real* source aspect ratio
+      // against the remaining folio after the title/caption, never against
+      // a generic 190px thumbnail or a decorative portrait/landscape box.
+      const image=q("img",frame);
+      const figureEl=q("figure",frame);
+      const originalW=Number(image?.getAttribute("width"));
+      const originalH=Number(image?.getAttribute("height"));
+      if(!(originalW>0&&originalH>0))throw Error("Unmeasured Teatro Score "+sourceId);
+      const caption=q("figcaption",figureEl);
+      const titleH=title?title.getBoundingClientRect().height+14:0;
+      const captionH=caption?Math.max(18,caption.getBoundingClientRect().height+12):0;
+      const availableW=leaf.area.clientWidth-10;
+      const availableH=leaf.area.clientHeight-titleH-captionH-24;
+      if(availableH<=60||availableW<=70)throw Error("No readable Score folio "+sourceId);
+      const fit=Math.min(availableW/originalW,availableH/originalH);
+      let renderW=Math.floor(originalW*fit),renderH=Math.floor(originalH*fit);
+      frame.dataset.aspect=(originalW/originalH).toFixed(4);
+      const size=()=>{
+        figureEl.style.width=renderW+"px";figureEl.style.maxWidth=renderW+"px";
+        figureEl.style.height=(renderH+captionH)+"px";figureEl.style.maxHeight=(renderH+captionH)+"px";
+        image.style.width=renderW+"px";image.style.height=renderH+"px";
+        image.style.maxWidth=renderW+"px";image.style.maxHeight=renderH+"px";
+        image.style.minHeight="0";image.style.objectFit="contain";
+      };
+      size();
+      let attempts=0;
+      while(!this.fits(leaf.area)&&attempts++<18){
+        renderW=Math.floor(renderW*.95);renderH=Math.floor(renderH*.95);
+        size();
+      }
+      if(!this.fits(leaf.area))throw Error("Oversize Score "+sourceId);
+      figureEl.dataset.scoreFit="balanced";
+      return;
+    }
     // WebKit can report a transient zero-height heading before its font/layout
     // settles. Reserve the opener's full running-title height in every pass.
     const titleH=title?Math.max(124,title.getBoundingClientRect().height):0;
@@ -382,7 +417,7 @@ class Linotype {
     // A text-only technical chapter starts reading on its title leaf.
     // Literary/image chapters retain their separate illustrated opener.
     let sheet=last && last.sourceId===sourceId &&
-      (this.pageFrame || (last.type==="opener" && !last.area.querySelector("figure")))
+      (!last.area.querySelector(".linotype-image-frame figure") && (this.pageFrame || last.type==="opener"))
       ? last : this.leafOfText(sourceId,label);
     const prose=q(".book-prose",section);
     if(!prose)throw Error("No prose for "+sourceId);
@@ -394,6 +429,13 @@ class Linotype {
          media.dataset.keepWithAnchor==="previous" && element.textContent.length<=360){
         sheet=this.mediaWithAnchor(sheet,element,media,sourceId,label);
         i++; // the authored media is inseparable from the preceding passage
+      }else if(element.matches("figure.teatro-score")){
+        // Further authored Scores are separate measured plates, not thumbnails
+        // squeezed between paragraphs. The next source passage follows them.
+        const plate=document.createElement("section");
+        plate.append(element.cloneNode(true));
+        this.image(plate,sourceId,false);
+        sheet=this.leafOfText(sourceId,label);
       }else if(element.tagName==="P"){
         sheet=this.appendParagraph(sheet,element,sourceId,label);
       }else{

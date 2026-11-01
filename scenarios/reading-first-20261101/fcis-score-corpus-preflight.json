@@ -1,0 +1,1363 @@
+{
+  "sourceEdition": "Fountain-Coach/solstice.fountain.coach Reading 01",
+  "profiles": [
+    "landscape",
+    "portrait",
+    "phone"
+  ],
+  "workLayouts": 90,
+  "totalImagePlacements": 90,
+  "failures": [],
+  "results": [
+    {
+      "profile": "landscape",
+      "id": "solstice-reading-01--2025-12-22-anweisung-an-den-schmerz",
+      "images": 1,
+      "pages": 5,
+      "visible": [
+        {
+          "w": 350,
+          "h": 525,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "landscape",
+      "id": "solstice-reading-01--2025-12-23-integration",
+      "images": 1,
+      "pages": 5,
+      "visible": [
+        {
+          "w": 350,
+          "h": 525,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "landscape",
+      "id": "solstice-reading-01--2025-12-28-renaturalization",
+      "images": 1,
+      "pages": 5,
+      "visible": [
+        {
+          "w": 350,
+          "h": 525,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "landscape",
+      "id": "solstice-reading-01--2026-01-08-vier-aussagen-zum-atherleib",
+      "images": 1,
+      "pages": 6,
+      "visible": [
+        {
+          "w": 350,
+          "h": 525,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "landscape",
+      "id": "solstice-reading-01--2026-01-22-three-floors",
+      "images": 1,
+      "pages": 4,
+      "visible": [
+        {
+          "w": 350,
+          "h": 525,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "landscape",
+      "id": "solstice-reading-01--2026-01-23-i-keep-moving",
+      "images": 1,
+      "pages": 5,
+      "visible": [
+        {
+          "w": 486,
+          "h": 324,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "landscape",
+      "id": "solstice-reading-01--2026-02-04-two-rooms",
+      "images": 1,
+      "pages": 4,
+      "visible": [
+        {
+          "w": 486,
+          "h": 324,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "landscape",
+      "id": "solstice-reading-01--2026-02-14-on-a-future-not-yet-drafted",
+      "images": 1,
+      "pages": 8,
+      "visible": [
+        {
+          "w": 486,
+          "h": 324,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "landscape",
+      "id": "solstice-reading-01--2026-02-28-no-optimize",
+      "images": 1,
+      "pages": 4,
+      "visible": [
+        {
+          "w": 486,
+          "h": 324,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "landscape",
+      "id": "solstice-reading-01--2026-03-16-the-teatre-of-the-mind",
+      "images": 1,
+      "pages": 8,
+      "visible": [
+        {
+          "w": 350,
+          "h": 525,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "landscape",
+      "id": "solstice-reading-01--2026-03-20-my-place-in-space",
+      "images": 1,
+      "pages": 6,
+      "visible": [
+        {
+          "w": 350,
+          "h": 525,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "landscape",
+      "id": "solstice-reading-01--2026-03-21-muttersprache",
+      "images": 1,
+      "pages": 4,
+      "visible": [
+        {
+          "w": 350,
+          "h": 525,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "landscape",
+      "id": "solstice-reading-01--2026-04-22-the-writing-hand",
+      "images": 1,
+      "pages": 5,
+      "visible": [
+        {
+          "w": 350,
+          "h": 525,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "landscape",
+      "id": "solstice-reading-01--2026-04-23-who-is-bee",
+      "images": 1,
+      "pages": 3,
+      "visible": [
+        {
+          "w": 373,
+          "h": 525,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "landscape",
+      "id": "solstice-reading-01--2026-04-30-about-writing-letters",
+      "images": 1,
+      "pages": 7,
+      "visible": [
+        {
+          "w": 371,
+          "h": 525,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "landscape",
+      "id": "solstice-reading-01--2026-05-01-a-score-before-production",
+      "images": 1,
+      "pages": 8,
+      "visible": [
+        {
+          "w": 371,
+          "h": 525,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "landscape",
+      "id": "solstice-reading-01--2026-05-25-seitenlicht",
+      "images": 1,
+      "pages": 5,
+      "visible": [
+        {
+          "w": 486,
+          "h": 324,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "landscape",
+      "id": "solstice-reading-01--2026-05-30-the-sheet",
+      "images": 1,
+      "pages": 11,
+      "visible": [
+        {
+          "w": 393,
+          "h": 525,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "landscape",
+      "id": "solstice-reading-01--2026-06-06-the-sentimental-machine",
+      "images": 1,
+      "pages": 9,
+      "visible": [
+        {
+          "w": 486,
+          "h": 364,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "landscape",
+      "id": "solstice-reading-01--2026-06-15-fck-frg-we-all-had-parents",
+      "images": 1,
+      "pages": 13,
+      "visible": [
+        {
+          "w": 486,
+          "h": 364,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "landscape",
+      "id": "solstice-reading-01--2026-06-24-prufe-dein-gewicht",
+      "images": 1,
+      "pages": 8,
+      "visible": [
+        {
+          "w": 486,
+          "h": 364,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "landscape",
+      "id": "solstice-reading-01--2026-07-21-everything-else-is-illustration",
+      "images": 1,
+      "pages": 3,
+      "visible": [
+        {
+          "w": 486,
+          "h": 324,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "landscape",
+      "id": "solstice-reading-01--2026-07-28-bees-journal",
+      "images": 1,
+      "pages": 3,
+      "visible": [
+        {
+          "w": 486,
+          "h": 343,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "landscape",
+      "id": "solstice-reading-01--2026-07-31-n-journal",
+      "images": 1,
+      "pages": 3,
+      "visible": [
+        {
+          "w": 486,
+          "h": 343,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "landscape",
+      "id": "solstice-reading-01--2026-08-17-the-scissors",
+      "images": 1,
+      "pages": 14,
+      "visible": [
+        {
+          "w": 486,
+          "h": 364,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "landscape",
+      "id": "solstice-reading-01--2026-08-19-six-panels",
+      "images": 1,
+      "pages": 9,
+      "visible": [
+        {
+          "w": 486,
+          "h": 364,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "landscape",
+      "id": "solstice-reading-01--2026-08-28-the-old-woman",
+      "images": 1,
+      "pages": 3,
+      "visible": [
+        {
+          "w": 486,
+          "h": 343,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "landscape",
+      "id": "solstice-reading-01--2026-09-04-the-strawberry",
+      "images": 1,
+      "pages": 6,
+      "visible": [
+        {
+          "w": 486,
+          "h": 324,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "landscape",
+      "id": "solstice-reading-01--2026-09-06-leselust",
+      "images": 1,
+      "pages": 5,
+      "visible": [
+        {
+          "w": 486,
+          "h": 324,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "landscape",
+      "id": "solstice-reading-01--2026-09-18-object-crossing-voice",
+      "images": 1,
+      "pages": 5,
+      "visible": [
+        {
+          "w": 486,
+          "h": 343,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "portrait",
+      "id": "solstice-reading-01--2025-12-22-anweisung-an-den-schmerz",
+      "images": 1,
+      "pages": 3,
+      "visible": [
+        {
+          "w": 590,
+          "h": 885,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "portrait",
+      "id": "solstice-reading-01--2025-12-23-integration",
+      "images": 1,
+      "pages": 4,
+      "visible": [
+        {
+          "w": 590,
+          "h": 885,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "portrait",
+      "id": "solstice-reading-01--2025-12-28-renaturalization",
+      "images": 1,
+      "pages": 3,
+      "visible": [
+        {
+          "w": 590,
+          "h": 885,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "portrait",
+      "id": "solstice-reading-01--2026-01-08-vier-aussagen-zum-atherleib",
+      "images": 1,
+      "pages": 4,
+      "visible": [
+        {
+          "w": 590,
+          "h": 885,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "portrait",
+      "id": "solstice-reading-01--2026-01-22-three-floors",
+      "images": 1,
+      "pages": 3,
+      "visible": [
+        {
+          "w": 590,
+          "h": 885,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "portrait",
+      "id": "solstice-reading-01--2026-01-23-i-keep-moving",
+      "images": 1,
+      "pages": 3,
+      "visible": [
+        {
+          "w": 614,
+          "h": 409,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "portrait",
+      "id": "solstice-reading-01--2026-02-04-two-rooms",
+      "images": 1,
+      "pages": 3,
+      "visible": [
+        {
+          "w": 614,
+          "h": 409,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "portrait",
+      "id": "solstice-reading-01--2026-02-14-on-a-future-not-yet-drafted",
+      "images": 1,
+      "pages": 7,
+      "visible": [
+        {
+          "w": 614,
+          "h": 409,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "portrait",
+      "id": "solstice-reading-01--2026-02-28-no-optimize",
+      "images": 1,
+      "pages": 3,
+      "visible": [
+        {
+          "w": 614,
+          "h": 409,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "portrait",
+      "id": "solstice-reading-01--2026-03-16-the-teatre-of-the-mind",
+      "images": 1,
+      "pages": 6,
+      "visible": [
+        {
+          "w": 590,
+          "h": 885,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "portrait",
+      "id": "solstice-reading-01--2026-03-20-my-place-in-space",
+      "images": 1,
+      "pages": 4,
+      "visible": [
+        {
+          "w": 590,
+          "h": 885,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "portrait",
+      "id": "solstice-reading-01--2026-03-21-muttersprache",
+      "images": 1,
+      "pages": 3,
+      "visible": [
+        {
+          "w": 590,
+          "h": 885,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "portrait",
+      "id": "solstice-reading-01--2026-04-22-the-writing-hand",
+      "images": 1,
+      "pages": 3,
+      "visible": [
+        {
+          "w": 590,
+          "h": 885,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "portrait",
+      "id": "solstice-reading-01--2026-04-23-who-is-bee",
+      "images": 1,
+      "pages": 2,
+      "visible": [
+        {
+          "w": 614,
+          "h": 862,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "portrait",
+      "id": "solstice-reading-01--2026-04-30-about-writing-letters",
+      "images": 1,
+      "pages": 4,
+      "visible": [
+        {
+          "w": 614,
+          "h": 867,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "portrait",
+      "id": "solstice-reading-01--2026-05-01-a-score-before-production",
+      "images": 1,
+      "pages": 6,
+      "visible": [
+        {
+          "w": 614,
+          "h": 867,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "portrait",
+      "id": "solstice-reading-01--2026-05-25-seitenlicht",
+      "images": 1,
+      "pages": 3,
+      "visible": [
+        {
+          "w": 614,
+          "h": 409,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "portrait",
+      "id": "solstice-reading-01--2026-05-30-the-sheet",
+      "images": 1,
+      "pages": 10,
+      "visible": [
+        {
+          "w": 614,
+          "h": 818,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "portrait",
+      "id": "solstice-reading-01--2026-06-06-the-sentimental-machine",
+      "images": 1,
+      "pages": 6,
+      "visible": [
+        {
+          "w": 614,
+          "h": 460,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "portrait",
+      "id": "solstice-reading-01--2026-06-15-fck-frg-we-all-had-parents",
+      "images": 1,
+      "pages": 9,
+      "visible": [
+        {
+          "w": 614,
+          "h": 460,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "portrait",
+      "id": "solstice-reading-01--2026-06-24-prufe-dein-gewicht",
+      "images": 1,
+      "pages": 6,
+      "visible": [
+        {
+          "w": 614,
+          "h": 460,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "portrait",
+      "id": "solstice-reading-01--2026-07-21-everything-else-is-illustration",
+      "images": 1,
+      "pages": 2,
+      "visible": [
+        {
+          "w": 614,
+          "h": 409,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "portrait",
+      "id": "solstice-reading-01--2026-07-28-bees-journal",
+      "images": 1,
+      "pages": 3,
+      "visible": [
+        {
+          "w": 614,
+          "h": 434,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "portrait",
+      "id": "solstice-reading-01--2026-07-31-n-journal",
+      "images": 1,
+      "pages": 2,
+      "visible": [
+        {
+          "w": 614,
+          "h": 434,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "portrait",
+      "id": "solstice-reading-01--2026-08-17-the-scissors",
+      "images": 1,
+      "pages": 9,
+      "visible": [
+        {
+          "w": 614,
+          "h": 460,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "portrait",
+      "id": "solstice-reading-01--2026-08-19-six-panels",
+      "images": 1,
+      "pages": 5,
+      "visible": [
+        {
+          "w": 614,
+          "h": 460,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "portrait",
+      "id": "solstice-reading-01--2026-08-28-the-old-woman",
+      "images": 1,
+      "pages": 2,
+      "visible": [
+        {
+          "w": 614,
+          "h": 434,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "portrait",
+      "id": "solstice-reading-01--2026-09-04-the-strawberry",
+      "images": 1,
+      "pages": 4,
+      "visible": [
+        {
+          "w": 614,
+          "h": 409,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "portrait",
+      "id": "solstice-reading-01--2026-09-06-leselust",
+      "images": 1,
+      "pages": 3,
+      "visible": [
+        {
+          "w": 614,
+          "h": 409,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "portrait",
+      "id": "solstice-reading-01--2026-09-18-object-crossing-voice",
+      "images": 1,
+      "pages": 3,
+      "visible": [
+        {
+          "w": 614,
+          "h": 434,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "phone",
+      "id": "solstice-reading-01--2025-12-22-anweisung-an-den-schmerz",
+      "images": 1,
+      "pages": 6,
+      "visible": [
+        {
+          "w": 312,
+          "h": 468,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "phone",
+      "id": "solstice-reading-01--2025-12-23-integration",
+      "images": 1,
+      "pages": 7,
+      "visible": [
+        {
+          "w": 312,
+          "h": 468,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "phone",
+      "id": "solstice-reading-01--2025-12-28-renaturalization",
+      "images": 1,
+      "pages": 7,
+      "visible": [
+        {
+          "w": 312,
+          "h": 468,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "phone",
+      "id": "solstice-reading-01--2026-01-08-vier-aussagen-zum-atherleib",
+      "images": 1,
+      "pages": 7,
+      "visible": [
+        {
+          "w": 312,
+          "h": 468,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "phone",
+      "id": "solstice-reading-01--2026-01-22-three-floors",
+      "images": 1,
+      "pages": 5,
+      "visible": [
+        {
+          "w": 312,
+          "h": 468,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "phone",
+      "id": "solstice-reading-01--2026-01-23-i-keep-moving",
+      "images": 1,
+      "pages": 6,
+      "visible": [
+        {
+          "w": 312,
+          "h": 208,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "phone",
+      "id": "solstice-reading-01--2026-02-04-two-rooms",
+      "images": 1,
+      "pages": 4,
+      "visible": [
+        {
+          "w": 312,
+          "h": 208,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "phone",
+      "id": "solstice-reading-01--2026-02-14-on-a-future-not-yet-drafted",
+      "images": 1,
+      "pages": 8,
+      "visible": [
+        {
+          "w": 312,
+          "h": 208,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "phone",
+      "id": "solstice-reading-01--2026-02-28-no-optimize",
+      "images": 1,
+      "pages": 4,
+      "visible": [
+        {
+          "w": 312,
+          "h": 208,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "phone",
+      "id": "solstice-reading-01--2026-03-16-the-teatre-of-the-mind",
+      "images": 1,
+      "pages": 10,
+      "visible": [
+        {
+          "w": 312,
+          "h": 468,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "phone",
+      "id": "solstice-reading-01--2026-03-20-my-place-in-space",
+      "images": 1,
+      "pages": 7,
+      "visible": [
+        {
+          "w": 312,
+          "h": 468,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "phone",
+      "id": "solstice-reading-01--2026-03-21-muttersprache",
+      "images": 1,
+      "pages": 5,
+      "visible": [
+        {
+          "w": 312,
+          "h": 468,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "phone",
+      "id": "solstice-reading-01--2026-04-22-the-writing-hand",
+      "images": 1,
+      "pages": 6,
+      "visible": [
+        {
+          "w": 312,
+          "h": 468,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "phone",
+      "id": "solstice-reading-01--2026-04-23-who-is-bee",
+      "images": 1,
+      "pages": 4,
+      "visible": [
+        {
+          "w": 312,
+          "h": 438,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "phone",
+      "id": "solstice-reading-01--2026-04-30-about-writing-letters",
+      "images": 1,
+      "pages": 9,
+      "visible": [
+        {
+          "w": 312,
+          "h": 440,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "phone",
+      "id": "solstice-reading-01--2026-05-01-a-score-before-production",
+      "images": 1,
+      "pages": 10,
+      "visible": [
+        {
+          "w": 312,
+          "h": 440,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "phone",
+      "id": "solstice-reading-01--2026-05-25-seitenlicht",
+      "images": 1,
+      "pages": 6,
+      "visible": [
+        {
+          "w": 312,
+          "h": 208,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "phone",
+      "id": "solstice-reading-01--2026-05-30-the-sheet",
+      "images": 1,
+      "pages": 12,
+      "visible": [
+        {
+          "w": 312,
+          "h": 416,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "phone",
+      "id": "solstice-reading-01--2026-06-06-the-sentimental-machine",
+      "images": 1,
+      "pages": 11,
+      "visible": [
+        {
+          "w": 312,
+          "h": 234,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "phone",
+      "id": "solstice-reading-01--2026-06-15-fck-frg-we-all-had-parents",
+      "images": 1,
+      "pages": 18,
+      "visible": [
+        {
+          "w": 312,
+          "h": 234,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "phone",
+      "id": "solstice-reading-01--2026-06-24-prufe-dein-gewicht",
+      "images": 1,
+      "pages": 9,
+      "visible": [
+        {
+          "w": 312,
+          "h": 234,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "phone",
+      "id": "solstice-reading-01--2026-07-21-everything-else-is-illustration",
+      "images": 1,
+      "pages": 4,
+      "visible": [
+        {
+          "w": 312,
+          "h": 208,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "phone",
+      "id": "solstice-reading-01--2026-07-28-bees-journal",
+      "images": 1,
+      "pages": 4,
+      "visible": [
+        {
+          "w": 312,
+          "h": 220,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "phone",
+      "id": "solstice-reading-01--2026-07-31-n-journal",
+      "images": 1,
+      "pages": 4,
+      "visible": [
+        {
+          "w": 312,
+          "h": 220,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "phone",
+      "id": "solstice-reading-01--2026-08-17-the-scissors",
+      "images": 1,
+      "pages": 16,
+      "visible": [
+        {
+          "w": 312,
+          "h": 234,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "phone",
+      "id": "solstice-reading-01--2026-08-19-six-panels",
+      "images": 1,
+      "pages": 12,
+      "visible": [
+        {
+          "w": 312,
+          "h": 234,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "phone",
+      "id": "solstice-reading-01--2026-08-28-the-old-woman",
+      "images": 1,
+      "pages": 4,
+      "visible": [
+        {
+          "w": 312,
+          "h": 220,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "phone",
+      "id": "solstice-reading-01--2026-09-04-the-strawberry",
+      "images": 1,
+      "pages": 7,
+      "visible": [
+        {
+          "w": 312,
+          "h": 208,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "phone",
+      "id": "solstice-reading-01--2026-09-06-leselust",
+      "images": 1,
+      "pages": 6,
+      "visible": [
+        {
+          "w": 312,
+          "h": 208,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    },
+    {
+      "profile": "phone",
+      "id": "solstice-reading-01--2026-09-18-object-crossing-voice",
+      "images": 1,
+      "pages": 6,
+      "visible": [
+        {
+          "w": 312,
+          "h": 220,
+          "within": true,
+          "visible": true
+        }
+      ],
+      "ok": true
+    }
+  ]
+}

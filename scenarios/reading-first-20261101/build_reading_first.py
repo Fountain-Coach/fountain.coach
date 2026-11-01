@@ -54,10 +54,10 @@ page='''<!doctype html>
   <div class="frame-location">
    <label for="reader-section">Reading</label>
    <select id="reader-section" aria-label="Choose publication">
-    <option value="library" selected>Bookshelf</option>
+    <option value="continuity" selected>On Continuity</option>\n    <option value="library">Bookshelf</option>
     <option value="essays">Essays</option>
-    <option value="solstice">Solstice (WT)</option>
-    <option value="solstice-reading-01">Reading 01 · First Reading</option>
+    <option value="first-readings">First Readings</option>
+
    </select>
    <output class="frame-page-count" id="page-count" aria-live="off">Pages</output>
   </div>
@@ -73,10 +73,11 @@ assert (w/'integrated-volumes.html').exists(), 'Build Essays source volumes firs
 assert (w/'solstice-volumes.html').exists(), 'Build published Solstice source volumes first'
 essays=(w/'integrated-volumes.html').read_text()
 solstice=(w/'solstice-volumes.html').read_text()
-first=re.search(r'<template data-reader-volume="essay--reframe-and-the-business-value-of-the-estate"><div class="book-flow" data-min-leaves="1">(.*?)</div></template>',essays,re.S)
-assert first and len(re.sub(r'<[^>]+>','',first.group(1)))>1200, 'Opening essay is not actual source prose'
+# The original authored editorial, not a randomly selected essay, is the first reading surface.
 start=page.index(' <div class="frame-source-flow" id="source-flow"')
 end=page.index(' <div class="page-viewport"',start)
-page=page[:start]+' <div class="frame-source-flow" id="source-flow" data-min-leaves="1">'+first.group(1)+'</div>\n'+essays+'\n'+solstice+'\n'+page[end:]
+continuity=page[start:end]
+assert 'continuity.title' in continuity and 'Fountain Coach began with a question about continuity.' in continuity
+page=page[:end]+'<template data-reader-volume="continuity"><div class="book-flow" data-min-leaves="1">'+continuity.split('>',1)[1].rsplit('</div>',1)[0]+'</div></template>\n'+essays+'\n'+solstice+'\n'+page[end:]
 (w/'index.html').write_text(page)
 print('written manuscript blocks',len(paragraphs),'chars',sum(map(len,paragraphs)))

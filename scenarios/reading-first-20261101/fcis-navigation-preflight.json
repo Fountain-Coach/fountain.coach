@@ -1,0 +1,139 @@
+{
+  "origin": "https://192.168.8.50:8243",
+  "sourceOverrides": true,
+  "runs": [
+    {
+      "profile": "landscape",
+      "editorial": {
+        "v": "continuity",
+        "title": "On Continuity",
+        "paragraphs": "Fountain Coach began with a question about continuity. What remains of a conversation when the people who have shared it are no longer together? What becomes of",
+        "pages": "3"
+      },
+      "shelf": {
+        "titles": [
+          "Essays\nSeven essays · chronological",
+          "First Readings\nReading 01 — First Reading"
+        ],
+        "scrollable": true,
+        "fullWindowScroll": false,
+        "foot": 820,
+        "available": 820,
+        "mode": "horizontal",
+        "pageNumbers": false
+      },
+      "toc": {
+        "entries": 32,
+        "scrollable": true,
+        "mode": "vertical",
+        "noNumbers": true,
+        "fixedFooter": true,
+        "head": "First Readings"
+      },
+      "score": {
+        "fig": true,
+        "src": "/solstice/assets/edition/post-2025-12-22-b0e6cf8252aca0da.jpg",
+        "width": 350,
+        "height": 525,
+        "original": [
+          1024,
+          1536
+        ],
+        "fit": "balanced",
+        "within": true,
+        "pages": "5"
+      },
+      "essay": "Reframe and the Business Value of the Estate",
+      "errors": []
+    },
+    {
+      "profile": "portrait",
+      "editorial": {
+        "v": "continuity",
+        "title": "On Continuity",
+        "paragraphs": "Fountain Coach began with a question about continuity. What remains of a conversation when the people who have shared it are no longer together? What becomes of",
+        "pages": "2"
+      },
+      "shelf": {
+        "titles": [
+          "Essays\nSeven essays · chronological",
+          "First Readings\nReading 01 — First Reading"
+        ],
+        "scrollable": true,
+        "fullWindowScroll": false,
+        "foot": 1180,
+        "available": 1180,
+        "mode": "horizontal",
+        "pageNumbers": false
+      },
+      "toc": {
+        "entries": 32,
+        "scrollable": true,
+        "mode": "vertical",
+        "noNumbers": true,
+        "fixedFooter": true,
+        "head": "First Readings"
+      },
+      "score": {
+        "fig": true,
+        "src": "/solstice/assets/edition/post-2025-12-22-b0e6cf8252aca0da.jpg",
+        "width": 590,
+        "height": 885,
+        "original": [
+          1024,
+          1536
+        ],
+        "fit": "balanced",
+        "within": true,
+        "pages": "3"
+      },
+      "essay": "Reframe and the Business Value of the Estate",
+      "errors": []
+    },
+    {
+      "profile": "phone",
+      "editorial": {
+        "v": "continuity",
+        "title": "On Continuity",
+        "paragraphs": "Fountain Coach began with a question about continuity. What remains of a conversation when the people who have shared it are no longer together? What becomes of",
+        "pages": "5"
+      },
+      "shelf": {
+        "titles": [
+          "Essays\nSeven essays · chronological",
+          "First Readings\nReading 01 — First Reading"
+        ],
+        "scrollable": true,
+        "fullWindowScroll": false,
+        "foot": 844,
+        "available": 844,
+        "mode": "horizontal",
+        "pageNumbers": false
+      },
+      "toc": {
+        "entries": 32,
+        "scrollable": true,
+        "mode": "vertical",
+        "noNumbers": true,
+        "fixedFooter": true,
+        "head": "First Readings"
+      },
+      "score": {
+        "fig": true,
+        "src": "/solstice/assets/edition/post-2025-12-22-b0e6cf8252aca0da.jpg",
+        "width": 312,
+        "height": 468,
+        "original": [
+          1024,
+          1536
+        ],
+        "fit": "balanced",
+        "within": true,
+        "pages": "6"
+      },
+      "essay": "Reframe and the Business Value of the Estate",
+      "errors": []
+    }
+  ],
+  "failures": 0
+}

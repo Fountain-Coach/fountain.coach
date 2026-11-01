@@ -24,7 +24,7 @@ const soundEditionPromise=fetch('/estate/essays/the-door-is-a-score/media/editio
 if(!viewport||!source||!window.SolsticeLinotype) return;
 const sourceLibrary=templates.get('library')?.content.querySelector('.book-flow')?.innerHTML;
 if(!sourceLibrary)throw Error('Authored Bookshelf is unavailable');
-const labels=new Map([['library','Bookshelf'],['essays','Essays'],['solstice','Solstice (WT)'],['solstice-reading-01','Reading 01 · First Reading'],['first-readings','First Readings (historical)'],['teatro','Teatro — An Unfinished Composition'],['notes--the-door-is-a-score','References · The Door Is a Score']]);
+const labels=new Map([['continuity','On Continuity'],['library','Bookshelf'],['essays','Essays'],['first-readings','First Readings'],['solstice','First Readings'],['solstice-reading-01','First Readings'],['teatro','Teatro — An Unfinished Composition'],['notes--the-door-is-a-score','References · The Door Is a Score']]);
 for(const [key,template] of templates){
  if(key.startsWith('essay--')||key.startsWith('solstice-reading-01--')){
   const label=template.content.querySelector('h2')?.textContent?.trim()||key;
@@ -34,18 +34,28 @@ for(const [key,template] of templates){
  }
 }
 const essaySequence=[...templates.keys()].filter(x=>x.startsWith('essay--')).reverse();
-const solsticeSequence=[...templates.keys()].filter(x=>x.startsWith('solstice-reading-01--')&&/\d{4}-\d{2}-\d{2}/.test(x));
-const firstEssay=essaySequence[0],firstReading=solsticeSequence[0];
-if(!firstEssay||!firstReading)throw Error('Published prose missing from Bookshelf');
+const solsticeSequence=[...templates.keys()].filter(x=>x.startsWith('solstice-reading-01--'));
+if(essaySequence.length!==7||solsticeSequence.length!==32)throw Error('Admitted collection inventory changed');
+const contents={essays:essaySequence,'first-readings':solsticeSequence};
 function entryVolume(name){
- if(name==='essays')return firstEssay;
- if(name==='solstice'||name==='solstice-reading-01')return firstReading;
+ if(name==='solstice'||name==='solstice-reading-01')return 'first-readings';
  return name;
 }
-function adjacentVolume(name,step){
- const sequence=[essaySequence,solsticeSequence].find(s=>s.includes(name));
- return sequence?.[sequence.indexOf(name)+step]||null;
+const isContents=name=>name==='essays'||name==='first-readings';
+const isSurface=name=>name==='library'||isContents(name);
+function owningContents(name){
+ if(essaySequence.includes(name)||name==='teatro'||name==='notes--the-door-is-a-score')return 'essays';
+ if(solsticeSequence.includes(name))return 'first-readings';
+ return null;
 }
+function adjacentVolume(name,step){
+ if(name==='continuity'&&step>0)return 'library';
+ const sequence=[essaySequence,solsticeSequence].find(s=>s.includes(name));
+ if(!sequence)return null;
+ const at=sequence.indexOf(name)+step;
+ return sequence[at]|| (at<0?(sequence===essaySequence?'essays':'first-readings'):null);
+}
+const surfaceOffsets={shelf:0,essays:0,'first-readings':0};
 let openAtEnd=null;
 let engine=null,signature='',frame=0,pointer=null,volume='library',ready=false,entryUrl=null;
 const positions=new Map();
@@ -60,7 +70,7 @@ function routeFromUrl(){
  if(match&&labels.has(match[1]))return entryVolume(match[1]);
  if(pathname.includes('/collections/first-readings/'))return 'first-readings';
  if(pathname.includes('/bookshelf/'))return 'library';
- return entryVolume(document.body.dataset.initialVolume||firstEssay);
+ return entryVolume(document.body.dataset.initialVolume||'continuity');
 }
 function addressFromUrl(){
  const raw=new URLSearchParams(location.hash.split('?')[1]||'').get('at');
@@ -80,10 +90,17 @@ function selectSource(name){
  source.dataset.minLeaves='1';
  volume=name;
  section.value=volume;
- parent.hidden=name==='library'||name.startsWith('essay--')||name.startsWith('solstice-reading-01--')||name==='essays'||name==='solstice';
- if(!parent.hidden){const shelf=name==='notes--the-door-is-a-score'?'essay--the-door-is-a-score':name.startsWith('solstice-reading-01--')?'solstice-reading-01':name==='solstice-reading-01'?'solstice':name==='solstice'||name==='essays'?'library':name==='teatro'?'essays':name==='first-readings'?'library':'essays';parent.dataset.readerTarget=shelf;parent.dataset.readerResume=name==='notes--the-door-is-a-score'?'true':'false';parent.textContent=labels.get(shelf);parent.setAttribute('aria-label','Return to '+labels.get(shelf)+' inside the reader');}
+ const parentName=name==='library'?'continuity':isContents(name)?'library':
+   name==='notes--the-door-is-a-score'?'essay--the-door-is-a-score':owningContents(name);
+ parent.hidden=!parentName;
+ if(parentName){
+  parent.dataset.readerTarget=parentName;
+  parent.dataset.readerResume='true';
+  parent.textContent=labels.get(parentName);
+  parent.setAttribute('aria-label','Return to '+labels.get(parentName)+' inside the reader');
+ }
  document.title='Benedikt Eickhoff · '+labels.get(volume);
- viewport.setAttribute('aria-label','Paginated '+labels.get(volume));
+ viewport.setAttribute('aria-label',(isSurface(name)?'Navigable ': 'Paginated ')+labels.get(volume));
 }
 let positionTimer=0,lastPositionWrite=0,pendingPosition=null;
 function flushPosition(){
@@ -154,6 +171,88 @@ function present(target,{write=true,focus=false}={}){
 }
 /* A media leaf cannot be measured until its intrinsic image geometry is known.
    Never accept a page and then allow a late-decoded image to change its flow. */
+function recordSurfaceOffset(){
+ const area=viewport.querySelector('.reader-scroll-region');
+ if(!area)return;
+ if(volume==='library')surfaceOffsets.shelf=area.scrollLeft;
+ else if(isContents(volume))surfaceOffsets[volume]=area.scrollTop;
+}
+function renderSurface(){
+ engine?.dispose();engine=null;
+ viewport.replaceChildren();
+ viewport.dataset.layout='loading';
+ const outer=document.createElement('section');
+ outer.className='reader-scroll-surface '+(volume==='library'?'reader-bookshelf':'reader-contents');
+ outer.setAttribute('aria-label',volume==='library'?'Bookshelf':'Contents of '+labels.get(volume));
+ const title=document.createElement('h1');
+ title.textContent=labels.get(volume);
+ outer.append(title);
+ const scroll=document.createElement('div');
+ scroll.className='reader-scroll-region';
+ scroll.tabIndex=0;
+ scroll.setAttribute('role','region');
+ scroll.setAttribute('aria-label',volume==='library'?'Browse books horizontally': 'Scroll '+labels.get(volume)+' contents vertically');
+ if(volume==='library'){
+  const books=[['Essays','essays','Seven essays · chronological'],['First Readings','first-readings','Reading 01 — First Reading']];
+  for(const [name,id,detail] of books){
+   const button=document.createElement('button');
+   button.type='button';button.className='reader-shelf-book';
+   button.dataset.readerTarget=id;
+   const heading=document.createElement('span');heading.className='reader-shelf-title';heading.textContent=name;
+   const sub=document.createElement('span');sub.className='reader-shelf-subtitle';sub.textContent=detail;
+   button.append(heading,sub);scroll.append(button);
+  }
+ }else{
+  const entries=contents[volume];
+  if(volume==='first-readings'){
+   const caption=document.createElement('p');
+   caption.className='reader-contents-reading';
+   caption.textContent='Reading 01 — First Reading';
+   outer.append(caption);
+  }
+  for(const id of entries){
+   const button=document.createElement('button');button.type='button';
+   button.className='reader-contents-entry';button.dataset.readerTarget=id;
+   button.textContent=labels.get(id)||id;scroll.append(button);
+  }
+ }
+ outer.append(scroll);
+ viewport.append(outer);
+ const surfaceName=volume;
+ const savedPosition=surfaceName==='library'?surfaceOffsets.shelf:surfaceOffsets[surfaceName];
+ const restore=()=>{
+   if(!scroll.isConnected||volume!==surfaceName)return;
+   if(surfaceName==='library')scroll.scrollLeft=savedPosition;
+   else scroll.scrollTop=savedPosition;
+ };
+ restore();
+ requestAnimationFrame(restore);
+ scroll.addEventListener('scroll',()=>{
+  if(!scroll.isConnected||volume!==surfaceName)return;
+  if(surfaceName==='library')surfaceOffsets.shelf=scroll.scrollLeft;
+  else if(isContents(surfaceName))surfaceOffsets[surfaceName]=scroll.scrollTop;
+ },{passive:true});
+ if(volume==='library'){
+  scroll.addEventListener('wheel',event=>{
+   if(Math.abs(event.deltaY)>Math.abs(event.deltaX)){
+    event.preventDefault();scroll.scrollLeft+=event.deltaY;
+   }
+  },{passive:false});
+  scroll.addEventListener('keydown',event=>{
+   if(event.key==='ArrowRight'||event.key==='ArrowLeft'){
+    event.preventDefault();scroll.scrollBy({left:event.key==='ArrowRight'?240:-240,behavior:'smooth'});
+   }
+  });
+ }
+ counter.hidden=true;counter.textContent='';
+ previous.disabled=false;next.disabled=volume!=='library';
+ status.textContent=volume==='library'?'Bookshelf. Scroll horizontally, select a book.':
+   labels.get(volume)+'. Scroll vertically, select a work.';
+ viewport.dataset.layout='ready';
+ viewport.dataset.mode=volume==='library'?'horizontal':'vertical';
+ viewport.dataset.pages='0';
+ viewport.dataset.volume=volume;
+}
 const loadedImages=new Map();
 let compositionToken=0;
 function loadImage(src){
@@ -170,6 +269,8 @@ function loadImage(src){
 }
 async function compose(){
  const token=++compositionToken,targetVolume=volume;
+ if(isSurface(volume)){renderSurface();return;}
+ counter.hidden=false;
  const width=viewport.clientWidth,height=viewport.clientHeight;
  if(width<120||height<100)return;
  const style=getComputedStyle(viewport);
@@ -216,6 +317,7 @@ function openVolume(name,{navigate=true,resume=false,fromEnd=false}={}){
  name=entryVolume(name);
  if(fromEnd)openAtEnd=name;
  if(!labels.has(name))return;
+ recordSurfaceOffset();
  if(engine){const address=engine.anchorAt(engine.current);if(address)positions.set(volume,address);}
  if(navigate){
   clearTimeout(positionTimer);positionTimer=0;pendingPosition=null;
@@ -224,6 +326,7 @@ function openVolume(name,{navigate=true,resume=false,fromEnd=false}={}){
  } else {
   const address=addressFromUrl();if(address)positions.set(name,address);
  }
+ viewport.dataset.layout='loading';
  if(name!==volume || !engine){selectSource(name);signature='';schedule();}
  else {signature='';schedule();}
 }
@@ -239,18 +342,24 @@ document.addEventListener('click',e=>{
 previous.addEventListener('click',()=>turn(-1,true));
 next.addEventListener('click',()=>turn(1,true));
 function turn(dir,focus=false){
- if(!engine||viewport.dataset.layout!=='ready')return;
+ if(viewport.dataset.layout!=='ready')return;
+ if(isSurface(volume)){
+  if(dir<0)openVolume(volume==='library'?'continuity':'library',{resume:true});
+  else if(volume==='library')openVolume('essays',{resume:true});
+  return;
+ }
+ if(!engine)return;
  const target=dir>0?engine.next():engine.prev();
  if(target!==engine.current){present(target,{write:true,focus});return;}
  const sibling=adjacentVolume(volume,dir);
  if(sibling)openVolume(sibling,{fromEnd:dir<0});
 }
 viewport.addEventListener('keydown',event=>{
- if(event.target.closest('a,button,input,select,textarea')||event.altKey||event.ctrlKey||event.metaKey)return;
+ if(event.target.closest('.reader-scroll-surface,a,button,input,select,textarea')||event.altKey||event.ctrlKey||event.metaKey)return;
  if(event.key==='ArrowRight'||event.key==='ArrowLeft'){event.preventDefault();turn(event.key==='ArrowRight'?1:-1,true);}
 });
 viewport.addEventListener('pointerdown',event=>{
- if(event.pointerType!=='touch'||!event.isPrimary||event.target.closest('a,button,input,select,textarea'))return;
+ if(event.pointerType!=='touch'||!event.isPrimary||event.target.closest('.reader-scroll-surface,a,button,input,select,textarea'))return;
  pointer={id:event.pointerId,x:event.clientX,y:event.clientY,t:performance.now()};
 });
 viewport.addEventListener('pointerup',event=>{

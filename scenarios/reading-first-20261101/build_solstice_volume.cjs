@@ -25,7 +25,7 @@ if(manifest.edition!=='first-reading'||manifest.publishedWorks!==30||manifest.en
    }
    return permitted.has(tag)?'<'+tag+'>'+body+'</'+tag+'>':body;
   };
-  const heading=(name,id)=>'<section class="book-chapter" id="work-'+esc(id)+'"><div class="book-chapter-heading"><h2>'+esc(name)+'</h2></div></section>';
+  const heading=(name,id,openingScore='')=>'<section class="book-chapter" id="work-'+esc(id)+'"><div class="book-chapter-heading"><h2>'+esc(name)+'</h2></div>'+openingScore+'</section>';
   const article=html=>'<section class="book-chapter-text"><article class="book-prose">'+html+'</article></section>';
   const blocks=(section,slug,seen)=> {
    const out=[];
@@ -40,7 +40,7 @@ if(manifest.edition!=='first-reading'||manifest.publishedWorks!==30||manifest.en
      const w=Number(im.getAttribute('width')),h=Number(im.getAttribute('height'));
      if(!(w>0&&h>0))throw Error('Solstice source image missing intrinsic size: '+src);
      const caption=n.querySelector('figcaption');
-     out.push('<figure class="frame-reading-figure" data-source-block="'+slug+'.image.'+seen.size+'"><img loading="eager" src="'+esc(src)+'" alt="'+esc(im.getAttribute('alt')||'')+'" width="'+w+'" height="'+h+'"/>'+(caption?'<figcaption>'+esc(caption.textContent)+'</figcaption>':'')+'</figure>');
+     out.push('<figure class="frame-reading-figure teatro-score" data-teatro-score="source-owned" data-source-block="'+slug+'.image.'+seen.size+'"><img loading="eager" src="'+esc(src)+'" alt="'+esc(im.getAttribute('alt')||'')+'" width="'+w+'" height="'+h+'"/>'+(caption?'<figcaption>'+esc(caption.textContent)+'</figcaption>':'')+'</figure>');
     }else{
      const text=n.textContent;
      if(!text.trim())continue;
@@ -80,7 +80,12 @@ if(manifest.edition!=='first-reading'||manifest.publishedWorks!==30||manifest.en
    }
    if(seen.size!==entry.images.length)throw Error('Image count mismatch '+slug+' '+seen.size+' / '+entry.images.length);
    imageCount+=seen.size;
-   templates[id]=heading(title,id)+article(openers.concat(prose).join(''));
+   // The first source-owned Teatro Score is the work's full-size opening reference.
+   // Preserve every later figure in its manuscript sequence as an individual folio.
+   const sourceBlocks=openers.concat(prose);
+   const scoreIndex=sourceBlocks.findIndex(block=>block.startsWith('<figure'));
+   const openingScore=scoreIndex<0?'':sourceBlocks.splice(scoreIndex,1)[0];
+   templates[id]=heading(title,id,openingScore)+article(sourceBlocks.join(''));
    inventory.push({id,title,kind:'work',date:entry.date,images:seen.size,sourceParagraphs:prose.length});
   }
   if(imageCount!==41)throw Error('Incomplete original image inventory '+imageCount);
