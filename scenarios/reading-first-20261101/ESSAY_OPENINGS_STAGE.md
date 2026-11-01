@@ -23,3 +23,11 @@ Read existing canonical `linotype-estate-template` and `reader-navigation-and-sc
 ## Acceptance status
 
 Local source candidate is browser-tested. **Live stage readback is recorded separately only after activation.** No physical iPad Safari/VoiceOver or public social scraper claim is made here.
+
+## Actual WLAN staging readback — v93
+
+- **Active immutable private release:** `shared-shell-20261101-v93-essay-abstracts-before-art`, on the existing `MacMiniDocker` HTTPS origin `https://192.168.8.50:8243/estate/`, copied from verified previous v92 with no public production effect.
+- **Source commit:** `Fountain-Coach/fountain.coach@f76f52b7f9c594831ce76b4409edadde0cbb796c`; v92 rollback retained. Changed route and assets have individually recorded SHA-256 values in `essay-abstract-release.json`.
+- **Unintercepted WebKit on the live stage:** `essay-abstracts-live.json` documents 21 successful essay/viewport compositions. `fcis-navigation-live.json` documents three successful navigation profiles, including fixed footer, scroll-position restoration and unchanged First Reading Score.
+- **HTTPS asset readback:** the reader entrance, Works alias and Pointer alias, sharing manifest and 1200×630 print-folio PNG all returned HTTP 200 with valid TLS certificate (curl verify result 0).
+- **Limitations:** the live essay abstracts are editorial stage drafts; source manuscripts and images are unchanged. Public social crawlers cannot fetch private WLAN image URLs, and physical iPad Safari/VoiceOver are not yet independently witnessed. Public production remains unmodified.

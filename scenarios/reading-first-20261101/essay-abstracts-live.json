@@ -1,0 +1,712 @@
+{
+  "origin": "https://192.168.8.50:8243",
+  "sourceInterception": false,
+  "results": [
+    {
+      "profile": "landscape",
+      "slug": "the-door-is-a-score",
+      "layout": "ready",
+      "pages": "15",
+      "summary": "A recorded closing door is not yet a dramatic action. Its meaning depends on a reading of place, intention and silence. This essay traces the craft of the Geräuschemacher from early radio practice to a source-bound listening study, where voice and performed sound become distinct but related ways of interpreting a written scene.",
+      "summaryVisible": "A recorded closing door is not yet a dramatic action. Its meaning depends on a reading of place, intention and silence. This essay traces the craft of the Geräuschemacher from early radio practice to a source-bound listening study, where voice and performed sound become distinct but related ways of interpreting a written scene.",
+      "heroSrc": "/estate/essays/the-door-is-a-score/assets/teatro-door-score.png",
+      "figs": [
+        {
+          "src": "/estate/essays/the-door-is-a-score/assets/teatro-door-score.png",
+          "width": "1774",
+          "height": "887"
+        },
+        {
+          "src": "/estate/essays/the-door-is-a-score/assets/listening-score.png",
+          "width": "1536",
+          "height": "768"
+        }
+      ],
+      "storyCharacters": 11653,
+      "firstParagraph": "Geräuschemachen, semantic reading, and the passage from an audio file to a performance.",
+      "sourceFigureIndex": 1,
+      "sourceStoryIndex": 2,
+      "image": {
+        "found": true,
+        "width": 486,
+        "height": 243,
+        "source": [
+          1774,
+          887
+        ],
+        "fit": "balanced",
+        "within": true
+      }
+    },
+    {
+      "profile": "landscape",
+      "slug": "the-ear-that-learns",
+      "layout": "ready",
+      "pages": "14",
+      "summary": "A five-second phrase exposes the difference between generating a note and hearing a syllable. Sing can render a timed score; Ear must attend to the resulting sound without merely recognizing what the score already says. Through actual rehearsal takes, this essay asks what evidence makes an artificial listener capable of learning from a performance.",
+      "summaryVisible": "A five-second phrase exposes the difference between generating a note and hearing a syllable. Sing can render a timed score; Ear must attend to the resulting sound without merely recognizing what the score already says. Through actual rehearsal takes, this essay asks what evidence makes an artificial listener capable of learning from a performance.",
+      "heroSrc": "/estate/essays/the-ear-that-learns/assets/listening-room.png",
+      "figs": [
+        {
+          "src": "/estate/essays/the-ear-that-learns/assets/listening-room.png",
+          "width": "1536",
+          "height": "1024"
+        }
+      ],
+      "storyCharacters": 11126,
+      "firstParagraph": "On a five-second phrase, an unfinished voice, and what a teacher asks us to hear.",
+      "sourceFigureIndex": 1,
+      "sourceStoryIndex": 2,
+      "image": {
+        "found": true,
+        "width": 486,
+        "height": 324,
+        "source": [
+          1536,
+          1024
+        ],
+        "fit": "balanced",
+        "within": true
+      }
+    },
+    {
+      "profile": "landscape",
+      "slug": "the-composable-book",
+      "layout": "ready",
+      "pages": "17",
+      "summary": "A digital book is not a pair of paper-colored application panels. It is a continuity between reading, writing and the forms a work can take. This essay develops Reframe’s composable book as a source-bound edition in which prose, scores, conversation and executable instruments can coexist without surrendering the page as their shared frame.",
+      "summaryVisible": "A digital book is not a pair of paper-colored application panels. It is a continuity between reading, writing and the forms a work can take. This essay develops Reframe’s composable book as a source-bound edition in which prose, scores, conversation and executable instruments can coexist without surrendering the page as their shared frame.",
+      "heroSrc": "/estate/essays/the-composable-book/assets/01-book-spread.svg",
+      "figs": [
+        {
+          "src": "/estate/essays/the-composable-book/assets/01-book-spread.svg",
+          "width": "1400",
+          "height": "820"
+        },
+        {
+          "src": "/estate/essays/the-composable-book/assets/02-composition.svg",
+          "width": "1400",
+          "height": "820"
+        },
+        {
+          "src": "/estate/essays/the-composable-book/assets/03-one-book-many-hosts.svg",
+          "width": "1400",
+          "height": "820"
+        },
+        {
+          "src": "/estate/essays/the-composable-book/assets/04-semantic-ledger.svg",
+          "width": "1400",
+          "height": "820"
+        }
+      ],
+      "storyCharacters": 12762,
+      "firstParagraph": "The first mistake is easy to make. Put two rectangles side by side, give them the color of",
+      "sourceFigureIndex": 1,
+      "sourceStoryIndex": 2,
+      "image": {
+        "found": true,
+        "width": 486,
+        "height": 284,
+        "source": [
+          250,
+          150
+        ],
+        "fit": "balanced",
+        "within": true
+      }
+    },
+    {
+      "profile": "landscape",
+      "slug": "to-read-is-not-to-remember",
+      "layout": "ready",
+      "pages": "5",
+      "summary": "A plausible interpretation is not evidence that a machine has read an entire book. Reading unfolds through time, reconsideration and contradictions that exceed any single model session. From Reframe’s encounters with Ulysses, this essay distinguishes retained information from the continuity of inquiry, and asks how interpretations can remain inspectable when the intelligence doing the reading changes.",
+      "summaryVisible": "A plausible interpretation is not evidence that a machine has read an entire book. Reading unfolds through time, reconsideration and contradictions that exceed any single model session. From Reframe’s encounters with Ulysses, this essay distinguishes retained information from the continuity of inquiry, and asks how interpretations can remain inspectable when the intelligence doing the reading changes.",
+      "figs": [
+        {
+          "src": "/estate/essays/to-read-is-not-to-remember/assets/bookshelf-ipad-landscape-test.png",
+          "width": "1180",
+          "height": "820"
+        }
+      ],
+      "storyCharacters": 3444,
+      "firstParagraph": "On artificial intelligence, memory, and the continuity of understanding",
+      "sourceFigureIndex": -1,
+      "sourceStoryIndex": 1
+    },
+    {
+      "profile": "landscape",
+      "slug": "semantic-compilation-the-archive-is-not-the-edition",
+      "layout": "ready",
+      "pages": "13",
+      "summary": "A chronological archive preserves when something was written; it cannot decide which arrangement becomes a book. Using the Solstice archive and its first published reading, this essay asks how a writer might compile source texts, images and recurring motifs into a defensible edition while keeping editorial judgment, provenance and alternative interpretations visible.",
+      "summaryVisible": "A chronological archive preserves when something was written; it cannot decide which arrangement becomes a book. Using the Solstice archive and its first published reading, this essay asks how a writer might compile source texts, images and recurring motifs into a defensible edition while keeping editorial judgment, provenance and alternative interpretations visible.",
+      "heroSrc": "/estate/essays/semantic-compilation-the-archive-is-not-the-edition/assets/semantic-compilation-estate-rail.svg",
+      "figs": [
+        {
+          "src": "/estate/essays/semantic-compilation-the-archive-is-not-the-edition/assets/semantic-compilation-estate-rail.svg",
+          "width": "1200",
+          "height": "630"
+        }
+      ],
+      "storyCharacters": 10859,
+      "firstParagraph": "A writing archive is evidence. An edition is a decision. Between them lies the work of sem",
+      "sourceFigureIndex": 1,
+      "sourceStoryIndex": 2,
+      "image": {
+        "found": true,
+        "width": 486,
+        "height": 255,
+        "source": [
+          285,
+          150
+        ],
+        "fit": "balanced",
+        "within": true
+      }
+    },
+    {
+      "profile": "landscape",
+      "slug": "teatro-an-unfinished-composition",
+      "layout": "ready",
+      "pages": "10",
+      "summary": "Human experience rarely arrives as a finished story. Memory, bodies, absence, language and machines coexist before any plot can explain them. Teatro begins with that unfinished field and offers the score as a way to compose relations in time and space: a form that can hold uncertainty, stage attention and leave interpretation open.",
+      "summaryVisible": "Human experience rarely arrives as a finished story. Memory, bodies, absence, language and machines coexist before any plot can explain them. Teatro begins with that unfinished field and offers the score as a way to compose relations in time and space: a form that can hold uncertainty, stage attention and leave interpretation open.",
+      "heroSrc": "/estate/essays/teatro-an-unfinished-composition/assets/teatro-score-memory-vector-human-condition.svg",
+      "figs": [
+        {
+          "src": "/estate/essays/teatro-an-unfinished-composition/assets/teatro-score-memory-vector-human-condition.svg",
+          "width": "1200",
+          "height": "630"
+        }
+      ],
+      "storyCharacters": 6910,
+      "firstParagraph": "The human condition is not a completed story. It is a field of relations, memories, machin",
+      "sourceFigureIndex": 1,
+      "sourceStoryIndex": 2,
+      "image": {
+        "found": true,
+        "width": 486,
+        "height": 255,
+        "source": [
+          285,
+          150
+        ],
+        "fit": "balanced",
+        "within": true
+      }
+    },
+    {
+      "profile": "landscape",
+      "slug": "reframe-and-the-business-value-of-the-estate",
+      "layout": "ready",
+      "pages": "14",
+      "summary": "The personal web once offered writers an address; platforms offered distribution. Agents now need something beyond a page: identifiable sources, permissions, capabilities and actions they can interpret and use. This essay considers whether Reframe’s greater value lies in an independently governed, agent-addressable estate rather than in a writing application alone.",
+      "summaryVisible": "The personal web once offered writers an address; platforms offered distribution. Agents now need something beyond a page: identifiable sources, permissions, capabilities and actions they can interpret and use. This essay considers whether Reframe’s greater value lies in an independently governed, agent-addressable estate rather than in a writing application alone.",
+      "heroSrc": "/estate/essays/reframe-and-the-business-value-of-the-estate/assets/address-landscape.png",
+      "figs": [
+        {
+          "src": "/estate/essays/reframe-and-the-business-value-of-the-estate/assets/address-landscape.png",
+          "width": "1536",
+          "height": "1024"
+        },
+        {
+          "src": "/estate/essays/reframe-and-the-business-value-of-the-estate/assets/estate-landscape.png",
+          "width": "1536",
+          "height": "1024"
+        },
+        {
+          "src": "/estate/essays/reframe-and-the-business-value-of-the-estate/assets/exchange-landscape.png",
+          "width": "1536",
+          "height": "1024"
+        }
+      ],
+      "storyCharacters": 10865,
+      "firstParagraph": "Reframe may be more valuable as infrastructure for independently operated, agent-addressab",
+      "sourceFigureIndex": 1,
+      "sourceStoryIndex": 2,
+      "image": {
+        "found": true,
+        "width": 486,
+        "height": 324,
+        "source": [
+          1536,
+          1024
+        ],
+        "fit": "balanced",
+        "within": true
+      }
+    },
+    {
+      "profile": "portrait",
+      "slug": "the-door-is-a-score",
+      "layout": "ready",
+      "pages": "9",
+      "summary": "A recorded closing door is not yet a dramatic action. Its meaning depends on a reading of place, intention and silence. This essay traces the craft of the Geräuschemacher from early radio practice to a source-bound listening study, where voice and performed sound become distinct but related ways of interpreting a written scene.",
+      "summaryVisible": "A recorded closing door is not yet a dramatic action. Its meaning depends on a reading of place, intention and silence. This essay traces the craft of the Geräuschemacher from early radio practice to a source-bound listening study, where voice and performed sound become distinct but related ways of interpreting a written scene.",
+      "heroSrc": "/estate/essays/the-door-is-a-score/assets/teatro-door-score.png",
+      "figs": [
+        {
+          "src": "/estate/essays/the-door-is-a-score/assets/teatro-door-score.png",
+          "width": "1774",
+          "height": "887"
+        },
+        {
+          "src": "/estate/essays/the-door-is-a-score/assets/listening-score.png",
+          "width": "1536",
+          "height": "768"
+        }
+      ],
+      "storyCharacters": 11653,
+      "firstParagraph": "Geräuschemachen, semantic reading, and the passage from an audio file to a performance.",
+      "sourceFigureIndex": 1,
+      "sourceStoryIndex": 2,
+      "image": {
+        "found": true,
+        "width": 614,
+        "height": 307,
+        "source": [
+          1774,
+          887
+        ],
+        "fit": "balanced",
+        "within": true
+      }
+    },
+    {
+      "profile": "portrait",
+      "slug": "the-ear-that-learns",
+      "layout": "ready",
+      "pages": "8",
+      "summary": "A five-second phrase exposes the difference between generating a note and hearing a syllable. Sing can render a timed score; Ear must attend to the resulting sound without merely recognizing what the score already says. Through actual rehearsal takes, this essay asks what evidence makes an artificial listener capable of learning from a performance.",
+      "summaryVisible": "A five-second phrase exposes the difference between generating a note and hearing a syllable. Sing can render a timed score; Ear must attend to the resulting sound without merely recognizing what the score already says. Through actual rehearsal takes, this essay asks what evidence makes an artificial listener capable of learning from a performance.",
+      "heroSrc": "/estate/essays/the-ear-that-learns/assets/listening-room.png",
+      "figs": [
+        {
+          "src": "/estate/essays/the-ear-that-learns/assets/listening-room.png",
+          "width": "1536",
+          "height": "1024"
+        }
+      ],
+      "storyCharacters": 11126,
+      "firstParagraph": "On a five-second phrase, an unfinished voice, and what a teacher asks us to hear.",
+      "sourceFigureIndex": 1,
+      "sourceStoryIndex": 2,
+      "image": {
+        "found": true,
+        "width": 614,
+        "height": 409,
+        "source": [
+          1536,
+          1024
+        ],
+        "fit": "balanced",
+        "within": true
+      }
+    },
+    {
+      "profile": "portrait",
+      "slug": "the-composable-book",
+      "layout": "ready",
+      "pages": "10",
+      "summary": "A digital book is not a pair of paper-colored application panels. It is a continuity between reading, writing and the forms a work can take. This essay develops Reframe’s composable book as a source-bound edition in which prose, scores, conversation and executable instruments can coexist without surrendering the page as their shared frame.",
+      "summaryVisible": "A digital book is not a pair of paper-colored application panels. It is a continuity between reading, writing and the forms a work can take. This essay develops Reframe’s composable book as a source-bound edition in which prose, scores, conversation and executable instruments can coexist without surrendering the page as their shared frame.",
+      "heroSrc": "/estate/essays/the-composable-book/assets/01-book-spread.svg",
+      "figs": [
+        {
+          "src": "/estate/essays/the-composable-book/assets/01-book-spread.svg",
+          "width": "1400",
+          "height": "820"
+        },
+        {
+          "src": "/estate/essays/the-composable-book/assets/02-composition.svg",
+          "width": "1400",
+          "height": "820"
+        },
+        {
+          "src": "/estate/essays/the-composable-book/assets/03-one-book-many-hosts.svg",
+          "width": "1400",
+          "height": "820"
+        },
+        {
+          "src": "/estate/essays/the-composable-book/assets/04-semantic-ledger.svg",
+          "width": "1400",
+          "height": "820"
+        }
+      ],
+      "storyCharacters": 12762,
+      "firstParagraph": "The first mistake is easy to make. Put two rectangles side by side, give them the color of",
+      "sourceFigureIndex": 1,
+      "sourceStoryIndex": 2,
+      "image": {
+        "found": true,
+        "width": 614,
+        "height": 359,
+        "source": [
+          250,
+          150
+        ],
+        "fit": "balanced",
+        "within": true
+      }
+    },
+    {
+      "profile": "portrait",
+      "slug": "to-read-is-not-to-remember",
+      "layout": "ready",
+      "pages": "3",
+      "summary": "A plausible interpretation is not evidence that a machine has read an entire book. Reading unfolds through time, reconsideration and contradictions that exceed any single model session. From Reframe’s encounters with Ulysses, this essay distinguishes retained information from the continuity of inquiry, and asks how interpretations can remain inspectable when the intelligence doing the reading changes.",
+      "summaryVisible": "A plausible interpretation is not evidence that a machine has read an entire book. Reading unfolds through time, reconsideration and contradictions that exceed any single model session. From Reframe’s encounters with Ulysses, this essay distinguishes retained information from the continuity of inquiry, and asks how interpretations can remain inspectable when the intelligence doing the reading changes.",
+      "figs": [
+        {
+          "src": "/estate/essays/to-read-is-not-to-remember/assets/bookshelf-ipad-landscape-test.png",
+          "width": "1180",
+          "height": "820"
+        }
+      ],
+      "storyCharacters": 3444,
+      "firstParagraph": "On artificial intelligence, memory, and the continuity of understanding",
+      "sourceFigureIndex": -1,
+      "sourceStoryIndex": 1
+    },
+    {
+      "profile": "portrait",
+      "slug": "semantic-compilation-the-archive-is-not-the-edition",
+      "layout": "ready",
+      "pages": "8",
+      "summary": "A chronological archive preserves when something was written; it cannot decide which arrangement becomes a book. Using the Solstice archive and its first published reading, this essay asks how a writer might compile source texts, images and recurring motifs into a defensible edition while keeping editorial judgment, provenance and alternative interpretations visible.",
+      "summaryVisible": "A chronological archive preserves when something was written; it cannot decide which arrangement becomes a book. Using the Solstice archive and its first published reading, this essay asks how a writer might compile source texts, images and recurring motifs into a defensible edition while keeping editorial judgment, provenance and alternative interpretations visible.",
+      "heroSrc": "/estate/essays/semantic-compilation-the-archive-is-not-the-edition/assets/semantic-compilation-estate-rail.svg",
+      "figs": [
+        {
+          "src": "/estate/essays/semantic-compilation-the-archive-is-not-the-edition/assets/semantic-compilation-estate-rail.svg",
+          "width": "1200",
+          "height": "630"
+        }
+      ],
+      "storyCharacters": 10859,
+      "firstParagraph": "A writing archive is evidence. An edition is a decision. Between them lies the work of sem",
+      "sourceFigureIndex": 1,
+      "sourceStoryIndex": 2,
+      "image": {
+        "found": true,
+        "width": 614,
+        "height": 322,
+        "source": [
+          285,
+          150
+        ],
+        "fit": "balanced",
+        "within": true
+      }
+    },
+    {
+      "profile": "portrait",
+      "slug": "teatro-an-unfinished-composition",
+      "layout": "ready",
+      "pages": "6",
+      "summary": "Human experience rarely arrives as a finished story. Memory, bodies, absence, language and machines coexist before any plot can explain them. Teatro begins with that unfinished field and offers the score as a way to compose relations in time and space: a form that can hold uncertainty, stage attention and leave interpretation open.",
+      "summaryVisible": "Human experience rarely arrives as a finished story. Memory, bodies, absence, language and machines coexist before any plot can explain them. Teatro begins with that unfinished field and offers the score as a way to compose relations in time and space: a form that can hold uncertainty, stage attention and leave interpretation open.",
+      "heroSrc": "/estate/essays/teatro-an-unfinished-composition/assets/teatro-score-memory-vector-human-condition.svg",
+      "figs": [
+        {
+          "src": "/estate/essays/teatro-an-unfinished-composition/assets/teatro-score-memory-vector-human-condition.svg",
+          "width": "1200",
+          "height": "630"
+        }
+      ],
+      "storyCharacters": 6910,
+      "firstParagraph": "The human condition is not a completed story. It is a field of relations, memories, machin",
+      "sourceFigureIndex": 1,
+      "sourceStoryIndex": 2,
+      "image": {
+        "found": true,
+        "width": 614,
+        "height": 322,
+        "source": [
+          285,
+          150
+        ],
+        "fit": "balanced",
+        "within": true
+      }
+    },
+    {
+      "profile": "portrait",
+      "slug": "reframe-and-the-business-value-of-the-estate",
+      "layout": "ready",
+      "pages": "8",
+      "summary": "The personal web once offered writers an address; platforms offered distribution. Agents now need something beyond a page: identifiable sources, permissions, capabilities and actions they can interpret and use. This essay considers whether Reframe’s greater value lies in an independently governed, agent-addressable estate rather than in a writing application alone.",
+      "summaryVisible": "The personal web once offered writers an address; platforms offered distribution. Agents now need something beyond a page: identifiable sources, permissions, capabilities and actions they can interpret and use. This essay considers whether Reframe’s greater value lies in an independently governed, agent-addressable estate rather than in a writing application alone.",
+      "heroSrc": "/estate/essays/reframe-and-the-business-value-of-the-estate/assets/address-landscape.png",
+      "figs": [
+        {
+          "src": "/estate/essays/reframe-and-the-business-value-of-the-estate/assets/address-landscape.png",
+          "width": "1536",
+          "height": "1024"
+        },
+        {
+          "src": "/estate/essays/reframe-and-the-business-value-of-the-estate/assets/estate-landscape.png",
+          "width": "1536",
+          "height": "1024"
+        },
+        {
+          "src": "/estate/essays/reframe-and-the-business-value-of-the-estate/assets/exchange-landscape.png",
+          "width": "1536",
+          "height": "1024"
+        }
+      ],
+      "storyCharacters": 10865,
+      "firstParagraph": "Reframe may be more valuable as infrastructure for independently operated, agent-addressab",
+      "sourceFigureIndex": 1,
+      "sourceStoryIndex": 2,
+      "image": {
+        "found": true,
+        "width": 614,
+        "height": 409,
+        "source": [
+          1536,
+          1024
+        ],
+        "fit": "balanced",
+        "within": true
+      }
+    },
+    {
+      "profile": "phone",
+      "slug": "the-door-is-a-score",
+      "layout": "ready",
+      "pages": "19",
+      "summary": "A recorded closing door is not yet a dramatic action. Its meaning depends on a reading of place, intention and silence. This essay traces the craft of the Geräuschemacher from early radio practice to a source-bound listening study, where voice and performed sound become distinct but related ways of interpreting a written scene.",
+      "summaryVisible": "A recorded closing door is not yet a dramatic action. Its meaning depends on a reading of place, intention and silence. This essay traces the craft of the Geräuschemacher from early radio practice to a source-bound listening study, where voice and performed sound become distinct but related ways of interpreting a written scene.",
+      "heroSrc": "/estate/essays/the-door-is-a-score/assets/teatro-door-score.png",
+      "figs": [
+        {
+          "src": "/estate/essays/the-door-is-a-score/assets/teatro-door-score.png",
+          "width": "1774",
+          "height": "887"
+        },
+        {
+          "src": "/estate/essays/the-door-is-a-score/assets/listening-score.png",
+          "width": "1536",
+          "height": "768"
+        }
+      ],
+      "storyCharacters": 11653,
+      "firstParagraph": "Geräuschemachen, semantic reading, and the passage from an audio file to a performance.",
+      "sourceFigureIndex": 1,
+      "sourceStoryIndex": 2,
+      "image": {
+        "found": true,
+        "width": 312,
+        "height": 156,
+        "source": [
+          1774,
+          887
+        ],
+        "fit": "balanced",
+        "within": true
+      }
+    },
+    {
+      "profile": "phone",
+      "slug": "the-ear-that-learns",
+      "layout": "ready",
+      "pages": "19",
+      "summary": "A five-second phrase exposes the difference between generating a note and hearing a syllable. Sing can render a timed score; Ear must attend to the resulting sound without merely recognizing what the score already says. Through actual rehearsal takes, this essay asks what evidence makes an artificial listener capable of learning from a performance.",
+      "summaryVisible": "A five-second phrase exposes the difference between generating a note and hearing a syllable. Sing can render a timed score; Ear must attend to the resulting sound without merely recognizing what the score already says. Through actual rehearsal takes, this essay asks what evidence makes an artificial listener capable of learning from a performance.",
+      "heroSrc": "/estate/essays/the-ear-that-learns/assets/listening-room.png",
+      "figs": [
+        {
+          "src": "/estate/essays/the-ear-that-learns/assets/listening-room.png",
+          "width": "1536",
+          "height": "1024"
+        }
+      ],
+      "storyCharacters": 11126,
+      "firstParagraph": "On a five-second phrase, an unfinished voice, and what a teacher asks us to hear.",
+      "sourceFigureIndex": 1,
+      "sourceStoryIndex": 2,
+      "image": {
+        "found": true,
+        "width": 312,
+        "height": 208,
+        "source": [
+          1536,
+          1024
+        ],
+        "fit": "balanced",
+        "within": true
+      }
+    },
+    {
+      "profile": "phone",
+      "slug": "the-composable-book",
+      "layout": "ready",
+      "pages": "22",
+      "summary": "A digital book is not a pair of paper-colored application panels. It is a continuity between reading, writing and the forms a work can take. This essay develops Reframe’s composable book as a source-bound edition in which prose, scores, conversation and executable instruments can coexist without surrendering the page as their shared frame.",
+      "summaryVisible": "A digital book is not a pair of paper-colored application panels. It is a continuity between reading, writing and the forms a work can take. This essay develops Reframe’s composable book as a source-bound edition in which prose, scores, conversation and executable instruments can coexist without surrendering the page as their shared frame.",
+      "heroSrc": "/estate/essays/the-composable-book/assets/01-book-spread.svg",
+      "figs": [
+        {
+          "src": "/estate/essays/the-composable-book/assets/01-book-spread.svg",
+          "width": "1400",
+          "height": "820"
+        },
+        {
+          "src": "/estate/essays/the-composable-book/assets/02-composition.svg",
+          "width": "1400",
+          "height": "820"
+        },
+        {
+          "src": "/estate/essays/the-composable-book/assets/03-one-book-many-hosts.svg",
+          "width": "1400",
+          "height": "820"
+        },
+        {
+          "src": "/estate/essays/the-composable-book/assets/04-semantic-ledger.svg",
+          "width": "1400",
+          "height": "820"
+        }
+      ],
+      "storyCharacters": 12762,
+      "firstParagraph": "The first mistake is easy to make. Put two rectangles side by side, give them the color of",
+      "sourceFigureIndex": 1,
+      "sourceStoryIndex": 2,
+      "image": {
+        "found": true,
+        "width": 312,
+        "height": 182,
+        "source": [
+          250,
+          150
+        ],
+        "fit": "balanced",
+        "within": true
+      }
+    },
+    {
+      "profile": "phone",
+      "slug": "to-read-is-not-to-remember",
+      "layout": "ready",
+      "pages": "7",
+      "summary": "A plausible interpretation is not evidence that a machine has read an entire book. Reading unfolds through time, reconsideration and contradictions that exceed any single model session. From Reframe’s encounters with Ulysses, this essay distinguishes retained information from the continuity of inquiry, and asks how interpretations can remain inspectable when the intelligence doing the reading changes.",
+      "summaryVisible": "A plausible interpretation is not evidence that a machine has read an entire book. Reading unfolds through time, reconsideration and contradictions that exceed any single model session. From Reframe’s encounters with Ulysses, this essay distinguishes retained information from the continuity of inquiry, and asks how interpretations can remain inspectable when the intelligence doing the reading changes.",
+      "figs": [
+        {
+          "src": "/estate/essays/to-read-is-not-to-remember/assets/bookshelf-ipad-landscape-test.png",
+          "width": "1180",
+          "height": "820"
+        }
+      ],
+      "storyCharacters": 3444,
+      "firstParagraph": "On artificial intelligence, memory, and the continuity of understanding",
+      "sourceFigureIndex": -1,
+      "sourceStoryIndex": 1
+    },
+    {
+      "profile": "phone",
+      "slug": "semantic-compilation-the-archive-is-not-the-edition",
+      "layout": "ready",
+      "pages": "17",
+      "summary": "A chronological archive preserves when something was written; it cannot decide which arrangement becomes a book. Using the Solstice archive and its first published reading, this essay asks how a writer might compile source texts, images and recurring motifs into a defensible edition while keeping editorial judgment, provenance and alternative interpretations visible.",
+      "summaryVisible": "A chronological archive preserves when something was written; it cannot decide which arrangement becomes a book. Using the Solstice archive and its first published reading, this essay asks how a writer might compile source texts, images and recurring motifs into a defensible edition while keeping editorial judgment, provenance and alternative interpretations visible.",
+      "heroSrc": "/estate/essays/semantic-compilation-the-archive-is-not-the-edition/assets/semantic-compilation-estate-rail.svg",
+      "figs": [
+        {
+          "src": "/estate/essays/semantic-compilation-the-archive-is-not-the-edition/assets/semantic-compilation-estate-rail.svg",
+          "width": "1200",
+          "height": "630"
+        }
+      ],
+      "storyCharacters": 10859,
+      "firstParagraph": "A writing archive is evidence. An edition is a decision. Between them lies the work of sem",
+      "sourceFigureIndex": 1,
+      "sourceStoryIndex": 2,
+      "image": {
+        "found": true,
+        "width": 312,
+        "height": 163,
+        "source": [
+          285,
+          150
+        ],
+        "fit": "balanced",
+        "within": true
+      }
+    },
+    {
+      "profile": "phone",
+      "slug": "teatro-an-unfinished-composition",
+      "layout": "ready",
+      "pages": "12",
+      "summary": "Human experience rarely arrives as a finished story. Memory, bodies, absence, language and machines coexist before any plot can explain them. Teatro begins with that unfinished field and offers the score as a way to compose relations in time and space: a form that can hold uncertainty, stage attention and leave interpretation open.",
+      "summaryVisible": "Human experience rarely arrives as a finished story. Memory, bodies, absence, language and machines coexist before any plot can explain them. Teatro begins with that unfinished field and offers the score as a way to compose relations in time and space: a form that can hold uncertainty, stage attention and leave interpretation open.",
+      "heroSrc": "/estate/essays/teatro-an-unfinished-composition/assets/teatro-score-memory-vector-human-condition.svg",
+      "figs": [
+        {
+          "src": "/estate/essays/teatro-an-unfinished-composition/assets/teatro-score-memory-vector-human-condition.svg",
+          "width": "1200",
+          "height": "630"
+        }
+      ],
+      "storyCharacters": 6910,
+      "firstParagraph": "The human condition is not a completed story. It is a field of relations, memories, machin",
+      "sourceFigureIndex": 1,
+      "sourceStoryIndex": 2,
+      "image": {
+        "found": true,
+        "width": 312,
+        "height": 163,
+        "source": [
+          285,
+          150
+        ],
+        "fit": "balanced",
+        "within": true
+      }
+    },
+    {
+      "profile": "phone",
+      "slug": "reframe-and-the-business-value-of-the-estate",
+      "layout": "ready",
+      "pages": "18",
+      "summary": "The personal web once offered writers an address; platforms offered distribution. Agents now need something beyond a page: identifiable sources, permissions, capabilities and actions they can interpret and use. This essay considers whether Reframe’s greater value lies in an independently governed, agent-addressable estate rather than in a writing application alone.",
+      "summaryVisible": "The personal web once offered writers an address; platforms offered distribution. Agents now need something beyond a page: identifiable sources, permissions, capabilities and actions they can interpret and use. This essay considers whether Reframe’s greater value lies in an independently governed, agent-addressable estate rather than in a writing application alone.",
+      "heroSrc": "/estate/essays/reframe-and-the-business-value-of-the-estate/assets/address-landscape.png",
+      "figs": [
+        {
+          "src": "/estate/essays/reframe-and-the-business-value-of-the-estate/assets/address-landscape.png",
+          "width": "1536",
+          "height": "1024"
+        },
+        {
+          "src": "/estate/essays/reframe-and-the-business-value-of-the-estate/assets/estate-landscape.png",
+          "width": "1536",
+          "height": "1024"
+        },
+        {
+          "src": "/estate/essays/reframe-and-the-business-value-of-the-estate/assets/exchange-landscape.png",
+          "width": "1536",
+          "height": "1024"
+        }
+      ],
+      "storyCharacters": 10865,
+      "firstParagraph": "Reframe may be more valuable as infrastructure for independently operated, agent-addressab",
+      "sourceFigureIndex": 1,
+      "sourceStoryIndex": 2,
+      "image": {
+        "found": true,
+        "width": 312,
+        "height": 208,
+        "source": [
+          1536,
+          1024
+        ],
+        "fit": "balanced",
+        "within": true
+      }
+    }
+  ],
+  "errors": 0
+}
