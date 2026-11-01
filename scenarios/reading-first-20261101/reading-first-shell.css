@@ -232,11 +232,24 @@ html:not(.js) body{height:auto;overflow:auto}html:not(.js) .reading-shell{height
  margin:0 0 20px;font:normal clamp(1.38rem,2.7vw,2.35rem)/1.18 "Iowan Old Style",Palatino,Georgia,serif;
  letter-spacing:-.025em;
 }
-.reader-shelf-statement{justify-content:center}
+.reader-shelf-statement{justify-content:stretch;min-height:0;padding-bottom:0}
+.reader-shelf-statement h2{flex-shrink:0;margin:0 0 6px}
 .reader-shelf-statement p{
- font:normal clamp(1rem,1.8vw,1.3rem)/1.55 "Iowan Old Style",Palatino,Georgia,serif;
- max-width:33ch;margin:0 0 24px;
+ font:normal clamp(.85rem,1.35vw,1.02rem)/1.43 "Iowan Old Style",Palatino,Georgia,serif;
+ color:var(--muted);margin:0 0 14px;flex-shrink:0;
 }
+.reader-collection-scroll{
+ flex:1;min-height:0;min-width:0;overflow-x:hidden;overflow-y:auto;
+ scrollbar-width:thin;scrollbar-color:var(--muted) transparent;
+ overscroll-behavior-y:contain;touch-action:pan-y;
+}
+.reader-shelf-contents-entry{
+ padding:clamp(10px,1.8vh,16px) 1px;
+ font-size:clamp(.96rem,1.5vw,1.17rem);
+ border-bottom:1px solid var(--line);
+}
+.reader-shelf-contents-entry:hover{background:color-mix(in srgb,var(--ink) 5%,transparent)}
+
 .reader-collection-open{
  align-self:start;background:none;color:var(--ink);cursor:pointer;
  border:0;border-top:1px solid var(--line);padding:12px 0;

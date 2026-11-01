@@ -64,6 +64,8 @@ function adjacentVolume(name,step){
 }
 const surfaceOffsets={shelf:0,essays:0,'first-readings':0};
 const galleryOffsets={essays:0,'first-readings':0};
+const shelfContentsOffsets={essays:0,'first-readings':0};
+let shelfOriginWork=null;
 let openAtEnd=null;
 let engine=null,signature='',frame=0,pointer=null,volume='library',ready=false,entryUrl=null;
 const positions=new Map();
@@ -99,6 +101,7 @@ function selectSource(name){
  volume=name;
  section.value=volume;
  const parentName=name==='library'?'continuity':isContents(name)?'library':
+   name===shelfOriginWork?'library':
    name==='notes--the-door-is-a-score'?'essay--the-door-is-a-score':owningContents(name);
  parent.hidden=!parentName;
  if(parentName){
@@ -187,6 +190,9 @@ function recordSurfaceOffset(){
   for(const scroller of viewport.querySelectorAll('.reader-gallery-scroll')){
    galleryOffsets[scroller.dataset.collection]=scroller.scrollTop;
   }
+  for(const scroller of viewport.querySelectorAll('.reader-collection-scroll')){
+   shelfContentsOffsets[scroller.dataset.collection]=scroller.scrollTop;
+  }
  }
  else if(isContents(volume))surfaceOffsets[volume]=area.scrollTop;
 }
@@ -211,17 +217,36 @@ function renderSurface(){
    {title:'First Readings',id:'first-readings',description:'Reading 01 — First Reading. Thirty published works, each accompanied by original imagery. The complete reading preserves all forty-one source illustrations.',detail:'Reading 01 · 30 works'}
   ];
   const savedGalleryOffsets={...galleryOffsets};
-  let galleryRestoreComplete=false;
+  const savedContentsOffsets={...shelfContentsOffsets};
+  let nestedRestoreComplete=false;
   for(const book of books){
    const statement=document.createElement('section');
    statement.className='reader-shelf-panel reader-shelf-statement';
    statement.setAttribute('aria-label',book.title+' collection');
    const heading=document.createElement('h2');heading.textContent=book.title;
-   const prose=document.createElement('p');prose.textContent=book.description;
-   const link=document.createElement('button');link.type='button';
-   link.className='reader-collection-open';link.dataset.readerTarget=book.id;
-   link.textContent='Read '+book.title;link.setAttribute('aria-label','Open '+book.title+' contents');
-   statement.append(heading,prose,link);scroll.append(statement);
+   const prose=document.createElement('p');
+   prose.textContent=book.id==='essays'?'Seven essays · chronological':'Reading 01 · First Reading';
+   statement.append(heading,prose);
+   const listing=document.createElement('div');
+   listing.className='reader-collection-scroll';
+   listing.dataset.collection=book.id;
+   listing.tabIndex=0;
+   listing.setAttribute('role','region');
+   listing.setAttribute('aria-label',book.title+' complete contents, scroll vertically');
+   for(const id of contents[book.id]){
+    const entry=document.createElement('button');
+    entry.className='reader-contents-entry reader-shelf-contents-entry';
+    entry.type='button';entry.dataset.readerTarget=id;
+    entry.textContent=labels.get(id);
+    entry.setAttribute('aria-label','Read '+labels.get(id)+' in '+book.title);
+    listing.append(entry);
+   }
+   statement.append(listing);scroll.append(statement);
+   listing.scrollTop=savedContentsOffsets[book.id];
+   listing.addEventListener('scroll',()=>{
+    if(nestedRestoreComplete && listing.isConnected && volume==='library')
+      shelfContentsOffsets[book.id]=listing.scrollTop;
+   },{passive:true});
    const gallery=document.createElement('section');
    gallery.className='reader-shelf-panel reader-shelf-gallery';
    gallery.setAttribute('aria-label',book.title+' illustrated contents');
@@ -252,7 +277,7 @@ function renderSurface(){
    vertical.append(tiles);gallery.append(vertical);scroll.append(gallery);
    vertical.scrollTop=savedGalleryOffsets[book.id];
    vertical.addEventListener('scroll',()=>{
-    if(galleryRestoreComplete && vertical.isConnected && volume==='library')galleryOffsets[book.id]=vertical.scrollTop;
+    if(nestedRestoreComplete && vertical.isConnected && volume==='library')galleryOffsets[book.id]=vertical.scrollTop;
    },{passive:true});
   }
   // The nested gallery can only restore its scroll after layout has established
@@ -262,7 +287,10 @@ function renderSurface(){
    for(const vertical of outer.querySelectorAll('.reader-gallery-scroll')){
     vertical.scrollTop=savedGalleryOffsets[vertical.dataset.collection];
    }
-   galleryRestoreComplete=true;
+   for(const vertical of outer.querySelectorAll('.reader-collection-scroll')){
+    vertical.scrollTop=savedContentsOffsets[vertical.dataset.collection];
+   }
+   nestedRestoreComplete=true;
   }));
  }else{
   const entries=contents[volume];
@@ -296,13 +324,13 @@ function renderSurface(){
  },{passive:true});
  if(volume==='library'){
   scroll.addEventListener('wheel',event=>{
-   if(event.target.closest('.reader-gallery-scroll'))return;
+   if(event.target.closest('.reader-gallery-scroll,.reader-collection-scroll'))return;
    if(Math.abs(event.deltaY)>Math.abs(event.deltaX)){
     event.preventDefault();scroll.scrollLeft+=event.deltaY;
    }
   },{passive:false});
   scroll.addEventListener('keydown',event=>{
-   if(event.target.closest('.reader-gallery-scroll')&&
+   if(event.target.closest('.reader-gallery-scroll,.reader-collection-scroll')&&
       (event.key==='ArrowUp'||event.key==='ArrowDown'))return;
    if(event.key==='ArrowRight'||event.key==='ArrowLeft'){
     event.preventDefault();scroll.scrollBy({left:event.key==='ArrowRight'?240:-240,behavior:'smooth'});
@@ -402,6 +430,9 @@ document.addEventListener('click',e=>{
  if(!link)return;
  e.preventDefault();
  const key=link.dataset.readerTarget;
+ // A direct contents/gallery selection returns to the same facing Bookshelf,
+ // without a newly imposed intermediary collection page.
+ shelfOriginWork=volume==='library'&&owningContents(key)?key:null;
  openVolume(key,{resume:link.dataset.readerResume==='true'});
 });
 previous.addEventListener('click',()=>turn(-1,true));
