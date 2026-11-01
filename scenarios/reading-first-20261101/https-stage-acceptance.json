@@ -1,0 +1,78 @@
+{
+  "scope": "private owner-WLAN staging only",
+  "origin": "https://192.168.8.50:8243",
+  "activeRelease": "shared-shell-20261101-v84-inline-satzfunk-qa",
+  "staticStageRoot": "/home/benedikt/estate-shell-acceptance-staging/current",
+  "stageServices": [
+    "fountain-shell-acceptance-preview-https.service",
+    "fountain-shell-acceptance-preview.service"
+  ],
+  "httpsServicePort": 8243,
+  "reuseWLANCertificate": true,
+  "privateCA": "Fountain Coach Local WLAN CA",
+  "subjectAlternativeName": "IP Address:192.168.8.50",
+  "verified": {
+    "trustedMacWebKitProfiles": [
+      {
+        "engine": "WebKit",
+        "profile": "landscape",
+        "https": true,
+        "player": "ready",
+        "trackCount": 4,
+        "seek": 2,
+        "page": "3\u20134 / 13",
+        "clip": 0,
+        "scroll": [
+          0,
+          0
+        ],
+        "source": "https://192.168.8.50:8243/estate/essays/the-door-is-a-score/media/memory.mp3",
+        "errors": []
+      },
+      {
+        "engine": "WebKit",
+        "profile": "portrait",
+        "https": true,
+        "player": "ready",
+        "trackCount": 4,
+        "seek": 2,
+        "page": "2 / 7",
+        "clip": 0,
+        "scroll": [
+          0
+        ],
+        "source": "https://192.168.8.50:8243/estate/essays/the-door-is-a-score/media/memory.mp3",
+        "errors": []
+      },
+      {
+        "engine": "WebKit",
+        "profile": "phone",
+        "https": true,
+        "player": "ready",
+        "trackCount": 4,
+        "seek": 2,
+        "page": "5 / 18",
+        "clip": 0,
+        "scroll": [
+          0
+        ],
+        "source": "https://192.168.8.50:8243/estate/essays/the-door-is-a-score/media/memory.mp3",
+        "errors": []
+      }
+    ],
+    "mp3RangeHTTP206": "bytes 0-999/337581, length 1000",
+    "unsatisfiableRangeHTTP416": true,
+    "sourceLock": true,
+    "noLocalhostRendering": true
+  },
+  "notVerified": [
+    "physical iPad Safari certificate trust and AV playback",
+    "Chromium trust of existing private CA",
+    "VoiceOver",
+    "public production"
+  ],
+  "sourceSHA256": {
+    "serve_shared_shell_preview_https.py": "8c8a867c66eb3babf10a792f8e4f9f55a7c537e24b99ef68b7054468d8234905",
+    "fountain-shell-acceptance-preview-https.service": "eb217311cd7299ccf2d03238aa9f8c18b6644ade7eb9cd5533d848efd4ddb6fe"
+  }
+}

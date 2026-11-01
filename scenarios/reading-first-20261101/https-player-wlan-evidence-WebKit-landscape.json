@@ -1,0 +1,23 @@
+{
+  "origin": "https://192.168.8.50:8243",
+  "release": "shared-shell-20261101-v84-inline-satzfunk-qa",
+  "results": [
+    {
+      "engine": "WebKit",
+      "profile": "landscape",
+      "https": true,
+      "player": "ready",
+      "trackCount": 4,
+      "seek": 2,
+      "page": "3–4 / 13",
+      "clip": 0,
+      "scroll": [
+        0,
+        0
+      ],
+      "source": "https://192.168.8.50:8243/estate/essays/the-door-is-a-score/media/memory.mp3",
+      "errors": []
+    }
+  ],
+  "failures": 0
+}
