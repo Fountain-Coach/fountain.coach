@@ -22,7 +22,8 @@ const soundEditionPromise=fetch('/estate/essays/the-door-is-a-score/media/editio
    !/^[a-f0-9]{64}$/.test(m.scoreSHA256)||m.tracks.some(t=>t.sourceSHA256!==m.scoreSHA256))
   throw Error('Invalid authenticated sound study');return m;});
 if(!viewport||!source||!window.SolsticeLinotype) return;
-const sourceLibrary=source.innerHTML;
+const sourceLibrary=templates.get('library')?.content.querySelector('.book-flow')?.innerHTML;
+if(!sourceLibrary)throw Error('Authored Bookshelf is unavailable');
 const labels=new Map([['library','Bookshelf'],['essays','Essays'],['solstice','Solstice (WT)'],['solstice-reading-01','Reading 01 · First Reading'],['first-readings','First Readings (historical)'],['teatro','Teatro — An Unfinished Composition'],['notes--the-door-is-a-score','References · The Door Is a Score']]);
 for(const [key,template] of templates){
  if(key.startsWith('essay--')||key.startsWith('solstice-reading-01--')){
@@ -32,8 +33,15 @@ for(const [key,template] of templates){
   section.append(option);
  }
 }
-const essaySequence=['essays',...[...templates.keys()].filter(x=>x.startsWith('essay--')).reverse()];
-const solsticeSequence=['solstice','solstice-reading-01',...[...templates.keys()].filter(x=>x.startsWith('solstice-reading-01--'))];
+const essaySequence=[...templates.keys()].filter(x=>x.startsWith('essay--')).reverse();
+const solsticeSequence=[...templates.keys()].filter(x=>x.startsWith('solstice-reading-01--')&&/\d{4}-\d{2}-\d{2}/.test(x));
+const firstEssay=essaySequence[0],firstReading=solsticeSequence[0];
+if(!firstEssay||!firstReading)throw Error('Published prose missing from Bookshelf');
+function entryVolume(name){
+ if(name==='essays')return firstEssay;
+ if(name==='solstice'||name==='solstice-reading-01')return firstReading;
+ return name;
+}
 function adjacentVolume(name,step){
  const sequence=[essaySequence,solsticeSequence].find(s=>s.includes(name));
  return sequence?.[sequence.indexOf(name)+step]||null;
@@ -49,10 +57,10 @@ appearance();
 theme.addEventListener('click',()=>{const value=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=value;try{localStorage.setItem('fountain-reader-theme',value)}catch{}appearance();signature='';schedule();});
 function routeFromUrl(){
  const pathname=location.pathname,match=location.hash.match(/^#\/read\/([\w-]+)/);
- if(match&&labels.has(match[1]))return match[1];
+ if(match&&labels.has(match[1]))return entryVolume(match[1]);
  if(pathname.includes('/collections/first-readings/'))return 'first-readings';
  if(pathname.includes('/bookshelf/'))return 'library';
- return document.body.dataset.initialVolume||'library';
+ return entryVolume(document.body.dataset.initialVolume||firstEssay);
 }
 function addressFromUrl(){
  const raw=new URLSearchParams(location.hash.split('?')[1]||'').get('at');
@@ -72,7 +80,7 @@ function selectSource(name){
  source.dataset.minLeaves='1';
  volume=name;
  section.value=volume;
- parent.hidden=['library','essays','solstice'].includes(name);
+ parent.hidden=name==='library'||name.startsWith('essay--')||name.startsWith('solstice-reading-01--')||name==='essays'||name==='solstice';
  if(!parent.hidden){const shelf=name==='notes--the-door-is-a-score'?'essay--the-door-is-a-score':name.startsWith('solstice-reading-01--')?'solstice-reading-01':name==='solstice-reading-01'?'solstice':name==='solstice'||name==='essays'?'library':name==='teatro'?'essays':name==='first-readings'?'library':'essays';parent.dataset.readerTarget=shelf;parent.dataset.readerResume=name==='notes--the-door-is-a-score'?'true':'false';parent.textContent=labels.get(shelf);parent.setAttribute('aria-label','Return to '+labels.get(shelf)+' inside the reader');}
  document.title='Benedikt Eickhoff · '+labels.get(volume);
  viewport.setAttribute('aria-label','Paginated '+labels.get(volume));
@@ -205,6 +213,7 @@ async function compose(){
 }
 function schedule(){cancelAnimationFrame(frame);frame=requestAnimationFrame(()=>{void compose();});}
 function openVolume(name,{navigate=true,resume=false,fromEnd=false}={}){
+ name=entryVolume(name);
  if(fromEnd)openAtEnd=name;
  if(!labels.has(name))return;
  if(engine){const address=engine.anchorAt(engine.current);if(address)positions.set(volume,address);}

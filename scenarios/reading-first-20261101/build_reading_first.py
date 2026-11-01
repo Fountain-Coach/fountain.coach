@@ -73,10 +73,10 @@ assert (w/'integrated-volumes.html').exists(), 'Build Essays source volumes firs
 assert (w/'solstice-volumes.html').exists(), 'Build published Solstice source volumes first'
 essays=(w/'integrated-volumes.html').read_text()
 solstice=(w/'solstice-volumes.html').read_text()
-library=re.search(r'<template data-reader-volume="library"><div class="book-flow" data-min-leaves="1">(.*?)</div></template>',essays,re.S)
-assert library, 'Cannot resolve two-book shelf'
+first=re.search(r'<template data-reader-volume="essay--reframe-and-the-business-value-of-the-estate"><div class="book-flow" data-min-leaves="1">(.*?)</div></template>',essays,re.S)
+assert first and len(re.sub(r'<[^>]+>','',first.group(1)))>1200, 'Opening essay is not actual source prose'
 start=page.index(' <div class="frame-source-flow" id="source-flow"')
 end=page.index(' <div class="page-viewport"',start)
-page=page[:start]+' <div class="frame-source-flow" id="source-flow" data-min-leaves="1">'+library.group(1)+'</div>\n'+essays+'\n'+solstice+'\n'+page[end:]
+page=page[:start]+' <div class="frame-source-flow" id="source-flow" data-min-leaves="1">'+first.group(1)+'</div>\n'+essays+'\n'+solstice+'\n'+page[end:]
 (w/'index.html').write_text(page)
 print('written manuscript blocks',len(paragraphs),'chars',sum(map(len,paragraphs)))
