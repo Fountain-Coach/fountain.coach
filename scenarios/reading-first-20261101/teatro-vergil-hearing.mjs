@@ -1,3 +1,4 @@
+import {mountVoicePatchView} from "/estate/assets/satzfunk-player/voice-patch-view.mjs";
 /* Source-bound Vergil reading in the new unified Bookshelf/Reader.
  * Keeps the existing Fountain Press pages and SatzfunkPlayer transport.
  * This is the private, author-approved audition, not public distribution.
@@ -87,6 +88,8 @@ async function install() {
   controls.insertBefore(display,document.getElementById("next-page"));
 
   const updateScore = () => {
+    const patch = viewport.querySelector(".voice-mastering-leaf .voice-patch-surface:not([data-patch-mounted])");
+    if (patch) mountVoicePatchView(patch,player);
     const out = viewport.querySelector(".voice-mastering-leaf .voice-score-live");
     if (!out) return;
     const ear = player.audioSettings.ear;
@@ -126,6 +129,11 @@ async function install() {
     player.addEventListener(event,update);
   }
   new MutationObserver(update).observe(viewport,{attributes:true,attributeFilter:["data-volume","aria-label"]});
+  // Linotype replaces the page on navigation and responsive re-composition.
+  // Mount the patch surface only on the current measured page, not the source.
+  new MutationObserver(() => {
+    if (viewport.querySelector(".voice-patch-surface:not([data-patch-mounted])")) updateScore();
+  }).observe(viewport,{childList:true,subtree:true});
   window.addEventListener("hashchange",update);
   window.addEventListener("popstate",update);
   update();
