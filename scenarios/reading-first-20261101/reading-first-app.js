@@ -129,6 +129,16 @@ function flushPosition(){
 }
 function remember(page){
  if(!engine)return;
+ // A technical end leaf has no narrated prose anchor. Keep its stable
+ // source identity when the header changes width and Linotype reflows.
+ const visible=engine.leaves.slice(page,page+(engine.css.spread?2:1));
+ if(visible.some(leaf=>leaf.type==='end'&&
+   leaf.area.querySelector('.voice-mastering-leaf[data-voice-mastering-profile="satzfunk.voice.mastering.01"]'))){
+  positions.set(volume,{endLeaf:'satzfunk.voice.mastering.01'});
+  pendingPosition=null;
+  clearTimeout(positionTimer);positionTimer=0;
+  return;
+ }
  const anchor=engine.anchorAt(page);
  if(!anchor)return;
  positions.set(volume,anchor);
@@ -479,6 +489,8 @@ async function compose(){
   await Promise.all(srcs.map(loadImage));
   if(token!==compositionToken||targetVolume!==volume)return;
   const focused=viewport.contains(document.activeElement);
+  const preserveMasteringEnd=viewport.dataset.volume===volume&&
+    !!viewport.querySelector('.voice-mastering-leaf');
   engine?.dispose();engine=null;viewport.replaceChildren();
   const e=new window.SolsticeLinotype(viewport,source,{pageFrame:true,label:'Measured '+labels.get(volume)+' pages',runningTitle:'Benedikt Eickhoff',imprint:'Benedikt Eickhoff'});
   engine=e;
@@ -488,6 +500,7 @@ async function compose(){
   let target=0;
   const anchor=positions.get(volume);
   if(openAtEnd===volume){target=e.pages-1;openAtEnd=null;}
+  else if(preserveMasteringEnd||anchor?.endLeaf==='satzfunk.voice.mastering.01'){target=e.pages-1;}
   else if(anchor){try{target=e.pageForAnchor(anchor)}catch{positions.delete(volume);}}
   present(target,{write:false,focus:focused});
   // Visible media are part of the printed page: a page is not ready while

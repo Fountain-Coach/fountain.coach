@@ -33,3 +33,16 @@
   .linotype-end .voice-mastering-leaf p{box-sizing:border-box;width:calc(100% - 20px);max-width:calc(100% - 20px);min-width:0;margin-inline:auto;overflow-wrap:anywhere}
   .linotype-end .voice-mastering-leaf h2{max-width:calc(100% - 20px);min-width:0}
 }
+
+/* WebKit portrait: constrain all flex children to measured sheet width. */
+.linotype-end .voice-mastering-leaf{max-width:100%;min-width:0;overflow:hidden}
+.linotype-end .voice-mastering-leaf p{box-sizing:border-box;max-width:100%;min-width:0;width:100%;overflow-wrap:anywhere}
+.linotype-end .voice-mastering-leaf .voice-score-plate{max-width:100%;min-width:0}
+
+/* Narrow Linotype sheets: keep the entire score within the measured height. */
+@media(max-width:670px){
+ .linotype-end .voice-mastering-leaf{gap:0}
+ .linotype-end .voice-mastering-leaf h2{margin:0 0 .02em}
+ .linotype-end .voice-mastering-leaf .voice-score-plate{max-height:120px}
+ .linotype-end .voice-mastering-leaf .voice-score-commentary{line-height:1.36}
+}
