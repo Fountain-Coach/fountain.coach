@@ -54,9 +54,10 @@ async function install() {
   player.setAttribute("label","Vergil reads Teatro — AI-generated voice");
   player.hidden = true;
   document.body.append(player);
+  player.configureVoice({csoundModule:"/estate/assets/linotype/book-csound-host.js"});
   const track = {
     id:"teatro-vergil-source-aligned-v2", title:TITLE,
-    media:edition.recording.media,mediaSHA256:MEDIA,sourceSHA256:SOURCE,
+    media:edition.recording.media,mediaSHA256:MEDIA,sourceSHA256:SOURCE,voice:true,
     publicReleaseAuthorized:false,privateRehearsalAuthorized:true
   };
   const grant = {scope:"private-wlan-rehearsal",origin:location.origin,
@@ -74,6 +75,8 @@ async function install() {
   button.setAttribute("aria-label","Read Teatro aloud with the AI-generated Vergil voice");
   button.setAttribute("aria-pressed","false");
   header.insertBefore(button,document.getElementById("reader-theme"));
+  const sound = player.createVoiceSettingsControl();
+  header.insertBefore(sound,document.getElementById("reader-theme"));
 
   const display = document.createElement("output");
   display.id = "teatro-vergil-clock";
@@ -87,6 +90,7 @@ async function install() {
     const visible = active();
     if (!visible && player.state.paused === false) player.pause();
     button.hidden = !visible;
+    sound.hidden = !visible;
     display.hidden = !visible;
     const playing = player.state.paused === false;
     button.textContent = playing ? "Pause reading" : "Read aloud";
