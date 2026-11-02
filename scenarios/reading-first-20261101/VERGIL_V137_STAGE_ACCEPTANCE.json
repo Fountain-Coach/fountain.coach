@@ -1,0 +1,67 @@
+{
+  "activeRelease": "shared-shell-20261102-v137-vergil-simplified-reader",
+  "date": "2026-11-02",
+  "delta": [
+    {
+      "afterSHA256": "24a199c8c5b78baebdc3e7db8d80c15bfad903600d54f8556ca794344a2a0c92",
+      "beforeSHA256": "78d4113fec4a70fccb84dcef18231d892a63b3128d1cf0813a9f3aacfecd3a19",
+      "file": "index.html"
+    },
+    {
+      "afterSHA256": "832f5d50cf354f910ddda94194c2d92d32cb980e1c1f4aa36959dc2b1512f6bd",
+      "beforeSHA256": "91bd9274ec80627b97fdcdc5c8da2f2dc74fcd9125a993517d3c3594d1e1248b",
+      "file": "assets/linotype/reading-first-app.js"
+    },
+    {
+      "afterSHA256": "ef22bbe0109dd39d3fc5772f222b6e38d6b388d2ee327467c522f4ea6515dd18",
+      "beforeSHA256": "052f097faf74413c741397edfe8204c1322893d16216b8e9e0237fc65b6409a9",
+      "file": "assets/linotype/teatro-vergil-hearing.mjs"
+    },
+    {
+      "afterSHA256": "25a248b4a12ec189292fe44e297b2c7f2a7b2edd59d9a58db48ce66fcb938b61",
+      "beforeSHA256": "31a1b230642a4d0ff26afdc3f1e546aec7d4e2c703f60c8869133bdb39f703fe",
+      "file": "assets/linotype/vergil-prologue-hearing.mjs"
+    },
+    {
+      "afterSHA256": "b78f527418f7d4b13ad1ee58b569a1214c7ac9eaf0db054d43a1037877f5bb73",
+      "beforeSHA256": "8f3c1eacc221122fb4206f8d758169e3825317e355abe2e292ea454657d80700",
+      "file": "assets/linotype/vergil-midi2-narration.mjs"
+    },
+    {
+      "afterSHA256": "aff97c7676e9f3cf254beba93f5e17d3d0bf57956b72f86e4c9cff750317314a",
+      "beforeSHA256": "e8be7e22d8423ad54c8607cb204587395fe9105f9b065e227b1431da0dccfb81",
+      "file": "assets/linotype/teatro-vergil-hearing.css"
+    },
+    {
+      "afterSHA256": "a77abac2539be9c991e23f064851d12db5a1dfeb2e853de8a1a5c7beb3c553ce",
+      "beforeSHA256": "14d52de8f92813e0c226345cde0dbc0cb96dfa62613941afe38f3789129c8f3d",
+      "file": "assets/linotype/vergil-prologue-hearing.css"
+    }
+  ],
+  "mastering": {
+    "broadcastCertified": false,
+    "default": "Csound studio, unchanged source-owned SatzfunkPlayer voice patch",
+    "ear": "real PCM acoustic witness with nonzero RMS in all four cases",
+    "fullProgrammeMeasurement": "not performed",
+    "targetIntegratedLUFS": -23,
+    "targetTruePeakDBTP": -1
+  },
+  "physicalIPadTouchVoiceOver": "unverified; not a condition satisfied by desktop WebKit",
+  "publicRelease": false,
+  "rollbackRelease": "shared-shell-20261102-v136-vergil-midi2-range-anchor",
+  "schema": "fountain.press.vergil-v137.private-acceptance.v1",
+  "sourceCommit": "785c3c5",
+  "unaltered": {
+    "prologueMP3SHA256": "4b2727e08bd7b3c0edea59f6faca92292e9447d980bfb1d2f963e829dba16881",
+    "prologueMidiScoreSHA256": "f96d3f09c24e81cdd72590536bd28bb4ccd64ec2cf358d24a8d4c0a09178794d",
+    "teatroMP3SHA256": "d5ce996b8d42db2a665263877e35b772220cc1faef6c2e1e54c3a6e0a6a65fcd",
+    "teatroMidiScoreSHA256": "1a04fd7b6835c183b4cd1f01146c1769e0974466393d398e4043691931efebb8"
+  },
+  "verification": {
+    "axeWCAG20And21AA": "8/8 zero rule violations; all colour-contrast checks incomplete",
+    "browserPlaybackAndReflow": "4/4 passed: both real readings in Chrome/WebKit, landscape to portrait",
+    "continuousAudioDrivenPageTurns": "2/2 passed",
+    "cursorClickScrubAndReflow": "2/2 passed",
+    "httpsReadback": "7/7 expected modified bytes equal independently fetched HTTPS"
+  }
+}

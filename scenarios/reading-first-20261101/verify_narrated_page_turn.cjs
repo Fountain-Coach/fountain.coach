@@ -27,16 +27,16 @@ const {chromium,webkit}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
   },id);
   if(!pair)throw Error('No natural page boundary between consecutive timed words');
   result.boundary={start:pair.a.timeSeconds,end:pair.b.timeSeconds,from:pair.ap,to:pair.bp,gap:pair.gap};
-  await page.evaluate(([s,t])=>{const x=document.querySelector(s);x.narrationBinding.setMode('manual');x.seek(t)},[player,pair.a.timeSeconds+.01]);
+  await page.evaluate(([s,t])=>{const x=document.querySelector(s);x.seek(t)},[player,pair.a.timeSeconds+.01]);
   await page.waitForFunction(([s,t])=>Math.abs(document.querySelector(s).state.currentTime-t)<.08,[player,pair.a.timeSeconds+.01],{timeout:11000});
-  await page.evaluate(s=>document.querySelector(s).narrationBinding.setMode('follow'),player);
+
   await page.waitForFunction(n=>window.FountainPressNarrationBridge.current===n,pair.ap,{timeout:12000});
   result.initial=await page.evaluate(s=>({page:window.FountainPressNarrationBridge.current,time:document.querySelector(s).state.currentTime,paused:document.querySelector(s).state.paused}),player);
   await page.locator(button).click();
   await page.waitForFunction(([s,target])=>window.FountainPressNarrationBridge.current===target&&document.querySelector(s).state.currentTime>=0,[player,pair.bp],{timeout:17000});
   result.follow=await page.evaluate(s=>({page:window.FountainPressNarrationBridge.current,time:document.querySelector(s).state.currentTime,paused:document.querySelector(s).state.paused,mode:document.querySelector(s).narrationBinding.mode,marks:document.querySelectorAll('.linotype-audio-cursor-mark').length}),player);
   await page.evaluate(s=>document.querySelector(s).pause(),player);
-  result.pass=result.initial.page===pair.ap&&result.follow.page===pair.bp&&!result.follow.paused&&result.follow.time>=pair.b.timeSeconds-.3&&errs.length===0;
+  result.pass=result.initial.page===pair.ap&&result.follow.page===pair.bp&&result.follow.mode==='cursor'&&result.follow.marks>0&&!result.follow.paused&&result.follow.time>=pair.b.timeSeconds-.3&&errs.length===0;
  }catch(e){result.fail=String(e).slice(0,600);result.pass=false}
  result.errors=errs;console.log(JSON.stringify(result));if(!result.pass)failures++;await page.close();await browser.close();
 }console.log('NATURAL_PAGE_TURNS_FAILURES',failures);if(failures)process.exitCode=1})().catch(e=>{console.error(e);process.exitCode=1});
