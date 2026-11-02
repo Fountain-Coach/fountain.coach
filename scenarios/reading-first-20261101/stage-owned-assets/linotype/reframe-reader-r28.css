@@ -1,0 +1,40 @@
+/* R28: view-layer arrangement of the existing Fountain Press Bookshelf. */
+:root{color-scheme:light}
+.reframe-reader-heading{padding:clamp(18px,3vw,34px) 0 clamp(20px,3vw,32px);border-bottom:1px solid var(--rule);margin-bottom:clamp(22px,3vw,34px)}
+.reframe-reader-heading .reader-eyebrow{font:600 11px/1.5 ui-monospace,Menlo,monospace;letter-spacing:.11em;color:#665f56;margin:0 0 12px}
+.reframe-reader-heading h1{font:400 clamp(40px,6vw,76px)/1.1 "Iowan Old Style",Georgia,serif;letter-spacing:-.045em;margin:0}
+.reframe-reader-heading .reader-deck{font:400 clamp(16px,2vw,21px)/1.4 "Iowan Old Style",Georgia,serif;margin:14px 0 0;color:#5b554e}
+.reframe-reader-footer{max-width:1320px;margin:0 auto;padding:26px clamp(16px,3vw,44px) 52px;color:#514b43;font:13px/1.7 "Iowan Old Style",Georgia,serif;border-top:1px solid var(--rule)}
+.reframe-reader-footer .reader-identities{display:flex;flex-wrap:wrap;gap:6px 24px}
+.reframe-reader-footer p{margin:0 0 8px}
+.reframe-reader-footer a{color:inherit;text-underline-offset:3px}
+.reframe-reader-footer a:focus-visible{outline:2px solid #292520;outline-offset:3px}
+.reframe-reader-footer nav{display:flex;gap:6px 18px;flex-wrap:wrap;margin-top:14px}
+.bookshelf-main{min-height:0;padding-bottom:clamp(30px,7vw,85px)}
+.bookshelf-pathways{font-size:12px}
+@media(max-width:720px){.reframe-reader-heading{padding-top:12px}.reframe-reader-footer{padding-bottom:35px}}
+@media(prefers-reduced-motion:reduce){.shelf-cover{transition:none!important}}
+
+/* Source-owned open hand is the sole obvious return-to-root control. */
+.bookshelf-brand .publisher-circle-return{
+  display:grid;place-items:center;width:100%;height:100%;
+  min-width:44px;min-height:44px;border-radius:inherit;
+  color:inherit;text-decoration:none;cursor:pointer;
+}
+.bookshelf-brand .publisher-circle-return img{pointer-events:none}
+.bookshelf-brand .publisher-circle-return:focus-visible{
+  outline:3px solid var(--ink);outline-offset:4px;
+}
+.book-toolbar .book-root-hand{
+  display:grid;place-items:center;width:44px;height:44px;min-width:44px;
+  max-width:44px;border:1px solid var(--book-rule);
+  border-radius:50%;text-decoration:none;
+}
+.book-toolbar .book-root-hand img{width:32px;height:32px;object-fit:contain}
+.book-toolbar .book-root-hand:focus-visible{
+  outline:3px solid currentColor;outline-offset:3px;
+}
+@media(hover:hover){
+  .bookshelf-brand .publisher-circle-return:hover{background:#2925200a}
+  .book-toolbar .book-root-hand:hover{background:#2925200a}
+}

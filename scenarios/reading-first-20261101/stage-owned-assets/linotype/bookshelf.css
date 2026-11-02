@@ -1,0 +1,106 @@
+@import url("./identity-circle.css");
+/* Fountain Press Bookshelf: a populated row within a visibly open editorial grid.
+   Inspired by the Instruments catalogue's vacant slots, not its chrome/theme. */
+:root{color-scheme:light;--outer:#dfd9ce;--ink:#292520;--rule:#d6cfc2;--vacant:#b7afa3;--bookshelf-slot-radius:22.37%}
+*{box-sizing:border-box}
+html{min-height:100%;background:var(--outer)}
+body.bookshelf-state{margin:0;min-height:100svh;color:var(--ink);background:var(--outer);font-family:"Iowan Old Style",Georgia,serif}
+.book-skip{position:absolute;left:12px;top:-80px;z-index:4;background:var(--outer);color:var(--ink);padding:12px}
+.book-skip:focus{top:12px}
+.bookshelf-main{max-width:1320px;min-height:100svh;margin-inline:auto;padding:clamp(20px,4vw,44px) clamp(16px,3vw,44px)}
+.bookshelf-paper{width:100%;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:clamp(10px,1.5vw,18px);align-items:start;background:transparent;box-shadow:none;}
+.bookshelf-brand{aspect-ratio:1;display:grid;place-items:center;min-width:0}
+.bookshelf-brand img{display:block;width:clamp(66px,7vw,108px);height:auto;aspect-ratio:1;object-fit:contain}
+/* The original open-hand mark is the single explicit Reader-root action. */
+.bookshelf-brand .publisher-circle-return{display:grid;place-items:center;width:100%;height:100%;min-width:44px;min-height:44px;border-radius:inherit;color:inherit;text-decoration:none;cursor:pointer}
+.bookshelf-brand .publisher-circle-return img{pointer-events:none}
+.bookshelf-brand .publisher-circle-return:focus-visible{outline:3px solid var(--ink);outline-offset:4px}
+@media(hover:hover){.bookshelf-brand .publisher-circle-return:hover{background:color-mix(in srgb,var(--ink) 4%,transparent)}}
+.bookshelf-books{display:contents;list-style:none;padding:0;margin:0}
+.shelf-item,.bookshelf-empty{min-width:0;aspect-ratio:1}
+.shelf-item{position:relative;display:grid;place-items:center;min-height:0}
+.shelf-book{position:absolute;inset:0;display:grid;place-items:center;width:100%;height:100%;color:inherit;text-decoration:none;outline-offset:3px}
+/* Occupied and empty thumbnails share the same square, rounded lattice. */
+.shelf-book:focus-visible{outline:2px solid var(--ink);border-radius:var(--bookshelf-slot-radius)}
+.shelf-cover{display:grid;place-items:center;width:100%;height:100%;aspect-ratio:1;min-width:0;min-height:0;overflow:hidden;border-radius:var(--bookshelf-slot-radius);background:#f7f2e8;border:1px solid var(--rule);padding:9%;box-shadow:1px 5px 12px #352c271b}
+/* Keep the actual source art whole; the thumbnail frame, not the cover, is square. */
+.shelf-cover img{display:block;width:100%;height:100%;min-width:0;min-height:0;object-fit:contain}
+.bookshelf-empty{border:1px dashed var(--vacant);border-radius:var(--bookshelf-slot-radius);background:transparent;opacity:.72;pointer-events:none}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){
+.shelf-cover{transition:box-shadow .18s ease}
+.shelf-book:hover .shelf-cover{box-shadow:1px 6px 17px #352c2735}
+}
+@media(max-width:1200px){.bookshelf-paper{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:720px){.bookshelf-paper{grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(12px,3vw,18px)}.bookshelf-brand img{width:clamp(66px,11vw,88px)}}
+@media print{.bookshelf-main{min-height:0}.bookshelf-empty{display:none}}
+
+/* A collection is an editorial publication: recognized identity and parent. */
+.bookshelf-collection-masthead{display:flex;align-items:baseline;justify-content:space-between;gap:20px;max-width:100%;padding:0 0 clamp(18px,2.5vw,30px)}
+.bookshelf-collection-masthead a{color:var(--ink);font:10px/1.5 ui-monospace,Menlo,monospace;letter-spacing:.07em;text-decoration:none;border-bottom:1px solid var(--vacant);padding-bottom:3px}
+.bookshelf-collection-masthead a:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.bookshelf-collection-masthead h1{font:400 clamp(22px,3vw,37px)/1.1 "Iowan Old Style",Georgia,serif;letter-spacing:-.025em;margin:0;text-align:right}
+@media(max-width:720px){.bookshelf-collection-masthead{align-items:start;flex-direction:column;gap:9px}.bookshelf-collection-masthead h1{text-align:left}}
+
+/* Identified cover: artwork and legible title live inside the thumbnail. */
+.shelf-cover:has(.shelf-cover-name){grid-template-rows:minmax(0,1fr) auto;gap:clamp(4px,.7vw,8px);align-items:stretch;padding:9% 8% 10%}
+.shelf-cover-name{display:block;max-width:100%;align-self:end;font:500 clamp(10px,1.05vw,15px)/1.18 "Iowan Old Style",Georgia,serif;letter-spacing:-.015em;text-align:center;color:var(--ink);overflow-wrap:normal;text-wrap:balance}
+.shelf-cover:has(.shelf-cover-name) img{object-fit:contain;object-position:center;max-width:100%;max-height:100%}
+@media(max-width:720px){.shelf-cover-name{font-size:clamp(11px,3vw,14px)}}
+
+
+/* Fountain Press app-surface: the Bookshelf IS the view, not a web page
+   wrapped around the Bookshelf. The original covers remain the only visible
+   text-bearing items. Names, heading and rights stay accessible in the DOM. */
+.press-visually-hidden{
+  position:absolute!important;width:1px!important;height:1px!important;
+  padding:0!important;margin:-1px!important;overflow:hidden!important;
+  clip:rect(0,0,0,0)!important;clip-path:inset(50%)!important;
+  white-space:nowrap!important;border:0!important;
+}
+body.bookshelf-state.app-surface{
+  min-height:100svh;min-height:100dvh;overscroll-behavior-y:contain;
+  -webkit-tap-highlight-color:transparent;
+}
+.app-surface .bookshelf-main{
+  max-width:none;min-height:100svh;min-height:100dvh;margin:0;
+  padding:clamp(16px,3vw,40px);
+  padding-top:max(clamp(16px,3vw,40px),env(safe-area-inset-top));
+  padding-right:max(clamp(16px,3vw,40px),env(safe-area-inset-right));
+  padding-bottom:max(clamp(16px,3vw,40px),env(safe-area-inset-bottom));
+  padding-left:max(clamp(16px,3vw,40px),env(safe-area-inset-left));
+}
+.app-surface .bookshelf-paper{grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(12px,1.6vw,20px);}
+.app-surface .bookshelf-brand{align-self:stretch}
+.app-surface .shelf-book{touch-action:manipulation}
+@media(max-width:720px){
+  .app-surface .bookshelf-paper{grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(12px,3vw,18px)}
+}
+@media(max-width:360px){.app-surface .bookshelf-main{padding:12px}}
+
+
+/* Publication credits/references remain reachable to assistive technology
+   without turning the opening Bookshelf into a website footer. The compact
+   panel appears only when its links actually receive keyboard focus. */
+.app-surface + .press-auxiliary-navigation,
+.app-surface .press-auxiliary-navigation{
+  position:absolute;width:1px;height:1px;overflow:hidden;
+  padding:0;margin:-1px;clip-path:inset(50%);white-space:nowrap;
+}
+.app-surface + .press-auxiliary-navigation:focus-within,
+.app-surface .press-auxiliary-navigation:focus-within{
+  position:fixed;inset:auto 12px max(12px,env(safe-area-inset-bottom)) 12px;
+  width:auto;max-height:50dvh;overflow:auto;padding:20px;margin:0;
+  clip-path:none;white-space:normal;z-index:99;
+  color:var(--ink);background:#f7f2e8;
+  border:1px solid var(--rule);border-radius:16px;
+  box-shadow:0 10px 35px #29252030;
+}
+.app-surface + .press-auxiliary-navigation:focus-within nav,
+.app-surface .press-auxiliary-navigation:focus-within nav{
+  display:flex;flex-wrap:wrap;gap:10px 20px;
+}
+
+/* Source-identified containing space, never a book-wide genre tint. */
+body.app-surface.containing-context[data-containing-space-id="first-readings"][data-containing-space-tone="teal"]{--containing-tone:#4a8982;--containing-field:#d4d8cf}
+body.app-surface.containing-context[data-containing-space-tone="teal"] .bookshelf-main{background:var(--containing-field);box-shadow:inset 5px 0 0 var(--containing-tone);padding-left:max(clamp(22px,3.5vw,48px),env(safe-area-inset-left))}
+body.app-surface.containing-context[data-containing-space-tone="teal"] .bookshelf-brand{border:1.5px solid var(--containing-tone);border-radius:50%}

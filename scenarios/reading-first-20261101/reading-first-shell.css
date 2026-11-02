@@ -330,10 +330,17 @@ html:not(.js) body{height:auto;overflow:auto}html:not(.js) .reading-shell{height
 .reader-gallery-item.is-selected .reader-gallery-title{font-weight:650}
 .reader-presentation-button:focus-visible,.reader-shelf-contents-entry:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
 .reader-collection-pair > [hidden]{display:none!important}
-@media(max-width:900px){
- .reader-collection-page{padding:3px 10px 8px}
- .reader-presentation-switch{display:flex}
- .reader-collection-pair{display:flex;min-height:0;gap:0}
- .reader-collection-pair > .reader-shelf-panel{flex:1;min-width:0;padding:0 4px}
- .reader-collection-pair h3{display:none}
+/* Column mode is a settled reader decision, not a live CSS viewport query.
+   In portrait, the text or image presentation fills the single book page. */
+html[data-book-columns="single"] .reader-collection-page{padding:3px 10px 8px}
+html[data-book-columns="single"] .reader-presentation-switch{display:flex}
+html[data-book-columns="single"] .reader-collection-pair{display:flex;min-height:0;gap:0}
+html[data-book-columns="single"] .reader-collection-pair > .reader-shelf-panel{flex:1;min-width:0;padding:0 4px}
+html[data-book-columns="single"] .reader-collection-pair h3{display:none}
+
+/* Atomic Linotype route transitions. On navigation, the old source must
+   never become an unrelated, temporarily visible page in the new route. */
+#page-viewport[data-navigation-pending] > :is(.linotype-stage,.reader-scroll-surface){
+ visibility:hidden!important;
+ pointer-events:none!important;
 }

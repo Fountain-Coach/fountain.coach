@@ -1,0 +1,174 @@
+{
+  "assets": {
+    "assets/linotype/about-linotype-engine.js": {
+      "sha256": "a3e6e54e949269c46bc6a8672192f69590c811fc86b6c6744ebc78c80f1d11db",
+      "source": "fountain-publishing/fountain.coach/scenarios/reading-first-20261101/stage-owned-assets/linotype/about-linotype-engine.js"
+    },
+    "assets/linotype/book-boot.js": {
+      "sha256": "c7fe0672a6697423d331670fe1c873d51399510a7f5b658b86c37a772d04a661",
+      "source": "fountain-publishing/fountain.coach/site/assets/linotype/book-boot.js"
+    },
+    "assets/linotype/book-csound-host.js": {
+      "sha256": "2a02492a70b6c6bc5352cf405f5203feca4122a3d3dc87a68d38df5ef228e601",
+      "source": "teatro.fountain.coach/site/assets/book-csound-host.js"
+    },
+    "assets/linotype/book.css": {
+      "sha256": "2c2a80839da91f6e83a21a317e2f7404da2881b6c9fec6f3136dbad823ba8afb",
+      "source": "fountain-publishing/fountain.coach/scenarios/reading-first-20261101/stage-owned-assets/linotype/book.css"
+    },
+    "assets/linotype/book.js": {
+      "sha256": "3a00eaf0edc4a663a9f68b834f6f67d54c802387e239710a5083b9deda5fde8d",
+      "source": "fountain-publishing/fountain.coach/site/assets/linotype/book.js"
+    },
+    "assets/linotype/bookshelf.css": {
+      "sha256": "f6a93b5b5e78697d5b92fdf862d9640b7e81923b2564a32667f9fe66215c792c",
+      "source": "fountain-publishing/fountain.coach/scenarios/reading-first-20261101/stage-owned-assets/linotype/bookshelf.css"
+    },
+    "assets/linotype/essays.css": {
+      "sha256": "265932732e835f0b626b226f0d311fae7645a83fa61b24d1edc441c38170e694",
+      "source": "fountain-publishing/fountain.coach/scenarios/reading-first-20261101/stage-owned-assets/linotype/essays.css"
+    },
+    "assets/linotype/fountain-about-entry.css": {
+      "sha256": "d2f8bb3335d8fdc1a37095cc7cbb051739d8b6700402695433fc31d403e94c6a",
+      "source": "fountain-publishing/fountain.coach/scenarios/reading-first-20261101/stage-owned-assets/linotype/fountain-about-entry.css"
+    },
+    "assets/linotype/identity-circle.css": {
+      "sha256": "31483c04941087e607f86b31c2dd0697e86b4f4faaf0c07238042acc9a1c9772",
+      "source": "fountain-publishing/fountain.coach/site/assets/linotype/identity-circle.css"
+    },
+    "assets/linotype/linotype-engine.js": {
+      "sha256": "9aa988c6dcd5c946cae65b3a45328b08f4f46b1c9105996ea39eb5e741b4e8e9",
+      "source": "fountain-publishing/fountain.coach/site/assets/linotype/linotype-engine.js"
+    },
+    "assets/linotype/living-essays.css": {
+      "sha256": "6a5c8da922578ed738e6b52c57ddde06c8cb7ad8e2c9c8eef00f53301438819b",
+      "source": "fountain-publishing/fountain.coach/scenarios/reading-first-20261101/stage-owned-assets/linotype/living-essays.css"
+    },
+    "assets/linotype/living-essays.js": {
+      "sha256": "bb9cd49ddf15aa0fede5b5753da45a4d218f174c66fd67d858fca40e76d7cc58",
+      "source": "fountain-publishing/fountain.coach/scenarios/reading-first-20261101/stage-owned-assets/linotype/living-essays.js"
+    },
+    "assets/linotype/mobile-page-navigation.css": {
+      "sha256": "b485292a2ef38f02298f9b2a124706bd179fa9502e7188de6f463c85da578327",
+      "source": "fountain-publishing/fountain.coach/site/assets/linotype/mobile-page-navigation.css"
+    },
+    "assets/linotype/mobile-page-navigation.js": {
+      "sha256": "fc5631543ec2269fcd536bafaf54c7f477a5d5253dbaf3296edcbc4402acd829",
+      "source": "fountain-publishing/fountain.coach/site/assets/linotype/mobile-page-navigation.js"
+    },
+    "assets/linotype/reading-audio-cursor.mjs": {
+      "sha256": "f44cfc62a33f5e4d2feeb158ac20ec3f7f626fc86ccae1526b7d8b6ad45e94c2",
+      "source": "fountain-press/runtime/reading-audio-cursor.mjs"
+    },
+    "assets/linotype/reading-first-app.js": {
+      "sha256": "91bd9274ec80627b97fdcdc5c8da2f2dc74fcd9125a993517d3c3594d1e1248b",
+      "source": "fountain-publishing/fountain.coach/scenarios/reading-first-20261101/reading-first-app.js"
+    },
+    "assets/linotype/reading-first-press-engine.js": {
+      "sha256": "c3e727b2b10b1ef76fb8976d9791580cb4604be9b66cb58d21bc605eaf560e66",
+      "source": "fountain-publishing/fountain.coach/scenarios/reading-first-20261101/reading-first-press-engine.js"
+    },
+    "assets/linotype/reading-first-press-frame.css": {
+      "sha256": "4cd2f853315d51bdd2c31917782d42759fee0a9a20cf18ae4d261af085bd0e51",
+      "source": "fountain-publishing/fountain.coach/scenarios/reading-first-20261101/reading-first-press-frame.css"
+    },
+    "assets/linotype/reading-first-press-host.css": {
+      "sha256": "a0ce4a3ba7c0e549354de8b3aaed608ad178f62bcfbc3451e3443f2989ea84b0",
+      "source": "fountain-publishing/fountain.coach/scenarios/reading-first-20261101/reading-first-press-host.css"
+    },
+    "assets/linotype/reading-first-shell.css": {
+      "sha256": "3f701b3d89bcaef92feb8850481fdfebad1134d260fe72eaca9cf418ab0c1236",
+      "source": "fountain-publishing/fountain.coach/scenarios/reading-first-20261101/reading-first-shell.css"
+    },
+    "assets/linotype/reading-layout-policy.js": {
+      "sha256": "f098b7faf814fc7faa027bc5a5b9a24969dc181064beebbe7a4597ba335f001b",
+      "source": "fountain-publishing/fountain.coach/site/assets/linotype/reading-layout-policy.js"
+    },
+    "assets/linotype/reframe-reader-r28.css": {
+      "sha256": "d63a3243abe216fc7a73b45d5e4e8d17d1d36861f97cd7230bc19887c8fb80b1",
+      "source": "fountain-publishing/fountain.coach/scenarios/reading-first-20261101/stage-owned-assets/linotype/reframe-reader-r28.css"
+    },
+    "assets/linotype/teatro-vergil-hearing.css": {
+      "sha256": "e8be7e22d8423ad54c8607cb204587395fe9105f9b065e227b1431da0dccfb81",
+      "source": "fountain-publishing/fountain.coach/scenarios/reading-first-20261101/teatro-vergil-hearing.css"
+    },
+    "assets/linotype/teatro-vergil-hearing.mjs": {
+      "sha256": "052f097faf74413c741397edfe8204c1322893d16216b8e9e0237fc65b6409a9",
+      "source": "fountain-publishing/fountain.coach/scenarios/reading-first-20261101/teatro-vergil-hearing.mjs"
+    },
+    "assets/linotype/vergil-midi2-narration.mjs": {
+      "sha256": "8f3c1eacc221122fb4206f8d758169e3825317e355abe2e292ea454657d80700",
+      "source": "fountain-publishing/fountain.coach/scenarios/reading-first-20261101/vergil-midi2-narration.mjs"
+    },
+    "assets/linotype/vergil-prologue-hearing.css": {
+      "sha256": "14d52de8f92813e0c226345cde0dbc0cb96dfa62613941afe38f3789129c8f3d",
+      "source": "fountain-publishing/fountain.coach/scenarios/reading-first-20261101/vergil-prologue-hearing.css"
+    },
+    "assets/linotype/vergil-prologue-hearing.mjs": {
+      "sha256": "31a1b230642a4d0ff26afdc3f1e546aec7d4e2c703f60c8869133bdb39f703fe",
+      "source": "fountain-publishing/fountain.coach/scenarios/reading-first-20261101/vergil-prologue-hearing.mjs"
+    }
+  },
+  "externalOwners": {
+    "SatzfunkPlayer": "d50140ddc8bb0ec12aec26499ac55c1c7d907a91",
+    "fountain-press": "9393405ec72d9640705605fb1273184dc87c2a14",
+    "teatro.fountain.coach": "ce9078b83cc6b35c1f9bd0d18fd9b6ce573351c1"
+  },
+  "indexSHA256": "78d4113fec4a70fccb84dcef18231d892a63b3128d1cf0813a9f3aacfecd3a19",
+  "playerAssets": {
+    "assets/satzfunk-player/index.mjs": {
+      "sha256": "9aa428c8dc4c59453c6b28663f17fd91a2e0a2ef589fe833b582228de0492a2a",
+      "source": "fountain-publishing/fountain.coach/scenarios/reading-first-20261101/stage-owned-assets/satzfunk-player/index.mjs"
+    },
+    "assets/satzfunk-player/midi2-codec.mjs": {
+      "sha256": "9a113bc25e2564068456583de2d16cc150c92f27fb7bef7b09e377e15ae5f2c7",
+      "source": "SatzfunkPlayer/src/midi2-codec.mjs"
+    },
+    "assets/satzfunk-player/midi2-reading-score.mjs": {
+      "sha256": "d5859cf6f84d4c86317c207c2299bd6fc7a59b5d50b45f0037e679e4a6ab1fe0",
+      "source": "SatzfunkPlayer/src/midi2-reading-score.mjs"
+    },
+    "assets/satzfunk-player/midi2-reading-transport.mjs": {
+      "sha256": "33360f9e747670e8d3b89f0b0f3decdf8366f6a4488f8807a37924b03470540f",
+      "source": "SatzfunkPlayer/src/midi2-reading-transport.mjs"
+    },
+    "assets/satzfunk-player/player-media.mjs": {
+      "sha256": "57c02b2c26616272b98ad9f7cf2d0b953601383e63d7de8dbbbdb8821fb5a5a5",
+      "source": "SatzfunkPlayer/src/player-media.mjs"
+    },
+    "assets/satzfunk-player/satzfunk-media-element.mjs": {
+      "sha256": "c547bf677bdee9079d7c0926a5e77cbc8aaeaee6696dc92101bf3894e53eaf19",
+      "source": "SatzfunkPlayer/src/satzfunk-media-element.mjs"
+    },
+    "assets/satzfunk-player/vendor/midi2/index.js": {
+      "sha256": "97282bbe2a0e0a2f796e9c8f9d8a281a15b4c1c4d346dbebb5662b30bb745590",
+      "source": "SatzfunkPlayer/vendor/midi2/midi2.js/dist/index.js"
+    },
+    "assets/satzfunk-player/voice-mastering.mjs": {
+      "sha256": "c62b925cd1d422cdbbfce4048abf4b10d08e5bce84c86f71c5c4c871f27da89b",
+      "source": "SatzfunkPlayer/src/voice-mastering.mjs"
+    },
+    "assets/satzfunk-player/voice-mix.mjs": {
+      "sha256": "9ed710b5959f522d5b68cd71f5869355bd30d8eb1c680db14e6222ab3572e8eb",
+      "source": "SatzfunkPlayer/src/voice-mix.mjs"
+    },
+    "assets/satzfunk-player/voice-patch-view.mjs": {
+      "sha256": "321de5e1ce33eafff7de4f133f43be7d3c775198f60c06a66178eefb736f6a0d",
+      "source": "SatzfunkPlayer/src/voice-patch-view.mjs"
+    },
+    "assets/satzfunk-player/voice-patch.mjs": {
+      "sha256": "e74d5b79b4cd845696e07e4872cfec42bad69af1156dfb73408f1d271661a2c7",
+      "source": "SatzfunkPlayer/src/voice-patch.mjs"
+    }
+  },
+  "privateMediaSHA256": {
+    "prologue-midi2-score": "f96d3f09c24e81cdd72590536bd28bb4ccd64ec2cf358d24a8d4c0a09178794d",
+    "prologue-mp3": "4b2727e08bd7b3c0edea59f6faca92292e9447d980bfb1d2f963e829dba16881",
+    "teatro-midi2-score": "1a04fd7b6835c183b4cd1f01146c1769e0974466393d398e4043691931efebb8",
+    "teatro-mp3": "d5ce996b8d42db2a665263877e35b772220cc1faef6c2e1e54c3a6e0a6a65fcd"
+  },
+  "publicPublication": false,
+  "schema": "fountain.press.private-stage-source-map.v1",
+  "sourcePolicy": "exact v136 static asset bytes; private MIDI reading scores/audio remain outside Git",
+  "stageRelease": "shared-shell-20261102-v136-vergil-midi2-range-anchor"
+}

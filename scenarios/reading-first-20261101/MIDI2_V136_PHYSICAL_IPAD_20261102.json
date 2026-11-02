@@ -1,0 +1,18 @@
+{
+  "schema": "fountain.press.physical-ipad-midi2-acceptance.v1",
+  "observedAt": "2026-11-02",
+  "device": "iPad Pro 11-inch (3rd generation)",
+  "os": "iPadOS 26.6.2",
+  "paired": true,
+  "developerMode": true,
+  "unlocked": true,
+  "orientation": "landscapeLeft",
+  "nativeSafariLaunch": "PROVEN via CoreDevice URL payload",
+  "actualSafariRender": "UNVERIFIED (no physical screen capture)",
+  "touchSelectionAndScrub": "UNVERIFIED",
+  "physicalAudioPlayback": "UNVERIFIED",
+  "physicalVoiceOver": "UNVERIFIED",
+  "nativeXCTestRunner": "not installed; prior 3-app profile limit, existing apps preserved",
+  "desktopAX": "8/8 axe-core tests, zero violations, colour contrast incomplete; not native AX",
+  "publicReleaseAuthorized": false
+}

@@ -1,0 +1,182 @@
+{
+  "schema": "fountain.press.midi2.ax.acceptance.v1",
+  "physicalDevice": false,
+  "results": [
+    {
+      "browser": "Chrome",
+      "viewport": "1024x768",
+      "route": "teatro",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "pageErrors": [],
+      "control": {
+        "mode": "cursor",
+        "cursor": 1,
+        "selects": [
+          "Voice sound",
+          "Narrator page following",
+          "Voice sound",
+          "Narrator page following",
+          "Choose publication"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "browser": "Chrome",
+      "viewport": "1024x768",
+      "route": "solstice-reading-01--vergil",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "pageErrors": [],
+      "control": {
+        "mode": "cursor",
+        "cursor": 1,
+        "selects": [
+          "Voice sound",
+          "Narrator page following",
+          "Voice sound",
+          "Narrator page following",
+          "Choose publication"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "browser": "Chrome",
+      "viewport": "390x844",
+      "route": "teatro",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "pageErrors": [],
+      "control": {
+        "mode": "cursor",
+        "cursor": 1,
+        "selects": [
+          "Voice sound",
+          "Narrator page following",
+          "Voice sound",
+          "Narrator page following",
+          "Choose publication"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "browser": "Chrome",
+      "viewport": "390x844",
+      "route": "solstice-reading-01--vergil",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "pageErrors": [],
+      "control": {
+        "mode": "cursor",
+        "cursor": 1,
+        "selects": [
+          "Voice sound",
+          "Narrator page following",
+          "Voice sound",
+          "Narrator page following",
+          "Choose publication"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "browser": "WebKit",
+      "viewport": "1024x768",
+      "route": "teatro",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "pageErrors": [],
+      "control": {
+        "mode": "cursor",
+        "cursor": 1,
+        "selects": [
+          "Voice sound",
+          "Narrator page following",
+          "Voice sound",
+          "Narrator page following",
+          "Choose publication"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "browser": "WebKit",
+      "viewport": "1024x768",
+      "route": "solstice-reading-01--vergil",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "pageErrors": [],
+      "control": {
+        "mode": "cursor",
+        "cursor": 1,
+        "selects": [
+          "Voice sound",
+          "Narrator page following",
+          "Voice sound",
+          "Narrator page following",
+          "Choose publication"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "browser": "WebKit",
+      "viewport": "390x844",
+      "route": "teatro",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "pageErrors": [],
+      "control": {
+        "mode": "cursor",
+        "cursor": 1,
+        "selects": [
+          "Voice sound",
+          "Narrator page following",
+          "Voice sound",
+          "Narrator page following",
+          "Choose publication"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "browser": "WebKit",
+      "viewport": "390x844",
+      "route": "solstice-reading-01--vergil",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "pageErrors": [],
+      "control": {
+        "mode": "cursor",
+        "cursor": 1,
+        "selects": [
+          "Voice sound",
+          "Narrator page following",
+          "Voice sound",
+          "Narrator page following",
+          "Choose publication"
+        ]
+      },
+      "pass": true
+    }
+  ]
+}
