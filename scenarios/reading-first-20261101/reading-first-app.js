@@ -195,6 +195,21 @@ function present(target,{write=true,focus=false}={}){
  status.textContent=(engine.css.spread?'Pages '+(page+1)+' to '+end:'Page '+(page+1))+' of '+engine.pages+'. '+labels.get(volume);
  if(focus){const leaf=engine.leaves[page]?.el;if(leaf){leaf.tabIndex=-1;leaf.focus({preventScroll:true});}}
 }
+// An optional narrator adapter addresses the existing measured Linotype.
+// It cannot paginate, alter source text or execute an audio transport itself.
+window.FountainPressNarrationBridge=Object.freeze({
+ get volume(){return volume},
+ get leaves(){return engine?.leaves||[]},
+ get current(){return engine?.current??0},
+ get css(){return engine?.css||{}},
+ spreadStart(i){return engine?.spreadStart(i)},
+ showPage(i){
+  if(!engine||viewport.dataset.layout!=='ready'||!Number.isInteger(i)||
+     i<0||i>=engine.pages)return false;
+  present(i,{write:false,focus:false});
+  return true;
+ }
+});
 /* A media leaf cannot be measured until its intrinsic image geometry is known.
    Never accept a page and then allow a late-decoded image to change its flow. */
 function recordSurfaceOffset(){
@@ -513,6 +528,7 @@ async function compose(){
   viewport.dataset.pages=String(e.pages);
   viewport.dataset.mode=e.css.spread?'spread':'single';
   viewport.dataset.volume=volume;
+  document.dispatchEvent(new CustomEvent("fountain:linotype-composed",{detail:{volume}}));
  }catch(error){
   if(token!==compositionToken)return;
   console.error('Fountain Press reader failure',volume,error);

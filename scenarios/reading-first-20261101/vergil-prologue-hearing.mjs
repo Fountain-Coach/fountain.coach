@@ -1,4 +1,5 @@
 import {mountVoicePatchView} from "/estate/assets/satzfunk-player/voice-patch-view.mjs";
+import {installVergilNarration} from "/estate/assets/linotype/vergil-midi2-narration.mjs";
 /* Source-bound Vergil reading in the new unified Bookshelf/Reader.
  * Keeps the existing Fountain Press pages and SatzfunkPlayer transport.
  * This is the private, author-approved audition, not public distribution.
@@ -86,6 +87,20 @@ async function install() {
   display.className = "vergil-prologue-clock";
   display.textContent = "0:00 / " + time(Math.round(edition.recording.duration));
   controls.insertBefore(display,document.getElementById("next-page"));
+
+  // Only the exact, author-private, acoustically aligned source enables
+  // MIDI2 page following; an invalid/missing sidecar leaves ordinary playback.
+  void installVergilNarration({
+    player,track,sound,active,viewport,
+    scoreURL:"/estate/media/first-readings/prologue-midi2-reading-score.private.json",
+    sourceBlocks:[...template.content.querySelectorAll("[data-source-block]")]
+      .filter(node=>node.matches("h2,p") &&
+        /^solstice-reading-01--vergil\.text\.\d+$/.test(node.dataset.sourceBlock))
+      .map(node=>({id:node.dataset.sourceBlock,text:node.textContent.trim()}))
+  }).then(binding=>{player.narrationBinding=binding;}).catch(error=>{
+    sound.dataset.narrationStatus="unavailable";
+    console.warn("MIDI2 narrator timing unavailable; manual reading remains",String(error));
+  });
 
   const updateScore = () => {
     if (!active()) return;
