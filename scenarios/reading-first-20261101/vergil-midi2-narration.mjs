@@ -5,8 +5,8 @@ import {createNarratedPageController,makeLinotypeReadingCursor} from "/estate/as
 // A source-bound optional adapter: the player owns time, Press owns physical
 // pages, MIDI 2.0 owns the event projection. Nothing reads from Ear RMS to
 // guess a spoken word. The private score itself must pass source digest admission.
-export async function installVergilNarration({player,track,sourceBlocks,scoreURL,sound,active,viewport}={}){
- if(!player||!track||!Array.isArray(sourceBlocks)||!sound ||
+export async function installVergilNarration({player,track,sourceBlocks,scoreURL,active,viewport}={}){
+ if(!player||!track||!Array.isArray(sourceBlocks)||
     typeof active!=="function"||!viewport||
     !scoreURL?.startsWith("/estate/media/first-readings/"))
     throw new TypeError("Narration requires the admitted recording and canonical source");
@@ -24,30 +24,13 @@ export async function installVergilNarration({player,track,sourceBlocks,scoreURL
  }});
  const cursor=makeLinotypeReadingCursor(document);
  controller=createNarratedPageController({
-  engine:bridge,score,transport,cursor,mode:"follow",
+  engine:bridge,score,transport,cursor,mode:"cursor",
   showPage:(page)=>bridge.showPage(page),
   onStatus:status=>{
-   if(sound.dataset) sound.dataset.narrationStatus=status.state;
+   player.dataset.narrationStatus=status.state;
   }
  });
- // The reader's Audio disclosure is the existing settings location; no
- // overlay, transcript or duplicate transport control is introduced.
- const label=document.createElement("label");
- label.className="satzfunk-narration-setting";
- label.textContent="Narrator";
- const select=document.createElement("select");
- select.className="satzfunk-narration-mode";
- select.setAttribute("aria-label","Narrator page following");
- for(const [value,name] of [
-  ["manual","Manual reading"],["follow","Follow narrator"],
-  ["cursor","Follow + audio cursor"]]){
-  const option=document.createElement("option");
-  option.value=value;option.textContent=name;select.append(option);
- }
- select.value="follow";
- select.addEventListener("change",()=>controller?.setMode(select.value));
- label.append(select);
- sound.append(label);
+ // No narrator/audio mode selector: the source-bound cursor always follows.
  const detachScrub=controller.attachPointerScrub(viewport,document);
  const reflow=()=>{
   if(disposed)return;
@@ -64,12 +47,11 @@ export async function installVergilNarration({player,track,sourceBlocks,scoreURL
   scoreID:transport.scoreID,
   get mode(){return controller.mode},
   get current(){return transport.current},
-  setMode(value){select.value=controller.setMode(value);return select.value},
   seekToSpan(blockID,offset){return controller.seekAt(blockID,offset)},
   dispose(){
    if(disposed)return;disposed=true;
    document.removeEventListener("fountain:linotype-composed",reflow);
-   observe.disconnect();detachScrub();transport.dispose();controller.dispose();label.remove();
+   observe.disconnect();detachScrub();transport.dispose();controller.dispose();
   }
  });
 }

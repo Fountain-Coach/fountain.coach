@@ -1,4 +1,3 @@
-import {mountVoicePatchView} from "/estate/assets/satzfunk-player/voice-patch-view.mjs";
 import {installVergilNarration} from "/estate/assets/linotype/vergil-midi2-narration.mjs";
 /* Source-bound Vergil reading in the new unified Bookshelf/Reader.
  * Keeps the existing Fountain Press pages and SatzfunkPlayer transport.
@@ -56,7 +55,7 @@ async function install() {
   player.setAttribute("label","Vergil reads Teatro — AI-generated voice");
   player.hidden = true;
   document.body.append(player);
-  player.configureVoice({csoundModule:"/estate/assets/linotype/book-csound-host.js"});
+  player.configureVoice({csoundModule:"/estate/assets/linotype/book-csound-host.js",mode:"studio"});
   const track = {
     id:"teatro-vergil-source-aligned-v2", title:TITLE,
     media:edition.recording.media,mediaSHA256:MEDIA,sourceSHA256:SOURCE,voice:true,
@@ -73,12 +72,10 @@ async function install() {
   button.id = "teatro-vergil-read";
   button.type = "button";
   button.className = "header-books teatro-vergil-read";
-  button.textContent = "Read aloud";
-  button.setAttribute("aria-label","Read Teatro aloud with the AI-generated Vergil voice");
+  button.textContent = "▶";
+  button.setAttribute("aria-label","Play Vergil narration");
   button.setAttribute("aria-pressed","false");
   header.insertBefore(button,document.getElementById("reader-theme"));
-  const sound = player.createVoiceSettingsControl();
-  header.insertBefore(sound,document.getElementById("reader-theme"));
 
   const display = document.createElement("output");
   display.id = "teatro-vergil-clock";
@@ -91,65 +88,38 @@ async function install() {
   // Only the exact, author-private, acoustically aligned source enables
   // MIDI2 page following; an invalid/missing sidecar leaves ordinary playback.
   void installVergilNarration({
-    player,track,sound,active,viewport,
+    player,track,active,viewport,
     scoreURL:"/estate/media/first-readings/teatro-midi2-reading-score.private.json",
     sourceBlocks:[...template.content.querySelectorAll("[data-source-block]")]
       .filter(node=>node.matches("h2,p") &&
         /^teatro-an-unfinished-composition\.(?:title|p\d+)$/.test(node.dataset.sourceBlock))
       .map(node=>({id:node.dataset.sourceBlock,text:node.textContent.trim()}))
   }).then(binding=>{player.narrationBinding=binding;}).catch(error=>{
-    sound.dataset.narrationStatus="unavailable";
-    console.warn("MIDI2 narrator timing unavailable; manual reading remains",String(error));
+    player.dataset.narrationStatus="unavailable";
+    console.warn("Source-aligned audio cursor unavailable",String(error));
   });
 
-  const updateScore = () => {
-    if (!active()) return;
-    const patch = viewport.querySelector(".voice-mastering-leaf .voice-patch-surface:not([data-patch-mounted])");
-    if (patch) mountVoicePatchView(patch,player);
-    const out = viewport.querySelector(".voice-mastering-leaf .voice-score-live");
-    if (!out) return;
-    const ear = player.audioSettings.ear;
-    if (player.state.paused || player.audioSettings.mode === "original") {
-      out.textContent = player.audioSettings.mode === "original"
-        ? "Original source · Csound bypassed" : "Ear listens when the reading plays.";
-    } else if (ear && Number.isFinite(ear.rms) && Number.isFinite(ear.samplePeak)) {
-      out.textContent = "Ear · RMS " + ear.rms.toFixed(3) + " · sample peak " +
-        ear.samplePeak.toFixed(3) + " (before output gain)";
-    } else {
-      out.textContent = "Ear listening · awaiting the next audio window";
-    }
-  };
-  player.addEventListener("satzfunkplayer:ear-observation",updateScore);
-  player.addEventListener("satzfunkplayer:audio-settings",updateScore);
   const update = () => {
     const visible = active();
     if (!visible && player.state.paused === false) player.pause();
     button.hidden = !visible;
-    sound.hidden = !visible;
     display.hidden = !visible;
     const playing = player.state.paused === false;
-    button.textContent = playing ? "Pause reading" : "Read aloud";
+    button.textContent = playing ? "❚❚" : "▶";
     button.setAttribute("aria-pressed",String(playing));
-    button.setAttribute("aria-label",(playing ? "Pause" : "Read")+
-      " Teatro aloud with the AI-generated Vergil voice");
-    updateScore();
+    button.setAttribute("aria-label",playing ? "Pause Vergil narration" : "Play Vergil narration");
     display.textContent = time(player.state.currentTime) +
       " / " + time(Math.round(edition.recording.duration));
   };
   button.addEventListener("click",() => {
     if (!active()) return;
     if (player.state.paused === false) player.pause();
-    else player.play().catch(() => {button.textContent="Audio unavailable";button.disabled=true;});
+    else player.play().catch(() => {button.setAttribute("aria-label","Audio unavailable");button.disabled=true;});
   });
   for (const event of ["satzfunkplayer:position","satzfunkplayer:transport","satzfunkplayer:ready","satzfunkplayer:refused"]) {
     player.addEventListener(event,update);
   }
   new MutationObserver(update).observe(viewport,{attributes:true,attributeFilter:["data-volume","aria-label"]});
-  // Linotype replaces the page on navigation and responsive re-composition.
-  // Mount the patch surface only on the current measured page, not the source.
-  new MutationObserver(() => {
-    if (viewport.querySelector(".voice-patch-surface:not([data-patch-mounted])")) updateScore();
-  }).observe(viewport,{childList:true,subtree:true});
   window.addEventListener("hashchange",update);
   window.addEventListener("popstate",update);
   update();

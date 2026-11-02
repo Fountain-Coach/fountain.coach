@@ -1,122 +1,18 @@
-/* Source-aligned Vergil playback belongs to the existing Reader frame. */
-.header-actions .teatro-vergil-read{white-space:nowrap;max-width:10rem}
-.header-actions .teatro-vergil-read[aria-pressed="true"]{text-decoration:underline;text-underline-offset:.3em}
-.frame-controls .teatro-vergil-clock{font:500 .68rem/1.4 ui-monospace,Menlo,monospace;color:var(--ink,var(--book-ink,currentColor));font-variant-numeric:tabular-nums;white-space:nowrap;align-self:center}
-.teatro-vergil-read[hidden],.teatro-vergil-clock[hidden]{display:none!important}
-@media(max-width:670px){.header-actions .teatro-vergil-read{font-size:.68rem;padding:.35rem .2rem}.frame-controls .teatro-vergil-clock{font-size:.6rem}}
-
-/* Reusable SatzfunkPlayer voice listening preference, projected into page frame. */
-.header-actions .satzfunk-voice-settings{position:relative;align-self:center;font:inherit}
-.header-actions .satzfunk-voice-settings[hidden]{display:none!important}
-.header-actions .satzfunk-voice-settings>summary{cursor:pointer;white-space:nowrap;font:500 .78rem/1.5 inherit;padding:.25rem .35rem}
-.header-actions .satzfunk-voice-settings>summary:focus-visible{outline:2px solid currentColor;outline-offset:3px}
-.header-actions .satzfunk-voice-panel{position:absolute;z-index:40;right:0;top:calc(100% + .3rem);width:min(17rem,74vw);padding:.8rem;box-sizing:border-box;border:1px solid currentColor;border-radius:.55rem;background:var(--paper,Canvas);color:var(--ink,CanvasText);box-shadow:0 8px 24px #0002}
-.header-actions .satzfunk-voice-panel label{display:grid;gap:.4rem;font-size:.78rem}
-.header-actions .satzfunk-voice-panel select{font:inherit;width:100%;padding:.5rem;background:Canvas;color:CanvasText;border:1px solid currentColor;border-radius:.3rem}
-.header-actions .satzfunk-voice-panel p{font-size:.69rem;line-height:1.4;opacity:.75;margin:.6rem 0 0}
-@media(max-width:670px){.header-actions .satzfunk-voice-settings>summary{font-size:.68rem;padding:.25rem .15rem}}
-
-/* The final source-separate Linotype leaf is an acoustic score, not controls. */
-.linotype-end .voice-mastering-leaf{box-sizing:border-box;width:100%;min-height:0;height:100%;margin:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(.2rem,.55vh,.45rem);text-align:center;color:inherit;overflow:visible}
-.linotype-end .voice-mastering-leaf .voice-score-kicker{font:500 clamp(.57rem,1.2vw,.72rem)/1.3 ui-monospace,Menlo,monospace;letter-spacing:.13em;text-transform:uppercase;margin:0;color:inherit;opacity:.7}
-.linotype-end .voice-mastering-leaf h2{font-size:clamp(1.4rem,4vw,2.25rem);font-weight:400;line-height:1.05;letter-spacing:-.035em;margin:.05em 0 .13em;max-width:100%}
-.linotype-end .voice-mastering-leaf .voice-score-plate{display:block;width:min(100%,560px);height:auto;max-height:min(21vh,150px);margin:0;overflow:visible;color:currentColor;flex:0 1 auto}
-.linotype-end .voice-mastering-leaf .voice-score-commentary{font-size:clamp(.68rem,1.6vw,.89rem);line-height:1.45;margin:0;max-width:56ch;text-wrap:pretty}
-.linotype-end .voice-mastering-leaf .voice-score-live{display:block;min-height:1.4em;font:500 clamp(.57rem,1.1vw,.68rem)/1.45 ui-monospace,Menlo,monospace;letter-spacing:.01em;max-width:100%;color:inherit;overflow-wrap:anywhere}
-.linotype-end .voice-mastering-leaf .voice-score-standard{font:400 clamp(.53rem,1.05vw,.65rem)/1.35 ui-monospace,Menlo,monospace;max-width:60ch;letter-spacing:.005em;opacity:.7;margin:0}
-@media(max-height:640px){.linotype-end .voice-mastering-leaf{gap:.24rem}.linotype-end .voice-mastering-leaf .voice-score-plate{max-height:24vh}.linotype-end .voice-mastering-leaf .voice-score-commentary{font-size:.66rem;line-height:1.3}}
-@media(forced-colors:active){.voice-score-plate circle{fill:CanvasText!important}.voice-mastering-leaf{color:CanvasText}}
-
-/* WebKit portrait: give each prose block explicit horizontal breathing room. */
-@media(max-width:670px){
-  .linotype-end .voice-mastering-leaf{min-width:0;box-sizing:border-box}
-  .linotype-end .voice-mastering-leaf p{box-sizing:border-box;width:calc(100% - 20px);max-width:calc(100% - 20px);min-width:0;margin-inline:auto;overflow-wrap:anywhere}
-  .linotype-end .voice-mastering-leaf h2{max-width:calc(100% - 20px);min-width:0}
+/* Vergil listening is one transport, not an audio settings panel.
+   The glyphs remain at normal system text size, with accessible touch targets. */
+.header-actions :is(.teatro-vergil-read,.vergil-prologue-read){
+ font:400 1em/1 system-ui,-apple-system,BlinkMacSystemFont,sans-serif;
+ min-width:44px;min-height:44px;padding:0;
+ display:inline-flex;align-items:center;justify-content:center;
+ border-radius:3px;white-space:nowrap;max-width:none;
 }
-
-/* WebKit portrait: constrain all flex children to measured sheet width. */
-.linotype-end .voice-mastering-leaf{max-width:100%;min-width:0;overflow:hidden}
-.linotype-end .voice-mastering-leaf p{box-sizing:border-box;max-width:100%;min-width:0;width:100%;overflow-wrap:anywhere}
-.linotype-end .voice-mastering-leaf .voice-score-plate{max-width:100%;min-width:0}
-
-/* Narrow Linotype sheets: keep the entire score within the measured height. */
-@media(max-width:670px){
- .linotype-end .voice-mastering-leaf{gap:0}
- .linotype-end .voice-mastering-leaf h2{margin:0 0 .02em}
- .linotype-end .voice-mastering-leaf .voice-score-plate{max-height:120px}
- .linotype-end .voice-mastering-leaf .voice-score-commentary{line-height:1.36}
+.header-actions :is(.teatro-vergil-read,.vergil-prologue-read):focus-visible{
+ outline:2px solid currentColor;outline-offset:2px;
 }
-
-/* Source-bound Satzfunk patcher. Connectors represent the compiled audio path. */
-.linotype-end .voice-mastering-leaf .voice-patch-surface{
- width:100%;height:clamp(206px,41vh,278px);max-width:100%;min-width:0;
- box-sizing:border-box;display:grid;grid-template-rows:auto minmax(0,1fr) auto auto;
- padding:5px 6px;gap:3px;color:var(--book-ink,#24251f);
- border:1px solid color-mix(in srgb,currentColor 40%,transparent);
- background:color-mix(in srgb,var(--paper,#f6f0e4) 93%,#888 7%);
- border-radius:4px;overflow:hidden;text-align:left;
- font:500 9px/1.15 ui-monospace,Menlo,monospace;
+:is(.teatro-vergil-read,.vergil-prologue-read,.teatro-vergil-clock,.vergil-prologue-clock)[hidden]{display:none!important}
+.frame-controls :is(.teatro-vergil-clock,.vergil-prologue-clock){
+ font:500 .68rem/1.4 ui-monospace,Menlo,monospace;
+ color:var(--ink,var(--book-ink,currentColor));
+ font-variant-numeric:tabular-nums;white-space:nowrap;align-self:center;
 }
-.voice-patch-heading{display:flex;justify-content:space-between;align-items:center;gap:4px;
- letter-spacing:.06em;font-size:8px;border-bottom:1px solid #7776;padding:0 2px 3px}
-.voice-patch-engine{opacity:.75;font-size:7px}
-.voice-patch-canvas{position:relative;display:grid;
- grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(3,minmax(0,1fr));
- gap:8px 9px;min-height:0;isolation:isolate}
-.voice-patch-wires{position:absolute;inset:0;z-index:0;width:100%;height:100%;
- color:#805e47;overflow:visible;pointer-events:none}
-.voice-patch-module{position:relative;z-index:1;box-sizing:border-box;min-width:0;
- border:1px solid #5559;background:var(--paper,#f3ecdd);border-radius:3px;
- padding:2px 3px;display:flex;flex-direction:column;justify-content:space-between;
- box-shadow:0 1px 2px #0002}
-.voice-patch-module.is-selected{border:1.5px solid #ad7851;box-shadow:0 0 0 1px #ad785133}
-.voice-patch-module.is-disconnected{opacity:.5;border-style:dashed}
-.voice-patch-module.has-signal{border-color:#9f8054}
-.voice-patch-module-title{font-size:9px;white-space:nowrap;overflow:hidden}
-.voice-patch-pick{background:transparent;color:inherit;box-shadow:none;border:0;
- font:inherit;line-height:1.35;width:100%;text-align:center;cursor:pointer;
- padding:1px 0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.voice-patch-module-jacks{display:flex;align-items:center;justify-content:space-between;gap:2px}
-.voice-patch-jack{border:1px solid currentColor;border-radius:50%;font:600 8px/1 sans-serif;
- padding:0;background:var(--paper,#f3ecdd);color:#92694d;width:24px;height:24px;
- flex:0 0 24px;cursor:crosshair}
-.voice-patch-jack:focus-visible,.voice-patch-pick:focus-visible,
-.voice-patch-control-input:focus-visible{outline:2px solid #ab754b;outline-offset:1px}
-.voice-patch-spacer{width:24px;flex:0 0 24px}
-.voice-patch-kind{font-size:7px;letter-spacing:0;opacity:.66;overflow:hidden;
- white-space:nowrap;text-overflow:ellipsis;text-align:center}
-.voice-patch-module[data-module="source"]{grid-area:1/1}
-.voice-patch-module[data-module="rumble"]{grid-area:1/2}
-.voice-patch-module[data-module="tone"]{grid-area:1/3}
-.voice-patch-module[data-module="deess"]{grid-area:2/3}
-.voice-patch-module[data-module="dynamics"]{grid-area:2/2}
-.voice-patch-module[data-module="makeup"]{grid-area:2/1}
-.voice-patch-module[data-module="ceiling"]{grid-area:3/1}
-.voice-patch-module[data-module="ear"]{grid-area:3/2}
-.voice-patch-module[data-module="output"]{grid-area:3/3}
-.voice-patch-module[data-module="ceiling"]{background:#e4d8c9}
-.voice-patch-inspector{display:flex;min-height:25px;align-items:center;justify-content:space-between;
- gap:6px;border-top:1px solid #7776;padding:4px 2px 0;font-size:8px}
-.voice-patch-description{display:flex;flex-direction:column;gap:2px;min-width:0;flex:1}
-.voice-patch-description strong{font-size:9px}
-.voice-patch-description span{font-size:7px;opacity:.76}
-.voice-patch-parameter{min-width:90px;max-width:44%;display:flex;align-items:center;gap:3px}
-.voice-patch-control-input{min-width:0;width:100%;accent-color:#a47859}
-.voice-patch-control-value{white-space:nowrap;font-size:8px}
-.voice-patch-hint{max-width:36%;font-size:7px;opacity:.8}
-.voice-patch-feedback{display:block;min-height:10px;font-size:7px;opacity:.75;white-space:nowrap;
- overflow:hidden;text-overflow:ellipsis}
-.voice-patch-surface.is-applying{opacity:.8}
-@media(max-width:670px){
- .linotype-end .voice-mastering-leaf .voice-patch-surface{height:clamp(206px,35vh,255px);gap:2px;padding:3px 4px}
- .voice-patch-canvas{gap:5px}
- .voice-patch-module{padding:1px 2px}
- .voice-patch-pick{font-size:8px}
- .voice-patch-jack{width:24px;height:24px;flex-basis:24px}
- .voice-patch-spacer{width:24px;flex-basis:24px}
- .voice-patch-inspector{padding-top:2px}
-}
-@media(forced-colors:active){
- .voice-patch-module{border-color:CanvasText;background:Canvas}
- .voice-patch-cable{stroke:CanvasText}
-}
+@media(max-width:670px){.frame-controls :is(.teatro-vergil-clock,.vergil-prologue-clock){font-size:.6rem}}

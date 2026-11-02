@@ -580,13 +580,10 @@ async function compose(){
   candidate=new window.SolsticeLinotype(preparation,source,{pageFrame:true,
    spreadOverride:stableSpread,label:'Measured '+labels.get(volume)+' pages',
    runningTitle:'Benedikt Eickhoff',imprint:'Benedikt Eickhoff'});
-  const preserveMasteringEnd=viewport.dataset.volume===volume&&
-    !!viewport.querySelector('.voice-mastering-leaf');
   candidate.compose();
   let target=0;
   const anchor=positions.get(volume);
   if(openAtEnd===volume){target=candidate.pages-1;}
-  else if(preserveMasteringEnd||anchor?.endLeaf==='satzfunk.voice.mastering.01'){target=candidate.pages-1;}
   else if(anchor){try{target=candidate.pageForAnchor(anchor)}catch{target=0;}}
   candidate.display(target);
   await Promise.all([...candidate.stage.querySelectorAll('img')].map(img=>img.decode()));

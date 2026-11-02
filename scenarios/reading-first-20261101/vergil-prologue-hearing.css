@@ -1,17 +1,1 @@
-/* Source-aligned Vergil playback belongs to the existing Reader frame. */
-.header-actions .vergil-prologue-read{white-space:nowrap;max-width:10rem}
-.header-actions .vergil-prologue-read[aria-pressed="true"]{text-decoration:underline;text-underline-offset:.3em}
-.frame-controls .vergil-prologue-clock{font:500 .68rem/1.4 ui-monospace,Menlo,monospace;color:var(--ink,var(--book-ink,currentColor));font-variant-numeric:tabular-nums;white-space:nowrap;align-self:center}
-.vergil-prologue-read[hidden],.vergil-prologue-clock[hidden]{display:none!important}
-@media(max-width:670px){.header-actions .vergil-prologue-read{font-size:.68rem;padding:.35rem .2rem}.frame-controls .vergil-prologue-clock{font-size:.6rem}}
-
-/* Reusable SatzfunkPlayer voice listening preference, projected into page frame. */
-.header-actions .satzfunk-voice-settings{position:relative;align-self:center;font:inherit}
-.header-actions .satzfunk-voice-settings[hidden]{display:none!important}
-.header-actions .satzfunk-voice-settings>summary{cursor:pointer;white-space:nowrap;font:500 .78rem/1.5 inherit;padding:.25rem .35rem}
-.header-actions .satzfunk-voice-settings>summary:focus-visible{outline:2px solid currentColor;outline-offset:3px}
-.header-actions .satzfunk-voice-panel{position:absolute;z-index:40;right:0;top:calc(100% + .3rem);width:min(17rem,74vw);padding:.8rem;box-sizing:border-box;border:1px solid currentColor;border-radius:.55rem;background:var(--paper,Canvas);color:var(--ink,CanvasText);box-shadow:0 8px 24px #0002}
-.header-actions .satzfunk-voice-panel label{display:grid;gap:.4rem;font-size:.78rem}
-.header-actions .satzfunk-voice-panel select{font:inherit;width:100%;padding:.5rem;background:Canvas;color:CanvasText;border:1px solid currentColor;border-radius:.3rem}
-.header-actions .satzfunk-voice-panel p{font-size:.69rem;line-height:1.4;opacity:.75;margin:.6rem 0 0}
-@media(max-width:670px){.header-actions .satzfunk-voice-settings>summary{font-size:.68rem;padding:.25rem .15rem}}
+/* Prologue uses the shared Vergil controls from teatro-vergil-hearing.css. */
