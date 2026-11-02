@@ -29,9 +29,9 @@ leaf='''<section class="book-end voice-mastering-leaf" id="voice-mastering-{id}"
 <p class="voice-score-kicker">Satzfunk · A listening score</p>
 <h2>The voice has a room</h2>
 '''+svg+'''
-<p class="voice-score-commentary">Vergil's recorded voice enters a deliberately modest acoustic architecture. Rumble is removed; vowel colour is preserved; sharp consonants are moderated; speech dynamics are gathered without erasing their movement. Ear observes the result, and the browser chooses where it is heard.</p>
+<p class="voice-score-commentary">Vergil's recorded voice passes through rumble, tonal, sibilance and dynamics control. Ear listens before the browser sends the sound onward.</p>
 <output class="voice-score-live" aria-label="Ear observation during playback" aria-live="off">Ear listens when the reading plays.</output>
-<p class="voice-score-standard">Delivery aim: −23 LUFS · ceiling −1 dBTP. The live Ear witness is not a broadcast loudness certificate.</p>
+<p class="voice-score-standard">BBC/EBU aim: −23 LUFS · −1 dBTP. Certification requires a full-programme measurement.</p>
 </section>'''
 for volume in ("teatro","solstice-reading-01--vergil"):
  pattern=r'(<template data-reader-volume="'+re.escape(volume)+r'">)(.*?)(</template>)'
