@@ -59,3 +59,14 @@ Owner code revisions:
 - MIDI2 Flex Lyric/Clip is a software projection here; physical MIDI2 output and hardware MIDI-CI are not claimed.
 - BBC/EBU integrated loudness and true-peak certification remain a separate mastering gate.
 - No public release was performed or authorized.
+
+## Additional natural-time boundary witness — 2026-11-02
+
+A new source-owned regression executable, `verify_narrated_page_turn.cjs`, tests the previously separate question of **automatic page turns caused solely by uninterrupted real audio playback**, not a direct seek or fabricated MIDI tick. It loads the active HTTPS stage, reads exact word positions and actual Press leaf offsets, selects two consecutive admitted words crossing a real facing-spread boundary, seeks while paused to the first word, enables Follow and then starts the existing player. The test requires the displayed spread to change by natural elapsed media time and confirms playback has not paused. Both sessions close their browsers.
+
+- **Chrome / Teatro:** actual media position 226.33s to 226.70s; composed spread start index 2 → 4, across the verified boundary at 226.68s; pass, no page errors.
+- **WebKit / Prologue:** actual media position 107.59s to 107.74s; composed spread start index 0 → 2, across the verified boundary at 107.70s; pass, no page errors.
+- **Gate:** 2/2 natural audio-driven page turns passed against active v136; the existing 8/8 cursor/seek, Manual, spread/portrait checks remain distinct.
+- **Reproduce:** `PLAYWRIGHT_MODULE=/absolute/path/to/playwright node scenarios/reading-first-20261101/verify_narrated_page_turn.cjs` from the owning checkout while the owner WLAN stage is reachable. The test uses the accepted recordings; it does not create new audio or modify the stage.
+
+Physical iPad Safari touch, VoiceOver, and reproducible Git-to-stage consolidation remain open as previously recorded. This added evidence does not grant any public publication authority.
