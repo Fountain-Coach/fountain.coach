@@ -86,6 +86,22 @@ async function install() {
   display.textContent = "0:00 / " + time(Math.round(edition.recording.duration));
   controls.insertBefore(display,document.getElementById("next-page"));
 
+  const updateScore = () => {
+    const out = viewport.querySelector(".voice-mastering-leaf .voice-score-live");
+    if (!out) return;
+    const ear = player.audioSettings.ear;
+    if (player.state.paused || player.audioSettings.mode === "original") {
+      out.textContent = player.audioSettings.mode === "original"
+        ? "Original source · Csound bypassed" : "Ear listens when the reading plays.";
+    } else if (ear && Number.isFinite(ear.rms) && Number.isFinite(ear.samplePeak)) {
+      out.textContent = "Ear · RMS " + ear.rms.toFixed(3) + " · sample peak " +
+        ear.samplePeak.toFixed(3) + " (before output gain)";
+    } else {
+      out.textContent = "Ear listening · awaiting the next audio window";
+    }
+  };
+  player.addEventListener("satzfunkplayer:ear-observation",updateScore);
+  player.addEventListener("satzfunkplayer:audio-settings",updateScore);
   const update = () => {
     const visible = active();
     if (!visible && player.state.paused === false) player.pause();
@@ -97,6 +113,7 @@ async function install() {
     button.setAttribute("aria-pressed",String(playing));
     button.setAttribute("aria-label",(playing ? "Pause" : "Read")+
       " Teatro aloud with the AI-generated Vergil voice");
+    updateScore();
     display.textContent = time(player.state.currentTime) +
       " / " + time(Math.round(edition.recording.duration));
   };
