@@ -88,6 +88,7 @@ async function install() {
   controls.insertBefore(display,document.getElementById("next-page"));
 
   const updateScore = () => {
+    if (!active()) return;
     const patch = viewport.querySelector(".voice-mastering-leaf .voice-patch-surface:not([data-patch-mounted])");
     if (patch) mountVoicePatchView(patch,player);
     const out = viewport.querySelector(".voice-mastering-leaf .voice-score-live");
