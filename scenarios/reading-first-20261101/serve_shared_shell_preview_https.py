@@ -20,9 +20,14 @@ class SecureStageHandler(Handler):
 
     def send_head(self):
         pathname = urlsplit(self.path).path
+        first_readings = {
+            "/estate/media/first-readings/teatro-vergil-auto-corrected-v2.mp3",
+            "/estate/media/first-readings/vergil-prologue-source-aligned.mp3",
+        }
         if not (
-            pathname.startswith("/estate/essays/the-door-is-a-score/media/")
-            and pathname.lower().endswith(".mp3")
+            (pathname.startswith("/estate/essays/the-door-is-a-score/media/")
+             and pathname.lower().endswith(".mp3"))
+            or pathname in first_readings
         ):
             return super().send_head()
 

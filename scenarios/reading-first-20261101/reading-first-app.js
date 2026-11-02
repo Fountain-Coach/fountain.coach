@@ -207,6 +207,10 @@ window.FountainPressNarrationBridge=Object.freeze({
   if(!engine||viewport.dataset.layout!=='ready'||!Number.isInteger(i)||
      i<0||i>=engine.pages)return false;
   present(i,{write:false,focus:false});
+  // Keep the narrated source address in this reader session across reflow.
+  // Do not persist an audio-driven page as the reader's manual bookmark.
+  const address=engine.anchorAt(engine.current);
+  if(address)positions.set(volume,address);
   return true;
  }
 });
