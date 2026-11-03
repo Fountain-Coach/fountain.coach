@@ -1,0 +1,348 @@
+{
+  "audioPlaybackIncluded": false,
+  "exclusions": [
+    "private Vergil recordings",
+    "MIDI timing and private narrated reading data",
+    "Door sound-study rehearsal recordings",
+    "Satzfunk private rehearsal grants",
+    "WLAN media manifests",
+    "staging-only server files and secrets"
+  ],
+  "files": [
+    {
+      "bytes": 214020,
+      "path": "assets/essay-share/did-the-machine-actually-read-the-book.png",
+      "sha256": "505ecfe967d0e282d09db21efccade400358c0972d20b5dfc71a51e8c3a997f8"
+    },
+    {
+      "bytes": 9842,
+      "path": "assets/fountain-coach-logo-transparent.png",
+      "sha256": "8c5fad1c3db56138d5959da75991dc8034a0be537ce46da6ffcc0d9655e7f729"
+    },
+    {
+      "bytes": 38492,
+      "path": "assets/linotype/reading-first-app.js",
+      "sha256": "9af7d698828bc9ee46b78512819025069080a90fb9a42250d17ab371ad84d935"
+    },
+    {
+      "bytes": 42178,
+      "path": "assets/linotype/reading-first-press-engine.js",
+      "sha256": "62eaf79d0fe2a68166af19794e1b64c521f6455d7b987c260da8aebf8810b30b"
+    },
+    {
+      "bytes": 7633,
+      "path": "assets/linotype/reading-first-press-frame.css",
+      "sha256": "4cd2f853315d51bdd2c31917782d42759fee0a9a20cf18ae4d261af085bd0e51"
+    },
+    {
+      "bytes": 6070,
+      "path": "assets/linotype/reading-first-press-host.css",
+      "sha256": "a0ce4a3ba7c0e549354de8b3aaed608ad178f62bcfbc3451e3443f2989ea84b0"
+    },
+    {
+      "bytes": 24215,
+      "path": "assets/linotype/reading-first-shell.css",
+      "sha256": "769fb12fbe7205e90269ecbf3760c8a6d226e78347bd1d62f05035174d671247"
+    },
+    {
+      "bytes": 2069047,
+      "path": "essays/reframe-and-the-business-value-of-the-estate/assets/address-landscape.png",
+      "sha256": "e826794efe5fefda45f644930ed44239d9ab4b6550015aa221da5612958026b2"
+    },
+    {
+      "bytes": 1946320,
+      "path": "essays/reframe-and-the-business-value-of-the-estate/assets/estate-landscape.png",
+      "sha256": "8e444b976461fdf9b278a8702eef07ec74d532f617496da37c52d33c8b806451"
+    },
+    {
+      "bytes": 1865163,
+      "path": "essays/reframe-and-the-business-value-of-the-estate/assets/exchange-landscape.png",
+      "sha256": "ae34a3ee42263c8beebea303cd8dd97eb5ccbedd328dc864ace907a0a1015721"
+    },
+    {
+      "bytes": 8839,
+      "path": "essays/semantic-compilation-the-archive-is-not-the-edition/assets/semantic-compilation-estate-rail.svg",
+      "sha256": "977c636ba6570781b2ea8e34983ae2db0be83bd93986343a99d84e37f4304c02"
+    },
+    {
+      "bytes": 3975,
+      "path": "essays/teatro-an-unfinished-composition/assets/teatro-score-memory-vector-human-condition.svg",
+      "sha256": "226e3440690dd8cbeb331c4f3f62ee002fa0bc0e6007fcdf8431f1f578d115e2"
+    },
+    {
+      "bytes": 3464,
+      "path": "essays/the-composable-book/assets/01-book-spread.svg",
+      "sha256": "4693b91ee8c90b637649161d00d4332a3133c6688cca7961b819b20d76b84a3d"
+    },
+    {
+      "bytes": 3882,
+      "path": "essays/the-composable-book/assets/02-composition.svg",
+      "sha256": "6a237b1fed685f5ad41f2d31b2dbde51328058cf6efea97fe03965e337552de8"
+    },
+    {
+      "bytes": 3331,
+      "path": "essays/the-composable-book/assets/03-one-book-many-hosts.svg",
+      "sha256": "94d86d2c15d0a9c14a4e963b461a18636a4ff238e3ad51939c1e5fc35e3ed04e"
+    },
+    {
+      "bytes": 3705,
+      "path": "essays/the-composable-book/assets/04-semantic-ledger.svg",
+      "sha256": "8dac2881905f6ca89129e459b59f7c8ca57fd45177674e87193fdd2e653a5f01"
+    },
+    {
+      "bytes": 52182,
+      "path": "essays/the-door-is-a-score/assets/listening-score.png",
+      "sha256": "600cdaf4c3249b39434539442dea680058c1bcaed47e68cf7df159035f17cd38"
+    },
+    {
+      "bytes": 1985551,
+      "path": "essays/the-door-is-a-score/assets/teatro-door-score.png",
+      "sha256": "47791d9ac527641ae7b2cfe7ffe7111a99b9e39afaf89b28e53d4fa3d44cd4bb"
+    },
+    {
+      "bytes": 26407,
+      "path": "essays/the-door-is-a-score/assets/vendor/CSOUND_CORE_LICENSE",
+      "sha256": "85b4d8deec70c1d7fdae19752d6284dade435904f7d7f8d2b2c1fc2ce3fe2eb1"
+    },
+    {
+      "bytes": 10718,
+      "path": "essays/the-door-is-a-score/assets/vendor/LICENSE",
+      "sha256": "3f3adbdc06d616ccfd85151124dddca09fcf324494f72d549db961b6b088c9b5"
+    },
+    {
+      "bytes": 2532,
+      "path": "essays/the-door-is-a-score/assets/vendor/THIRD_PARTY.md",
+      "sha256": "d0be724a19ab4c3d3c0f4cbe41e5eafa2dd530ec0e0dbaca4b0901d6b13feda7"
+    },
+    {
+      "bytes": 187050,
+      "path": "essays/the-ear-that-learns/assets/listening-room.png",
+      "sha256": "d07e55ebed5b0e9100a86191099b686c8c1802770b292c358d86208911dd269e"
+    },
+    {
+      "bytes": 45558,
+      "path": "essays/to-read-is-not-to-remember/assets/bookshelf-ipad-landscape-test.png",
+      "sha256": "ca2628cd98b5ebdc18816c510729d997f0539882b03949104bf94a2354389dd0"
+    },
+    {
+      "bytes": 398971,
+      "path": "index.html",
+      "sha256": "65e8851e5f3bd5d4b2211b4462456e9f1876171c6e719814448d81ad14879234"
+    },
+    {
+      "bytes": 69687,
+      "path": "solstice/assets/edition/post-2025-12-22-b0e6cf8252aca0da.jpg",
+      "sha256": "b0e6cf8252aca0da83a9b0bfbdbb3f57b88c826e8b85ac5a89f43b23bad98876"
+    },
+    {
+      "bytes": 209255,
+      "path": "solstice/assets/edition/post-2025-12-23-f0b9144a1df6ae0b.jpg",
+      "sha256": "f0b9144a1df6ae0ba75145a89376441a21ce7f2d4aab7f1df8fd8dbc1b299f18"
+    },
+    {
+      "bytes": 210268,
+      "path": "solstice/assets/edition/post-2025-12-28-c9d7b304d2577e3c.jpg",
+      "sha256": "c9d7b304d2577e3cd9c84c554e05aff7ea9dd59e3693e76858f748ed1309f8ed"
+    },
+    {
+      "bytes": 232262,
+      "path": "solstice/assets/edition/post-2026-01-08-7e60c7273855d415.jpg",
+      "sha256": "7e60c7273855d41589a65200a7f6d75c596b9a920fa8a21b390acd092d7ca2b0"
+    },
+    {
+      "bytes": 194848,
+      "path": "solstice/assets/edition/post-2026-01-22-5df50180208e95ac.jpg",
+      "sha256": "5df50180208e95ac2d2537120f2bb7c22fa3fa8af971867a9d7ac4de8ab398c3"
+    },
+    {
+      "bytes": 219561,
+      "path": "solstice/assets/edition/post-2026-01-23-1c3c1d6806e93f7b.jpg",
+      "sha256": "1c3c1d6806e93f7be93de86315e81e31ffd1a2641ee1fae4c02d00fc00602790"
+    },
+    {
+      "bytes": 133595,
+      "path": "solstice/assets/edition/post-2026-02-04-d896e49fab8b9de6.jpg",
+      "sha256": "d896e49fab8b9de64fe6d216ec3749127e52909b29a260fae285c6755e0966f7"
+    },
+    {
+      "bytes": 115802,
+      "path": "solstice/assets/edition/post-2026-02-14-176bf23235b226f3.jpg",
+      "sha256": "176bf23235b226f3f56175c3b5a96bcdebb5791d8a5459bcc6e79e1f69239600"
+    },
+    {
+      "bytes": 48595,
+      "path": "solstice/assets/edition/post-2026-02-14-4c119414e04b1a21.jpg",
+      "sha256": "4c119414e04b1a214a6a2554c62962bd0f251c1eacc44fe30c24cb73aed9ae5f"
+    },
+    {
+      "bytes": 118908,
+      "path": "solstice/assets/edition/post-2026-02-14-a25168e8eaa4ea6f.jpg",
+      "sha256": "a25168e8eaa4ea6f5b88454c3877662473c08c584db9b3bc3485c6ce2dc672e1"
+    },
+    {
+      "bytes": 106384,
+      "path": "solstice/assets/edition/post-2026-02-28-90f23f8004961575.jpg",
+      "sha256": "90f23f8004961575177329229889eb0ca522166cc73ffb7ded5c3758bd8d9d7c"
+    },
+    {
+      "bytes": 437468,
+      "path": "solstice/assets/edition/post-2026-03-16-c3f30632d4c61a08.jpg",
+      "sha256": "c3f30632d4c61a088786b5c959deedbb5a9e5561c76211152e51d65b5017b5c4"
+    },
+    {
+      "bytes": 469977,
+      "path": "solstice/assets/edition/post-2026-03-16-f8848e33f3017105.jpg",
+      "sha256": "f8848e33f3017105df7f9f008bddd0177f4a684e7252f6101960d7db48d3dd2c"
+    },
+    {
+      "bytes": 200939,
+      "path": "solstice/assets/edition/post-2026-03-20-6a08a376a9a616ad.jpg",
+      "sha256": "6a08a376a9a616add8697ad5f3eff26367563f0b9b9ccc275ba37960d35732a8"
+    },
+    {
+      "bytes": 224301,
+      "path": "solstice/assets/edition/post-2026-03-21-dd4b3443194bbfe0.jpg",
+      "sha256": "dd4b3443194bbfe0614fa8573cf404560d08d1f9a438311f6a70464a2d239bb9"
+    },
+    {
+      "bytes": 152178,
+      "path": "solstice/assets/edition/post-2026-04-22-a0427fee962c65c8.jpg",
+      "sha256": "a0427fee962c65c8cde805ebb71a4a1685e7e34c9c374df2ed64e1bc82e8b14e"
+    },
+    {
+      "bytes": 47468,
+      "path": "solstice/assets/edition/post-2026-04-23-3115141ef9dee17f.jpg",
+      "sha256": "3115141ef9dee17f7c6426c6b98968dd20a9b2daebe7d39f09e810574ed2c1e5"
+    },
+    {
+      "bytes": 239007,
+      "path": "solstice/assets/edition/post-2026-04-30-0e22d7426fe14b6a.jpg",
+      "sha256": "0e22d7426fe14b6aecdb80749e8ca688df1a0ded1f5dd583dcc8a5f52069bda2"
+    },
+    {
+      "bytes": 189992,
+      "path": "solstice/assets/edition/post-2026-05-01-18375574f4b885e9.jpg",
+      "sha256": "18375574f4b885e928262bb3b615cb82481dfc39abcbee529d68f1dba7aec0c1"
+    },
+    {
+      "bytes": 119104,
+      "path": "solstice/assets/edition/post-2026-05-01-ca5df313851efc64.jpg",
+      "sha256": "ca5df313851efc6420fbf9f1b58c4d31fa0bc6d175c600873838faf7cd794f2f"
+    },
+    {
+      "bytes": 48963,
+      "path": "solstice/assets/edition/post-2026-05-25-ed229a3996db0d32.jpg",
+      "sha256": "ed229a3996db0d3236b040b1888bbe061fed4839f7769d1c83fcea6162da20a1"
+    },
+    {
+      "bytes": 54139,
+      "path": "solstice/assets/edition/post-2026-05-30-1f467f3d2b353f56.jpg",
+      "sha256": "1f467f3d2b353f56024cde2c9f2b9b6c1b0b08c8e266ed42a2379c49b72b163f"
+    },
+    {
+      "bytes": 180583,
+      "path": "solstice/assets/edition/post-2026-05-30-2abbf0eeeb401f07.jpg",
+      "sha256": "2abbf0eeeb401f07b777d04f3be8a3fed2db9e645e00eb3e9f37879e771c2e67"
+    },
+    {
+      "bytes": 193721,
+      "path": "solstice/assets/edition/post-2026-05-30-72608939958eb3b9.jpg",
+      "sha256": "72608939958eb3b9ef3f08b6bdc21b542a5e56c086749305175688a045caf475"
+    },
+    {
+      "bytes": 86741,
+      "path": "solstice/assets/edition/post-2026-05-30-c32610cb27096d79.jpg",
+      "sha256": "c32610cb27096d7946200fa64dcb3173d7788aa5145589c5dfde19cab45a452d"
+    },
+    {
+      "bytes": 71152,
+      "path": "solstice/assets/edition/post-2026-05-30-d639865b8b728df8.jpg",
+      "sha256": "d639865b8b728df806f7fbf3cd87f4e5f5a620b392c354d63efff231e926977e"
+    },
+    {
+      "bytes": 77151,
+      "path": "solstice/assets/edition/post-2026-06-06-254e011042fb679e.jpg",
+      "sha256": "254e011042fb679efa713262ac56dc190904a4dfecfdd31095bc7a00f475d4cd"
+    },
+    {
+      "bytes": 58169,
+      "path": "solstice/assets/edition/post-2026-06-06-398a7827c5faf579.jpg",
+      "sha256": "398a7827c5faf579ef2452a157056b8e6520054361e17b4246d00a815d0ee453"
+    },
+    {
+      "bytes": 168241,
+      "path": "solstice/assets/edition/post-2026-06-15-b2f077572eff8793.jpg",
+      "sha256": "b2f077572eff8793dc8bbaf40485a4deb017faed90712bec7ef0af92350c205d"
+    },
+    {
+      "bytes": 150681,
+      "path": "solstice/assets/edition/post-2026-06-15-fa70b1744d6af826.jpg",
+      "sha256": "fa70b1744d6af8269f69ae13c20d4f6263eed8b15f90a01317d1dbc15a267e2c"
+    },
+    {
+      "bytes": 122443,
+      "path": "solstice/assets/edition/post-2026-06-24-8f2981e0b674fe01.jpg",
+      "sha256": "8f2981e0b674fe01c572cd53f4847e5ddad8eea37becc8f0d3187eb6b8d4eaee"
+    },
+    {
+      "bytes": 133585,
+      "path": "solstice/assets/edition/post-2026-06-24-f614868939456e96.jpg",
+      "sha256": "f614868939456e96dec268c992951b3566fc8fa8d56e07dd73e3d41e263c88de"
+    },
+    {
+      "bytes": 101292,
+      "path": "solstice/assets/edition/post-2026-07-21-728a816389b59438.jpg",
+      "sha256": "728a816389b59438647f6f16807059370250a0a134dece6eaaaf4d6676fc8f72"
+    },
+    {
+      "bytes": 156706,
+      "path": "solstice/assets/edition/post-2026-07-28-cdd8e5b1c9628c67.jpg",
+      "sha256": "cdd8e5b1c9628c67a0a1c40e3dd5bd8d4069b9ff778d09268dfbfd7bc6299e90"
+    },
+    {
+      "bytes": 127336,
+      "path": "solstice/assets/edition/post-2026-07-31-b345eeebe3c904df.jpg",
+      "sha256": "b345eeebe3c904df1968068b774144a9569e07ceef647718f1ffe420c7a161a4"
+    },
+    {
+      "bytes": 136148,
+      "path": "solstice/assets/edition/post-2026-08-28-330a889f93b0b76d.jpg",
+      "sha256": "330a889f93b0b76d55269267f522543955297332098e473c7d7c13d6ed57e738"
+    },
+    {
+      "bytes": 210586,
+      "path": "solstice/assets/edition/post-2026-09-04-aeddf555dd785ebf.jpg",
+      "sha256": "aeddf555dd785ebfbf9641b7c4d3784cc16fc1a3386674043000e4dca2cc498c"
+    },
+    {
+      "bytes": 213157,
+      "path": "solstice/assets/edition/post-2026-09-06-0e595f232b2d6da1.jpg",
+      "sha256": "0e595f232b2d6da16ea71f8fa84812afd404c983e5bc5df40325ed1448daf591"
+    },
+    {
+      "bytes": 200814,
+      "path": "solstice/assets/edition/post-2026-09-18-c75d27c000b328a1.jpg",
+      "sha256": "c75d27c000b328a1f07ab485c76c1bae0bfe775feb640122479593d5d228a264"
+    },
+    {
+      "bytes": 218996,
+      "path": "solstice/assets/edition/teatro-score-2026-08-17.jpg",
+      "sha256": "153bcd73d037128c791b194d4a5f0f1b39e0979478a25ecc6bf7f7f92eced6fb"
+    },
+    {
+      "bytes": 175901,
+      "path": "solstice/assets/edition/teatro-score-2026-08-19.jpg",
+      "sha256": "11772b92061b57289540732e5432d10db6ad6e1f7e3374ab84c3b4b952c4b272"
+    }
+  ],
+  "host": "fountain.coach",
+  "midiReadingDataIncluded": false,
+  "publicReleaseAuthorized": false,
+  "releaseId": "reader-v140-public-text-only-candidate",
+  "schema": "fountain.coach.public-reader-candidate.v1",
+  "source": {
+    "commit": "611c3e34c9dfffc932d86d957edf49bda46927ec",
+    "repository": "Fountain-Coach/fountain.coach"
+  },
+  "status": "not-admitted-not-deployed"
+}

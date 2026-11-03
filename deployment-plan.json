@@ -1,0 +1,17 @@
+{
+  "authority" : "signedArtifact",
+  "buildBoundary" : "localArtifact",
+  "host" : "fountain.coach",
+  "kind" : "artifactRelease",
+  "operation" : "estate.static-release.promote",
+  "pathPrefix" : "",
+  "requiredProof" : [
+    "local-store-admission",
+    "immutable-artifact-digest",
+    "kit-owned-authorization",
+    "atomic-caddy-promotion",
+    "public-https-read-back",
+    "rollback"
+  ],
+  "state" : "available"
+}
