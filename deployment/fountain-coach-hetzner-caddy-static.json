@@ -1,0 +1,8 @@
+{
+  "publicHost": "fountain.coach",
+  "sshHost": "65.109.14.71",
+  "sshUser": "root",
+  "sshPort": 22,
+  "releaseRoot": "/srv/fountain-static-publications/fountain.coach/releases",
+  "activeLink": "/srv/fountain-static-publications/fountain.coach/current"
+}

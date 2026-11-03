@@ -1,0 +1,1329 @@
+{
+  "addedPaths": [
+    "estate/about/index.html",
+    "estate/assets/author-landing.css",
+    "estate/assets/editions.css",
+    "estate/assets/essay-pathways.css",
+    "estate/assets/essay-share/did-the-machine-actually-read-the-book.png",
+    "estate/assets/essay-site.css",
+    "estate/assets/estate-bookshelf/first-reading-ink.png",
+    "estate/assets/estate-bookshelf/fountain-coach-edition.png",
+    "estate/assets/estate-bookshelf/teatro-score-memory-vector-human-condition.svg",
+    "estate/assets/estate-core.css",
+    "estate/assets/estate-core.js",
+    "estate/assets/fountain-coach-logo-transparent.png",
+    "estate/assets/future-estate-portal.svg",
+    "estate/assets/linotype/about-linotype-engine.js",
+    "estate/assets/linotype/book-boot.js",
+    "estate/assets/linotype/book-csound-host.js",
+    "estate/assets/linotype/book.css",
+    "estate/assets/linotype/book.js",
+    "estate/assets/linotype/bookshelf.css",
+    "estate/assets/linotype/essays.css",
+    "estate/assets/linotype/fountain-about-entry.css",
+    "estate/assets/linotype/identity-circle.css",
+    "estate/assets/linotype/linotype-engine.js",
+    "estate/assets/linotype/living-essays.css",
+    "estate/assets/linotype/living-essays.js",
+    "estate/assets/linotype/mobile-page-navigation.css",
+    "estate/assets/linotype/mobile-page-navigation.js",
+    "estate/assets/linotype/reading-audio-cursor.mjs",
+    "estate/assets/linotype/reading-first-app.js",
+    "estate/assets/linotype/reading-first-press-engine.js",
+    "estate/assets/linotype/reading-first-press-frame.css",
+    "estate/assets/linotype/reading-first-press-host.css",
+    "estate/assets/linotype/reading-first-shell.css",
+    "estate/assets/linotype/reading-layout-policy.js",
+    "estate/assets/linotype/reframe-reader-r28.css",
+    "estate/assets/linotype/teatro-vergil-hearing.css",
+    "estate/assets/linotype/teatro-vergil-hearing.mjs",
+    "estate/assets/linotype/vergil-midi2-narration.mjs",
+    "estate/assets/linotype/vergil-prologue-hearing.css",
+    "estate/assets/linotype/vergil-prologue-hearing.mjs",
+    "estate/assets/satzfunk-player/index.mjs",
+    "estate/assets/satzfunk-player/midi2-codec.mjs",
+    "estate/assets/satzfunk-player/midi2-reading-score.mjs",
+    "estate/assets/satzfunk-player/midi2-reading-transport.mjs",
+    "estate/assets/satzfunk-player/player-media.mjs",
+    "estate/assets/satzfunk-player/satzfunk-media-element.mjs",
+    "estate/assets/satzfunk-player/vendor/midi2/index.js",
+    "estate/assets/satzfunk-player/voice-mastering.mjs",
+    "estate/assets/satzfunk-player/voice-mix.mjs",
+    "estate/assets/satzfunk-player/voice-patch-view.mjs",
+    "estate/assets/satzfunk-player/voice-patch.mjs",
+    "estate/assets/site.css",
+    "estate/assets/site.js",
+    "estate/bookshelf/index.html",
+    "estate/bookshelf/source-original.html",
+    "estate/collections/first-readings/index.html",
+    "estate/collections/first-readings/source-original.html",
+    "estate/editions/catalogue/index.html",
+    "estate/editions/essays-continuing/index.html",
+    "estate/editions/essays/index.html",
+    "estate/editions/essays/reframe-and-the-business-value-of-the-estate/index.html",
+    "estate/editions/essays/semantic-compilation-the-archive-is-not-the-edition/index.html",
+    "estate/editions/essays/teatro-an-unfinished-composition/index.html",
+    "estate/editions/index.html",
+    "estate/essays/index.html",
+    "estate/essays/reframe-and-the-business-value-of-the-estate/assets/address-landscape.png",
+    "estate/essays/reframe-and-the-business-value-of-the-estate/assets/estate-landscape.png",
+    "estate/essays/reframe-and-the-business-value-of-the-estate/assets/exchange-landscape.png",
+    "estate/essays/reframe-and-the-business-value-of-the-estate/index.html",
+    "estate/essays/semantic-compilation-the-archive-is-not-the-edition/assets/semantic-compilation-estate-rail.svg",
+    "estate/essays/semantic-compilation-the-archive-is-not-the-edition/index.html",
+    "estate/essays/teatro-an-unfinished-composition/assets/teatro-score-memory-vector-human-condition.svg",
+    "estate/essays/teatro-an-unfinished-composition/index.html",
+    "estate/essays/the-composable-book/assets/01-book-spread.svg",
+    "estate/essays/the-composable-book/assets/02-composition.svg",
+    "estate/essays/the-composable-book/assets/03-one-book-many-hosts.svg",
+    "estate/essays/the-composable-book/assets/04-semantic-ledger.svg",
+    "estate/essays/the-composable-book/assets/cover.png",
+    "estate/essays/the-composable-book/assets/essay.css",
+    "estate/essays/the-composable-book/index.html",
+    "estate/essays/the-door-is-a-score/assets/keys.ogg",
+    "estate/essays/the-door-is-a-score/assets/listening-score.png",
+    "estate/essays/the-door-is-a-score/assets/listening.mjs",
+    "estate/essays/the-door-is-a-score/assets/score.mjs",
+    "estate/essays/the-door-is-a-score/assets/study.css",
+    "estate/essays/the-door-is-a-score/assets/teatro-door-score.png",
+    "estate/essays/the-door-is-a-score/assets/vendor/CSOUND_CORE_LICENSE",
+    "estate/essays/the-door-is-a-score/assets/vendor/LICENSE",
+    "estate/essays/the-door-is-a-score/assets/vendor/THIRD_PARTY.md",
+    "estate/essays/the-door-is-a-score/assets/vendor/csound.js",
+    "estate/essays/the-door-is-a-score/assets/wood-close.ogg",
+    "estate/essays/the-door-is-a-score/assets/wood-hinge.ogg",
+    "estate/essays/the-door-is-a-score/index.html",
+    "estate/essays/the-door-is-a-score/media/beyond.mp3",
+    "estate/essays/the-door-is-a-score/media/edition.json",
+    "estate/essays/the-door-is-a-score/media/memory.mp3",
+    "estate/essays/the-door-is-a-score/media/present.mp3",
+    "estate/essays/the-door-is-a-score/media/withheld.mp3",
+    "estate/essays/the-ear-that-learns/assets/essay-listening.mjs",
+    "estate/essays/the-ear-that-learns/assets/listening-room.png",
+    "estate/essays/the-ear-that-learns/assets/listening-room.svg",
+    "estate/essays/the-ear-that-learns/index.html",
+    "estate/essays/to-read-is-not-to-remember/assets/bookshelf-ipad-landscape-test.png",
+    "estate/essays/to-read-is-not-to-remember/index.html",
+    "estate/essays/to-read-is-not-to-remember/to-read-is-not-to-remember.pdf",
+    "estate/index.html",
+    "estate/media/first-readings/prologue-midi2-reading-score.json",
+    "estate/media/first-readings/teatro-midi2-reading-score.json",
+    "estate/media/first-readings/teatro-vergil-auto-corrected-v2.mp3",
+    "estate/media/first-readings/teatro-vergil-edition.json",
+    "estate/media/first-readings/vergil-prologue-edition.json",
+    "estate/media/first-readings/vergil-prologue-source-aligned.mp3",
+    "solstice/assets/edition/post-2025-12-22-b0e6cf8252aca0da.jpg",
+    "solstice/assets/edition/post-2025-12-23-f0b9144a1df6ae0b.jpg",
+    "solstice/assets/edition/post-2025-12-28-c9d7b304d2577e3c.jpg",
+    "solstice/assets/edition/post-2026-01-08-7e60c7273855d415.jpg",
+    "solstice/assets/edition/post-2026-01-22-5df50180208e95ac.jpg",
+    "solstice/assets/edition/post-2026-01-23-1c3c1d6806e93f7b.jpg",
+    "solstice/assets/edition/post-2026-02-04-d896e49fab8b9de6.jpg",
+    "solstice/assets/edition/post-2026-02-14-176bf23235b226f3.jpg",
+    "solstice/assets/edition/post-2026-02-14-4c119414e04b1a21.jpg",
+    "solstice/assets/edition/post-2026-02-14-a25168e8eaa4ea6f.jpg",
+    "solstice/assets/edition/post-2026-02-28-90f23f8004961575.jpg",
+    "solstice/assets/edition/post-2026-03-16-c3f30632d4c61a08.jpg",
+    "solstice/assets/edition/post-2026-03-16-f8848e33f3017105.jpg",
+    "solstice/assets/edition/post-2026-03-20-6a08a376a9a616ad.jpg",
+    "solstice/assets/edition/post-2026-03-21-dd4b3443194bbfe0.jpg",
+    "solstice/assets/edition/post-2026-04-22-a0427fee962c65c8.jpg",
+    "solstice/assets/edition/post-2026-04-23-3115141ef9dee17f.jpg",
+    "solstice/assets/edition/post-2026-04-30-0e22d7426fe14b6a.jpg",
+    "solstice/assets/edition/post-2026-05-01-18375574f4b885e9.jpg",
+    "solstice/assets/edition/post-2026-05-01-ca5df313851efc64.jpg",
+    "solstice/assets/edition/post-2026-05-25-ed229a3996db0d32.jpg",
+    "solstice/assets/edition/post-2026-05-30-1f467f3d2b353f56.jpg",
+    "solstice/assets/edition/post-2026-05-30-2abbf0eeeb401f07.jpg",
+    "solstice/assets/edition/post-2026-05-30-72608939958eb3b9.jpg",
+    "solstice/assets/edition/post-2026-05-30-c32610cb27096d79.jpg",
+    "solstice/assets/edition/post-2026-05-30-d639865b8b728df8.jpg",
+    "solstice/assets/edition/post-2026-06-06-254e011042fb679e.jpg",
+    "solstice/assets/edition/post-2026-06-06-398a7827c5faf579.jpg",
+    "solstice/assets/edition/post-2026-06-15-b2f077572eff8793.jpg",
+    "solstice/assets/edition/post-2026-06-15-fa70b1744d6af826.jpg",
+    "solstice/assets/edition/post-2026-06-24-8f2981e0b674fe01.jpg",
+    "solstice/assets/edition/post-2026-06-24-f614868939456e96.jpg",
+    "solstice/assets/edition/post-2026-07-21-728a816389b59438.jpg",
+    "solstice/assets/edition/post-2026-07-28-cdd8e5b1c9628c67.jpg",
+    "solstice/assets/edition/post-2026-07-31-b345eeebe3c904df.jpg",
+    "solstice/assets/edition/post-2026-08-28-330a889f93b0b76d.jpg",
+    "solstice/assets/edition/post-2026-09-04-aeddf555dd785ebf.jpg",
+    "solstice/assets/edition/post-2026-09-06-0e595f232b2d6da1.jpg",
+    "solstice/assets/edition/post-2026-09-18-c75d27c000b328a1.jpg",
+    "solstice/assets/edition/teatro-score-2026-08-17.jpg",
+    "solstice/assets/edition/teatro-score-2026-08-19.jpg"
+  ],
+  "baselineRootSHA256": "9814fc24e3018c36f310f0bc8da3ccaa3251e0100404be3da0b7dad8e7c02309",
+  "files": [
+    {
+      "bytes": 21976,
+      "path": "assets/estate-core.css",
+      "sha256": "70e2f638ca42b0b8a4f0dc26fd002ea239b5a4a8528e1d8f3aa876b02ca59772"
+    },
+    {
+      "bytes": 6513,
+      "path": "assets/estate-core.js",
+      "sha256": "020f32d995828892cd86e38edf190b02fadbfe34e2dad00cacfc6a5b8e8feec9"
+    },
+    {
+      "bytes": 7414,
+      "path": "assets/estate-shell-d9a170d82a21d19b.css",
+      "sha256": "d9a170d82a21d19be5d155c19f3591e670bf8988c230e8c7737493937c40bb8b"
+    },
+    {
+      "bytes": 9842,
+      "path": "assets/estate-shell-logo-8c5fad1c3db56138.png",
+      "sha256": "8c5fad1c3db56138d5959da75991dc8034a0be537ce46da6ffcc0d9655e7f729"
+    },
+    {
+      "bytes": 9842,
+      "path": "assets/estate-shell-logo.png",
+      "sha256": "8c5fad1c3db56138d5959da75991dc8034a0be537ce46da6ffcc0d9655e7f729"
+    },
+    {
+      "bytes": 908,
+      "path": "assets/estate-shell-state-4139f6eec4e0f8d7.js",
+      "sha256": "4139f6eec4e0f8d737c768d1e4f5572c91430598f6ecf2523d3ea2437d6e1d5b"
+    },
+    {
+      "bytes": 908,
+      "path": "assets/estate-shell-state.js",
+      "sha256": "4139f6eec4e0f8d737c768d1e4f5572c91430598f6ecf2523d3ea2437d6e1d5b"
+    },
+    {
+      "bytes": 9842,
+      "path": "assets/fountain-coach-logo-transparent.png",
+      "sha256": "8c5fad1c3db56138d5959da75991dc8034a0be537ce46da6ffcc0d9655e7f729"
+    },
+    {
+      "bytes": 2677,
+      "path": "assets/future-estate-portal.svg",
+      "sha256": "d6123c13fbcd2e1217e4558b2ff52b21b8d829c49be84193327b6673350ee19c"
+    },
+    {
+      "bytes": 21856,
+      "path": "assets/site.css",
+      "sha256": "6aba1927f4b60e6942ee4f2f19e14ad039d0af93fa4aa1809c9b38300842c9fd"
+    },
+    {
+      "bytes": 220,
+      "path": "assets/site.js",
+      "sha256": "87ed7fd7fef8f44685cea515aac7a142684e675507dcb4d182f1dc8305039cd7"
+    },
+    {
+      "bytes": 81627,
+      "path": "assets/social/future-estate-portal.jpg",
+      "sha256": "fc9d0e9c9662b027c5230e29648fa7ce247110227a0f6662f2d5f3ddba7156da"
+    },
+    {
+      "bytes": 13826,
+      "path": "essays/index.html",
+      "sha256": "5e4599d6f4830b3ea8f3c1dae00cb2cb179fb76f27858da58295eef809bf3526"
+    },
+    {
+      "bytes": 2069047,
+      "path": "essays/reframe-and-the-business-value-of-the-estate/assets/address-landscape.png",
+      "sha256": "e826794efe5fefda45f644930ed44239d9ab4b6550015aa221da5612958026b2"
+    },
+    {
+      "bytes": 87554,
+      "path": "essays/semantic-compilation-the-archive-is-not-the-edition/assets/semantic-compilation-estate-rail.png",
+      "sha256": "93d25f0f207fd67169cb930ce718f1e1b9cb8d768e4c4b9a7be6f715ab53f2b9"
+    },
+    {
+      "bytes": 8839,
+      "path": "essays/semantic-compilation-the-archive-is-not-the-edition/assets/semantic-compilation-estate-rail.svg",
+      "sha256": "977c636ba6570781b2ea8e34983ae2db0be83bd93986343a99d84e37f4304c02"
+    },
+    {
+      "bytes": 20796,
+      "path": "essays/semantic-compilation-the-archive-is-not-the-edition/index.html",
+      "sha256": "da6aba17c04cacc3280b2ee58ab1f1eebe48a0dccd475e5a150ef3234b524a0d"
+    },
+    {
+      "bytes": 3975,
+      "path": "essays/teatro-an-unfinished-composition/assets/teatro-score-memory-vector-human-condition.svg",
+      "sha256": "226e3440690dd8cbeb331c4f3f62ee002fa0bc0e6007fcdf8431f1f578d115e2"
+    },
+    {
+      "bytes": 3464,
+      "path": "essays/the-composable-book/assets/01-book-spread.svg",
+      "sha256": "4693b91ee8c90b637649161d00d4332a3133c6688cca7961b819b20d76b84a3d"
+    },
+    {
+      "bytes": 3882,
+      "path": "essays/the-composable-book/assets/02-composition.svg",
+      "sha256": "6a237b1fed685f5ad41f2d31b2dbde51328058cf6efea97fe03965e337552de8"
+    },
+    {
+      "bytes": 3331,
+      "path": "essays/the-composable-book/assets/03-one-book-many-hosts.svg",
+      "sha256": "94d86d2c15d0a9c14a4e963b461a18636a4ff238e3ad51939c1e5fc35e3ed04e"
+    },
+    {
+      "bytes": 3705,
+      "path": "essays/the-composable-book/assets/04-semantic-ledger.svg",
+      "sha256": "8dac2881905f6ca89129e459b59f7c8ca57fd45177674e87193fdd2e653a5f01"
+    },
+    {
+      "bytes": 103927,
+      "path": "essays/the-composable-book/assets/cover.png",
+      "sha256": "6a1b90a402b9e704688ab81f598b89d2c29ab98b619ca100d0c8323d8e5a4840"
+    },
+    {
+      "bytes": 7393,
+      "path": "essays/the-composable-book/assets/essay.css",
+      "sha256": "05b3915a0f37d5f83df06af31081bfe661c7b792c8a83c2c4f952c7f03b4011c"
+    },
+    {
+      "bytes": 27216,
+      "path": "essays/the-composable-book/index.html",
+      "sha256": "e69e87294edb6f2faf7b86279af8c7951e75c7a458c79d540a3faa689f8eec54"
+    },
+    {
+      "bytes": 337581,
+      "path": "essays/the-door-is-a-score/assets/beyond.mp3",
+      "sha256": "b9d1d07040e8b538e01bcb0c813a2906c01fd98d4623fa669c993b403bdf16c6"
+    },
+    {
+      "bytes": 2688078,
+      "path": "essays/the-door-is-a-score/assets/beyond.wav",
+      "sha256": "2f8878b457b6760f7bdaeb573b65e8c0fb6c3dcbe8c60c64e138caec5ef1fe2e"
+    },
+    {
+      "bytes": 3409,
+      "path": "essays/the-door-is-a-score/assets/evidence.json",
+      "sha256": "c91e0ef6fa81116b634928609f6168d7bc4ed050a90b006cd3a9699feaca9a40"
+    },
+    {
+      "bytes": 18061,
+      "path": "essays/the-door-is-a-score/assets/keys.ogg",
+      "sha256": "8bc33b2545a8bd9c1b0e2c47665c6bb9ca981ab972415f66a2d468d0b4921a5a"
+    },
+    {
+      "bytes": 39404,
+      "path": "essays/the-door-is-a-score/assets/keys.wav",
+      "sha256": "285dc534784012190bf96419273bdbc8fdcef9426b53f8220410bab6f6405ab6"
+    },
+    {
+      "bytes": 52182,
+      "path": "essays/the-door-is-a-score/assets/listening-score.png",
+      "sha256": "600cdaf4c3249b39434539442dea680058c1bcaed47e68cf7df159035f17cd38"
+    },
+    {
+      "bytes": 5409,
+      "path": "essays/the-door-is-a-score/assets/listening.mjs",
+      "sha256": "1d9517cc6bef226815b04412611c2809b5e5ca963636fed9239dca2ef955e340"
+    },
+    {
+      "bytes": 337581,
+      "path": "essays/the-door-is-a-score/assets/memory.mp3",
+      "sha256": "4030bc4a876f858423d1c747bb3730cf790985afb22999c7c7d49f51ceeb182c"
+    },
+    {
+      "bytes": 2688078,
+      "path": "essays/the-door-is-a-score/assets/memory.wav",
+      "sha256": "04420548eb2f4b0e0afb9d77955a2609a604536e8461c5b15c524f493241e73a"
+    },
+    {
+      "bytes": 337581,
+      "path": "essays/the-door-is-a-score/assets/present.mp3",
+      "sha256": "ffcd129b4da0925dff99875e04be533c3e9f728dad9291169214485a4f773788"
+    },
+    {
+      "bytes": 2688078,
+      "path": "essays/the-door-is-a-score/assets/present.wav",
+      "sha256": "02fb5f20ebe35abdef7d4d85aa2a615e4dc546ac2bf995b28a9565473056850a"
+    },
+    {
+      "bytes": 2813,
+      "path": "essays/the-door-is-a-score/assets/score.mjs",
+      "sha256": "50d6e7e80e5bd0374bed5d8a8bc761b551782019a1596b383c5f0acceb111ab0"
+    },
+    {
+      "bytes": 2089,
+      "path": "essays/the-door-is-a-score/assets/study.css",
+      "sha256": "7ed44511c2af8deca3874453b09cd987c44e497c9227e647016e5e5c6495d6e2"
+    },
+    {
+      "bytes": 113395,
+      "path": "essays/the-door-is-a-score/assets/teatro-door-score-social-v2.jpg",
+      "sha256": "b9bc81910e2fb270dbf1c281b1ca59a1d874291617d9bc19ae32322ccd088fef"
+    },
+    {
+      "bytes": 1985551,
+      "path": "essays/the-door-is-a-score/assets/teatro-door-score.png",
+      "sha256": "47791d9ac527641ae7b2cfe7ffe7111a99b9e39afaf89b28e53d4fa3d44cd4bb"
+    },
+    {
+      "bytes": 26407,
+      "path": "essays/the-door-is-a-score/assets/vendor/CSOUND_CORE_LICENSE",
+      "sha256": "85b4d8deec70c1d7fdae19752d6284dade435904f7d7f8d2b2c1fc2ce3fe2eb1"
+    },
+    {
+      "bytes": 10718,
+      "path": "essays/the-door-is-a-score/assets/vendor/LICENSE",
+      "sha256": "3f3adbdc06d616ccfd85151124dddca09fcf324494f72d549db961b6b088c9b5"
+    },
+    {
+      "bytes": 2532,
+      "path": "essays/the-door-is-a-score/assets/vendor/THIRD_PARTY.md",
+      "sha256": "d0be724a19ab4c3d3c0f4cbe41e5eafa2dd530ec0e0dbaca4b0901d6b13feda7"
+    },
+    {
+      "bytes": 4872684,
+      "path": "essays/the-door-is-a-score/assets/vendor/csound.js",
+      "sha256": "c86c69291326fa3d64872f430ca9a06324a94c96db373d6bd207fdd4e5a3fc9e"
+    },
+    {
+      "bytes": 337581,
+      "path": "essays/the-door-is-a-score/assets/withheld.mp3",
+      "sha256": "3bef2108ef74029d5fcc6f9002afd8ea025881932bede889af872d2d3b405ddf"
+    },
+    {
+      "bytes": 2688078,
+      "path": "essays/the-door-is-a-score/assets/withheld.wav",
+      "sha256": "3f7e199977fb4db3184658263a1c1e94529eb570c8730122a60149eae4ee8778"
+    },
+    {
+      "bytes": 18325,
+      "path": "essays/the-door-is-a-score/assets/wood-close.ogg",
+      "sha256": "e4cbbaa6331b42a32cc3a63d643f4849c65c39a45e7c57d568eb1790619af06d"
+    },
+    {
+      "bytes": 38166,
+      "path": "essays/the-door-is-a-score/assets/wood-close.wav",
+      "sha256": "b2e848557252ecb3ef128765e52afe56c978c8b25b0d7c687edc6566c710b675"
+    },
+    {
+      "bytes": 21785,
+      "path": "essays/the-door-is-a-score/assets/wood-hinge.ogg",
+      "sha256": "c6c90e02993b2e044937f344351b417aeff6841aa4cd683f208d85ececf23392"
+    },
+    {
+      "bytes": 45950,
+      "path": "essays/the-door-is-a-score/assets/wood-hinge.wav",
+      "sha256": "6eb0d47107e6bb94aa475763930319d51112192a5e4c4c99840cfe10d6d7020e"
+    },
+    {
+      "bytes": 26815,
+      "path": "essays/the-door-is-a-score/index.html",
+      "sha256": "f59f59a6d30c4cee61d16afb7512b3ef8b7007210bfeae102964b0f350f4cc84"
+    },
+    {
+      "bytes": 9862,
+      "path": "essays/the-ear-that-learns/assets/essay-listening.mjs",
+      "sha256": "6bea43701e82e67d41f40c02d98dec9f445f18189fe856a657197083280aac33"
+    },
+    {
+      "bytes": 187050,
+      "path": "essays/the-ear-that-learns/assets/listening-room.png",
+      "sha256": "d07e55ebed5b0e9100a86191099b686c8c1802770b292c358d86208911dd269e"
+    },
+    {
+      "bytes": 5335,
+      "path": "essays/the-ear-that-learns/assets/listening-room.svg",
+      "sha256": "972a143be61a414583ab6d6bacc03f8ccb22f3c6b75a1c5aa64d3b97a530c5d7"
+    },
+    {
+      "bytes": 27644,
+      "path": "essays/the-ear-that-learns/index.html",
+      "sha256": "c7d6f85a2562e56dffa4b5319a9df218a22154a41c6022a7510dc3d22a097a11"
+    },
+    {
+      "bytes": 166038,
+      "path": "essays/the-ear-that-learns/media/sing-articulated-compare.m4a",
+      "sha256": "c27fe2ee9bd757b4b1d82aeb3f1ea82f7ff24b1b03741cc77408ebc1638cc807"
+    },
+    {
+      "bytes": 163176,
+      "path": "essays/the-ear-that-learns/media/sing-expressive-compare.m4a",
+      "sha256": "acf902889e00a37bb832864ff826a612b468fb49900db8de02682cbefd6ab68f"
+    },
+    {
+      "bytes": 165926,
+      "path": "essays/the-ear-that-learns/media/sing-plain-compare.m4a",
+      "sha256": "83b45c232a05abea5c3fe5fd25bee71630ce86e66eae78b9817cd60fd9ee8c21"
+    },
+    {
+      "bytes": 45558,
+      "path": "essays/to-read-is-not-to-remember/assets/bookshelf-ipad-landscape-test.png",
+      "sha256": "ca2628cd98b5ebdc18816c510729d997f0539882b03949104bf94a2354389dd0"
+    },
+    {
+      "bytes": 2942,
+      "path": "essays/to-read-is-not-to-remember/editorial-introduction.md",
+      "sha256": "cd4c8ec73b288edb64a69151af13dcd382ed657e7c57b55173a7c5161a54e503"
+    },
+    {
+      "bytes": 12580,
+      "path": "essays/to-read-is-not-to-remember/index.html",
+      "sha256": "23698ad0b7abb97188df28663bc55d5f711fb07d4eb7947b47a8467dde06b9c0"
+    },
+    {
+      "bytes": 52243,
+      "path": "essays/to-read-is-not-to-remember/source.md",
+      "sha256": "40acb5ce4d5f9434180604e4bd024e64423a4e97087c6c9d9e1ab534adada5ca"
+    },
+    {
+      "bytes": 265026,
+      "path": "essays/to-read-is-not-to-remember/to-read-is-not-to-remember.pdf",
+      "sha256": "9c8abd38a0963970f6a8721f89c6281ecaff3994c722985a38232e8afb4be41f"
+    },
+    {
+      "bytes": 9963,
+      "path": "estate/about/index.html",
+      "sha256": "c0a13f79df75ba60e94c162feaa0f5bd034a443226514e2837a5817fb2eb6e2e"
+    },
+    {
+      "bytes": 3821,
+      "path": "estate/assets/author-landing.css",
+      "sha256": "3eaf0b1604754b1f320501b3ac551dec16eabdb646b00829554841e9328b1cca"
+    },
+    {
+      "bytes": 4033,
+      "path": "estate/assets/editions.css",
+      "sha256": "316fdf5b2ea5742a2704ad004e07ad4c5fd3acdbcdfd6e2681d42e9e9eb2d1b0"
+    },
+    {
+      "bytes": 727,
+      "path": "estate/assets/essay-pathways.css",
+      "sha256": "0a8016a8c802a73388bc9db45f264a3dca3c781d5bc0c1a352e6ff77ec3cade0"
+    },
+    {
+      "bytes": 214020,
+      "path": "estate/assets/essay-share/did-the-machine-actually-read-the-book.png",
+      "sha256": "505ecfe967d0e282d09db21efccade400358c0972d20b5dfc71a51e8c3a997f8"
+    },
+    {
+      "bytes": 21856,
+      "path": "estate/assets/essay-site.css",
+      "sha256": "6aba1927f4b60e6942ee4f2f19e14ad039d0af93fa4aa1809c9b38300842c9fd"
+    },
+    {
+      "bytes": 154802,
+      "path": "estate/assets/estate-bookshelf/first-reading-ink.png",
+      "sha256": "274dab8c594e399585fa5238364f25e95fc7ffa3808eaef872de406ec79f745f"
+    },
+    {
+      "bytes": 2069047,
+      "path": "estate/assets/estate-bookshelf/fountain-coach-edition.png",
+      "sha256": "e826794efe5fefda45f644930ed44239d9ab4b6550015aa221da5612958026b2"
+    },
+    {
+      "bytes": 3975,
+      "path": "estate/assets/estate-bookshelf/teatro-score-memory-vector-human-condition.svg",
+      "sha256": "226e3440690dd8cbeb331c4f3f62ee002fa0bc0e6007fcdf8431f1f578d115e2"
+    },
+    {
+      "bytes": 21237,
+      "path": "estate/assets/estate-core.css",
+      "sha256": "31baf2864046acf1885c49ccff40869d0dfbc9da63a2af674aecf218b8f8dbfe"
+    },
+    {
+      "bytes": 6513,
+      "path": "estate/assets/estate-core.js",
+      "sha256": "020f32d995828892cd86e38edf190b02fadbfe34e2dad00cacfc6a5b8e8feec9"
+    },
+    {
+      "bytes": 9842,
+      "path": "estate/assets/fountain-coach-logo-transparent.png",
+      "sha256": "8c5fad1c3db56138d5959da75991dc8034a0be537ce46da6ffcc0d9655e7f729"
+    },
+    {
+      "bytes": 2677,
+      "path": "estate/assets/future-estate-portal.svg",
+      "sha256": "d6123c13fbcd2e1217e4558b2ff52b21b8d829c49be84193327b6673350ee19c"
+    },
+    {
+      "bytes": 20214,
+      "path": "estate/assets/linotype/about-linotype-engine.js",
+      "sha256": "a3e6e54e949269c46bc6a8672192f69590c811fc86b6c6744ebc78c80f1d11db"
+    },
+    {
+      "bytes": 455,
+      "path": "estate/assets/linotype/book-boot.js",
+      "sha256": "c7fe0672a6697423d331670fe1c873d51399510a7f5b658b86c37a772d04a661"
+    },
+    {
+      "bytes": 2765339,
+      "path": "estate/assets/linotype/book-csound-host.js",
+      "sha256": "2a02492a70b6c6bc5352cf405f5203feca4122a3d3dc87a68d38df5ef228e601"
+    },
+    {
+      "bytes": 30175,
+      "path": "estate/assets/linotype/book.css",
+      "sha256": "2c2a80839da91f6e83a21a317e2f7404da2881b6c9fec6f3136dbad823ba8afb"
+    },
+    {
+      "bytes": 23082,
+      "path": "estate/assets/linotype/book.js",
+      "sha256": "3a00eaf0edc4a663a9f68b834f6f67d54c802387e239710a5083b9deda5fde8d"
+    },
+    {
+      "bytes": 7951,
+      "path": "estate/assets/linotype/bookshelf.css",
+      "sha256": "f6a93b5b5e78697d5b92fdf862d9640b7e81923b2564a32667f9fe66215c792c"
+    },
+    {
+      "bytes": 3018,
+      "path": "estate/assets/linotype/essays.css",
+      "sha256": "265932732e835f0b626b226f0d311fae7645a83fa61b24d1edc441c38170e694"
+    },
+    {
+      "bytes": 529,
+      "path": "estate/assets/linotype/fountain-about-entry.css",
+      "sha256": "d2f8bb3335d8fdc1a37095cc7cbb051739d8b6700402695433fc31d403e94c6a"
+    },
+    {
+      "bytes": 391,
+      "path": "estate/assets/linotype/identity-circle.css",
+      "sha256": "31483c04941087e607f86b31c2dd0697e86b4f4faaf0c07238042acc9a1c9772"
+    },
+    {
+      "bytes": 20214,
+      "path": "estate/assets/linotype/linotype-engine.js",
+      "sha256": "9aa988c6dcd5c946cae65b3a45328b08f4f46b1c9105996ea39eb5e741b4e8e9"
+    },
+    {
+      "bytes": 7117,
+      "path": "estate/assets/linotype/living-essays.css",
+      "sha256": "6a5c8da922578ed738e6b52c57ddde06c8cb7ad8e2c9c8eef00f53301438819b"
+    },
+    {
+      "bytes": 4484,
+      "path": "estate/assets/linotype/living-essays.js",
+      "sha256": "bb9cd49ddf15aa0fede5b5753da45a4d218f174c66fd67d858fca40e76d7cc58"
+    },
+    {
+      "bytes": 7305,
+      "path": "estate/assets/linotype/mobile-page-navigation.css",
+      "sha256": "b485292a2ef38f02298f9b2a124706bd179fa9502e7188de6f463c85da578327"
+    },
+    {
+      "bytes": 11338,
+      "path": "estate/assets/linotype/mobile-page-navigation.js",
+      "sha256": "fc5631543ec2269fcd536bafaf54c7f477a5d5253dbaf3296edcbc4402acd829"
+    },
+    {
+      "bytes": 7403,
+      "path": "estate/assets/linotype/reading-audio-cursor.mjs",
+      "sha256": "f44cfc62a33f5e4d2feeb158ac20ec3f7f626fc86ccae1526b7d8b6ad45e94c2"
+    },
+    {
+      "bytes": 41508,
+      "path": "estate/assets/linotype/reading-first-app.js",
+      "sha256": "1f8145e905c2f59c44c68af8f096679324e7ecd8b15398c4408009442a0ba78c"
+    },
+    {
+      "bytes": 42185,
+      "path": "estate/assets/linotype/reading-first-press-engine.js",
+      "sha256": "0fed47d6d2bb4c61565cbc37d9f6df21da3f650b365dc1856ee72fdb95eaba4d"
+    },
+    {
+      "bytes": 7633,
+      "path": "estate/assets/linotype/reading-first-press-frame.css",
+      "sha256": "4cd2f853315d51bdd2c31917782d42759fee0a9a20cf18ae4d261af085bd0e51"
+    },
+    {
+      "bytes": 6070,
+      "path": "estate/assets/linotype/reading-first-press-host.css",
+      "sha256": "a0ce4a3ba7c0e549354de8b3aaed608ad178f62bcfbc3451e3443f2989ea84b0"
+    },
+    {
+      "bytes": 24215,
+      "path": "estate/assets/linotype/reading-first-shell.css",
+      "sha256": "769fb12fbe7205e90269ecbf3760c8a6d226e78347bd1d62f05035174d671247"
+    },
+    {
+      "bytes": 906,
+      "path": "estate/assets/linotype/reading-layout-policy.js",
+      "sha256": "f098b7faf814fc7faa027bc5a5b9a24969dc181064beebbe7a4597ba335f001b"
+    },
+    {
+      "bytes": 2483,
+      "path": "estate/assets/linotype/reframe-reader-r28.css",
+      "sha256": "d63a3243abe216fc7a73b45d5e4e8d17d1d36861f97cd7230bc19887c8fb80b1"
+    },
+    {
+      "bytes": 1050,
+      "path": "estate/assets/linotype/teatro-vergil-hearing.css",
+      "sha256": "aff97c7676e9f3cf254beba93f5e17d3d0bf57956b72f86e4c9cff750317314a"
+    },
+    {
+      "bytes": 6622,
+      "path": "estate/assets/linotype/teatro-vergil-hearing.mjs",
+      "sha256": "185744bbc4daa72cc55044720d089b854f1cf2d6ca2eab10d868ac74e72ca720"
+    },
+    {
+      "bytes": 2805,
+      "path": "estate/assets/linotype/vergil-midi2-narration.mjs",
+      "sha256": "f0c14916e17778ffbe3c4d2b5f7d6f7948661da8e29a63dace85fd900d77e7b4"
+    },
+    {
+      "bytes": 79,
+      "path": "estate/assets/linotype/vergil-prologue-hearing.css",
+      "sha256": "a77abac2539be9c991e23f064851d12db5a1dfeb2e853de8a1a5c7beb3c553ce"
+    },
+    {
+      "bytes": 6685,
+      "path": "estate/assets/linotype/vergil-prologue-hearing.mjs",
+      "sha256": "5d60ecfa5ecadce573c40ede51f83c88cd359c8f6e822fe18938c5fef336a9d8"
+    },
+    {
+      "bytes": 971,
+      "path": "estate/assets/satzfunk-player/index.mjs",
+      "sha256": "9aa428c8dc4c59453c6b28663f17fd91a2e0a2ef589fe833b582228de0492a2a"
+    },
+    {
+      "bytes": 1044,
+      "path": "estate/assets/satzfunk-player/midi2-codec.mjs",
+      "sha256": "9a113bc25e2564068456583de2d16cc150c92f27fb7bef7b09e377e15ae5f2c7"
+    },
+    {
+      "bytes": 5946,
+      "path": "estate/assets/satzfunk-player/midi2-reading-score.mjs",
+      "sha256": "d5859cf6f84d4c86317c207c2299bd6fc7a59b5d50b45f0037e679e4a6ab1fe0"
+    },
+    {
+      "bytes": 5514,
+      "path": "estate/assets/satzfunk-player/midi2-reading-transport.mjs",
+      "sha256": "33360f9e747670e8d3b89f0b0f3decdf8366f6a4488f8807a37924b03470540f"
+    },
+    {
+      "bytes": 3198,
+      "path": "estate/assets/satzfunk-player/player-media.mjs",
+      "sha256": "57c02b2c26616272b98ad9f7cf2d0b953601383e63d7de8dbbbdb8821fb5a5a5"
+    },
+    {
+      "bytes": 17537,
+      "path": "estate/assets/satzfunk-player/satzfunk-media-element.mjs",
+      "sha256": "c547bf677bdee9079d7c0926a5e77cbc8aaeaee6696dc92101bf3894e53eaf19"
+    },
+    {
+      "bytes": 260349,
+      "path": "estate/assets/satzfunk-player/vendor/midi2/index.js",
+      "sha256": "97282bbe2a0e0a2f796e9c8f9d8a281a15b4c1c4d346dbebb5662b30bb745590"
+    },
+    {
+      "bytes": 2605,
+      "path": "estate/assets/satzfunk-player/voice-mastering.mjs",
+      "sha256": "c62b925cd1d422cdbbfce4048abf4b10d08e5bce84c86f71c5c4c871f27da89b"
+    },
+    {
+      "bytes": 6546,
+      "path": "estate/assets/satzfunk-player/voice-mix.mjs",
+      "sha256": "9ed710b5959f522d5b68cd71f5869355bd30d8eb1c680db14e6222ab3572e8eb"
+    },
+    {
+      "bytes": 7839,
+      "path": "estate/assets/satzfunk-player/voice-patch-view.mjs",
+      "sha256": "321de5e1ce33eafff7de4f133f43be7d3c775198f60c06a66178eefb736f6a0d"
+    },
+    {
+      "bytes": 6471,
+      "path": "estate/assets/satzfunk-player/voice-patch.mjs",
+      "sha256": "e74d5b79b4cd845696e07e4872cfec42bad69af1156dfb73408f1d271661a2c7"
+    },
+    {
+      "bytes": 16650,
+      "path": "estate/assets/site.css",
+      "sha256": "d8a6e65183510323ebba5c45b28d8663205d55a00111b214a25b59766262e97f"
+    },
+    {
+      "bytes": 220,
+      "path": "estate/assets/site.js",
+      "sha256": "87ed7fd7fef8f44685cea515aac7a142684e675507dcb4d182f1dc8305039cd7"
+    },
+    {
+      "bytes": 382109,
+      "path": "estate/bookshelf/index.html",
+      "sha256": "f7bb11b7431c7f27506d434bcee695b0b49c0e3e317a0c4437e73f175e873515"
+    },
+    {
+      "bytes": 5186,
+      "path": "estate/bookshelf/source-original.html",
+      "sha256": "c5f629c5dee3411e90b57a3f9ede46b1d080f966468018b57899d5d46c50ef1c"
+    },
+    {
+      "bytes": 382109,
+      "path": "estate/collections/first-readings/index.html",
+      "sha256": "f7bb11b7431c7f27506d434bcee695b0b49c0e3e317a0c4437e73f175e873515"
+    },
+    {
+      "bytes": 3610,
+      "path": "estate/collections/first-readings/source-original.html",
+      "sha256": "7190fcb230e5a94b7800fd056b7b1a3d86b921d8981c131adff6b9ae31e24d26"
+    },
+    {
+      "bytes": 12095,
+      "path": "estate/editions/catalogue/index.html",
+      "sha256": "12781d285c8a30bf5b33fce0328d65b84bbc09b9ca7cad7ffa017b9facba7950"
+    },
+    {
+      "bytes": 50619,
+      "path": "estate/editions/essays/index.html",
+      "sha256": "0538139420592e1009d0076d9dc01df222b6587fd8481250a2d0bf339c0653ea"
+    },
+    {
+      "bytes": 28521,
+      "path": "estate/editions/essays/reframe-and-the-business-value-of-the-estate/index.html",
+      "sha256": "35118ee7ba7d6b581f2f52a5e07b724183c7d4f45ea060fcf64b8363fd8b94aa"
+    },
+    {
+      "bytes": 27373,
+      "path": "estate/editions/essays/semantic-compilation-the-archive-is-not-the-edition/index.html",
+      "sha256": "e31f38780e72396b4ffa2dda560064b745213b7d5ca5526c19a1c99ec2654b29"
+    },
+    {
+      "bytes": 22819,
+      "path": "estate/editions/essays/teatro-an-unfinished-composition/index.html",
+      "sha256": "281b37e8e1a7a82ad6ac168702a7b687441fb38a6403a6f5629f42f6aa2e0a4a"
+    },
+    {
+      "bytes": 105912,
+      "path": "estate/editions/essays-continuing/index.html",
+      "sha256": "c24303fbe864f48c88c144c06f085f713208475728f8b39512fb1541221b506b"
+    },
+    {
+      "bytes": 4983,
+      "path": "estate/editions/index.html",
+      "sha256": "c9d8fb59fcd4fc9079124bc2a04c9b58b6c5a5d4cda534b173be3b0a535f386d"
+    },
+    {
+      "bytes": 16496,
+      "path": "estate/essays/index.html",
+      "sha256": "63e09e11278f851327ae61af0706c60cd58c17c00b8fb1ea97276a98b575ded0"
+    },
+    {
+      "bytes": 2069047,
+      "path": "estate/essays/reframe-and-the-business-value-of-the-estate/assets/address-landscape.png",
+      "sha256": "e826794efe5fefda45f644930ed44239d9ab4b6550015aa221da5612958026b2"
+    },
+    {
+      "bytes": 1946320,
+      "path": "estate/essays/reframe-and-the-business-value-of-the-estate/assets/estate-landscape.png",
+      "sha256": "8e444b976461fdf9b278a8702eef07ec74d532f617496da37c52d33c8b806451"
+    },
+    {
+      "bytes": 1865163,
+      "path": "estate/essays/reframe-and-the-business-value-of-the-estate/assets/exchange-landscape.png",
+      "sha256": "ae34a3ee42263c8beebea303cd8dd97eb5ccbedd328dc864ace907a0a1015721"
+    },
+    {
+      "bytes": 24436,
+      "path": "estate/essays/reframe-and-the-business-value-of-the-estate/index.html",
+      "sha256": "a6b9291950c59288c7755dd9861dc892700143556e55b54f1bbf1258325529c0"
+    },
+    {
+      "bytes": 8839,
+      "path": "estate/essays/semantic-compilation-the-archive-is-not-the-edition/assets/semantic-compilation-estate-rail.svg",
+      "sha256": "977c636ba6570781b2ea8e34983ae2db0be83bd93986343a99d84e37f4304c02"
+    },
+    {
+      "bytes": 22799,
+      "path": "estate/essays/semantic-compilation-the-archive-is-not-the-edition/index.html",
+      "sha256": "039353e54f31132d481039617bdea8af238a2cb2d1cba592ea9cd5cc4eb3502f"
+    },
+    {
+      "bytes": 3975,
+      "path": "estate/essays/teatro-an-unfinished-composition/assets/teatro-score-memory-vector-human-condition.svg",
+      "sha256": "226e3440690dd8cbeb331c4f3f62ee002fa0bc0e6007fcdf8431f1f578d115e2"
+    },
+    {
+      "bytes": 18810,
+      "path": "estate/essays/teatro-an-unfinished-composition/index.html",
+      "sha256": "1a0def6b37d2259a59b5eaa52be997fb759b4e4f6eb2828b4edfea04469ee393"
+    },
+    {
+      "bytes": 3464,
+      "path": "estate/essays/the-composable-book/assets/01-book-spread.svg",
+      "sha256": "4693b91ee8c90b637649161d00d4332a3133c6688cca7961b819b20d76b84a3d"
+    },
+    {
+      "bytes": 3882,
+      "path": "estate/essays/the-composable-book/assets/02-composition.svg",
+      "sha256": "6a237b1fed685f5ad41f2d31b2dbde51328058cf6efea97fe03965e337552de8"
+    },
+    {
+      "bytes": 3331,
+      "path": "estate/essays/the-composable-book/assets/03-one-book-many-hosts.svg",
+      "sha256": "94d86d2c15d0a9c14a4e963b461a18636a4ff238e3ad51939c1e5fc35e3ed04e"
+    },
+    {
+      "bytes": 3705,
+      "path": "estate/essays/the-composable-book/assets/04-semantic-ledger.svg",
+      "sha256": "8dac2881905f6ca89129e459b59f7c8ca57fd45177674e87193fdd2e653a5f01"
+    },
+    {
+      "bytes": 103927,
+      "path": "estate/essays/the-composable-book/assets/cover.png",
+      "sha256": "6a1b90a402b9e704688ab81f598b89d2c29ab98b619ca100d0c8323d8e5a4840"
+    },
+    {
+      "bytes": 7393,
+      "path": "estate/essays/the-composable-book/assets/essay.css",
+      "sha256": "05b3915a0f37d5f83df06af31081bfe661c7b792c8a83c2c4f952c7f03b4011c"
+    },
+    {
+      "bytes": 29403,
+      "path": "estate/essays/the-composable-book/index.html",
+      "sha256": "4cc4bcca6f1d2bc5e4b50aa434e225254102368b7d63ddd46c9181a840889206"
+    },
+    {
+      "bytes": 18061,
+      "path": "estate/essays/the-door-is-a-score/assets/keys.ogg",
+      "sha256": "8bc33b2545a8bd9c1b0e2c47665c6bb9ca981ab972415f66a2d468d0b4921a5a"
+    },
+    {
+      "bytes": 52182,
+      "path": "estate/essays/the-door-is-a-score/assets/listening-score.png",
+      "sha256": "600cdaf4c3249b39434539442dea680058c1bcaed47e68cf7df159035f17cd38"
+    },
+    {
+      "bytes": 5409,
+      "path": "estate/essays/the-door-is-a-score/assets/listening.mjs",
+      "sha256": "1d9517cc6bef226815b04412611c2809b5e5ca963636fed9239dca2ef955e340"
+    },
+    {
+      "bytes": 2813,
+      "path": "estate/essays/the-door-is-a-score/assets/score.mjs",
+      "sha256": "50d6e7e80e5bd0374bed5d8a8bc761b551782019a1596b383c5f0acceb111ab0"
+    },
+    {
+      "bytes": 2089,
+      "path": "estate/essays/the-door-is-a-score/assets/study.css",
+      "sha256": "7ed44511c2af8deca3874453b09cd987c44e497c9227e647016e5e5c6495d6e2"
+    },
+    {
+      "bytes": 1985551,
+      "path": "estate/essays/the-door-is-a-score/assets/teatro-door-score.png",
+      "sha256": "47791d9ac527641ae7b2cfe7ffe7111a99b9e39afaf89b28e53d4fa3d44cd4bb"
+    },
+    {
+      "bytes": 26407,
+      "path": "estate/essays/the-door-is-a-score/assets/vendor/CSOUND_CORE_LICENSE",
+      "sha256": "85b4d8deec70c1d7fdae19752d6284dade435904f7d7f8d2b2c1fc2ce3fe2eb1"
+    },
+    {
+      "bytes": 10718,
+      "path": "estate/essays/the-door-is-a-score/assets/vendor/LICENSE",
+      "sha256": "3f3adbdc06d616ccfd85151124dddca09fcf324494f72d549db961b6b088c9b5"
+    },
+    {
+      "bytes": 2532,
+      "path": "estate/essays/the-door-is-a-score/assets/vendor/THIRD_PARTY.md",
+      "sha256": "d0be724a19ab4c3d3c0f4cbe41e5eafa2dd530ec0e0dbaca4b0901d6b13feda7"
+    },
+    {
+      "bytes": 4872684,
+      "path": "estate/essays/the-door-is-a-score/assets/vendor/csound.js",
+      "sha256": "c86c69291326fa3d64872f430ca9a06324a94c96db373d6bd207fdd4e5a3fc9e"
+    },
+    {
+      "bytes": 18325,
+      "path": "estate/essays/the-door-is-a-score/assets/wood-close.ogg",
+      "sha256": "e4cbbaa6331b42a32cc3a63d643f4849c65c39a45e7c57d568eb1790619af06d"
+    },
+    {
+      "bytes": 21785,
+      "path": "estate/essays/the-door-is-a-score/assets/wood-hinge.ogg",
+      "sha256": "c6c90e02993b2e044937f344351b417aeff6841aa4cd683f208d85ececf23392"
+    },
+    {
+      "bytes": 28188,
+      "path": "estate/essays/the-door-is-a-score/index.html",
+      "sha256": "2ec1fb52a8416acf406e514f6b89199085b16eee4d1b6953b823a24d08515cdd"
+    },
+    {
+      "bytes": 337581,
+      "path": "estate/essays/the-door-is-a-score/media/beyond.mp3",
+      "sha256": "b9d1d07040e8b538e01bcb0c813a2906c01fd98d4623fa669c993b403bdf16c6"
+    },
+    {
+      "bytes": 2018,
+      "path": "estate/essays/the-door-is-a-score/media/edition.json",
+      "sha256": "1cf302a89fea95c21c8b1862884e1bac24e1f5784dff0919ed6b0622bb9f2bc3"
+    },
+    {
+      "bytes": 337581,
+      "path": "estate/essays/the-door-is-a-score/media/memory.mp3",
+      "sha256": "4030bc4a876f858423d1c747bb3730cf790985afb22999c7c7d49f51ceeb182c"
+    },
+    {
+      "bytes": 337581,
+      "path": "estate/essays/the-door-is-a-score/media/present.mp3",
+      "sha256": "ffcd129b4da0925dff99875e04be533c3e9f728dad9291169214485a4f773788"
+    },
+    {
+      "bytes": 337581,
+      "path": "estate/essays/the-door-is-a-score/media/withheld.mp3",
+      "sha256": "3bef2108ef74029d5fcc6f9002afd8ea025881932bede889af872d2d3b405ddf"
+    },
+    {
+      "bytes": 9411,
+      "path": "estate/essays/the-ear-that-learns/assets/essay-listening.mjs",
+      "sha256": "c1e305f0886df66ee602d829b8ec61e27ff6a614d9d0cbbfb5f8c82bef7cfa6f"
+    },
+    {
+      "bytes": 187050,
+      "path": "estate/essays/the-ear-that-learns/assets/listening-room.png",
+      "sha256": "d07e55ebed5b0e9100a86191099b686c8c1802770b292c358d86208911dd269e"
+    },
+    {
+      "bytes": 5335,
+      "path": "estate/essays/the-ear-that-learns/assets/listening-room.svg",
+      "sha256": "972a143be61a414583ab6d6bacc03f8ccb22f3c6b75a1c5aa64d3b97a530c5d7"
+    },
+    {
+      "bytes": 28632,
+      "path": "estate/essays/the-ear-that-learns/index.html",
+      "sha256": "20f7f3190129ef8642df99f781d24d5e5bf2b8b234bcf71a9da447bbb0fb368e"
+    },
+    {
+      "bytes": 45558,
+      "path": "estate/essays/to-read-is-not-to-remember/assets/bookshelf-ipad-landscape-test.png",
+      "sha256": "ca2628cd98b5ebdc18816c510729d997f0539882b03949104bf94a2354389dd0"
+    },
+    {
+      "bytes": 16707,
+      "path": "estate/essays/to-read-is-not-to-remember/index.html",
+      "sha256": "2eb20df27e4b1a85c2c531f061a712f2aaf66f792df5cda518bb14b62d0822b3"
+    },
+    {
+      "bytes": 265026,
+      "path": "estate/essays/to-read-is-not-to-remember/to-read-is-not-to-remember.pdf",
+      "sha256": "9c8abd38a0963970f6a8721f89c6281ecaff3994c722985a38232e8afb4be41f"
+    },
+    {
+      "bytes": 400241,
+      "path": "estate/index.html",
+      "sha256": "c6de70bf24b6e2e2321fdfbd215e568c36e518b3e093c65f6921d02ad03164bc"
+    },
+    {
+      "bytes": 316986,
+      "path": "estate/media/first-readings/prologue-midi2-reading-score.json",
+      "sha256": "9e972107dd3c41f9ac404be22dfca1fd1846dd39b7fde07b9ca10ba067cc210f"
+    },
+    {
+      "bytes": 220704,
+      "path": "estate/media/first-readings/teatro-midi2-reading-score.json",
+      "sha256": "1f00e49dff57e8c81001ea9e25046a30abb01e89e05dac157349a4d85ed7f526"
+    },
+    {
+      "bytes": 4126392,
+      "path": "estate/media/first-readings/teatro-vergil-auto-corrected-v2.mp3",
+      "sha256": "d5ce996b8d42db2a665263877e35b772220cc1faef6c2e1e54c3a6e0a6a65fcd"
+    },
+    {
+      "bytes": 793,
+      "path": "estate/media/first-readings/teatro-vergil-edition.json",
+      "sha256": "4e3821947801b15620bfc21641520fd512886efd51617e804b84c41af3353817"
+    },
+    {
+      "bytes": 911,
+      "path": "estate/media/first-readings/vergil-prologue-edition.json",
+      "sha256": "1da108f6c65664a6942069cbc16033e8e18eba04eb80da0ecee60d927bcb7d99"
+    },
+    {
+      "bytes": 6000840,
+      "path": "estate/media/first-readings/vergil-prologue-source-aligned.mp3",
+      "sha256": "4b2727e08bd7b3c0edea59f6faca92292e9447d980bfb1d2f963e829dba16881"
+    },
+    {
+      "bytes": 400241,
+      "path": "index.html",
+      "sha256": "c6de70bf24b6e2e2321fdfbd215e568c36e518b3e093c65f6921d02ad03164bc"
+    },
+    {
+      "bytes": 2648,
+      "path": "publication-manifest.json",
+      "sha256": "4ee6ea145a3bd464eb3c64a01d02bf5991b7203070d1475c090c25b9f534ad0c"
+    },
+    {
+      "bytes": 1570,
+      "path": "release-manifest.json",
+      "sha256": "3a014bc5da629652aeac386e00dbd5a6642d911d2ef165d2cd85e6fb949b9312"
+    },
+    {
+      "bytes": 69687,
+      "path": "solstice/assets/edition/post-2025-12-22-b0e6cf8252aca0da.jpg",
+      "sha256": "b0e6cf8252aca0da83a9b0bfbdbb3f57b88c826e8b85ac5a89f43b23bad98876"
+    },
+    {
+      "bytes": 209255,
+      "path": "solstice/assets/edition/post-2025-12-23-f0b9144a1df6ae0b.jpg",
+      "sha256": "f0b9144a1df6ae0ba75145a89376441a21ce7f2d4aab7f1df8fd8dbc1b299f18"
+    },
+    {
+      "bytes": 210268,
+      "path": "solstice/assets/edition/post-2025-12-28-c9d7b304d2577e3c.jpg",
+      "sha256": "c9d7b304d2577e3cd9c84c554e05aff7ea9dd59e3693e76858f748ed1309f8ed"
+    },
+    {
+      "bytes": 232262,
+      "path": "solstice/assets/edition/post-2026-01-08-7e60c7273855d415.jpg",
+      "sha256": "7e60c7273855d41589a65200a7f6d75c596b9a920fa8a21b390acd092d7ca2b0"
+    },
+    {
+      "bytes": 194848,
+      "path": "solstice/assets/edition/post-2026-01-22-5df50180208e95ac.jpg",
+      "sha256": "5df50180208e95ac2d2537120f2bb7c22fa3fa8af971867a9d7ac4de8ab398c3"
+    },
+    {
+      "bytes": 219561,
+      "path": "solstice/assets/edition/post-2026-01-23-1c3c1d6806e93f7b.jpg",
+      "sha256": "1c3c1d6806e93f7be93de86315e81e31ffd1a2641ee1fae4c02d00fc00602790"
+    },
+    {
+      "bytes": 133595,
+      "path": "solstice/assets/edition/post-2026-02-04-d896e49fab8b9de6.jpg",
+      "sha256": "d896e49fab8b9de64fe6d216ec3749127e52909b29a260fae285c6755e0966f7"
+    },
+    {
+      "bytes": 115802,
+      "path": "solstice/assets/edition/post-2026-02-14-176bf23235b226f3.jpg",
+      "sha256": "176bf23235b226f3f56175c3b5a96bcdebb5791d8a5459bcc6e79e1f69239600"
+    },
+    {
+      "bytes": 48595,
+      "path": "solstice/assets/edition/post-2026-02-14-4c119414e04b1a21.jpg",
+      "sha256": "4c119414e04b1a214a6a2554c62962bd0f251c1eacc44fe30c24cb73aed9ae5f"
+    },
+    {
+      "bytes": 118908,
+      "path": "solstice/assets/edition/post-2026-02-14-a25168e8eaa4ea6f.jpg",
+      "sha256": "a25168e8eaa4ea6f5b88454c3877662473c08c584db9b3bc3485c6ce2dc672e1"
+    },
+    {
+      "bytes": 106384,
+      "path": "solstice/assets/edition/post-2026-02-28-90f23f8004961575.jpg",
+      "sha256": "90f23f8004961575177329229889eb0ca522166cc73ffb7ded5c3758bd8d9d7c"
+    },
+    {
+      "bytes": 437468,
+      "path": "solstice/assets/edition/post-2026-03-16-c3f30632d4c61a08.jpg",
+      "sha256": "c3f30632d4c61a088786b5c959deedbb5a9e5561c76211152e51d65b5017b5c4"
+    },
+    {
+      "bytes": 469977,
+      "path": "solstice/assets/edition/post-2026-03-16-f8848e33f3017105.jpg",
+      "sha256": "f8848e33f3017105df7f9f008bddd0177f4a684e7252f6101960d7db48d3dd2c"
+    },
+    {
+      "bytes": 200939,
+      "path": "solstice/assets/edition/post-2026-03-20-6a08a376a9a616ad.jpg",
+      "sha256": "6a08a376a9a616add8697ad5f3eff26367563f0b9b9ccc275ba37960d35732a8"
+    },
+    {
+      "bytes": 224301,
+      "path": "solstice/assets/edition/post-2026-03-21-dd4b3443194bbfe0.jpg",
+      "sha256": "dd4b3443194bbfe0614fa8573cf404560d08d1f9a438311f6a70464a2d239bb9"
+    },
+    {
+      "bytes": 152178,
+      "path": "solstice/assets/edition/post-2026-04-22-a0427fee962c65c8.jpg",
+      "sha256": "a0427fee962c65c8cde805ebb71a4a1685e7e34c9c374df2ed64e1bc82e8b14e"
+    },
+    {
+      "bytes": 47468,
+      "path": "solstice/assets/edition/post-2026-04-23-3115141ef9dee17f.jpg",
+      "sha256": "3115141ef9dee17f7c6426c6b98968dd20a9b2daebe7d39f09e810574ed2c1e5"
+    },
+    {
+      "bytes": 239007,
+      "path": "solstice/assets/edition/post-2026-04-30-0e22d7426fe14b6a.jpg",
+      "sha256": "0e22d7426fe14b6aecdb80749e8ca688df1a0ded1f5dd583dcc8a5f52069bda2"
+    },
+    {
+      "bytes": 189992,
+      "path": "solstice/assets/edition/post-2026-05-01-18375574f4b885e9.jpg",
+      "sha256": "18375574f4b885e928262bb3b615cb82481dfc39abcbee529d68f1dba7aec0c1"
+    },
+    {
+      "bytes": 119104,
+      "path": "solstice/assets/edition/post-2026-05-01-ca5df313851efc64.jpg",
+      "sha256": "ca5df313851efc6420fbf9f1b58c4d31fa0bc6d175c600873838faf7cd794f2f"
+    },
+    {
+      "bytes": 48963,
+      "path": "solstice/assets/edition/post-2026-05-25-ed229a3996db0d32.jpg",
+      "sha256": "ed229a3996db0d3236b040b1888bbe061fed4839f7769d1c83fcea6162da20a1"
+    },
+    {
+      "bytes": 54139,
+      "path": "solstice/assets/edition/post-2026-05-30-1f467f3d2b353f56.jpg",
+      "sha256": "1f467f3d2b353f56024cde2c9f2b9b6c1b0b08c8e266ed42a2379c49b72b163f"
+    },
+    {
+      "bytes": 180583,
+      "path": "solstice/assets/edition/post-2026-05-30-2abbf0eeeb401f07.jpg",
+      "sha256": "2abbf0eeeb401f07b777d04f3be8a3fed2db9e645e00eb3e9f37879e771c2e67"
+    },
+    {
+      "bytes": 193721,
+      "path": "solstice/assets/edition/post-2026-05-30-72608939958eb3b9.jpg",
+      "sha256": "72608939958eb3b9ef3f08b6bdc21b542a5e56c086749305175688a045caf475"
+    },
+    {
+      "bytes": 86741,
+      "path": "solstice/assets/edition/post-2026-05-30-c32610cb27096d79.jpg",
+      "sha256": "c32610cb27096d7946200fa64dcb3173d7788aa5145589c5dfde19cab45a452d"
+    },
+    {
+      "bytes": 71152,
+      "path": "solstice/assets/edition/post-2026-05-30-d639865b8b728df8.jpg",
+      "sha256": "d639865b8b728df806f7fbf3cd87f4e5f5a620b392c354d63efff231e926977e"
+    },
+    {
+      "bytes": 77151,
+      "path": "solstice/assets/edition/post-2026-06-06-254e011042fb679e.jpg",
+      "sha256": "254e011042fb679efa713262ac56dc190904a4dfecfdd31095bc7a00f475d4cd"
+    },
+    {
+      "bytes": 58169,
+      "path": "solstice/assets/edition/post-2026-06-06-398a7827c5faf579.jpg",
+      "sha256": "398a7827c5faf579ef2452a157056b8e6520054361e17b4246d00a815d0ee453"
+    },
+    {
+      "bytes": 168241,
+      "path": "solstice/assets/edition/post-2026-06-15-b2f077572eff8793.jpg",
+      "sha256": "b2f077572eff8793dc8bbaf40485a4deb017faed90712bec7ef0af92350c205d"
+    },
+    {
+      "bytes": 150681,
+      "path": "solstice/assets/edition/post-2026-06-15-fa70b1744d6af826.jpg",
+      "sha256": "fa70b1744d6af8269f69ae13c20d4f6263eed8b15f90a01317d1dbc15a267e2c"
+    },
+    {
+      "bytes": 122443,
+      "path": "solstice/assets/edition/post-2026-06-24-8f2981e0b674fe01.jpg",
+      "sha256": "8f2981e0b674fe01c572cd53f4847e5ddad8eea37becc8f0d3187eb6b8d4eaee"
+    },
+    {
+      "bytes": 133585,
+      "path": "solstice/assets/edition/post-2026-06-24-f614868939456e96.jpg",
+      "sha256": "f614868939456e96dec268c992951b3566fc8fa8d56e07dd73e3d41e263c88de"
+    },
+    {
+      "bytes": 101292,
+      "path": "solstice/assets/edition/post-2026-07-21-728a816389b59438.jpg",
+      "sha256": "728a816389b59438647f6f16807059370250a0a134dece6eaaaf4d6676fc8f72"
+    },
+    {
+      "bytes": 156706,
+      "path": "solstice/assets/edition/post-2026-07-28-cdd8e5b1c9628c67.jpg",
+      "sha256": "cdd8e5b1c9628c67a0a1c40e3dd5bd8d4069b9ff778d09268dfbfd7bc6299e90"
+    },
+    {
+      "bytes": 127336,
+      "path": "solstice/assets/edition/post-2026-07-31-b345eeebe3c904df.jpg",
+      "sha256": "b345eeebe3c904df1968068b774144a9569e07ceef647718f1ffe420c7a161a4"
+    },
+    {
+      "bytes": 136148,
+      "path": "solstice/assets/edition/post-2026-08-28-330a889f93b0b76d.jpg",
+      "sha256": "330a889f93b0b76d55269267f522543955297332098e473c7d7c13d6ed57e738"
+    },
+    {
+      "bytes": 210586,
+      "path": "solstice/assets/edition/post-2026-09-04-aeddf555dd785ebf.jpg",
+      "sha256": "aeddf555dd785ebfbf9641b7c4d3784cc16fc1a3386674043000e4dca2cc498c"
+    },
+    {
+      "bytes": 213157,
+      "path": "solstice/assets/edition/post-2026-09-06-0e595f232b2d6da1.jpg",
+      "sha256": "0e595f232b2d6da16ea71f8fa84812afd404c983e5bc5df40325ed1448daf591"
+    },
+    {
+      "bytes": 200814,
+      "path": "solstice/assets/edition/post-2026-09-18-c75d27c000b328a1.jpg",
+      "sha256": "c75d27c000b328a1f07ab485c76c1bae0bfe775feb640122479593d5d228a264"
+    },
+    {
+      "bytes": 218996,
+      "path": "solstice/assets/edition/teatro-score-2026-08-17.jpg",
+      "sha256": "153bcd73d037128c791b194d4a5f0f1b39e0979478a25ecc6bf7f7f92eced6fb"
+    },
+    {
+      "bytes": 175901,
+      "path": "solstice/assets/edition/teatro-score-2026-08-19.jpg",
+      "sha256": "11772b92061b57289540732e5432d10db6ad6e1f7e3374ab84c3b4b952c4b272"
+    }
+  ],
+  "modifiedPaths": [
+    "index.html",
+    "release-manifest.json"
+  ],
+  "predecessor": "estate-20261027-v19-door-score-accepted-shell-824404f",
+  "preservedPaths": [
+    "assets/estate-core.css",
+    "assets/estate-core.js",
+    "assets/estate-shell-d9a170d82a21d19b.css",
+    "assets/estate-shell-logo-8c5fad1c3db56138.png",
+    "assets/estate-shell-logo.png",
+    "assets/estate-shell-state-4139f6eec4e0f8d7.js",
+    "assets/estate-shell-state.js",
+    "assets/fountain-coach-logo-transparent.png",
+    "assets/future-estate-portal.svg",
+    "assets/site.css",
+    "assets/site.js",
+    "assets/social/future-estate-portal.jpg",
+    "essays/index.html",
+    "essays/reframe-and-the-business-value-of-the-estate/assets/address-landscape.png",
+    "essays/semantic-compilation-the-archive-is-not-the-edition/assets/semantic-compilation-estate-rail.png",
+    "essays/semantic-compilation-the-archive-is-not-the-edition/assets/semantic-compilation-estate-rail.svg",
+    "essays/semantic-compilation-the-archive-is-not-the-edition/index.html",
+    "essays/teatro-an-unfinished-composition/assets/teatro-score-memory-vector-human-condition.svg",
+    "essays/the-composable-book/assets/01-book-spread.svg",
+    "essays/the-composable-book/assets/02-composition.svg",
+    "essays/the-composable-book/assets/03-one-book-many-hosts.svg",
+    "essays/the-composable-book/assets/04-semantic-ledger.svg",
+    "essays/the-composable-book/assets/cover.png",
+    "essays/the-composable-book/assets/essay.css",
+    "essays/the-composable-book/index.html",
+    "essays/the-door-is-a-score/assets/beyond.mp3",
+    "essays/the-door-is-a-score/assets/beyond.wav",
+    "essays/the-door-is-a-score/assets/evidence.json",
+    "essays/the-door-is-a-score/assets/keys.ogg",
+    "essays/the-door-is-a-score/assets/keys.wav",
+    "essays/the-door-is-a-score/assets/listening-score.png",
+    "essays/the-door-is-a-score/assets/listening.mjs",
+    "essays/the-door-is-a-score/assets/memory.mp3",
+    "essays/the-door-is-a-score/assets/memory.wav",
+    "essays/the-door-is-a-score/assets/present.mp3",
+    "essays/the-door-is-a-score/assets/present.wav",
+    "essays/the-door-is-a-score/assets/score.mjs",
+    "essays/the-door-is-a-score/assets/study.css",
+    "essays/the-door-is-a-score/assets/teatro-door-score-social-v2.jpg",
+    "essays/the-door-is-a-score/assets/teatro-door-score.png",
+    "essays/the-door-is-a-score/assets/vendor/CSOUND_CORE_LICENSE",
+    "essays/the-door-is-a-score/assets/vendor/LICENSE",
+    "essays/the-door-is-a-score/assets/vendor/THIRD_PARTY.md",
+    "essays/the-door-is-a-score/assets/vendor/csound.js",
+    "essays/the-door-is-a-score/assets/withheld.mp3",
+    "essays/the-door-is-a-score/assets/withheld.wav",
+    "essays/the-door-is-a-score/assets/wood-close.ogg",
+    "essays/the-door-is-a-score/assets/wood-close.wav",
+    "essays/the-door-is-a-score/assets/wood-hinge.ogg",
+    "essays/the-door-is-a-score/assets/wood-hinge.wav",
+    "essays/the-door-is-a-score/index.html",
+    "essays/the-ear-that-learns/assets/essay-listening.mjs",
+    "essays/the-ear-that-learns/assets/listening-room.png",
+    "essays/the-ear-that-learns/assets/listening-room.svg",
+    "essays/the-ear-that-learns/index.html",
+    "essays/the-ear-that-learns/media/sing-articulated-compare.m4a",
+    "essays/the-ear-that-learns/media/sing-expressive-compare.m4a",
+    "essays/the-ear-that-learns/media/sing-plain-compare.m4a",
+    "essays/to-read-is-not-to-remember/assets/bookshelf-ipad-landscape-test.png",
+    "essays/to-read-is-not-to-remember/editorial-introduction.md",
+    "essays/to-read-is-not-to-remember/index.html",
+    "essays/to-read-is-not-to-remember/source.md",
+    "essays/to-read-is-not-to-remember/to-read-is-not-to-remember.pdf",
+    "publication-manifest.json"
+  ],
+  "releaseID": "estate-20261103-v20-vergil-reader-611c3e3",
+  "schema": "fountain.coach.v140.production-baseline-overlay.v1",
+  "sourceCommit": "611c3e34c9dfffc932d86d957edf49bda46927ec"
+}
