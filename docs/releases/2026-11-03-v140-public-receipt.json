@@ -1,0 +1,49 @@
+{
+  "activated" : true,
+  "detail" : "Exact published bytes verified independently via HTTPS",
+  "previousReleaseID" : "estate-20261027-v19-door-score-accepted-shell-824404f",
+  "publicHost" : "fountain.coach",
+  "recordedAt" : 815382170.83441,
+  "releaseID" : "estate-20261103-v20-vergil-reader-611c3e3",
+  "sourceInventorySHA256" : "c70f0d38c86e9cea9f04f9a7fe55474060eb3bc3ea6a845d3c6b2cab8920f867",
+  "sourceRevision" : "611c3e34c9dfffc932d86d957edf49bda46927ec",
+  "state" : "active",
+  "verifiedPublicFiles" : [
+    {
+      "path" : "\/index.html",
+      "sha256" : "c6de70bf24b6e2e2321fdfbd215e568c36e518b3e093c65f6921d02ad03164bc"
+    },
+    {
+      "path" : "\/estate\/index.html",
+      "sha256" : "c6de70bf24b6e2e2321fdfbd215e568c36e518b3e093c65f6921d02ad03164bc"
+    },
+    {
+      "path" : "\/estate\/assets\/linotype\/reading-first-app.js",
+      "sha256" : "1f8145e905c2f59c44c68af8f096679324e7ecd8b15398c4408009442a0ba78c"
+    },
+    {
+      "path" : "\/estate\/media\/first-readings\/teatro-vergil-auto-corrected-v2.mp3",
+      "sha256" : "d5ce996b8d42db2a665263877e35b772220cc1faef6c2e1e54c3a6e0a6a65fcd"
+    },
+    {
+      "path" : "\/estate\/media\/first-readings\/vergil-prologue-source-aligned.mp3",
+      "sha256" : "4b2727e08bd7b3c0edea59f6faca92292e9447d980bfb1d2f963e829dba16881"
+    },
+    {
+      "path" : "\/estate\/media\/first-readings\/teatro-midi2-reading-score.json",
+      "sha256" : "1f00e49dff57e8c81001ea9e25046a30abb01e89e05dac157349a4d85ed7f526"
+    },
+    {
+      "path" : "\/estate\/media\/first-readings\/prologue-midi2-reading-score.json",
+      "sha256" : "9e972107dd3c41f9ac404be22dfca1fd1846dd39b7fde07b9ca10ba067cc210f"
+    },
+    {
+      "path" : "\/essays\/the-door-is-a-score\/index.html",
+      "sha256" : "f59f59a6d30c4cee61d16afb7512b3ef8b7007210bfeae102964b0f350f4cc84"
+    },
+    {
+      "path" : "\/assets\/site.css",
+      "sha256" : "6aba1927f4b60e6942ee4f2f19e14ad039d0af93fa4aa1809c9b38300842c9fd"
+    }
+  ]
+}

@@ -26,3 +26,13 @@ Observed live `/estate/*` and `/solstice/assets/edition/*` fall through Caddy to
 The two native production operations must be verified separately: (1) route admission with Caddy validation, rollback and original release retained, then (2) `EstatePublisherSSHDelivery deliver` with 219-file immutable manifest, independent HTTPS SHA read-back and predecessor retained for rollback. Only a terminal public receipt and public browser/HTTPS observations establish that publication happened.
 
 **State at preparation:** authorized and source-verified candidate, not yet a live public release. Do not claim production success from this document alone.
+
+## Terminal public release — independently witnessed 3 November 2026
+
+**PUBLISHED / ACTIVE.** The bounded native EstatePublisher route operation returned `active` with original Caddy SHA-256 `4426f65d3019eff7634877072f523afaebce18b2a08507dbb5dddcabf50dfdf9`, candidate `08f10f0201c35458bcaf1cc3d1a9749d679ddde27a33c5e4a7d4c738a003a748`, both exact asset prefixes admitted, prior public and Caddy releases retained. Terminal typed receipt: [2026-11-03-v140-route-admission-receipt.json](releases/2026-11-03-v140-route-admission-receipt.json).
+
+The existing EstatePublisher SSH static-delivery executed the 219-file immutable artifact and returned `state=active`, `activated=true`, `previousReleaseID=estate-20261027-v19-door-score-accepted-shell-824404f`, inventory SHA-256 `c70f0d38c86e9cea9f04f9a7fe55474060eb3bc3ea6a845d3c6b2cab8920f867`, independently verified public file SHA-256 for nine URLs. Receipt: [2026-11-03-v140-public-receipt.json](releases/2026-11-03-v140-public-receipt.json). Retained previous release independently confirmed by remote read-only witness, current symlink points to `releases/estate-20261103-v20-vergil-reader-611c3e3`.
+
+Independent public read-back: both identical exact-source Vergil MP3 digests, both MIDI event JSON, reader HTML/JS, Door essay and old site stylesheet match HTTPS. Source-published Solstice artwork first image SHA-256 matches. Live MP3 byte ranges return HTTP **206**. Both authored readings passed Csound/Ear/MIDI2 Play/Pause and responsive pagination on **4/4 Chrome/WebKit** real public routes; page folio same-position i↔logo passed **8/8** with zero coordinate delta. See [2026-11-03-v140-public-browser-acceptance.json](releases/2026-11-03-v140-public-browser-acceptance.json).
+
+Public entrance: https://fountain.coach/ ; Teatro reading: https://fountain.coach/estate/#/read/teatro ; Vergil Prologue: https://fountain.coach/estate/#/read/solstice-reading-01--vergil . Private WLAN stage v140 and source rehearsal grants were not altered. This is native, browser-measured release proof, not a physical-iPad VoiceOver evaluation.

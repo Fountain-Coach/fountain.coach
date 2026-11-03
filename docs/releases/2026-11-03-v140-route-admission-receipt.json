@@ -1,0 +1,22 @@
+{
+  "admittedPaths" : [
+    "\/estate\/*",
+    "\/solstice\/assets\/edition\/*"
+  ],
+  "detail" : "Caddy route prefixes admitted; prior source release retained; awaiting separate immutable site activation",
+  "originalCaddySHA256" : "4426f65d3019eff7634877072f523afaebce18b2a08507dbb5dddcabf50dfdf9",
+  "previousConfigurationRetained" : true,
+  "previousReleaseID" : "estate-20261027-v19-door-score-accepted-shell-824404f",
+  "proposedCaddySHA256" : "08f10f0201c35458bcaf1cc3d1a9749d679ddde27a33c5e4a7d4c738a003a748",
+  "publicHost" : "fountain.coach",
+  "publicStatuses" : {
+    "\/" : 200,
+    "\/essays\/the-door-is-a-score\/" : 200,
+    "\/estate\/assets\/linotype\/reading-first-app.js" : 404,
+    "\/for-agents\/" : 200,
+    "\/solstice\/assets\/edition\/absent-source-proof.jpg" : 404
+  },
+  "recordedAt" : 815382109.86061,
+  "sourceReleaseRetained" : true,
+  "state" : "active"
+}

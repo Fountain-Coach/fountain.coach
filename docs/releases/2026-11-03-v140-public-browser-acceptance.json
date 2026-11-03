@@ -1,0 +1,66 @@
+{
+  "schema": "fountain.coach.v140.public-browser-acceptance.v1",
+  "date": "2026-11-03",
+  "host": "https://fountain.coach",
+  "releaseID": "estate-20261103-v20-vergil-reader-611c3e3",
+  "sourceRevision": "611c3e34c9dfffc932d86d957edf49bda46927ec",
+  "publicRelease": "active",
+  "browserCases": 4,
+  "browserFailures": 0,
+  "browserResults": [
+    {
+      "engine": "Chrome",
+      "route": "teatro",
+      "passed": true,
+      "audioProcessing": "csound-teatro-audioworklet",
+      "audioMode": "studio",
+      "earWindows": 17,
+      "midiCursorMarks": 1,
+      "portrait": "single"
+    },
+    {
+      "engine": "Chrome",
+      "route": "solstice-reading-01--vergil",
+      "passed": true,
+      "audioProcessing": "csound-teatro-audioworklet",
+      "audioMode": "studio",
+      "earWindows": 17,
+      "midiCursorMarks": 1,
+      "portrait": "single"
+    },
+    {
+      "engine": "WebKit",
+      "route": "teatro",
+      "passed": true,
+      "audioProcessing": "csound-teatro-audioworklet",
+      "audioMode": "studio",
+      "earWindows": 18,
+      "midiCursorMarks": 1,
+      "portrait": "single"
+    },
+    {
+      "engine": "WebKit",
+      "route": "solstice-reading-01--vergil",
+      "passed": true,
+      "audioProcessing": "csound-teatro-audioworklet",
+      "audioMode": "studio",
+      "earWindows": 18,
+      "midiCursorMarks": 1,
+      "portrait": "single"
+    }
+  ],
+  "folioReturnCases": 8,
+  "folioReturnFailures": 0,
+  "sameCoordinateDeltaCssPixels": 0,
+  "mediaRangeStatus": 206,
+  "sourceVerifiedPublicSolsticeImage": {
+    "path": "/solstice/assets/edition/post-2025-12-22-b0e6cf8252aca0da.jpg",
+    "sha256": "b0e6cf8252aca0da83a9b0bfbdbb3f57b88c826e8b85ac5a89f43b23bad98876"
+  },
+  "predecessor": "estate-20261027-v19-door-score-accepted-shell-824404f",
+  "predecessorRetained": true,
+  "wlanStageUnchanged": true,
+  "limits": [
+    "Chrome/WebKit desktop emulation is not physical iPad VoiceOver acceptance"
+  ]
+}
