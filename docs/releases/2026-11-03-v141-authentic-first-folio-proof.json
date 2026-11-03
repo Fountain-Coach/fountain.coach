@@ -1,0 +1,107 @@
+{
+  "schema": "fountain.press.first-folio-screenshot-proof.v1",
+  "method": "Playwright WebKit actual first sheet",
+  "readerSource": "fountain.coach v140 source SHA 5f9b3eafc4248baf0bdb4432b53efa1c5e9caf9c",
+  "total": 9,
+  "screenshots": [
+    {
+      "id": "continuity",
+      "title": "On Continuity",
+      "source": "accepted-v140-first-measured-Linotype-sheet",
+      "sheetWidthPx": 700,
+      "sheetHeightPx": 1088,
+      "textBeginning": "BENEDIKT EICKHOFF\nOn Continuity\n\nFountain Coach began with a question about continuity. What remains of a conversation when the people who have shared it are no longer to",
+      "output": "/estate/assets/social/v141/continuity.jpg",
+      "screenshotFirstSheet": true,
+      "byteSize": 95556
+    },
+    {
+      "id": "library",
+      "title": "The Bookshelf",
+      "source": "accepted-v140-first-measured-Linotype-sheet",
+      "sheetWidthPx": 872,
+      "sheetHeightPx": 1092,
+      "textBeginning": "Bookshelf\nEssays\n\nFive essays · chronological\n\nContents\nImages\nReframe and the Business Value of the Estate\nTeatro — An Unfinished Composition\nDid the Machine Actually Re",
+      "output": "/estate/assets/social/v141/library.jpg",
+      "screenshotFirstSheet": true,
+      "byteSize": 22127
+    },
+    {
+      "id": "essays",
+      "title": "Essays",
+      "source": "accepted-v140-first-measured-Linotype-sheet",
+      "sheetWidthPx": 872,
+      "sheetHeightPx": 1092,
+      "textBeginning": "Essays\nReframe and the Business Value of the Estate\nTeatro — An Unfinished Composition\nDid the Machine Actually Read the Book?\nThe Ear That Learns\nThe Door Is a Score",
+      "output": "/estate/assets/social/v141/essays.jpg",
+      "screenshotFirstSheet": true,
+      "byteSize": 20036
+    },
+    {
+      "id": "notes--the-door-is-a-score",
+      "title": "References",
+      "source": "accepted-v140-first-measured-Linotype-sheet",
+      "sheetWidthPx": 700,
+      "sheetHeightPx": 1088,
+      "textBeginning": "BENEDIKT EICKHOFF\nReferences\n\nSources cited in The Door Is a Score. Opening a source is a deliberate action outside this edition.\n\n1. Deutsches Rundfunkarchiv’s account\n\n",
+      "output": "/estate/assets/social/v141/notes--the-door-is-a-score.jpg",
+      "screenshotFirstSheet": true,
+      "byteSize": 31735
+    },
+    {
+      "id": "solstice",
+      "title": "Solstice (WT)",
+      "source": "accepted-v140-first-measured-Linotype-sheet",
+      "sheetWidthPx": 872,
+      "sheetHeightPx": 1092,
+      "textBeginning": "First Readings\n\nReading 01 — First Reading\n\nVergil\nFirst Reading — Preface\nAnweisung an den Schmerz\nIntegration\nRenaturalization\nVier Aussagen zum Ätherleib\nThree Floors\n",
+      "output": "/estate/assets/social/v141/solstice.jpg",
+      "screenshotFirstSheet": true,
+      "byteSize": 34211
+    },
+    {
+      "id": "solstice-reading-01",
+      "title": "First Reading",
+      "source": "accepted-v140-first-measured-Linotype-sheet",
+      "sheetWidthPx": 872,
+      "sheetHeightPx": 1092,
+      "textBeginning": "First Readings\n\nReading 01 — First Reading\n\nVergil\nFirst Reading — Preface\nAnweisung an den Schmerz\nIntegration\nRenaturalization\nVier Aussagen zum Ätherleib\nThree Floors\n",
+      "output": "/estate/assets/social/v141/solstice-reading-01.jpg",
+      "screenshotFirstSheet": true,
+      "byteSize": 34211
+    },
+    {
+      "id": "solstice-reading-01--vergil",
+      "title": "Vergil",
+      "source": "accepted-v140-first-measured-Linotype-sheet",
+      "sheetWidthPx": 700,
+      "sheetHeightPx": 1088,
+      "textBeginning": "BENEDIKT EICKHOFF\nVergil\n\nTHE READING SERIES PROLOGUE\n\nVergil\n\nABOUT ILLUSTRATING INFERNO · A SYSTEM PERSONA\n\nYou are a calm and exact guide through emotionally charged, ",
+      "output": "/estate/assets/social/v141/solstice-reading-01--vergil.jpg",
+      "screenshotFirstSheet": true,
+      "byteSize": 77602
+    },
+    {
+      "id": "solstice-reading-01--preface",
+      "title": "First Reading — Preface",
+      "source": "accepted-v140-first-measured-Linotype-sheet",
+      "sheetWidthPx": 700,
+      "sheetHeightPx": 1088,
+      "textBeginning": "BENEDIKT EICKHOFF\nFirst Reading — Preface\n\nTHE EDITION\n\nFirst Reading\n\nA selection beginning at the winter solstice: prose, the journals of Bee, Zork and N., and their fo",
+      "output": "/estate/assets/social/v141/solstice-reading-01--preface.jpg",
+      "screenshotFirstSheet": true,
+      "byteSize": 38372
+    },
+    {
+      "id": "publication-notes",
+      "title": "Publication Notes",
+      "source": "accepted-v140-first-measured-Linotype-sheet",
+      "sheetWidthPx": 700,
+      "sheetHeightPx": 1088,
+      "textBeginning": "PUBLICATION NOTES\nPublication Notes\n\nFountain Coach is the publisher. Individual works retain the authors and contributors credited in their editions.\n\nThis book is a sou",
+      "output": "/estate/assets/social/v141/publication-notes.jpg",
+      "screenshotFirstSheet": true,
+      "byteSize": 26298
+    }
+  ]
+}

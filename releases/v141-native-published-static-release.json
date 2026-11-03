@@ -1,0 +1,1280 @@
+{
+  "files" : [
+    {
+      "path" : "\/assets\/estate-core.css",
+      "sha256" : "70e2f638ca42b0b8a4f0dc26fd002ea239b5a4a8528e1d8f3aa876b02ca59772"
+    },
+    {
+      "path" : "\/assets\/estate-core.js",
+      "sha256" : "020f32d995828892cd86e38edf190b02fadbfe34e2dad00cacfc6a5b8e8feec9"
+    },
+    {
+      "path" : "\/assets\/estate-shell-d9a170d82a21d19b.css",
+      "sha256" : "d9a170d82a21d19be5d155c19f3591e670bf8988c230e8c7737493937c40bb8b"
+    },
+    {
+      "path" : "\/assets\/estate-shell-logo-8c5fad1c3db56138.png",
+      "sha256" : "8c5fad1c3db56138d5959da75991dc8034a0be537ce46da6ffcc0d9655e7f729"
+    },
+    {
+      "path" : "\/assets\/estate-shell-logo.png",
+      "sha256" : "8c5fad1c3db56138d5959da75991dc8034a0be537ce46da6ffcc0d9655e7f729"
+    },
+    {
+      "path" : "\/assets\/estate-shell-state-4139f6eec4e0f8d7.js",
+      "sha256" : "4139f6eec4e0f8d737c768d1e4f5572c91430598f6ecf2523d3ea2437d6e1d5b"
+    },
+    {
+      "path" : "\/assets\/estate-shell-state.js",
+      "sha256" : "4139f6eec4e0f8d737c768d1e4f5572c91430598f6ecf2523d3ea2437d6e1d5b"
+    },
+    {
+      "path" : "\/assets\/fountain-coach-logo-transparent.png",
+      "sha256" : "8c5fad1c3db56138d5959da75991dc8034a0be537ce46da6ffcc0d9655e7f729"
+    },
+    {
+      "path" : "\/assets\/future-estate-portal.svg",
+      "sha256" : "d6123c13fbcd2e1217e4558b2ff52b21b8d829c49be84193327b6673350ee19c"
+    },
+    {
+      "path" : "\/assets\/site.css",
+      "sha256" : "6aba1927f4b60e6942ee4f2f19e14ad039d0af93fa4aa1809c9b38300842c9fd"
+    },
+    {
+      "path" : "\/assets\/site.js",
+      "sha256" : "87ed7fd7fef8f44685cea515aac7a142684e675507dcb4d182f1dc8305039cd7"
+    },
+    {
+      "path" : "\/assets\/social\/future-estate-portal.jpg",
+      "sha256" : "fc9d0e9c9662b027c5230e29648fa7ce247110227a0f6662f2d5f3ddba7156da"
+    },
+    {
+      "path" : "\/essays\/index.html",
+      "sha256" : "5e4599d6f4830b3ea8f3c1dae00cb2cb179fb76f27858da58295eef809bf3526"
+    },
+    {
+      "path" : "\/essays\/reframe-and-the-business-value-of-the-estate\/assets\/address-landscape.png",
+      "sha256" : "e826794efe5fefda45f644930ed44239d9ab4b6550015aa221da5612958026b2"
+    },
+    {
+      "path" : "\/essays\/semantic-compilation-the-archive-is-not-the-edition\/assets\/semantic-compilation-estate-rail.png",
+      "sha256" : "93d25f0f207fd67169cb930ce718f1e1b9cb8d768e4c4b9a7be6f715ab53f2b9"
+    },
+    {
+      "path" : "\/essays\/semantic-compilation-the-archive-is-not-the-edition\/assets\/semantic-compilation-estate-rail.svg",
+      "sha256" : "977c636ba6570781b2ea8e34983ae2db0be83bd93986343a99d84e37f4304c02"
+    },
+    {
+      "path" : "\/essays\/semantic-compilation-the-archive-is-not-the-edition\/index.html",
+      "sha256" : "da6aba17c04cacc3280b2ee58ab1f1eebe48a0dccd475e5a150ef3234b524a0d"
+    },
+    {
+      "path" : "\/essays\/teatro-an-unfinished-composition\/assets\/teatro-score-memory-vector-human-condition.svg",
+      "sha256" : "226e3440690dd8cbeb331c4f3f62ee002fa0bc0e6007fcdf8431f1f578d115e2"
+    },
+    {
+      "path" : "\/essays\/the-composable-book\/assets\/01-book-spread.svg",
+      "sha256" : "4693b91ee8c90b637649161d00d4332a3133c6688cca7961b819b20d76b84a3d"
+    },
+    {
+      "path" : "\/essays\/the-composable-book\/assets\/02-composition.svg",
+      "sha256" : "6a237b1fed685f5ad41f2d31b2dbde51328058cf6efea97fe03965e337552de8"
+    },
+    {
+      "path" : "\/essays\/the-composable-book\/assets\/03-one-book-many-hosts.svg",
+      "sha256" : "94d86d2c15d0a9c14a4e963b461a18636a4ff238e3ad51939c1e5fc35e3ed04e"
+    },
+    {
+      "path" : "\/essays\/the-composable-book\/assets\/04-semantic-ledger.svg",
+      "sha256" : "8dac2881905f6ca89129e459b59f7c8ca57fd45177674e87193fdd2e653a5f01"
+    },
+    {
+      "path" : "\/essays\/the-composable-book\/assets\/cover.png",
+      "sha256" : "6a1b90a402b9e704688ab81f598b89d2c29ab98b619ca100d0c8323d8e5a4840"
+    },
+    {
+      "path" : "\/essays\/the-composable-book\/assets\/essay.css",
+      "sha256" : "05b3915a0f37d5f83df06af31081bfe661c7b792c8a83c2c4f952c7f03b4011c"
+    },
+    {
+      "path" : "\/essays\/the-composable-book\/index.html",
+      "sha256" : "e69e87294edb6f2faf7b86279af8c7951e75c7a458c79d540a3faa689f8eec54"
+    },
+    {
+      "path" : "\/essays\/the-door-is-a-score\/assets\/beyond.mp3",
+      "sha256" : "b9d1d07040e8b538e01bcb0c813a2906c01fd98d4623fa669c993b403bdf16c6"
+    },
+    {
+      "path" : "\/essays\/the-door-is-a-score\/assets\/beyond.wav",
+      "sha256" : "2f8878b457b6760f7bdaeb573b65e8c0fb6c3dcbe8c60c64e138caec5ef1fe2e"
+    },
+    {
+      "path" : "\/essays\/the-door-is-a-score\/assets\/evidence.json",
+      "sha256" : "c91e0ef6fa81116b634928609f6168d7bc4ed050a90b006cd3a9699feaca9a40"
+    },
+    {
+      "path" : "\/essays\/the-door-is-a-score\/assets\/keys.ogg",
+      "sha256" : "8bc33b2545a8bd9c1b0e2c47665c6bb9ca981ab972415f66a2d468d0b4921a5a"
+    },
+    {
+      "path" : "\/essays\/the-door-is-a-score\/assets\/keys.wav",
+      "sha256" : "285dc534784012190bf96419273bdbc8fdcef9426b53f8220410bab6f6405ab6"
+    },
+    {
+      "path" : "\/essays\/the-door-is-a-score\/assets\/listening-score.png",
+      "sha256" : "600cdaf4c3249b39434539442dea680058c1bcaed47e68cf7df159035f17cd38"
+    },
+    {
+      "path" : "\/essays\/the-door-is-a-score\/assets\/listening.mjs",
+      "sha256" : "1d9517cc6bef226815b04412611c2809b5e5ca963636fed9239dca2ef955e340"
+    },
+    {
+      "path" : "\/essays\/the-door-is-a-score\/assets\/memory.mp3",
+      "sha256" : "4030bc4a876f858423d1c747bb3730cf790985afb22999c7c7d49f51ceeb182c"
+    },
+    {
+      "path" : "\/essays\/the-door-is-a-score\/assets\/memory.wav",
+      "sha256" : "04420548eb2f4b0e0afb9d77955a2609a604536e8461c5b15c524f493241e73a"
+    },
+    {
+      "path" : "\/essays\/the-door-is-a-score\/assets\/present.mp3",
+      "sha256" : "ffcd129b4da0925dff99875e04be533c3e9f728dad9291169214485a4f773788"
+    },
+    {
+      "path" : "\/essays\/the-door-is-a-score\/assets\/present.wav",
+      "sha256" : "02fb5f20ebe35abdef7d4d85aa2a615e4dc546ac2bf995b28a9565473056850a"
+    },
+    {
+      "path" : "\/essays\/the-door-is-a-score\/assets\/score.mjs",
+      "sha256" : "50d6e7e80e5bd0374bed5d8a8bc761b551782019a1596b383c5f0acceb111ab0"
+    },
+    {
+      "path" : "\/essays\/the-door-is-a-score\/assets\/study.css",
+      "sha256" : "7ed44511c2af8deca3874453b09cd987c44e497c9227e647016e5e5c6495d6e2"
+    },
+    {
+      "path" : "\/essays\/the-door-is-a-score\/assets\/teatro-door-score-social-v2.jpg",
+      "sha256" : "b9bc81910e2fb270dbf1c281b1ca59a1d874291617d9bc19ae32322ccd088fef"
+    },
+    {
+      "path" : "\/essays\/the-door-is-a-score\/assets\/teatro-door-score.png",
+      "sha256" : "47791d9ac527641ae7b2cfe7ffe7111a99b9e39afaf89b28e53d4fa3d44cd4bb"
+    },
+    {
+      "path" : "\/essays\/the-door-is-a-score\/assets\/vendor\/CSOUND_CORE_LICENSE",
+      "sha256" : "85b4d8deec70c1d7fdae19752d6284dade435904f7d7f8d2b2c1fc2ce3fe2eb1"
+    },
+    {
+      "path" : "\/essays\/the-door-is-a-score\/assets\/vendor\/LICENSE",
+      "sha256" : "3f3adbdc06d616ccfd85151124dddca09fcf324494f72d549db961b6b088c9b5"
+    },
+    {
+      "path" : "\/essays\/the-door-is-a-score\/assets\/vendor\/THIRD_PARTY.md",
+      "sha256" : "d0be724a19ab4c3d3c0f4cbe41e5eafa2dd530ec0e0dbaca4b0901d6b13feda7"
+    },
+    {
+      "path" : "\/essays\/the-door-is-a-score\/assets\/vendor\/csound.js",
+      "sha256" : "c86c69291326fa3d64872f430ca9a06324a94c96db373d6bd207fdd4e5a3fc9e"
+    },
+    {
+      "path" : "\/essays\/the-door-is-a-score\/assets\/withheld.mp3",
+      "sha256" : "3bef2108ef74029d5fcc6f9002afd8ea025881932bede889af872d2d3b405ddf"
+    },
+    {
+      "path" : "\/essays\/the-door-is-a-score\/assets\/withheld.wav",
+      "sha256" : "3f7e199977fb4db3184658263a1c1e94529eb570c8730122a60149eae4ee8778"
+    },
+    {
+      "path" : "\/essays\/the-door-is-a-score\/assets\/wood-close.ogg",
+      "sha256" : "e4cbbaa6331b42a32cc3a63d643f4849c65c39a45e7c57d568eb1790619af06d"
+    },
+    {
+      "path" : "\/essays\/the-door-is-a-score\/assets\/wood-close.wav",
+      "sha256" : "b2e848557252ecb3ef128765e52afe56c978c8b25b0d7c687edc6566c710b675"
+    },
+    {
+      "path" : "\/essays\/the-door-is-a-score\/assets\/wood-hinge.ogg",
+      "sha256" : "c6c90e02993b2e044937f344351b417aeff6841aa4cd683f208d85ececf23392"
+    },
+    {
+      "path" : "\/essays\/the-door-is-a-score\/assets\/wood-hinge.wav",
+      "sha256" : "6eb0d47107e6bb94aa475763930319d51112192a5e4c4c99840cfe10d6d7020e"
+    },
+    {
+      "path" : "\/essays\/the-door-is-a-score\/index.html",
+      "sha256" : "f59f59a6d30c4cee61d16afb7512b3ef8b7007210bfeae102964b0f350f4cc84"
+    },
+    {
+      "path" : "\/essays\/the-ear-that-learns\/assets\/essay-listening.mjs",
+      "sha256" : "6bea43701e82e67d41f40c02d98dec9f445f18189fe856a657197083280aac33"
+    },
+    {
+      "path" : "\/essays\/the-ear-that-learns\/assets\/listening-room.png",
+      "sha256" : "d07e55ebed5b0e9100a86191099b686c8c1802770b292c358d86208911dd269e"
+    },
+    {
+      "path" : "\/essays\/the-ear-that-learns\/assets\/listening-room.svg",
+      "sha256" : "972a143be61a414583ab6d6bacc03f8ccb22f3c6b75a1c5aa64d3b97a530c5d7"
+    },
+    {
+      "path" : "\/essays\/the-ear-that-learns\/index.html",
+      "sha256" : "c7d6f85a2562e56dffa4b5319a9df218a22154a41c6022a7510dc3d22a097a11"
+    },
+    {
+      "path" : "\/essays\/the-ear-that-learns\/media\/sing-articulated-compare.m4a",
+      "sha256" : "c27fe2ee9bd757b4b1d82aeb3f1ea82f7ff24b1b03741cc77408ebc1638cc807"
+    },
+    {
+      "path" : "\/essays\/the-ear-that-learns\/media\/sing-expressive-compare.m4a",
+      "sha256" : "acf902889e00a37bb832864ff826a612b468fb49900db8de02682cbefd6ab68f"
+    },
+    {
+      "path" : "\/essays\/the-ear-that-learns\/media\/sing-plain-compare.m4a",
+      "sha256" : "83b45c232a05abea5c3fe5fd25bee71630ce86e66eae78b9817cd60fd9ee8c21"
+    },
+    {
+      "path" : "\/essays\/to-read-is-not-to-remember\/assets\/bookshelf-ipad-landscape-test.png",
+      "sha256" : "ca2628cd98b5ebdc18816c510729d997f0539882b03949104bf94a2354389dd0"
+    },
+    {
+      "path" : "\/essays\/to-read-is-not-to-remember\/editorial-introduction.md",
+      "sha256" : "cd4c8ec73b288edb64a69151af13dcd382ed657e7c57b55173a7c5161a54e503"
+    },
+    {
+      "path" : "\/essays\/to-read-is-not-to-remember\/index.html",
+      "sha256" : "23698ad0b7abb97188df28663bc55d5f711fb07d4eb7947b47a8467dde06b9c0"
+    },
+    {
+      "path" : "\/essays\/to-read-is-not-to-remember\/source.md",
+      "sha256" : "40acb5ce4d5f9434180604e4bd024e64423a4e97087c6c9d9e1ab534adada5ca"
+    },
+    {
+      "path" : "\/essays\/to-read-is-not-to-remember\/to-read-is-not-to-remember.pdf",
+      "sha256" : "9c8abd38a0963970f6a8721f89c6281ecaff3994c722985a38232e8afb4be41f"
+    },
+    {
+      "path" : "\/estate\/about\/index.html",
+      "sha256" : "c0a13f79df75ba60e94c162feaa0f5bd034a443226514e2837a5817fb2eb6e2e"
+    },
+    {
+      "path" : "\/estate\/assets\/author-landing.css",
+      "sha256" : "3eaf0b1604754b1f320501b3ac551dec16eabdb646b00829554841e9328b1cca"
+    },
+    {
+      "path" : "\/estate\/assets\/editions.css",
+      "sha256" : "316fdf5b2ea5742a2704ad004e07ad4c5fd3acdbcdfd6e2681d42e9e9eb2d1b0"
+    },
+    {
+      "path" : "\/estate\/assets\/essay-pathways.css",
+      "sha256" : "0a8016a8c802a73388bc9db45f264a3dca3c781d5bc0c1a352e6ff77ec3cade0"
+    },
+    {
+      "path" : "\/estate\/assets\/essay-share\/did-the-machine-actually-read-the-book.png",
+      "sha256" : "505ecfe967d0e282d09db21efccade400358c0972d20b5dfc71a51e8c3a997f8"
+    },
+    {
+      "path" : "\/estate\/assets\/essay-site.css",
+      "sha256" : "6aba1927f4b60e6942ee4f2f19e14ad039d0af93fa4aa1809c9b38300842c9fd"
+    },
+    {
+      "path" : "\/estate\/assets\/estate-bookshelf\/first-reading-ink.png",
+      "sha256" : "274dab8c594e399585fa5238364f25e95fc7ffa3808eaef872de406ec79f745f"
+    },
+    {
+      "path" : "\/estate\/assets\/estate-bookshelf\/fountain-coach-edition.png",
+      "sha256" : "e826794efe5fefda45f644930ed44239d9ab4b6550015aa221da5612958026b2"
+    },
+    {
+      "path" : "\/estate\/assets\/estate-bookshelf\/teatro-score-memory-vector-human-condition.svg",
+      "sha256" : "226e3440690dd8cbeb331c4f3f62ee002fa0bc0e6007fcdf8431f1f578d115e2"
+    },
+    {
+      "path" : "\/estate\/assets\/estate-core.css",
+      "sha256" : "31baf2864046acf1885c49ccff40869d0dfbc9da63a2af674aecf218b8f8dbfe"
+    },
+    {
+      "path" : "\/estate\/assets\/estate-core.js",
+      "sha256" : "020f32d995828892cd86e38edf190b02fadbfe34e2dad00cacfc6a5b8e8feec9"
+    },
+    {
+      "path" : "\/estate\/assets\/fountain-coach-logo-transparent.png",
+      "sha256" : "8c5fad1c3db56138d5959da75991dc8034a0be537ce46da6ffcc0d9655e7f729"
+    },
+    {
+      "path" : "\/estate\/assets\/future-estate-portal.svg",
+      "sha256" : "d6123c13fbcd2e1217e4558b2ff52b21b8d829c49be84193327b6673350ee19c"
+    },
+    {
+      "path" : "\/estate\/assets\/linotype\/about-linotype-engine.js",
+      "sha256" : "a3e6e54e949269c46bc6a8672192f69590c811fc86b6c6744ebc78c80f1d11db"
+    },
+    {
+      "path" : "\/estate\/assets\/linotype\/book-boot.js",
+      "sha256" : "c7fe0672a6697423d331670fe1c873d51399510a7f5b658b86c37a772d04a661"
+    },
+    {
+      "path" : "\/estate\/assets\/linotype\/book-csound-host.js",
+      "sha256" : "2a02492a70b6c6bc5352cf405f5203feca4122a3d3dc87a68d38df5ef228e601"
+    },
+    {
+      "path" : "\/estate\/assets\/linotype\/book.css",
+      "sha256" : "2c2a80839da91f6e83a21a317e2f7404da2881b6c9fec6f3136dbad823ba8afb"
+    },
+    {
+      "path" : "\/estate\/assets\/linotype\/book.js",
+      "sha256" : "3a00eaf0edc4a663a9f68b834f6f67d54c802387e239710a5083b9deda5fde8d"
+    },
+    {
+      "path" : "\/estate\/assets\/linotype\/bookshelf.css",
+      "sha256" : "f6a93b5b5e78697d5b92fdf862d9640b7e81923b2564a32667f9fe66215c792c"
+    },
+    {
+      "path" : "\/estate\/assets\/linotype\/essays.css",
+      "sha256" : "265932732e835f0b626b226f0d311fae7645a83fa61b24d1edc441c38170e694"
+    },
+    {
+      "path" : "\/estate\/assets\/linotype\/fountain-about-entry.css",
+      "sha256" : "d2f8bb3335d8fdc1a37095cc7cbb051739d8b6700402695433fc31d403e94c6a"
+    },
+    {
+      "path" : "\/estate\/assets\/linotype\/identity-circle.css",
+      "sha256" : "31483c04941087e607f86b31c2dd0697e86b4f4faaf0c07238042acc9a1c9772"
+    },
+    {
+      "path" : "\/estate\/assets\/linotype\/linotype-engine.js",
+      "sha256" : "9aa988c6dcd5c946cae65b3a45328b08f4f46b1c9105996ea39eb5e741b4e8e9"
+    },
+    {
+      "path" : "\/estate\/assets\/linotype\/living-essays.css",
+      "sha256" : "6a5c8da922578ed738e6b52c57ddde06c8cb7ad8e2c9c8eef00f53301438819b"
+    },
+    {
+      "path" : "\/estate\/assets\/linotype\/living-essays.js",
+      "sha256" : "bb9cd49ddf15aa0fede5b5753da45a4d218f174c66fd67d858fca40e76d7cc58"
+    },
+    {
+      "path" : "\/estate\/assets\/linotype\/mobile-page-navigation.css",
+      "sha256" : "b485292a2ef38f02298f9b2a124706bd179fa9502e7188de6f463c85da578327"
+    },
+    {
+      "path" : "\/estate\/assets\/linotype\/mobile-page-navigation.js",
+      "sha256" : "fc5631543ec2269fcd536bafaf54c7f477a5d5253dbaf3296edcbc4402acd829"
+    },
+    {
+      "path" : "\/estate\/assets\/linotype\/reading-audio-cursor.mjs",
+      "sha256" : "f44cfc62a33f5e4d2feeb158ac20ec3f7f626fc86ccae1526b7d8b6ad45e94c2"
+    },
+    {
+      "path" : "\/estate\/assets\/linotype\/reading-first-app.js",
+      "sha256" : "4243dea9d3d8be1187f0c72cbde994e7748eebaeacc78e91d618b222024cfea4"
+    },
+    {
+      "path" : "\/estate\/assets\/linotype\/reading-first-press-engine.js",
+      "sha256" : "0fed47d6d2bb4c61565cbc37d9f6df21da3f650b365dc1856ee72fdb95eaba4d"
+    },
+    {
+      "path" : "\/estate\/assets\/linotype\/reading-first-press-frame.css",
+      "sha256" : "4cd2f853315d51bdd2c31917782d42759fee0a9a20cf18ae4d261af085bd0e51"
+    },
+    {
+      "path" : "\/estate\/assets\/linotype\/reading-first-press-host.css",
+      "sha256" : "a0ce4a3ba7c0e549354de8b3aaed608ad178f62bcfbc3451e3443f2989ea84b0"
+    },
+    {
+      "path" : "\/estate\/assets\/linotype\/reading-first-shell.css",
+      "sha256" : "769fb12fbe7205e90269ecbf3760c8a6d226e78347bd1d62f05035174d671247"
+    },
+    {
+      "path" : "\/estate\/assets\/linotype\/reading-layout-policy.js",
+      "sha256" : "f098b7faf814fc7faa027bc5a5b9a24969dc181064beebbe7a4597ba335f001b"
+    },
+    {
+      "path" : "\/estate\/assets\/linotype\/reframe-reader-r28.css",
+      "sha256" : "d63a3243abe216fc7a73b45d5e4e8d17d1d36861f97cd7230bc19887c8fb80b1"
+    },
+    {
+      "path" : "\/estate\/assets\/linotype\/teatro-vergil-hearing.css",
+      "sha256" : "aff97c7676e9f3cf254beba93f5e17d3d0bf57956b72f86e4c9cff750317314a"
+    },
+    {
+      "path" : "\/estate\/assets\/linotype\/teatro-vergil-hearing.mjs",
+      "sha256" : "185744bbc4daa72cc55044720d089b854f1cf2d6ca2eab10d868ac74e72ca720"
+    },
+    {
+      "path" : "\/estate\/assets\/linotype\/vergil-midi2-narration.mjs",
+      "sha256" : "f0c14916e17778ffbe3c4d2b5f7d6f7948661da8e29a63dace85fd900d77e7b4"
+    },
+    {
+      "path" : "\/estate\/assets\/linotype\/vergil-prologue-hearing.css",
+      "sha256" : "a77abac2539be9c991e23f064851d12db5a1dfeb2e853de8a1a5c7beb3c553ce"
+    },
+    {
+      "path" : "\/estate\/assets\/linotype\/vergil-prologue-hearing.mjs",
+      "sha256" : "5d60ecfa5ecadce573c40ede51f83c88cd359c8f6e822fe18938c5fef336a9d8"
+    },
+    {
+      "path" : "\/estate\/assets\/satzfunk-player\/index.mjs",
+      "sha256" : "9aa428c8dc4c59453c6b28663f17fd91a2e0a2ef589fe833b582228de0492a2a"
+    },
+    {
+      "path" : "\/estate\/assets\/satzfunk-player\/midi2-codec.mjs",
+      "sha256" : "9a113bc25e2564068456583de2d16cc150c92f27fb7bef7b09e377e15ae5f2c7"
+    },
+    {
+      "path" : "\/estate\/assets\/satzfunk-player\/midi2-reading-score.mjs",
+      "sha256" : "d5859cf6f84d4c86317c207c2299bd6fc7a59b5d50b45f0037e679e4a6ab1fe0"
+    },
+    {
+      "path" : "\/estate\/assets\/satzfunk-player\/midi2-reading-transport.mjs",
+      "sha256" : "33360f9e747670e8d3b89f0b0f3decdf8366f6a4488f8807a37924b03470540f"
+    },
+    {
+      "path" : "\/estate\/assets\/satzfunk-player\/player-media.mjs",
+      "sha256" : "57c02b2c26616272b98ad9f7cf2d0b953601383e63d7de8dbbbdb8821fb5a5a5"
+    },
+    {
+      "path" : "\/estate\/assets\/satzfunk-player\/satzfunk-media-element.mjs",
+      "sha256" : "c547bf677bdee9079d7c0926a5e77cbc8aaeaee6696dc92101bf3894e53eaf19"
+    },
+    {
+      "path" : "\/estate\/assets\/satzfunk-player\/vendor\/midi2\/index.js",
+      "sha256" : "97282bbe2a0e0a2f796e9c8f9d8a281a15b4c1c4d346dbebb5662b30bb745590"
+    },
+    {
+      "path" : "\/estate\/assets\/satzfunk-player\/voice-mastering.mjs",
+      "sha256" : "c62b925cd1d422cdbbfce4048abf4b10d08e5bce84c86f71c5c4c871f27da89b"
+    },
+    {
+      "path" : "\/estate\/assets\/satzfunk-player\/voice-mix.mjs",
+      "sha256" : "9ed710b5959f522d5b68cd71f5869355bd30d8eb1c680db14e6222ab3572e8eb"
+    },
+    {
+      "path" : "\/estate\/assets\/satzfunk-player\/voice-patch-view.mjs",
+      "sha256" : "321de5e1ce33eafff7de4f133f43be7d3c775198f60c06a66178eefb736f6a0d"
+    },
+    {
+      "path" : "\/estate\/assets\/satzfunk-player\/voice-patch.mjs",
+      "sha256" : "e74d5b79b4cd845696e07e4872cfec42bad69af1156dfb73408f1d271661a2c7"
+    },
+    {
+      "path" : "\/estate\/assets\/site.css",
+      "sha256" : "d8a6e65183510323ebba5c45b28d8663205d55a00111b214a25b59766262e97f"
+    },
+    {
+      "path" : "\/estate\/assets\/site.js",
+      "sha256" : "87ed7fd7fef8f44685cea515aac7a142684e675507dcb4d182f1dc8305039cd7"
+    },
+    {
+      "path" : "\/estate\/assets\/social\/v141\/continuity.jpg",
+      "sha256" : "c5bb7ec78b00e7ead99edfb8b4747eef50d5a58eed7f644ed25d83a4b58db006"
+    },
+    {
+      "path" : "\/estate\/assets\/social\/v141\/essay--reframe-and-the-business-value-of-the-estate.jpg",
+      "sha256" : "71fd77dd5c9fe0cc5acbc6a7f57308dff1f977e1bf2baa33a4a2779767d03fe9"
+    },
+    {
+      "path" : "\/estate\/assets\/social\/v141\/essay--semantic-compilation-the-archive-is-not-the-edition.jpg",
+      "sha256" : "b6c63d46c65135a844ff6e7f9ec02ae01e1bb5a2d235932edb3c4650ef2aa966"
+    },
+    {
+      "path" : "\/estate\/assets\/social\/v141\/essay--teatro-an-unfinished-composition.jpg",
+      "sha256" : "b70bfbf08d33ebdc1a857b35928c2102323ea820fc2a63bc7deed1b9c4a735d5"
+    },
+    {
+      "path" : "\/estate\/assets\/social\/v141\/essay--the-composable-book.jpg",
+      "sha256" : "532707060af4cdec69b8c482b0dcc9339f251fff33609dad473cc8a5f5b8df16"
+    },
+    {
+      "path" : "\/estate\/assets\/social\/v141\/essay--the-door-is-a-score.jpg",
+      "sha256" : "c88638da8740c5a02cb07d60de262fcb2423aa299b6e5610a3e7e6de18aee1f2"
+    },
+    {
+      "path" : "\/estate\/assets\/social\/v141\/essay--the-ear-that-learns.jpg",
+      "sha256" : "5827fc88933bc18932fcc6fc526ddc08b0982ee805cb6183b88e481fb95c895d"
+    },
+    {
+      "path" : "\/estate\/assets\/social\/v141\/essay--to-read-is-not-to-remember.jpg",
+      "sha256" : "4e2b965e5dab85c7b46bfbc27cb9581205aa29ba715c0a946b8ddafe89d2e725"
+    },
+    {
+      "path" : "\/estate\/assets\/social\/v141\/essays.jpg",
+      "sha256" : "8b18dfd9c6c3438db19b11f9149c56a8f42b69b4070feb05794b3b4fcb3b6406"
+    },
+    {
+      "path" : "\/estate\/assets\/social\/v141\/first-readings.jpg",
+      "sha256" : "b70bfbf08d33ebdc1a857b35928c2102323ea820fc2a63bc7deed1b9c4a735d5"
+    },
+    {
+      "path" : "\/estate\/assets\/social\/v141\/library.jpg",
+      "sha256" : "467ff7b05ac9467008e297ea43fd5f75582990eeda95624c88cb817a70729845"
+    },
+    {
+      "path" : "\/estate\/assets\/social\/v141\/notes--the-door-is-a-score.jpg",
+      "sha256" : "5e982b17ea5551aa5f373c29c162479830dc6dc2793071b0b64dfe2413566212"
+    },
+    {
+      "path" : "\/estate\/assets\/social\/v141\/publication-notes.jpg",
+      "sha256" : "1a1d3aaa0157ddfafb4d6f1f85e1254433821eba2d840f97587d341e1818ba3d"
+    },
+    {
+      "path" : "\/estate\/assets\/social\/v141\/solstice-reading-01--2025-12-22-anweisung-an-den-schmerz.jpg",
+      "sha256" : "166119842ed3ebecd6e212f0c3a73e58a0b85977275b45defb25d7571e2857a2"
+    },
+    {
+      "path" : "\/estate\/assets\/social\/v141\/solstice-reading-01--2025-12-23-integration.jpg",
+      "sha256" : "0f1c8641e1eb305040e4169e68f6b2603498be0309b3bc386b6ca4d7f07ed04a"
+    },
+    {
+      "path" : "\/estate\/assets\/social\/v141\/solstice-reading-01--2025-12-28-renaturalization.jpg",
+      "sha256" : "713955acfef13ec13749b490fc3278324060f9bbdb28f6bef702b4f940837cbc"
+    },
+    {
+      "path" : "\/estate\/assets\/social\/v141\/solstice-reading-01--2026-01-08-vier-aussagen-zum-atherleib.jpg",
+      "sha256" : "89df535117c1fbb09381633f813a913fe00081d3856dde03f1073af202b5aa4d"
+    },
+    {
+      "path" : "\/estate\/assets\/social\/v141\/solstice-reading-01--2026-01-22-three-floors.jpg",
+      "sha256" : "9c8eb05417f61a42d073a3708cb4da4a25013e12763eb698852041949dee15ca"
+    },
+    {
+      "path" : "\/estate\/assets\/social\/v141\/solstice-reading-01--2026-01-23-i-keep-moving.jpg",
+      "sha256" : "17f01ffa931f0bc1e804a312a65edeeb42d6a83a5b769525a8d9f0a5130ad92c"
+    },
+    {
+      "path" : "\/estate\/assets\/social\/v141\/solstice-reading-01--2026-02-04-two-rooms.jpg",
+      "sha256" : "5a13a2f8e61903f6eb75f368d9b796a3fbf651f1a254026c7e7cdaeb6886932c"
+    },
+    {
+      "path" : "\/estate\/assets\/social\/v141\/solstice-reading-01--2026-02-14-on-a-future-not-yet-drafted.jpg",
+      "sha256" : "a3858d9a7a0f20b756ce6672ebeb4e7386e9d1e12deb094db7e0af96d734ffad"
+    },
+    {
+      "path" : "\/estate\/assets\/social\/v141\/solstice-reading-01--2026-02-28-no-optimize.jpg",
+      "sha256" : "d4cfbd58455e34b73d3b2278709e54774eb977daa64c1f720e627aab33b578d0"
+    },
+    {
+      "path" : "\/estate\/assets\/social\/v141\/solstice-reading-01--2026-03-16-the-teatre-of-the-mind.jpg",
+      "sha256" : "366959908a45dbf8bc6148827cb12324f02e517a910889103ded7e5d2f0ba7f9"
+    },
+    {
+      "path" : "\/estate\/assets\/social\/v141\/solstice-reading-01--2026-03-20-my-place-in-space.jpg",
+      "sha256" : "aa59a4cf15d0427f62f55ee70ac27ae3c4ae6d21ba80b834fc4169ad198aa341"
+    },
+    {
+      "path" : "\/estate\/assets\/social\/v141\/solstice-reading-01--2026-03-21-muttersprache.jpg",
+      "sha256" : "9f43d2a2ae15e9161a9a4d9898c5a90f88aa91c65a6b9e43b143475da22857b0"
+    },
+    {
+      "path" : "\/estate\/assets\/social\/v141\/solstice-reading-01--2026-04-22-the-writing-hand.jpg",
+      "sha256" : "126754c128f2cb2128141dad9be4273c5a08d742714df0fc76cb541aed3bd43c"
+    },
+    {
+      "path" : "\/estate\/assets\/social\/v141\/solstice-reading-01--2026-04-23-who-is-bee.jpg",
+      "sha256" : "ef72e614a195a10e75a03513eef9b6b768a35fe93e7d7e5d9721f16bb682b865"
+    },
+    {
+      "path" : "\/estate\/assets\/social\/v141\/solstice-reading-01--2026-04-30-about-writing-letters.jpg",
+      "sha256" : "1f6fa704afc6c9f44ad0351412149937984e791484709ca2ed5e6fddff38e44f"
+    },
+    {
+      "path" : "\/estate\/assets\/social\/v141\/solstice-reading-01--2026-05-01-a-score-before-production.jpg",
+      "sha256" : "29e7035cf3e4e432fdcdf9386c536a1abe0961090ea3b59b3750331ce97c3b72"
+    },
+    {
+      "path" : "\/estate\/assets\/social\/v141\/solstice-reading-01--2026-05-25-seitenlicht.jpg",
+      "sha256" : "12b008c1bb3b60eda97a478e42558019526fe39efa9ca809e66a88a9c626b33b"
+    },
+    {
+      "path" : "\/estate\/assets\/social\/v141\/solstice-reading-01--2026-05-30-the-sheet.jpg",
+      "sha256" : "2301a72a986eaec5e687a6dc3647532eaa6766ec019152ff1f6792675b04f0a6"
+    },
+    {
+      "path" : "\/estate\/assets\/social\/v141\/solstice-reading-01--2026-06-06-the-sentimental-machine.jpg",
+      "sha256" : "a8fa287d96eb01d36b9ba6326f903402248e01ff8141b7cb7b1995e9c478e160"
+    },
+    {
+      "path" : "\/estate\/assets\/social\/v141\/solstice-reading-01--2026-06-15-fck-frg-we-all-had-parents.jpg",
+      "sha256" : "68f2a8af89993abc48a4a0c43c3ff72d046dada192ca7ece913345000395b225"
+    },
+    {
+      "path" : "\/estate\/assets\/social\/v141\/solstice-reading-01--2026-06-24-prufe-dein-gewicht.jpg",
+      "sha256" : "85ea86bc64dd327daf0c10fd1277db389ddfdc28c50790ffeffb0fa23dfea632"
+    },
+    {
+      "path" : "\/estate\/assets\/social\/v141\/solstice-reading-01--2026-07-21-everything-else-is-illustration.jpg",
+      "sha256" : "151bd3d14874deb1f8084fea8ddcd823f354bfc98396c9fd7d1d60452caf2c2f"
+    },
+    {
+      "path" : "\/estate\/assets\/social\/v141\/solstice-reading-01--2026-07-28-bees-journal.jpg",
+      "sha256" : "01238213077ec709a8d4518a33164e3141821b8581d3cc8df33a5df09ba80b57"
+    },
+    {
+      "path" : "\/estate\/assets\/social\/v141\/solstice-reading-01--2026-07-31-n-journal.jpg",
+      "sha256" : "a1b881ffc80b84726b6d251a643ba8f3181ad386d2b9f990cfd3daa5ab5aa119"
+    },
+    {
+      "path" : "\/estate\/assets\/social\/v141\/solstice-reading-01--2026-08-17-the-scissors.jpg",
+      "sha256" : "9f4b2a17c1bf4c94d363f0b09b9f610aafad90d6e79dedd4c006b7a0154b919d"
+    },
+    {
+      "path" : "\/estate\/assets\/social\/v141\/solstice-reading-01--2026-08-19-six-panels.jpg",
+      "sha256" : "da0d947febf41d339f604d8c33f9f776fcae9c90a312cd2e5465695a5c351832"
+    },
+    {
+      "path" : "\/estate\/assets\/social\/v141\/solstice-reading-01--2026-08-28-the-old-woman.jpg",
+      "sha256" : "ff5e1e5f1cf6dfe3a36a841df98e6de1bec481749d1e6935cc8c2def801a63cd"
+    },
+    {
+      "path" : "\/estate\/assets\/social\/v141\/solstice-reading-01--2026-09-04-the-strawberry.jpg",
+      "sha256" : "4bf868db3a5c0fceafeb0e91c0f380b726aeeefcc66aedd3a4c6742f13d33f14"
+    },
+    {
+      "path" : "\/estate\/assets\/social\/v141\/solstice-reading-01--2026-09-06-leselust.jpg",
+      "sha256" : "b9607657976b43767b4a55eead7f77da5f565c1b47829df417e53b34460d7396"
+    },
+    {
+      "path" : "\/estate\/assets\/social\/v141\/solstice-reading-01--2026-09-18-object-crossing-voice.jpg",
+      "sha256" : "80cd92d6156c48c2f0216e877c125b9c94aa397b2fd9252e191a5ee812c6833c"
+    },
+    {
+      "path" : "\/estate\/assets\/social\/v141\/solstice-reading-01--preface.jpg",
+      "sha256" : "22e845a1cb21dfd3fdd6236dc0369afbd43aa5f5b406cdeeaa89f17659219ac9"
+    },
+    {
+      "path" : "\/estate\/assets\/social\/v141\/solstice-reading-01--vergil.jpg",
+      "sha256" : "8aa0c134447a73c228bbc72fee354540b952e92fe62ed9edb0f16390fb088384"
+    },
+    {
+      "path" : "\/estate\/assets\/social\/v141\/solstice-reading-01.jpg",
+      "sha256" : "fa851d3a580e62de2f0be8efe433220a473b3882fe97ca3e0c0db6fb6eca83f1"
+    },
+    {
+      "path" : "\/estate\/assets\/social\/v141\/solstice.jpg",
+      "sha256" : "fa851d3a580e62de2f0be8efe433220a473b3882fe97ca3e0c0db6fb6eca83f1"
+    },
+    {
+      "path" : "\/estate\/assets\/social\/v141\/teatro.jpg",
+      "sha256" : "b70bfbf08d33ebdc1a857b35928c2102323ea820fc2a63bc7deed1b9c4a735d5"
+    },
+    {
+      "path" : "\/estate\/bookshelf\/index.html",
+      "sha256" : "f7bb11b7431c7f27506d434bcee695b0b49c0e3e317a0c4437e73f175e873515"
+    },
+    {
+      "path" : "\/estate\/bookshelf\/source-original.html",
+      "sha256" : "c5f629c5dee3411e90b57a3f9ede46b1d080f966468018b57899d5d46c50ef1c"
+    },
+    {
+      "path" : "\/estate\/collections\/first-readings\/index.html",
+      "sha256" : "f7bb11b7431c7f27506d434bcee695b0b49c0e3e317a0c4437e73f175e873515"
+    },
+    {
+      "path" : "\/estate\/collections\/first-readings\/source-original.html",
+      "sha256" : "7190fcb230e5a94b7800fd056b7b1a3d86b921d8981c131adff6b9ae31e24d26"
+    },
+    {
+      "path" : "\/estate\/editions\/catalogue\/index.html",
+      "sha256" : "12781d285c8a30bf5b33fce0328d65b84bbc09b9ca7cad7ffa017b9facba7950"
+    },
+    {
+      "path" : "\/estate\/editions\/essays-continuing\/index.html",
+      "sha256" : "c24303fbe864f48c88c144c06f085f713208475728f8b39512fb1541221b506b"
+    },
+    {
+      "path" : "\/estate\/editions\/essays\/index.html",
+      "sha256" : "0538139420592e1009d0076d9dc01df222b6587fd8481250a2d0bf339c0653ea"
+    },
+    {
+      "path" : "\/estate\/editions\/essays\/reframe-and-the-business-value-of-the-estate\/index.html",
+      "sha256" : "35118ee7ba7d6b581f2f52a5e07b724183c7d4f45ea060fcf64b8363fd8b94aa"
+    },
+    {
+      "path" : "\/estate\/editions\/essays\/semantic-compilation-the-archive-is-not-the-edition\/index.html",
+      "sha256" : "e31f38780e72396b4ffa2dda560064b745213b7d5ca5526c19a1c99ec2654b29"
+    },
+    {
+      "path" : "\/estate\/editions\/essays\/teatro-an-unfinished-composition\/index.html",
+      "sha256" : "281b37e8e1a7a82ad6ac168702a7b687441fb38a6403a6f5629f42f6aa2e0a4a"
+    },
+    {
+      "path" : "\/estate\/editions\/index.html",
+      "sha256" : "c9d8fb59fcd4fc9079124bc2a04c9b58b6c5a5d4cda534b173be3b0a535f386d"
+    },
+    {
+      "path" : "\/estate\/essays\/index.html",
+      "sha256" : "63e09e11278f851327ae61af0706c60cd58c17c00b8fb1ea97276a98b575ded0"
+    },
+    {
+      "path" : "\/estate\/essays\/reframe-and-the-business-value-of-the-estate\/assets\/address-landscape.png",
+      "sha256" : "e826794efe5fefda45f644930ed44239d9ab4b6550015aa221da5612958026b2"
+    },
+    {
+      "path" : "\/estate\/essays\/reframe-and-the-business-value-of-the-estate\/assets\/estate-landscape.png",
+      "sha256" : "8e444b976461fdf9b278a8702eef07ec74d532f617496da37c52d33c8b806451"
+    },
+    {
+      "path" : "\/estate\/essays\/reframe-and-the-business-value-of-the-estate\/assets\/exchange-landscape.png",
+      "sha256" : "ae34a3ee42263c8beebea303cd8dd97eb5ccbedd328dc864ace907a0a1015721"
+    },
+    {
+      "path" : "\/estate\/essays\/reframe-and-the-business-value-of-the-estate\/index.html",
+      "sha256" : "a6b9291950c59288c7755dd9861dc892700143556e55b54f1bbf1258325529c0"
+    },
+    {
+      "path" : "\/estate\/essays\/semantic-compilation-the-archive-is-not-the-edition\/assets\/semantic-compilation-estate-rail.svg",
+      "sha256" : "977c636ba6570781b2ea8e34983ae2db0be83bd93986343a99d84e37f4304c02"
+    },
+    {
+      "path" : "\/estate\/essays\/semantic-compilation-the-archive-is-not-the-edition\/index.html",
+      "sha256" : "039353e54f31132d481039617bdea8af238a2cb2d1cba592ea9cd5cc4eb3502f"
+    },
+    {
+      "path" : "\/estate\/essays\/teatro-an-unfinished-composition\/assets\/teatro-score-memory-vector-human-condition.svg",
+      "sha256" : "226e3440690dd8cbeb331c4f3f62ee002fa0bc0e6007fcdf8431f1f578d115e2"
+    },
+    {
+      "path" : "\/estate\/essays\/teatro-an-unfinished-composition\/index.html",
+      "sha256" : "1a0def6b37d2259a59b5eaa52be997fb759b4e4f6eb2828b4edfea04469ee393"
+    },
+    {
+      "path" : "\/estate\/essays\/the-composable-book\/assets\/01-book-spread.svg",
+      "sha256" : "4693b91ee8c90b637649161d00d4332a3133c6688cca7961b819b20d76b84a3d"
+    },
+    {
+      "path" : "\/estate\/essays\/the-composable-book\/assets\/02-composition.svg",
+      "sha256" : "6a237b1fed685f5ad41f2d31b2dbde51328058cf6efea97fe03965e337552de8"
+    },
+    {
+      "path" : "\/estate\/essays\/the-composable-book\/assets\/03-one-book-many-hosts.svg",
+      "sha256" : "94d86d2c15d0a9c14a4e963b461a18636a4ff238e3ad51939c1e5fc35e3ed04e"
+    },
+    {
+      "path" : "\/estate\/essays\/the-composable-book\/assets\/04-semantic-ledger.svg",
+      "sha256" : "8dac2881905f6ca89129e459b59f7c8ca57fd45177674e87193fdd2e653a5f01"
+    },
+    {
+      "path" : "\/estate\/essays\/the-composable-book\/assets\/cover.png",
+      "sha256" : "6a1b90a402b9e704688ab81f598b89d2c29ab98b619ca100d0c8323d8e5a4840"
+    },
+    {
+      "path" : "\/estate\/essays\/the-composable-book\/assets\/essay.css",
+      "sha256" : "05b3915a0f37d5f83df06af31081bfe661c7b792c8a83c2c4f952c7f03b4011c"
+    },
+    {
+      "path" : "\/estate\/essays\/the-composable-book\/index.html",
+      "sha256" : "4cc4bcca6f1d2bc5e4b50aa434e225254102368b7d63ddd46c9181a840889206"
+    },
+    {
+      "path" : "\/estate\/essays\/the-door-is-a-score\/assets\/keys.ogg",
+      "sha256" : "8bc33b2545a8bd9c1b0e2c47665c6bb9ca981ab972415f66a2d468d0b4921a5a"
+    },
+    {
+      "path" : "\/estate\/essays\/the-door-is-a-score\/assets\/listening-score.png",
+      "sha256" : "600cdaf4c3249b39434539442dea680058c1bcaed47e68cf7df159035f17cd38"
+    },
+    {
+      "path" : "\/estate\/essays\/the-door-is-a-score\/assets\/listening.mjs",
+      "sha256" : "1d9517cc6bef226815b04412611c2809b5e5ca963636fed9239dca2ef955e340"
+    },
+    {
+      "path" : "\/estate\/essays\/the-door-is-a-score\/assets\/score.mjs",
+      "sha256" : "50d6e7e80e5bd0374bed5d8a8bc761b551782019a1596b383c5f0acceb111ab0"
+    },
+    {
+      "path" : "\/estate\/essays\/the-door-is-a-score\/assets\/study.css",
+      "sha256" : "7ed44511c2af8deca3874453b09cd987c44e497c9227e647016e5e5c6495d6e2"
+    },
+    {
+      "path" : "\/estate\/essays\/the-door-is-a-score\/assets\/teatro-door-score.png",
+      "sha256" : "47791d9ac527641ae7b2cfe7ffe7111a99b9e39afaf89b28e53d4fa3d44cd4bb"
+    },
+    {
+      "path" : "\/estate\/essays\/the-door-is-a-score\/assets\/vendor\/CSOUND_CORE_LICENSE",
+      "sha256" : "85b4d8deec70c1d7fdae19752d6284dade435904f7d7f8d2b2c1fc2ce3fe2eb1"
+    },
+    {
+      "path" : "\/estate\/essays\/the-door-is-a-score\/assets\/vendor\/LICENSE",
+      "sha256" : "3f3adbdc06d616ccfd85151124dddca09fcf324494f72d549db961b6b088c9b5"
+    },
+    {
+      "path" : "\/estate\/essays\/the-door-is-a-score\/assets\/vendor\/THIRD_PARTY.md",
+      "sha256" : "d0be724a19ab4c3d3c0f4cbe41e5eafa2dd530ec0e0dbaca4b0901d6b13feda7"
+    },
+    {
+      "path" : "\/estate\/essays\/the-door-is-a-score\/assets\/vendor\/csound.js",
+      "sha256" : "c86c69291326fa3d64872f430ca9a06324a94c96db373d6bd207fdd4e5a3fc9e"
+    },
+    {
+      "path" : "\/estate\/essays\/the-door-is-a-score\/assets\/wood-close.ogg",
+      "sha256" : "e4cbbaa6331b42a32cc3a63d643f4849c65c39a45e7c57d568eb1790619af06d"
+    },
+    {
+      "path" : "\/estate\/essays\/the-door-is-a-score\/assets\/wood-hinge.ogg",
+      "sha256" : "c6c90e02993b2e044937f344351b417aeff6841aa4cd683f208d85ececf23392"
+    },
+    {
+      "path" : "\/estate\/essays\/the-door-is-a-score\/index.html",
+      "sha256" : "2ec1fb52a8416acf406e514f6b89199085b16eee4d1b6953b823a24d08515cdd"
+    },
+    {
+      "path" : "\/estate\/essays\/the-door-is-a-score\/media\/beyond.mp3",
+      "sha256" : "b9d1d07040e8b538e01bcb0c813a2906c01fd98d4623fa669c993b403bdf16c6"
+    },
+    {
+      "path" : "\/estate\/essays\/the-door-is-a-score\/media\/edition.json",
+      "sha256" : "1cf302a89fea95c21c8b1862884e1bac24e1f5784dff0919ed6b0622bb9f2bc3"
+    },
+    {
+      "path" : "\/estate\/essays\/the-door-is-a-score\/media\/memory.mp3",
+      "sha256" : "4030bc4a876f858423d1c747bb3730cf790985afb22999c7c7d49f51ceeb182c"
+    },
+    {
+      "path" : "\/estate\/essays\/the-door-is-a-score\/media\/present.mp3",
+      "sha256" : "ffcd129b4da0925dff99875e04be533c3e9f728dad9291169214485a4f773788"
+    },
+    {
+      "path" : "\/estate\/essays\/the-door-is-a-score\/media\/withheld.mp3",
+      "sha256" : "3bef2108ef74029d5fcc6f9002afd8ea025881932bede889af872d2d3b405ddf"
+    },
+    {
+      "path" : "\/estate\/essays\/the-ear-that-learns\/assets\/essay-listening.mjs",
+      "sha256" : "c1e305f0886df66ee602d829b8ec61e27ff6a614d9d0cbbfb5f8c82bef7cfa6f"
+    },
+    {
+      "path" : "\/estate\/essays\/the-ear-that-learns\/assets\/listening-room.png",
+      "sha256" : "d07e55ebed5b0e9100a86191099b686c8c1802770b292c358d86208911dd269e"
+    },
+    {
+      "path" : "\/estate\/essays\/the-ear-that-learns\/assets\/listening-room.svg",
+      "sha256" : "972a143be61a414583ab6d6bacc03f8ccb22f3c6b75a1c5aa64d3b97a530c5d7"
+    },
+    {
+      "path" : "\/estate\/essays\/the-ear-that-learns\/index.html",
+      "sha256" : "20f7f3190129ef8642df99f781d24d5e5bf2b8b234bcf71a9da447bbb0fb368e"
+    },
+    {
+      "path" : "\/estate\/essays\/to-read-is-not-to-remember\/assets\/bookshelf-ipad-landscape-test.png",
+      "sha256" : "ca2628cd98b5ebdc18816c510729d997f0539882b03949104bf94a2354389dd0"
+    },
+    {
+      "path" : "\/estate\/essays\/to-read-is-not-to-remember\/index.html",
+      "sha256" : "2eb20df27e4b1a85c2c531f061a712f2aaf66f792df5cda518bb14b62d0822b3"
+    },
+    {
+      "path" : "\/estate\/essays\/to-read-is-not-to-remember\/to-read-is-not-to-remember.pdf",
+      "sha256" : "9c8abd38a0963970f6a8721f89c6281ecaff3994c722985a38232e8afb4be41f"
+    },
+    {
+      "path" : "\/estate\/index.html",
+      "sha256" : "3f32bce5c95349b8d8ecce63063d05ea9044296a0b3f1270d5bf07094b751966"
+    },
+    {
+      "path" : "\/estate\/media\/first-readings\/prologue-midi2-reading-score.json",
+      "sha256" : "9e972107dd3c41f9ac404be22dfca1fd1846dd39b7fde07b9ca10ba067cc210f"
+    },
+    {
+      "path" : "\/estate\/media\/first-readings\/teatro-midi2-reading-score.json",
+      "sha256" : "1f00e49dff57e8c81001ea9e25046a30abb01e89e05dac157349a4d85ed7f526"
+    },
+    {
+      "path" : "\/estate\/media\/first-readings\/teatro-vergil-auto-corrected-v2.mp3",
+      "sha256" : "d5ce996b8d42db2a665263877e35b772220cc1faef6c2e1e54c3a6e0a6a65fcd"
+    },
+    {
+      "path" : "\/estate\/media\/first-readings\/teatro-vergil-edition.json",
+      "sha256" : "4e3821947801b15620bfc21641520fd512886efd51617e804b84c41af3353817"
+    },
+    {
+      "path" : "\/estate\/media\/first-readings\/vergil-prologue-edition.json",
+      "sha256" : "1da108f6c65664a6942069cbc16033e8e18eba04eb80da0ecee60d927bcb7d99"
+    },
+    {
+      "path" : "\/estate\/media\/first-readings\/vergil-prologue-source-aligned.mp3",
+      "sha256" : "4b2727e08bd7b3c0edea59f6faca92292e9447d980bfb1d2f963e829dba16881"
+    },
+    {
+      "path" : "\/estate\/read\/continuity\/index.html",
+      "sha256" : "89d2f875048fef4d5f5dfdfe38e2613c1645c4ec2e02b06c747b2bf1cd89c096"
+    },
+    {
+      "path" : "\/estate\/read\/essay--reframe-and-the-business-value-of-the-estate\/index.html",
+      "sha256" : "389147dbe66b8cd78d3a5ad5ca9b013312f800c80e844305805dc42dd46b6dd0"
+    },
+    {
+      "path" : "\/estate\/read\/essay--semantic-compilation-the-archive-is-not-the-edition\/index.html",
+      "sha256" : "da6041074293c312037b61aecbdce87e4834087eaebc4b33fd89ad4d656a65be"
+    },
+    {
+      "path" : "\/estate\/read\/essay--teatro-an-unfinished-composition\/index.html",
+      "sha256" : "14e598ce847bd874cffb0c8dafbaf722606d05eed2b82656d68bb58177739d14"
+    },
+    {
+      "path" : "\/estate\/read\/essay--the-composable-book\/index.html",
+      "sha256" : "3110225ddf79eafeaf77e7b311afc81dd2b49e34f822f83071937dd646650a9e"
+    },
+    {
+      "path" : "\/estate\/read\/essay--the-door-is-a-score\/index.html",
+      "sha256" : "3573329a4a46e42eefe2a846cea164a807d99728301e489aa6b0fc8ba4018344"
+    },
+    {
+      "path" : "\/estate\/read\/essay--the-ear-that-learns\/index.html",
+      "sha256" : "7ed63e0ed3086643a82bada3f511bb1b50b06708965b55bcfe9554de71cc76f2"
+    },
+    {
+      "path" : "\/estate\/read\/essay--to-read-is-not-to-remember\/index.html",
+      "sha256" : "fea5cb34b74db1aadee0b5ba7947c7698988fb9609e180f8c3bdc527b5178296"
+    },
+    {
+      "path" : "\/estate\/read\/essays\/index.html",
+      "sha256" : "8e92a6fb810ceedd50d7d67cbb650d47999c3b66944843e24b95740f52003222"
+    },
+    {
+      "path" : "\/estate\/read\/first-readings\/index.html",
+      "sha256" : "ab1d1053ad0f2995aaeca2a7e1d54b278a332f882f7cabbe8f2199fa3630b1dd"
+    },
+    {
+      "path" : "\/estate\/read\/library\/index.html",
+      "sha256" : "382277b85f53921676832adc9fd4b9270bbaaba9b1a614d264dfb36115564f55"
+    },
+    {
+      "path" : "\/estate\/read\/notes--the-door-is-a-score\/index.html",
+      "sha256" : "9c0784003506162e3184a06a7e683682a765367f3bd359bb2abe6a81bad0ee71"
+    },
+    {
+      "path" : "\/estate\/read\/publication-notes\/index.html",
+      "sha256" : "22812ae9548478a4873c53eb93ae12bbc3d3d9c1949263ea75d233447a64aa8e"
+    },
+    {
+      "path" : "\/estate\/read\/solstice-reading-01--2025-12-22-anweisung-an-den-schmerz\/index.html",
+      "sha256" : "7bda16efdf3d57ef649d3ce8302e35cd5cfbb9a3a9a929c7440eb2390f497af1"
+    },
+    {
+      "path" : "\/estate\/read\/solstice-reading-01--2025-12-23-integration\/index.html",
+      "sha256" : "346bc41ee49728a6c84c9ffaa2f83a9048315acd22c35f029b8d042a9a1346dd"
+    },
+    {
+      "path" : "\/estate\/read\/solstice-reading-01--2025-12-28-renaturalization\/index.html",
+      "sha256" : "078f00a91ea49af0867d93c8450f7a16d8a0b6d1d7b5761753ba3b7314187274"
+    },
+    {
+      "path" : "\/estate\/read\/solstice-reading-01--2026-01-08-vier-aussagen-zum-atherleib\/index.html",
+      "sha256" : "0540ceb597adae7b699c22f92e05446d163f8219d5df10e4dc2cf7a7c88e1fca"
+    },
+    {
+      "path" : "\/estate\/read\/solstice-reading-01--2026-01-22-three-floors\/index.html",
+      "sha256" : "540748c0d72ed260d5bbd1d7bff0f3506f92d06fb9a54f9af42970ca1e15ff37"
+    },
+    {
+      "path" : "\/estate\/read\/solstice-reading-01--2026-01-23-i-keep-moving\/index.html",
+      "sha256" : "9873cbfa79305fe2c5929dcbe5168be8a62b01102f5ac93e6db0fbc6808c6bf1"
+    },
+    {
+      "path" : "\/estate\/read\/solstice-reading-01--2026-02-04-two-rooms\/index.html",
+      "sha256" : "319c0b489e7675aa652dcfd1c55ae4919722d6c0711a3ee8c9045a1da39f5831"
+    },
+    {
+      "path" : "\/estate\/read\/solstice-reading-01--2026-02-14-on-a-future-not-yet-drafted\/index.html",
+      "sha256" : "e2b225232c5e5b2bf220b0b5943195e7985c26d8f8657ff6a8b0629bd33bb3f6"
+    },
+    {
+      "path" : "\/estate\/read\/solstice-reading-01--2026-02-28-no-optimize\/index.html",
+      "sha256" : "37abb158e573ca4e236aafcfaa8994328bd914a73d1f7497821e40cf1fb9e02f"
+    },
+    {
+      "path" : "\/estate\/read\/solstice-reading-01--2026-03-16-the-teatre-of-the-mind\/index.html",
+      "sha256" : "1b0c286fc46906446c30c0fe3f84e3e7f4ea8b1b4aa8d5cfcb9dba885e80e16b"
+    },
+    {
+      "path" : "\/estate\/read\/solstice-reading-01--2026-03-20-my-place-in-space\/index.html",
+      "sha256" : "2f68de908a0ba57cb908c2e0c680b5fef616bb9b3f6cfd05b6123cc0020d5003"
+    },
+    {
+      "path" : "\/estate\/read\/solstice-reading-01--2026-03-21-muttersprache\/index.html",
+      "sha256" : "9d1a251bb87cc4242da3fde6e9c4fe9ee4d55e8a1e5e94a86d574e17bee7afa8"
+    },
+    {
+      "path" : "\/estate\/read\/solstice-reading-01--2026-04-22-the-writing-hand\/index.html",
+      "sha256" : "25899ec1284ff3c17a3cb63f264bf7c6414fba1a1af4774baa1db3f065a37b43"
+    },
+    {
+      "path" : "\/estate\/read\/solstice-reading-01--2026-04-23-who-is-bee\/index.html",
+      "sha256" : "5088baaff1730fc26a06fe874cde6fb03b29a1957d18999e25bf137d21f9cd45"
+    },
+    {
+      "path" : "\/estate\/read\/solstice-reading-01--2026-04-30-about-writing-letters\/index.html",
+      "sha256" : "be6b1d4f0b3678d4d1a1d4d6e6427cc92adfc305472caa88d2e18f1b49f1b99e"
+    },
+    {
+      "path" : "\/estate\/read\/solstice-reading-01--2026-05-01-a-score-before-production\/index.html",
+      "sha256" : "3183b861365fa239db9733e343efda9711ce55434e9a865e5bb5fb9aa63fbd43"
+    },
+    {
+      "path" : "\/estate\/read\/solstice-reading-01--2026-05-25-seitenlicht\/index.html",
+      "sha256" : "7484c627baacb82e5200baf24513dac008b1ca6fae2d648d94c82f35b12e6321"
+    },
+    {
+      "path" : "\/estate\/read\/solstice-reading-01--2026-05-30-the-sheet\/index.html",
+      "sha256" : "5972c67f1e57b84d2c24ffc549f003779c3ec82a35e692bc7b005c15c3f0556e"
+    },
+    {
+      "path" : "\/estate\/read\/solstice-reading-01--2026-06-06-the-sentimental-machine\/index.html",
+      "sha256" : "3bf37d7ffa5c85bca2474d04aa51e0ee82ba63ad241e445dd9028d4f74c7c848"
+    },
+    {
+      "path" : "\/estate\/read\/solstice-reading-01--2026-06-15-fck-frg-we-all-had-parents\/index.html",
+      "sha256" : "8e602b1ff30f5558676002ee59401735bbaf30403e95dfc53c1fcdf685541a65"
+    },
+    {
+      "path" : "\/estate\/read\/solstice-reading-01--2026-06-24-prufe-dein-gewicht\/index.html",
+      "sha256" : "c42dd61a0bb922eb98d910338551478a64b59620c055d92af2025f2be4796a0b"
+    },
+    {
+      "path" : "\/estate\/read\/solstice-reading-01--2026-07-21-everything-else-is-illustration\/index.html",
+      "sha256" : "13ed2c2bd94e853f1cfc13c794e727815494fcdcb940e23a70c1793c737ec6a6"
+    },
+    {
+      "path" : "\/estate\/read\/solstice-reading-01--2026-07-28-bees-journal\/index.html",
+      "sha256" : "af807eebd421232d58c80d7c020316c28ae9aaafd03b08669efe49254885cc44"
+    },
+    {
+      "path" : "\/estate\/read\/solstice-reading-01--2026-07-31-n-journal\/index.html",
+      "sha256" : "343fea4f00f33895cef17ce674319e3b1a88f8c01e91e424a5de0895afafa3e3"
+    },
+    {
+      "path" : "\/estate\/read\/solstice-reading-01--2026-08-17-the-scissors\/index.html",
+      "sha256" : "4f6f665017291795dfef0d3f2d142d57b63faf9cf8f8525d5da3473467517fed"
+    },
+    {
+      "path" : "\/estate\/read\/solstice-reading-01--2026-08-19-six-panels\/index.html",
+      "sha256" : "0381ad31e296d83ea369e25cb3d517b119fcd8da14ce314dd07c2d9f0751328c"
+    },
+    {
+      "path" : "\/estate\/read\/solstice-reading-01--2026-08-28-the-old-woman\/index.html",
+      "sha256" : "d5411e49af52e7cf80cf1d1e8b37f44c0cbc41538201c9cfd758b3d4f4b5a68b"
+    },
+    {
+      "path" : "\/estate\/read\/solstice-reading-01--2026-09-04-the-strawberry\/index.html",
+      "sha256" : "7f489784168a1bc3a452f88d1afe176d1a97cab656a7b34def57b5ca4c6da10a"
+    },
+    {
+      "path" : "\/estate\/read\/solstice-reading-01--2026-09-06-leselust\/index.html",
+      "sha256" : "871cf24dd4648d3e71403ceaf08b4c5a03a440e9090eaa3bc09c8c48dedcc5ff"
+    },
+    {
+      "path" : "\/estate\/read\/solstice-reading-01--2026-09-18-object-crossing-voice\/index.html",
+      "sha256" : "6199fb1cd84b436a6e7651357cd0a1a2add846e4c6b400507d74af95811aa760"
+    },
+    {
+      "path" : "\/estate\/read\/solstice-reading-01--preface\/index.html",
+      "sha256" : "d6a0ded0bcd57acd5f5111a321463337ba9635ae7bf5f9c72d5be029f3dfdbe3"
+    },
+    {
+      "path" : "\/estate\/read\/solstice-reading-01--vergil\/index.html",
+      "sha256" : "cafb9018317fc0cf22cb4441deafc6bc05f07e858b7a7ec918ed7bb575168393"
+    },
+    {
+      "path" : "\/estate\/read\/solstice-reading-01\/index.html",
+      "sha256" : "05033bfd835f9b901cccf892b4af251aeeec806f56aa927b13b90a7097b406b3"
+    },
+    {
+      "path" : "\/estate\/read\/solstice\/index.html",
+      "sha256" : "bac30ff635fd21c63bb3e8ece058ec5102d93a7bcd54af8d0b040e281f0ffb29"
+    },
+    {
+      "path" : "\/estate\/read\/teatro\/index.html",
+      "sha256" : "7fd54aa8f5742ce4abc3a582b78c62202a89828c8d7fc8a074c7213e73a9c116"
+    },
+    {
+      "path" : "\/index.html",
+      "sha256" : "3f32bce5c95349b8d8ecce63063d05ea9044296a0b3f1270d5bf07094b751966"
+    },
+    {
+      "path" : "\/publication-manifest.json",
+      "sha256" : "4ee6ea145a3bd464eb3c64a01d02bf5991b7203070d1475c090c25b9f534ad0c"
+    },
+    {
+      "path" : "\/release-manifest.json",
+      "sha256" : "2e258c3cd655126b7eb4cabe9d4ab09ffec93ef3fdc8e32f3928c4c7101d10f1"
+    },
+    {
+      "path" : "\/solstice\/assets\/edition\/post-2025-12-22-b0e6cf8252aca0da.jpg",
+      "sha256" : "b0e6cf8252aca0da83a9b0bfbdbb3f57b88c826e8b85ac5a89f43b23bad98876"
+    },
+    {
+      "path" : "\/solstice\/assets\/edition\/post-2025-12-23-f0b9144a1df6ae0b.jpg",
+      "sha256" : "f0b9144a1df6ae0ba75145a89376441a21ce7f2d4aab7f1df8fd8dbc1b299f18"
+    },
+    {
+      "path" : "\/solstice\/assets\/edition\/post-2025-12-28-c9d7b304d2577e3c.jpg",
+      "sha256" : "c9d7b304d2577e3cd9c84c554e05aff7ea9dd59e3693e76858f748ed1309f8ed"
+    },
+    {
+      "path" : "\/solstice\/assets\/edition\/post-2026-01-08-7e60c7273855d415.jpg",
+      "sha256" : "7e60c7273855d41589a65200a7f6d75c596b9a920fa8a21b390acd092d7ca2b0"
+    },
+    {
+      "path" : "\/solstice\/assets\/edition\/post-2026-01-22-5df50180208e95ac.jpg",
+      "sha256" : "5df50180208e95ac2d2537120f2bb7c22fa3fa8af971867a9d7ac4de8ab398c3"
+    },
+    {
+      "path" : "\/solstice\/assets\/edition\/post-2026-01-23-1c3c1d6806e93f7b.jpg",
+      "sha256" : "1c3c1d6806e93f7be93de86315e81e31ffd1a2641ee1fae4c02d00fc00602790"
+    },
+    {
+      "path" : "\/solstice\/assets\/edition\/post-2026-02-04-d896e49fab8b9de6.jpg",
+      "sha256" : "d896e49fab8b9de64fe6d216ec3749127e52909b29a260fae285c6755e0966f7"
+    },
+    {
+      "path" : "\/solstice\/assets\/edition\/post-2026-02-14-176bf23235b226f3.jpg",
+      "sha256" : "176bf23235b226f3f56175c3b5a96bcdebb5791d8a5459bcc6e79e1f69239600"
+    },
+    {
+      "path" : "\/solstice\/assets\/edition\/post-2026-02-14-4c119414e04b1a21.jpg",
+      "sha256" : "4c119414e04b1a214a6a2554c62962bd0f251c1eacc44fe30c24cb73aed9ae5f"
+    },
+    {
+      "path" : "\/solstice\/assets\/edition\/post-2026-02-14-a25168e8eaa4ea6f.jpg",
+      "sha256" : "a25168e8eaa4ea6f5b88454c3877662473c08c584db9b3bc3485c6ce2dc672e1"
+    },
+    {
+      "path" : "\/solstice\/assets\/edition\/post-2026-02-28-90f23f8004961575.jpg",
+      "sha256" : "90f23f8004961575177329229889eb0ca522166cc73ffb7ded5c3758bd8d9d7c"
+    },
+    {
+      "path" : "\/solstice\/assets\/edition\/post-2026-03-16-c3f30632d4c61a08.jpg",
+      "sha256" : "c3f30632d4c61a088786b5c959deedbb5a9e5561c76211152e51d65b5017b5c4"
+    },
+    {
+      "path" : "\/solstice\/assets\/edition\/post-2026-03-16-f8848e33f3017105.jpg",
+      "sha256" : "f8848e33f3017105df7f9f008bddd0177f4a684e7252f6101960d7db48d3dd2c"
+    },
+    {
+      "path" : "\/solstice\/assets\/edition\/post-2026-03-20-6a08a376a9a616ad.jpg",
+      "sha256" : "6a08a376a9a616add8697ad5f3eff26367563f0b9b9ccc275ba37960d35732a8"
+    },
+    {
+      "path" : "\/solstice\/assets\/edition\/post-2026-03-21-dd4b3443194bbfe0.jpg",
+      "sha256" : "dd4b3443194bbfe0614fa8573cf404560d08d1f9a438311f6a70464a2d239bb9"
+    },
+    {
+      "path" : "\/solstice\/assets\/edition\/post-2026-04-22-a0427fee962c65c8.jpg",
+      "sha256" : "a0427fee962c65c8cde805ebb71a4a1685e7e34c9c374df2ed64e1bc82e8b14e"
+    },
+    {
+      "path" : "\/solstice\/assets\/edition\/post-2026-04-23-3115141ef9dee17f.jpg",
+      "sha256" : "3115141ef9dee17f7c6426c6b98968dd20a9b2daebe7d39f09e810574ed2c1e5"
+    },
+    {
+      "path" : "\/solstice\/assets\/edition\/post-2026-04-30-0e22d7426fe14b6a.jpg",
+      "sha256" : "0e22d7426fe14b6aecdb80749e8ca688df1a0ded1f5dd583dcc8a5f52069bda2"
+    },
+    {
+      "path" : "\/solstice\/assets\/edition\/post-2026-05-01-18375574f4b885e9.jpg",
+      "sha256" : "18375574f4b885e928262bb3b615cb82481dfc39abcbee529d68f1dba7aec0c1"
+    },
+    {
+      "path" : "\/solstice\/assets\/edition\/post-2026-05-01-ca5df313851efc64.jpg",
+      "sha256" : "ca5df313851efc6420fbf9f1b58c4d31fa0bc6d175c600873838faf7cd794f2f"
+    },
+    {
+      "path" : "\/solstice\/assets\/edition\/post-2026-05-25-ed229a3996db0d32.jpg",
+      "sha256" : "ed229a3996db0d3236b040b1888bbe061fed4839f7769d1c83fcea6162da20a1"
+    },
+    {
+      "path" : "\/solstice\/assets\/edition\/post-2026-05-30-1f467f3d2b353f56.jpg",
+      "sha256" : "1f467f3d2b353f56024cde2c9f2b9b6c1b0b08c8e266ed42a2379c49b72b163f"
+    },
+    {
+      "path" : "\/solstice\/assets\/edition\/post-2026-05-30-2abbf0eeeb401f07.jpg",
+      "sha256" : "2abbf0eeeb401f07b777d04f3be8a3fed2db9e645e00eb3e9f37879e771c2e67"
+    },
+    {
+      "path" : "\/solstice\/assets\/edition\/post-2026-05-30-72608939958eb3b9.jpg",
+      "sha256" : "72608939958eb3b9ef3f08b6bdc21b542a5e56c086749305175688a045caf475"
+    },
+    {
+      "path" : "\/solstice\/assets\/edition\/post-2026-05-30-c32610cb27096d79.jpg",
+      "sha256" : "c32610cb27096d7946200fa64dcb3173d7788aa5145589c5dfde19cab45a452d"
+    },
+    {
+      "path" : "\/solstice\/assets\/edition\/post-2026-05-30-d639865b8b728df8.jpg",
+      "sha256" : "d639865b8b728df806f7fbf3cd87f4e5f5a620b392c354d63efff231e926977e"
+    },
+    {
+      "path" : "\/solstice\/assets\/edition\/post-2026-06-06-254e011042fb679e.jpg",
+      "sha256" : "254e011042fb679efa713262ac56dc190904a4dfecfdd31095bc7a00f475d4cd"
+    },
+    {
+      "path" : "\/solstice\/assets\/edition\/post-2026-06-06-398a7827c5faf579.jpg",
+      "sha256" : "398a7827c5faf579ef2452a157056b8e6520054361e17b4246d00a815d0ee453"
+    },
+    {
+      "path" : "\/solstice\/assets\/edition\/post-2026-06-15-b2f077572eff8793.jpg",
+      "sha256" : "b2f077572eff8793dc8bbaf40485a4deb017faed90712bec7ef0af92350c205d"
+    },
+    {
+      "path" : "\/solstice\/assets\/edition\/post-2026-06-15-fa70b1744d6af826.jpg",
+      "sha256" : "fa70b1744d6af8269f69ae13c20d4f6263eed8b15f90a01317d1dbc15a267e2c"
+    },
+    {
+      "path" : "\/solstice\/assets\/edition\/post-2026-06-24-8f2981e0b674fe01.jpg",
+      "sha256" : "8f2981e0b674fe01c572cd53f4847e5ddad8eea37becc8f0d3187eb6b8d4eaee"
+    },
+    {
+      "path" : "\/solstice\/assets\/edition\/post-2026-06-24-f614868939456e96.jpg",
+      "sha256" : "f614868939456e96dec268c992951b3566fc8fa8d56e07dd73e3d41e263c88de"
+    },
+    {
+      "path" : "\/solstice\/assets\/edition\/post-2026-07-21-728a816389b59438.jpg",
+      "sha256" : "728a816389b59438647f6f16807059370250a0a134dece6eaaaf4d6676fc8f72"
+    },
+    {
+      "path" : "\/solstice\/assets\/edition\/post-2026-07-28-cdd8e5b1c9628c67.jpg",
+      "sha256" : "cdd8e5b1c9628c67a0a1c40e3dd5bd8d4069b9ff778d09268dfbfd7bc6299e90"
+    },
+    {
+      "path" : "\/solstice\/assets\/edition\/post-2026-07-31-b345eeebe3c904df.jpg",
+      "sha256" : "b345eeebe3c904df1968068b774144a9569e07ceef647718f1ffe420c7a161a4"
+    },
+    {
+      "path" : "\/solstice\/assets\/edition\/post-2026-08-28-330a889f93b0b76d.jpg",
+      "sha256" : "330a889f93b0b76d55269267f522543955297332098e473c7d7c13d6ed57e738"
+    },
+    {
+      "path" : "\/solstice\/assets\/edition\/post-2026-09-04-aeddf555dd785ebf.jpg",
+      "sha256" : "aeddf555dd785ebfbf9641b7c4d3784cc16fc1a3386674043000e4dca2cc498c"
+    },
+    {
+      "path" : "\/solstice\/assets\/edition\/post-2026-09-06-0e595f232b2d6da1.jpg",
+      "sha256" : "0e595f232b2d6da16ea71f8fa84812afd404c983e5bc5df40325ed1448daf591"
+    },
+    {
+      "path" : "\/solstice\/assets\/edition\/post-2026-09-18-c75d27c000b328a1.jpg",
+      "sha256" : "c75d27c000b328a1f07ab485c76c1bae0bfe775feb640122479593d5d228a264"
+    },
+    {
+      "path" : "\/solstice\/assets\/edition\/teatro-score-2026-08-17.jpg",
+      "sha256" : "153bcd73d037128c791b194d4a5f0f1b39e0979478a25ecc6bf7f7f92eced6fb"
+    },
+    {
+      "path" : "\/solstice\/assets\/edition\/teatro-score-2026-08-19.jpg",
+      "sha256" : "11772b92061b57289540732e5432d10db6ad6e1f7e3374ab84c3b4b952c4b272"
+    }
+  ],
+  "previousReleaseID" : "estate-20261103-v20-vergil-reader-611c3e3",
+  "publicHost" : "fountain.coach",
+  "publicWitnessPaths" : [
+    "\/index.html",
+    "\/estate\/index.html",
+    "\/estate\/read\/essay--teatro-an-unfinished-composition\/index.html",
+    "\/estate\/assets\/social\/v141\/essay--teatro-an-unfinished-composition.jpg",
+    "\/estate\/read\/solstice-reading-01--vergil\/index.html",
+    "\/estate\/assets\/social\/v141\/solstice-reading-01--vergil.jpg",
+    "\/estate\/assets\/linotype\/reading-first-app.js",
+    "\/estate\/media\/first-readings\/teatro-vergil-auto-corrected-v2.mp3",
+    "\/estate\/media\/first-readings\/vergil-prologue-source-aligned.mp3",
+    "\/assets\/site.css"
+  ],
+  "releaseID" : "estate-20261103-v21-social-principal-fb47bd0",
+  "sourceRevision" : "fb47bd09ff1652803e3082e2373d5ce7187b2e2f"
+}

@@ -20,7 +20,7 @@ const targets=[
    const expected=['solstice','solstice-reading-01'].includes(id)?'first-readings':id;
    const result={browser:browserName,id,url};
    try{
-    const response=await page.goto(url,{waitUntil:'domcontentloaded'});
+    const response=await page.goto(url,{waitUntil:'load'});
     if(response.status()!==200)throw Error('direct page HTTP '+response.status());
     await page.waitForFunction(id=>document.querySelector('#page-viewport')?.dataset.volume===id &&
           document.querySelector('#page-viewport')?.dataset.layout==='ready',expected,{timeout:28000});
@@ -29,7 +29,7 @@ const targets=[
     const title=await page.title();
     const ogtitle=await page.locator('meta[property="og:title"]').getAttribute('content');
     if(!title.includes(ogtitle.replace(/^The /,'')))throw Error('runtime title does not match work '+title+' vs '+ogtitle);
-    await page.reload({waitUntil:'domcontentloaded'});
+    await page.reload({waitUntil:'load'});
     await page.waitForFunction(id=>document.querySelector('#page-viewport')?.dataset.volume===id &&
           document.querySelector('#page-viewport')?.dataset.layout==='ready',expected,{timeout:28000});
     if(page.url().split('?')[0]!==url)throw Error('reload unexpectedly changed stable work URL '+page.url());
@@ -44,7 +44,7 @@ const targets=[
   const page=await browser.newPage({viewport:{width:1024,height:768}});
   const r={browser:browserName,kind:'navigation-and-legacy'};
   try{
-   await page.goto(ORIGIN+'/estate/#/read/teatro',{waitUntil:'domcontentloaded'});
+   await page.goto(ORIGIN+'/estate/#/read/teatro',{waitUntil:'load'});
    await page.waitForFunction(()=>document.querySelector('#page-viewport')?.dataset.layout==='ready'
       && document.querySelector('#page-viewport')?.dataset.volume==='teatro',{timeout:28000});
    r.legacyHash=true;

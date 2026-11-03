@@ -1,0 +1,53 @@
+{
+  "activated" : true,
+  "detail" : "Exact published bytes verified independently via HTTPS",
+  "previousReleaseID" : "estate-20261103-v20-vergil-reader-611c3e3",
+  "publicHost" : "fountain.coach",
+  "recordedAt" : 815384986.538931,
+  "releaseID" : "estate-20261103-v21-social-principal-fb47bd0",
+  "sourceInventorySHA256" : "81390a8a396969c61fc73c88db9da3d1c98e89e804d80de997c48fd21ecdb021",
+  "sourceRevision" : "fb47bd09ff1652803e3082e2373d5ce7187b2e2f",
+  "state" : "active",
+  "verifiedPublicFiles" : [
+    {
+      "path" : "\/index.html",
+      "sha256" : "3f32bce5c95349b8d8ecce63063d05ea9044296a0b3f1270d5bf07094b751966"
+    },
+    {
+      "path" : "\/estate\/index.html",
+      "sha256" : "3f32bce5c95349b8d8ecce63063d05ea9044296a0b3f1270d5bf07094b751966"
+    },
+    {
+      "path" : "\/estate\/read\/essay--teatro-an-unfinished-composition\/index.html",
+      "sha256" : "14e598ce847bd874cffb0c8dafbaf722606d05eed2b82656d68bb58177739d14"
+    },
+    {
+      "path" : "\/estate\/assets\/social\/v141\/essay--teatro-an-unfinished-composition.jpg",
+      "sha256" : "b70bfbf08d33ebdc1a857b35928c2102323ea820fc2a63bc7deed1b9c4a735d5"
+    },
+    {
+      "path" : "\/estate\/read\/solstice-reading-01--vergil\/index.html",
+      "sha256" : "cafb9018317fc0cf22cb4441deafc6bc05f07e858b7a7ec918ed7bb575168393"
+    },
+    {
+      "path" : "\/estate\/assets\/social\/v141\/solstice-reading-01--vergil.jpg",
+      "sha256" : "8aa0c134447a73c228bbc72fee354540b952e92fe62ed9edb0f16390fb088384"
+    },
+    {
+      "path" : "\/estate\/assets\/linotype\/reading-first-app.js",
+      "sha256" : "4243dea9d3d8be1187f0c72cbde994e7748eebaeacc78e91d618b222024cfea4"
+    },
+    {
+      "path" : "\/estate\/media\/first-readings\/teatro-vergil-auto-corrected-v2.mp3",
+      "sha256" : "d5ce996b8d42db2a665263877e35b772220cc1faef6c2e1e54c3a6e0a6a65fcd"
+    },
+    {
+      "path" : "\/estate\/media\/first-readings\/vergil-prologue-source-aligned.mp3",
+      "sha256" : "4b2727e08bd7b3c0edea59f6faca92292e9447d980bfb1d2f963e829dba16881"
+    },
+    {
+      "path" : "\/assets\/site.css",
+      "sha256" : "6aba1927f4b60e6942ee4f2f19e14ad039d0af93fa4aa1809c9b38300842c9fd"
+    }
+  ]
+}
