@@ -172,7 +172,15 @@ class Linotype {
     const n=this.leaves.length+1;
     const imprint=this.options.imprint||document.body.dataset.editionImprint||"FOUNTAIN PRESS";
     folio.replaceChildren();
-    const imprintSpan=document.createElement("span");imprintSpan.textContent=imprint;
+    const imprintSpan=this.pageFrame&&this.options.folioInfo?
+      document.createElement("button"):document.createElement("span");
+    if(this.pageFrame&&this.options.folioInfo){
+      imprintSpan.type="button";imprintSpan.className="linotype-info-link";
+      imprintSpan.dataset.readerInfo="true";
+      imprintSpan.setAttribute("aria-label","Open publication notes and legal information");
+      imprintSpan.setAttribute("title","Publication notes");
+      imprintSpan.textContent="i";
+    }else imprintSpan.textContent=imprint;
     const countSpan=document.createElement("span");countSpan.textContent=String(n).padStart(3,"0");
     folio.append(imprintSpan,countSpan);
     el.append(heading,area,folio);

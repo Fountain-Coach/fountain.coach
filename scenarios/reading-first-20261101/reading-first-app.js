@@ -24,7 +24,7 @@ const soundEditionPromise=fetch('/estate/essays/the-door-is-a-score/media/editio
 if(!viewport||!source||!window.SolsticeLinotype) return;
 const sourceLibrary=templates.get('library')?.content.querySelector('.book-flow')?.innerHTML;
 if(!sourceLibrary)throw Error('Authored Bookshelf is unavailable');
-const labels=new Map([['continuity','On Continuity'],['library','Bookshelf'],['essays','Essays'],['first-readings','First Readings'],['solstice','First Readings'],['solstice-reading-01','First Readings'],['teatro','Teatro — An Unfinished Composition'],['notes--the-door-is-a-score','References · The Door Is a Score']]);
+const labels=new Map([['publication-notes','Publication Notes'],['continuity','On Continuity'],['library','Bookshelf'],['essays','Essays'],['first-readings','First Readings'],['solstice','First Readings'],['solstice-reading-01','First Readings'],['teatro','Teatro — An Unfinished Composition'],['notes--the-door-is-a-score','References · The Door Is a Score']]);
 for(const [key,template] of templates){
  if(key.startsWith('essay--')||key.startsWith('solstice-reading-01--')){
   const label=template.content.querySelector('h2')?.textContent?.trim()||key;
@@ -81,6 +81,7 @@ const surfaceOffsets={shelf:0,essays:0,'first-readings':0};
 const galleryOffsets={essays:0,'first-readings':0};
 const shelfContentsOffsets={essays:0,'first-readings':0};
 const collectionOrder=['essays','first-readings'];
+let addendumReturnVolume='continuity';
 let activeCollection='essays';
 const selectedWork={essays:null,'first-readings':null};
 const compactPresentation={essays:'contents','first-readings':'contents'};
@@ -120,8 +121,9 @@ function selectSource(name){
  }
  source.dataset.minLeaves='1';
  volume=name;
- section.value=volume;
- const parentName=name==='library'?'continuity':isContents(name)?'library':
+ if([...section.options].some(opt=>opt.value===volume))section.value=volume;
+ const parentName=name==='publication-notes'?addendumReturnVolume:
+  name==='library'?'continuity':isContents(name)?'library':
    name===shelfOriginWork?'library':
    name==='notes--the-door-is-a-score'?'essay--the-door-is-a-score':owningContents(name);
  parent.hidden=!parentName;
@@ -579,7 +581,8 @@ async function compose(){
    Math.abs(width-lastPageGeometry.width)<48?engine.css.spread:undefined;
   candidate=new window.SolsticeLinotype(preparation,source,{pageFrame:true,
    spreadOverride:stableSpread,label:'Measured '+labels.get(volume)+' pages',
-   runningTitle:'Benedikt Eickhoff',imprint:'Benedikt Eickhoff'});
+   runningTitle:volume==='publication-notes'?'Publication Notes':'Benedikt Eickhoff',
+   imprint:'Fountain Coach',folioInfo:volume!=='publication-notes'});
   candidate.compose();
   let target=0;
   const anchor=positions.get(volume);
@@ -688,6 +691,21 @@ function handleHistory(){
 }
 section.addEventListener('change',()=>openVolume(section.value));
 document.addEventListener('click',e=>{
+ const info=e.target.closest('[data-reader-info]');
+ if(info){
+  e.preventDefault();
+  if(volume!=='publication-notes'){
+   addendumReturnVolume=volume;
+   openVolume('publication-notes');
+  }
+  return;
+ }
+ const returnLink=e.target.closest('[data-reader-return]');
+ if(returnLink){
+  e.preventDefault();
+  openVolume(addendumReturnVolume,{resume:true});
+  return;
+ }
  const link=e.target.closest('[data-reader-target]');
  if(!link)return;
  e.preventDefault();
