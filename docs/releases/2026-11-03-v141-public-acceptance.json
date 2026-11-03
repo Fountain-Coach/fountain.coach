@@ -1,0 +1,56 @@
+{
+  "schema": "fountain.press.social-public-v141-acceptance.v1",
+  "date": "2026-11-03",
+  "publicHost": "fountain.coach",
+  "publicState": "active",
+  "releaseID": "estate-20261103-v21-social-principal-fb47bd0",
+  "sourceRevision": "fb47bd09ff1652803e3082e2373d5ce7187b2e2f",
+  "sourceInventorySHA256": "81390a8a396969c61fc73c88db9da3d1c98e89e804d80de997c48fd21ecdb021",
+  "previousReleaseID": "estate-20261103-v20-vergil-reader-611c3e3",
+  "previousReleaseRetained": true,
+  "publicStaticFiles": 315,
+  "preservedPublicFiles": 215,
+  "newPublicFiles": 96,
+  "workSpecificMetadataAndImageRoutes": 48,
+  "facebookCrawler": {
+    "test": "Facebook facebookexternalhit/1.1 User-Agent on independent production HTTPS",
+    "passed": 49,
+    "failed": 0,
+    "uniqueSocialImages": 48,
+    "type": "JPEG 1200x630"
+  },
+  "imagePolicy": {
+    "authoredFirstIllustrations": 39,
+    "actualComposedFirstFolioScreenshots": 9
+  },
+  "publicBrowsers": {
+    "ChromeWebKitCases": 20,
+    "passed": 20,
+    "failed": 0,
+    "pageLoadPolicy": "wait for module scripts to settle before reload"
+  },
+  "vergilPlayback": {
+    "ChromeWebKitCases": 4,
+    "passed": 4,
+    "failed": 0,
+    "csoundAudioWorklet": true,
+    "sourceBoundMIDIReadingCursor": true
+  },
+  "legacyHashToCanonicalPath": "passed",
+  "sensitiveMediaExclusions": [
+    "unreleased auditions",
+    "WAV masters",
+    "WLAN rehearsal grants"
+  ],
+  "unchanged": [
+    "Vergil MP3 bytes",
+    "MIDI2 scores",
+    "v140 manuscript and reading composition",
+    "legacy public files other than 4 scoped replacements",
+    "private WLAN stage"
+  ],
+  "limits": [
+    "No actual Facebook post created or Facebook cached-URL refresh forced",
+    "No physical iPad VoiceOver session in this release"
+  ]
+}
