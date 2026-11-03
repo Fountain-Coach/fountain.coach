@@ -172,14 +172,23 @@ class Linotype {
     const n=this.leaves.length+1;
     const imprint=this.options.imprint||document.body.dataset.editionImprint||"FOUNTAIN PRESS";
     folio.replaceChildren();
-    const imprintSpan=this.pageFrame&&this.options.folioInfo?
-      document.createElement("button"):document.createElement("span");
-    if(this.pageFrame&&this.options.folioInfo){
+    const hasInfo=this.pageFrame&&this.options.folioInfo;
+    const hasReturn=this.pageFrame&&this.options.folioReturn;
+    const imprintSpan=document.createElement(hasInfo||hasReturn?"button":"span");
+    if(hasInfo||hasReturn){
       imprintSpan.type="button";imprintSpan.className="linotype-info-link";
-      imprintSpan.dataset.readerInfo="true";
-      imprintSpan.setAttribute("aria-label","Open publication notes and legal information");
-      imprintSpan.setAttribute("title","Publication notes");
-      imprintSpan.textContent="i";
+      if(hasReturn){
+        imprintSpan.dataset.readerReturn="true";
+        imprintSpan.setAttribute("aria-label","Return to previous reading position");
+        imprintSpan.setAttribute("title","Return to reading");
+        const mark=document.createElement("img");mark.src="/estate/assets/fountain-coach-logo-transparent.png";
+        mark.alt="";mark.width=17;mark.height=17;mark.setAttribute("aria-hidden","true");
+        imprintSpan.append(mark);
+      }else{
+        imprintSpan.dataset.readerInfo="true";
+        imprintSpan.setAttribute("aria-label","Open publication notes and legal information");
+        imprintSpan.setAttribute("title","Publication notes");imprintSpan.textContent="i";
+      }
     }else imprintSpan.textContent=imprint;
     const countSpan=document.createElement("span");countSpan.textContent=String(n).padStart(3,"0");
     folio.append(imprintSpan,countSpan);
@@ -765,7 +774,17 @@ class Linotype {
       else{
         const blank=document.createElement("div");
         blank.className="linotype-blank";
-        blank.setAttribute("aria-hidden","true");
+        if(this.pageFrame&&this.options.folioReturn){
+          // Mirror the book's return at the same bottom-left folio coordinate
+          // on an empty facing leaf: the finger need not change its location.
+          blank.classList.add("linotype-addendum-facing");
+          const action=this.leaves[0]?.el.querySelector("button[data-reader-return]")?.cloneNode(true);
+          if(action){
+            action.style.left=this.css.insetX+"px";
+            action.style.bottom=this.css.insetY+"px";
+            blank.append(action);
+          }
+        }else blank.setAttribute("aria-hidden","true");
         this.stage.append(blank);
       }
     }

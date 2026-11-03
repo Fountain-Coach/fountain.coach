@@ -582,7 +582,7 @@ async function compose(){
   candidate=new window.SolsticeLinotype(preparation,source,{pageFrame:true,
    spreadOverride:stableSpread,label:'Measured '+labels.get(volume)+' pages',
    runningTitle:volume==='publication-notes'?'Publication Notes':'Benedikt Eickhoff',
-   imprint:'Fountain Coach',folioInfo:volume!=='publication-notes'});
+   imprint:'Fountain Coach',folioInfo:volume!=='publication-notes',folioReturn:volume==='publication-notes'});
   candidate.compose();
   let target=0;
   const anchor=positions.get(volume);

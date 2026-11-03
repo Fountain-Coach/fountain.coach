@@ -360,3 +360,26 @@ html[data-book-columns="single"] .reader-collection-pair h3{display:none}
 @media print{
  .page-viewport .linotype-folio .linotype-info-link{border:0}
 }
+
+/* Same folio, same finger: the circled i becomes the publisher's circle
+   in the addendum. A facing blank leaf mirrors the return on the right. */
+.page-viewport .linotype-folio .linotype-info-link,
+.page-viewport .linotype-addendum-facing .linotype-info-link{position:relative}
+.page-viewport .linotype-folio .linotype-info-link::after,
+.page-viewport .linotype-addendum-facing .linotype-info-link::after{
+  content:"";position:absolute;inset:-13px;pointer-events:auto
+}
+.page-viewport .linotype-info-link img{
+  display:block;width:17px;height:17px;object-fit:contain;
+}
+:root[data-theme="dark"] .page-viewport .linotype-info-link img{filter:invert(1)}
+.page-viewport .linotype-addendum-facing{position:relative}
+.page-viewport .linotype-addendum-facing .linotype-info-link{
+  position:absolute;appearance:none;display:grid;place-items:center;
+  width:19px;height:19px;min-width:19px;padding:0;margin:0;
+  border:1px solid currentColor;border-radius:50%;
+  color:var(--muted);background:transparent;cursor:pointer
+}
+.page-viewport .linotype-addendum-facing .linotype-info-link:focus-visible{
+  outline:2px solid var(--focus);outline-offset:3px
+}
