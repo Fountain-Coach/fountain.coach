@@ -172,5 +172,23 @@
   "readerRuntimePolicy": "No replacement reader, no duplicate compositor, no fabricated audio or MIDI2 event",
   "publicReleased": false,
   "fountainStoreAdmitted": false,
-  "privateStagingCandidate": true
+  "privateStagingCandidate": true,
+  "illustrationLayoutRevision": "essay-plate-ink-safe-inset-36-and-shared-satzspiegel-left-v2",
+  "originalPDFSHA256Unchanged": true,
+  "editorialRevisionScope": "13 original source-owned diagram projections recropped and balanced; source and reader engine unchanged",
+  "illustrationFileSHA256": {
+    "address.svg": "5fb7b53bd74fe4425c9e2bc2e967084170d3b940a57c4b2a0c9dff1d0cca7d2b",
+    "classical.svg": "87843cf80d8069cd94c78032709c2fcb9e7546b253fe8e1cbeb63fcb7f843c60",
+    "colophon.svg": "be5a4e96c9138562cace84faf2001e90f8e9b829f06ec20876460edae5e7ebe4",
+    "conditions.svg": "151aa2a5c715dbc44327ca1762d001de80f2f8abaf2a2d9c3224c49df4f98fc8",
+    "cursor.svg": "da859a9f710f0cd983141bff9167608d57801f23856d91e523f78c7016ae5076",
+    "joyce.svg": "dba0cc9005d1fbe8143001299dcb320ad2e54fa8413581118df265e9d8c3de88",
+    "machine.svg": "b896e4bac655bef13df12618cde4a8ec4dd7cbcdcb29aec30d5f44621213f341",
+    "midi.svg": "70c06ea968b1cbcccf96fe178dfa54ce3b8a48562f17941573515614d34aa7d3",
+    "modern.svg": "dfd404b517d475121a11fc49f1596816dbbf7bae74268b02c14f4cb97710a98e",
+    "proof.svg": "7da53f80040b50820f0bf5248d0e3b4ccc04d3537c00767de21ef6c09eb64bd2",
+    "question.svg": "10814f5646022defc69ac245d146a8d4cc6183708aa0aadc5e96a2f891c4297b",
+    "reader.svg": "4584338a86f27c26f446eb5b9e269a9e43c12ce540bdf026a7f9f211615be7bb",
+    "return.svg": "a6928ab50245d72fef67dda6dd6383c4aba226761a7e99c8f8d66f960802ac7f"
+  }
 }
