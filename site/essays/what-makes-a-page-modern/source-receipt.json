@@ -173,7 +173,7 @@
   "publicReleased": false,
   "fountainStoreAdmitted": false,
   "privateStagingCandidate": true,
-  "illustrationLayoutRevision": "v3-framed-svg-boundary-flush-with-type-area-and-unframed-optical-inset-36",
+  "illustrationLayoutRevision": "v4-web-reader-rectangle-internal-text-measure",
   "originalPDFSHA256Unchanged": true,
   "editorialRevisionScope": "13 original source-owned diagram projections recropped and balanced; source and reader engine unchanged",
   "illustrationFileSHA256": {
@@ -188,7 +188,14 @@
     "modern.svg": "dfd404b517d475121a11fc49f1596816dbbf7bae74268b02c14f4cb97710a98e",
     "proof.svg": "7da53f80040b50820f0bf5248d0e3b4ccc04d3537c00767de21ef6c09eb64bd2",
     "question.svg": "147d2cfd793518420603fc253af102aea44bb875f2ab9c6044ace8dbf4f61888",
-    "reader.svg": "4584338a86f27c26f446eb5b9e269a9e43c12ce540bdf026a7f9f211615be7bb",
+    "reader.svg": "778a1a33b7f69e34f5603e02950d245abd221fff3ea260c02310a2a4d79df9fb",
     "return.svg": "a6928ab50245d72fef67dda6dd6383c4aba226761a7e99c8f8d66f960802ac7f"
+  },
+  "illustrationLayoutCorrection": {
+    "plate": "reader.svg",
+    "defect": "WEB READER glyphs exceeded available internal right margin",
+    "rule": "Every illustrated frame's visible glyphs remain inside the drawn panel, with >=28 SVG units physical horizontal padding; the WEB READER heading and text begin at x=744, 34 units from panel left, with actual minimum right inset >=30.",
+    "sourceWordsUnchanged": true,
+    "stageScope": "single source-owned SVG and its integrity references"
   }
 }
