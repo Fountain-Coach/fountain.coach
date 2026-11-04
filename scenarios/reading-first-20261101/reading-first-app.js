@@ -42,7 +42,7 @@ const implementationStories=new Set([
 const essaySequence=[...templates.keys()]
  .filter(x=>x.startsWith('essay--')&&!implementationStories.has(x)).reverse();
 const solsticeSequence=[...templates.keys()].filter(x=>x.startsWith('solstice-reading-01--'));
-if(essaySequence.length!==5||solsticeSequence.length!==32)throw Error('Editorial collection inventory changed');
+if(essaySequence.length!==6||solsticeSequence.length!==32)throw Error('Editorial collection inventory changed');
 // Editorial prose is admitted with each work, not inferred at render time.
 for(const id of [...essaySequence,...solsticeSequence.slice(2)]){
  const template=templates.get(id);
@@ -55,7 +55,7 @@ const contents={essays:essaySequence,'first-readings':solsticeSequence};
 const galleryData=JSON.parse(document.getElementById('reader-gallery-data')?.textContent||'null');
 if(galleryData?.schema!=='fountain.press.bookshelf-gallery.v1')throw Error('Bookshelf gallery source missing');
 const galleries=galleryData.collections;
-if(galleries.essays.length!==5||galleries['first-readings'].length!==30 ||
+if(galleries.essays.length!==6||galleries['first-readings'].length!==30 ||
  galleries.essays.some((e,i)=>e.id!==essaySequence[i]) ||
  galleries['first-readings'].some((e,i)=>e.id!==solsticeSequence[i+2]))
  throw Error('Gallery no longer matches admitted source ordering');
@@ -357,7 +357,7 @@ function renderSurface(){
    const header=document.createElement('header');header.className='reader-collection-heading';
    const name=document.createElement('h2');name.textContent=labels.get(id);
    const subtitle=document.createElement('p');
-   subtitle.textContent=id==='essays'?'Five essays · chronological':'Reading 01 · First Reading';
+   subtitle.textContent=id==='essays'?'Six essays · chronological':'Reading 01 · First Reading';
    header.append(name,subtitle);book.append(header);
    const toggle=document.createElement('div');toggle.className='reader-presentation-switch';
    toggle.setAttribute('role','group');toggle.setAttribute('aria-label',labels.get(id)+' presentation');
