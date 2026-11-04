@@ -8,6 +8,12 @@
   "collections": {
     "essays": [
       {
+        "id": "essay--what-makes-a-page-modern",
+        "src": "/estate/essays/what-makes-a-page-modern/assets/question.svg",
+        "alt": "Original editorial typesetting diagram: one Satzspiegel and a large unoccupied outer margin",
+        "sourceKind": "source-owned-editorial-plate"
+      },
+      {
         "id": "essay--reframe-and-the-business-value-of-the-estate",
         "src": "/estate/essays/reframe-and-the-business-value-of-the-estate/assets/address-landscape.png",
         "alt": "Minimal isometric room with an archive, open threshold, and held red mark representing a personal address",
@@ -20,22 +26,10 @@
         "sourceKind": "original-source-image"
       },
       {
-        "id": "essay--semantic-compilation-the-archive-is-not-the-edition",
-        "src": "/estate/essays/semantic-compilation-the-archive-is-not-the-edition/assets/semantic-compilation-estate-rail.svg",
-        "alt": "The Fountain Coach estate navigation rail admits the eight-point Solstice mark above a three-part diagram: an archive, an interpretive editorial plan, and a reading edition.",
-        "sourceKind": "original-source-image"
-      },
-      {
         "id": "essay--to-read-is-not-to-remember",
         "src": "/estate/assets/essay-share/did-the-machine-actually-read-the-book.png",
         "alt": "Typeset opening spread of Did the Machine Actually Read the Book? showing its title, argument and original essay typography",
         "sourceKind": "actual-typeset-page-preview"
-      },
-      {
-        "id": "essay--the-composable-book",
-        "src": "/estate/essays/the-composable-book/assets/01-book-spread.svg",
-        "alt": "An open book is one composition. Reading and Composer meet at its binding; neither page is a docked application window.",
-        "sourceKind": "original-source-image"
       },
       {
         "id": "essay--the-ear-that-learns",

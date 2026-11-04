@@ -1,0 +1,176 @@
+{
+  "schema": "fountain.press.reader-source-addition.v1",
+  "sourceOwner": "Fountain-Coach/fountain.coach",
+  "sourceKind": "author-approved-13-page-A4-illustrated-essay",
+  "sourcePDFSHA256": "2baaab0012e825b49f04e7a760b64efa52c95dc09deab7117de790f6c6e14bad",
+  "pdfPageCount": 13,
+  "readerIdentity": "existing-v140-production-derived-reader",
+  "readerVolume": "essay--what-makes-a-page-modern",
+  "manuscriptParagraphs": [
+    {
+      "id": "question.p1",
+      "sha256": "68b8598319b237727a777692914c44635d9bf2dbbebf7a0f8d3afdd0c4c34055",
+      "characters": 303
+    },
+    {
+      "id": "question.p2",
+      "sha256": "b0e0df5869d3ef84922d9e4809b00a1d8484c43f0d9c5a934f69e43cd3d5df00",
+      "characters": 394
+    },
+    {
+      "id": "question.p3",
+      "sha256": "e58a03299c8f6b526aa5ffe157bfbf33399384e0d6f46454d602eaf9769aa38a",
+      "characters": 148
+    },
+    {
+      "id": "classical.p1",
+      "sha256": "a76e00a031df707d67c76694ad24b4aaa9171897e2eaf85c935fc326bf6c000f",
+      "characters": 209
+    },
+    {
+      "id": "modern.p1",
+      "sha256": "fa100cbf38a8e2e3d133b620961cfab6bee71f96875a629a767a8905ff67dafb",
+      "characters": 187
+    },
+    {
+      "id": "machine.p1",
+      "sha256": "65693c816d2559cd66e0cf00c773e3f1b1213e77dd5426e4b37b3bc0cf93a3c2",
+      "characters": 296
+    },
+    {
+      "id": "machine.p2",
+      "sha256": "fa2a94d58fe3625d5b703f5e6e3e4c76962248dfbc31c5a1ebf2dcb1640ec2a3",
+      "characters": 354
+    },
+    {
+      "id": "machine.p3",
+      "sha256": "7b2df77a3939e0413a9dfba500b1fa6963b2d0521c530179663b7d94cdbcaf4c",
+      "characters": 263
+    },
+    {
+      "id": "joyce.p1",
+      "sha256": "04c409e7c0ece20440aaaaeb2c7ba8a97a42de1ceadaae1346e4230d1b88fb0c",
+      "characters": 309
+    },
+    {
+      "id": "joyce.p2",
+      "sha256": "fb5b5aa78739af4343bd034a91456978ba3292f42ba2f5ed37788fc915810ff9",
+      "characters": 318
+    },
+    {
+      "id": "joyce.p3",
+      "sha256": "65dc036a814f7b4f8981db2de27cf9633623014c190e51bfd21c7a6be70ad647",
+      "characters": 235
+    },
+    {
+      "id": "address.p1",
+      "sha256": "e2b815fcf647eee4b0af161749194e6b773f4711562eab4049b0e6221b2eec50",
+      "characters": 365
+    },
+    {
+      "id": "address.p2",
+      "sha256": "0b7982cce0124c70cc039f17fe8d4e39b41f58dfe3db97c0d8da4f5e56de2d2b",
+      "characters": 371
+    },
+    {
+      "id": "address.p3",
+      "sha256": "92a0b471fdb3276db0d5e7bd2907d32dc087057c9c97aa1c3d1494737d606237",
+      "characters": 211
+    },
+    {
+      "id": "reader.p1",
+      "sha256": "fc384b8fec1b3c6c3a04ebe81352c9c63619c05fb3879a24327328dbc4a8551a",
+      "characters": 303
+    },
+    {
+      "id": "reader.p2",
+      "sha256": "133949f4bcc10a539e43d3019e4938b4cc5a5c6a28264fd36824239b18b06935",
+      "characters": 308
+    },
+    {
+      "id": "reader.p3",
+      "sha256": "5e3cecf3cc5e5ac9321c6cae98beb5b3f50b9988989d8568772df34fd6e56069",
+      "characters": 171
+    },
+    {
+      "id": "cursor.p1",
+      "sha256": "0f00f6f51dac11fef265ba0b128dee153eca930e272948370818da7ac60132b7",
+      "characters": 266
+    },
+    {
+      "id": "cursor.p2",
+      "sha256": "f4d1bd5a1fb330b1ebeeb06b2893a2348a2d295d4ac2426148cd37c335315c6d",
+      "characters": 377
+    },
+    {
+      "id": "cursor.p3",
+      "sha256": "1ccf8822e5f2bb826407810530b2133d95a0b2d1a7a7b4a1be4d032f3272372e",
+      "characters": 287
+    },
+    {
+      "id": "midi.p1",
+      "sha256": "a1b90187806600c87a6d3bfe4b8ff90f274f431f1c1b818b051c6dcc8cbe5a04",
+      "characters": 395
+    },
+    {
+      "id": "midi.p2",
+      "sha256": "a9b56ab424c4b14fd84be194fa086f16a53656c6d3974f12b11b6581450185c9",
+      "characters": 356
+    },
+    {
+      "id": "midi.p3",
+      "sha256": "0b1838f3635c8f4d6d9b8cc58ec3b743dd886e8c75f868535dfacdd6458f3f32",
+      "characters": 224
+    },
+    {
+      "id": "return.p1",
+      "sha256": "181b1e68b1ce886daf62a752bd3e7c131450e74545f251ddb67aea7fcd85bd91",
+      "characters": 323
+    },
+    {
+      "id": "return.p2",
+      "sha256": "ee09e1dec972d63f71dbfa3c280b4bd365a6fdf58207ff923246fdbd53bb0164",
+      "characters": 407
+    },
+    {
+      "id": "return.p3",
+      "sha256": "bca52655f3444e48aefe41ea8fb30c06288366966fb32da8d575ee5e2f2863f8",
+      "characters": 323
+    },
+    {
+      "id": "conditions.p1",
+      "sha256": "aa975ee5fea10b1e07d1f2997092044b7d053a65681fbca8b7f2058ecd9dd8a6",
+      "characters": 186
+    },
+    {
+      "id": "conditions.1",
+      "sha256": "db33eabff4dbdb77d907ac4c96a99cf9e820ca3bd2682ded671f46d86a0098d7"
+    },
+    {
+      "id": "conditions.2",
+      "sha256": "cdc0f832a411bc6982f7cc942ca739d7b8fc8962a9aecbf789452385b2826f2c"
+    },
+    {
+      "id": "conditions.3",
+      "sha256": "9bd9e32d395eea364333a8eb3b01f11fa457948f808210dfef4cd914f6b28db2"
+    },
+    {
+      "id": "conditions.4",
+      "sha256": "18d71db7d85485861976d8ccaccdbfb2bc5314ff6bdfdb2ec7ce67197660dd7b"
+    },
+    {
+      "id": "conditions.5",
+      "sha256": "09d416ca9eba8806b5162f257cd25c74ced780a926c983371b8f877dbb7499f0"
+    },
+    {
+      "id": "conditions.6",
+      "sha256": "3243b0d93e67284766f40070011e1e610fe87ba458649172b43c1f7f388f27f2"
+    }
+  ],
+  "identicalSpecimenSHA256": "655e4477fdc0eeec16813e7573990c5cfd83e010f343b074d46ea36460a54724",
+  "editorialAddition": "separate distribution colophon, marked outside original manuscript",
+  "readerRuntimePolicy": "No replacement reader, no duplicate compositor, no fabricated audio or MIDI2 event",
+  "publicReleased": false,
+  "fountainStoreAdmitted": false,
+  "privateStagingCandidate": true
+}
