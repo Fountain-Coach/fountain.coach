@@ -1,0 +1,96 @@
+{
+  "evidence": "actual-public-HTTPS",
+  "passed": 9,
+  "total": 9,
+  "results": [
+    {
+      "browser": "Chrome",
+      "id": "library",
+      "url": "https://fountain.coach/estate/read/library/",
+      "direct": true,
+      "reload": true,
+      "meta": "https://fountain.coach/estate/assets/social/v141/library.jpg",
+      "errors": [],
+      "missing": [],
+      "pass": true
+    },
+    {
+      "browser": "Chrome",
+      "id": "solstice-reading-01--2026-02-04-two-rooms",
+      "url": "https://fountain.coach/estate/read/solstice-reading-01--2026-02-04-two-rooms/",
+      "direct": true,
+      "reload": true,
+      "meta": "https://fountain.coach/estate/assets/social/v141/solstice-reading-01--2026-02-04-two-rooms.jpg",
+      "errors": [],
+      "missing": [],
+      "pass": true
+    },
+    {
+      "browser": "Chrome",
+      "id": "solstice-reading-01--2026-07-31-n-journal",
+      "url": "https://fountain.coach/estate/read/solstice-reading-01--2026-07-31-n-journal/",
+      "direct": true,
+      "reload": true,
+      "meta": "https://fountain.coach/estate/assets/social/v141/solstice-reading-01--2026-07-31-n-journal.jpg",
+      "errors": [],
+      "missing": [],
+      "pass": true
+    },
+    {
+      "browser": "Chrome",
+      "kind": "navigation-and-legacy",
+      "legacyHash": true,
+      "canonical": "https://fountain.coach/estate/read/solstice-reading-01--vergil/",
+      "reload": true,
+      "pass": true
+    },
+    {
+      "browser": "WebKit",
+      "id": "library",
+      "url": "https://fountain.coach/estate/read/library/",
+      "direct": true,
+      "reload": true,
+      "meta": "https://fountain.coach/estate/assets/social/v141/library.jpg",
+      "errors": [],
+      "missing": [],
+      "pass": true
+    },
+    {
+      "browser": "WebKit",
+      "id": "solstice-reading-01--2026-02-04-two-rooms",
+      "url": "https://fountain.coach/estate/read/solstice-reading-01--2026-02-04-two-rooms/",
+      "direct": true,
+      "reload": true,
+      "meta": "https://fountain.coach/estate/assets/social/v141/solstice-reading-01--2026-02-04-two-rooms.jpg",
+      "errors": [],
+      "missing": [],
+      "pass": true
+    },
+    {
+      "browser": "WebKit",
+      "id": "solstice-reading-01--2026-07-31-n-journal",
+      "url": "https://fountain.coach/estate/read/solstice-reading-01--2026-07-31-n-journal/",
+      "direct": true,
+      "reload": true,
+      "meta": "https://fountain.coach/estate/assets/social/v141/solstice-reading-01--2026-07-31-n-journal.jpg",
+      "errors": [],
+      "missing": [],
+      "pass": true
+    },
+    {
+      "browser": "WebKit",
+      "kind": "navigation-and-legacy",
+      "legacyHash": true,
+      "canonical": "https://fountain.coach/estate/read/solstice-reading-01--vergil/",
+      "reload": true,
+      "pass": true
+    },
+    {
+      "kind": "v152-current-membership-and-archive",
+      "evidence": "actual-public-HTTPS",
+      "pass": true,
+      "currentEssays": 5,
+      "archiveRetained": true
+    }
+  ]
+}

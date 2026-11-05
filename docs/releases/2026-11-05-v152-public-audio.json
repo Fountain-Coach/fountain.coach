@@ -1,0 +1,203 @@
+{
+  "schema": "fountain.press.vergil.public-v140",
+  "evidence": "actual-public-HTTPS",
+  "tests": [
+    {
+      "browser": "Chrome",
+      "route": "teatro",
+      "start": {
+        "button": "▶",
+        "mode": "cursor",
+        "hidden": false,
+        "aria": "Play Vergil narration",
+        "sound": "studio",
+        "patches": 0,
+        "soundSelectors": 0,
+        "finalTemplatePatches": 0,
+        "pages": "10",
+        "layout": "spread",
+        "csound": "not-started",
+        "font": "system-ui, -apple-system, \"system-ui\", sans-serif",
+        "fontSize": "18px",
+        "hit": {
+          "w": 44,
+          "h": 44
+        }
+      },
+      "playing": {
+        "symbol": "❚❚",
+        "aria": "Pause Vergil narration",
+        "paused": false,
+        "engine": "csound-teatro-audioworklet",
+        "mode": "studio",
+        "earWindows": 16,
+        "rms": 0.045977831553712975
+      },
+      "cursor": {
+        "position": 51.629999,
+        "targetTime": 51.629999999999995,
+        "page": 0,
+        "marks": 1,
+        "mode": "cursor"
+      },
+      "portrait": {
+        "display": "single",
+        "mode": "cursor",
+        "marks": 1,
+        "button": "▶",
+        "voiceOptions": 0,
+        "patchLeaves": 0
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "browser": "Chrome",
+      "route": "solstice-reading-01--vergil",
+      "start": {
+        "button": "▶",
+        "mode": "cursor",
+        "hidden": false,
+        "aria": "Play Vergil narration",
+        "sound": "studio",
+        "patches": 0,
+        "soundSelectors": 0,
+        "finalTemplatePatches": 0,
+        "pages": "14",
+        "layout": "spread",
+        "csound": "not-started",
+        "font": "system-ui, -apple-system, \"system-ui\", sans-serif",
+        "fontSize": "18px",
+        "hit": {
+          "w": 44,
+          "h": 44
+        }
+      },
+      "playing": {
+        "symbol": "❚❚",
+        "aria": "Pause Vergil narration",
+        "paused": false,
+        "engine": "csound-teatro-audioworklet",
+        "mode": "studio",
+        "earWindows": 16,
+        "rms": 0.07266582109634794
+      },
+      "cursor": {
+        "position": 50.25,
+        "targetTime": 50.25,
+        "page": 0,
+        "marks": 1,
+        "mode": "cursor"
+      },
+      "portrait": {
+        "display": "single",
+        "mode": "cursor",
+        "marks": 1,
+        "button": "▶",
+        "voiceOptions": 0,
+        "patchLeaves": 0
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "browser": "WebKit",
+      "route": "teatro",
+      "start": {
+        "button": "▶",
+        "mode": "cursor",
+        "hidden": false,
+        "aria": "Play Vergil narration",
+        "sound": "studio",
+        "patches": 0,
+        "soundSelectors": 0,
+        "finalTemplatePatches": 0,
+        "pages": "10",
+        "layout": "spread",
+        "csound": "not-started",
+        "font": "system-ui, -apple-system, BlinkMacSystemFont, sans-serif",
+        "fontSize": "18px",
+        "hit": {
+          "w": 44,
+          "h": 44
+        }
+      },
+      "playing": {
+        "symbol": "❚❚",
+        "aria": "Pause Vergil narration",
+        "paused": false,
+        "engine": "csound-teatro-audioworklet",
+        "mode": "studio",
+        "earWindows": 17,
+        "rms": 0.052553525434954895
+      },
+      "cursor": {
+        "position": 51.629999999999995,
+        "targetTime": 51.629999999999995,
+        "page": 0,
+        "marks": 1,
+        "mode": "cursor"
+      },
+      "portrait": {
+        "display": "single",
+        "mode": "cursor",
+        "marks": 1,
+        "button": "▶",
+        "voiceOptions": 0,
+        "patchLeaves": 0
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "browser": "WebKit",
+      "route": "solstice-reading-01--vergil",
+      "start": {
+        "button": "▶",
+        "mode": "cursor",
+        "hidden": false,
+        "aria": "Play Vergil narration",
+        "sound": "studio",
+        "patches": 0,
+        "soundSelectors": 0,
+        "finalTemplatePatches": 0,
+        "pages": "14",
+        "layout": "spread",
+        "csound": "not-started",
+        "font": "system-ui, -apple-system, BlinkMacSystemFont, sans-serif",
+        "fontSize": "18px",
+        "hit": {
+          "w": 44,
+          "h": 44
+        }
+      },
+      "playing": {
+        "symbol": "❚❚",
+        "aria": "Pause Vergil narration",
+        "paused": false,
+        "engine": "csound-teatro-audioworklet",
+        "mode": "studio",
+        "earWindows": 17,
+        "rms": 0.07494137634213088
+      },
+      "cursor": {
+        "position": 50.25,
+        "targetTime": 50.25,
+        "page": 0,
+        "marks": 1,
+        "mode": "cursor"
+      },
+      "portrait": {
+        "display": "single",
+        "mode": "cursor",
+        "marks": 1,
+        "button": "▶",
+        "voiceOptions": 0,
+        "patchLeaves": 0
+      },
+      "errors": [],
+      "pass": true
+    }
+  ],
+  "failures": 0
+}

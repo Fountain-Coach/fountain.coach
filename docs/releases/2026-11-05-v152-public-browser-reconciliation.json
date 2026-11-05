@@ -1,0 +1,24 @@
+{
+  "schema": "fountain.press.live-case-reconciliation.v1",
+  "release": "estate-20261105-v22-reader-v152-1609cb9",
+  "method": "Latest independent result per identical browser/work or navigation case on the same immutable release",
+  "inputs": [
+    {
+      "path": "docs/releases/2026-11-05-v152-public-browser.json",
+      "sha256": "ac9d98804e35a6c35ef65a5bc566814a912e2caf4f9e2a8a6d7c5a3388a3ba2b",
+      "passed": 84,
+      "total": 87
+    },
+    {
+      "path": "docs/releases/2026-11-05-v152-public-browser-focused.json",
+      "sha256": "0bc3e98e502b4b649883c86d572a7457fce27e61885b36e241aac9843cf256be",
+      "passed": 9,
+      "total": 9
+    }
+  ],
+  "initialResult": "84/87; three WebKit background media requests were interrupted during rapid reload",
+  "focusedResult": "9/9 with actual request-idle waits before reload and close; no runtime/media changes",
+  "uniqueCases": 87,
+  "passed": 87,
+  "allPassed": true
+}

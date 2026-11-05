@@ -1,0 +1,69 @@
+{
+  "activated" : true,
+  "detail" : "Exact published bytes verified independently via HTTPS",
+  "previousReleaseID" : "estate-20261103-v21-social-principal-fb47bd0",
+  "publicHost" : "fountain.coach",
+  "recordedAt" : 815569237.537948,
+  "releaseID" : "estate-20261105-v22-reader-v152-1609cb9",
+  "sourceInventorySHA256" : "6cc749190f74c8c27282de7efcdbe309c671800b82374f4c2957c3c81110a952",
+  "sourceRevision" : "1609cb909ae2f89b4b28223fe70c482638d6b854",
+  "state" : "active",
+  "verifiedPublicFiles" : [
+    {
+      "path" : "\/index.html",
+      "sha256" : "cc521077ae4fb96cd420e4b39ae4a63c3ec77899a3a35694986f28258e07ca1a"
+    },
+    {
+      "path" : "\/estate\/index.html",
+      "sha256" : "cc521077ae4fb96cd420e4b39ae4a63c3ec77899a3a35694986f28258e07ca1a"
+    },
+    {
+      "path" : "\/estate\/read\/essay--what-makes-a-page-modern\/index.html",
+      "sha256" : "3610ed6a1e8aaa85f08a9fdb1ab5f8ea9734bfe2ad0991be3decddfc70425a4b"
+    },
+    {
+      "path" : "\/estate\/read\/essay--to-read-is-not-to-remember\/index.html",
+      "sha256" : "2e667685b64a0da3efcce0489c3a63a763ae5751f6d0687a5db1f94d20713c6a"
+    },
+    {
+      "path" : "\/estate\/assets\/linotype\/reading-first-app.js",
+      "sha256" : "1a7b4f9e30f9448f5ac0bf1e773a9d8b91a69cedbb27c94e75564059b0fd8893"
+    },
+    {
+      "path" : "\/estate\/assets\/linotype\/reading-first-press-engine.js",
+      "sha256" : "e38301452ef0f07aa9440953d898dcf9ae13fcb828a7d4a97fac163976261d9a"
+    },
+    {
+      "path" : "\/estate\/assets\/linotype\/reading-first-press-frame.css",
+      "sha256" : "8e175ccbdfdd71e506979772059c72fcfb85de8d3daa366a34544ccc7d4502e6"
+    },
+    {
+      "path" : "\/estate\/assets\/social\/v152\/essay--what-makes-a-page-modern.jpg",
+      "sha256" : "19a20419e7ee26bad42b1330aa8779d9d808cc4d7cfc39d2c893eeded1c32976"
+    },
+    {
+      "path" : "\/estate\/media\/first-readings\/teatro-vergil-auto-corrected-v2.mp3",
+      "sha256" : "d5ce996b8d42db2a665263877e35b772220cc1faef6c2e1e54c3a6e0a6a65fcd"
+    },
+    {
+      "path" : "\/estate\/media\/first-readings\/vergil-prologue-source-aligned.mp3",
+      "sha256" : "4b2727e08bd7b3c0edea59f6faca92292e9447d980bfb1d2f963e829dba16881"
+    },
+    {
+      "path" : "\/essays\/index.html",
+      "sha256" : "97c1f8d94f5db4f235505486948364d9817c8c94da930e42e0df8a1e73b7b9d1"
+    },
+    {
+      "path" : "\/estate\/essays\/index.html",
+      "sha256" : "a72cf4bcd1cffebb94585ee20ccb7c4eb2dab4652a85c7d9555cac2b62014e08"
+    },
+    {
+      "path" : "\/essays\/to-read-is-not-to-remember\/index.html",
+      "sha256" : "23698ad0b7abb97188df28663bc55d5f711fb07d4eb7947b47a8467dde06b9c0"
+    },
+    {
+      "path" : "\/assets\/site.css",
+      "sha256" : "6aba1927f4b60e6942ee4f2f19e14ad039d0af93fa4aa1809c9b38300842c9fd"
+    }
+  ]
+}

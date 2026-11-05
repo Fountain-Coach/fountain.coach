@@ -11,6 +11,7 @@ if(process.env.READER_LEDGER){
  if(works.length!==35)throw Error('Wrong current-publication ledger');
  for(const id of [...works.map(x=>x.id),'essay--to-read-is-not-to-remember'])if(!targets.includes(id))targets.push(id);
 }
+if(process.env.TEST_TARGETS)targets.splice(0,targets.length,...process.env.TEST_TARGETS.split(','));
 const candidate=process.env.CANDIDATE_ROOT&&path.resolve(process.env.CANDIDATE_ROOT);
 async function fixture(page){
  if(!candidate)return;
@@ -48,10 +49,12 @@ async function fixture(page){
     const title=await page.title();
     const ogtitle=await page.locator('meta[property="og:title"]').getAttribute('content');
     if(!title.includes(ogtitle.replace(/^The /,'')))throw Error('runtime title does not match work '+title+' vs '+ogtitle);
+    await page.waitForLoadState('networkidle',{timeout:20000});
     await page.reload({waitUntil:'load'});
     await page.waitForFunction(id=>document.querySelector('#page-viewport')?.dataset.volume===id &&
           document.querySelector('#page-viewport')?.dataset.layout==='ready',expected,{timeout:28000});
     if(page.url().split('?')[0]!==url)throw Error('reload unexpectedly changed stable work URL '+page.url());
+    await page.waitForLoadState('networkidle',{timeout:20000});
     result.direct=true;result.reload=true;result.meta=meta;
    }catch(e){result.error=String(e)}
    result.errors=errors;result.missing=missing.slice(0,3);

@@ -1,0 +1,81 @@
+- link "Skip to reading pages":
+  - /url: "#page-viewport"
+- banner:
+  - button "Open Fountain Coach Bookshelf"
+  - button "Return to Essays inside the reader": Essays
+  - button "Open the Bookshelf inside the reader": Books
+  - button "Use dark appearance": ◐
+- main:
+  - region "Paginated What Makes a Page Modern?":
+    - group "Measured What Makes a Page Modern? pages":
+      - group "Page 1":
+        - heading "Benedikt Eickhoff" [level=2]
+        - heading "What Makes a Page Modern?" [level=2]
+        - figure "The fixed type area is surrounded by intentionally unoccupied paper.":
+          - img "The fixed type area is surrounded by intentionally unoccupied paper."
+          - text: The fixed type area is surrounded by intentionally unoccupied paper.
+        - note "Editorial preface":
+          - text: From the editor
+          - paragraph: "The same passage passes through classical setting, modern typography, the returned proof and an addressable page. Self Out Loud lets the writer’s own voice enter the argument: not as a finished performance, but as an instrument through which the writing may continue."
+        - paragraph: The false answer
+        - paragraph: Two pages lie on a table. One presents a centred title, a restrained serif, and paragraphs gathered into an even rectangle. The other puts the title to one side and lets the lines end where the words end. We call the first classical and the second modern. Yet neither name tells us what the page is for.
+        - button "Open publication notes and legal information": i
+        - text: "001"
+      - group "Page 2":
+        - heading "Benedikt Eickhoff" [level=2]
+        - paragraph: Before a printer chooses a face or an alignment, a more fundamental arrangement has begun. There is the Format, the outer dimension of the sheet. Within it lies the Satzspiegel—the type area in which words and images will be composed. Between that area and the cut edges are the Stege, the margins. The Zeilenfall determines where lines end; Durchschuss, the leading, gives them breathing room.
+        - paragraph: The useful question is not which page looks more up to date. It is which decisions its spaces make visible—and which activities those spaces permit.
+        - paragraph: A page can look new and repeat an old decision. It can also look entirely conventional while allowing something genuinely new to happen.
+        - paragraph: "The next two settings form a small demonstration within the page: two distinctly framed type specimens of one passage. Their words are deliberately identical; their composition changes."
+        - paragraph: The first setting
+        - paragraph: In the first specimen, a centred heading and even measure place the passage inside a familiar book tradition. This is the first setting of the demonstration, not another paragraph of the essay.
+        - button "Open publication notes and legal information": i
+        - text: "002"
+  - navigation "Reading controls":
+    - button "Previous page": ←
+    - text: Reading
+    - combobox "Choose publication":
+      - option "On Continuity"
+      - option "Bookshelf"
+      - option "Essays"
+      - option "First Readings"
+      - option "Essays · The Door Is a Score"
+      - option "Essays · The Ear That Learns"
+      - option "Essays · Teatro — An Unfinished Composition"
+      - option "Essays · Reframe and the Business Value of the Estate"
+      - option "Essays · What Makes a Page Modern?" [selected]
+      - option "First Reading · Vergil"
+      - option "First Reading · First Reading — Preface"
+      - option "First Reading · Anweisung an den Schmerz"
+      - option "First Reading · Integration"
+      - option "First Reading · Renaturalization"
+      - option "First Reading · Vier Aussagen zum Ätherleib"
+      - option "First Reading · Three Floors"
+      - option "First Reading · I Keep Moving"
+      - option "First Reading · Two Rooms"
+      - option "First Reading · On a Future Not Yet Drafted"
+      - option "First Reading · No Optimize"
+      - option "First Reading · The Teatre of the Mind"
+      - option "First Reading · My Place in Space"
+      - option "First Reading · Muttersprache"
+      - option "First Reading · The Writing Hand"
+      - option "First Reading · Who Is Bee?"
+      - option "First Reading · About Writing Letters"
+      - option "First Reading · A Score Before Production"
+      - option "First Reading · Seitenlicht"
+      - option "First Reading · The Sheet"
+      - option "First Reading · The Sentimental Machine"
+      - option "First Reading · FCK FRG / We All Had Parents"
+      - option "First Reading · Prüfe dein Gewicht"
+      - option "First Reading · Everything Else Is Illustration"
+      - option "First Reading · Bee’s Journal"
+      - option "First Reading · N. Journal"
+      - option "First Reading · The Scissors"
+      - option "First Reading · Six Panels"
+      - option "First Reading · The Old Woman"
+      - option "First Reading · The Strawberry"
+      - option "First Reading · Leselust"
+      - option "First Reading · Object / Crossing / Voice"
+    - status: 1–2 / 23
+    - button "Next page": →
+  - status: Pages 1 to 2 of 23. What Makes a Page Modern?
