@@ -1,0 +1,14 @@
+{
+  "activated" : false,
+  "detail" : "SSH delivery failed: existing host command failed with exit 255",
+  "previousReleaseID" : "estate-20261105-v22-reader-v152-1609cb9",
+  "publicHost" : "fountain.coach",
+  "recordedAt" : 815579611.077908,
+  "releaseID" : "estate-20261105-v23-reader-cache-7015c18",
+  "sourceInventorySHA256" : "ed7cc5b563db22edabb74334b857a3fdeaf2c18761d3310691377e427c54cb1f",
+  "sourceRevision" : "7015c18a3ecee27f0daa34270894f2a1f569539b",
+  "state" : "stagingFailed",
+  "verifiedPublicFiles" : [
+
+  ]
+}
