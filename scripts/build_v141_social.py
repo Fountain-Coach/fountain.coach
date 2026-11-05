@@ -389,7 +389,7 @@ def main_isolate_v152_cache():
             html=checked(html,'"/'+original+'"','"/'+fingerprint+'"')
         (out/relative).write_text(html)
         html_paths.append(relative)
-    if len(html_paths)!=51:fail("Unexpected Reader route inventory")
+    if len(html_paths)!=53:fail("Unexpected Reader route inventory")
     manifest=json.loads((baseline/"release-manifest.json").read_text())
     manifest.update(releaseID=release,previousReleaseID=parent,sourceRevision=revision,
         publicationState="v152-reader-cache-isolated",
