@@ -11,25 +11,21 @@ The useful question is not which page looks more up to date. It is which decisio
 
 A page can look new and repeat an old decision. It can also look entirely conventional while allowing something genuinely new to happen.
 
-Consider a short passage. We shall set it twice, without changing a word.
+The next two settings form a small demonstration within the page: two distinctly framed type specimens of one passage. Their words are deliberately identical; their composition changes.
 
 ## The first setting
 
-> A page is not a container in which words happen to rest. It is a decision about what can be read, where the eye must return, and what may still be added. The same sentence can stand in a narrow measure or cross a wide field; neither setting changes the sentence, yet each changes its pace. At the edge of the text another kind of writing may begin. The margin is not the absence of composition. It is a place held open for the work to continue.
-
-Set beneath a centred heading, in a compact and even measure, the passage enters a familiar book tradition. The reader follows the lineation through a stable rectangle.
+In the first specimen, a centred heading and even measure place the passage inside a familiar book tradition. This is the first setting of the demonstration, not another paragraph of the essay.
 
 [[plate:classical]]
 
 ## The second setting
 
-> A page is not a container in which words happen to rest. It is a decision about what can be read, where the eye must return, and what may still be added. The same sentence can stand in a narrow measure or cross a wide field; neither setting changes the sentence, yet each changes its pace. At the edge of the text another kind of writing may begin. The margin is not the absence of composition. It is a place held open for the work to continue.
-
-Set asymmetrically, with ragged-right lines and deliberate unoccupied paper, the same passage acquires another rhythm. The eye encounters changes of measure and hierarchy. Empty space participates more visibly in the composition.
-
-Neither arrangement is inherently more intelligent. The same words acquire another pace, not another author.
+In the second specimen, the identical passage takes an asymmetrical, ragged-right measure. Its hierarchy and unoccupied paper create a different pace. The source remains unchanged.
 
 [[plate:modern]]
+
+Neither arrangement is inherently more intelligent. The same words acquire another pace, not another author.
 
 ## A machine is not a style
 

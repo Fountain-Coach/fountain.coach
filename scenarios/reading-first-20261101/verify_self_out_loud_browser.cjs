@@ -9,8 +9,8 @@ const {chromium,webkit}=require('/Users/benedikteickhoff/Developer/fcis.fountain
 const path=require('node:path');
 const root=__dirname;
 const essay='essay--what-makes-a-page-modern';
-const source=fs.readFileSync(path.join(root,'stage-v147-combined.html'));
-const receipt=JSON.parse(fs.readFileSync(path.join(root,'stage-v147-combined-receipt.json')));
+const source=fs.readFileSync(path.join(root,'stage-v148-specimen.html'));
+const receipt=JSON.parse(fs.readFileSync(path.join(root,'stage-v148-specimen-receipt.json')));
 const sha=b=>crypto.createHash('sha256').update(b).digest('hex');
 assert.equal(sha(source),receipt.revisedReaderRootSHA256);
 const base='https://192.168.8.50:8243';
@@ -53,6 +53,9 @@ async function run(type,label){
           const imageFigures=visibleFigures.map(f=>f.querySelector('img')).filter(Boolean);
           const headings=[...tpl.content.querySelectorAll('p.frame-subheading')].map(x=>x.textContent.trim());
           const blocks=[...tpl.content.querySelectorAll('[data-source-block]')];
+          const specimenFrames=[...tpl.content.querySelectorAll('figure[data-typographic-specimen]')];
+          const specimenProse=tpl.content.querySelectorAll('[data-source-unit-id="what-makes-a-page-modern.specimen"]');
+          const figureAnchors=[...tpl.content.querySelectorAll('figure[data-inline-after-paragraph]')].map(x=>Number(x.dataset.inlineAfterParagraph));
           const nonempty=blocks.filter(b=>b.textContent.trim());
           return {
             volume:viewport.dataset.volume,layout:viewport.dataset.layout,
@@ -60,6 +63,9 @@ async function run(type,label){
             visibleImages:imageFigures.length,
             readyImages:imageFigures.filter(x=>x.complete && x.naturalWidth>0).length,
             headings,sourceBlocks:blocks.length,nonemptyBlocks:nonempty.length,
+            specimenCount:specimenFrames.length,specimenProseCount:specimenProse.length,
+            framedSpecimens:specimenFrames.map(x=>x.dataset.typographicSpecimen),
+            figureAnchors,
             bookParent:document.querySelector('#reader-parent')?.getAttribute('data-reader-target'),
             widthOverflow:document.documentElement.scrollWidth-window.innerWidth,
             revision:tpl.content.querySelector('[data-source-work-sha256]')?.getAttribute('data-source-work-sha256')??tpl.content.querySelector('[data-source-work-sha256]')?.dataset.sourceWorkSha256,
@@ -69,6 +75,11 @@ async function run(type,label){
         assert.equal(state.volume,essay);
         assert.equal(state.layout,'ready');
         assert.equal(state.images,expectedPlateCount,state.images+' vs '+expectedPlateCount);
+        assert.equal(state.specimenCount,2);
+        assert.equal(state.specimenProseCount,0);
+        assert.deepEqual(state.framedSpecimens,['classical','modern']);
+        assert.equal(state.figureAnchors.length,11,'all secondary figures must follow their authored prose');
+        assert.ok(state.figureAnchors.every((n,i)=>n>0&&(i===0||n>=state.figureAnchors[i-1])));
         assert.equal(state.readyImages,state.visibleImages);
         console.log('COMPOSED',label,w,h,'pages',state.pages,'figures',state.images,'visible',state.visibleImages,'ready',state.readyImages);
         assert.ok(state.pages>=15,JSON.stringify(state));
@@ -78,7 +89,7 @@ async function run(type,label){
         assert.ok(state.headings.includes('Conditions of composition'));
         assert.equal(state.bookParent,'essays',JSON.stringify(state));
         assert.equal(errors.length,0,errors.join('\n'));
-        const save=path.join('/tmp','self-out-loud-'+label+'-'+w+'x'+h+'.png');
+        const save=path.join('/tmp','type-specimen-'+label+'-'+w+'x'+h+'.png');
         await page.screenshot({path:save,fullPage:false});
         // The existing book gallery, Teatro, source-linked routes remain unchanged.
         await page.goto(base+'/estate/#/read/library',{waitUntil:'domcontentloaded'});
@@ -101,6 +112,6 @@ async function run(type,label){
 (async()=>{
   await run(chromium,'chromium');
   await run(webkit,'webkit');
-  fs.writeFileSync(path.join(root,'stage-v147-browser-acceptance.json'),
+  fs.writeFileSync(path.join(root,'stage-v148-browser-acceptance.json'),
     JSON.stringify({schema:'fountain.press.self-out-loud-browser-proof.v1',results},null,2)+'\n');
 })().catch(err=>{console.error(err);process.exitCode=1;});

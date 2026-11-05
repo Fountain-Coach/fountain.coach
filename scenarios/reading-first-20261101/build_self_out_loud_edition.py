@@ -13,7 +13,7 @@ import json
 import re
 from pathlib import Path
 
-BASE_SHA = "9d8b6c330146f4b7d1b6e437aa916f89aca99e110de7c8f24060df29050bd8c5"
+BASE_SHA = "11cd731753769f5feacd2f91dc2ba1fc8c0e914d5d107b00f9c98ad58eff3c2c"
 VOLUME = "essay--what-makes-a-page-modern"
 PREFIX = "what-makes-a-page-modern"
 ROOT = Path(__file__).resolve().parents[2]
@@ -44,6 +44,41 @@ def slugify(s: str) -> str:
         raise ValueError("Missing heading source identity")
     return s
 
+def framed_specimen(raw: str, kind: str) -> str:
+    """Make the two type-settings identifiable as stage-within-stage plates.
+
+    The SVG art remains byte-for-byte unchanged; a measured, bordered inset
+    and its accessible label belong to THIS essay's source projection only.
+    The specimen text appears exactly once in each plate, not in body prose.
+    """
+    number, name = {"classical": ("I", "classical measure"),
+                    "modern": ("II", "modernist measure")}[kind]
+    prefix = '<figure class="frame-reading-figure"'
+    if raw.count(prefix) != 1 or raw.count("<img ") != 1:
+        raise ValueError("Unexpected existing author-owned figure structure")
+    # The frame is part of the source-owned nested typographic specimen, NOT
+    # a new page, reader component or cross-book stylesheet.
+    raw = raw.replace(prefix, prefix + (
+        ' data-typographic-specimen="' + kind + '"'
+        ' style="box-sizing:border-box;max-width:100%;background:#fbfaf6;'
+        'border:1px solid #b0a99d;padding:1rem 1rem .85rem;'
+        'margin-block:1.15rem 1.35rem;break-inside:avoid;"'
+    ), 1)
+    label = (
+        '<div role="note" aria-label="Typography experiment, specimen ' + number + 
+        ', ' + name + '" style="box-sizing:border-box;display:flex;flex-wrap:wrap;'
+        'justify-content:space-between;align-items:baseline;gap:.25rem .9rem;'
+        'width:100%;border-bottom:1px solid #b0a99d;padding-bottom:.6rem;margin-bottom:.8rem;'
+        'font:600 .65rem/1.35 system-ui,sans-serif;letter-spacing:.11em;'
+        'text-transform:uppercase;color:#5e584d;">'
+        '<span>ONE PASSAGE / TWO SETTINGS</span>'
+        '<span>SPECIMEN ' + number + ' · ' + name.upper() + '</span>'
+        '</div>'
+    )
+    raw = raw.replace("<img ", label + "<img ", 1)
+    return raw
+
+
 def compose(source: str, figures: dict[str, str]) -> tuple[str, dict]:
     lines = source.splitlines()
     if lines[0].strip() != "# What Makes a Page Modern?":
@@ -53,6 +88,8 @@ def compose(source: str, figures: dict[str, str]) -> tuple[str, dict]:
     pieces: list[str] = []
     heading = None
     counts: dict[str, int] = {}
+    paragraph_position = 0  # same narrative paragraph numbering as the existing compositor
+    authored_anchors: list[dict] = []
     used_figures: list[str] = []
     i = 2
     headings: list[str] = []
@@ -74,6 +111,7 @@ def compose(source: str, figures: dict[str, str]) -> tuple[str, dict]:
                 'data-source-to="' + str(len(heading)) + '">' +
                 html.escape(heading) + "</p>"
             )
+            paragraph_position += 1
             continue
         if heading is None:
             raise ValueError("Text not attached to any heading")
@@ -82,7 +120,16 @@ def compose(source: str, figures: dict[str, str]) -> tuple[str, dict]:
             if key not in figures or key in used_figures:
                 raise ValueError("Unknown or repeated source plate: " + key)
             used_figures.append(key)
-            pieces.append(figures[key])
+            if paragraph_position < 1:
+                raise ValueError("A source plate has no preceding narrative position")
+            plate = framed_specimen(figures[key],key) if key in ("classical","modern") else figures[key]
+            # Existing Reader accepts a precise author-specified prose anchor.
+            # Without this, its fallback spreads all figures by equal intervals,
+            # destroying each specimen's relationship with its explanation.
+            plate = plate.replace("<figure ", '<figure data-inline-after-paragraph="' +
+                str(paragraph_position) + '" ', 1)
+            authored_anchors.append({"figure":key,"afterParagraph":paragraph_position})
+            pieces.append(plate)
             continue
         is_specimen = line.startswith("> ")
         if is_specimen:
@@ -102,6 +149,7 @@ def compose(source: str, figures: dict[str, str]) -> tuple[str, dict]:
             html.escape(line, quote=False) + "</p>"
         )
         paragraphs.append((block,line))
+        paragraph_position += 1
     if set(used_figures) != set(FIGURES):
         raise ValueError("Missing original illustrations: " + repr(set(FIGURES)-set(used_figures)))
     if len(headings) < 13 or len(paragraphs) < 50:
@@ -114,6 +162,7 @@ def compose(source: str, figures: dict[str, str]) -> tuple[str, dict]:
         raise ValueError("Six-condition closure is missing")
     article = '<article class="book-prose">' + ''.join(pieces) + '</article>'
     return article, {"headingSlugs":headings,"paragraphs":len(paragraphs),
+                     "sourceAnchoredPlates":authored_anchors,
                      "originalInlinePlates":used_figures,
                      "sourceBlocks":len(paragraphs)+len(headings)+len(used_figures)}
 
