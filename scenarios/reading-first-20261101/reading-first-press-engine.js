@@ -108,10 +108,15 @@ class Linotype {
       const eligible=!portrait&&w>=minLeaf*2+gutter+inset*2;
       const spread=typeof this.options.spreadOverride==='boolean'
         ? this.options.spreadOverride : eligible;
-      const width=Math.floor(Math.min(spread?(w-gutter-inset*2)/2:w-inset*2,700));
+      // The page is the available Reader frame, not a 700px miniature.
+      // On large portrait screens a single folio uses the entire admitted
+      // width; in landscape two complete folios share the measured field.
+      const width=Math.floor(spread?(w-gutter-inset*2)/2:w-inset*2);
       const height=h-4;
       this.css={spread,width,height,gutter,scale:1,viewportWidth:w,viewportHeight:h,
-        insetX:Math.round(clamp(width*.06,16,38)),insetY:14,font};
+        // Horizontal book stegs remain proportional on every leaf;
+        // the old 38px maximum left large portrait pages under-margined.
+        insetX:Math.round(Math.max(16,width*.075)),insetY:14,font};
       for(const [name,value] of Object.entries({"sheet-w":width+"px","sheet-h":height+"px",
         "sheet-gutter":gutter+"px","sheet-scale":1,"stage-base-w":(width*(spread?2:1)+(spread?gutter:0))+"px"}))
         this.stage.style.setProperty("--"+name,value);
@@ -490,10 +495,10 @@ class Linotype {
       return ok;
     };
     if(append(leaf,0,text.length))return leaf;
-    // Keep the setting together when it fits a fresh leaf, and split only
-    // when even that entire measurable leaf cannot hold actual type.
-    if(leaf.area.childElementCount)leaf=this.leafOfText(sourceId,label);
-    if(append(leaf,0,text.length))return leaf;
+    // The specimen participates in the same sequence as the preceding
+    // prose. Use measurable *remaining* lines, not an all-or-nothing
+    // figure move. A fresh folio is warranted only when the label and two
+    // readable lines cannot fit; the source still owns every continuation.
     let from=0,guard=0;
     while(from<text.length){
       if(++guard>100)throw Error("Nested typographic compositor stalled");
@@ -505,6 +510,17 @@ class Linotype {
         const mid=(lo+hi)>>1,to=breaks[mid];
         if(measure(leaf,from,to)){best=to;lo=mid+1;}
         else hi=mid-1;
+      }
+      if(best>=0 && from===0 && leaf.area.childElementCount){
+        // Do not strand only a label or one line at a page foot.
+        // This is a geometric widow check, never an arbitrary glyph count.
+        const trial=prepare(0,best);
+        leaf.area.append(trial);
+        const paragraph=q(".linotype-specimen-text",trial);
+        const lineHeight=parseFloat(getComputedStyle(paragraph).lineHeight)||this.css.font*1.46;
+        const readable=paragraph.getBoundingClientRect().height >= lineHeight*1.8;
+        trial.remove();
+        if(!readable){leaf=this.leafOfText(sourceId,label);continue;}
       }
       if(best<0){
         if(leaf.area.childElementCount){

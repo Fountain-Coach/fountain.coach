@@ -142,8 +142,9 @@
   max-inline-size:100%;
   max-block-size:none;
   min-inline-size:0;
-  margin:.8em 0 1em;
-  padding:.85em;
+  margin:.7em 0 .9em;
+  padding-block:.72em;
+  padding-inline:clamp(.55em,2.25%,2.3em);
   border:1px solid var(--line,#b0a99d);
   border-radius:0;
   background:var(--paper,#fffef9);
@@ -219,7 +220,7 @@
   border-top:1px solid var(--line,#b0a99d);
 }
 .linotype-stage[data-frame="viewport"] .linotype-area .linotype-typographic-specimen[data-typographic-specimen="classical"] .linotype-specimen-setting{
-  padding-inline:.65em;
+  padding-inline:clamp(.15em,.8%,1em);
   font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
 }
 .linotype-stage[data-frame="viewport"] .linotype-area .linotype-typographic-specimen[data-typographic-specimen="classical"] .linotype-specimen-title{
