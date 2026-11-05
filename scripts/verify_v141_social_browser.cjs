@@ -26,6 +26,48 @@ async function fixture(page){
  });
 }
 (async()=>{
+ if(process.env.TEST_CACHE_ISOLATION){
+  const results=[],browser=await webkit.launch({headless:true});
+  const stale=fs.readFileSync(path.join(__dirname,'../build/public-release-v141-social/estate/assets/linotype/reading-first-app.js'));
+  for(const landscape of [false,true])for(const target of ['/', '/estate/read/essays/', '/estate/read/essay--what-makes-a-page-modern/']){
+   const page=await browser.newPage({viewport:landscape?{width:1180,height:820}:{width:820,height:1180},isMobile:true,hasTouch:true,
+    userAgent:'Mozilla/5.0 (iPad; CPU OS 17_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 [FBAN/FBIOS;FBAV/480.0.0.0.1;FBDV/iPad13,4;FBSN/iPadOS;FBSV/17.6;FBID/tablet;FBLC/en_US;IABMV/1]'});
+   await fixture(page);
+   let staleHits=0;const errors=[],requests=[];
+   await page.route(new URL(ORIGIN).origin+'/estate/assets/linotype/reading-first-app.js',route=>{
+    staleHits++;return route.fulfill({status:200,contentType:'text/javascript',body:stale});
+   });
+   await page.addInitScript(()=>Object.defineProperty(window,'localStorage',{get(){throw new DOMException('Denied','SecurityError')}}));
+   page.on('pageerror',e=>errors.push(e.message));page.on('request',r=>requests.push(r.url()));
+   const result={target,landscape,evidence:candidate?'candidate-fixture':'actual-public-HTTPS',device:'emulated iPad WebKit with Facebook UA; not physical Facebook'};
+   try{
+    const response=await page.goto(ORIGIN+target+'?fbclid=cache-isolation-regression',{waitUntil:'load'});
+    if(response.status()!==200)throw Error('HTTP '+response.status());
+    if(process.env.TEST_EXPECT_BLANK){
+     await page.waitForFunction(()=>document.querySelector('#page-viewport')&& !document.querySelector('#page-viewport').textContent.trim());
+     if(staleHits!==1||!errors.includes('Editorial collection inventory changed'))throw Error('Expected stale-script startup failure was not reproduced');
+     result.reproducedBlank=true;
+    }else{
+     await page.waitForFunction(()=>document.querySelector('#page-viewport')?.dataset.layout==='ready',{timeout:28000});
+     if(staleHits)throw Error('Reader still requests collision-prone old app URL');
+     if(!requests.some(u=>/reading-first-app\.[a-f0-9]{64}\.js$/.test(u)))throw Error('Content-addressed app was not requested');
+     if(errors.length)throw Error(errors.join('; '));
+     const text=await page.locator('#page-viewport').innerText();if(text.trim().length<30)throw Error('Blank composed viewport');
+     result.volume=await page.locator('#page-viewport').getAttribute('data-volume');
+     await page.reload({waitUntil:'load'});
+     await page.waitForFunction(()=>document.querySelector('#page-viewport')?.dataset.layout==='ready');
+     result.reload=true;
+     if(target==='/'&&!landscape&&process.env.SCREENSHOT_PATH)await page.screenshot({path:process.env.SCREENSHOT_PATH});
+    }
+    result.pass=true;
+   }catch(e){result.error=String(e);result.pass=false}
+   result.staleHits=staleHits;result.errors=errors;results.push(result);console.log(JSON.stringify(result));await page.close();
+  }
+  await browser.close();
+  const report={evidence:candidate?'candidate-fixture':'actual-public-HTTPS',passed:results.filter(r=>r.pass).length,total:results.length,results};
+  if(process.env.REPORT_PATH)fs.writeFileSync(process.env.REPORT_PATH,JSON.stringify(report,null,2)+'\n');
+  process.exitCode=report.passed===report.total?0:1;return;
+ }
  const all=[],failures=[];
  for(const [browserName,engine] of [['Chrome',chromium],['WebKit',webkit]]){
   const launch=browserName==='Chrome'?{headless:true,executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'}:{headless:true};

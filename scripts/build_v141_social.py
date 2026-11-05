@@ -354,8 +354,61 @@ def main_refresh_v152():
     (ROOT/"build/v152-production-overlay-witness.json").write_text(json.dumps(report,indent=2,ensure_ascii=False)+"\n")
     print("V152_CANDIDATE",release,"files",len(new),"bytes",sum((out/p).stat().st_size for p in new),"preserved",report["preservedFiles"])
 
+def main_isolate_v152_cache():
+    """Keep the accepted Reader bytes; bind each HTML to its exact runtime bytes.
+
+    Embedded browsers can retain the former app at the unchanged asset URL.
+    Mixing that v141 app with v152's five-essay HTML throws before composition.
+    Content-addressed paths prevent that collision without changing the reader.
+    """
+    baseline=ROOT/"build/public-release-v152"
+    out=ROOT/"build/public-release-v152-cache-isolated"
+    prior=json.loads((ROOT/"releases/v152-native-static-release.json").read_text())
+    parent="estate-20261105-v22-reader-v152-1609cb9"
+    if prior["releaseID"]!=parent:fail("Wrong cache-repair predecessor")
+    old={f["path"].lstrip("/"):f["sha256"] for f in prior["files"]}
+    observed={str(p.relative_to(baseline)):digest(p.read_bytes()) for p in baseline.rglob("*") if p.is_file()}
+    if observed!=old:fail("Published v152 baseline inventory mismatch")
+    if out.exists():fail("Refusing to overwrite immutable cache-isolated candidate")
+    revision=subprocess.check_output(["git","rev-parse","HEAD"],cwd=ROOT,text=True).strip()
+    release="estate-20261105-v23-reader-cache-"+revision[:7]
+    shutil.copytree(baseline,out)
+    assets={}
+    for name in ("reading-first-app.js","reading-first-press-engine.js","reading-first-press-frame.css"):
+        relative="estate/assets/linotype/"+name
+        file=Path(relative)
+        fingerprint=str(file.with_name(file.stem+"."+old[relative]+file.suffix))
+        (out/fingerprint).write_bytes((baseline/relative).read_bytes())
+        assets[relative]=fingerprint
+    html_paths=[]
+    for relative in sorted(old):
+        if not relative.endswith(".html"):continue
+        html=(baseline/relative).read_text()
+        if 'src="/estate/assets/linotype/reading-first-app.js"' not in html:continue
+        for original,fingerprint in assets.items():
+            html=checked(html,'"/'+original+'"','"/'+fingerprint+'"')
+        (out/relative).write_text(html)
+        html_paths.append(relative)
+    if len(html_paths)!=51:fail("Unexpected Reader route inventory")
+    manifest=json.loads((baseline/"release-manifest.json").read_text())
+    manifest.update(releaseID=release,previousReleaseID=parent,sourceRevision=revision,
+        publicationState="v152-reader-cache-isolated",
+        generatorSHA256=digest(Path(__file__).read_bytes()),contentAddressedReaderAssets=assets)
+    (out/"release-manifest.json").write_text(json.dumps(manifest,indent=2,ensure_ascii=False,sort_keys=True)+"\n")
+    new={str(p.relative_to(out)):digest(p.read_bytes()) for p in out.rglob("*") if p.is_file()}
+    modified={p for p in old if old[p]!=new.get(p)}
+    if modified!=set(html_paths)|{"release-manifest.json"} or set(old)-set(new):fail("Unexpected cache repair changes")
+    if set(new)-set(old)!=set(assets.values()):fail("Unexpected cache repair additions")
+    report={"schema":"fountain.press.cache-isolation.v1","release":release,"predecessor":parent,
+        "sourceCommit":revision,"assets":assets,"modified":sorted(modified),
+        "added":sorted(set(new)-set(old)),"preservedFiles":len(old)-len(modified),
+        "readerRuntimeBytesChanged":False,"files":[{"path":p,"sha256":h} for p,h in sorted(new.items())]}
+    (ROOT/"build/v152-cache-isolation-witness.json").write_text(json.dumps(report,indent=2)+"\n")
+    print("CACHE_ISOLATED_CANDIDATE",release,"files",len(new),"readerRoutes",len(html_paths),"preserved",report["preservedFiles"])
+
 if __name__=="__main__":
-    if len(sys.argv)!=2 or sys.argv[1] not in ("assemble","finalize","refresh-v152"):raise SystemExit("Usage: build_v141_social.py assemble|finalize|refresh-v152")
+    if len(sys.argv)!=2 or sys.argv[1] not in ("assemble","finalize","refresh-v152","isolate-v152-cache"):raise SystemExit("Usage: build_v141_social.py assemble|finalize|refresh-v152|isolate-v152-cache")
     if sys.argv[1]=="assemble":main_assemble()
     elif sys.argv[1]=="finalize":main_finalize()
-    else:main_refresh_v152()
+    elif sys.argv[1]=="refresh-v152":main_refresh_v152()
+    else:main_isolate_v152_cache()
