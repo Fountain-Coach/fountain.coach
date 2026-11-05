@@ -13,11 +13,12 @@ import json
 import re
 from pathlib import Path
 
-BASE_SHA = "11cd731753769f5feacd2f91dc2ba1fc8c0e914d5d107b00f9c98ad58eff3c2c"
+BASE_SHA = "532dbdf6603fb1300a974418130c50cbc17636262d9dcf7c0a802c3aabfdd81c"
 VOLUME = "essay--what-makes-a-page-modern"
 PREFIX = "what-makes-a-page-modern"
 ROOT = Path(__file__).resolve().parents[2]
 SOURCE = ROOT / "site/essays/what-makes-a-page-modern/combined-essay.md"
+SPECIMEN_SOURCE = ROOT / "site/essays/what-makes-a-page-modern/specimen-source.txt"
 FIGURES = (
     "classical", "modern", "machine", "joyce", "proof", "reader",
     "address", "cursor", "midi", "return", "conditions"
@@ -44,39 +45,51 @@ def slugify(s: str) -> str:
         raise ValueError("Missing heading source identity")
     return s
 
-def framed_specimen(raw: str, kind: str) -> str:
-    """Make the two type-settings identifiable as stage-within-stage plates.
+def semantic_specimen(raw: str, kind: str) -> str:
+    """Compose real, addressable typography inside the parent Linotype measure.
 
-    The SVG art remains byte-for-byte unchanged; a measured, bordered inset
-    and its accessible label belong to THIS essay's source projection only.
-    The specimen text appears exactly once in each plate, not in body prose.
+    This replaces the old *image rendering* of the two historic source SVGs.
+    The type is rebroken by the same Reader at every page width and font size.
+    The source passage occurs once in specimen-source.txt and is projected
+    into two deliberately different layouts without fixed image dimensions.
     """
-    number, name = {"classical": ("I", "classical measure"),
-                    "modern": ("II", "modernist measure")}[kind]
-    prefix = '<figure class="frame-reading-figure"'
-    if raw.count(prefix) != 1 or raw.count("<img ") != 1:
-        raise ValueError("Unexpected existing author-owned figure structure")
-    # The frame is part of the source-owned nested typographic specimen, NOT
-    # a new page, reader component or cross-book stylesheet.
-    raw = raw.replace(prefix, prefix + (
+    number, name = {"classical": ("I", "Classical measure"),
+                    "modern": ("II", "Modernist measure")}[kind]
+    if raw.count("<img ") != 1 or raw.count("<figcaption>") != 1:
+        raise ValueError("Unexpected historical specimen illustration")
+    historical_sha = re.search(r'data-source-plate-sha256="([a-f0-9]{64})"', raw)
+    caption = re.search(r'<figcaption>(.*?)</figcaption>', raw, re.S)
+    if not historical_sha or not caption:
+        raise ValueError("Cannot identify original setting provenance")
+    text = SPECIMEN_SOURCE.read_text(encoding="utf-8").rstrip("\n")
+    if not text.startswith("A page is not a container") or len(text) < 350:
+        raise ValueError("Unadmitted specimen source")
+    digest_text = digest(SPECIMEN_SOURCE.read_bytes())
+    source_id = PREFIX + ".specimen-source"
+    # The original SVG remains an immutable historical asset, rather than
+    # a second, fixed-size image masquerading as the live nested setting.
+    return (
+        '<figure class="frame-reading-figure linotype-typographic-specimen"'
         ' data-typographic-specimen="' + kind + '"'
-        ' style="box-sizing:border-box;max-width:100%;background:#fbfaf6;'
-        'border:1px solid #b0a99d;padding:1rem 1rem .85rem;'
-        'margin-block:1.15rem 1.35rem;break-inside:avoid;"'
-    ), 1)
-    label = (
-        '<div role="note" aria-label="Typography experiment, specimen ' + number + 
-        ', ' + name + '" style="box-sizing:border-box;display:flex;flex-wrap:wrap;'
-        'justify-content:space-between;align-items:baseline;gap:.25rem .9rem;'
-        'width:100%;border-bottom:1px solid #b0a99d;padding-bottom:.6rem;margin-bottom:.8rem;'
-        'font:600 .65rem/1.35 system-ui,sans-serif;letter-spacing:.11em;'
-        'text-transform:uppercase;color:#5e584d;">'
+        ' data-source-block="' + PREFIX + '.plate.' + kind + '"'
+        ' data-historical-plate-sha256="' + historical_sha.group(1) + '"'
+        ' data-specimen-source-sha256="' + digest_text + '">'
+        '<header class="linotype-specimen-label" aria-label="Type specimen ' +
+        number + ', ' + name.lower() + '">'
         '<span>ONE PASSAGE / TWO SETTINGS</span>'
         '<span>SPECIMEN ' + number + ' · ' + name.upper() + '</span>'
+        '</header>'
+        '<div class="linotype-specimen-setting">'
+        '<h3 class="linotype-specimen-title">THE PAGE</h3>'
+        '<p class="linotype-specimen-text" data-source-unit-id="' + source_id +
+        '" data-source-setting="' + kind + '"'
+        ' data-source-block="' + source_id + '.' + kind + '"'
+        ' data-source-from="0" data-source-to="' + str(len(text)) + '">' +
+        html.escape(text, quote=False) + '</p>'
         '</div>'
+        '<figcaption>' + caption.group(1) + '</figcaption>'
+        '</figure>'
     )
-    raw = raw.replace("<img ", label + "<img ", 1)
-    return raw
 
 
 def compose(source: str, figures: dict[str, str]) -> tuple[str, dict]:
@@ -122,7 +135,7 @@ def compose(source: str, figures: dict[str, str]) -> tuple[str, dict]:
             used_figures.append(key)
             if paragraph_position < 1:
                 raise ValueError("A source plate has no preceding narrative position")
-            plate = framed_specimen(figures[key],key) if key in ("classical","modern") else figures[key]
+            plate = semantic_specimen(figures[key],key) if key in ("classical","modern") else figures[key]
             # Existing Reader accepts a precise author-specified prose anchor.
             # Without this, its fallback spreads all figures by equal intervals,
             # destroying each specimen's relationship with its explanation.
@@ -220,19 +233,47 @@ def main() -> None:
        'data-source-work-sha256="' + source_sha + '"', edited, count=1)
     new_template = match.group(1) + edited + match.group(3)
     new_document = document[:match.start()] + new_template + document[match.end():]
-    # Exactly one source volume changes. No outside script, shell or reader mutation.
-    if new_document.replace(new_template, "[SOURCE]", 1) != document.replace(match.group(), "[SOURCE]", 1):
-        raise ValueError("Non-essay Reader bytes changed")
+    # The inherited essay-local figure reset used !important to flatten the
+    # SVG illustrations against the page measure. That is correct for images,
+    # but DESTROYS horizontal insets in an actual nested typographic setting.
+    # Restrict that reset to the remaining true artwork, by one exact edit
+    # inside the already-authorized essay-local stylesheet.
+    style_rx = re.compile(r'<style id="modern-page-figure-measure">.*?</style>', re.S)
+    old_styles = style_rx.findall(document)
+    if len(old_styles) != 1:
+        raise ValueError("Cannot reconcile existing essay-local padding rule")
+    image_rule = 'figure[data-source-block^="' + PREFIX + '.plate."]'
+    inline_rule = 'figure.linotype-inline-illustration[data-source-block^="' + PREFIX + '.plate."]'
+    if old_styles[0].count(image_rule) != 4 or old_styles[0].count(inline_rule) != 1:
+        raise ValueError("Unexpected essay-local image CSS")
+    new_styles = old_styles[0].replace(
+        image_rule, image_rule + ':not([data-typographic-specimen])').replace(
+        inline_rule, inline_rule + ':not([data-typographic-specimen])')
+    if new_document.count(old_styles[0]) != 1:
+        raise ValueError("Missing original essay CSS in new Reader")
+    new_document = new_document.replace(old_styles[0], new_styles, 1)
+    # Exactly the source-bound essay and its image-only reset are allowed
+    # to change here. The actual Press engine/CSS are separately pinned.
+    before_outside = document.replace(match.group(), "[SOURCE]", 1).replace(
+        old_styles[0], "[SPECIMEN-STYLES]", 1)
+    after_outside = new_document.replace(new_template, "[SOURCE]", 1).replace(
+        new_styles, "[SPECIMEN-STYLES]", 1)
+    if before_outside != after_outside:
+        raise ValueError("Unreviewed Reader shell or template mutation")
     if len(re.findall(r'data-source-block="' + PREFIX + r'\.plate\.', new_template)) != 12:
         raise ValueError("Expected eleven inline plates and existing hero illustration")
     args.out.parent.mkdir(parents=True, exist_ok=True)
     args.receipt.parent.mkdir(parents=True, exist_ok=True)
     args.out.write_bytes(new_document.encode("utf-8"))
     receipt = {
-        "schema": "fountain.press.modern-page-self-out-loud-edition.v1",
+        "schema": "fountain.press.nested-type-measure.v1",
         "readerVolume": VOLUME,
-        "readerEngineChanged": False,
-        "changedSourceOnly": True,
+        "readerEngineChanged": True,
+        "changedSourceOnly": False,
+        "nestedComposition": "measured-and-source-addressed",
+        "specimenSourceSHA256": digest(SPECIMEN_SOURCE.read_bytes()),
+        "reflowingTypeSpecimens": 2,
+        "preservedActualImageFigures": 10,
         "previousReaderRootSHA256": BASE_SHA,
         "revisedReaderRootSHA256": digest(args.out.read_bytes()),
         "revisedManuscriptSHA256": source_sha,

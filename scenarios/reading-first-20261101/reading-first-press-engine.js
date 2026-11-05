@@ -450,7 +450,88 @@ class Linotype {
     }
     return following;
   }
+  inFlowSpecimen(leaf,source,sourceId,label){
+    // A typographic setting is live source text, not an SVG or an image.
+    // Measure its nested type area in the SAME inherited sheet geometry.
+    // A long specimen flows into another authentic folio; never scale it.
+    const authored=q(".linotype-specimen-text",source);
+    if(!authored||!source.dataset.typographicSpecimen)
+      throw Error("Missing source-bound nested typographic specimen");
+    const text=normalized(authored);
+    if(!text.length||Number(authored.dataset.sourceFrom||0)!==0||
+       Number(authored.dataset.sourceTo)!==text.length)
+      throw Error("Nonmatching specimen source addresses");
+    const unit=authored.dataset.sourceUnitId;
+    if(!unit)throw Error("Missing specimen source identity");
+    const prepare=(from,to)=>{
+      const figure=immutable(source);
+      figure.classList.add("linotype-inline-illustration");
+      figure.dataset.specimenFrom=String(from);
+      figure.dataset.specimenTo=String(to);
+      const copy=q(".linotype-specimen-text",figure);
+      copy.textContent=text.slice(from,to);
+      copy.dataset.sourceFrom=String(from);
+      copy.dataset.sourceTo=String(to);
+      if(from>0){
+        figure.dataset.specimenContinuation="true";
+        q(".linotype-specimen-title",figure)?.remove();
+        const last=q(".linotype-specimen-label span:last-child",figure);
+        if(last)last.textContent+=" · CONTINUED";
+      }
+      if(to<text.length)q("figcaption",figure)?.remove();
+      return figure;
+    };
+    const append=(target,from,to)=>this.appendPiece(target,prepare(from,to));
+    const measure=(target,from,to)=>{
+      const piece=prepare(from,to);
+      target.area.append(piece);
+      const ok=this.fits(target.area);
+      piece.remove();
+      return ok;
+    };
+    if(append(leaf,0,text.length))return leaf;
+    // Keep the setting together when it fits a fresh leaf, and split only
+    // when even that entire measurable leaf cannot hold actual type.
+    if(leaf.area.childElementCount)leaf=this.leafOfText(sourceId,label);
+    if(append(leaf,0,text.length))return leaf;
+    let from=0,guard=0;
+    while(from<text.length){
+      if(++guard>100)throw Error("Nested typographic compositor stalled");
+      const rest=text.slice(from);
+      let breaks=boundaries(rest).map(x=>x+from);
+      breaks.push(text.length);
+      let lo=0,hi=breaks.length-1,best=-1;
+      while(lo<=hi){
+        const mid=(lo+hi)>>1,to=breaks[mid];
+        if(measure(leaf,from,to)){best=to;lo=mid+1;}
+        else hi=mid-1;
+      }
+      if(best<0){
+        if(leaf.area.childElementCount){
+          leaf=this.leafOfText(sourceId,label);
+          continue;
+        }
+        // Fall back to character boundaries for a single unbroken token.
+        lo=from+1;hi=text.length;
+        while(lo<=hi){
+          const mid=(lo+hi)>>1;
+          if(measure(leaf,from,mid)){best=mid;lo=mid+1;}
+          else hi=mid-1;
+        }
+        if(best<from+1)throw Error("Nested type cannot fit even one character on a leaf");
+      }
+      if(!append(leaf,from,best))
+        throw Error("Measured specimen fragment unexpectedly overflowed");
+      from=best;
+      if(from<text.length)leaf=this.leafOfText(sourceId,label);
+    }
+    return leaf;
+  }
   inFlowFigure(leaf,source,sourceId,label){
+    // The same Press compositor now admits a *nested measured setting*.
+    // Only genuine artwork continues through the image/aspect-ratio path.
+    if(source.matches("figure[data-typographic-specimen]"))
+      return this.inFlowSpecimen(leaf,source,sourceId,label);
     // Every authored illustration is measured against its real intrinsic
     // aspect. The old fixed 190px figure height produced thumbnail-sized
     // artwork alongside full-width body text.
@@ -691,7 +772,7 @@ class Linotype {
       // concatenated, ordered source once per chapter, not each section
       // against all pages of that chapter. Never weaken the exact-text test.
       const content=sourceChapterParagraphs.get(id)||[];
-      content.push(...[...original.querySelectorAll(".book-prose p")].map(x=>x.textContent));
+      content.push(...[...original.querySelectorAll(".book-prose > p")].map(x=>x.textContent));
       sourceChapterParagraphs.set(id,content);
     }
     for(const [id,paragraphs] of sourceChapterParagraphs){
@@ -731,7 +812,7 @@ class Linotype {
         ids.add(id);
         const copies=this.leaves.flatMap(leaf=>[...leaf.area.querySelectorAll("[data-source-block]")])
           .filter(node=>node.dataset.sourceBlock===id);
-        if(copies.map(node=>node.textContent).join("")!==block.textContent)
+        if((block.matches("figure[data-typographic-specimen]") ? copies.map(x=>q(".linotype-specimen-text",x)?.textContent||"").join("")!==q(".linotype-specimen-text",block)?.textContent : copies.map(node=>node.textContent).join("")!==block.textContent))
           throw Error("Source block lost in composition: "+id);
       }
     }
