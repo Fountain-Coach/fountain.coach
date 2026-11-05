@@ -569,21 +569,53 @@ class Linotype {
       }
       return figure;
     };
-    const reserve=Math.max(76,this.css.font*4);
-    const insert=(target)=>{
-      const figure=prepare(target.area);
+    const insert=(target,scale=1,probe=false)=>{
+      const figure=prepare(target.area),image=q("img",figure);
+      if(image&&scale!==1){
+        const w=parseFloat(image.style.width),h=parseFloat(image.style.height);
+        if(!(w>0&&h>0))return false;
+        image.style.width=Math.floor(w*scale)+"px";
+        image.style.height=Math.floor(h*scale)+"px";
+        image.style.maxHeight=Math.floor(h*scale)+"px";
+      }
       if(!this.appendPiece(target,figure))return false;
-      // Avoid a floating picture at the very foot of a page, with no room
-      // for the manuscript to resume. This measurement uses actual layout.
+      // A figure must leave enough measured room for prose to resume.
+      // An empty continuation leaf is NOT a reason to shrink every image.
       const bottom=target.area.getBoundingClientRect().bottom;
       const illustrationBottom=figure.getBoundingClientRect().bottom;
+      // On a facing spread, the verso and recto form one visible field.
+      // An authored following paragraph may continue on its facing recto:
+      // don't strand the figure simply because there is no space for those
+      // lines on the verso itself. The recto, terminal pages, and every
+      // single-page view keep their full on-leaf prose reserve.
+      const facingProse=this.pageFrame&&this.css.spread&&target.n%2===1&&
+        source.nextElementSibling?.tagName==="P";
+      const reserve=facingProse?Math.max(12,this.css.font*.7):
+        Math.max(76,this.css.font*4);
       if(bottom-illustrationBottom<reserve){
         figure.remove();
         return false;
       }
+      if(probe)figure.remove();
       return true;
     };
     if(insert(leaf))return leaf;
+    if(this.pageFrame&&this.css.spread&&leaf.area.childElementCount){
+      // A large-screen two-leaf composition may have sufficient room for
+      // the *same* secondary plate at a slightly smaller measured scale.
+      // Find the greatest admissible size, never distort the aspect ratio,
+      // never turn a source illustration into a thumbnail, and never
+      // redistribute paragraphs across author-defined source addresses.
+      const minScale=.72;
+      if(insert(leaf,minScale,true)){
+        let low=minScale,high=1;
+        for(let n=0;n<8;n++){
+          const middle=(low+high)/2;
+          if(insert(leaf,middle,true))low=middle;else high=middle;
+        }
+        if(insert(leaf,low))return leaf;
+      }
+    }
     leaf=this.leafOfText(sourceId,label);
     if(!insert(leaf))
       throw Error("Secondary illustration cannot fit with prose reserve: "+sourceId);
@@ -721,6 +753,59 @@ class Linotype {
             throw Error("Source endnote will not fit: "+sourceId);
         }
       }else if(element.tagName==="P"){
+        if(this.pageFrame&&this.css.spread&&
+           element.matches(".frame-subheading")&&elements[i+1]?.tagName==="P"){
+          // On a facing spread a subsection title must introduce readable
+          // text, not become the last isolated line of a filled folio.
+          // Probe the heading and about two *measured* lines of its first
+          // paragraph in the actual remaining text area. Never alter source.
+          const opening=elements[i+1],text=normalized(opening);
+          const characters=Math.min(text.length,Math.max(90,
+            Math.ceil(sheet.area.clientWidth/(this.css.font*.55)*1.8)));
+          if(characters>0){
+            const heading=immutable(element),first=fragmentFor(opening,0,characters);
+            const fitsTogether=()=>{
+              sheet.area.append(heading,first);
+              const fit=this.fits(sheet.area);
+              first.remove();heading.remove();
+              return fit;
+            };
+            let together=fitsTogether();
+            if(!together&&sheet.area.childElementCount){
+              // Rather than orphan the heading or move the entire semantic
+              // group, try recovering a few lines by *slightly* reducing a
+              // preceding supplementary image. Keep its natural aspect and
+              // at least 75% of its selected reading size. No text moves.
+              const figures=[...sheet.area.querySelectorAll(
+                "figure.linotype-inline-illustration:not([data-typographic-specimen]) img")];
+              const image=figures.at(-1);
+              const width=parseFloat(image?.style.width);
+              const height=parseFloat(image?.style.height);
+              if(width>0&&height>0){
+                const scale=s=>{
+                  image.style.width=Math.floor(width*s)+"px";
+                  image.style.height=Math.floor(height*s)+"px";
+                  image.style.maxHeight=Math.floor(height*s)+"px";
+                  return fitsTogether();
+                };
+                if(scale(.75)){
+                  let low=.75,high=1;
+                  for(let j=0;j<8;j++){
+                    const middle=(low+high)/2;
+                    if(scale(middle))low=middle;else high=middle;
+                  }
+                  together=scale(low);
+                }
+                if(!together){
+                  image.style.width=Math.floor(width)+"px";
+                  image.style.height=Math.floor(height)+"px";
+                  image.style.maxHeight=Math.floor(height)+"px";
+                }
+              }
+              if(!together)sheet=this.leafOfText(sourceId,label);
+            }
+          }
+        }
         sheet=this.appendParagraph(sheet,element,sourceId,label);
         paragraphNumber++;
         appendDue();
