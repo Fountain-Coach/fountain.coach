@@ -23,3 +23,18 @@
 - Publisher CLI: source build completed, strict inspection and authority verifier PASS, and the exact-host \`artifactRelease/signedArtifact/localArtifact\` resolver returned \`estate.static-release.promote\` as the native operation. This does **not** prove readiness to execute.
 - **Blocking:** no local FountainStore public artifact admission, no kit-owned release authorization, and no accepted current production baseline/rollback. Public root and /for-agents/ digests differ from checked-in site snapshot. Do not publish or replace public root. Full results in docs/v140-controlled-publication-20261103.md.
 - No production, DNS, GitHub repository visibility, or public media state was changed. This phase is a documented, reproducible **blocked** public release, not a shipped one.
+
+
+## Self Out Loud — What Makes a Page Modern? revised private Reader edition (2026-11-05)
+
+**Owner/phase:** Fountain-Coach/fountain.coach, revised source-bound essay in `essay--what-makes-a-page-modern`. **Accepted goal:** bring the approved combined essay into the canonical **existing** Fountain Press Reader on the owner-WLAN staging server; no new Reader, synthetic recording, live microphone instrument or public release.
+
+**Current evidence:** v146 active staging Reader baseline, immutable root SHA-256 `9d8b6c330146f4b7d1b6e437aa916f89aca99e110de7c8f24060df29050bd8c5`. Combined authored manuscript `site/essays/what-makes-a-page-modern/combined-essay.md`, SHA-256 `4b3c0c2b2f02d707d0c88d3c4f045c8119d05707709512a832e995c648edf272`. Existing compositor only; 12 original semantic figures retained. Source preview: 6/6 Chrome/WebKit on HTTPS stage assets at 820x1120, 1200x860 and 390x844: 19/28/36 leaves; all source section headings, no horizontal overflow, six Essays gallery members and Teatro preserved. Browser profiles accepted the private WLAN CA for automated checking; this is not a physical iPad Safari witness. Unrelated automatic audio-load cancellation/retry warnings were observed during navigation; actual playing/audio decoding not accepted by this test.
+
+**Governance reading record**
+- **Chapters and rules read:** FCIS Goal Fidelity and Non-Invention §1–10 (reuse existing system and finite acceptance); current Linotype Estate Template source/provenance and production-first policy; Fountain Press Reader authority/“page is the frame”; source-owner and estate AGENTS boundaries; private WLAN EstatePublisher staging scope.
+- **Forbids:** another Reader/compositor, new public route, altered private audition files, overwritten v146, treating browser preview as staging activation or public publication, inventing a live Self Out Loud feature.
+- **Conflicts:** the original 13-page PDF was authoritative for v142–v146; this newly approved revision must have its **own** source digest and declaration, retaining the older PDF as historical source rather than falsely claiming exact PDF identity. Staging gate must be explicitly revised and independently verified.
+- **Excluded:** live microphone, speech recognition, new MIDI 2.0 mapping, production release, synthetic voice replacement, Reframe Store authoring acceptance and physical iPad witness; none are required for this essay-only staging request.
+
+**Next executable action:** commit the source and deterministic revised-edition builder; create v147 immutable candidate from current v146 bytes plus the single revised Reader root and source-lock; revise the existing provenance guard with a pinned approval tuple; test guard and actual HTTPS browser; switch only the existing WLAN current symlink with rollback, then record exact receipt. Status remains SOURCE-READY / STAGING NOT YET ACTIVATED until witnessed.
