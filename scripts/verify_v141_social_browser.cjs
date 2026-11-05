@@ -1,4 +1,4 @@
-const path=require('path'),os=require('os');
+const path=require('path'),os=require('os'),fs=require('fs');
 const {chromium,webkit}=require(path.join(os.homedir(),'Developer/fcis.fountain.coach/node_modules/playwright'));
 const ORIGIN=process.env.TEST_ORIGIN||'http://127.0.0.1:4292';
 const targets=[
@@ -6,6 +6,24 @@ const targets=[
  'solstice-reading-01--preface','solstice-reading-01--2025-12-22-anweisung-an-den-schmerz',
  'essay--teatro-an-unfinished-composition','publication-notes'
 ];
+if(process.env.READER_LEDGER){
+ const works=JSON.parse(fs.readFileSync(process.env.READER_LEDGER)).works.filter(x=>x.status==='current-essay'||x.status==='current-first-reading');
+ if(works.length!==35)throw Error('Wrong current-publication ledger');
+ for(const id of [...works.map(x=>x.id),'essay--to-read-is-not-to-remember'])if(!targets.includes(id))targets.push(id);
+}
+const candidate=process.env.CANDIDATE_ROOT&&path.resolve(process.env.CANDIDATE_ROOT);
+async function fixture(page){
+ if(!candidate)return;
+ await page.route(new URL(ORIGIN).origin+'/**',async route=>{
+  const u=new URL(route.request().url()),relative=decodeURIComponent(u.pathname).replace(/^\//,'');
+  let file=path.resolve(candidate,relative||'index.html');
+  if(!file.startsWith(candidate+path.sep))return route.fulfill({status:403,body:'outside candidate'});
+  if(fs.existsSync(file)&&fs.statSync(file).isDirectory())file=path.join(file,'index.html');
+  if(!fs.existsSync(file))return route.fulfill({status:404,body:'unlisted candidate file'});
+  const mime={'.js':'text/javascript','.mjs':'text/javascript','.css':'text/css','.html':'text/html','.json':'application/json','.svg':'image/svg+xml','.mp3':'audio/mpeg','.jpg':'image/jpeg','.png':'image/png'}[path.extname(file)]||'application/octet-stream';
+  return route.fulfill({status:200,contentType:mime,body:fs.readFileSync(file)});
+ });
+}
 (async()=>{
  const all=[],failures=[];
  for(const [browserName,engine] of [['Chrome',chromium],['WebKit',webkit]]){
@@ -13,6 +31,7 @@ const targets=[
   const browser=await engine.launch(launch);
   for(const id of targets){
    const page=await browser.newPage({viewport:{width:900,height:1200}});
+   await fixture(page);
    const errors=[],missing=[];
    page.on('pageerror',e=>errors.push(e.message));
    page.on('response',r=>{if(r.status()>=400)missing.push(r.status()+' '+r.url())});
@@ -42,6 +61,7 @@ const targets=[
    await page.close();
   }
   const page=await browser.newPage({viewport:{width:1024,height:768}});
+  await fixture(page);
   const r={browser:browserName,kind:'navigation-and-legacy'};
   try{
    await page.goto(ORIGIN+'/estate/#/read/teatro',{waitUntil:'load'});
@@ -63,6 +83,26 @@ const targets=[
   all.push(r);console.log(JSON.stringify(r));await page.close();
   await browser.close();
  }
- console.log('PRESS_SOCIAL_BROWSER',all.length-failures.length,'/',all.length);
+ if(process.env.READER_LEDGER){
+  const browser=await webkit.launch({headless:true});
+  const page=await browser.newPage({viewport:{width:820,height:1120}});await fixture(page);
+  const r={kind:'v152-current-membership-and-archive',evidence:candidate?'candidate-fixture':'actual-public-HTTPS'};
+  try{
+   await page.goto(ORIGIN+'/estate/read/essays/',{waitUntil:'load'});
+   await page.waitForFunction(()=>document.querySelector('#page-viewport')?.dataset.layout==='ready');
+   const state=await page.evaluate(()=>({
+    essays:JSON.parse(document.querySelector('#reader-gallery-data').textContent).collections.essays.map(n=>n.id),
+    archivedSelectable:!!document.querySelector('#reader-section option[value="essay--to-read-is-not-to-remember"]'),
+    modernPresent:!!document.querySelector('template[data-reader-volume="essay--what-makes-a-page-modern"]'),
+    archivedNote:document.querySelector('template[data-reader-volume="essay--to-read-is-not-to-remember"]').content.textContent.includes('Archived')
+   }));
+   const unique=[...new Set(state.essays.filter(id=>id.startsWith('essay--')))];
+   if(unique.length!==5||unique.includes('essay--to-read-is-not-to-remember')||state.archivedSelectable||!state.modernPresent||!state.archivedNote)throw Error(JSON.stringify(state));
+   r.pass=true;r.currentEssays=unique.length;r.archiveRetained=true;
+  }catch(e){r.error=String(e);r.pass=false;failures.push(r)}
+  all.push(r);console.log(JSON.stringify(r));await browser.close();
+ }
+ if(process.env.REPORT_PATH)fs.writeFileSync(process.env.REPORT_PATH,JSON.stringify({evidence:candidate?'candidate-fixture':'actual-public-HTTPS',passed:all.length-failures.length,total:all.length,results:all},null,2)+'\n');
+ console.log('PRESS_SOCIAL_BROWSER',candidate?'CANDIDATE_FIXTURE':'LIVE',all.length-failures.length,'/',all.length);
  process.exitCode=failures.length?1:0;
 })().catch(e=>{console.error(e);process.exitCode=1});

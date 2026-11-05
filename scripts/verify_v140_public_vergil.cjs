@@ -11,6 +11,24 @@ const {chromium,webkit}=require(process.env.PLAYWRIGHT_MODULE||path.join(require
   if(process.env.CASE && process.env.CASE !== browserName+':'+route) continue;
   const browser=await engine.launch(browserName==='Chrome'?{headless:true,executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'}:{headless:true});
   const page=await browser.newPage({viewport:{width:1024,height:768},ignoreHTTPSErrors:true});
+  if(process.env.CANDIDATE_ROOT){
+   const root=path.resolve(process.env.CANDIDATE_ROOT),origin=new URL(process.env.WLAN_READER_ORIGIN).origin;
+   await page.route(origin+'/**',async route=>{
+    const pathname=decodeURIComponent(new URL(route.request().url()).pathname);
+    let file=path.resolve(root,pathname.replace(/^\//,'')||'index.html');
+    if(!file.startsWith(root+path.sep))return route.fulfill({status:403,body:'outside candidate'});
+    if(fs.existsSync(file)&&fs.statSync(file).isDirectory())file=path.join(file,'index.html');
+    if(!fs.existsSync(file))return route.fulfill({status:404,body:'unlisted candidate file'});
+    const mime={'.js':'text/javascript','.mjs':'text/javascript','.css':'text/css','.html':'text/html','.json':'application/json','.svg':'image/svg+xml','.mp3':'audio/mpeg','.wasm':'application/wasm'}[path.extname(file)]||'application/octet-stream';
+    const bytes=fs.readFileSync(file),range=route.request().headers().range?.match(/^bytes=(\d+)-(\d*)$/);
+    if(range){
+     const start=Number(range[1]),end=range[2]?Math.min(Number(range[2]),bytes.length-1):bytes.length-1;
+     if(start>=bytes.length)return route.fulfill({status:416,headers:{'Content-Range':'bytes */'+bytes.length}});
+     return route.fulfill({status:206,contentType:mime,headers:{'Content-Range':`bytes ${start}-${end}/${bytes.length}`,'Accept-Ranges':'bytes'},body:bytes.subarray(start,end+1)});
+    }
+    return route.fulfill({status:200,contentType:mime,headers:{'Accept-Ranges':'bytes'},body:bytes});
+   });
+  }
   const errors=[];page.on('pageerror',e=>errors.push(String(e)));
   let r={browser:browserName,route};
   const sel='satzfunk-player[label*="'+playerLabel+'"]';
@@ -58,8 +76,9 @@ const {chromium,webkit}=require(process.env.PLAYWRIGHT_MODULE||path.join(require
      throw Error('No source-addressed target');
    },scoreName);
    await page.evaluate(([s,t])=>document.querySelector(s).seek(t),[sel,target.t]);
+   await page.waitForFunction(([s,t])=>Math.abs(document.querySelector(s).state.currentTime-t)<0.25,[sel,target.t],{timeout:16000});
    await page.waitForFunction(()=>document.querySelectorAll('.linotype-audio-cursor-mark').length>0,{timeout:16000});
-   r.cursor=await page.evaluate(([s,t])=>({position:document.querySelector(s).state.currentTime,
+   r.cursor=await page.evaluate(([s,t])=>({position:document.querySelector(s).state.currentTime,targetTime:t,
      page:window.FountainPressNarrationBridge.current,
      marks:document.querySelectorAll('.linotype-audio-cursor-mark').length,
      mode:document.querySelector(s).narrationBinding.mode}),[sel,target.t]);
@@ -83,7 +102,7 @@ const {chromium,webkit}=require(process.env.PLAYWRIGHT_MODULE||path.join(require
   console.log(JSON.stringify(r));out.push(r);if(!r.pass)fails++;
   await page.close();await browser.close();
  }
- if(process.env.OUTPUT)fs.writeFileSync(process.env.OUTPUT,JSON.stringify({schema:'fountain.press.vergil.public-v140',tests:out,failures:fails},null,2));
+ if(process.env.OUTPUT)fs.writeFileSync(process.env.OUTPUT,JSON.stringify({schema:'fountain.press.vergil.public-v140',evidence:process.env.CANDIDATE_ROOT?'candidate-fixture':'actual-public-HTTPS',tests:out,failures:fails},null,2));
  console.log(JSON.stringify({cases:out.length,passed:out.length-fails,failed:fails}));
  if(fails)process.exitCode=1;
 })().catch(e=>{console.error(e);process.exitCode=1});

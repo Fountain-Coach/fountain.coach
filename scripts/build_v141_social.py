@@ -210,7 +210,152 @@ def main_finalize():
        "files":[{"path":k,"sha256":v,"bytes":(OUT/k).stat().st_size} for k,v in sorted(new.items())]}
     WITNESS.write_text(json.dumps(m,indent=2,ensure_ascii=False)+"\n")
     print("FINAL_CANDIDATE",RELEASE,"files",len(new),"preserved",len(old)-len(replaced),"new",len(added),"fallbacks",len(items))
+def main_refresh_v152():
+    """Refresh the executed public overlay from exact, prebuilt v152 source.
+
+    Local packaging only. Keep the public grants, final audio and direct-route
+    adapter; transfer only through the existing native publisher afterward.
+    """
+    source_repo=Path(os.environ["FOUNTAIN_V152_SOURCE_REPO"]).resolve()
+    stage=ROOT/"build/private-source-v152"
+    source="1609cb909ae2f89b4b28223fe70c482638d6b854"
+    parent="estate-20261103-v21-social-principal-fb47bd0"
+    release="estate-20261105-v22-reader-v152-1609cb9"
+    baseline=ROOT/"build/public-release-v141-social"
+    out=ROOT/"build/public-release-v152"
+    if out.exists():fail("Refusing to overwrite immutable v152 candidate")
+    old_manifest=json.loads((ROOT/"releases/v141-native-published-static-release.json").read_text())
+    if old_manifest["releaseID"]!=parent:fail("Wrong public predecessor")
+    old={row["path"].lstrip("/"):row["sha256"] for row in old_manifest["files"]}
+    actual={str(p.relative_to(baseline)):digest(p.read_bytes()) for p in baseline.rglob("*") if p.is_file()}
+    if old!=actual:fail("Local published predecessor bytes differ from native manifest")
+    def git_bytes(path,revision=source):
+        return subprocess.check_output(["git","-C",str(source_repo),"show",revision+":"+path])
+    prefix="scenarios/reading-first-20261101/"
+    locked={
+        "index.html":"77f90b8db05a42700f727b4558f7e91a6406e2ae6bf25d59d953fa5ddae7b3d9",
+        "reading-first-app.js":"9fa017c008cebad8586a49a03741aae398a36a0fc61e935364f45b6e913b6345",
+        "reading-first-press-engine.js":"e38301452ef0f07aa9440953d898dcf9ae13fcb828a7d4a97fac163976261d9a",
+        "reading-first-press-frame.css":"8e175ccbdfdd71e506979772059c72fcfb85de8d3daa366a34544ccc7d4502e6",
+    }
+    stage_paths={name:("estate/index.html" if name=="index.html" else "estate/assets/linotype/"+name) for name in locked}
+    admission=json.loads((stage/"source-lock.json").read_text())["machineReadingEditorialArchiveAdmission"]
+    if admission["sourceCommit"]!=source or admission["release"]!="shared-shell-20261105-v152-editorial-archive-1609cb9":
+        fail("Wrong staged source admission")
+    inputs={name:(stage/stage_paths[name]).read_bytes() for name in locked}
+    for name,data in inputs.items():
+        if digest(data)!=locked[name]:fail("Unverified v152 source "+name)
+        if name!="index.html" and data!=git_bytes(prefix+name):fail("Staged runtime differs from pinned Git source: "+name)
+    html=inputs["index.html"].decode()
+    if any(s in html for s in ("private-auditions/","192.168.","localhost:")):
+        fail("Private origin or audition in authored Reader")
+    doc=PressVolumes();doc.feed(html)
+    prior_ids={p.parent.name for p in (baseline/"estate/read").glob("*/index.html")}
+    modern="essay--what-makes-a-page-modern"
+    if set(doc.volumes)-prior_ids!={modern} or prior_ids-set(doc.volumes):
+        fail("Unexpected Reader source identity delta")
+    shutil.copytree(baseline,out)
+    # Apply only the source-owned archival app delta to the already-published
+    # app. The public narrator grants and v141 pathname/history handling stay.
+    app=(baseline/"estate/assets/linotype/reading-first-app.js").read_text()
+    diff=subprocess.check_output(["git","-C",str(source_repo),"diff","--unified=3",
+        "611c3e34c9dfffc932d86d957edf49bda46927ec",source,"--",prefix+"reading-first-app.js"],text=True)
+    hunks=re.split(r"^@@[^\n]*\n",diff,flags=re.M)[1:]
+    if not hunks:fail("Expected v152 archival app change")
+    for hunk in hunks:
+        lines=hunk.splitlines(keepends=True)
+        before="".join(line[1:] for line in lines if line.startswith((" ","-")))
+        after="".join(line[1:] for line in lines if line.startswith((" ","+")))
+        app=checked(app,before,after)
+    if 'const direct=pathname.match' not in app or 'archivedEssays' not in app:
+        fail("Public paths or archival membership missing")
+    for forbidden in ("private-wlan-rehearsal",".private.json","192.168."):
+        if forbidden in app:fail("Private binding in public app: "+forbidden)
+    (out/"estate/assets/linotype/reading-first-app.js").write_text(app)
+    for name in ("reading-first-press-engine.js","reading-first-press-frame.css"):
+        (out/"estate/assets/linotype"/name).write_bytes(inputs[name])
+    # Original authored SVGs only; no private source manuscript or auditions.
+    asset_prefix="site/essays/what-makes-a-page-modern/assets/"
+    asset_paths=subprocess.check_output(["git","-C",str(source_repo),"ls-tree","-r","--name-only",source,"--",asset_prefix],text=True).splitlines()
+    if len(asset_paths)!=13 or any(not p.endswith(".svg") for p in asset_paths):
+        fail("Unexpected modern-page illustration inventory")
+    for path in asset_paths:
+        target=out/"estate/essays/what-makes-a-page-modern/assets"/Path(path).name
+        target.parent.mkdir(parents=True,exist_ok=True)
+        data=git_bytes(path)
+        staged=(stage/"estate/essays/what-makes-a-page-modern/assets"/Path(path).name).read_bytes()
+        if staged!=data:fail("Staged illustration differs from source: "+path)
+        target.write_bytes(data)
+    # Reuse the published per-work social headers, replacing only their Reader
+    # body with the exact source. New work uses the same existing wrapper.
+    body=html.split("</head>",1)[1]
+    marker='<body data-edition-id="benedikt-eickhoff-bookshelf-20261101">'
+    if body.count(marker)!=1:fail("Reader source body identity changed")
+    for rel in ["index.html","estate/index.html"]+["estate/read/"+v+"/index.html" for v in sorted(prior_ids)]:
+        original=(baseline/rel).read_text()
+        found=re.search(r'data-initial-volume="([a-z0-9-]+)"',original)
+        if not found:fail("Published initial volume missing: "+rel)
+        head=original.split("</head>",1)[0]+"</head>"
+        (out/rel).write_text(head+checked(body,marker,marker[:-1]+' data-initial-volume="'+found[1]+'">'))
+    meta=doc.volumes[modern]
+    src=meta["figure"]
+    if not src or not src.startswith("/estate/essays/what-makes-a-page-modern/assets/"):
+        fail("New work lacks a source-owned principal illustration")
+    social=out/"estate/assets/social/v152"/(modern+".jpg")
+    social.parent.mkdir(parents=True,exist_ok=True)
+    intermediate=ROOT/"build/v152-modern-principal.png"
+    subprocess.run(["rsvg-convert","--keep-aspect-ratio","-w","1200","-h","630","-o",str(intermediate),str(out/src.lstrip("/"))],check=True)
+    subprocess.run(["magick",str(intermediate),"-resize","1200x630","-background","#efeee9","-gravity","center","-extent","1200x630","-alpha","remove","-alpha","off","-strip","-quality","88",str(social)],check=True)
+    model="essay--the-ear-that-learns"
+    head=(baseline/"estate/read"/model/"index.html").read_text().split("</head>",1)[0]+"</head>"
+    head=head.replace(model,modern).replace("The Ear That Learns",meta["title"].strip())
+    head=head.replace("/estate/assets/social/v141/"+modern+".jpg","/estate/assets/social/v152/"+modern+".jpg")
+    target=out/"estate/read"/modern/"index.html";target.parent.mkdir(parents=True,exist_ok=True)
+    target.write_text(head+checked(body,marker,marker[:-1]+' data-initial-volume="'+modern+'">'))
+    # Reuse the v152 archival projection on each separately published gallery;
+    # original direct essay URLs and all their files stay byte-identical.
+    archive_module={"__name__":"pinned_archive_projection"}
+    exec(compile(git_bytes(prefix+"archive_gallery_projection.py"),"pinned-archive-gallery.py","exec"),archive_module)
+    gallery_proof=[]
+    for rel,locale in (("essays/index.html","source"),("estate/essays/index.html","stage")):
+        original=(baseline/rel).read_bytes()
+        projected,receipt=archive_module["transform"](original,digest(original),locale)
+        (out/rel).write_bytes(projected);gallery_proof.append({"path":rel,**receipt})
+    share=out/"estate/assets/essay-share/manifest.json"
+    share.write_bytes(git_bytes(prefix+"essay-share-manifest.json"))
+    manifest=json.loads((baseline/"release-manifest.json").read_text())
+    manifest.update(releaseID=release,previousReleaseID=parent,sourceRevision=source,
+        stageRelease="shared-shell-20261105-v152-editorial-archive-1609cb9",
+        publicationState="owner-authorized-v152-reader-and-archive",
+        contentScope="v152 Reader, five current Essays, 30 First Readings; existing public media and historical routes retained",
+        authorDecision="2026-11-05: publish accepted v152 staging to production; existing final-media grants retained",
+        generatorSHA256=digest(Path(__file__).read_bytes()))
+    (out/"release-manifest.json").write_text(json.dumps(manifest,indent=2,ensure_ascii=False,sort_keys=True)+"\n")
+    new={str(p.relative_to(out)):digest(p.read_bytes()) for p in out.rglob("*") if p.is_file()}
+    modified={p for p in old if old[p]!=new.get(p)}
+    allowed={"index.html","estate/index.html","estate/assets/linotype/reading-first-app.js",
+        "estate/assets/linotype/reading-first-press-engine.js","estate/assets/linotype/reading-first-press-frame.css",
+        "essays/index.html","estate/essays/index.html","release-manifest.json"}
+    allowed.update("estate/read/"+v+"/index.html" for v in prior_ids)
+    if modified!=allowed or set(old)-set(new):fail("Unexpected changed or removed public file")
+    added=set(new)-set(old)
+    allowed_added={"estate/essays/what-makes-a-page-modern/assets/"+Path(p).name for p in asset_paths}
+    allowed_added.update({"estate/read/"+modern+"/index.html","estate/assets/social/v152/"+modern+".jpg","estate/assets/essay-share/manifest.json"})
+    if added!=allowed_added:fail("Unexpected added public asset")
+    report={"schema":"fountain.press.v152.public-overlay.v1","release":release,"predecessor":parent,
+        "sourceCommit":source,"sourceInputs":locked,
+        "gitSourceHTMLSHA256":digest(git_bytes(prefix+"index.html")),
+        "stagedProjectionHTMLSHA256":locked["index.html"],
+        "generatorSHA256":manifest["generatorSHA256"],
+        "currentEssays":5,"currentFirstReadings":30,"sourceVolumes":len(doc.volumes),
+        "modified":sorted(modified),"added":sorted(added),"preservedFiles":len(old)-len(modified),
+        "galleryProof":gallery_proof,"privateAuditionsIncluded":False,
+        "files":[{"path":p,"sha256":h,"bytes":(out/p).stat().st_size} for p,h in sorted(new.items())]}
+    (ROOT/"build/v152-production-overlay-witness.json").write_text(json.dumps(report,indent=2,ensure_ascii=False)+"\n")
+    print("V152_CANDIDATE",release,"files",len(new),"bytes",sum((out/p).stat().st_size for p in new),"preserved",report["preservedFiles"])
+
 if __name__=="__main__":
-    if len(sys.argv)!=2 or sys.argv[1] not in ("assemble","finalize"):raise SystemExit("Usage: build_v141_social.py assemble|finalize")
+    if len(sys.argv)!=2 or sys.argv[1] not in ("assemble","finalize","refresh-v152"):raise SystemExit("Usage: build_v141_social.py assemble|finalize|refresh-v152")
     if sys.argv[1]=="assemble":main_assemble()
-    else:main_finalize()
+    elif sys.argv[1]=="finalize":main_finalize()
+    else:main_refresh_v152()
