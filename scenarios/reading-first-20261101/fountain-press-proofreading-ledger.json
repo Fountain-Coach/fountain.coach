@@ -1,0 +1,1123 @@
+{
+  "schema": "fountain.press.per-publication-proofreading-ledger.v1",
+  "authority": "v151 live stage source HTML, reviewed as exact static source snapshot",
+  "method": "Whole inventory source/link/markup/spelling-pattern pass; no literary revision inferred",
+  "limitations": "Lexical anomalies, factual/rights claims and source-to-gallery attribution still require independent editorial evidence",
+  "metrics": {
+    "templates": 49,
+    "currentEssays": 5,
+    "currentFirstReadings": 30,
+    "currentWords": 28416,
+    "firstReadingsWithNoEmbeddedImage": 23,
+    "sourceReferenceIssues": 1,
+    "archiveCount": 1,
+    "archivedWork": "essay--to-read-is-not-to-remember"
+  },
+  "works": [
+    {
+      "id": "continuity",
+      "title": "On Continuity",
+      "status": "other-reader-surface",
+      "sourceSHA256": "9c07d55b301a71fc375359a14cf7660af68548d0793c8d34d91d6d2033c9252b",
+      "sourceParagraphs": 10,
+      "wordCount": 402,
+      "sourceAddressCount": 11,
+      "figures": 0,
+      "proems": 0,
+      "abstracts": 0,
+      "sourceImagesMissingAlt": 0,
+      "externalCitations": 1,
+      "findings": []
+    },
+    {
+      "id": "library",
+      "title": "The Bookshelf",
+      "status": "other-reader-surface",
+      "sourceSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sourceParagraphs": 0,
+      "wordCount": 0,
+      "sourceAddressCount": 0,
+      "figures": 2,
+      "proems": 0,
+      "abstracts": 0,
+      "sourceImagesMissingAlt": 0,
+      "externalCitations": 0,
+      "findings": []
+    },
+    {
+      "id": "first-readings",
+      "title": "First Readings",
+      "status": "other-reader-surface",
+      "sourceSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sourceParagraphs": 0,
+      "wordCount": 0,
+      "sourceAddressCount": 0,
+      "figures": 1,
+      "proems": 0,
+      "abstracts": 0,
+      "sourceImagesMissingAlt": 1,
+      "externalCitations": 0,
+      "findings": [
+        {
+          "area": "accessibility",
+          "severity": "needs-review",
+          "finding": "Source images missing alternative text: /estate/essays/teatro-an-unfinished-composition/assets/teatro-score-memory-vector-human-condition.svg"
+        },
+        {
+          "area": "layout",
+          "severity": "needs-review",
+          "finding": "Illustrations missing declared dimensions: /estate/essays/teatro-an-unfinished-composition/assets/teatro-score-memory-vector-human-condition.svg"
+        }
+      ]
+    },
+    {
+      "id": "essays",
+      "title": "Essays",
+      "status": "other-reader-surface",
+      "sourceSHA256": "7fa40d72676ccd3ebb3e41557f0014ed6cc721338808ce11e2e3e261654aa3ac",
+      "sourceParagraphs": 1,
+      "wordCount": 4,
+      "sourceAddressCount": 0,
+      "figures": 0,
+      "proems": 0,
+      "abstracts": 0,
+      "sourceImagesMissingAlt": 0,
+      "externalCitations": 0,
+      "findings": []
+    },
+    {
+      "id": "teatro",
+      "title": "Teatro — An Unfinished Composition",
+      "status": "other-reader-surface",
+      "sourceSHA256": "c1dbde8f49c04928b8a0be2a1cbedb23f82a89783bc0352026042bba2d045ac1",
+      "sourceParagraphs": 28,
+      "wordCount": 1086,
+      "sourceAddressCount": 30,
+      "figures": 1,
+      "proems": 0,
+      "abstracts": 0,
+      "sourceImagesMissingAlt": 0,
+      "externalCitations": 0,
+      "findings": [
+        {
+          "area": "copy",
+          "severity": "verify",
+          "finding": "Repeated adjacent word(s): theatre\n\nTheatre"
+        }
+      ]
+    },
+    {
+      "id": "notes--the-door-is-a-score",
+      "title": "References",
+      "status": "other-reader-surface",
+      "sourceSHA256": "5acf553e8453a94172602cdcbf316a0b07342eb35ec53657df19b89e1d6c31d9",
+      "sourceParagraphs": 22,
+      "wordCount": 114,
+      "sourceAddressCount": 21,
+      "figures": 0,
+      "proems": 0,
+      "abstracts": 0,
+      "sourceImagesMissingAlt": 0,
+      "externalCitations": 21,
+      "findings": []
+    },
+    {
+      "id": "essay--the-door-is-a-score",
+      "title": "The Door Is a Score",
+      "status": "current-essay",
+      "sourceSHA256": "3771b9175a57719c6a3851d3eb60aefb00e0950f96bb447a1b89097b00a80b78",
+      "sourceParagraphs": 36,
+      "wordCount": 1782,
+      "sourceAddressCount": 41,
+      "figures": 3,
+      "proems": 1,
+      "abstracts": 0,
+      "sourceImagesMissingAlt": 0,
+      "externalCitations": 0,
+      "findings": [
+        {
+          "area": "content-review",
+          "severity": "not-verified",
+          "finding": "Factual claims, artistic decisions and full prose line edits require source-grounded editorial review"
+        }
+      ]
+    },
+    {
+      "id": "essay--the-ear-that-learns",
+      "title": "The Ear That Learns",
+      "status": "current-essay",
+      "sourceSHA256": "177d5c85055790a85090001ca88c1020b8880a2ee3a08300dd99b5a29e6198f6",
+      "sourceParagraphs": 48,
+      "wordCount": 1797,
+      "sourceAddressCount": 51,
+      "figures": 1,
+      "proems": 1,
+      "abstracts": 0,
+      "sourceImagesMissingAlt": 0,
+      "externalCitations": 0,
+      "findings": [
+        {
+          "area": "content-review",
+          "severity": "not-verified",
+          "finding": "Factual claims, artistic decisions and full prose line edits require source-grounded editorial review"
+        }
+      ]
+    },
+    {
+      "id": "essay--the-composable-book",
+      "title": "The Composable Book",
+      "status": "historical-implementation",
+      "sourceSHA256": "b4ba6684d760ba3b302e393a892a3e8ae0ea9421357b123bd987735a2cda3198",
+      "sourceParagraphs": 63,
+      "wordCount": 1944,
+      "sourceAddressCount": 69,
+      "figures": 4,
+      "proems": 0,
+      "abstracts": 1,
+      "sourceImagesMissingAlt": 0,
+      "externalCitations": 18,
+      "findings": [
+        {
+          "area": "publication-state",
+          "severity": "historical",
+          "finding": "Previous author decision excludes implementation story from current literary collection"
+        }
+      ]
+    },
+    {
+      "id": "essay--to-read-is-not-to-remember",
+      "title": "Did the Machine Actually Read the Book?",
+      "status": "archive",
+      "sourceSHA256": "417303c139776e487d9790345dee9bc417c51d68d77e375084f46774403be765",
+      "sourceParagraphs": 20,
+      "wordCount": 499,
+      "sourceAddressCount": 23,
+      "figures": 1,
+      "proems": 1,
+      "abstracts": 0,
+      "sourceImagesMissingAlt": 0,
+      "externalCitations": 0,
+      "findings": [
+        {
+          "area": "publication-state",
+          "severity": "archived",
+          "finding": "Writer archived on 2026-11-05; keep source/direct route while excluding from current list"
+        }
+      ]
+    },
+    {
+      "id": "essay--semantic-compilation-the-archive-is-not-the-edition",
+      "title": "Semantic Compilation — The Archive Is Not the Edition",
+      "status": "historical-implementation",
+      "sourceSHA256": "952c790e461d563519e6269f82edd87433bf79a3c3da570dde15580f28efc800",
+      "sourceParagraphs": 30,
+      "wordCount": 1734,
+      "sourceAddressCount": 33,
+      "figures": 1,
+      "proems": 0,
+      "abstracts": 1,
+      "sourceImagesMissingAlt": 0,
+      "externalCitations": 2,
+      "findings": [
+        {
+          "area": "publication-state",
+          "severity": "historical",
+          "finding": "Previous author decision excludes implementation story from current literary collection"
+        }
+      ]
+    },
+    {
+      "id": "essay--teatro-an-unfinished-composition",
+      "title": "Teatro — An Unfinished Composition",
+      "status": "current-essay",
+      "sourceSHA256": "90ef43bcaf06736420afe1f2ec4ed6b584bca3d44e544119e14894d39ca6bca6",
+      "sourceParagraphs": 29,
+      "wordCount": 1091,
+      "sourceAddressCount": 32,
+      "figures": 1,
+      "proems": 1,
+      "abstracts": 0,
+      "sourceImagesMissingAlt": 0,
+      "externalCitations": 0,
+      "findings": [
+        {
+          "area": "copy",
+          "severity": "verify",
+          "finding": "Repeated adjacent word(s): theatre\n\nTheatre"
+        },
+        {
+          "area": "content-review",
+          "severity": "not-verified",
+          "finding": "Factual claims, artistic decisions and full prose line edits require source-grounded editorial review"
+        }
+      ]
+    },
+    {
+      "id": "essay--reframe-and-the-business-value-of-the-estate",
+      "title": "Reframe and the Business Value of the Estate",
+      "status": "current-essay",
+      "sourceSHA256": "1554193b2e7fb6e7fad622783051fdc7773990f26ce569093963204cb9a1d6fc",
+      "sourceParagraphs": 32,
+      "wordCount": 1589,
+      "sourceAddressCount": 37,
+      "figures": 3,
+      "proems": 1,
+      "abstracts": 0,
+      "sourceImagesMissingAlt": 0,
+      "externalCitations": 8,
+      "findings": [
+        {
+          "area": "content-review",
+          "severity": "not-verified",
+          "finding": "Factual claims, artistic decisions and full prose line edits require source-grounded editorial review"
+        }
+      ]
+    },
+    {
+      "id": "essay--what-makes-a-page-modern",
+      "title": "What Makes a Page Modern?",
+      "status": "current-essay",
+      "sourceSHA256": "e8cbc7ba13d193f4e059f52270132df51ee1197816bb8ead9c46bf069dcc14a8",
+      "sourceParagraphs": 119,
+      "wordCount": 2932,
+      "sourceAddressCount": 135,
+      "figures": 12,
+      "proems": 1,
+      "abstracts": 0,
+      "sourceImagesMissingAlt": 0,
+      "externalCitations": 0,
+      "findings": [
+        {
+          "area": "illustration",
+          "severity": "passed",
+          "finding": "Two source-bound, live typographic specimens have no img/alt by design"
+        },
+        {
+          "area": "content-review",
+          "severity": "not-verified",
+          "finding": "Factual claims, artistic decisions and full prose line edits require source-grounded editorial review"
+        }
+      ]
+    },
+    {
+      "id": "solstice",
+      "title": "Solstice (WT)",
+      "status": "other-reader-surface",
+      "sourceSHA256": "3fca2e24cce77cac7beb7556e4bff1b142070e024672fa530234e4c3b3320b57",
+      "sourceParagraphs": 1,
+      "wordCount": 4,
+      "sourceAddressCount": 0,
+      "figures": 0,
+      "proems": 0,
+      "abstracts": 0,
+      "sourceImagesMissingAlt": 0,
+      "externalCitations": 0,
+      "findings": []
+    },
+    {
+      "id": "solstice-reading-01",
+      "title": "First Reading",
+      "status": "other-reader-surface",
+      "sourceSHA256": "0aec2f7e4f8e67541247d44877e0f9d0c32807fbd99411391cc20d005817939a",
+      "sourceParagraphs": 1,
+      "wordCount": 5,
+      "sourceAddressCount": 0,
+      "figures": 0,
+      "proems": 0,
+      "abstracts": 0,
+      "sourceImagesMissingAlt": 0,
+      "externalCitations": 0,
+      "findings": []
+    },
+    {
+      "id": "solstice-reading-01--vergil",
+      "title": "Vergil",
+      "status": "other-reader-surface",
+      "sourceSHA256": "63eba43a777b39f9bb27ab8b54fcb7cb04f5ad61633a8f50e0e6aa44e56b3971",
+      "sourceParagraphs": 40,
+      "wordCount": 1581,
+      "sourceAddressCount": 40,
+      "figures": 0,
+      "proems": 0,
+      "abstracts": 0,
+      "sourceImagesMissingAlt": 0,
+      "externalCitations": 0,
+      "findings": []
+    },
+    {
+      "id": "solstice-reading-01--preface",
+      "title": "First Reading — Preface",
+      "status": "other-reader-surface",
+      "sourceSHA256": "47a7a0fa3e8fd0364607b3a1ffd924dd78d0129a36f00b763f318af69b4db887",
+      "sourceParagraphs": 5,
+      "wordCount": 82,
+      "sourceAddressCount": 5,
+      "figures": 0,
+      "proems": 0,
+      "abstracts": 0,
+      "sourceImagesMissingAlt": 0,
+      "externalCitations": 0,
+      "findings": []
+    },
+    {
+      "id": "solstice-reading-01--2025-12-22-anweisung-an-den-schmerz",
+      "title": "Anweisung an den Schmerz",
+      "status": "current-first-reading",
+      "sourceSHA256": "d758dc8f19ae8d50bd23b03012429aa8e4f6a72bb52fc722486cd08082d39d5a",
+      "sourceParagraphs": 8,
+      "wordCount": 604,
+      "sourceAddressCount": 10,
+      "figures": 0,
+      "proems": 1,
+      "abstracts": 0,
+      "sourceImagesMissingAlt": 0,
+      "externalCitations": 0,
+      "findings": [
+        {
+          "area": "illustration",
+          "severity": "editorial-review",
+          "finding": "Gallery artwork exists, but no source-bound image appears in the work's Reader body"
+        },
+        {
+          "area": "content-review",
+          "severity": "not-verified",
+          "finding": "Full literary German/English proofreading and editorial voice require review beyond deterministic text scan"
+        }
+      ]
+    },
+    {
+      "id": "solstice-reading-01--2025-12-23-integration",
+      "title": "Integration",
+      "status": "current-first-reading",
+      "sourceSHA256": "97738f9450949e52e035e5a0978f17ba121c7aba8e3770301ce2dc7ab20802dd",
+      "sourceParagraphs": 16,
+      "wordCount": 724,
+      "sourceAddressCount": 18,
+      "figures": 0,
+      "proems": 1,
+      "abstracts": 0,
+      "sourceImagesMissingAlt": 0,
+      "externalCitations": 0,
+      "findings": [
+        {
+          "area": "illustration",
+          "severity": "editorial-review",
+          "finding": "Gallery artwork exists, but no source-bound image appears in the work's Reader body"
+        },
+        {
+          "area": "content-review",
+          "severity": "not-verified",
+          "finding": "Full literary German/English proofreading and editorial voice require review beyond deterministic text scan"
+        }
+      ]
+    },
+    {
+      "id": "solstice-reading-01--2025-12-28-renaturalization",
+      "title": "Renaturalization",
+      "status": "current-first-reading",
+      "sourceSHA256": "469d2262b74aef5cb4da955e86f183885a4b1d6c7af59d06046e80be6ca241a3",
+      "sourceParagraphs": 16,
+      "wordCount": 663,
+      "sourceAddressCount": 18,
+      "figures": 0,
+      "proems": 1,
+      "abstracts": 0,
+      "sourceImagesMissingAlt": 0,
+      "externalCitations": 0,
+      "findings": [
+        {
+          "area": "illustration",
+          "severity": "editorial-review",
+          "finding": "Gallery artwork exists, but no source-bound image appears in the work's Reader body"
+        },
+        {
+          "area": "content-review",
+          "severity": "not-verified",
+          "finding": "Full literary German/English proofreading and editorial voice require review beyond deterministic text scan"
+        }
+      ]
+    },
+    {
+      "id": "solstice-reading-01--2026-01-08-vier-aussagen-zum-atherleib",
+      "title": "Vier Aussagen zum Ätherleib",
+      "status": "current-first-reading",
+      "sourceSHA256": "5a0ea8f4897ba837933dd981aad678ec8f7be92138f5be0c19430051ce03d249",
+      "sourceParagraphs": 28,
+      "wordCount": 636,
+      "sourceAddressCount": 30,
+      "figures": 0,
+      "proems": 1,
+      "abstracts": 0,
+      "sourceImagesMissingAlt": 0,
+      "externalCitations": 0,
+      "findings": [
+        {
+          "area": "illustration",
+          "severity": "editorial-review",
+          "finding": "Gallery artwork exists, but no source-bound image appears in the work's Reader body"
+        },
+        {
+          "area": "content-review",
+          "severity": "not-verified",
+          "finding": "Full literary German/English proofreading and editorial voice require review beyond deterministic text scan"
+        }
+      ]
+    },
+    {
+      "id": "solstice-reading-01--2026-01-22-three-floors",
+      "title": "Three Floors",
+      "status": "current-first-reading",
+      "sourceSHA256": "8dea61151538e12aa02269d46aaa003f17c21634335ee07c37b4e8478225d130",
+      "sourceParagraphs": 15,
+      "wordCount": 353,
+      "sourceAddressCount": 17,
+      "figures": 0,
+      "proems": 1,
+      "abstracts": 0,
+      "sourceImagesMissingAlt": 0,
+      "externalCitations": 0,
+      "findings": [
+        {
+          "area": "illustration",
+          "severity": "editorial-review",
+          "finding": "Gallery artwork exists, but no source-bound image appears in the work's Reader body"
+        },
+        {
+          "area": "content-review",
+          "severity": "not-verified",
+          "finding": "Full literary German/English proofreading and editorial voice require review beyond deterministic text scan"
+        }
+      ]
+    },
+    {
+      "id": "solstice-reading-01--2026-01-23-i-keep-moving",
+      "title": "I Keep Moving",
+      "status": "current-first-reading",
+      "sourceSHA256": "6d0c26736010ee5c6fb348693ba9a3ae6f072b507806c8b36d9e370023f96b03",
+      "sourceParagraphs": 14,
+      "wordCount": 540,
+      "sourceAddressCount": 16,
+      "figures": 0,
+      "proems": 1,
+      "abstracts": 0,
+      "sourceImagesMissingAlt": 0,
+      "externalCitations": 0,
+      "findings": [
+        {
+          "area": "illustration",
+          "severity": "editorial-review",
+          "finding": "Gallery artwork exists, but no source-bound image appears in the work's Reader body"
+        },
+        {
+          "area": "content-review",
+          "severity": "not-verified",
+          "finding": "Full literary German/English proofreading and editorial voice require review beyond deterministic text scan"
+        }
+      ]
+    },
+    {
+      "id": "solstice-reading-01--2026-02-04-two-rooms",
+      "title": "Two Rooms",
+      "status": "current-first-reading",
+      "sourceSHA256": "cb586e19af48d3af170c34ed25d4ca64c0862d4e4363ba017ced4c883f5baf7e",
+      "sourceParagraphs": 14,
+      "wordCount": 304,
+      "sourceAddressCount": 16,
+      "figures": 0,
+      "proems": 1,
+      "abstracts": 0,
+      "sourceImagesMissingAlt": 0,
+      "externalCitations": 0,
+      "findings": [
+        {
+          "area": "illustration",
+          "severity": "editorial-review",
+          "finding": "Gallery artwork exists, but no source-bound image appears in the work's Reader body"
+        },
+        {
+          "area": "content-review",
+          "severity": "not-verified",
+          "finding": "Full literary German/English proofreading and editorial voice require review beyond deterministic text scan"
+        }
+      ]
+    },
+    {
+      "id": "solstice-reading-01--2026-02-14-on-a-future-not-yet-drafted",
+      "title": "On a Future Not Yet Drafted",
+      "status": "current-first-reading",
+      "sourceSHA256": "810cac8c76a7f7c819741d412d6452db22ffc9ac231cc5ee5df0f3cf9dc4a455",
+      "sourceParagraphs": 11,
+      "wordCount": 335,
+      "sourceAddressCount": 15,
+      "figures": 2,
+      "proems": 1,
+      "abstracts": 0,
+      "sourceImagesMissingAlt": 0,
+      "externalCitations": 0,
+      "findings": [
+        {
+          "area": "content-review",
+          "severity": "not-verified",
+          "finding": "Full literary German/English proofreading and editorial voice require review beyond deterministic text scan"
+        }
+      ]
+    },
+    {
+      "id": "solstice-reading-01--2026-02-28-no-optimize",
+      "title": "No Optimize",
+      "status": "current-first-reading",
+      "sourceSHA256": "36f84ebe898092f5a6d5761b6e61f347811733040129a88d1c362bd6caa86e69",
+      "sourceParagraphs": 15,
+      "wordCount": 296,
+      "sourceAddressCount": 17,
+      "figures": 0,
+      "proems": 1,
+      "abstracts": 0,
+      "sourceImagesMissingAlt": 0,
+      "externalCitations": 0,
+      "findings": [
+        {
+          "area": "illustration",
+          "severity": "editorial-review",
+          "finding": "Gallery artwork exists, but no source-bound image appears in the work's Reader body"
+        },
+        {
+          "area": "content-review",
+          "severity": "not-verified",
+          "finding": "Full literary German/English proofreading and editorial voice require review beyond deterministic text scan"
+        }
+      ]
+    },
+    {
+      "id": "solstice-reading-01--2026-03-16-the-teatre-of-the-mind",
+      "title": "The Teatre of the Mind",
+      "status": "current-first-reading",
+      "sourceSHA256": "8c7960dc6a860d02a624dade4fec3f554c92af3feac596ab1b910648bdf8cde9",
+      "sourceParagraphs": 21,
+      "wordCount": 718,
+      "sourceAddressCount": 24,
+      "figures": 1,
+      "proems": 1,
+      "abstracts": 0,
+      "sourceImagesMissingAlt": 0,
+      "externalCitations": 0,
+      "findings": [
+        {
+          "area": "content-review",
+          "severity": "not-verified",
+          "finding": "Full literary German/English proofreading and editorial voice require review beyond deterministic text scan"
+        }
+      ]
+    },
+    {
+      "id": "solstice-reading-01--2026-03-20-my-place-in-space",
+      "title": "My Place in Space",
+      "status": "current-first-reading",
+      "sourceSHA256": "2f4b4d6e2f9ca43c47a395135beaeb4c2d22ac344477ad81d74e477989adbb66",
+      "sourceParagraphs": 14,
+      "wordCount": 824,
+      "sourceAddressCount": 16,
+      "figures": 0,
+      "proems": 1,
+      "abstracts": 0,
+      "sourceImagesMissingAlt": 0,
+      "externalCitations": 0,
+      "findings": [
+        {
+          "area": "illustration",
+          "severity": "editorial-review",
+          "finding": "Gallery artwork exists, but no source-bound image appears in the work's Reader body"
+        },
+        {
+          "area": "content-review",
+          "severity": "not-verified",
+          "finding": "Full literary German/English proofreading and editorial voice require review beyond deterministic text scan"
+        }
+      ]
+    },
+    {
+      "id": "solstice-reading-01--2026-03-21-muttersprache",
+      "title": "Muttersprache",
+      "status": "current-first-reading",
+      "sourceSHA256": "8618560d9ea4a99e1f5df053e2939b4ca45f77cd9d814050313eb204ad7b4d5a",
+      "sourceParagraphs": 10,
+      "wordCount": 392,
+      "sourceAddressCount": 12,
+      "figures": 0,
+      "proems": 1,
+      "abstracts": 0,
+      "sourceImagesMissingAlt": 0,
+      "externalCitations": 0,
+      "findings": [
+        {
+          "area": "illustration",
+          "severity": "editorial-review",
+          "finding": "Gallery artwork exists, but no source-bound image appears in the work's Reader body"
+        },
+        {
+          "area": "content-review",
+          "severity": "not-verified",
+          "finding": "Full literary German/English proofreading and editorial voice require review beyond deterministic text scan"
+        }
+      ]
+    },
+    {
+      "id": "solstice-reading-01--2026-04-22-the-writing-hand",
+      "title": "The Writing Hand",
+      "status": "current-first-reading",
+      "sourceSHA256": "dbe80d5dccbb93c7d6eb2c946d3aefa17bb96a26f91ca0edc59ff820b18e24e9",
+      "sourceParagraphs": 9,
+      "wordCount": 619,
+      "sourceAddressCount": 11,
+      "figures": 0,
+      "proems": 1,
+      "abstracts": 0,
+      "sourceImagesMissingAlt": 0,
+      "externalCitations": 0,
+      "findings": [
+        {
+          "area": "illustration",
+          "severity": "editorial-review",
+          "finding": "Gallery artwork exists, but no source-bound image appears in the work's Reader body"
+        },
+        {
+          "area": "content-review",
+          "severity": "not-verified",
+          "finding": "Full literary German/English proofreading and editorial voice require review beyond deterministic text scan"
+        }
+      ]
+    },
+    {
+      "id": "solstice-reading-01--2026-04-23-who-is-bee",
+      "title": "Who Is Bee?",
+      "status": "current-first-reading",
+      "sourceSHA256": "2afa9661998f9ef617fcaaa032416fd52622728371d76bb0d73d693b9156e70a",
+      "sourceParagraphs": 12,
+      "wordCount": 292,
+      "sourceAddressCount": 14,
+      "figures": 0,
+      "proems": 1,
+      "abstracts": 0,
+      "sourceImagesMissingAlt": 0,
+      "externalCitations": 0,
+      "findings": [
+        {
+          "area": "illustration",
+          "severity": "editorial-review",
+          "finding": "Gallery artwork exists, but no source-bound image appears in the work's Reader body"
+        },
+        {
+          "area": "content-review",
+          "severity": "not-verified",
+          "finding": "Full literary German/English proofreading and editorial voice require review beyond deterministic text scan"
+        }
+      ]
+    },
+    {
+      "id": "solstice-reading-01--2026-04-30-about-writing-letters",
+      "title": "About Writing Letters",
+      "status": "current-first-reading",
+      "sourceSHA256": "b056faffbd4efee466087759533a8aae5bcc195cfa769bbd7c10143adf01d723",
+      "sourceParagraphs": 12,
+      "wordCount": 1080,
+      "sourceAddressCount": 14,
+      "figures": 0,
+      "proems": 1,
+      "abstracts": 0,
+      "sourceImagesMissingAlt": 0,
+      "externalCitations": 0,
+      "findings": [
+        {
+          "area": "illustration",
+          "severity": "editorial-review",
+          "finding": "Gallery artwork exists, but no source-bound image appears in the work's Reader body"
+        },
+        {
+          "area": "content-review",
+          "severity": "not-verified",
+          "finding": "Full literary German/English proofreading and editorial voice require review beyond deterministic text scan"
+        }
+      ]
+    },
+    {
+      "id": "solstice-reading-01--2026-05-01-a-score-before-production",
+      "title": "A Score Before Production",
+      "status": "current-first-reading",
+      "sourceSHA256": "0c071d1719ab3b3bd81d6e3ac96b8982f423f58be404dec69bca4795ec4789fe",
+      "sourceParagraphs": 15,
+      "wordCount": 820,
+      "sourceAddressCount": 18,
+      "figures": 1,
+      "proems": 1,
+      "abstracts": 0,
+      "sourceImagesMissingAlt": 0,
+      "externalCitations": 0,
+      "findings": [
+        {
+          "area": "content-review",
+          "severity": "not-verified",
+          "finding": "Full literary German/English proofreading and editorial voice require review beyond deterministic text scan"
+        }
+      ]
+    },
+    {
+      "id": "solstice-reading-01--2026-05-25-seitenlicht",
+      "title": "Seitenlicht",
+      "status": "current-first-reading",
+      "sourceSHA256": "20a0cd80fa09a911c9e98e8fbc36d3c5c83f8aa2dc7d6270c836f741a127c342",
+      "sourceParagraphs": 13,
+      "wordCount": 486,
+      "sourceAddressCount": 15,
+      "figures": 0,
+      "proems": 1,
+      "abstracts": 0,
+      "sourceImagesMissingAlt": 0,
+      "externalCitations": 0,
+      "findings": [
+        {
+          "area": "illustration",
+          "severity": "editorial-review",
+          "finding": "Gallery artwork exists, but no source-bound image appears in the work's Reader body"
+        },
+        {
+          "area": "content-review",
+          "severity": "not-verified",
+          "finding": "Full literary German/English proofreading and editorial voice require review beyond deterministic text scan"
+        }
+      ]
+    },
+    {
+      "id": "solstice-reading-01--2026-05-30-the-sheet",
+      "title": "The Sheet",
+      "status": "current-first-reading",
+      "sourceSHA256": "439f2615a9ec5da3c483d1566dd436388d8d818c602473b67f766626ed1f15fc",
+      "sourceParagraphs": 9,
+      "wordCount": 284,
+      "sourceAddressCount": 15,
+      "figures": 4,
+      "proems": 1,
+      "abstracts": 0,
+      "sourceImagesMissingAlt": 0,
+      "externalCitations": 0,
+      "findings": [
+        {
+          "area": "content-review",
+          "severity": "not-verified",
+          "finding": "Full literary German/English proofreading and editorial voice require review beyond deterministic text scan"
+        }
+      ]
+    },
+    {
+      "id": "solstice-reading-01--2026-06-06-the-sentimental-machine",
+      "title": "The Sentimental Machine",
+      "status": "current-first-reading",
+      "sourceSHA256": "66d6804fd487a9199bb3dc4868a083cf8ef7176bc46970ec29e3ca3009dc986a",
+      "sourceParagraphs": 17,
+      "wordCount": 941,
+      "sourceAddressCount": 20,
+      "figures": 1,
+      "proems": 1,
+      "abstracts": 0,
+      "sourceImagesMissingAlt": 0,
+      "externalCitations": 0,
+      "findings": [
+        {
+          "area": "content-review",
+          "severity": "not-verified",
+          "finding": "Full literary German/English proofreading and editorial voice require review beyond deterministic text scan"
+        }
+      ]
+    },
+    {
+      "id": "solstice-reading-01--2026-06-15-fck-frg-we-all-had-parents",
+      "title": "FCK FRG / We All Had Parents",
+      "status": "current-first-reading",
+      "sourceSHA256": "a7b6ba256f91eaac2dd3fce5837f90de68edcfae4b6a8e416d26921b352e6643",
+      "sourceParagraphs": 29,
+      "wordCount": 1772,
+      "sourceAddressCount": 32,
+      "figures": 1,
+      "proems": 1,
+      "abstracts": 0,
+      "sourceImagesMissingAlt": 0,
+      "externalCitations": 0,
+      "findings": [
+        {
+          "area": "content-review",
+          "severity": "not-verified",
+          "finding": "Full literary German/English proofreading and editorial voice require review beyond deterministic text scan"
+        }
+      ]
+    },
+    {
+      "id": "solstice-reading-01--2026-06-24-prufe-dein-gewicht",
+      "title": "Prüfe dein Gewicht",
+      "status": "current-first-reading",
+      "sourceSHA256": "027bd20ac0b4cec05ad3698be32eb1dad841c13d4172146452a988e5fb29f4f1",
+      "sourceParagraphs": 34,
+      "wordCount": 587,
+      "sourceAddressCount": 37,
+      "figures": 1,
+      "proems": 1,
+      "abstracts": 0,
+      "sourceImagesMissingAlt": 0,
+      "externalCitations": 0,
+      "findings": [
+        {
+          "area": "content-review",
+          "severity": "not-verified",
+          "finding": "Full literary German/English proofreading and editorial voice require review beyond deterministic text scan"
+        }
+      ]
+    },
+    {
+      "id": "solstice-reading-01--2026-07-21-everything-else-is-illustration",
+      "title": "Everything Else Is Illustration",
+      "status": "current-first-reading",
+      "sourceSHA256": "553fca4796fbfa6429d2239f283a05adbfca7c67bfac7c6d572dffbf1c234745",
+      "sourceParagraphs": 10,
+      "wordCount": 223,
+      "sourceAddressCount": 12,
+      "figures": 0,
+      "proems": 1,
+      "abstracts": 0,
+      "sourceImagesMissingAlt": 0,
+      "externalCitations": 0,
+      "findings": [
+        {
+          "area": "illustration",
+          "severity": "editorial-review",
+          "finding": "Gallery artwork exists, but no source-bound image appears in the work's Reader body"
+        },
+        {
+          "area": "content-review",
+          "severity": "not-verified",
+          "finding": "Full literary German/English proofreading and editorial voice require review beyond deterministic text scan"
+        }
+      ]
+    },
+    {
+      "id": "solstice-reading-01--2026-07-28-bees-journal",
+      "title": "Bee’s Journal",
+      "status": "current-first-reading",
+      "sourceSHA256": "42b0d100397c41546e2f290f3207d27a37c38b9c77be40956857be76bc76954c",
+      "sourceParagraphs": 7,
+      "wordCount": 342,
+      "sourceAddressCount": 9,
+      "figures": 0,
+      "proems": 1,
+      "abstracts": 0,
+      "sourceImagesMissingAlt": 0,
+      "externalCitations": 0,
+      "findings": [
+        {
+          "area": "illustration",
+          "severity": "editorial-review",
+          "finding": "Gallery artwork exists, but no source-bound image appears in the work's Reader body"
+        },
+        {
+          "area": "content-review",
+          "severity": "not-verified",
+          "finding": "Full literary German/English proofreading and editorial voice require review beyond deterministic text scan"
+        }
+      ]
+    },
+    {
+      "id": "solstice-reading-01--2026-07-31-n-journal",
+      "title": "N. Journal",
+      "status": "current-first-reading",
+      "sourceSHA256": "76580f780977e800ba36593f5c483428112ddba6abcd79c5404bf73512b1a8d1",
+      "sourceParagraphs": 3,
+      "wordCount": 320,
+      "sourceAddressCount": 5,
+      "figures": 0,
+      "proems": 1,
+      "abstracts": 0,
+      "sourceImagesMissingAlt": 0,
+      "externalCitations": 0,
+      "findings": [
+        {
+          "area": "illustration",
+          "severity": "editorial-review",
+          "finding": "Gallery artwork exists, but no source-bound image appears in the work's Reader body"
+        },
+        {
+          "area": "content-review",
+          "severity": "not-verified",
+          "finding": "Full literary German/English proofreading and editorial voice require review beyond deterministic text scan"
+        }
+      ]
+    },
+    {
+      "id": "solstice-reading-01--2026-08-17-the-scissors",
+      "title": "The Scissors",
+      "status": "current-first-reading",
+      "sourceSHA256": "49ffa28979d6bdec134e8b518541201c7b62983e865010d27baafa8193550dd7",
+      "sourceParagraphs": 117,
+      "wordCount": 1576,
+      "sourceAddressCount": 119,
+      "figures": 0,
+      "proems": 1,
+      "abstracts": 0,
+      "sourceImagesMissingAlt": 0,
+      "externalCitations": 0,
+      "findings": [
+        {
+          "area": "illustration",
+          "severity": "editorial-review",
+          "finding": "Gallery artwork exists, but no source-bound image appears in the work's Reader body"
+        },
+        {
+          "area": "content-review",
+          "severity": "not-verified",
+          "finding": "Full literary German/English proofreading and editorial voice require review beyond deterministic text scan"
+        }
+      ]
+    },
+    {
+      "id": "solstice-reading-01--2026-08-19-six-panels",
+      "title": "Six Panels",
+      "status": "current-first-reading",
+      "sourceSHA256": "d459181d043bdfc7ea4241eecc715a9509348a0a1dca829568976f2409d8d15a",
+      "sourceParagraphs": 13,
+      "wordCount": 1453,
+      "sourceAddressCount": 15,
+      "figures": 0,
+      "proems": 1,
+      "abstracts": 0,
+      "sourceImagesMissingAlt": 0,
+      "externalCitations": 0,
+      "findings": [
+        {
+          "area": "illustration",
+          "severity": "editorial-review",
+          "finding": "Gallery artwork exists, but no source-bound image appears in the work's Reader body"
+        },
+        {
+          "area": "content-review",
+          "severity": "not-verified",
+          "finding": "Full literary German/English proofreading and editorial voice require review beyond deterministic text scan"
+        }
+      ]
+    },
+    {
+      "id": "solstice-reading-01--2026-08-28-the-old-woman",
+      "title": "The Old Woman",
+      "status": "current-first-reading",
+      "sourceSHA256": "9e0694df54226bdf57304e35cf8037e6992ab7391d9526673f5ef06deaa26a2b",
+      "sourceParagraphs": 10,
+      "wordCount": 266,
+      "sourceAddressCount": 12,
+      "figures": 0,
+      "proems": 1,
+      "abstracts": 0,
+      "sourceImagesMissingAlt": 0,
+      "externalCitations": 0,
+      "findings": [
+        {
+          "area": "illustration",
+          "severity": "editorial-review",
+          "finding": "Gallery artwork exists, but no source-bound image appears in the work's Reader body"
+        },
+        {
+          "area": "content-review",
+          "severity": "not-verified",
+          "finding": "Full literary German/English proofreading and editorial voice require review beyond deterministic text scan"
+        }
+      ]
+    },
+    {
+      "id": "solstice-reading-01--2026-09-04-the-strawberry",
+      "title": "The Strawberry",
+      "status": "current-first-reading",
+      "sourceSHA256": "5bcf1258933e38a818b3b74f548f718a94a44e0320a3189b7b24e9ab019c016a",
+      "sourceParagraphs": 19,
+      "wordCount": 668,
+      "sourceAddressCount": 21,
+      "figures": 0,
+      "proems": 1,
+      "abstracts": 0,
+      "sourceImagesMissingAlt": 0,
+      "externalCitations": 0,
+      "findings": [
+        {
+          "area": "illustration",
+          "severity": "editorial-review",
+          "finding": "Gallery artwork exists, but no source-bound image appears in the work's Reader body"
+        },
+        {
+          "area": "content-review",
+          "severity": "not-verified",
+          "finding": "Full literary German/English proofreading and editorial voice require review beyond deterministic text scan"
+        }
+      ]
+    },
+    {
+      "id": "solstice-reading-01--2026-09-06-leselust",
+      "title": "Leselust",
+      "status": "current-first-reading",
+      "sourceSHA256": "696e5d9da228247bb0a7b79f27732eda500c05c5708bea994b3cb6ec2eeddfcb",
+      "sourceParagraphs": 11,
+      "wordCount": 587,
+      "sourceAddressCount": 13,
+      "figures": 0,
+      "proems": 1,
+      "abstracts": 0,
+      "sourceImagesMissingAlt": 0,
+      "externalCitations": 0,
+      "findings": [
+        {
+          "area": "illustration",
+          "severity": "editorial-review",
+          "finding": "Gallery artwork exists, but no source-bound image appears in the work's Reader body"
+        },
+        {
+          "area": "content-review",
+          "severity": "not-verified",
+          "finding": "Full literary German/English proofreading and editorial voice require review beyond deterministic text scan"
+        }
+      ]
+    },
+    {
+      "id": "solstice-reading-01--2026-09-18-object-crossing-voice",
+      "title": "Object / Crossing / Voice",
+      "status": "current-first-reading",
+      "sourceSHA256": "be42eace0979ec7ce24f637190e30d67f0682255edc5001f4acc8edf06351e05",
+      "sourceParagraphs": 13,
+      "wordCount": 520,
+      "sourceAddressCount": 15,
+      "figures": 0,
+      "proems": 1,
+      "abstracts": 0,
+      "sourceImagesMissingAlt": 0,
+      "externalCitations": 0,
+      "findings": [
+        {
+          "area": "illustration",
+          "severity": "editorial-review",
+          "finding": "Gallery artwork exists, but no source-bound image appears in the work's Reader body"
+        },
+        {
+          "area": "content-review",
+          "severity": "not-verified",
+          "finding": "Full literary German/English proofreading and editorial voice require review beyond deterministic text scan"
+        }
+      ]
+    },
+    {
+      "id": "publication-notes",
+      "title": "Publication Notes",
+      "status": "other-reader-surface",
+      "sourceSHA256": "b09b8bfa69c6382ad2facbeb47ce721b8319d8258e6b40567007616c06daa24e",
+      "sourceParagraphs": 3,
+      "wordCount": 47,
+      "sourceAddressCount": 4,
+      "figures": 0,
+      "proems": 0,
+      "abstracts": 0,
+      "sourceImagesMissingAlt": 0,
+      "externalCitations": 1,
+      "findings": []
+    }
+  ]
+}

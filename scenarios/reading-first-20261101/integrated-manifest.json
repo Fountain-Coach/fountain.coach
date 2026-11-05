@@ -34,7 +34,8 @@
       "slug": "to-read-is-not-to-remember",
       "title": "Did the Machine Actually Read the Book?",
       "paragraphs": 21,
-      "figures": 1
+      "figures": 1,
+      "editorialState": "archived"
     },
     {
       "slug": "semantic-compilation-the-archive-is-not-the-edition",
@@ -68,5 +69,23 @@
     "essay--semantic-compilation-the-archive-is-not-the-edition",
     "essay--teatro-an-unfinished-composition",
     "essay--reframe-and-the-business-value-of-the-estate"
+  ],
+  "currentEssays": [
+    "what-makes-a-page-modern",
+    "reframe-and-the-business-value-of-the-estate",
+    "teatro-an-unfinished-composition",
+    "the-ear-that-learns",
+    "the-door-is-a-score"
+  ],
+  "archivalDecisions": [
+    {
+      "title": "Did the Machine Actually Read the Book?",
+      "slug": "to-read-is-not-to-remember",
+      "state": "archived",
+      "date": "2026-11-05",
+      "originalRoute": "/estate/essays/to-read-is-not-to-remember/",
+      "preserveOriginalSource": true,
+      "removeFromCurrentEssays": true
+    }
   ]
 }

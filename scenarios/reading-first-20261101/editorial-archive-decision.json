@@ -1,0 +1,26 @@
+{
+  "schema": "fountain.press.publication-state.v1",
+  "decision": "writer-authorized-archive",
+  "decisionDate": "2026-11-05",
+  "workID": "essay--to-read-is-not-to-remember",
+  "title": "Did the Machine Actually Read the Book?",
+  "retainedOriginalRoute": "/estate/essays/to-read-is-not-to-remember/",
+  "originalPublicSourceSHA256": "553b26f69963d0787c416b64b56591d3ccb46b01541d57debf1f79dc5d6a1714",
+  "retainedDeepReader": "#/read/essay--to-read-is-not-to-remember",
+  "withdrawFrom": [
+    "currentEssayContents",
+    "collectionGallery",
+    "adjacentWorkNavigation",
+    "publicationSelection",
+    "currentSharePromotion"
+  ],
+  "retain": [
+    "originalWork",
+    "sourceAddress",
+    "attribution",
+    "historicalDeepLinks",
+    "originalStaticSourceRoute"
+  ],
+  "stageOnly": true,
+  "publicProductionChanged": false
+}

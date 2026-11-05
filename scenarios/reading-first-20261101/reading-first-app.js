@@ -30,7 +30,11 @@ for(const [key,template] of templates){
   const label=template.content.querySelector('h2')?.textContent?.trim()||key;
   labels.set(key,label);
   const option=document.createElement('option');option.value=key;option.textContent=key.startsWith('essay--')?'Essays · '+label:'First Reading · '+label;
-  if(!['essay--semantic-compilation-the-archive-is-not-the-edition','essay--the-composable-book'].includes(key))section.append(option);
+  // Historical works retain their exact deep-reader identity, but do not
+  // masquerade as current publications in the Reader's selection control.
+  if(!['essay--semantic-compilation-the-archive-is-not-the-edition',
+        'essay--the-composable-book',
+        'essay--to-read-is-not-to-remember'].includes(key))section.append(option);
  }
 }
 // Authored editorial membership: implementation histories remain independently
@@ -39,10 +43,14 @@ const implementationStories=new Set([
  'essay--semantic-compilation-the-archive-is-not-the-edition',
  'essay--the-composable-book'
 ]);
+// The writer archived this October 2026 essay on 5 November 2026.
+// Its original source and deep Reader URL remain readable; the current
+// Essays publication is a different, explicit membership projection.
+const archivedEssays=new Set(['essay--to-read-is-not-to-remember']);
 const essaySequence=[...templates.keys()]
- .filter(x=>x.startsWith('essay--')&&!implementationStories.has(x)).reverse();
+ .filter(x=>x.startsWith('essay--')&&!implementationStories.has(x)&&!archivedEssays.has(x)).reverse();
 const solsticeSequence=[...templates.keys()].filter(x=>x.startsWith('solstice-reading-01--'));
-if(essaySequence.length!==6||solsticeSequence.length!==32)throw Error('Editorial collection inventory changed');
+if(essaySequence.length!==5||solsticeSequence.length!==32)throw Error('Editorial collection inventory changed');
 // Editorial prose is admitted with each work, not inferred at render time.
 for(const id of [...essaySequence,...solsticeSequence.slice(2)]){
  const template=templates.get(id);
@@ -55,7 +63,7 @@ const contents={essays:essaySequence,'first-readings':solsticeSequence};
 const galleryData=JSON.parse(document.getElementById('reader-gallery-data')?.textContent||'null');
 if(galleryData?.schema!=='fountain.press.bookshelf-gallery.v1')throw Error('Bookshelf gallery source missing');
 const galleries=galleryData.collections;
-if(galleries.essays.length!==6||galleries['first-readings'].length!==30 ||
+if(galleries.essays.length!==5||galleries['first-readings'].length!==30 ||
  galleries.essays.some((e,i)=>e.id!==essaySequence[i]) ||
  galleries['first-readings'].some((e,i)=>e.id!==solsticeSequence[i+2]))
  throw Error('Gallery no longer matches admitted source ordering');
@@ -66,7 +74,7 @@ function entryVolume(name){
 const isContents=name=>name==='essays'||name==='first-readings';
 const isSurface=name=>name==='library'||isContents(name);
 function owningContents(name){
- if(essaySequence.includes(name)||name==='teatro'||name==='notes--the-door-is-a-score')return 'essays';
+ if(essaySequence.includes(name)||archivedEssays.has(name)||name==='teatro'||name==='notes--the-door-is-a-score')return 'essays';
  if(solsticeSequence.includes(name))return 'first-readings';
  return null;
 }

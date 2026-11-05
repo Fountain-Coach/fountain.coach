@@ -1,0 +1,79 @@
+{
+  "schema": "fountain.press.archive-preview.v1",
+  "sourceRootSHA256": "8ca2c693f4ae275f16331f3989790016a7f0ba3d0a2c2dc34d58e3a4f432478f",
+  "candidateRootSHA256": "77f90b8db05a42700f727b4558f7e91a6406e2ae6bf25d59d953fa5ddae7b3d9",
+  "results": [
+    {
+      "browserName": "webkit",
+      "w": 390,
+      "h": 844,
+      "currentEssays": 5,
+      "archiveDeepLink": true,
+      "archivalNote": true,
+      "originalDirectRouteUnchanged": true,
+      "readerParent": "essays",
+      "sourceAddressPresent": true,
+      "errors": []
+    },
+    {
+      "browserName": "webkit",
+      "w": 820,
+      "h": 1120,
+      "currentEssays": 5,
+      "archiveDeepLink": true,
+      "archivalNote": true,
+      "originalDirectRouteUnchanged": true,
+      "readerParent": "essays",
+      "sourceAddressPresent": true,
+      "errors": []
+    },
+    {
+      "browserName": "webkit",
+      "w": 1440,
+      "h": 900,
+      "currentEssays": 5,
+      "archiveDeepLink": true,
+      "archivalNote": true,
+      "originalDirectRouteUnchanged": true,
+      "readerParent": "essays",
+      "sourceAddressPresent": true,
+      "errors": []
+    },
+    {
+      "browserName": "chromium",
+      "w": 390,
+      "h": 844,
+      "currentEssays": 5,
+      "archiveDeepLink": true,
+      "archivalNote": true,
+      "originalDirectRouteUnchanged": true,
+      "readerParent": "essays",
+      "sourceAddressPresent": true,
+      "errors": []
+    },
+    {
+      "browserName": "chromium",
+      "w": 820,
+      "h": 1120,
+      "currentEssays": 5,
+      "archiveDeepLink": true,
+      "archivalNote": true,
+      "originalDirectRouteUnchanged": true,
+      "readerParent": "essays",
+      "sourceAddressPresent": true,
+      "errors": []
+    },
+    {
+      "browserName": "chromium",
+      "w": 1440,
+      "h": 900,
+      "currentEssays": 5,
+      "archiveDeepLink": true,
+      "archivalNote": true,
+      "originalDirectRouteUnchanged": true,
+      "readerParent": "essays",
+      "sourceAddressPresent": true,
+      "errors": []
+    }
+  ]
+}

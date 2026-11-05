@@ -1,0 +1,12 @@
+{
+  "schema": "fountain.press.archived-gallery-projection.v1",
+  "inputSHA256": "7f5d2ff63ad8c1a233b585bc73c1e4ca96981bb0d1eca767b4486ac437955087",
+  "outputSHA256": "85fa6b12ee9a73f66e189b9c18306dc88408d889c87bfc5f2983f8a899da58aa",
+  "title": "Did the Machine Actually Read the Book?",
+  "originalRoute": "/essays/to-read-is-not-to-remember/",
+  "archivalCardRemoved": true,
+  "archiveReferenceRetained": true,
+  "sourceProseChanged": false,
+  "page": "legacy Essays gallery",
+  "stageOnly": false
+}

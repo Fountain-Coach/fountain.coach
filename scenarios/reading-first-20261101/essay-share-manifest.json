@@ -37,7 +37,9 @@
         "type": "actual-typeset-page-preview",
         "path": "/estate/assets/essay-share/did-the-machine-actually-read-the-book.png",
         "alt": "Typeset opening spread of Did the Machine Actually Read the Book? showing its title, argument and original essay typography"
-      }
+      },
+      "editorialState": "archived",
+      "currentEditionPromotion": false
     },
     "semantic-compilation-the-archive-is-not-the-edition": {
       "reader": "#/read/essay--semantic-compilation-the-archive-is-not-the-edition",

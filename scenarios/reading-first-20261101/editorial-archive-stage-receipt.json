@@ -1,0 +1,23 @@
+{
+  "schema": "fountain.press.editorial-archive-decision.v1",
+  "workID": "essay--to-read-is-not-to-remember",
+  "title": "Did the Machine Actually Read the Book?",
+  "status": "archived",
+  "archivedAt": "2026-11-05",
+  "preservedOriginalRoute": "/estate/essays/to-read-is-not-to-remember/",
+  "preservedReaderRoute": "#/read/essay--to-read-is-not-to-remember",
+  "originalSourceHTMLSHA256": "8ca2c693f4ae275f16331f3989790016a7f0ba3d0a2c2dc34d58e3a4f432478f",
+  "archivedReaderHTMLSHA256": "77f90b8db05a42700f727b4558f7e91a6406e2ae6bf25d59d953fa5ddae7b3d9",
+  "currentEssays": [
+    "essay--what-makes-a-page-modern",
+    "essay--reframe-and-the-business-value-of-the-estate",
+    "essay--teatro-an-unfinished-composition",
+    "essay--the-ear-that-learns",
+    "essay--the-door-is-a-score"
+  ],
+  "removedFromCurrentGallery": "essay--to-read-is-not-to-remember",
+  "preservedOriginalFigurePaths": true,
+  "preservedWriterProse": true,
+  "editorialStatusSourceBlock": "editorial.archive.to-read-is-not-to-remember",
+  "productionStatus": "unchanged"
+}
