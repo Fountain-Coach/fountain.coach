@@ -7,6 +7,7 @@ const proof='/tmp/press-sound-essay-proof-v160';
 const html=fs.readFileSync(proof+'/index.html','utf8');
 const app=fs.readFileSync(proof+'/reading-first-app.js','utf8');
 const code='essay--a-sound-must-earn-its-place';
+const live=process.env.PRESS_LIVE_STAGE==='1';
 (async()=>{
  const browser=await puppeteer.launch({headless:true,executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',args:['--no-sandbox','--ignore-certificate-errors']});
  let passed=0; const output=[];
@@ -15,6 +16,7 @@ const code='essay--a-sound-must-earn-its-place';
    const page=await browser.newPage();
    await page.setViewport({width,height,deviceScaleFactor:1});
    const errors=[];page.on('pageerror',e=>errors.push(e.message));
+   if(!live){
    await page.setRequestInterception(true);
    page.on('request',req=>{
     if(req.isNavigationRequest() && req.url().startsWith('https://192.168.8.50:8243/estate')){
@@ -23,6 +25,7 @@ const code='essay--a-sound-must-earn-its-place';
      req.respond({status:200,contentType:'application/javascript; charset=utf-8',body:app}).catch(e=>errors.push(e.message));
     }else req.continue().catch(e=>errors.push(e.message));
    });
+   }
    await page.goto(ROOT+'#/read/'+code,{waitUntil:'domcontentloaded',timeout:20000});
    await page.waitForFunction((vol)=>document.querySelector('#page-viewport')?.dataset.volume===vol &&
     document.querySelector('#page-viewport')?.dataset.layout==='ready', {timeout:25000},code);
@@ -57,7 +60,7 @@ const code='essay--a-sound-must-earn-its-place';
    passed++;
    await page.close();
   }
-  fs.writeFileSync(proof+'/browser-preflight.json',JSON.stringify({status:'PASS',passed,output},null,2)+'\n');
-  console.log('BROWSER_EDITORIAL_PROOF_PASS',passed,'layouts');
+  fs.writeFileSync(proof+(live?'/browser-live-acceptance.json':'/browser-preflight.json'),JSON.stringify({status:'PASS',mode:live?'live':'preflight',passed,output},null,2)+'\n');
+  console.log(live?'BROWSER_LIVE_EDITORIAL_PROOF_PASS':'BROWSER_EDITORIAL_PROOF_PASS',passed,'layouts');
  } finally {await browser.close();}
 })().catch(e=>{console.error(e.stack||String(e));process.exit(1)});
