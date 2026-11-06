@@ -67,7 +67,7 @@ def figure(i):
       '<figure class="linotype-inline-illustration frame-reading-figure" '
       'data-source-block="'+html.escape(i["sourceAddress"],quote=True)+'" '
       'data-source-illustration-id="'+kind+'" '
-      'data-inline-after-paragraph="'+("7" if portrait else "2")+'" '
+      'data-inline-after-paragraph="'+("8" if portrait else "2")+'" '
       'data-press-illustration-role="'+html.escape(i["role"])+'" '
       'data-press-media="source-photo-and-architectural-interpretation" '
       'style="box-sizing:border-box;display:block;'
@@ -97,7 +97,7 @@ def template_v3(v2,v3,figures):
         raise ValueError("Wrong source address or content")
     out=out.replace('data-source-sha256="'+prior_sha+'"',
                     'data-source-sha256="'+new_sha+'"',1)
-    for anchor,i in (("2",figures[0]),("7",figures[1])):
+    for anchor,i in (("2",figures[0]),("8",figures[1])):
         pat=r'(<p data-source-block="a-sound-must-earn-its-place\.p'+anchor+r'"[^>]*>.*?</p>)'
         if len(re.findall(pat,out,re.S))!=1:
             raise ValueError("Missing exact prose anchor "+anchor)
@@ -152,7 +152,7 @@ def build(index_path,app_path,output):
                  "webSHA256":i["sha256"],"file":OUT_DIR+"/"+i["filename"]}
                 for i in imgs]
     }
-    receipt_path=out/"estate/evidence/press-essay-kino-illustrations-v166.json"
+    receipt_path=out/"estate/evidence/press-essay-kino-illustrations-v167.json"
     receipt_path.parent.mkdir(parents=True,exist_ok=True)
     receipt_path.write_text(json.dumps(receipt,ensure_ascii=False,indent=2)+"\n")
     print("KIN0_ESSAY_IMAGES_SOURCE_CANDIDATE",json.dumps(receipt,indent=2))

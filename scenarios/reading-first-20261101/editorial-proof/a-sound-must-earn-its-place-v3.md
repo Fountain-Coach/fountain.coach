@@ -18,8 +18,6 @@ We have met the same difference in a simpler material. In *The Door Is a Score*,
 
 Synthetic sound deserves that degree of attention. Its source may be recorded, modeled, performed or built from oscillators. The choice is not a ranking of technologies. It is the beginning of a material inquiry: how does this thing start, what changes while it sounds, and what is left in the air when it stops? A small noise can take hours of work before it has the right weight. Some imperfections have to be removed; others are exactly what makes the sound believable.
 
-[KINO-ILLUSTRATION:night-photograph]
-
 We made two original Csound patches for the same short score: air, a low resonance, two metallic gestures and their disappearance. Both are sixteen seconds long, without a borrowed recording or a jazz sample. In the first, each event is simply triggered and left almost bare, with a uniform envelope and no convincing room. In the second, the same events acquire differing attacks, unstable partials, a slowly changing perspective and a reverberant tail. Their overall listening levels have been matched. The second is a direction to audition, not a finished production.
 
 [KINO-ILLUSTRATION:night-photograph]
