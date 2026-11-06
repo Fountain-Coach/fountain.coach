@@ -3,9 +3,10 @@
 const fs=require('node:fs');
 const puppeteer=require('/opt/homebrew/lib/node_modules/@wonderwhy-er/desktop-commander/node_modules/puppeteer');
 const ROOT='https://192.168.8.50:8243/estate/';
-const DIR='/tmp/press-governance-161/stage';
+const FIXTURE=process.env.PRESS_GOV_FIXTURE_DIR || '/tmp/press-governance-161';
+const DIR=FIXTURE+'/stage';
 const live=process.env.PRESS_GOV_STAGE_LIVE==='1';
-const manifest=JSON.parse(fs.readFileSync('/tmp/press-governance-161/governance-press-manifest.json','utf8'));
+const manifest=JSON.parse(fs.readFileSync(FIXTURE+'/governance-press-manifest.json','utf8'));
 (async()=>{
  const b=await puppeteer.launch({headless:true,executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
  args:['--no-sandbox','--ignore-certificate-errors']});

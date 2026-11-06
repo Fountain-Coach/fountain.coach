@@ -4,9 +4,10 @@
 const fs = require('node:fs');
 const puppeteer = require('/opt/homebrew/lib/node_modules/@wonderwhy-er/desktop-commander/node_modules/puppeteer');
 const ROOT = 'https://192.168.8.50:8243/estate/';
-const OUTPUT = '/tmp/press-governance-161/stage';
+const FIXTURE = process.env.PRESS_GOV_FIXTURE_DIR || '/tmp/press-governance-161';
+const OUTPUT = FIXTURE+'/stage';
 const live = process.env.PRESS_GOV_STAGE_LIVE === '1';
-const manifest = JSON.parse(fs.readFileSync('/tmp/press-governance-161/governance-press-manifest.json','utf8'));
+const manifest = JSON.parse(fs.readFileSync(FIXTURE+'/governance-press-manifest.json','utf8'));
 const chapters = manifest.chapters;
 const samples = ['00-abstract','07-agent-operating-guide','08-validation-and-acceptance',
  '124-midi2-timed-webkit-transitions','127-estate-template-publishing-path',
