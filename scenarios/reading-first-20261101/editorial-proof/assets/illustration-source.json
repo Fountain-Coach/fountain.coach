@@ -1,0 +1,34 @@
+{
+  "schema": "fountain.press.essay-authored-illustrations.v1",
+  "work": "A Sound Must Earn Its Place",
+  "stagingOnly": true,
+  "publicRightsGranted": false,
+  "figures": [
+    {
+      "sourceAddress": "a-sound-must-earn-its-place.figure.1",
+      "role": "inline",
+      "id": "architectural-plate",
+      "filename": "kino-international-architectural-plate-20261106.jpg",
+      "width": 1200,
+      "height": 800,
+      "sha256": "9bfa71540c6b54a4ac83696fbc0506e31ae58e47c681634d9b93dc4386d31a1c",
+      "originSha256": "b4d31a3e02420800966d355481cfb28fd7dd638642ebd54d890f66b54b883311",
+      "origin": "Image generated from writer-supplied photographs; architectural interpretation, not a measured drawing",
+      "alt": "Architectural front elevation-style interpretation of Kino International, Berlin, showing the projecting glazed foyer and building behind, without a cinema poster or footer lettering",
+      "caption": "Kino International, Berlin. Architectural interpretation."
+    },
+    {
+      "sourceAddress": "a-sound-must-earn-its-place.figure.2",
+      "role": "social-lead",
+      "id": "night-photograph",
+      "filename": "kino-international-night-20261106.jpg",
+      "width": 1087,
+      "height": 1450,
+      "sha256": "cb7b399aeb472a65a7156f9d9990b39564ba492337ef19365ed079c68ac1bc52",
+      "originSha256": "6512e48435fe1d492680bb1d991594b6218c3ca8d26494fb782ecef481d10904",
+      "origin": "Writer-supplied real photograph, original IMG_1410.jpeg",
+      "alt": "Actual night photograph of Kino International, Berlin; illuminated KINO INTERNATIONAL lettering and entrance against a dark street",
+      "caption": "Kino International after dark. Actual photograph."
+    }
+  ]
+}
