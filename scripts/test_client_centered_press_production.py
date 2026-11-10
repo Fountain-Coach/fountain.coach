@@ -47,7 +47,8 @@ class ClientCenteredPublicationTests(unittest.TestCase):
             'Refuse overwrite of generated publication candidate',
         ):
             self.assertIn(required, code)
-        self.assertIn('assert page', 'assert page' if 'page' in code else '')  # check page construction
+        self.assertIn('(dest / "index.html").write_text(page)', code)
+        self.assertIn("assert 'client-centered-review.js' not in page", code)
 
 
 if __name__ == '__main__':
