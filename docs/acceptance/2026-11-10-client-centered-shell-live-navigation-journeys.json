@@ -1,0 +1,203 @@
+[
+  {
+    "name": "root-cover-to-client-next-back",
+    "start": "/",
+    "viewport": [
+      1366,
+      1024
+    ],
+    "ok": true,
+    "steps": [
+      {
+        "action": "client",
+        "status": "Pages 1 to 2 of 7. Client-Centered",
+        "count": "1–2 / 7",
+        "hash": "",
+        "url": "/estate/read/essay--client-centered/",
+        "workSelect": false
+      },
+      {
+        "action": "next",
+        "status": "Pages 3 to 4 of 7. Client-Centered",
+        "count": "3–4 / 7",
+        "hash": "",
+        "url": "/estate/read/essay--client-centered/",
+        "workSelect": false
+      },
+      {
+        "action": "brand",
+        "status": "Bookshelf. Essays. 1 of 2 collections.",
+        "count": "",
+        "hash": "",
+        "url": "/estate/read/library/",
+        "workSelect": true
+      }
+    ],
+    "errors": []
+  },
+  {
+    "name": "current-essay-index",
+    "start": "/estate/read/essays/",
+    "viewport": [
+      1024,
+      1365
+    ],
+    "ok": true,
+    "steps": [
+      {
+        "action": "client",
+        "status": "Page 1 of 4. Client-Centered",
+        "count": "1 / 4",
+        "hash": "",
+        "url": "/estate/read/essay--client-centered/",
+        "workSelect": false
+      },
+      {
+        "action": "next",
+        "status": "Page 2 of 4. Client-Centered",
+        "count": "2 / 4",
+        "hash": "",
+        "url": "/estate/read/essay--client-centered/",
+        "workSelect": false
+      },
+      {
+        "action": "brand",
+        "status": "Bookshelf. Essays. 1 of 2 collections.",
+        "count": "",
+        "hash": "",
+        "url": "/estate/read/library/",
+        "workSelect": true
+      }
+    ],
+    "errors": []
+  },
+  {
+    "name": "bookshelf-root-return",
+    "start": "/estate/bookshelf/",
+    "viewport": [
+      390,
+      844
+    ],
+    "ok": true,
+    "steps": [
+      {
+        "action": "client",
+        "status": "Page 1 of 14. Client-Centered",
+        "count": "1 / 14",
+        "hash": "",
+        "url": "/estate/read/essay--client-centered/",
+        "workSelect": false
+      },
+      {
+        "action": "brand",
+        "status": "Bookshelf. Essays. 1 of 2 collections.",
+        "count": "",
+        "hash": "",
+        "url": "/estate/read/library/",
+        "workSelect": true
+      }
+    ],
+    "errors": []
+  },
+  {
+    "name": "old-essay-gallery-link",
+    "start": "/essays/",
+    "viewport": [
+      1366,
+      1024
+    ],
+    "ok": true,
+    "steps": [
+      {
+        "action": "link",
+        "status": "Pages 1 to 2 of 7. Client-Centered",
+        "count": "1–2 / 7",
+        "hash": "",
+        "url": "/estate/read/essay--client-centered/",
+        "workSelect": false
+      }
+    ],
+    "errors": []
+  },
+  {
+    "name": "old-estate-gallery-link",
+    "start": "/estate/essays/",
+    "viewport": [
+      1366,
+      1024
+    ],
+    "ok": true,
+    "steps": [
+      {
+        "action": "link",
+        "status": "Pages 1 to 2 of 7. Client-Centered",
+        "count": "1–2 / 7",
+        "hash": "",
+        "url": "/estate/read/essay--client-centered/",
+        "workSelect": false
+      }
+    ],
+    "errors": []
+  },
+  {
+    "name": "current-editions-book-index",
+    "start": "/estate/editions/",
+    "viewport": [
+      1366,
+      1024
+    ],
+    "ok": true,
+    "steps": [
+      {
+        "action": "link",
+        "status": "",
+        "count": "",
+        "hash": "",
+        "url": "/estate/read/essays/",
+        "workSelect": true
+      },
+      {
+        "action": "client",
+        "status": "Pages 1 to 2 of 7. Client-Centered",
+        "count": "1–2 / 7",
+        "hash": "",
+        "url": "/estate/read/essay--client-centered/",
+        "workSelect": false
+      }
+    ],
+    "errors": [
+      "The Content Security Policy directive 'frame-ancestors' is ignored when delivered via a <meta> element."
+    ]
+  },
+  {
+    "name": "historical-catalogue-pointer",
+    "start": "/estate/editions/catalogue/",
+    "viewport": [
+      1024,
+      1365
+    ],
+    "ok": true,
+    "steps": [
+      {
+        "action": "link",
+        "status": "",
+        "count": "",
+        "hash": "",
+        "url": "/estate/read/essays/",
+        "workSelect": true
+      },
+      {
+        "action": "client",
+        "status": "Page 1 of 4. Client-Centered",
+        "count": "1 / 4",
+        "hash": "",
+        "url": "/estate/read/essay--client-centered/",
+        "workSelect": false
+      }
+    ],
+    "errors": [
+      "The Content Security Policy directive 'frame-ancestors' is ignored when delivered via a <meta> element.",
+      "Loading the script 'https://fountain.coach/assets/estate-shell-state.js' violates the following Content Security Policy directive: \"default-src 'none'"
+    ]
+  }
+]
