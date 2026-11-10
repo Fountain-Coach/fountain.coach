@@ -612,15 +612,135 @@ def reconcile_public_shell(public_root, output, publisher_revision):
     },indent=2))
 
 
+def remove_essay_subtitle(public_root, output, publisher_revision):
+    """One count-free Essays heading in the established shared Press shell.
+
+    The author explicitly removed the outdated, gratuitous 'Six essays'
+    presentation subtitle. Project an updated content-addressed app into
+    the same 55 existing Reader entrances and preserve their exact prose,
+    all galleries, source manifests, artworks and the Press compositor.
+    """
+    if not re.fullmatch(r'[0-9a-f]{40}', publisher_revision):
+        raise ValueError('Exact merged source SHA required')
+    prev='fcis-client-centered-shell-20261110-1e26f73'
+    release='fcis-essay-heading-20261110-'+publisher_revision[:7]
+    meta=json.loads((public_root/'release-manifest.json').read_text())
+    if meta['releaseID']!=prev:
+        raise ValueError('Current public predecessor changed')
+    if output.exists():
+        raise ValueError('Refuse to overwrite release candidate')
+    root_html=(public_root/'estate/index.html').read_text()
+    app_names=set(re.findall(r'reading-first-app\.[0-9a-f]{64}\.js',root_html))
+    if len(app_names)!=1:
+        raise ValueError('Current Reader app not uniquely identified')
+    old_name=app_names.pop()
+    old_app=public_root/'estate/assets/linotype'/old_name
+    old_sha=old_name[len('reading-first-app.'):-3]
+    if sha(old_app)!=old_sha:
+        raise ValueError('Published Reader app digest mismatch')
+    old_code=old_app.read_text()
+    before="""const subtitle=document.createElement('p');
+   subtitle.textContent=id==='essays'?'Six essays · chronological':'Reading 01 · First Reading';
+   header.append(name,subtitle);book.append(header);"""
+    after="""header.append(name);
+   if(id!=='essays'){
+     const subtitle=document.createElement('p');
+     subtitle.textContent='Reading 01 · First Reading';
+     header.append(subtitle);
+   }
+   book.append(header);"""
+    if old_code.count(before)!=1:
+        raise ValueError('Expected stale label missing or changed')
+    new_code=old_code.replace(before,after,1)
+    if 'Six essays · chronological' in new_code:
+        raise ValueError('Stale label survived replacement')
+    new_sha=hashlib.sha256(new_code.encode()).hexdigest()
+    new_name='reading-first-app.'+new_sha+'.js'
+    if (public_root/'estate/assets/linotype'/new_name).exists():
+        raise ValueError('New content-addressed app already exists in source')
+    if sha(public_root/'estate/assets/linotype'/ORIGINAL_ENGINE)!=ENGINE_SHA:
+        raise ValueError('Original Linotype compositor drift')
+    original_essay_manifest=sha(public_root/PUBLIC_REL/'edition-manifest.json')
+    original_social=sha(public_root/SOCIAL)
+    shutil.copytree(public_root,output,symlinks=False)
+    (output/'estate/assets/linotype'/new_name).write_text(new_code)
+    reader_paths=[]
+    for source in sorted(public_root.rglob('index.html')):
+        old=source.read_text()
+        if 'id="reader-gallery-data"' not in old:
+            continue
+        path=source.relative_to(public_root)
+        if old.count(old_name)!=1:
+            raise ValueError('Inconsistent active Reader on '+str(path))
+        updated=old.replace(old_name,new_name,1)
+        if re.findall(r'<template data-reader-volume="([^"]+)"',old)!=re.findall(r'<template data-reader-volume="([^"]+)"',updated):
+            raise ValueError('Unexpected source template mutation')
+        if updated.count('data-reader-volume="essay--client-centered"')!=1:
+            raise ValueError('Client-Centered source omitted')
+        (output/path).write_text(updated)
+        reader_paths.append(path.as_posix())
+    if len(reader_paths)!=55:
+        raise ValueError('Expected 55 source-admitted Reader entrances')
+    m=output/'release-manifest.json'
+    result=json.loads(m.read_text())
+    result.update({
+        'releaseID':release,'previousReleaseID':prev,
+        'sourceRevision':publisher_revision,
+        'publicationState':'published-reader-editorial-subtitle-corrected',
+        'authorDecision':'2026-11-10: remove stale Six essays subtitle, no replacement',
+        'readerEditorialSubtitleRemoval':{
+            'previousReleaseID':prev,
+            'sourceRevision':publisher_revision,
+            'oldApp':old_name,'newApp':new_name,
+            'oldAppSHA256':old_sha,'newAppSHA256':new_sha,
+            'changedReaderEntries':reader_paths,
+            'changedEssayText':False,
+            'originalPressEngineSHA256':ENGINE_SHA,
+            'originalManuscriptSHA256':SOURCE_SHA,
+            'essayManifestSHA256':original_essay_manifest,
+            'socialImageSHA256':original_social,
+        }
+    })
+    result['modifiedPaths']=sorted(set(result.get('modifiedPaths',[])) |
+                                   set(reader_paths)|{'release-manifest.json'})
+    result['addedPaths']=sorted(set(result.get('addedPaths',[])) |
+                               {'estate/assets/linotype/'+new_name})
+    m.write_text(json.dumps(result,indent=2,ensure_ascii=False)+'\n')
+    old_files={x.relative_to(public_root).as_posix():x for x in public_root.rglob('*') if x.is_file()}
+    now={x.relative_to(output).as_posix():x for x in output.rglob('*') if x.is_file()}
+    expected_new={'estate/assets/linotype/'+new_name}
+    if set(now)-set(old_files)!=expected_new or set(old_files)-set(now):
+        raise ValueError('Unexpected release path added/deleted')
+    altered={key for key in old_files if sha(old_files[key])!=sha(now[key])}
+    if altered!=set(reader_paths)|{'release-manifest.json'}:
+        raise ValueError('Undeclared existing publication modification: '+repr(altered^set(reader_paths)|{'release-manifest.json'}))
+    if sha(output/PUBLIC_REL/'edition-manifest.json')!=original_essay_manifest or sha(output/SOCIAL)!=original_social:
+        raise ValueError('Source work or artwork unexpectedly modified')
+    print(json.dumps({
+        'releaseID':release,'sourceRevision':publisher_revision,
+        'previousReleaseID':prev,'newApp':new_name,
+        'changedHTML':len(reader_paths),'unchangedExistingFiles':len(old_files)-len(altered),
+        'changedSourceWork':False,
+    },indent=2))
+
+
+
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--public-baseline", type=Path, required=True)
     ap.add_argument("--staged-essay", type=Path)
     ap.add_argument("--output", type=Path, required=True)
     ap.add_argument("--reconcile-shell", action="store_true")
+    ap.add_argument("--remove-essay-subtitle", action="store_true")
     ap.add_argument("--publisher-revision")
     args=ap.parse_args()
-    if args.reconcile_shell:
+    if args.remove_essay_subtitle:
+        if args.reconcile_shell:
+            ap.error("Choose one bounded publication operation")
+        if not args.publisher_revision:
+            ap.error("--publisher-revision required")
+        remove_essay_subtitle(args.public_baseline,args.output,args.publisher_revision)
+    elif args.reconcile_shell:
         if not args.publisher_revision:
             ap.error("--publisher-revision required when reconciling shell")
         reconcile_public_shell(args.public_baseline,args.output,args.publisher_revision)
