@@ -1,0 +1,57 @@
+{
+  "activated" : true,
+  "detail" : "Exact published bytes verified independently via HTTPS",
+  "previousReleaseID" : "fcis-client-centered-shell-20261110-1e26f73",
+  "publicHost" : "fountain.coach",
+  "recordedAt" : 815995679.923124,
+  "releaseID" : "fcis-essay-heading-20261110-8f58f29",
+  "sourceInventorySHA256" : "44f9442a6f52486acbe97738629b9b237ec726a732413169ed246ba18484a334",
+  "sourceRevision" : "8f58f2949a23a335559a01f0995d909bef0f61a1",
+  "state" : "active",
+  "verifiedPublicFiles" : [
+    {
+      "path" : "\/index.html",
+      "sha256" : "005ca222f53735a313543809521c525e23552223406f31bf3e590ccde4a13a49"
+    },
+    {
+      "path" : "\/estate\/index.html",
+      "sha256" : "005ca222f53735a313543809521c525e23552223406f31bf3e590ccde4a13a49"
+    },
+    {
+      "path" : "\/estate\/bookshelf\/index.html",
+      "sha256" : "0a60c0c23b2e1b7a4356492cb6f35679673536df02560a9a849d265a19383eec"
+    },
+    {
+      "path" : "\/estate\/read\/essays\/index.html",
+      "sha256" : "4b38b782548c3521f9707880aa1c9d0af7a1ea58f5273c7a9491f60ce52bef53"
+    },
+    {
+      "path" : "\/estate\/read\/first-readings\/index.html",
+      "sha256" : "edae449d5f8d6dd59335153e34839d2aee9ea676e1cf839ce6b6516b26a818f9"
+    },
+    {
+      "path" : "\/estate\/read\/essay--client-centered\/index.html",
+      "sha256" : "f070fa518e7072cd451cc81acbcc9f14374a2d7778702295cba6a28c63a35186"
+    },
+    {
+      "path" : "\/estate\/read\/essay--the-ear-that-learns\/index.html",
+      "sha256" : "07067d81290e7cd6f0495be5a5cdfbf48d11cf59ef3d2c7b47865782060d903a"
+    },
+    {
+      "path" : "\/estate\/collections\/first-readings\/index.html",
+      "sha256" : "bcee1c036a7f9c6855c690b2b33de51b93e245447e44af5af27f394d55476c2d"
+    },
+    {
+      "path" : "\/estate\/assets\/linotype\/reading-first-app.1b574fe1d24004a7c4d25ecc5df31cb098ac0784f4a87158ac5208d7cda06dd7.js",
+      "sha256" : "1b574fe1d24004a7c4d25ecc5df31cb098ac0784f4a87158ac5208d7cda06dd7"
+    },
+    {
+      "path" : "\/estate\/read\/essay--client-centered\/edition-manifest.json",
+      "sha256" : "93d05adc6d9cb3a113aee74b3eaee1661bfb540c439e9fd89008bbe34ea2a71f"
+    },
+    {
+      "path" : "\/estate\/assets\/social\/client-centered-4a89ae5.png",
+      "sha256" : "7a19bb703dec14ac26cc769884a18e8fb19225556ded172e0307eeaec91ba3ac"
+    }
+  ]
+}
