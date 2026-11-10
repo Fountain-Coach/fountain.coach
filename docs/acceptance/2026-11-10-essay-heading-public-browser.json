@@ -1,0 +1,35 @@
+{
+  "result": "PASS",
+  "checks": [
+    {
+      "viewport": "landscape",
+      "heading": "Essays",
+      "essaySubtitleCount": 0,
+      "firstReadingSubtitle": "Reading 01 · First Reading",
+      "essays": 7,
+      "clientNavigation": "PASS",
+      "backToBookshelf": "PASS",
+      "pageErrors": []
+    },
+    {
+      "viewport": "portrait",
+      "heading": "Essays",
+      "essaySubtitleCount": 0,
+      "firstReadingSubtitle": "Reading 01 · First Reading",
+      "essays": 7,
+      "clientNavigation": "PASS",
+      "backToBookshelf": "PASS",
+      "pageErrors": []
+    },
+    {
+      "viewport": "phone",
+      "heading": "Essays",
+      "essaySubtitleCount": 0,
+      "firstReadingSubtitle": "Reading 01 · First Reading",
+      "essays": 7,
+      "clientNavigation": "PASS",
+      "backToBookshelf": "PASS",
+      "pageErrors": []
+    }
+  ]
+}

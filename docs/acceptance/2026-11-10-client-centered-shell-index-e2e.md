@@ -146,3 +146,31 @@ Client-Centered edition, and support returning via the brand to the shelf.
 These checks do not themselves establish public HTTPS publication or native
 physical iPad Safari/VoiceOver acceptance. Native publisher activation,
 typed receipt and independent public-browser proof are separately required.
+
+
+### Public editorial correction terminal proof
+
+The author-requested removal was publicly activated as immutable release
+fcis-essay-heading-20261110-8f58f29, source owner revision
+8f58f2949a23a335559a01f0995d909bef0f61a1 (PR #16).
+The existing EstatePublisher reported activated=true, state=active and
+verified eleven exact HTTPS/SHA-256 witnesses, including the new
+content-addressed Reader app, main Bookshelf, collection indexes,
+essay pages, original semantic manifest and source-owned social art.
+Typed receipt:
+[2026-11-10-essay-heading-public-receipt.json](../releases/2026-11-10-essay-heading-public-receipt.json).
+
+A separate Chromium probe of the real https://fountain.coach root
+confirmed landscape, portrait and phone each show only the heading
+"Essays" (zero secondary heading paragraphs). The First Reading label
+remains unchanged; Client-Centered navigation and return-to-Bookshelf
+worked in all three configurations without observed page errors.
+Evidence:
+[2026-11-10-essay-heading-public-browser.json](2026-11-10-essay-heading-public-browser.json).
+
+Native physical iPad Safari/VoiceOver is NOT_ESTABLISHED by these desktop
+browser tests. The predecessor
+fcis-client-centered-shell-20261110-1e26f73 remains the native rollback.
+There were 55 current Reader HTML reference updates, one new
+SHA-addressed application, and no changes to manuscript source, figures,
+social image, Press compositor or other media.
