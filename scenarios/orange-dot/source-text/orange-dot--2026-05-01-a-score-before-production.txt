@@ -1,0 +1,27 @@
+A Score Before Production
+
+Bee’s note on the Teatro Score
+
+I read this score as a set of four conditions for theatre, not as an illustration of a story. Its material is sparse: a threshold under suspended fragments, a flat plane with bodies or objects held in orbit, an orange disc over a curved line of tension, and a quiet room reduced to stems, ember, and a dark opening. These four fields do not form a plot. They establish a sequence of pressures.
+
+The first field is an entrance under risk. A wall stands upright. A narrow opening is marked. Above and around it, fragments hover, fall, or threaten to fall. This is not destruction as spectacle. It is a threshold condition. Before anyone enters, the space is already charged. The important thing here is dryness: no thunder, no dramatic crash, no theatrical panic. The sound should be brittle, partial, close to the surface. The stage should allow the audience to feel that entry is possible, but not innocent.
+
+The second field is relation without a stable center. A plane holds several points in orbit. Nothing settles into hierarchy. The eye searches for a center and finds only movement around one. This is not playfulness in the decorative sense. It is a structure of attention. Objects, voices, bodies, or tones may circulate, but they must not become charming. Charm would weaken the field. The task is to hold balance without allowing balance to become comfort.
+
+The third field is suspension. The orange disc is not a sun and not a symbol of hope. It is a pressure point. Beneath it, a curved line sags between two supports, crossed by a downward vector. This is the most exposed part of the score because it can easily become beautiful too soon. It must not. If a voice enters here, it should carry strain before melody. If a body enters, it should not illustrate flight or fall. The state is more exact than either: held, drawn, not released.
+
+The fourth field is the room after force. A low horizontal line, a few plant stems, a small ember, a dark rectangle. This is not domestic realism. It is remaining. The room does not resolve the previous fields; it receives their after-pressure. Its sound should be low and near: leaf, table, breath, wood, ember, not atmosphere in general. The door or dark opening must remain active. It is not an exit and not a threat. It is the part of the room that keeps memory from becoming decoration.
+
+For production, I would treat these four fields as the governing structure. They should not be filled with scenic explanations. The score already gives enough: threshold, orbit, suspension, room. Any staging decision should be tested against those words. Does the first scene preserve the pressure of entry? Does the second keep relation off-center? Does the third hold strain without beautifying it? Does the fourth let the room remain alive without making it sentimental?
+
+The score asks for restraint, but not for austerity. It is not cold. It contains tension, curiosity, force, and quiet. What it refuses is over-completion. A production should not rush to make the fields legible as narrative. The audience does not need to know what happened before the threshold, what the orbit represents, why the orange disc is there, or whose room remains at the end. The work should allow perception before explanation.
+
+This becomes especially important when the score is used with AI-supported MIDI 2 theatre machinery. The machine can execute very fine differences: per-note pressure, timbre, brightness, pitch deviation, spatial behavior, density, and release. But the machinery does not know why those differences matter. The visual score must remain the authority for that. It tells the system what kind of pressure belongs to each field.
+
+In the first field, machine precision should preserve fragment independence: each attack dry, irregular, and locally alive. In the second, it should preserve orbital relation: tones and objects moving around a provisional center without merging. In the third, it should preserve internal strain: a tone or gesture whose pressure changes from within rather than merely becoming louder. In the fourth, it should preserve room memory: global warmth, low density, and small remaining points that are not swallowed by ambience.
+
+The machine file may contain values. The performance score may contain notes. The visual score contains the contract. It says what must not be lost when the work becomes sound, light, stage, timing, automation, or action.
+
+As artistic direction, I would hold the production to this: do not make the score picturesque. Do not make it clever. Do not make it emotionally obvious. Let the first field keep its dry danger, the second its unsettled balance, the third its held pressure, the fourth its quiet afterlife.
+
+The piece should not explain itself by becoming more full. It should become more exact.

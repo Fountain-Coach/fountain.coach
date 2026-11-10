@@ -1,0 +1,557 @@
+{
+  "schema": "fountain.press.orange-dot.author-selection.v1",
+  "sourceAuthority": "Benedikt Eickhoff Facebook export, locally owned, September 2026",
+  "corpusStart": "2025-12-21",
+  "corpusEnd": "2026-09-19",
+  "totalArchivePostsInRange": 690,
+  "editorialDecision": "23 source-authentic posts; no claim that unselected material is irrelevant; original entire source texts and all original associated images retained for each selected entry",
+  "editorialAxes": [
+    "orange signal",
+    "carried warmth",
+    "vigilance and self-regulation",
+    "intermittent contact",
+    "translation into Teatro Score",
+    "N. and Bee: the autonomous mark and interval"
+  ],
+  "preexistingFirstReadingsWorks": [
+    "Integration (2025-12-23): cited without text duplication",
+    "I Keep Moving (2026-01-23): deliberate reappearance",
+    "A Score Before Production (2026-05-01): deliberate reappearance"
+  ],
+  "rightsBoundary": "Private author-controlled WLAN stage only; no public release or automatic social distribution",
+  "entries": [
+    {
+      "id": "orange-dot--2025-12-21-solstice",
+      "date": "2025-12-21",
+      "title": "Solstice",
+      "theme": "opening",
+      "sourceIndex": 1364,
+      "sourceTextFile": "source-text/orange-dot--2025-12-21-solstice.txt",
+      "textSha256": "ae080679f356528fe478701bbbdbc8d99c809f14c7a690defaa88a9e47e0d122",
+      "textLength": 12,
+      "originalImageCount": 1,
+      "images": [
+        {
+          "sourceImageFile": "orange-dot--2025-12-21-solstice-01-6e5f8aec639a96.jpg",
+          "sha256": "6e5f8aec639a96ed025cfc4e6e6626197fa41e026626f114a92001375adaa33d",
+          "width": 1448,
+          "height": 2048,
+          "ordinal": 1
+        }
+      ],
+      "firstReadingsOverlap": null
+    },
+    {
+      "id": "orange-dot--2025-12-23-the-raft",
+      "date": "2025-12-23",
+      "title": "The Raft",
+      "theme": "ember",
+      "sourceIndex": 1361,
+      "sourceTextFile": "source-text/orange-dot--2025-12-23-the-raft.txt",
+      "textSha256": "8e46cace92cefe621f76005ba5f4a7de6bc0406e49825159a887c736581e6324",
+      "textLength": 3186,
+      "originalImageCount": 1,
+      "images": [
+        {
+          "sourceImageFile": "orange-dot--2025-12-23-the-raft-01-20e2c7609c2654.jpg",
+          "sha256": "20e2c7609c2654c17b2966cabc03281a8d9779798ac1d83f3127d7b3ef896c8c",
+          "width": 1024,
+          "height": 1536,
+          "ordinal": 1
+        }
+      ],
+      "firstReadingsOverlap": null
+    },
+    {
+      "id": "orange-dot--2025-12-24-am-rand-des-feldes",
+      "date": "2025-12-24",
+      "title": "Am Rand des Feldes",
+      "theme": "boundary",
+      "sourceIndex": 1352,
+      "sourceTextFile": "source-text/orange-dot--2025-12-24-am-rand-des-feldes.txt",
+      "textSha256": "ed06497b2e42b9a798cc59f1b644fc51febaf0c5c8b625162e6abaf196a3c244",
+      "textLength": 3749,
+      "originalImageCount": 1,
+      "images": [
+        {
+          "sourceImageFile": "orange-dot--2025-12-24-am-rand-des-feldes-01-380db60201e8d9.jpg",
+          "sha256": "380db60201e8d90e0aca98ef3514e0e06c6613f5f75964fab4eaa194c45ed497",
+          "width": 1024,
+          "height": 1536,
+          "ordinal": 1
+        }
+      ],
+      "firstReadingsOverlap": null
+    },
+    {
+      "id": "orange-dot--2025-12-25-die-butterbrotdose",
+      "date": "2025-12-25",
+      "title": "Die Butterbrotdose",
+      "theme": "carried warmth",
+      "sourceIndex": 1346,
+      "sourceTextFile": "source-text/orange-dot--2025-12-25-die-butterbrotdose.txt",
+      "textSha256": "2fa87e2a7b18ef49bfdc2b99d1cd219027277d6d9dba8ca252621354cc8e5bb4",
+      "textLength": 3620,
+      "originalImageCount": 2,
+      "images": [
+        {
+          "sourceImageFile": "orange-dot--2025-12-25-die-butterbrotdose-01-f568f9e4630f1b.jpg",
+          "sha256": "f568f9e4630f1beee336ca9513b20e34b5d700c3ba0cb74ebb7c006547d99534",
+          "width": 1024,
+          "height": 1536,
+          "ordinal": 1
+        },
+        {
+          "sourceImageFile": "orange-dot--2025-12-25-die-butterbrotdose-02-ec53dd84d4b8ee.jpg",
+          "sha256": "ec53dd84d4b8ee3c8fd29ffb08e361febf864658227ee61f53181bc22ae6f0b6",
+          "width": 1024,
+          "height": 1536,
+          "ordinal": 2
+        }
+      ],
+      "firstReadingsOverlap": null
+    },
+    {
+      "id": "orange-dot--2025-12-28-hotel-paris-1947",
+      "date": "2025-12-28",
+      "title": "Hotel Paris / 1947",
+      "theme": "rest",
+      "sourceIndex": 1332,
+      "sourceTextFile": "source-text/orange-dot--2025-12-28-hotel-paris-1947.txt",
+      "textSha256": "0a966a89e5e72581cea8a4c5f162a70d2b6cc520a4963918f727af0d88153bc2",
+      "textLength": 3062,
+      "originalImageCount": 1,
+      "images": [
+        {
+          "sourceImageFile": "orange-dot--2025-12-28-hotel-paris-1947-01-9a2a9140c86fb4.jpg",
+          "sha256": "9a2a9140c86fb4e264ef5b047894ca1e023e2d634045037862596dba76410499",
+          "width": 1024,
+          "height": 1536,
+          "ordinal": 1
+        }
+      ],
+      "firstReadingsOverlap": null
+    },
+    {
+      "id": "orange-dot--2026-01-04-wardrobe-casting-spec",
+      "date": "2026-01-04",
+      "title": "Wardrobe + Casting Spec",
+      "theme": "state change",
+      "sourceIndex": 1298,
+      "sourceTextFile": "source-text/orange-dot--2026-01-04-wardrobe-casting-spec.txt",
+      "textSha256": "fd21edf4bc3e5c48afa78dfd6d409a74bdb858601b5edbf0636fea68ed850759",
+      "textLength": 5458,
+      "originalImageCount": 1,
+      "images": [
+        {
+          "sourceImageFile": "orange-dot--2026-01-04-wardrobe-casting-spec-01-5030fd4fdd5fa8.jpg",
+          "sha256": "5030fd4fdd5fa82466c68972f65218516735f916b69506f3586eac8a487cb1e6",
+          "width": 1024,
+          "height": 1536,
+          "ordinal": 1
+        }
+      ],
+      "firstReadingsOverlap": null
+    },
+    {
+      "id": "orange-dot--2026-01-06-fog-stage-observer-seat",
+      "date": "2026-01-06",
+      "title": "Fog Stage / Observer Seat",
+      "theme": "vigilance",
+      "sourceIndex": 1291,
+      "sourceTextFile": "source-text/orange-dot--2026-01-06-fog-stage-observer-seat.txt",
+      "textSha256": "08b4eee150e8036c79167024ca0b9c475eecae1631bfb8399d81eda958724ff9",
+      "textLength": 2785,
+      "originalImageCount": 2,
+      "images": [
+        {
+          "sourceImageFile": "orange-dot--2026-01-06-fog-stage-observer-seat-01-5558153ad46016.jpg",
+          "sha256": "5558153ad46016228ce5219b9b790a4e570a3b1395cd34fd35b21a0e2b82b963",
+          "width": 1024,
+          "height": 1536,
+          "ordinal": 1
+        },
+        {
+          "sourceImageFile": "orange-dot--2026-01-06-fog-stage-observer-seat-02-a03b6529ac7318.jpg",
+          "sha256": "a03b6529ac7318bdff8e3d6d9cc946b8626bd1b869825017e2af72f8f055fb58",
+          "width": 1024,
+          "height": 1536,
+          "ordinal": 2
+        }
+      ],
+      "firstReadingsOverlap": null
+    },
+    {
+      "id": "orange-dot--2026-01-16-burning-down-the-house",
+      "date": "2026-01-16",
+      "title": "Burning Down the House",
+      "theme": "continuity",
+      "sourceIndex": 1229,
+      "sourceTextFile": "source-text/orange-dot--2026-01-16-burning-down-the-house.txt",
+      "textSha256": "fd019fe373065ce23b2bb26a3984aa47cee65f5611b39d0e116b34b60f6cf627",
+      "textLength": 3703,
+      "originalImageCount": 1,
+      "images": [
+        {
+          "sourceImageFile": "orange-dot--2026-01-16-burning-down-the-house-01-ce753d386e70b3.jpg",
+          "sha256": "ce753d386e70b385120939f484ceaf34c5c466d6bb1b7fa3f8d0da2d9173d8b2",
+          "width": 1024,
+          "height": 1536,
+          "ordinal": 1
+        }
+      ],
+      "firstReadingsOverlap": null
+    },
+    {
+      "id": "orange-dot--2026-01-18-first-lo-r",
+      "date": "2026-01-18",
+      "title": "First LO — R.",
+      "theme": "contact",
+      "sourceIndex": 1209,
+      "sourceTextFile": "source-text/orange-dot--2026-01-18-first-lo-r.txt",
+      "textSha256": "4894c0ba161abc8c81e119a048e0c1e75972f4ea9dce16ba9b05ed1b13b6d114",
+      "textLength": 3636,
+      "originalImageCount": 1,
+      "images": [
+        {
+          "sourceImageFile": "orange-dot--2026-01-18-first-lo-r-01-0ac4477e6a4dd6.jpg",
+          "sha256": "0ac4477e6a4dd69d9fb1e3751ed348b45a5393a4d5fd388eddd6e830d9ff7529",
+          "width": 1024,
+          "height": 1536,
+          "ordinal": 1
+        }
+      ],
+      "firstReadingsOverlap": null
+    },
+    {
+      "id": "orange-dot--2026-01-22-the-vigilance-regulator",
+      "date": "2026-01-22",
+      "title": "The Vigilance Regulator",
+      "theme": "contact regulation",
+      "sourceIndex": 1175,
+      "sourceTextFile": "source-text/orange-dot--2026-01-22-the-vigilance-regulator.txt",
+      "textSha256": "000bf60b6a77e5b1b463537e4eb592602c5b2d6a122a46398f75453458d2a07a",
+      "textLength": 4154,
+      "originalImageCount": 2,
+      "images": [
+        {
+          "sourceImageFile": "orange-dot--2026-01-22-the-vigilance-regulator-01-d056ef3fc29730.jpg",
+          "sha256": "d056ef3fc2973086d3c16bed13da7d3fecf06557136737b11fcee45d97dbb274",
+          "width": 1024,
+          "height": 1536,
+          "ordinal": 1
+        },
+        {
+          "sourceImageFile": "orange-dot--2026-01-22-the-vigilance-regulator-02-b5da722ce9f6c7.jpg",
+          "sha256": "b5da722ce9f6c76d666d66149f7e31e917e6b2f40182ff72f2596cb075f88708",
+          "width": 1024,
+          "height": 1536,
+          "ordinal": 2
+        }
+      ],
+      "firstReadingsOverlap": null
+    },
+    {
+      "id": "orange-dot--2026-01-23-i-keep-moving",
+      "date": "2026-01-23",
+      "title": "I Keep Moving",
+      "theme": "living signal",
+      "sourceIndex": 1168,
+      "sourceTextFile": "source-text/orange-dot--2026-01-23-i-keep-moving.txt",
+      "textSha256": "c8426ba2ed3efb9d538dffe8b96c1a1ffdb2fe893df7dbd444cf1199130a6a52",
+      "textLength": 3036,
+      "originalImageCount": 1,
+      "images": [
+        {
+          "sourceImageFile": "orange-dot--2026-01-23-i-keep-moving-01-1c3c1d6806e93f.jpg",
+          "sha256": "1c3c1d6806e93f7be93de86315e81e31ffd1a2641ee1fae4c02d00fc00602790",
+          "width": 1440,
+          "height": 960,
+          "ordinal": 1
+        }
+      ],
+      "firstReadingsOverlap": {
+        "title": "I Keep Moving",
+        "href": "/editions/first-reading/entries/2026-01-23-i-keep-moving/",
+        "image": "/assets/edition/post-2026-01-23-1c3c1d6806e93f7b.jpg"
+      }
+    },
+    {
+      "id": "orange-dot--2026-02-01-drift-notes",
+      "date": "2026-02-01",
+      "title": "Drift Notes",
+      "theme": "pilot light",
+      "sourceIndex": 1113,
+      "sourceTextFile": "source-text/orange-dot--2026-02-01-drift-notes.txt",
+      "textSha256": "9411621249eca49a3db9f9ba83561e37fbb447a7eeae43e1f054857cd2edf805",
+      "textLength": 2112,
+      "originalImageCount": 1,
+      "images": [
+        {
+          "sourceImageFile": "orange-dot--2026-02-01-drift-notes-01-2a959448a64ef9.jpg",
+          "sha256": "2a959448a64ef9db72fd714f56a222f838d59dbafa149ab59a90d913dc21edd9",
+          "width": 1024,
+          "height": 1536,
+          "ordinal": 1
+        }
+      ],
+      "firstReadingsOverlap": null
+    },
+    {
+      "id": "orange-dot--2026-03-13-on-natural-intermittency",
+      "date": "2026-03-13",
+      "title": "On Natural Intermittency",
+      "theme": "intermittency",
+      "sourceIndex": 951,
+      "sourceTextFile": "source-text/orange-dot--2026-03-13-on-natural-intermittency.txt",
+      "textSha256": "9e598fb36369a9f0121d800cad98e791b252175907648fb574c5260ae53aceda",
+      "textLength": 4340,
+      "originalImageCount": 1,
+      "images": [
+        {
+          "sourceImageFile": "orange-dot--2026-03-13-on-natural-intermittency-01-a980509f437372.jpg",
+          "sha256": "a980509f4373729444ea865b29958038d174e51e214246b627e035b0fec7a530",
+          "width": 1024,
+          "height": 1536,
+          "ordinal": 1
+        }
+      ],
+      "firstReadingsOverlap": null
+    },
+    {
+      "id": "orange-dot--2026-04-06-nothing-is-solved-in-this-way",
+      "date": "2026-04-06",
+      "title": "Nothing Is Solved in This Way",
+      "theme": "nonintervention",
+      "sourceIndex": 890,
+      "sourceTextFile": "source-text/orange-dot--2026-04-06-nothing-is-solved-in-this-way.txt",
+      "textSha256": "76abd4115d5a1d8ce1f968c55cbed4386c556d49b203ec6e83b8f864a3e93d03",
+      "textLength": 3209,
+      "originalImageCount": 1,
+      "images": [
+        {
+          "sourceImageFile": "orange-dot--2026-04-06-nothing-is-solved-in-this-way-01-ce7d13b1d0b0a8.jpg",
+          "sha256": "ce7d13b1d0b0a861bb28a5e0062c97f51e83d5382f54166c385cb4fcdee3284a",
+          "width": 1440,
+          "height": 960,
+          "ordinal": 1
+        }
+      ],
+      "firstReadingsOverlap": null
+    },
+    {
+      "id": "orange-dot--2026-04-10-bee-love-grounding-movement",
+      "date": "2026-04-10",
+      "title": "Bee — Love, Grounding, Movement",
+      "theme": "unforced relation",
+      "sourceIndex": 873,
+      "sourceTextFile": "source-text/orange-dot--2026-04-10-bee-love-grounding-movement.txt",
+      "textSha256": "220f41ea64f3324430e059bfaf75665f31cdc805adc8000f9a8cbd1b1e3ac674",
+      "textLength": 3982,
+      "originalImageCount": 1,
+      "images": [
+        {
+          "sourceImageFile": "orange-dot--2026-04-10-bee-love-grounding-movement-01-82ac842c1f5438.jpg",
+          "sha256": "82ac842c1f54388e49adcd7eaed8b22eafbcd7e36f050ecf622c83bb6a266a93",
+          "width": 1440,
+          "height": 960,
+          "ordinal": 1
+        }
+      ],
+      "firstReadingsOverlap": null
+    },
+    {
+      "id": "orange-dot--2026-05-01-a-score-before-production",
+      "date": "2026-05-01",
+      "title": "A Score Before Production",
+      "theme": "score translation",
+      "sourceIndex": 804,
+      "sourceTextFile": "source-text/orange-dot--2026-05-01-a-score-before-production.txt",
+      "textSha256": "03b01e55f6538dbc12e386dd98805ae4fd049937aa4909facb6ae87c1e653010",
+      "textLength": 4870,
+      "originalImageCount": 2,
+      "images": [
+        {
+          "sourceImageFile": "orange-dot--2026-05-01-a-score-before-production-01-ca5df313851efc.jpg",
+          "sha256": "ca5df313851efc6420fbf9f1b58c4d31fa0bc6d175c600873838faf7cd794f2f",
+          "width": 1055,
+          "height": 1491,
+          "ordinal": 1
+        },
+        {
+          "sourceImageFile": "orange-dot--2026-05-01-a-score-before-production-02-18375574f4b885.jpg",
+          "sha256": "18375574f4b885e928262bb3b615cb82481dfc39abcbee529d68f1dba7aec0c1",
+          "width": 1122,
+          "height": 1402,
+          "ordinal": 2
+        }
+      ],
+      "firstReadingsOverlap": {
+        "title": "A Score Before Production",
+        "href": "/editions/first-reading/entries/2026-05-01-a-score-before-production/",
+        "image": "/assets/edition/post-2026-05-01-ca5df313851efc64.jpg"
+      }
+    },
+    {
+      "id": "orange-dot--2026-05-04-n-first-platform",
+      "date": "2026-05-04",
+      "title": "N. — First Platform",
+      "theme": "embodied score",
+      "sourceIndex": 791,
+      "sourceTextFile": "source-text/orange-dot--2026-05-04-n-first-platform.txt",
+      "textSha256": "9f43e0b83eb630ff759ce698336742c3710633d830c570a9589a78787a535d53",
+      "textLength": 4081,
+      "originalImageCount": 1,
+      "images": [
+        {
+          "sourceImageFile": "orange-dot--2026-05-04-n-first-platform-01-6fa0146862ce7d.jpg",
+          "sha256": "6fa0146862ce7d18f5b0faa8ade501b34609207cc67bb21f747f76d97c0df188",
+          "width": 1055,
+          "height": 1491,
+          "ordinal": 1
+        }
+      ],
+      "firstReadingsOverlap": null
+    },
+    {
+      "id": "orange-dot--2026-05-07-n-drawing-to-stay",
+      "date": "2026-05-07",
+      "title": "N. — Drawing to Stay",
+      "theme": "warm attention",
+      "sourceIndex": 776,
+      "sourceTextFile": "source-text/orange-dot--2026-05-07-n-drawing-to-stay.txt",
+      "textSha256": "903edd7e93b42e225a1a64d558057ec58cbeab289bb1fe573f1bfe6dc60f1baa",
+      "textLength": 6712,
+      "originalImageCount": 1,
+      "images": [
+        {
+          "sourceImageFile": "orange-dot--2026-05-07-n-drawing-to-stay-01-beb46fcb7f726f.jpg",
+          "sha256": "beb46fcb7f726f179a636b59e5f227cff983fe9e7623e665d179aa5eb94e9740",
+          "width": 1086,
+          "height": 1448,
+          "ordinal": 1
+        }
+      ],
+      "firstReadingsOverlap": null
+    },
+    {
+      "id": "orange-dot--2026-06-09-n-care-and-capture",
+      "date": "2026-06-09",
+      "title": "N. — Care and Capture",
+      "theme": "critical care",
+      "sourceIndex": 696,
+      "sourceTextFile": "source-text/orange-dot--2026-06-09-n-care-and-capture.txt",
+      "textSha256": "fc5fed86d43433f01c35c88f9a44b62d4d97ee1c1df8b60c37948f2d1d09be8e",
+      "textLength": 5193,
+      "originalImageCount": 1,
+      "images": [
+        {
+          "sourceImageFile": "orange-dot--2026-06-09-n-care-and-capture-01-168c0bb9cf28b0.jpg",
+          "sha256": "168c0bb9cf28b0ff1883888fc248eb05e94ee22aebe1bc4cb178a1dc55aca0bd",
+          "width": 1402,
+          "height": 1122,
+          "ordinal": 1
+        }
+      ],
+      "firstReadingsOverlap": null
+    },
+    {
+      "id": "orange-dot--2026-07-17-n-the-orange-frame",
+      "date": "2026-07-17",
+      "title": "N. — The Orange Frame",
+      "theme": "doubt",
+      "sourceIndex": 597,
+      "sourceTextFile": "source-text/orange-dot--2026-07-17-n-the-orange-frame.txt",
+      "textSha256": "040291013483915e053a619674d7187bddd60db35644dc414888e457f124c0d7",
+      "textLength": 762,
+      "originalImageCount": 2,
+      "images": [
+        {
+          "sourceImageFile": "orange-dot--2026-07-17-n-the-orange-frame-01-c2229f8b954f4c.jpg",
+          "sha256": "c2229f8b954f4c534ee16e716570ee7a7dd82d600498b2a1d41ff005171880c9",
+          "width": 1440,
+          "height": 960,
+          "ordinal": 1
+        },
+        {
+          "sourceImageFile": "orange-dot--2026-07-17-n-the-orange-frame-02-1ce9f9d6b79146.jpg",
+          "sha256": "1ce9f9d6b79146a1269fd0cb2dfa37109240648b03e1ee5463679b4023a91510",
+          "width": 1439,
+          "height": 960,
+          "ordinal": 2
+        }
+      ],
+      "firstReadingsOverlap": null
+    },
+    {
+      "id": "orange-dot--2026-08-08-n-schnippel",
+      "date": "2026-08-08",
+      "title": "N. — Schnippel",
+      "theme": "color as impulse",
+      "sourceIndex": 534,
+      "sourceTextFile": "source-text/orange-dot--2026-08-08-n-schnippel.txt",
+      "textSha256": "7e4d254fc5dfceb7b2b843b50ee191880aff9cdbd4807521dcb3053dd11ee511",
+      "textLength": 3126,
+      "originalImageCount": 2,
+      "images": [
+        {
+          "sourceImageFile": "orange-dot--2026-08-08-n-schnippel-01-0c273bad5bd436.jpg",
+          "sha256": "0c273bad5bd436d586e2f96ddf8eab65d236a5c603ec95434aa54ca7a44da83e",
+          "width": 1414,
+          "height": 1112,
+          "ordinal": 1
+        },
+        {
+          "sourceImageFile": "orange-dot--2026-08-08-n-schnippel-02-cf3edaf413d03b.jpg",
+          "sha256": "cf3edaf413d03b75b85a6dbd0dea809074aee9d735b6eaa85452564d2f14d341",
+          "width": 1357,
+          "height": 960,
+          "ordinal": 2
+        }
+      ],
+      "firstReadingsOverlap": null
+    },
+    {
+      "id": "orange-dot--2026-09-01-domestic-geometry-my-ass",
+      "date": "2026-09-01",
+      "title": "Domestic Geometry My Ass",
+      "theme": "liberation of mark",
+      "sourceIndex": 463,
+      "sourceTextFile": "source-text/orange-dot--2026-09-01-domestic-geometry-my-ass.txt",
+      "textSha256": "70e9828667e97431f0d7fdca57e5a3ad7cd82d4e86ef4d8191205719961cf32c",
+      "textLength": 1491,
+      "originalImageCount": 1,
+      "images": [
+        {
+          "sourceImageFile": "orange-dot--2026-09-01-domestic-geometry-my-ass-01-7268cfe081c23b.jpg",
+          "sha256": "7268cfe081c23b8bef576c5a08e2fe0ed445537d9f0ef6779697a2ae276ddf1e",
+          "width": 1280,
+          "height": 960,
+          "ordinal": 1
+        }
+      ],
+      "firstReadingsOverlap": null
+    },
+    {
+      "id": "orange-dot--2026-09-17-bee-the-interval",
+      "date": "2026-09-17",
+      "title": "Bee — The Interval",
+      "theme": "open encounter",
+      "sourceIndex": 410,
+      "sourceTextFile": "source-text/orange-dot--2026-09-17-bee-the-interval.txt",
+      "textSha256": "81d6cc603a634e397da8a0ae68b075911189c8eeaf2b1b0c57553699f704ad1b",
+      "textLength": 2758,
+      "originalImageCount": 1,
+      "images": [
+        {
+          "sourceImageFile": "orange-dot--2026-09-17-bee-the-interval-01-1dc642f1f20c1d.jpg",
+          "sha256": "1dc642f1f20c1d6d5176efff380393f7055d4646b45035f6a3b55e325eef427d",
+          "width": 1440,
+          "height": 960,
+          "ordinal": 1
+        }
+      ],
+      "firstReadingsOverlap": null
+    }
+  ]
+}
