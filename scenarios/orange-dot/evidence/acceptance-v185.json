@@ -1,0 +1,96 @@
+{
+  "schema": "fountain.press.orange-dot.owner-wlan-acceptance.v185",
+  "sourceAuthority": "Benedikt Eickhoff downloaded Facebook posts and original images",
+  "sourceGitRepository": "Fountain-Coach/fountain.coach",
+  "sourceGitBranch": "codex/orange-dot-reader-20261110",
+  "sourceGitRevision": "3ff108330921f4befc5418b910860fbe6fb55428",
+  "archivePeriod": [
+    "2025-12-21",
+    "2026-09-19"
+  ],
+  "archivePostsInRange": 690,
+  "meaningfulPostCandidatesOver200Chars": 246,
+  "selectedSourcePosts": 23,
+  "selectedOriginalImages": 29,
+  "originalImagesReusedFromFirstReading": 3,
+  "newOriginalImageFiles": 26,
+  "exactFirstReadingOverlapPolicy": {
+    "integration": "excluded and cross-referenced",
+    "i-keep-moving": "verbatim reprise",
+    "a-score-before-production": "verbatim reprise"
+  },
+  "stage": {
+    "host": "192.168.8.50",
+    "port": 8243,
+    "url": "https://192.168.8.50:8243/estate/#/read/orange-dot",
+    "scope": "owner-WLAN editorial staging",
+    "activeRelease": "shared-shell-20261110-v185-orange-dot-3ff1083",
+    "immutablePredecessor": "shared-shell-20261110-v184-playable-breach-b9d4c88",
+    "sourceLockSHA256": "8f5528fdda104b1291dde4e8131ea633df0f8c336e941d6ef1deb1c2db4fd4fb",
+    "readbackIndexSHA256": "0d9d16093a300c787e703dc53658dba8616ce8b2204378781be0b4babc715b8b",
+    "readbackAppSHA256": "1f9b8410422a1c911d1937cc801b075453af9ea573ec40ad008654a0855cf19d",
+    "readbackEditionSHA256": "04951e5c1adfc8d91169249ad3ab97f1fdf6b335b1a1277d051df7cf694214dd",
+    "httpAndHttpsServicesActive": true,
+    "publicProductionChanged": false
+  },
+  "sourceTests": {
+    "originalTextsVerified": 23,
+    "originalImagesVerified": 29,
+    "firstReadingTemplatesUnchanged": 32,
+    "governanceTemplatesUnchanged": 160,
+    "appSyntaxValid": true
+  },
+  "strictGuard": {
+    "fullInheritedChainAdmitted": true,
+    "unknownAssetRefused": true,
+    "alteredManifestRefused": true,
+    "sourceRestored": true
+  },
+  "chromiumBrowser": {
+    "deviceViewports": [
+      "820x1180 iPad portrait",
+      "1180x820 iPad landscape",
+      "390x844 phone portrait"
+    ],
+    "postsReadPerViewport": 23,
+    "imagesReadPerViewport": 29,
+    "fiveCollectionBookshelf": true,
+    "realFolioTurn": true,
+    "exceptions": 0,
+    "newMediaHTTPFailures": 0,
+    "representativeNeighborIDs": [
+      "essay--what-makes-a-page-modern",
+      "score--between-gardens",
+      "solstice-reading-01--2026-01-23-i-keep-moving",
+      "orange-dot--2026-09-17-bee-the-interval",
+      "governance--00-abstract"
+    ],
+    "neighborWorkOpeningsPassed": 15
+  },
+  "screenEvidence": [
+    {
+      "path": "evidence/ipad-landscape.png",
+      "sha256": "d9940f848a6401e44ef9bbe006d7179d9369f305791011aa456f3ede4f0cc7e7",
+      "bytes": 241123
+    },
+    {
+      "path": "evidence/ipad-portrait.png",
+      "sha256": "dec7a00fa79b0321a25112c75b06fd569729fa76fe839335ec4a838e3ae64c6c",
+      "bytes": 528186
+    },
+    {
+      "path": "evidence/phone-portrait.png",
+      "sha256": "d404ef578e94b54d2261b27e269b793c07e9fc4b38b83d2b7b6300ada70219cf",
+      "bytes": 157077
+    }
+  ],
+  "unverified": [
+    "physical iPad Safari/VoiceOver",
+    "public production rights and release"
+  ],
+  "notPerformed": [
+    "production deployment",
+    "public Git push",
+    "new Reader or staging server"
+  ]
+}
