@@ -1,0 +1,265 @@
+/* Fountain Press: opt-in readable screen frame, not scaled A-series proof.
+   The host supplies a bounded viewport; this owner composes its measured pages. */
+.linotype-stage[data-frame="viewport"]{display:flex;gap:var(--sheet-gutter);width:var(--stage-base-w);height:var(--sheet-h);flex:none;transform:none;position:relative;align-items:stretch;margin:auto;color:var(--ink,#202b25)}
+.linotype-stage[data-frame="viewport"][data-mode="measure"]{position:absolute;top:0;left:0;display:flex;flex-direction:column;align-items:flex-start;visibility:hidden;gap:0}
+.linotype-stage[data-frame="viewport"] .linotype-sheet{flex:none;box-sizing:border-box;display:grid;grid-template-rows:auto minmax(0,1fr) auto;gap:10px;background:var(--paper,#fffef9);border:1px solid var(--line,#ccc);border-radius:3px;padding:var(--sheet-inset-y) var(--sheet-side);font-size:var(--sheet-font);overflow:hidden;min-width:0;min-height:0}
+.linotype-stage[data-frame="viewport"] .linotype-area{display:block;min-width:0;min-height:0;overflow:hidden;font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;font-size:var(--sheet-font);line-height:1.58;overflow-wrap:anywhere;hyphens:none}
+.linotype-stage[data-frame="viewport"] .linotype-running{font-family:inherit;font-size:.75rem;font-weight:600;letter-spacing:.08em;line-height:1.4;margin:0;padding:0 0 7px;border-bottom:1px solid var(--line,#ccc);color:var(--muted,#536053);text-transform:uppercase}
+.linotype-stage[data-frame="viewport"] .linotype-folio{display:flex;justify-content:space-between;font-family:inherit;font-size:.75rem;line-height:1.4;color:var(--muted,#536053);gap:12px}
+.linotype-stage[data-frame="viewport"] .linotype-area p{font-size:inherit;line-height:inherit;margin:0 0 .8em;max-width:none;letter-spacing:normal;white-space:pre-wrap;overflow-wrap:anywhere}
+.linotype-stage[data-frame="viewport"] .linotype-area h2{font-family:inherit;font-size:1.45em;font-weight:400;line-height:1.15;letter-spacing:-.035em;margin:0 0 .65em;overflow-wrap:anywhere}
+.linotype-stage[data-frame="viewport"] .frame-lead{font-size:1.08em!important;line-height:1.45!important}
+.linotype-stage[data-frame="viewport"] .frame-plate{margin:0;padding:0;max-width:100%;display:block}
+.linotype-stage[data-frame="viewport"] .frame-plate svg{width:100%;height:auto;max-height:var(--frame-plate-h);display:block}
+.linotype-stage[data-frame="viewport"] .frame-definition{border-left:2px solid var(--control-line,#687764);padding-left:.7em}
+.linotype-stage[data-frame="viewport"] .frame-takeaway{font-style:italic}
+.linotype-stage[data-frame="viewport"] .frame-source{font-family:system-ui,sans-serif;font-size:.8em!important;line-height:1.5!important}
+.linotype-stage[data-frame="viewport"] .frame-source a{text-decoration:underline;text-underline-offset:3px;display:inline}
+.linotype-stage[data-frame="viewport"] .linotype-blank{flex:none;width:var(--sheet-w);height:var(--sheet-h);background:transparent}
+.linotype-stage[data-frame="viewport"] .linotype-keep-tail{white-space:nowrap}
+@media(prefers-reduced-motion:reduce){.linotype-stage[data-frame="viewport"]{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.linotype-stage[data-frame="viewport"] .linotype-sheet{background:Canvas;color:CanvasText;border-color:CanvasText}.linotype-stage[data-frame="viewport"] :is(.linotype-running,.linotype-folio){color:CanvasText}}
+
+
+/* Linotype last leaf: narrative stops before the concluding rule.
+   Provenance follows as understated endnotes, never pseudo-prose or a fake arrow. */
+.linotype-stage[data-frame="viewport"] .linotype-source-record[hidden]{display:none!important}
+.linotype-stage[data-frame="viewport"] .linotype-endnotes{
+  display:block;max-width:100%;margin:1.35em 0 0;padding:0;
+  font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
+  color:var(--muted,#62665f);
+}
+.linotype-stage[data-frame="viewport"] .linotype-endnotes hr{
+  border:0;border-top:1px solid var(--line,#c9c8c0);
+  margin:0 0 .75em;width:100%;
+}
+.linotype-stage[data-frame="viewport"] .linotype-area .linotype-endnotes p{
+  font-family:inherit;font-size:.64em!important;line-height:1.45!important;
+  letter-spacing:.015em;margin:0;white-space:normal;overflow-wrap:normal;
+}
+@media(forced-colors:active){
+ .linotype-stage[data-frame="viewport"] .linotype-endnotes{color:CanvasText}
+ .linotype-stage[data-frame="viewport"] .linotype-endnotes hr{border-color:CanvasText}
+}
+
+
+/* Edited proem, neither synopsis nor original journal text.
+   It occupies the same measurable book frame and can be read aloud in order. */
+.linotype-stage[data-frame="viewport"] .linotype-area .frame-editorial-proem{
+  font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  max-width:100%;
+  margin:0 0 1.25em;
+  padding:0 0 .85em;
+  border-bottom:1px solid var(--line,#c9c8c0);
+  color:var(--ink,#171816);
+}
+.linotype-stage[data-frame="viewport"] .linotype-area .frame-editorial-kicker{
+  display:block;
+  font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,sans-serif;
+  font-size:.56em;
+  font-weight:650;
+  letter-spacing:.10em;
+  text-transform:uppercase;
+  line-height:1.6;
+  color:var(--muted,#62665f);
+  margin:0 0 .42em;
+}
+.linotype-stage[data-frame="viewport"] .linotype-area .frame-editorial-proem p{
+  font-family:inherit;font-size:.86em!important;
+  line-height:1.48!important;letter-spacing:0!important;
+  white-space:normal;margin:0!important;
+  font-style:italic;
+}
+@media(forced-colors:active){
+ .linotype-stage[data-frame="viewport"] .linotype-area .frame-editorial-proem{color:CanvasText;border-color:CanvasText}
+ .linotype-stage[data-frame="viewport"] .linotype-area .frame-editorial-kicker{color:CanvasText}
+}
+
+
+/* Reading page is the frame. No artificial illustration-only plate or
+   centred miniature: natural aspect and maximum usable column width govern.
+   Measured page breaks, never flex stretch, establish the vertical rhythm. */
+.linotype-stage[data-frame="viewport"] :is(.linotype-plate,.linotype-opener) .linotype-area{
+  display:block;
+}
+.linotype-stage[data-frame="viewport"] .linotype-image-frame{
+  display:flex;flex:0 0 auto;min-height:0;width:100%;
+  justify-content:center;align-items:flex-start;
+  margin:0 0 .9em;
+}
+.linotype-stage[data-frame="viewport"] .linotype-image-frame figure,
+.linotype-stage[data-frame="viewport"] .linotype-image-frame[data-aspect="portrait"] figure,
+.linotype-stage[data-frame="viewport"] .linotype-image-frame[data-aspect="landscape"] figure{
+  max-width:100%;aspect-ratio:auto;
+}
+.linotype-stage[data-frame="viewport"] .linotype-image-frame + .frame-editorial-proem{
+  margin-top:.1em;
+}
+
+
+/* Embedded illustrations share the book's complete column measure.
+   Their actual size is assigned by the measured compositor, never a
+   hardcoded thumbnail height independent of the text. */
+.linotype-stage[data-frame="viewport"] .frame-reading-figure img{
+  min-height:0;
+}
+
+
+/* Secondary images are true blocks in the prose measure, not additional
+   chapter-opening plates. A consistent editorial interval follows each. */
+.linotype-stage[data-frame="viewport"] .linotype-area figure.linotype-inline-illustration{
+  display:grid;
+  justify-items:center;
+  width:100%;
+  max-width:100%;
+  margin:.85em 0 1em;
+  padding:0;
+  break-inside:avoid;
+}
+.linotype-stage[data-frame="viewport"] .linotype-area .linotype-inline-illustration img{
+  display:block;
+  min-height:0!important;
+  max-width:100%;
+  object-fit:contain;
+}
+.linotype-stage[data-frame="viewport"] .linotype-area .linotype-inline-illustration figcaption{
+  max-width:100%;
+  text-align:left;
+  margin-top:.45em;
+}
+
+
+/* Native nested composition: a setting within the measured Linotype page.
+   Unlike SVG plates, these specimen lines are ordinary accessible text.
+   They inherit the sheet's font and usable width and are paginated by the
+   same compositor, including character-addressed continuation if needed.
+   No intrinsic image size, fixed inner page, viewport transform or pixels. */
+.linotype-stage[data-frame="viewport"] .linotype-area figure.linotype-inline-illustration.linotype-typographic-specimen{
+  box-sizing:border-box;
+  display:block;
+  inline-size:100%;
+  block-size:auto;
+  max-inline-size:100%;
+  max-block-size:none;
+  min-inline-size:0;
+  margin:.7em 0 .9em;
+  padding-block:.72em;
+  padding-inline:clamp(.55em,2.25%,2.3em);
+  border:1px solid var(--line,#b0a99d);
+  border-radius:0;
+  background:var(--paper,#fffef9);
+  color:var(--ink,#171816);
+  break-inside:auto;
+  overflow:visible;
+}
+.linotype-stage[data-frame="viewport"] .linotype-area .linotype-typographic-specimen .linotype-specimen-label{
+  box-sizing:border-box;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:.25em 1em;
+  inline-size:100%;
+  padding:0 0 .5em;
+  margin:0 0 .7em;
+  border-bottom:1px solid var(--line,#b0a99d);
+  font-family:ui-sans-serif,system-ui,sans-serif;
+  font-size:.59em;
+  line-height:1.45;
+  font-weight:650;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--muted,#62665f);
+  overflow-wrap:anywhere;
+}
+.linotype-stage[data-frame="viewport"] .linotype-area .linotype-typographic-specimen .linotype-specimen-setting{
+  box-sizing:border-box;
+  display:block;
+  inline-size:100%;
+  max-inline-size:100%;
+  min-inline-size:0;
+  margin:0;
+  padding:0;
+}
+.linotype-stage[data-frame="viewport"] .linotype-area .linotype-typographic-specimen .linotype-specimen-title{
+  box-sizing:border-box;
+  display:block;
+  margin:0 0 .75em;
+  padding:0 0 .4em;
+  line-height:1.15;
+  overflow-wrap:anywhere;
+}
+.linotype-stage[data-frame="viewport"] .linotype-area .linotype-typographic-specimen .linotype-specimen-text{
+  box-sizing:border-box;
+  display:block;
+  inline-size:100%;
+  max-inline-size:100%;
+  min-inline-size:0;
+  font-size:1em;
+  line-height:1.46;
+  letter-spacing:normal;
+  margin:0;
+  padding:0;
+  white-space:normal;
+  overflow-wrap:break-word;
+  hyphens:auto;
+}
+.linotype-stage[data-frame="viewport"] .linotype-area .linotype-typographic-specimen figcaption{
+  box-sizing:border-box;
+  display:block;
+  inline-size:100%;
+  max-inline-size:100%;
+  justify-self:stretch;
+  font-family:ui-sans-serif,system-ui,sans-serif;
+  font-size:.62em;
+  line-height:1.45;
+  color:var(--muted,#62665f);
+  text-align:start;
+  margin:.85em 0 0;
+  padding-top:.45em;
+  border-top:1px solid var(--line,#b0a99d);
+}
+.linotype-stage[data-frame="viewport"] .linotype-area .linotype-typographic-specimen[data-typographic-specimen="classical"] .linotype-specimen-setting{
+  padding-inline:clamp(.15em,.8%,1em);
+  font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+}
+.linotype-stage[data-frame="viewport"] .linotype-area .linotype-typographic-specimen[data-typographic-specimen="classical"] .linotype-specimen-title{
+  font-family:inherit;
+  font-size:1.43em;
+  font-weight:400;
+  text-align:center;
+  letter-spacing:.085em;
+  border-bottom:1px solid var(--line,#b0a99d);
+}
+.linotype-stage[data-frame="viewport"] .linotype-area .linotype-typographic-specimen[data-typographic-specimen="classical"] .linotype-specimen-text{
+  font-family:inherit;
+  text-align:justify;
+  text-align-last:left;
+}
+.linotype-stage[data-frame="viewport"] .linotype-area .linotype-typographic-specimen[data-typographic-specimen="modern"] .linotype-specimen-setting{
+  font-family:ui-sans-serif,system-ui,sans-serif;
+}
+.linotype-stage[data-frame="viewport"] .linotype-area .linotype-typographic-specimen[data-typographic-specimen="modern"] .linotype-specimen-title{
+  font-family:inherit;
+  font-size:1.55em;
+  font-weight:750;
+  text-align:left;
+  letter-spacing:-.045em;
+  border-top:.15em solid currentColor;
+  padding-top:.35em;
+}
+.linotype-stage[data-frame="viewport"] .linotype-area .linotype-typographic-specimen[data-typographic-specimen="modern"] .linotype-specimen-text{
+  font-family:inherit;
+  text-align:left;
+  hyphens:none;
+}
+.linotype-stage[data-frame="viewport"] .linotype-area .linotype-typographic-specimen[data-specimen-continuation="true"] .linotype-specimen-label{
+  margin-bottom:.55em;
+}
+@media(forced-colors:active){
+ .linotype-stage[data-frame="viewport"] .linotype-area .linotype-typographic-specimen{
+   color:CanvasText;
+   background:Canvas;
+   border-color:CanvasText;
+ }
+}
