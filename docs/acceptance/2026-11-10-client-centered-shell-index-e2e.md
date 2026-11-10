@@ -69,12 +69,54 @@ not from an arbitrarily older source or unrelated private staging.
 - The two previously broken stylesheet URLs were corrected with actual
   existing production assets.
 
-Local candidate browser proof does **not** imply public deployment,
-physical iPad Safari or VoiceOver. Public promotion still requires a
-separately authorized existing EstatePublisher SSH/Caddy immutable release,
-source inventory, terminal receipt, HTTP/SHA witness and predecessor rollback.
+Candidate browser proof did **not** imply public deployment,
+physical iPad Safari or VoiceOver. The separately authorized EstatePublisher
+public effect and its independent live HTTPS/browser proof are recorded
+below, without promoting desktop Chromium to native-device acceptance.
 
 The source-owning fountain.coach Git repository has no existing PLANS.md;
 this record continues the existing Client-Centered publication acceptance
 documentation. No new app, alternative renderer, DNS service, password
 or Store transaction was introduced.
+
+
+## Production terminal closeout — independently read back
+
+**ACTIVE:** fcis-client-centered-shell-20261110-1e26f73 on
+https://fountain.coach/, installed by the existing native
+EstatePublisherSSHDelivery with immutable release inventory, authenticated
+SSH/rsync, atomic symlink activation, independent HTTPS byte verification
+and retained rollback.
+
+- Canonical source projector merge:
+  Fountain-Coach/fountain.coach@1e26f73b6de9a17f9c2a78dd417bc8111e38eebb
+  (source PR #14, exact merged code).
+- Work manuscript unchanged at original SHA-256
+  03e4497f6deabe173958bd632b721ac7f23ae95e3bbe0043a1204ad5039de78a.
+- Publisher full source-inventory SHA-256:
+  3670e033eb3d7a8721067fddc306cafbefd8d85b7f9c3d7d53d1a845eebb630e.
+- Native typed result: state=active, activated=true;
+  **14/14** public HTTPS path+SHA-256 witnesses, including root,
+  Bookshelf, both collection indexes, existing and new essays,
+  original new-essay semantic manifest/social raster, old index surfaces,
+  and a retained existing neighboring Reader route.
+- Preserved predecessor (rollback): fcis-client-centered-20261110-4a89ae5.
+- [Typed public release receipt](../releases/2026-11-10-client-centered-shell-public-receipt.json)
+  is verbatim native publisher output, not inferred from HTTP 200.
+- [Live 55-route Reader browser acceptance](2026-11-10-client-centered-shell-live-all-reader-routes.json):
+  **55/55** true public HTTPS routes with current seven-essay catalogue,
+  51 complete source templates, 30 original First Readings and no
+  fatal runtime errors in the observed set.
+- [Live seven-journey navigation acceptance](2026-11-10-client-centered-shell-live-navigation-journeys.json):
+  **7/7** public HTTPS end-to-end flows: root Bookshelf to Client-Centered,
+  next page, logo to Bookshelf, current Essays index, mobile Bookshelf,
+  both historic essay galleries and two older edition index pointers.
+
+**Authority boundaries:** No new native physical iPad Safari/VoiceOver proof
+and no FountainStore membership/effect claim. Earlier independent
+historical book editions preserve their original text and status; this
+release updates the current Reader/index membership, not their archived
+manuscripts. The original author-provided source and source-bound artwork
+remain byte-identical under the recorded SHA manifests. The candidate's
+landscape/portrait/phone browser matrix and the live public click journeys
+are distinct forms of evidence, not one test counted twice.

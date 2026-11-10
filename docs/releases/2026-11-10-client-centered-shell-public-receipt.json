@@ -1,0 +1,69 @@
+{
+  "activated" : true,
+  "detail" : "Exact published bytes verified independently via HTTPS",
+  "previousReleaseID" : "fcis-client-centered-20261110-4a89ae5",
+  "publicHost" : "fountain.coach",
+  "recordedAt" : 815990966.223348,
+  "releaseID" : "fcis-client-centered-shell-20261110-1e26f73",
+  "sourceInventorySHA256" : "3670e033eb3d7a8721067fddc306cafbefd8d85b7f9c3d7d53d1a845eebb630e",
+  "sourceRevision" : "1e26f73b6de9a17f9c2a78dd417bc8111e38eebb",
+  "state" : "active",
+  "verifiedPublicFiles" : [
+    {
+      "path" : "\/index.html",
+      "sha256" : "a43a04562191fed6a6acd4dc9cb1aeb7a9c87a231df733c172d1072c813d0359"
+    },
+    {
+      "path" : "\/estate\/index.html",
+      "sha256" : "a43a04562191fed6a6acd4dc9cb1aeb7a9c87a231df733c172d1072c813d0359"
+    },
+    {
+      "path" : "\/estate\/bookshelf\/index.html",
+      "sha256" : "8d1fc58235c58e82bf1504f96538f5af019c382442c507038edd63dc4b412be2"
+    },
+    {
+      "path" : "\/estate\/read\/library\/index.html",
+      "sha256" : "c3b364a41df9394a0906638cbc0dccad05c89ca4ab9a1c3484854893c7a1cebb"
+    },
+    {
+      "path" : "\/estate\/read\/essays\/index.html",
+      "sha256" : "a52dcd388b7819a78e2919e10d20d001ee46f36d56445e2fabb002991eaf819d"
+    },
+    {
+      "path" : "\/estate\/read\/first-readings\/index.html",
+      "sha256" : "c6a4ebf3eaa200268b492bc1a7595c8eb60dd3a485253394dd8936c508b0eb15"
+    },
+    {
+      "path" : "\/estate\/read\/essay--client-centered\/index.html",
+      "sha256" : "491c5f509b26ff55b83a478d2f6c02771976862c08363fb5306d12348a8aa735"
+    },
+    {
+      "path" : "\/estate\/read\/essay--client-centered\/edition-manifest.json",
+      "sha256" : "93d05adc6d9cb3a113aee74b3eaee1661bfb540c439e9fd89008bbe34ea2a71f"
+    },
+    {
+      "path" : "\/estate\/assets\/social\/client-centered-4a89ae5.png",
+      "sha256" : "7a19bb703dec14ac26cc769884a18e8fb19225556ded172e0307eeaec91ba3ac"
+    },
+    {
+      "path" : "\/estate\/editions\/index.html",
+      "sha256" : "cc60137466de2edd3ebb5f7ecaa08349010fe59fc663f5d58fe8352e36606a82"
+    },
+    {
+      "path" : "\/estate\/editions\/catalogue\/index.html",
+      "sha256" : "a4790805a3aa25d4b277cb3918bc0b22b1211b7175fb004d469e998afb79f684"
+    },
+    {
+      "path" : "\/essays\/index.html",
+      "sha256" : "046d3957ef397f027088af0f65c95fca72d4f1e2c8ddc316c30a35b552e6f2cb"
+    },
+    {
+      "path" : "\/estate\/essays\/index.html",
+      "sha256" : "37a55560d43db9d9bf1a952ecf538ed6e881741a04deaf0e443a89d29e9882c4"
+    },
+    {
+      "path" : "\/estate\/read\/essay--the-ear-that-learns\/index.html",
+      "sha256" : "148205cfe473f8777ab7cba28afaaace18281da59155672ab7fc47eb15cc5c55"
+    }
+  ]
+}
