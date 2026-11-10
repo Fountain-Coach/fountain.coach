@@ -1,0 +1,187 @@
+{
+  "state": "BROWSER_PREFLIGHT_PASS",
+  "checks": [
+    {
+      "name": "portrait",
+      "route": "/estate/read/essay--client-centered/",
+      "boot": {
+        "title": "Benedikt Eickhoff · Client-Centered",
+        "publication": "published",
+        "essays": [
+          "essay--client-centered",
+          "essay--what-makes-a-page-modern",
+          "essay--reframe-and-the-business-value-of-the-estate",
+          "essay--teatro-an-unfinished-composition",
+          "essay--the-ear-that-learns",
+          "essay--the-door-is-a-score",
+          "essay--a-sound-must-earn-its-place"
+        ],
+        "templates": 51,
+        "proem": 1,
+        "sourceParas": 27,
+        "inline": 1,
+        "engineSrc": "/estate/assets/linotype/reading-first-press-engine.e38301452ef0f07aa9440953d898dcf9ae13fcb828a7d4a97fac163976261d9a.js",
+        "count": "1 / 4",
+        "status": "Page 1 of 4. Client-Centered"
+      },
+      "folioCounts": [
+        "1 / 4",
+        "2 / 4",
+        "3 / 4",
+        "4 / 4"
+      ],
+      "fills": [
+        98,
+        98,
+        98,
+        98
+      ],
+      "errors": []
+    },
+    {
+      "name": "landscape",
+      "route": "/estate/read/essay--client-centered/",
+      "boot": {
+        "title": "Benedikt Eickhoff · Client-Centered",
+        "publication": "published",
+        "essays": [
+          "essay--client-centered",
+          "essay--what-makes-a-page-modern",
+          "essay--reframe-and-the-business-value-of-the-estate",
+          "essay--teatro-an-unfinished-composition",
+          "essay--the-ear-that-learns",
+          "essay--the-door-is-a-score",
+          "essay--a-sound-must-earn-its-place"
+        ],
+        "templates": 51,
+        "proem": 1,
+        "sourceParas": 27,
+        "inline": 1,
+        "engineSrc": "/estate/assets/linotype/reading-first-press-engine.e38301452ef0f07aa9440953d898dcf9ae13fcb828a7d4a97fac163976261d9a.js",
+        "count": "1–2 / 7",
+        "status": "Pages 1 to 2 of 7. Client-Centered"
+      },
+      "folioCounts": [
+        "1–2 / 7",
+        "3–4 / 7",
+        "5–6 / 7",
+        "7 / 7"
+      ],
+      "fills": [
+        97,
+        95,
+        97,
+        98,
+        95,
+        95,
+        78
+      ],
+      "errors": []
+    },
+    {
+      "name": "phone",
+      "route": "/estate/read/essay--client-centered/",
+      "boot": {
+        "title": "Benedikt Eickhoff · Client-Centered",
+        "publication": "published",
+        "essays": [
+          "essay--client-centered",
+          "essay--what-makes-a-page-modern",
+          "essay--reframe-and-the-business-value-of-the-estate",
+          "essay--teatro-an-unfinished-composition",
+          "essay--the-ear-that-learns",
+          "essay--the-door-is-a-score",
+          "essay--a-sound-must-earn-its-place"
+        ],
+        "templates": 51,
+        "proem": 1,
+        "sourceParas": 27,
+        "inline": 1,
+        "engineSrc": "/estate/assets/linotype/reading-first-press-engine.e38301452ef0f07aa9440953d898dcf9ae13fcb828a7d4a97fac163976261d9a.js",
+        "count": "1 / 14",
+        "status": "Page 1 of 14. Client-Centered"
+      },
+      "folioCounts": [
+        "1 / 14",
+        "2 / 14",
+        "3 / 14",
+        "4 / 14",
+        "5 / 14",
+        "6 / 14",
+        "7 / 14",
+        "8 / 14",
+        "9 / 14",
+        "10 / 14",
+        "11 / 14",
+        "12 / 14",
+        "13 / 14",
+        "14 / 14"
+      ],
+      "fills": [
+        96,
+        97,
+        95,
+        97,
+        97,
+        95,
+        90,
+        97,
+        97,
+        97,
+        90,
+        97,
+        95,
+        73
+      ],
+      "errors": []
+    },
+    {
+      "name": "bookshelf",
+      "route": "/estate/",
+      "boot": {
+        "title": "Benedikt Eickhoff · On Continuity",
+        "essays": [
+          "essay--client-centered",
+          "essay--what-makes-a-page-modern",
+          "essay--reframe-and-the-business-value-of-the-estate",
+          "essay--teatro-an-unfinished-composition",
+          "essay--the-ear-that-learns",
+          "essay--the-door-is-a-score",
+          "essay--a-sound-must-earn-its-place"
+        ],
+        "templates": 51,
+        "proem": 1,
+        "sourceParas": 27,
+        "inline": 1,
+        "engineSrc": "/estate/assets/linotype/reading-first-press-engine.e38301452ef0f07aa9440953d898dcf9ae13fcb828a7d4a97fac163976261d9a.js",
+        "count": "1–2 / 2",
+        "status": "Pages 1 to 2 of 2. On Continuity"
+      },
+      "folioCounts": [],
+      "fills": [],
+      "errors": []
+    },
+    {
+      "name": "existingKino",
+      "route": "/estate/read/essay--a-sound-must-earn-its-place/",
+      "boot": {
+        "title": "Benedikt Eickhoff · A Sound Must Earn Its Place",
+        "essays": [
+          "essay--what-makes-a-page-modern",
+          "essay--reframe-and-the-business-value-of-the-estate",
+          "essay--teatro-an-unfinished-composition",
+          "essay--the-ear-that-learns",
+          "essay--the-door-is-a-score",
+          "essay--a-sound-must-earn-its-place"
+        ],
+        "templates": 50,
+        "engineSrc": "/estate/assets/linotype/reading-first-press-engine.e38301452ef0f07aa9440953d898dcf9ae13fcb828a7d4a97fac163976261d9a.js",
+        "count": "1–2 / 11",
+        "status": "Pages 1 to 2 of 11. A Sound Must Earn Its Place"
+      },
+      "folioCounts": [],
+      "fills": [],
+      "errors": []
+    }
+  ]
+}

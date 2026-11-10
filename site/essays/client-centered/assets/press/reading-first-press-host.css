@@ -1,0 +1,88 @@
+/* FCIS modern Linotype host projection.
+   Fountain Press still owns measurement and paragraph composition. */
+
+.page-frame-reader{flex:1;min-height:0;min-width:0;display:grid;grid-template-rows:minmax(0,1fr) auto;position:relative}
+.page-frame-reader.has-hearing{grid-template-rows:minmax(0,1fr) auto auto}
+.page-viewport{min-height:0;min-width:0;position:relative;overflow:hidden;display:flex;align-items:stretch;justify-content:center;font-size:1.125rem;touch-action:pan-y pinch-zoom}
+.frame-type-probe{position:absolute!important;visibility:hidden;pointer-events:none;margin:0;font-size:inherit;line-height:1.58;font-family:"Iowan Old Style",Palatino,Georgia,serif}
+
+/* The composed leaves are the application surface, not paper cards inside it. */
+.page-viewport .linotype-stage[data-frame="viewport"]{margin:auto;gap:clamp(26px,4vw,72px)}
+.page-viewport .linotype-stage[data-frame="viewport"] .linotype-sheet{
+ background:transparent;border:0;border-radius:0;box-shadow:none;
+ padding:var(--sheet-inset-y) var(--sheet-side)
+}
+.page-viewport .linotype-stage[data-frame="viewport"] .linotype-running{
+ border:0;padding:0 0 9px;font-family:Inter,ui-sans-serif,sans-serif;
+ font-size:.67rem;font-weight:650;letter-spacing:.12em;color:var(--muted)
+}
+.page-viewport .linotype-stage[data-frame="viewport"] .linotype-folio{
+ font-family:Inter,ui-sans-serif,sans-serif;font-size:.68rem;color:var(--muted)
+}
+.page-viewport .linotype-stage[data-frame="viewport"] .linotype-area{
+ font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+ line-height:1.58
+}
+.page-viewport .linotype-stage[data-frame="viewport"] .linotype-area h2{
+ font-size:1.58em;line-height:1.08;margin:0 0 .72em
+}
+.page-viewport .linotype-stage[data-frame="viewport"] .linotype-area h2[data-source-block="the-question.title"]{
+ font-size:clamp(2.25em,4.7vw,3.45em);line-height:.92;letter-spacing:-.055em;
+ max-width:10.5ch;margin:.12em 0 .72em
+}
+.page-viewport .linotype-stage[data-frame="viewport"] .frame-lead{font-size:1.12em!important;line-height:1.43!important}
+.page-viewport .linotype-stage[data-frame="viewport"] .frame-source,
+.page-viewport .linotype-stage[data-frame="viewport"] .frame-endmatter{
+ font-family:Inter,ui-sans-serif,sans-serif;font-size:.76em!important;line-height:1.5!important
+}
+.frame-source a,.frame-endmatter a{text-decoration:underline;text-underline-offset:3px}
+.frame-glossary-entry strong{font-family:Inter,ui-sans-serif,sans-serif;font-size:.82em;letter-spacing:.01em}
+.frame-case-figure{margin:.6em 0 1em;padding:0;display:grid;gap:.45em;max-width:100%;break-inside:avoid}
+.frame-case-figure img{display:block;width:100%;height:min(220px,28vh);object-fit:contain;object-position:center top;border:1px solid var(--line);background:var(--bg)}
+.frame-case-figure.portrait img{width:auto;max-width:62%;justify-self:center}
+.frame-case-figure figcaption{font-family:Inter,ui-sans-serif,sans-serif;font-size:.67em;line-height:1.42;color:var(--muted)}
+.frame-controls{
+ min-height:58px;border-top:1px solid var(--line);display:flex;align-items:center;
+ gap:8px;padding:6px max(2px,env(safe-area-inset-right)) max(6px,env(safe-area-inset-bottom))
+}
+.frame-controls button{border:0;background:transparent;color:inherit;cursor:pointer}
+.frame-controls .page-arrow,.frame-controls .page-audio,.frame-controls .page-pdf{width:44px;height:44px;min-width:44px;min-height:44px;display:grid;place-items:center}
+.frame-controls button:disabled{opacity:.22;cursor:default}
+.frame-location{min-width:0;flex:1;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:10px}
+.frame-location label{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+.frame-location select{
+ appearance:none;-webkit-appearance:none;width:100%;min-width:0;min-height:44px;height:44px;
+ border:0;background:transparent;color:var(--ink);padding:0 4px;font-size:.82rem;font-weight:550;
+ text-overflow:ellipsis;cursor:pointer
+}
+.frame-page-count{font-size:.72rem;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+.frame-source-flow[hidden]{display:none!important}
+.page-pdf{font-family:Inter,ui-sans-serif,sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.04em;text-decoration:none;color:inherit}
+.frame-error{position:absolute;inset:16px;background:var(--bg);border:1px solid var(--line);padding:20px;overflow:auto;z-index:2}
+
+/* Listening stays attached to the same book. */
+.hearing-row{min-width:0;border-top:1px solid var(--line);padding:3px 0;background:var(--bg)}
+.hearing-controls{display:grid;grid-template-columns:44px minmax(60px,1fr);align-items:center;gap:10px;max-width:720px;margin:auto}
+.hearing-controls>button{min-height:44px;min-width:44px;border:0;background:transparent;color:inherit;cursor:pointer}
+.hearing-seek{display:flex;gap:10px;align-items:center;min-width:0;font-size:.7rem;color:var(--muted);white-space:nowrap;font-variant-numeric:tabular-nums}
+.hearing-seek input{width:100%;min-width:0;min-height:44px;accent-color:var(--ink)}
+.hearing-error{font-size:.85rem;margin:4px;color:var(--ink)}
+
+@media(min-width:1200px){
+ .page-viewport{padding-inline:32px}
+}
+@media(max-width:700px),(max-height:650px){
+ .page-viewport .linotype-stage[data-frame="viewport"]{gap:0}
+ .page-viewport .linotype-stage[data-frame="viewport"] .linotype-sheet{padding-inline:var(--sheet-side)}
+ .page-viewport .linotype-stage[data-frame="viewport"] .linotype-area h2[data-source-block="the-question.title"]{font-size:2.3em}
+ .frame-controls{min-height:54px;padding-block:4px;gap:4px}
+ .frame-location{gap:5px}.frame-location select{font-size:.75rem}.frame-page-count{font-size:.67rem}
+ .hearing-controls{gap:4px}.hearing-seek{gap:4px}.hearing-seek>span[aria-hidden]{font-size:.64rem}
+}
+@media(max-height:450px){
+ .frame-controls{min-height:48px;padding-block:2px}.frame-page-count{display:none}.hearing-row{padding:0}
+}
+@media(forced-colors:active){
+ .page-viewport .linotype-stage[data-frame="viewport"] .linotype-sheet{background:Canvas;color:CanvasText;border:0}
+ .hearing-seek input{accent-color:Highlight}
+}

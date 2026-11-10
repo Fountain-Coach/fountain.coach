@@ -1,0 +1,18 @@
+/* Vergil listening is one transport, not an audio settings panel.
+   The glyphs remain at normal system text size, with accessible touch targets. */
+.header-actions :is(.teatro-vergil-read,.vergil-prologue-read){
+ font:400 1em/1 system-ui,-apple-system,BlinkMacSystemFont,sans-serif;
+ min-width:44px;min-height:44px;padding:0;
+ display:inline-flex;align-items:center;justify-content:center;
+ border-radius:3px;white-space:nowrap;max-width:none;
+}
+.header-actions :is(.teatro-vergil-read,.vergil-prologue-read):focus-visible{
+ outline:2px solid currentColor;outline-offset:2px;
+}
+:is(.teatro-vergil-read,.vergil-prologue-read,.teatro-vergil-clock,.vergil-prologue-clock)[hidden]{display:none!important}
+.frame-controls :is(.teatro-vergil-clock,.vergil-prologue-clock){
+ font:500 .68rem/1.4 ui-monospace,Menlo,monospace;
+ color:var(--ink,var(--book-ink,currentColor));
+ font-variant-numeric:tabular-nums;white-space:nowrap;align-self:center;
+}
+@media(max-width:670px){.frame-controls :is(.teatro-vergil-clock,.vergil-prologue-clock){font-size:.6rem}}

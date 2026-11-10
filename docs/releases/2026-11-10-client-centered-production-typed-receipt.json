@@ -1,0 +1,33 @@
+{
+  "activated" : true,
+  "detail" : "Exact published bytes verified independently via HTTPS",
+  "previousReleaseID" : "fcis-5f94d0f-ear-sing-20261107",
+  "publicHost" : "fountain.coach",
+  "recordedAt" : 815988671.903375,
+  "releaseID" : "fcis-client-centered-20261110-4a89ae5",
+  "sourceInventorySHA256" : "0a5d4e36c47982ec7192b901724f551c828cd489207476ee92b3b654a6af2238",
+  "sourceRevision" : "4a89ae5c2d822a0f594c382748277e2b818d82e4",
+  "state" : "active",
+  "verifiedPublicFiles" : [
+    {
+      "path" : "\/estate\/read\/essay--client-centered\/index.html",
+      "sha256" : "71f01d94ac631a8413084c57db43b51f8be0607992816333912642ff13f3c7ed"
+    },
+    {
+      "path" : "\/estate\/read\/essay--client-centered\/edition-manifest.json",
+      "sha256" : "93d05adc6d9cb3a113aee74b3eaee1661bfb540c439e9fd89008bbe34ea2a71f"
+    },
+    {
+      "path" : "\/estate\/assets\/social\/client-centered-4a89ae5.png",
+      "sha256" : "7a19bb703dec14ac26cc769884a18e8fb19225556ded172e0307eeaec91ba3ac"
+    },
+    {
+      "path" : "\/estate\/index.html",
+      "sha256" : "66f17c662c7e3bae065fa60dccfad4f7d44f05a48319b69e5f5c190284885f72"
+    },
+    {
+      "path" : "\/estate\/read\/essay--the-ear-that-learns\/index.html",
+      "sha256" : "30af76515fb99cf9045f27e9240773cbff2e55d78d00cc52bdb9b7c24c020462"
+    }
+  ]
+}
