@@ -31,7 +31,7 @@ FIGURES=[
   "after":"client-centered.title","role":"hero",
   "alt":"Axonometric Teatro Score: two separate platforms across an open, translucent plane, with a small vermilion mark on the shared floor."},
  {"id":"client-centered.method","file":"client-centered-open-method.svg",
-  "after":"client-centered.s2.p14","role":"inline",
+  "after":"client-centered.s2.p6","role":"inline",
   "alt":"Axonometric Teatro Score: a method made of incomplete spatial frames with an open vermilion route passing beyond the instrument."},
 ]
 def digest(raw):return hashlib.sha256(raw).hexdigest()
@@ -112,19 +112,24 @@ def build():
                '" alt="'+html.escape(hero["alt"],quote=True)+
                '" width="1500" height="980"/></figure></section>')
     second=FIGURES[1]
-    second_html=('<section class="book-art-leaf"><figure class="frame-reading-figure" '+
-                 'data-source-block="'+second["id"]+'" data-source-plate-sha256="'+figure_meta[1]["sha256"]+'">'+
+    # Secondary art belongs at its authored source beat inside the existing
+    # paragraph stream, not in a stand-alone plate that splits the chapter.
+    # The original Press engine measures in-flow figures with nearby prose.
+    figure_after = 1 + sum(1 + len(g["paragraphs"]) for g in groups[:2])
+    second_html=('<figure class="frame-reading-figure" '+
+                 'data-inline-after-paragraph="'+str(figure_after)+'" '+
+                 'data-source-block="'+second["id"]+'" data-source-illustration-id="'+second["id"]+'" '+
+                 'data-source-plate-sha256="'+figure_meta[1]["sha256"]+'">'+
                  '<img loading="lazy" decoding="async" src="'+figure_meta[1]["stagingURL"]+
                  '" alt="'+html.escape(second["alt"],quote=True)+
-                 '" width="1500" height="980"/></figure></section>')
+                 '" width="1500" height="980"/></figure>')
     intro='On expertise, participation, and the freedom of another person'
     # Keep source paragraphs intact. CSS controls lineation; no inserted <br>.
-    before,after=("".join(section_fragments)).split("__FIGURE_TWO__")
-    text1=('<section class="book-chapter-text"><article class="book-prose">'+
+    ordered_source="".join(section_fragments).replace("__FIGURE_TWO__",second_html)
+    text_flow=('<section class="book-chapter-text"><article class="book-prose">'+
            '<p class="frame-lead" data-source-block="client-centered.subtitle" data-source-from="0" data-source-to="'+str(len(intro))+'">'+
-           html.escape(intro)+'</p>'+before+'</article></section>')
-    text2='<section class="book-chapter-text"><article class="book-prose">'+after+'</article></section>'
-    template='<template data-reader-volume="essay--client-centered"><div class="book-flow" data-min-leaves="1">'+start+hero_html+text1+second_html+text2+'</div></template>'
+           html.escape(intro)+'</p>'+ordered_source+'</article></section>')
+    template='<template data-reader-volume="essay--client-centered"><div class="book-flow" data-min-leaves="1">'+start+hero_html+text_flow+'</div></template>'
     html_out=BASE.read_text("utf-8")
     anchor=' <script type="application/json" id="reader-gallery-data">'
     assert html_out.count(anchor)==1
@@ -146,7 +151,9 @@ def build():
                               'Client-Centered, a complete source-bound Fountain Press essay in private editorial review.')
     # No public canonical or OG claim for an unapproved edition.
     html_out=re.sub(r'<link rel="canonical" href="https://fountain.coach/estate/read/essay--the-ear-that-learns/"/>\s*','',html_out,count=1)
-    html_out=re.sub(r'<meta property="og:(?:url|image|image:alt|title|description)"[^>]*>\s*','',html_out)
+    # Never carry another essay's social image or title into this private review.
+    html_out=re.sub(r'<meta property="og:(?:url|image[^"]*|title|description)"[^>]*>\s*','',html_out)
+    html_out=re.sub(r'<meta name="twitter:(?:title|description|image|card)"[^>]*>\s*','',html_out)
     html_out=html_out.replace('<meta name="robots" content="index,follow"/>',
                               '<meta name="robots" content="noindex,nofollow"/>\n'+
                               '<meta name="fountain:publication-state" content="owner-WLAN-editorial-review"/>\n'+
