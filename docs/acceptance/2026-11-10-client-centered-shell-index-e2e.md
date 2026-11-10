@@ -120,3 +120,29 @@ manuscripts. The original author-provided source and source-bound artwork
 remain byte-identical under the recorded SHA manifests. The candidate's
 landscape/portrait/phone browser matrix and the live public click journeys
 are distinct forms of evidence, not one test counted twice.
+
+## Subsequent writer editorial correction — remove stale essay-count subtitle
+
+The public Essays collection presented a hard-coded "Six essays · chronological"
+line, even though the admitted Reader inventory already contained seven
+current essays. The writer requested **removal**, not a corrected numerical
+claim or another descriptive phrase. The observed culprit was in the
+active content-addressed Press application
+reading-first-app.47b1250c4feb1cd6b920b451d2b0a6dd14207020857600f39192361c3e4fe725.js,
+not the manuscript, authorial volume text, semantic manifest or paginator.
+
+The source-owned production projector's --remove-essay-subtitle mode changes
+only the Essays header composition: the header retains "Essays" and creates
+no subsidiary paragraph; First Readings keeps its independently authored
+"Reading 01 · First Reading" label. The new application is SHA-256-addressed;
+all 55 current Reader entry HTML files reference it. The original app,
+original Press compositor, article source, figures, social images,
+historical books and all other release files remain available and unaltered.
+
+Offline acceptance: 6/6 source/manifest/Reader inventory tests; Chromium
+landscape, portrait and phone each display an Essays heading without a
+subtitle paragraph, preserve the First Reading label, allow opening the
+Client-Centered edition, and support returning via the brand to the shelf.
+These checks do not themselves establish public HTTPS publication or native
+physical iPad Safari/VoiceOver acceptance. Native publisher activation,
+typed receipt and independent public-browser proof are separately required.

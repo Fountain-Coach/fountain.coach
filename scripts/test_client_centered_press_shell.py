@@ -43,6 +43,9 @@ class ClientCenteredShellParity(unittest.TestCase):
         cls.gallery = json.loads(GALLERY.search(cls.source).group(1))
         cls.pages = [p for p in ROOT.rglob('index.html')
                      if 'id="reader-gallery-data"' in p.read_text(errors='replace')]
+        cls.release = json.loads((ROOT/'release-manifest.json').read_text())
+        cls.editorial = cls.release.get('readerEditorialSubtitleRemoval')
+        cls.reader_app = cls.editorial['newApp'] if cls.editorial else ORIGINAL_READER_APP
 
     def test_every_reader_entry_has_identical_full_source(self):
         self.assertEqual(len(self.pages),55)
@@ -57,7 +60,7 @@ class ClientCenteredShellParity(unittest.TestCase):
                 present={m.group(1):m.group() for m in TEMPLATES.finditer(s)}
                 self.assertEqual(present,self.templates,'Incomplete source prose/figure parity')
                 self.assertEqual(json.loads(GALLERY.search(s).group(1)),self.gallery)
-                self.assertEqual(s.count(ORIGINAL_READER_APP),1)
+                self.assertEqual(s.count(self.reader_app),1)
                 self.assertEqual(s.count('data-reader-volume="essay--client-centered"'),1)
                 self.assertEqual(s.count('data-reader-volume="essay--a-sound-must-earn-its-place"'),1)
                 self.assertNotIn('reading-first-app.client-centered-review.js',s)
@@ -125,12 +128,37 @@ class ClientCenteredShellParity(unittest.TestCase):
                 self.assertEqual(sha(ROOT/f),sha(PREVIOUS/f))
             prior={f.relative_to(PREVIOUS).as_posix():f for f in PREVIOUS.rglob('*') if f.is_file()}
             new={f.relative_to(ROOT).as_posix():f for f in ROOT.rglob('*') if f.is_file()}
-            self.assertEqual(prior.keys(),new.keys())
-            rc=json.loads((ROOT/'release-manifest.json').read_text())['clientCenteredShellReconciliation']
-            self.assertEqual(rc['readerEntryRouteCount'],55)
-            diff=[key for key in new if sha(new[key])!=sha(prior[key])]
-            self.assertEqual(set(diff),set(rc['modifiedRouteHTML'])|{'release-manifest.json'})
-            self.assertEqual(len(diff),60)
+            if self.editorial:
+                self.assertEqual(set(new)-set(prior),
+                                 {'estate/assets/linotype/'+self.editorial['newApp']})
+                self.assertFalse(set(prior)-set(new))
+                diff={key for key in prior if sha(new[key])!=sha(prior[key])}
+                self.assertEqual(diff,set(self.editorial['changedReaderEntries'])|
+                                 {'release-manifest.json'})
+                self.assertEqual(len(diff),56)
+                self.assertEqual(len(new),len(prior)+1)
+            else:
+                self.assertEqual(prior.keys(),new.keys())
+                rc=json.loads((ROOT/'release-manifest.json').read_text())['clientCenteredShellReconciliation']
+                self.assertEqual(rc['readerEntryRouteCount'],55)
+                diff=[key for key in new if sha(new[key])!=sha(prior[key])]
+                self.assertEqual(set(diff),set(rc['modifiedRouteHTML'])|{'release-manifest.json'})
+                self.assertEqual(len(diff),60)
+
+    def test_essays_collection_has_no_unsupported_count_subtitle(self):
+        if not self.editorial:
+            self.skipTest('This invariant applies to a later author-requested editorial removal')
+        app=ROOT/'estate/assets/linotype'/self.reader_app
+        self.assertEqual(sha(app),self.editorial['newAppSHA256'])
+        self.assertNotIn('Six essays · chronological',app.read_text())
+        self.assertNotIn('Six essays',app.read_text())
+        self.assertIn("if(id!=='essays')",app.read_text())
+        self.assertIn("subtitle.textContent='Reading 01 · First Reading'",app.read_text())
+        self.assertEqual(self.editorial['originalPressEngineSHA256'],ENGINE_SHA)
+        if PREVIOUS:
+            self.assertEqual(sha(PREVIOUS/'estate/assets/linotype'/ORIGINAL_READER_APP),
+                             self.editorial['oldAppSHA256'])
+        self.assertEqual(len(self.editorial['changedReaderEntries']),55)
 
     def test_per_work_canonical_and_social_metadata_retained(self):
         for route in ('essay--client-centered','essay--the-ear-that-learns',
