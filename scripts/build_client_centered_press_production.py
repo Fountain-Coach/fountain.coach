@@ -298,11 +298,334 @@ def render(stage_root, current_root, output):
     return output_summary
 
 
+
+# Subsequent publication maintenance uses the SAME source/compositor/public
+# release pattern.  The first public promotion admitted the work only in
+# /estate/index and the work's own route.  Each copied Reader entrance was
+# therefore a different, historically frozen catalogue.  This reconciles
+# all actual Reader entrances, without altering the semantic manuscript.
+META_TAG = re.compile(
+    r'<(?:meta|link)\s+[^>]*?/?>(?:\s*)'
+    r'|<title>.*?</title>\s*'
+    r'|<script type="application/ld\+json">.*?</script>\s*',
+    re.S
+)
+
+
+def page_metadata(tag):
+    if tag.startswith('<title>'):
+        return True
+    if tag.startswith('<script type="application/ld+json">'):
+        return True
+    if tag.startswith('<link '):
+        return bool(re.search(r'\brel="canonical"', tag))
+    if tag.startswith('<meta '):
+        name = re.search(r'\bname="([^"]+)"', tag)
+        prop = re.search(r'\bproperty="([^"]+)"', tag)
+        if prop and prop.group(1).startswith('og:'):
+            return True
+        if name:
+            key = name.group(1)
+            return key in {'description', 'robots', 'fountain:publication-state',
+                           'fountain:source-owner', 'fountain:source-revision',
+                           'fountain:manuscript-sha256'} or key.startswith('twitter:')
+    return False
+
+
+def extract_head(page):
+    if page.count('</head>') != 1:
+        raise ValueError('Ambiguous Reader head')
+    return page[:page.index('</head>')], page[page.index('</head>'):]
+
+
+def project_reader_entry(canonical, old, target):
+    canonical_head, canonical_tail = extract_head(canonical)
+    original_head, _ = extract_head(old)
+    # Site metadata is per-path; the complete source-bound Reader shell,
+    # assets and edition membership are shared between every entrance.
+    preserved = [m.group() for m in META_TAG.finditer(original_head)
+                 if page_metadata(m.group())]
+    if target in {'index.html','estate/index.html',
+                  'estate/bookshelf/index.html','estate/collections/first-readings/index.html'}:
+        # These are public entrances, not their historical WLAN previews.
+        preserved = [x for x in preserved
+                     if not (x.startswith('<meta ') and 'name="robots"' in x)]
+        preserved.append('<meta name="robots" content="index,follow"/>\n')
+    shell_head = META_TAG.sub(
+        lambda m: '' if page_metadata(m.group()) else m.group(),
+        canonical_head
+    )
+    if not any('<title>' in x for x in preserved):
+        raise ValueError('Missing route-specific document title: ' + target)
+    head = shell_head + '\n' + ''.join(preserved).rstrip() + '\n'
+    if target in {'index.html', 'estate/index.html',
+                  'estate/bookshelf/index.html', 'estate/read/library/index.html'}:
+        volume = 'library'
+    elif target == 'estate/collections/first-readings/index.html':
+        volume = 'first-readings'
+    elif target.startswith('estate/read/'):
+        volume = Path(target).parts[2]
+    else:
+        old_volume = re.search(r'data-initial-volume="([^"]+)"', old)
+        if not old_volume:
+            raise ValueError('Reader initial volume missing: ' + target)
+        volume = old_volume.group(1)
+    tail = canonical_tail
+    if volume != 'continuity':
+        tail = replace_one(tail, 'data-initial-volume="continuity"',
+                           'data-initial-volume="' + volume + '"',
+                           'Reader initial volume')
+    page = head + tail
+    # The original per-route HTML assets may be obsolete, but the canonical
+    # module and 49 semantic templates must be identical across all entrances.
+    if page.count('data-reader-volume="essay--client-centered"') != 1:
+        raise ValueError('Work template not admitted: ' + target)
+    if page.count('reading-first-app.47b1250c4feb1cd6b920b451d2b0a6dd14207020857600f39192361c3e4fe725.js') != 1:
+        raise ValueError('Current Press Reader app not admitted: ' + target)
+    if page.count('id="reader-gallery-data"') != 1:
+        raise ValueError('Current catalogue not admitted: ' + target)
+    if 'noindex,nofollow' in page and target in {
+            'index.html', 'estate/index.html', 'estate/bookshelf/index.html'}:
+        raise ValueError('Review-only metadata leaked into root: '+target)
+    return page
+
+
+def add_client_centered_to_legacy_essay_gallery(page, figure_alt, target):
+    if 'data-essay-gallery=' not in page:
+        raise ValueError('Unexpected historic index shell: ' + target)
+    if 'data-essay-route="/estate/read/essay--client-centered/"' in page:
+        raise ValueError('Already listed, cannot insert twice: ' + target)
+    # Retain historical/archived content as source references, but add a real
+    # link to the current author-approved source-bound public edition.
+    import html as html_helper
+    new = (
+        '<article class="essay-gallery-card" '
+        'data-essay-route="/estate/read/essay--client-centered/">'
+        '<a class="essay-gallery-image" '
+        'href="/estate/read/essay--client-centered/" aria-label="Read Client-Centered">'
+        '<img src="/estate/read/essay--client-centered/assets/images/'
+        'client-centered-positions.svg" width="1500" height="980" alt="' +
+        html_helper.escape(figure_alt, quote=True) + '"></a>'
+        '<div class="essay-gallery-copy"><div class="eyebrow">'
+        'ESSAY · NOVEMBER 2026</div><h3><a '
+        'href="/estate/read/essay--client-centered/">Client-Centered</a></h3>'
+        '<p>On expertise, participation, and the freedom of another person.</p>'
+        '</div></article>'
+    )
+    first = '<article class="essay-gallery-card"'
+    if page.count(first) < 5:
+        raise ValueError('Historical essay gallery count abnormal: ' + target)
+    return page.replace(first, new + first, 1)
+
+
+def reconcile_public_shell(public_root, output, publisher_revision):
+    if not re.fullmatch('[a-f0-9]{40}', publisher_revision):
+        raise ValueError('Publisher source revision must be exact 40-character SHA')
+    if output.exists():
+        raise ValueError('Immutable output already exists')
+    before = json.loads((public_root / 'release-manifest.json').read_text())
+    if before['releaseID'] != RELEASE:
+        raise ValueError('Live public predecessor changed')
+    source_manifest = json.loads((public_root / PUBLIC_REL / 'edition-manifest.json').read_text())
+    if source_manifest['sourceSHA256'] != SOURCE_SHA or not source_manifest['productionAuthorized']:
+        raise ValueError('Source publication not admitted')
+    original_client = (public_root / PUBLIC_REL / 'index.html').read_text()
+    original_edition_sha = sha(public_root / PUBLIC_REL / 'edition-manifest.json')
+    original_social_sha = sha(public_root / SOCIAL)
+    if original_social_sha != '7a19bb703dec14ac26cc769884a18e8fb19225556ded172e0307eeaec91ba3ac':
+        raise ValueError('Source-owned public social artwork drift')
+    press_engine = public_root / 'estate/assets/linotype' / ORIGINAL_ENGINE
+    if sha(press_engine) != ENGINE_SHA:
+        raise ValueError('Original Press engine changed')
+    canonical = (public_root / 'estate/index.html').read_text()
+    if canonical.count('data-reader-volume="essay--client-centered"') != 1:
+        raise ValueError('Current published work missing from canonical shell')
+    gallery_match = re.search(
+        r'<script type="application/json" id="reader-gallery-data">(.*?)</script>',
+        canonical, re.S
+    )
+    if not gallery_match:
+        raise ValueError('Current Press catalogue unavailable')
+    library = json.loads(gallery_match.group(1))
+    ids = [e['id'] for e in library['collections']['essays']]
+    if len(ids) != 7 or ids[0] != 'essay--client-centered' or len(set(ids)) != 7:
+        raise ValueError('Current seven-essay catalogue is not source admitted')
+    if len(library['collections']['first-readings']) != 30:
+        raise ValueError('First Readings collection drift')
+    if output.exists():
+        raise ValueError('Output exists')
+    shutil.copytree(public_root, output, symlinks=False)
+    changed=[]
+    entries=[]
+    for file in sorted((public_root / 'estate/read').glob('*/index.html')):
+        old=file.read_text()
+        if 'id="reader-gallery-data"' not in old or 'data-reader-volume=' not in old:
+            raise ValueError('Non-Reader entry unexpectedly found: ' + str(file))
+        entries.append(file)
+    entries.extend([
+        public_root/'index.html',
+        public_root/'estate/index.html',
+        public_root/'estate/bookshelf/index.html',
+        public_root/'estate/collections/first-readings/index.html'
+    ])
+    for file in entries:
+        rel=file.relative_to(public_root).as_posix()
+        old=file.read_text()
+        page=project_reader_entry(canonical, old, rel)
+        if page != old:
+            (output/rel).write_text(page)
+            changed.append(rel)
+    # Gallery-only historical pages are still index surfaces.  Do not rewrite
+    # their authored historical essays as current books; give their readers
+    # the exact source-owned current edition target alongside legacy works.
+    figure_alt=next(x['alt'] for x in source_manifest['figures']
+                    if x['file'] == HERO)
+    for name in ('essays/index.html', 'estate/essays/index.html'):
+        old=(public_root/name).read_text()
+        page=add_client_centered_to_legacy_essay_gallery(old,figure_alt,name)
+        if name == 'essays/index.html' and 'rel="icon"' not in page[:page.index('</head>')]:
+            page=replace_one(page,'</head>',
+                '<link rel="icon" href="/estate/assets/fountain-coach-logo-transparent.png"/>\n</head>',
+                'legacy current-work index favicon')
+        if name == 'estate/essays/index.html':
+            # The historical alias returns 404. Reuse its already-published
+            # content-addressed CSS rather than introducing a new CSS file.
+            page=replace_one(page,'href="/assets/estate-shell.css"',
+                'href="/assets/estate-shell-d9a170d82a21d19b.css"',
+                'existing production stylesheet')
+        (output/name).write_text(page)
+        changed.append(name)
+    # Two older "edition" indexes remain useful historical records.  Keep
+    # their original claims and contents, but surface the current published
+    # Essays entry point instead of presenting the old draft as today's book.
+    edition='estate/editions/index.html'
+    page=(public_root/edition).read_text()
+    page=replace_one(page,
+      'href="/estate/editions/essays-continuing/"',
+      'href="/estate/read/essays/"',
+      'existing Essays index entry')
+    page=replace_one(page,
+      'aria-label="Open Essays — A Book Continually Written; seven source-authored chapters, WLAN candidate"',
+      'aria-label="Open current Essays in Fountain Press; seven published source-authored essays"',
+      'existing Essays index accessible name')
+    page=replace_one(page,
+      'data-canonical-href="https://fountain.coach/editions/essays-continuing/"',
+      'data-canonical-href="https://fountain.coach/estate/read/essays/"',
+      'current essays canonical index target')
+    # The index's old cover claimed only a WLAN candidate and attributed an
+    # obsolete 2026-10 publication artifact to the newly linked public Reader.
+    # Its currently displayed link must identify the actual admitted artefact,
+    # but preserve the separate First Readings entry without rewriting it.
+    item=re.search(r'<li class="shelf-item" data-book-id="fountain-coach".*?</li>',
+                   page,re.S)
+    if not item:raise ValueError('Current Essays edition card absent')
+    before_item=item.group()
+    current_item=replace_one(before_item,
+        'data-release-status="wlan-proof"',
+        'data-release-status="published"', 'public Essays collection status')
+    current_item=re.sub(r'data-source-revision="[a-f0-9]{40}"',
+        'data-source-revision="'+publisher_revision+'"',current_item,count=1)
+    current_item=re.sub(r'data-reader-artifact-sha256="[a-f0-9]{64}"',
+        'data-reader-artifact-sha256="'+sha(output/'estate/index.html')+'"',
+        current_item,count=1)
+    current_item=current_item.replace(' data-preview-host="fountain"','')
+    if current_item==before_item:
+        raise ValueError('Current Essays provenance did not reconcile')
+    page=replace_one(page,before_item,current_item,'single existing Essays edition entry')
+    (output/edition).write_text(page)
+    changed.append(edition)
+
+    catalogue='estate/editions/catalogue/index.html'
+    page=(public_root/catalogue).read_text()
+    anchor='Read the edition <span aria-hidden="true">→</span></a></p>'
+    page=replace_one(page,anchor,anchor+
+      '<p><a class="edition-open" href="/estate/read/essays/">'
+      'Read the current seven-essay Fountain Press collection '
+      '<span aria-hidden="true">→</span></a></p>',
+      'historical three-essay index access to current edition')
+    page=replace_one(page,'href="/assets/estate-shell.css"',
+        'href="/assets/estate-shell-d9a170d82a21d19b.css"',
+        'current authenticated estate stylesheet')
+    (output/catalogue).write_text(page)
+    changed.append(catalogue)
+
+    # The historical continuing book is NOT an index and remains source-owned,
+    # without being silently rebuilt or containing an invented new chapter.
+    if original_edition_sha != sha(output/PUBLIC_REL/'edition-manifest.json'):
+        raise ValueError('Original essay semantic manifest changed')
+    if original_social_sha != sha(output/SOCIAL):
+        raise ValueError('Original social image changed')
+    if original_client != (output/PUBLIC_REL/'index.html').read_text() and (
+        extract_template(original_client) != extract_template(
+          (output/PUBLIC_REL/'index.html').read_text())):
+        raise ValueError('Original source manuscript projection changed')
+
+    previous_release=output/'release-manifest.json'
+    data=json.loads(previous_release.read_text())
+    data['previousReleaseID']=RELEASE
+    data['releaseID']='fcis-client-centered-shell-20261110-'+publisher_revision[:7]
+    data['sourceRevision']=publisher_revision
+    data['publicationState']='published-client-centered-all-reader-indexes-reconciled'
+    data['authorDecision']='2026-11-10: correct misintegrated index-like publication shell across existing public Reader entrances'
+    data['contentScope']='Seven-essay Bookshelf and all existing Reader entry routes; original manuscript and old editions intact'
+    data['clientCenteredShellReconciliation']={
+        'sourceOwner':'Fountain-Coach/fountain.coach',
+        'publisherSourceRevision':publisher_revision,
+        'workSourceRevision':SOURCE_REV,
+        'workSourceSHA256':SOURCE_SHA,
+        'originalPressEngineSHA256':ENGINE_SHA,
+        'sourceEditionManifestSHA256':original_edition_sha,
+        'sourceSocialSHA256':original_social_sha,
+        'readerEntryRouteCount':len(entries),
+        'readerCurrentEssayCount':7,
+        'firstReadingsCount':30,
+        'modifiedRouteHTML':sorted(changed),
+        'preservedOriginalHistoricalEdition':True,
+        'productionActivationAuthorized':True,
+    }
+    data['modifiedPaths']=sorted(set(data.get('modifiedPaths',[]))|set(changed)|{'release-manifest.json'})
+    previous_release.write_text(json.dumps(data,indent=2,ensure_ascii=False)+'\n')
+    actual_changed=[]
+    old_files={q.relative_to(public_root).as_posix():q for q in public_root.rglob('*') if q.is_file()}
+    new_files={q.relative_to(output).as_posix():q for q in output.rglob('*') if q.is_file()}
+    if set(old_files)!=set(new_files):
+        raise ValueError('Unrelated existing site files added/deleted')
+    for key,file in old_files.items():
+        if sha(file)!=sha(new_files[key]):
+            actual_changed.append(key)
+    if set(actual_changed)!=set(changed)|{'release-manifest.json'}:
+        raise ValueError('Undeclared public mutation: '+str(sorted(set(actual_changed)^set(changed)|{'release-manifest.json'})))
+    print(json.dumps({
+        'schema':'fountain.press.reader-index-reconciliation.v1',
+        'publisherSourceRevision':publisher_revision,
+        'manuscriptSourceRevision':SOURCE_REV,
+        'previousReleaseID':RELEASE,
+        'releaseID':data['releaseID'],
+        'filesPreserved':len(old_files)-len(actual_changed),
+        'readerRoutes':len(entries),
+        'modifiedPaths':sorted(actual_changed),
+        'currentEssays':ids,
+        'firstReadings':30,
+        'workManifestSHA256':original_edition_sha,
+        'workSocialSHA256':original_social_sha,
+        'originalEngineSHA256':ENGINE_SHA,
+    },indent=2))
+
+
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--public-baseline", type=Path, required=True)
-    ap.add_argument("--staged-essay", type=Path, required=True)
+    ap.add_argument("--staged-essay", type=Path)
     ap.add_argument("--output", type=Path, required=True)
-    args = ap.parse_args()
-    result = render(args.staged_essay, args.public_baseline, args.output)
-    print(json.dumps(result, indent=2, ensure_ascii=False))
+    ap.add_argument("--reconcile-shell", action="store_true")
+    ap.add_argument("--publisher-revision")
+    args=ap.parse_args()
+    if args.reconcile_shell:
+        if not args.publisher_revision:
+            ap.error("--publisher-revision required when reconciling shell")
+        reconcile_public_shell(args.public_baseline,args.output,args.publisher_revision)
+    else:
+        if not args.staged_essay:
+            ap.error("--staged-essay is required for initial production projection")
+        print(json.dumps(render(args.staged_essay,args.public_baseline,args.output),
+                         indent=2, ensure_ascii=False))
