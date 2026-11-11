@@ -37,3 +37,16 @@ The accepted **private** release is `shared-shell-20261111-v195-direct-books-soc
 The private live paths are `http://192.168.8.50:8200/estate/books/essays/`, `/first-readings/`, and `/orange-dot/`. The **canonical public** URLs are `https://fountain.coach/estate/books/<id>/`, but they are **not published yet**. Source `Orange Dot` rights remain a private/author-controlled gate, so neither the public URLs nor preview images may be promoted without an independently approved source-owner release.
 
 A Skill can select and execute this checked-in compiler/verification on a publishing change, but does not itself run a background watcher. The canonical FCIS Linotype procedural source change is tracked separately in `Fountain-Coach/.github` pull request #71 and remains subject to protected merge and provider marketplace synchronization.
+
+
+## Public author-approved release
+
+The author’s 11 November 2026 explicit instruction to publish Orange Dot supersedes the historical staging-only publication boundary for this selected public edition. Its source-bound `orange-dot-public-admission-20261111.json` names the same 23 writings, 29 original images, SHA identities, three books and exact release exclusions. It does not claim independently cleared third-party rights.
+
+`compose_orange_dot_public_release.py` consumes the **full verified v195 production-derived local stage artifact**, the exact 445-file public predecessor SHA inventory and the 40-character **merged** Git source revision. It checks preservation of all public predecessor files and every original artwork SHA. It generates a new complete static public site with only four declared metadata/alias edits; the original Reader, pages, images and social derivative art are unchanged. Example, with unique new output paths:
+
+```sh
+python3 scenarios/press-books/compose_orange_dot_public_release.py   --source /verified/v195/composite-site   --public-inventory /verified/public-predecessor.sha256   --revision EXACT_MERGED_SOURCE_COMMIT_SHA40   --output /new/public-site   --receipt /new/public-composition-receipt.json
+```
+
+Use existing `EstatePublisherSSHDelivery` `inspect → prepare → preflight → deliver` with the existing `fountain.coach` SSH/Caddy profile and a new immutable release ID. `verify_http_semantics.py --public` and `DIRECT_BOOKS_PUBLIC=1 verify_direct_books.mjs` verify the publicly admitted state independently. Recheck the original 23 posts/29 image hashes, public HTTPS and the active/rollback symlinks after delivery; no stage branch or Git commit alone constitutes a Caddy publication. Do not activate a private source lock or propagate arbitrary staging-only assets to an unrelated site.
