@@ -1,0 +1,72 @@
+{
+  "authorDecisionDate": "2026-11-11",
+  "authorizationKind": "Author's explicit instruction in ChatGPT conversation to publish Orange Dot and its containing Fountain Press through the existing Hetzner Caddy static-publication lane",
+  "canonicalBookURL": "https://fountain.coach/estate/books/orange-dot/",
+  "composition": {
+    "canonicalStageSourceLockSHA256": "71eae0d19d032617ba80ee4d9ef749d62fa04c8c1b32ec129a03cef2306152e5",
+    "canonicalStagedRelease": "shared-shell-20261111-v195-direct-books-social-5227c32",
+    "expectedBooks": 3,
+    "expectedIllustrations": 29,
+    "expectedOriginalStageFiles": 483,
+    "expectedPublishedPredecessorChangedPaths": [
+      "estate/index.html",
+      "estate/assets/linotype/reading-first-shell.css"
+    ],
+    "expectedStageOnlyAddedPaths": 38,
+    "machineCataloguePath": "/estate/books/catalog.json",
+    "productionDerivedHTMLSHA256": "121fb1186597e25520a02f6e1b6d7b263491fa028c193cde64da801c36e314dc",
+    "publicPredecessor": "fcis-essay-heading-20261110-8f58f29",
+    "publicPredecessorFileCount": 445,
+    "publicPredecessorFileInventorySHA256": "ac45b1f587dca29db4b7ead134b34016f795bcc53783d2fa83e34c4dd573cbc6",
+    "publicPredecessorIndexSHA256": "005ca222f53735a313543809521c525e23552223406f31bf3e590ccde4a13a49",
+    "socialImagePolicy": "Use first admitted illustrated chapter's unchanged source image; aspect-preserving 1200x630 raster; no generic image",
+    "sourcePolicy": "scenarios/press-books/book-policy.json"
+  },
+  "distributionScope": "Publish all 23 complete selected writings and all 29 original accompanying images as the Orange Dot book within Fountain Press; author also directs the resulting book-level 1200x630 first-chapter social preview",
+  "editorialScope": {
+    "bookshelfOrder": [
+      "essays",
+      "first-readings",
+      "orange-dot"
+    ],
+    "excludedFromBookshelf": [
+      "Works",
+      "Scores",
+      "Governance"
+    ],
+    "governanceIndependent": "https://governance.fountain.coach/",
+    "medicineShowUnpublished": true,
+    "originalParagraphImagePlacementPreserved": true,
+    "preserveExistingPublished": [
+      "essays",
+      "first-readings",
+      "historical-public-routes"
+    ],
+    "unchangedPublishedNeighborsRequired": true
+  },
+  "notAuthorized": [
+    "Publish unfinished Medicine Show",
+    "Publish excluded Works or Governance books",
+    "Invent copyright permission",
+    "Change DNS",
+    "Install new publishing service",
+    "Override unrelated public edition routes"
+  ],
+  "originalAccompanyingImages": 29,
+  "ownerGitRepository": "Fountain-Coach/fountain.coach",
+  "publicationHost": "fountain.coach",
+  "publicationIntent": "PUBLIC_AUTHOR_AUTHORIZED_FOR_THIS_SELECTED_EDITION",
+  "releaseLane": "EstatePublisherSSHDelivery, immutable site-local release on Hetzner, existing Caddy root, atomic previous release and independently verified public HTTPS",
+  "rightsDecision": "The author now authorizes this specific public Fountain Press publication; the historical private-stage-only decision no longer governs this release. This expresses the author's instruction, not independent proof of third-party copyright or depicted-subject consent.",
+  "schema": "fountain.press.orange-dot.public-author-admission.v1",
+  "selectedWritings": 23,
+  "sourceArchivePeriod": [
+    "2025-12-21",
+    "2026-09-19"
+  ],
+  "sourceMediaCustody": "Author-controlled original Facebook export, with image bytes and per-work SHA-256 fixed in prior source selection",
+  "sourceOwner": "Benedikt Eickhoff",
+  "sourceRevisionOfOriginalWritings": "b431528",
+  "sourceSelectionSHA256": "2229655a548d053e78694bf09b792237185306c30cd0641c9424c1f36cb24447",
+  "thirdPartyRightsAssessment": "No independent third-party reproduction license or depicted-subject release has been established by this review. Do not represent those as cleared; preserve source provenance, credits and author custody."
+}

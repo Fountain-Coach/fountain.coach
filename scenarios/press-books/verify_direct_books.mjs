@@ -8,6 +8,7 @@ const base=process.env.DIRECT_BOOKS_BASE||'http://127.0.0.1:8841';
 const local=process.env.DIRECT_BOOKS_LOCAL||'/Volumes/DockerDisk/ArchiveOps/orange-dot-public-preflight-20261111/book-links-stage-v195-preview';
 const manifest=JSON.parse(fs.readFileSync(path.join(local,'estate/books/catalog.json'),'utf8'));
 const cols=['essays','first-readings','orange-dot'];
+const expectPublic=process.env.DIRECT_BOOKS_PUBLIC==='1';
 function assert(x,msg){if(!x)throw Error(msg)}
 assert(manifest.schema==='fountain.press.book-direct-links.v1','catalog schema');
 assert(JSON.stringify(manifest.books.map(b=>b.id))===JSON.stringify(cols),'ordered collections');
@@ -80,7 +81,7 @@ try{
  const parsed=await http.json();
  assert(JSON.stringify(parsed.books.map(x=>x.id))===JSON.stringify(cols),'machine order mismatch');
  for(const x of parsed.books){
-  assert(x.stageOnly===true&&x.publicReleaseAuthorized===false,'false public assertion');
+  assert(x.stageOnly===!expectPublic&&x.publicReleaseAuthorized===expectPublic,'book publication state mismatch');
   assert(x.firstChapterOriginalImageSHA256.length===64&&x.socialImageSHA256.length===64,'missing source provenance');
  }
  await catalogRes.close();

@@ -37,14 +37,14 @@ def fetch(base,route):
     req=Request(base+route,headers={"Cache-Control":"no-store"})
     with urlopen(req,context=ctx,timeout=30) as response:
         return response.status,response.read(),response.headers.get("Content-Type","")
-def verify(base):
+def verify(base,public=False):
     result,b,ct=fetch(base,"/estate/books/catalog.json")
     assert result==200 and ct.startswith("application/json"),(result,ct)
     catalog=json.loads(b)
     assert catalog["schema"]=="fountain.press.book-direct-links.v1"
     assert [e["id"] for e in catalog["books"]]==["essays","first-readings","orange-dot"]
     for book in catalog["books"]:
-        assert book["stageOnly"] is True and book["publicReleaseAuthorized"] is False
+        assert book["stageOnly"] is (not public) and book["publicReleaseAuthorized"] is public
         status,html,typ=fetch(base,book["directURLPath"])
         assert status==200 and typ.startswith("text/html"),(book["id"],typ)
         raw=html.decode("utf-8")
@@ -82,5 +82,6 @@ def verify(base):
 if __name__=="__main__":
     p=argparse.ArgumentParser()
     p.add_argument("--base",default="http://192.168.8.50:8200")
+    p.add_argument("--public",action="store_true",help="Verify the publicly admitted production projection rather than the private WLAN stage")
     args=p.parse_args()
-    verify(args.base.rstrip("/"))
+    verify(args.base.rstrip("/"),args.public)
