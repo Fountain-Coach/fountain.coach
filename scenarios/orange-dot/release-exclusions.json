@@ -27,5 +27,8 @@
   "sourceArchivesRetained": true,
   "noPublicDeploymentInThisPolicy": true,
   "orangeDotWorksRetained": 23,
-  "orangeDotImagesRetained": 29
+  "orangeDotImagesRetained": 29,
+  "excludeGovernanceShelf": true,
+  "preserveExistingGovernanceChapterLinks": true,
+  "governanceSourcePublicationUnchanged": "https://governance.fountain.coach/"
 }

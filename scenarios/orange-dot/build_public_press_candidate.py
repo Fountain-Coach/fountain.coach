@@ -57,6 +57,13 @@ def main():
     works_source_ids=tuple(e["id"] for e in exclusion["excludedTitles"])
     assert works_source_ids==("score--between-gardens", "score--ballern-gehen",
                               "score--midsummer-nights-dream", "essay--above-the-line")
+    assert exclusion["excludeGovernanceShelf"] is True
+    assert exclusion["preserveExistingGovernanceChapterLinks"] is True
+    assert exclusion["governanceSourcePublicationUnchanged"]=="https://governance.fountain.coach/"
+    assert 'data-reader-volume="governance"' not in merged
+    assert 'data-edition-membership="governance"' not in merged
+    assert '"governance":' not in merged
+    assert merged.lower().count('governance.fountain.coach/')==original.lower().count('governance.fountain.coach/')
     forbidden_fragments=("data-reader-volume=\"scores\"",
                          "data-reader-volume=\""+works_source_ids[0]+"\"",
                          "data-reader-volume=\""+works_source_ids[1]+"\"",
@@ -76,6 +83,7 @@ def main():
         assert merged_gallery["collections"][col]==source_gallery["collections"][col]
     assert len(merged_gallery["collections"]["orange-dot"])==23
     assert "scores" not in merged_gallery["collections"]
+    assert "governance" not in merged_gallery["collections"]
     assert "worksBooks" not in merged_gallery.get("sources",{})
     for collection in merged_gallery["collections"].values():
         assert not any(e.get("id") in works_source_ids for e in collection)
@@ -141,6 +149,8 @@ def main():
     ]
     for a,b,reason in patches:
         text=replace_once(text,a,b,reason)
+    assert "governanceSequence" not in text
+    assert "name==='governance'" not in text
     JS.parent.mkdir(parents=True,exist_ok=True)
     new_js_sha=hashlib.sha256(text.encode()).hexdigest()
     new_js=JS.with_name("reading-first-app."+new_js_sha+".js")
@@ -204,6 +214,7 @@ def main():
             "originalSourceArchivePreserved":True,
             "publicationDecision":"exclude-entire-Works-book-from-this-release",
         },
+        "excludedGovernanceShelf":{"collectionIncluded":False,"originalSourceUnchanged":True,"existingReferencesPreserved":True},
         "newCollectionOrder":["essays","first-readings","orange-dot"],
         "rightsBoundary":selection["rightsBoundary"],
         "publicReleaseAuthorized":False,
