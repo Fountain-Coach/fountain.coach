@@ -1,0 +1,41 @@
+{
+  "activated" : true,
+  "detail" : "Exact published bytes verified independently via HTTPS",
+  "previousReleaseID" : "fcis-essay-heading-20261110-8f58f29",
+  "publicHost" : "fountain.coach",
+  "recordedAt" : 816115104.467277,
+  "releaseID" : "fountain-press-orange-dot-20261111-d71968a",
+  "sourceInventorySHA256" : "73589835922028b55f4f2a058b6db0e0328545766c919533fee0672b051b6ac4",
+  "sourceRevision" : "d71968a730d2e0458a6f67e74370f21c79e34b2f",
+  "state" : "active",
+  "verifiedPublicFiles" : [
+    {
+      "path" : "\/estate\/index.html",
+      "sha256" : "b8f2e495d7ba2e0b7ad0ca04321c7d5afb6a25633fdeb5dbccd90b8321d0b508"
+    },
+    {
+      "path" : "\/estate\/books\/essays\/index.html",
+      "sha256" : "37683bacecc516b65c82c9dd2c5bea132fc0d8912c52eb9425836d60e2b7cb04"
+    },
+    {
+      "path" : "\/estate\/books\/first-readings\/index.html",
+      "sha256" : "9f49ebad31e72689353467acaccc0bcef446aa0ff05475ab26af74c23e8c9a8b"
+    },
+    {
+      "path" : "\/estate\/books\/orange-dot\/index.html",
+      "sha256" : "e9b5c57808e20e2e2913a17ac375bb0e7fca5810a8a70d249f1a5cabdd4e9f6a"
+    },
+    {
+      "path" : "\/estate\/books\/catalog.json",
+      "sha256" : "151713e57fc534a498f7622a3d3e4147a4da5bd391ee1873d001d8f922487be6"
+    },
+    {
+      "path" : "\/estate\/collections\/orange-dot\/edition.json",
+      "sha256" : "149c6e390759632e31934b3ccbc1a3f8a9749a178c34a4893ba4bad325e9bfe5"
+    },
+    {
+      "path" : "\/estate\/assets\/social\/books\/orange-dot-first-chapter.jpg",
+      "sha256" : "040adeafa8c7bee1b0075cfbe297388580c6e8897b9bf08712e8ef3bd5c58115"
+    }
+  ]
+}
