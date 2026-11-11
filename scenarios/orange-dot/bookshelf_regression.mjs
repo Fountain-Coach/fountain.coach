@@ -16,12 +16,13 @@ try{
     images:p.querySelectorAll('.reader-gallery-scroll [data-work-id]').length
    }));
   });
-  const expected=[['essays',6,5],['scores',1,1],['first-readings',32,30],['orange-dot',23,23],['governance',160,1]];
+  const expected=[['essays',7,6],['scores',3,3],['first-readings',32,30],['orange-dot',23,23],['governance',160,1]];
   for(let i=0;i<expected.length;i++){
    let [id,contents,images]=expected[i];
    if(actual[i]?.id!==id||actual[i]?.contents!==contents||actual[i]?.images!==images)
     throw Error('Collection regression '+name+': '+JSON.stringify(actual));
   }
+  // Active v192b predecessor: Essays and Scores expanded since the original v185 fixture.
   // Test three independently published neighbors and the new collection route.
   for(const id of ['essay--what-makes-a-page-modern','score--between-gardens','solstice-reading-01--2026-01-23-i-keep-moving','orange-dot--2026-09-17-bee-the-interval','governance--00-abstract']){
    console.log('CHECKING',name,id); if(id.startsWith('governance--'))await page.goto('https://192.168.8.50:8243/estate/#/read/'+id,{waitUntil:'domcontentloaded'}); else await page.evaluate(id=>{let s=document.querySelector('#reader-section');s.value=id;s.dispatchEvent(new Event('change',{bubbles:true}));},id);
