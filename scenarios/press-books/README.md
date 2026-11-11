@@ -50,3 +50,12 @@ python3 scenarios/press-books/compose_orange_dot_public_release.py   --source /v
 ```
 
 Use existing `EstatePublisherSSHDelivery` `inspect → prepare → preflight → deliver` with the existing `fountain.coach` SSH/Caddy profile and a new immutable release ID. `verify_http_semantics.py --public` and `DIRECT_BOOKS_PUBLIC=1 verify_direct_books.mjs` verify the publicly admitted state independently. Recheck the original 23 posts/29 image hashes, public HTTPS and the active/rollback symlinks after delivery; no stage branch or Git commit alone constitutes a Caddy publication. Do not activate a private source lock or propagate arbitrary staging-only assets to an unrelated site.
+
+
+## Root and /estate Bookshelf parity
+
+The public host has two existing entries: `https://fountain.coach/` and `https://fountain.coach/estate/`. After Orange Dot's first verified production release, the root still displayed the old two-book Reader. This is a real publication-shell defect, not grounds to reintroduce a second Reader, a redirect, a new CMS or Caddy configuration.
+
+Use `align_public_press_root.py` on the exact 483-file author-admitted previous public release with its native terminal receipt. It verifies the old root SHA, the accepted three-book `/estate/index.html` SHA, unchanged 23/29 source/media and the public semantic catalogue, then creates a new 483-file release candidate in which `/index.html` is **exactly the same bytes** as `/estate/index.html`. No other files change. The root `https://fountain.coach/` remains the canonical Bookshelf URL; the existing `/estate/` Reader and direct-book deep links remain valid.
+
+The `verify_root_parity.mjs` WebKit test opens both routes in iPad portrait, iPad landscape and phone, verifies identical book contents/direct links, enters the same first Orange Dot chapter and checks actual paginated leaves and JS errors. Admit this as a **new immutable EstatePublisher release** with predecessor `fountain-press-orange-dot-20261111-d71968a`; do not edit the active root in place or modify Caddy for a static file fix.
