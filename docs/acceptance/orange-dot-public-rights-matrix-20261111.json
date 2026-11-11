@@ -1,0 +1,271 @@
+{
+  "schema": "fountain.press.orange-dot.public-rights-review.v1",
+  "sourceOwner": "Benedikt Eickhoff Facebook export, locally owned, September 2026",
+  "sourceRightsBoundary": "Private author-controlled WLAN stage only; no public release or automatic social distribution",
+  "selectedWorks": 23,
+  "originalImages": 29,
+  "generalReleaseStatus": "BLOCKED_PENDING_EXPLICIT_AUTHOR_RIGHTS_CLEARANCE",
+  "imageReviews": [
+    {
+      "work": "Solstice",
+      "date": "2025-12-21",
+      "image": "orange-dot--2025-12-21-solstice-01-6e5f8aec639a96.jpg",
+      "sourceSHA256": "6e5f8aec639a96ed025cfc4e6e6626197fa41e026626f114a92001375adaa33d",
+      "source": "author-controlled Facebook export",
+      "publication_rights": "UNVERIFIED-for-public-press",
+      "sensitive_subject_or_third_party_release": "NOT_REVIEWED"
+    },
+    {
+      "work": "The Raft",
+      "date": "2025-12-23",
+      "image": "orange-dot--2025-12-23-the-raft-01-20e2c7609c2654.jpg",
+      "sourceSHA256": "20e2c7609c2654c17b2966cabc03281a8d9779798ac1d83f3127d7b3ef896c8c",
+      "source": "author-controlled Facebook export",
+      "publication_rights": "UNVERIFIED-for-public-press",
+      "sensitive_subject_or_third_party_release": "NOT_REVIEWED"
+    },
+    {
+      "work": "Am Rand des Feldes",
+      "date": "2025-12-24",
+      "image": "orange-dot--2025-12-24-am-rand-des-feldes-01-380db60201e8d9.jpg",
+      "sourceSHA256": "380db60201e8d90e0aca98ef3514e0e06c6613f5f75964fab4eaa194c45ed497",
+      "source": "author-controlled Facebook export",
+      "publication_rights": "UNVERIFIED-for-public-press",
+      "sensitive_subject_or_third_party_release": "NOT_REVIEWED"
+    },
+    {
+      "work": "Die Butterbrotdose",
+      "date": "2025-12-25",
+      "image": "orange-dot--2025-12-25-die-butterbrotdose-01-f568f9e4630f1b.jpg",
+      "sourceSHA256": "f568f9e4630f1beee336ca9513b20e34b5d700c3ba0cb74ebb7c006547d99534",
+      "source": "author-controlled Facebook export",
+      "publication_rights": "UNVERIFIED-for-public-press",
+      "sensitive_subject_or_third_party_release": "NOT_REVIEWED"
+    },
+    {
+      "work": "Die Butterbrotdose",
+      "date": "2025-12-25",
+      "image": "orange-dot--2025-12-25-die-butterbrotdose-02-ec53dd84d4b8ee.jpg",
+      "sourceSHA256": "ec53dd84d4b8ee3c8fd29ffb08e361febf864658227ee61f53181bc22ae6f0b6",
+      "source": "author-controlled Facebook export",
+      "publication_rights": "UNVERIFIED-for-public-press",
+      "sensitive_subject_or_third_party_release": "NOT_REVIEWED"
+    },
+    {
+      "work": "Hotel Paris / 1947",
+      "date": "2025-12-28",
+      "image": "orange-dot--2025-12-28-hotel-paris-1947-01-9a2a9140c86fb4.jpg",
+      "sourceSHA256": "9a2a9140c86fb4e264ef5b047894ca1e023e2d634045037862596dba76410499",
+      "source": "author-controlled Facebook export",
+      "publication_rights": "UNVERIFIED-for-public-press",
+      "sensitive_subject_or_third_party_release": "NOT_REVIEWED"
+    },
+    {
+      "work": "Wardrobe + Casting Spec",
+      "date": "2026-01-04",
+      "image": "orange-dot--2026-01-04-wardrobe-casting-spec-01-5030fd4fdd5fa8.jpg",
+      "sourceSHA256": "5030fd4fdd5fa82466c68972f65218516735f916b69506f3586eac8a487cb1e6",
+      "source": "author-controlled Facebook export",
+      "publication_rights": "UNVERIFIED-for-public-press",
+      "sensitive_subject_or_third_party_release": "NOT_REVIEWED"
+    },
+    {
+      "work": "Fog Stage / Observer Seat",
+      "date": "2026-01-06",
+      "image": "orange-dot--2026-01-06-fog-stage-observer-seat-01-5558153ad46016.jpg",
+      "sourceSHA256": "5558153ad46016228ce5219b9b790a4e570a3b1395cd34fd35b21a0e2b82b963",
+      "source": "author-controlled Facebook export",
+      "publication_rights": "UNVERIFIED-for-public-press",
+      "sensitive_subject_or_third_party_release": "NOT_REVIEWED"
+    },
+    {
+      "work": "Fog Stage / Observer Seat",
+      "date": "2026-01-06",
+      "image": "orange-dot--2026-01-06-fog-stage-observer-seat-02-a03b6529ac7318.jpg",
+      "sourceSHA256": "a03b6529ac7318bdff8e3d6d9cc946b8626bd1b869825017e2af72f8f055fb58",
+      "source": "author-controlled Facebook export",
+      "publication_rights": "UNVERIFIED-for-public-press",
+      "sensitive_subject_or_third_party_release": "NOT_REVIEWED"
+    },
+    {
+      "work": "Burning Down the House",
+      "date": "2026-01-16",
+      "image": "orange-dot--2026-01-16-burning-down-the-house-01-ce753d386e70b3.jpg",
+      "sourceSHA256": "ce753d386e70b385120939f484ceaf34c5c466d6bb1b7fa3f8d0da2d9173d8b2",
+      "source": "author-controlled Facebook export",
+      "publication_rights": "UNVERIFIED-for-public-press",
+      "sensitive_subject_or_third_party_release": "NOT_REVIEWED"
+    },
+    {
+      "work": "First LO — R.",
+      "date": "2026-01-18",
+      "image": "orange-dot--2026-01-18-first-lo-r-01-0ac4477e6a4dd6.jpg",
+      "sourceSHA256": "0ac4477e6a4dd69d9fb1e3751ed348b45a5393a4d5fd388eddd6e830d9ff7529",
+      "source": "author-controlled Facebook export",
+      "publication_rights": "UNVERIFIED-for-public-press",
+      "sensitive_subject_or_third_party_release": "NOT_REVIEWED"
+    },
+    {
+      "work": "The Vigilance Regulator",
+      "date": "2026-01-22",
+      "image": "orange-dot--2026-01-22-the-vigilance-regulator-01-d056ef3fc29730.jpg",
+      "sourceSHA256": "d056ef3fc2973086d3c16bed13da7d3fecf06557136737b11fcee45d97dbb274",
+      "source": "author-controlled Facebook export",
+      "publication_rights": "UNVERIFIED-for-public-press",
+      "sensitive_subject_or_third_party_release": "NOT_REVIEWED"
+    },
+    {
+      "work": "The Vigilance Regulator",
+      "date": "2026-01-22",
+      "image": "orange-dot--2026-01-22-the-vigilance-regulator-02-b5da722ce9f6c7.jpg",
+      "sourceSHA256": "b5da722ce9f6c76d666d66149f7e31e917e6b2f40182ff72f2596cb075f88708",
+      "source": "author-controlled Facebook export",
+      "publication_rights": "UNVERIFIED-for-public-press",
+      "sensitive_subject_or_third_party_release": "NOT_REVIEWED"
+    },
+    {
+      "work": "I Keep Moving",
+      "date": "2026-01-23",
+      "image": "orange-dot--2026-01-23-i-keep-moving-01-1c3c1d6806e93f.jpg",
+      "sourceSHA256": "1c3c1d6806e93f7be93de86315e81e31ffd1a2641ee1fae4c02d00fc00602790",
+      "source": "author-controlled Facebook export",
+      "publication_rights": "UNVERIFIED-for-public-press",
+      "sensitive_subject_or_third_party_release": "NOT_REVIEWED"
+    },
+    {
+      "work": "Drift Notes",
+      "date": "2026-02-01",
+      "image": "orange-dot--2026-02-01-drift-notes-01-2a959448a64ef9.jpg",
+      "sourceSHA256": "2a959448a64ef9db72fd714f56a222f838d59dbafa149ab59a90d913dc21edd9",
+      "source": "author-controlled Facebook export",
+      "publication_rights": "UNVERIFIED-for-public-press",
+      "sensitive_subject_or_third_party_release": "NOT_REVIEWED"
+    },
+    {
+      "work": "On Natural Intermittency",
+      "date": "2026-03-13",
+      "image": "orange-dot--2026-03-13-on-natural-intermittency-01-a980509f437372.jpg",
+      "sourceSHA256": "a980509f4373729444ea865b29958038d174e51e214246b627e035b0fec7a530",
+      "source": "author-controlled Facebook export",
+      "publication_rights": "UNVERIFIED-for-public-press",
+      "sensitive_subject_or_third_party_release": "NOT_REVIEWED"
+    },
+    {
+      "work": "Nothing Is Solved in This Way",
+      "date": "2026-04-06",
+      "image": "orange-dot--2026-04-06-nothing-is-solved-in-this-way-01-ce7d13b1d0b0a8.jpg",
+      "sourceSHA256": "ce7d13b1d0b0a861bb28a5e0062c97f51e83d5382f54166c385cb4fcdee3284a",
+      "source": "author-controlled Facebook export",
+      "publication_rights": "UNVERIFIED-for-public-press",
+      "sensitive_subject_or_third_party_release": "NOT_REVIEWED"
+    },
+    {
+      "work": "Bee — Love, Grounding, Movement",
+      "date": "2026-04-10",
+      "image": "orange-dot--2026-04-10-bee-love-grounding-movement-01-82ac842c1f5438.jpg",
+      "sourceSHA256": "82ac842c1f54388e49adcd7eaed8b22eafbcd7e36f050ecf622c83bb6a266a93",
+      "source": "author-controlled Facebook export",
+      "publication_rights": "UNVERIFIED-for-public-press",
+      "sensitive_subject_or_third_party_release": "NOT_REVIEWED"
+    },
+    {
+      "work": "A Score Before Production",
+      "date": "2026-05-01",
+      "image": "orange-dot--2026-05-01-a-score-before-production-01-ca5df313851efc.jpg",
+      "sourceSHA256": "ca5df313851efc6420fbf9f1b58c4d31fa0bc6d175c600873838faf7cd794f2f",
+      "source": "author-controlled Facebook export",
+      "publication_rights": "UNVERIFIED-for-public-press",
+      "sensitive_subject_or_third_party_release": "NOT_REVIEWED"
+    },
+    {
+      "work": "A Score Before Production",
+      "date": "2026-05-01",
+      "image": "orange-dot--2026-05-01-a-score-before-production-02-18375574f4b885.jpg",
+      "sourceSHA256": "18375574f4b885e928262bb3b615cb82481dfc39abcbee529d68f1dba7aec0c1",
+      "source": "author-controlled Facebook export",
+      "publication_rights": "UNVERIFIED-for-public-press",
+      "sensitive_subject_or_third_party_release": "NOT_REVIEWED"
+    },
+    {
+      "work": "N. — First Platform",
+      "date": "2026-05-04",
+      "image": "orange-dot--2026-05-04-n-first-platform-01-6fa0146862ce7d.jpg",
+      "sourceSHA256": "6fa0146862ce7d18f5b0faa8ade501b34609207cc67bb21f747f76d97c0df188",
+      "source": "author-controlled Facebook export",
+      "publication_rights": "UNVERIFIED-for-public-press",
+      "sensitive_subject_or_third_party_release": "NOT_REVIEWED"
+    },
+    {
+      "work": "N. — Drawing to Stay",
+      "date": "2026-05-07",
+      "image": "orange-dot--2026-05-07-n-drawing-to-stay-01-beb46fcb7f726f.jpg",
+      "sourceSHA256": "beb46fcb7f726f179a636b59e5f227cff983fe9e7623e665d179aa5eb94e9740",
+      "source": "author-controlled Facebook export",
+      "publication_rights": "UNVERIFIED-for-public-press",
+      "sensitive_subject_or_third_party_release": "NOT_REVIEWED"
+    },
+    {
+      "work": "N. — Care and Capture",
+      "date": "2026-06-09",
+      "image": "orange-dot--2026-06-09-n-care-and-capture-01-168c0bb9cf28b0.jpg",
+      "sourceSHA256": "168c0bb9cf28b0ff1883888fc248eb05e94ee22aebe1bc4cb178a1dc55aca0bd",
+      "source": "author-controlled Facebook export",
+      "publication_rights": "UNVERIFIED-for-public-press",
+      "sensitive_subject_or_third_party_release": "NOT_REVIEWED"
+    },
+    {
+      "work": "N. — The Orange Frame",
+      "date": "2026-07-17",
+      "image": "orange-dot--2026-07-17-n-the-orange-frame-01-c2229f8b954f4c.jpg",
+      "sourceSHA256": "c2229f8b954f4c534ee16e716570ee7a7dd82d600498b2a1d41ff005171880c9",
+      "source": "author-controlled Facebook export",
+      "publication_rights": "UNVERIFIED-for-public-press",
+      "sensitive_subject_or_third_party_release": "NOT_REVIEWED"
+    },
+    {
+      "work": "N. — The Orange Frame",
+      "date": "2026-07-17",
+      "image": "orange-dot--2026-07-17-n-the-orange-frame-02-1ce9f9d6b79146.jpg",
+      "sourceSHA256": "1ce9f9d6b79146a1269fd0cb2dfa37109240648b03e1ee5463679b4023a91510",
+      "source": "author-controlled Facebook export",
+      "publication_rights": "UNVERIFIED-for-public-press",
+      "sensitive_subject_or_third_party_release": "NOT_REVIEWED"
+    },
+    {
+      "work": "N. — Schnippel",
+      "date": "2026-08-08",
+      "image": "orange-dot--2026-08-08-n-schnippel-01-0c273bad5bd436.jpg",
+      "sourceSHA256": "0c273bad5bd436d586e2f96ddf8eab65d236a5c603ec95434aa54ca7a44da83e",
+      "source": "author-controlled Facebook export",
+      "publication_rights": "UNVERIFIED-for-public-press",
+      "sensitive_subject_or_third_party_release": "NOT_REVIEWED"
+    },
+    {
+      "work": "N. — Schnippel",
+      "date": "2026-08-08",
+      "image": "orange-dot--2026-08-08-n-schnippel-02-cf3edaf413d03b.jpg",
+      "sourceSHA256": "cf3edaf413d03b75b85a6dbd0dea809074aee9d735b6eaa85452564d2f14d341",
+      "source": "author-controlled Facebook export",
+      "publication_rights": "UNVERIFIED-for-public-press",
+      "sensitive_subject_or_third_party_release": "NOT_REVIEWED"
+    },
+    {
+      "work": "Domestic Geometry My Ass",
+      "date": "2026-09-01",
+      "image": "orange-dot--2026-09-01-domestic-geometry-my-ass-01-7268cfe081c23b.jpg",
+      "sourceSHA256": "7268cfe081c23b8bef576c5a08e2fe0ed445537d9f0ef6779697a2ae276ddf1e",
+      "source": "author-controlled Facebook export",
+      "publication_rights": "UNVERIFIED-for-public-press",
+      "sensitive_subject_or_third_party_release": "NOT_REVIEWED"
+    },
+    {
+      "work": "Bee — The Interval",
+      "date": "2026-09-17",
+      "image": "orange-dot--2026-09-17-bee-the-interval-01-1dc642f1f20c1d.jpg",
+      "sourceSHA256": "1dc642f1f20c1d6d5176efff380393f7055d4646b45035f6a3b55e325eef427d",
+      "source": "author-controlled Facebook export",
+      "publication_rights": "UNVERIFIED-for-public-press",
+      "sensitive_subject_or_third_party_release": "NOT_REVIEWED"
+    }
+  ]
+}

@@ -140,7 +140,7 @@ def main():
     # Static collection files remain source-bound to the same selected images
     # and remain explicitly UNAUTHORIZED for public release until rights review.
     stage_manifest=json.loads(Path(
-      "/tmp/orange-dot-stage-delta-20261110/estate/collections/orange-dot/edition.json"
+      "/Volumes/DockerDisk/ArchiveOps/orange-dot-public-preflight-20261111/baseline/stage-orange-dot-edition.json"
     ).read_text())
     stage_manifest["sourceGitRevision"]="b431528"
     stage_manifest["stageOnly"]=True
