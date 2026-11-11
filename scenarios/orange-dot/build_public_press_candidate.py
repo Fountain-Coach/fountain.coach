@@ -46,6 +46,20 @@ def main():
     assert merged.count('data-reader-volume=')==75
     assert merged.count('data-edition-membership="orange-dot"')==23
     assert merged.find('data-reader-volume="orange-dot"')>0
+    # The author's release decision: the complete former Works book is not
+    # admitted. Its four source-owned volumes must not leak into a gallery,
+    # contents, reader template, media bundle or semantic admission record.
+    works_source_ids=("score--between-gardens", "score--ballern-gehen",
+                      "score--midsummer-nights-dream", "essay--above-the-line")
+    forbidden_fragments=("data-reader-volume=\"scores\"",
+                         "data-reader-volume=\""+works_source_ids[0]+"\"",
+                         "data-reader-volume=\""+works_source_ids[1]+"\"",
+                         "data-reader-volume=\""+works_source_ids[2]+"\"",
+                         "data-reader-volume=\""+works_source_ids[3]+"\"",
+                         "data-source-owner=\"Fountain-Coach/works-benedikt-eickhoff\"",
+                         '"worksBooks":', '"scores":')
+    for fragment in forbidden_fragments:
+        assert fragment not in merged, ("Works book must be absent",fragment)
     source_gallery=json.loads(re.search(
         r'<script type="application/json" id="reader-gallery-data">(.*?)</script>',
         original,re.S).group(1))
@@ -55,6 +69,10 @@ def main():
     for col in ("essays","first-readings"):
         assert merged_gallery["collections"][col]==source_gallery["collections"][col]
     assert len(merged_gallery["collections"]["orange-dot"])==23
+    assert "scores" not in merged_gallery["collections"]
+    assert "worksBooks" not in merged_gallery.get("sources",{})
+    for collection in merged_gallery["collections"].values():
+        assert not any(e.get("id") in works_source_ids for e in collection)
     for e in entries:
         assert e["textSha256"]==sha(SRC/e["sourceTextFile"])
         for image in e["images"]:
@@ -173,6 +191,13 @@ def main():
         "selectedWorks":23,"originalImages":29,"newImageAssets":26,
         "existingFirstReadingImageReuse":3,
         "previousCollectionsPreserved":["essays","first-readings"],
+        "excludedFormerWorksBook":{
+            "sourceOwner":"Fountain-Coach/works-benedikt-eickhoff",
+            "volumeIDs":list(works_source_ids),
+            "scoresCollectionIncluded":False,
+            "originalSourceArchivePreserved":True,
+            "publicationDecision":"exclude-entire-Works-book-from-this-release",
+        },
         "newCollectionOrder":["essays","first-readings","orange-dot"],
         "rightsBoundary":selection["rightsBoundary"],
         "publicReleaseAuthorized":False,

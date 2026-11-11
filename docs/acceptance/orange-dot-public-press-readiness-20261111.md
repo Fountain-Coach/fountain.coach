@@ -23,6 +23,12 @@ The public-base composition scripts are `scenarios/orange-dot/compose_public_ora
 - Production-based *local mirror*, not the public host: WebKit 3/3 responsive viewport tests, three Bookshelf collections in exact sequence `essays,first-readings,orange-dot`, original Essays/First Readings identities preserved, Orange Dot illustration correction measured. All six supplementary Orange Dot source figures were audited in portrait, facing-spread landscape and phone views; image/caption counts preserved and adjacent figure/text spacing consistent.
 - Editorial note: some final folios have short source-tail paragraphs. These are not image gaps, but should be visually proofread on a physical iPad. Physical iPad Safari/VoiceOver acceptance has not yet occurred.
 
+## Writer's release exclusion: the former Works book
+
+The writer decided on 11 November 2026 to omit the **entire former Works book** from this Orange Dot release. The four source titles are *Between Gardens* (`score--between-gardens`), *Ballern Gehen* (`score--ballern-gehen`), *A Midsummer Night’s Dream* (`score--midsummer-nights-dream`) and *Above the Line* (`essay--above-the-line`). The Works-derived Scores collection is not included either. Their original sources and unpublished staging evidence are retained, not deleted. The actual public predecessor already lacked all four, so no live public content is being taken down.
+
+`scenarios/orange-dot/release-exclusions.json` and `build_public_press_candidate.py` enforce absence from templates, galleries, source-owner records and the public candidate media inventory. The candidate/mirror test and three-viewport WebKit Reader acceptance passed after the release-scope change, preserving 23 Orange Dot texts/29 images and the existing Essays and First Readings. The canonical owner-WLAN v193 stage still contains inherited former Works volumes; **it is not this proposed public production candidate**.
+
 ## Public release gates — unfulfilled
 
 1. `selection.json` explicitly says **“Private author-controlled WLAN stage only; no public release or automatic social distribution.”** The 29-image rights matrix in `docs/acceptance/orange-dot-public-rights-matrix-20261111.json` therefore marks the public redistribution/third-party subject clearance as unverified, not approved. Neither archive possession nor a past Facebook post proves permission for each public reissue. The user intends a future Press publication, but the source rights gate must be independently brought into agreement with that intention before delivery.

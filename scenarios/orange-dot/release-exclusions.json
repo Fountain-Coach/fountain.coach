@@ -1,0 +1,31 @@
+{
+  "schema": "fountain.press.orange-dot.release-exclusions.v1",
+  "decisionDate": "2026-11-11",
+  "scope": "Orange Dot public Press candidate only",
+  "excludeFormerWorksBook": true,
+  "sourceOwner": "Fountain-Coach/works-benedikt-eickhoff",
+  "excludedTitles": [
+    {
+      "id": "score--between-gardens",
+      "title": "Between Gardens"
+    },
+    {
+      "id": "score--ballern-gehen",
+      "title": "Ballern Gehen"
+    },
+    {
+      "id": "score--midsummer-nights-dream",
+      "title": "A Midsummer Night's Dream"
+    },
+    {
+      "id": "essay--above-the-line",
+      "title": "Above the Line"
+    }
+  ],
+  "excludeScoresCollectionWhenOnlyWorksSource": true,
+  "leaveExistingProductionEssaysAndFirstReadingsUnchanged": true,
+  "sourceArchivesRetained": true,
+  "noPublicDeploymentInThisPolicy": true,
+  "orangeDotWorksRetained": 23,
+  "orangeDotImagesRetained": 29
+}
