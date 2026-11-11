@@ -1,0 +1,45 @@
+{
+  "activated" : true,
+  "detail" : "Exact published bytes verified independently via HTTPS",
+  "previousReleaseID" : "fountain-press-orange-dot-20261111-d71968a",
+  "publicHost" : "fountain.coach",
+  "recordedAt" : 816115721.634169,
+  "releaseID" : "fountain-press-orange-dot-root-20261111-fe71ba5",
+  "sourceInventorySHA256" : "fb898e1a76b59304468e83bce78897210eb7d8cf98fb3a6063e1d26a1abb0bee",
+  "sourceRevision" : "fe71ba5be854495486874a014b18ef55bf8d688d",
+  "state" : "active",
+  "verifiedPublicFiles" : [
+    {
+      "path" : "\/index.html",
+      "sha256" : "b8f2e495d7ba2e0b7ad0ca04321c7d5afb6a25633fdeb5dbccd90b8321d0b508"
+    },
+    {
+      "path" : "\/estate\/index.html",
+      "sha256" : "b8f2e495d7ba2e0b7ad0ca04321c7d5afb6a25633fdeb5dbccd90b8321d0b508"
+    },
+    {
+      "path" : "\/estate\/books\/essays\/index.html",
+      "sha256" : "37683bacecc516b65c82c9dd2c5bea132fc0d8912c52eb9425836d60e2b7cb04"
+    },
+    {
+      "path" : "\/estate\/books\/first-readings\/index.html",
+      "sha256" : "9f49ebad31e72689353467acaccc0bcef446aa0ff05475ab26af74c23e8c9a8b"
+    },
+    {
+      "path" : "\/estate\/books\/orange-dot\/index.html",
+      "sha256" : "e9b5c57808e20e2e2913a17ac375bb0e7fca5810a8a70d249f1a5cabdd4e9f6a"
+    },
+    {
+      "path" : "\/estate\/books\/catalog.json",
+      "sha256" : "151713e57fc534a498f7622a3d3e4147a4da5bd391ee1873d001d8f922487be6"
+    },
+    {
+      "path" : "\/estate\/collections\/orange-dot\/edition.json",
+      "sha256" : "149c6e390759632e31934b3ccbc1a3f8a9749a178c34a4893ba4bad325e9bfe5"
+    },
+    {
+      "path" : "\/estate\/assets\/social\/books\/orange-dot-first-chapter.jpg",
+      "sha256" : "040adeafa8c7bee1b0075cfbe297388580c6e8897b9bf08712e8ef3bd5c58115"
+    }
+  ]
+}
