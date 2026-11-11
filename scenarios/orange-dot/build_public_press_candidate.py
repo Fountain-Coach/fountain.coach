@@ -49,8 +49,14 @@ def main():
     # The author's release decision: the complete former Works book is not
     # admitted. Its four source-owned volumes must not leak into a gallery,
     # contents, reader template, media bundle or semantic admission record.
-    works_source_ids=("score--between-gardens", "score--ballern-gehen",
-                      "score--midsummer-nights-dream", "essay--above-the-line")
+    exclusion=json.loads((SRC/"release-exclusions.json").read_text())
+    assert exclusion["schema"]=="fountain.press.orange-dot.release-exclusions.v1"
+    assert exclusion["scope"]=="Orange Dot public Press candidate only"
+    assert exclusion["excludeFormerWorksBook"] is True
+    assert exclusion["sourceOwner"]=="Fountain-Coach/works-benedikt-eickhoff"
+    works_source_ids=tuple(e["id"] for e in exclusion["excludedTitles"])
+    assert works_source_ids==("score--between-gardens", "score--ballern-gehen",
+                              "score--midsummer-nights-dream", "essay--above-the-line")
     forbidden_fragments=("data-reader-volume=\"scores\"",
                          "data-reader-volume=\""+works_source_ids[0]+"\"",
                          "data-reader-volume=\""+works_source_ids[1]+"\"",
