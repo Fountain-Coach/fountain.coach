@@ -30,7 +30,7 @@ def one_replace(s, old, new, label):
 
 def plain(text):
     # The cover uses visual <br> breaks, not semantic word joins.
-    text = re.sub(r"<br\\s*/?>", " ", text, flags=re.I)
+    text = re.sub(r"<br\s*/?>", " ", text, flags=re.I)
     return html.unescape(re.sub(r"<[^>]+>", "", text)).strip()
 
 def source_blocks(source):
