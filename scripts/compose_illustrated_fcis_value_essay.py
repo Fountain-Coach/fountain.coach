@@ -186,12 +186,16 @@ def main():
     for rel,content in sorted(rendered.items()):
         target=args.output/rel;target.parent.mkdir(parents=True,exist_ok=True)
         target.write_bytes(content)
+    predecessor_lock=baseline/"source-lock.json"
+    baseline_kind="stage-source-lock" if predecessor_lock.is_file() else "production-root-index"
+    baseline_digest=(sha(predecessor_lock.read_bytes()) if predecessor_lock.is_file()
+                     else sha((baseline/"estate/index.html").read_bytes()))
     receipt={
       "schema":"fountain.press.illustrated-essay-overlay.v197",
       "workId":ID,"sourceOwner":"Fountain-Coach/fountain.coach",
       "sourceRevision":args.revision,"sourceSHA256":manifest["sourceSHA256"],
       "baselineRelease":baseline.name,
-      "baselineLockSHA256":sha((baseline/"source-lock.json").read_bytes()),
+      "baselineProvenanceKind":baseline_kind,"baselineProvenanceSHA256":baseline_digest,
       "heroSourceSHA256":hero_sha,"socialDerivativeSHA256":sha(social),
       "originalWorkSourceParagraphsPreserved":True,
       "originalImageCount":1,"stagingOnly":True,"publicReleaseAuthorized":False,
