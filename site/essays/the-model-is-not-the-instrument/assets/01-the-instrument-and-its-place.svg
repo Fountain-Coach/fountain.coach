@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 980" role="img">
+<title>Fountain Press Teatro Score</title>
+<rect width="1500" height="980" fill="#f7f6f0"/>
+<g stroke="#555a54" stroke-width="2.1" stroke-linejoin="round" stroke-linecap="round">
+<path d="M149 627 736 297 1369 646 775 956Z" fill="#e9e8e1" fill-opacity=".32"/>
+<path d="M149 627V405L736 84V297" fill="none" stroke="#b6b7ae" stroke-width="1.5"/>
+<path d="M736 84 1369 430V646" fill="none" stroke="#b6b7ae" stroke-width="1.5"/>
+<g stroke="#afb0a9" stroke-width="1" opacity=".42">
+<path d="M248 681 834 350M347 734 933 404M446 787 1032 459M545 840 1131 515M644 892 1230 568"/>
+<path d="M237 578 862 923M335 521 960 871M432 464 1058 819M530 409 1158 766M629 354 1256 712"/>
+</g>
+<g opacity=".96"><path d="M240 423 l258 -39 v250 l-258 39Z" fill="#f6f5ef"/>
+<path d="M259 442 l220 -31 v198 l-220 31Z" fill="#e3e4dc"/>
+<path d="M291 491 l146 -23 M291 515 l139 -23 M291 539 l123 -21 M291 563 l154 -17" stroke="#9b9e96" stroke-width="1.9"/>
+<path d="M352 657v44 l-42 23 h136 l-45 -23 v-44" fill="#d8d9d1"/></g><path d="M424 781 523 720 624 776 523 835Z" fill="#faf9f3"/><path d="M447 773 521 732 M445 788 545 732 M478 792 570 739" stroke="#a4a69e" stroke-width="1.4"/><path d="M635 442 l186 -106 194 103 -186 109Z" fill="#f5f4ee"/>
+<path d="M635 442 l194 106 v188 l-194 -106Z" fill="#d8dad3"/>
+<path d="M829 548 l186 -109 v188 l-186 109Z" fill="#e3e4dc"/>
+<g stroke="#92958d" stroke-width="2.3"><path d="M676 519v105 M692 527v105 M708 536v105 M724 545v105"/></g>
+<circle cx="945" cy="606" r="9" fill="#bb503d" stroke="none"/>
+<circle cx="972" cy="590" r="6" fill="#e7e8e1"/><path d="M1120 660 l271 -101 125 76 -266 101Z" fill="#e7e8e0" stroke-width="6"/>
+<path d="M1143 658 l248 -90 99 60 -247 92Z" fill="#faf9f5" stroke="#92968e" stroke-width="1.3"/>
+<path d="M1194 663 l63 -24 52 31 -64 24Z" fill="#e2e4dd" stroke="#abb0a6"/>
+<path d="M1313 622 l75 -27 M1307 639 l104 -39 M1298 656 l105 -40 M1194 698 l69 -26" stroke="#8e9188" stroke-width="1.4"/><path d="M511 591 C573 569 584 541 632 539 M1016 642 C1060 651 1094 660 1117 660" stroke="#737a73" stroke-width="2.5" stroke-dasharray="2 13" fill="none"/><path d="M830 237l54 -31 54 31v59l-54 32-54-32Z" fill="#f9f7f1" stroke="#777c76"/><path d="M843 275c17-19 28-19 41-2 11-14 24-18 40-3" fill="none" stroke="#92958e" stroke-width="2.5"/><path d="M884 329v96" stroke="#92958e" stroke-width="2" stroke-dasharray="2 12"/><path d="M870 425l14 15 14-15-14-16Z" fill="#bd523f" stroke="none"/></g></svg>

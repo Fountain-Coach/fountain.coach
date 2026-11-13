@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 980" role="img">
+<title>Fountain Press Teatro Score</title>
+<rect width="1500" height="980" fill="#f7f6f0"/>
+<g stroke="#555a54" stroke-width="2.1" stroke-linejoin="round" stroke-linecap="round">
+<path d="M149 627 736 297 1369 646 775 956Z" fill="#e9e8e1" fill-opacity=".32"/>
+<path d="M149 627V405L736 84V297" fill="none" stroke="#b6b7ae" stroke-width="1.5"/>
+<path d="M736 84 1369 430V646" fill="none" stroke="#b6b7ae" stroke-width="1.5"/>
+<g stroke="#afb0a9" stroke-width="1" opacity=".42">
+<path d="M248 681 834 350M347 734 933 404M446 787 1032 459M545 840 1131 515M644 892 1230 568"/>
+<path d="M237 578 862 923M335 521 960 871M432 464 1058 819M530 409 1158 766M629 354 1256 712"/>
+</g>
+<path d="M307 345l254-128 197 111-257 140Z" fill="#f8f8f3"/><path d="M307 345v278l194 115V468Z" fill="#e1e1d9"/><path d="M501 468v270l257-144V328Z" fill="#f5f5ef"/><g stroke="#949a93" stroke-width="1.6"><path d="M354 426l117 69 M354 439l117 69 M354 452l117 69 M354 465l117 69 M354 478l117 69"/><path d="M520 503l175-98 M520 517l175-98 M520 531l175-98 M520 545l175-98 M520 559l175-98"/></g><path d="M577 466c13-21 31-24 31 1v57 M649 431c13-21 31-24 31 1v57" fill="none" stroke="#565b54" stroke-width="3"/><path d="M806 424 l186 -106 194 103 -186 109Z" fill="#f5f4ee"/>
+<path d="M806 424 l194 106 v188 l-194 -106Z" fill="#d8dad3"/>
+<path d="M1000 530 l186 -109 v188 l-186 109Z" fill="#e3e4dc"/>
+<g stroke="#92958d" stroke-width="2.3"><path d="M847 501v105 M863 509v105 M879 518v105 M895 527v105"/></g>
+<circle cx="1116" cy="588" r="9" fill="#bb503d" stroke="none"/>
+<circle cx="1143" cy="572" r="6" fill="#e7e8e1"/><path d="M1208 555q42-58 0-116M1236 570q69-93 0-185M1271 589q99-132 0-264" stroke="#ba4c39" stroke-width="3.4" fill="none"/><path d="M753 560l58 13" stroke="#727872" stroke-width="2.4" stroke-dasharray="2 12"/></g></svg>
