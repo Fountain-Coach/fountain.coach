@@ -52,11 +52,12 @@ def source():
  return raw,subtitle,proem,blocks,sections
 def template(subtitle,proem,blocks):
  h=sha(ART)
- heading='<section class="book-chapter" id="work-if-only"><div class="book-chapter-heading"><h2 data-source-block="if-only.title">If Only</h2>'+f'<p class="frame-subtitle" data-source-block="if-only.subtitle" data-source-from="0" data-source-to="{len(subtitle)}">{html.escape(subtitle)}</p></div></section>'
+ heading='<section class="book-chapter" id="work-if-only"><div class="book-chapter-heading"><h2 data-source-block="if-only.title">If Only</h2></div></section>'
+ subtitle_para=f'<p class="frame-lead" data-source-block="if-only.subtitle" data-source-from="0" data-source-to="{len(subtitle)}">{html.escape(subtitle)}</p>'
  hero=f'<section class="book-art-leaf"><figure class="frame-reading-figure frame-essay-hero" data-source-block="if-only.hero" data-source-illustration-id="if-only.hero" data-source-plate-sha256="{h}" data-editorial-role="hero"><img loading="eager" decoding="sync" src="{FIG}" width="640" height="480" alt="{html.escape(ALT,quote=True)}"/></figure></section>'
  pref='<aside class="frame-editorial-proem" data-editorial-role="proem" data-source-block="if-only.editorial" data-source-from="0" data-source-to="'+str(len(proem))+'" role="note" aria-label="Editorial preface"><span class="frame-editorial-kicker">From the editor</span><p>'+inline(proem)+'</p></aside>'
  body="".join(f'<p{" class="+chr(34)+"frame-subheading"+chr(34) if b["kind"]=="heading" else ""} data-source-block="{b["id"]}" data-source-from="0" data-source-to="{len(b["text"])}">{inline(b["text"])}</p>' for b in blocks)
- return f'<template data-reader-volume="{ID}"><div class="book-flow" data-min-leaves="1">'+heading+hero+'<section class="book-chapter-text">'+pref+'<article class="book-prose">'+body+'</article></section></div></template>'
+ return f'<template data-reader-volume="{ID}"><div class="book-flow" data-min-leaves="1">'+heading+hero+'<section class="book-chapter-text">'+pref+'<article class="book-prose">'+subtitle_para+body+'</article></section></div></template>'
 def replace(t,edition):
  needle=re.compile(r'<template data-reader-volume="'+OLD+r'">.*?</template>',re.S)
  req(len(needle.findall(t))==1,"Old essay template identity not unique")
