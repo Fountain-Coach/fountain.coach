@@ -1,0 +1,53 @@
+{
+  "activated" : true,
+  "detail" : "Exact published bytes verified independently via HTTPS",
+  "previousReleaseID" : "fountain-press-fcis-value-20261112-ba6a653",
+  "publicHost" : "fountain.coach",
+  "recordedAt" : 816283735.372824,
+  "releaseID" : "fountain-press-if-only-20261113-4258957",
+  "sourceInventorySHA256" : "fc0316e679c7023ab96666241cb7566bbc0f5ec747cc90428a3ebb52bf21c0de",
+  "sourceRevision" : "425895748fbcd5fef70f70ec7c7419298b7dffc0",
+  "state" : "active",
+  "verifiedPublicFiles" : [
+    {
+      "path" : "\/index.html",
+      "sha256" : "e5e5e88aedf3df6680814a7fbcc133202db7a55cd588b46d265517c66247ad65"
+    },
+    {
+      "path" : "\/estate\/index.html",
+      "sha256" : "e5e5e88aedf3df6680814a7fbcc133202db7a55cd588b46d265517c66247ad65"
+    },
+    {
+      "path" : "\/estate\/books\/essays\/index.html",
+      "sha256" : "872337c93f11b5581d57c6b364c7de1ea5222116020eb246f9eeba69b833b4a1"
+    },
+    {
+      "path" : "\/estate\/read\/essay--if-only\/index.html",
+      "sha256" : "c4bd73e3d687713cb29fbbaada50cefdb157ba7445976a8895dfe8c818c7b9d1"
+    },
+    {
+      "path" : "\/estate\/read\/essay--if-only\/assets\/hero-simultanbuehne.webp",
+      "sha256" : "e03e5cf7ed8851fadd4c08488cdebd86cf98f177d9d28cb4ed9730ce69f8fa70"
+    },
+    {
+      "path" : "\/estate\/assets\/social\/essays\/if-only-social.jpg",
+      "sha256" : "f41b9bbec06e2de89c1369fa965fc382a867d331637903c3c18bde039254c583"
+    },
+    {
+      "path" : "\/estate\/assets\/social\/books\/essays-first-chapter.jpg",
+      "sha256" : "f41b9bbec06e2de89c1369fa965fc382a867d331637903c3c18bde039254c583"
+    },
+    {
+      "path" : "\/estate\/books\/catalog.json",
+      "sha256" : "eda45f02a51c90468b32385c49bf87402f384ed892073e1107ee722d95b03448"
+    },
+    {
+      "path" : "\/estate\/books\/first-readings\/index.html",
+      "sha256" : "d5afdeb92eb76cff2754a4c0bff7cce134e707be859f98d1e61a11a5793dc782"
+    },
+    {
+      "path" : "\/estate\/books\/orange-dot\/index.html",
+      "sha256" : "9c5f063c6cf87e99157d5f11cc01a55b7d7da8381b51ec99d1b173710dba18fe"
+    }
+  ]
+}

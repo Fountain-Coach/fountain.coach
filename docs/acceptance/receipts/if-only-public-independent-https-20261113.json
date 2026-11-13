@@ -1,0 +1,85 @@
+{
+  "schema": "fountain.press.if-only-public-independent-acceptance.v1",
+  "timeUTC": "2026-11-13T17:30:17.123301+00:00",
+  "releaseID": "fountain-press-if-only-20261113-4258957",
+  "sourceRevision": "425895748fbcd5fef70f70ec7c7419298b7dffc0",
+  "predecessor": "fountain-press-fcis-value-20261112-ba6a653",
+  "fileCount": 493,
+  "nativeReceiptSHA256": "abbd12bff7786ec3c959df72517f86eb4b157b8393d532f9caa92f9cb61d1f50",
+  "readback": [
+    {
+      "url": "https://fountain.coach/index.html",
+      "http": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "e5e5e88aedf3df6680814a7fbcc133202db7a55cd588b46d265517c66247ad65",
+      "ok": true
+    },
+    {
+      "url": "https://fountain.coach/estate/index.html",
+      "http": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "e5e5e88aedf3df6680814a7fbcc133202db7a55cd588b46d265517c66247ad65",
+      "ok": true
+    },
+    {
+      "url": "https://fountain.coach/estate/books/essays/index.html",
+      "http": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "872337c93f11b5581d57c6b364c7de1ea5222116020eb246f9eeba69b833b4a1",
+      "ok": true
+    },
+    {
+      "url": "https://fountain.coach/estate/read/essay--if-only/index.html",
+      "http": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "c4bd73e3d687713cb29fbbaada50cefdb157ba7445976a8895dfe8c818c7b9d1",
+      "ok": true
+    },
+    {
+      "url": "https://fountain.coach/estate/read/essay--if-only/assets/hero-simultanbuehne.webp",
+      "http": 200,
+      "contentType": "image/webp",
+      "sha256": "e03e5cf7ed8851fadd4c08488cdebd86cf98f177d9d28cb4ed9730ce69f8fa70",
+      "ok": true
+    },
+    {
+      "url": "https://fountain.coach/estate/assets/social/essays/if-only-social.jpg",
+      "http": 200,
+      "contentType": "image/jpeg",
+      "sha256": "f41b9bbec06e2de89c1369fa965fc382a867d331637903c3c18bde039254c583",
+      "ok": true
+    },
+    {
+      "url": "https://fountain.coach/estate/assets/social/books/essays-first-chapter.jpg",
+      "http": 200,
+      "contentType": "image/jpeg",
+      "sha256": "f41b9bbec06e2de89c1369fa965fc382a867d331637903c3c18bde039254c583",
+      "ok": true
+    },
+    {
+      "url": "https://fountain.coach/estate/books/catalog.json",
+      "http": 200,
+      "contentType": "application/json",
+      "sha256": "eda45f02a51c90468b32385c49bf87402f384ed892073e1107ee722d95b03448",
+      "ok": true
+    },
+    {
+      "url": "https://fountain.coach/estate/books/first-readings/index.html",
+      "http": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "d5afdeb92eb76cff2754a4c0bff7cce134e707be859f98d1e61a11a5793dc782",
+      "ok": true
+    },
+    {
+      "url": "https://fountain.coach/estate/books/orange-dot/index.html",
+      "http": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "9c5f063c6cf87e99157d5f11cc01a55b7d7da8381b51ec99d1b173710dba18fe",
+      "ok": true
+    }
+  ],
+  "humanAndMachineSourceMatched": true,
+  "perWorkCanonicalSocialMatched": true,
+  "publicRootParity": true,
+  "allPassed": true
+}
