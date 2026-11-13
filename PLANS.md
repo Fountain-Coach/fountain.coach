@@ -1,5 +1,11 @@
 # Fountain Coach Fountain Press source project
 
+## 13 November 2026 — semantic clarity of The Model Is Not the Instrument illustrations
+
+**Requested observable outcome:** replace four ambiguous Teatro Scores with four distinct arguments (request/execution/readback; claim/404; score/instrument/sound; purchase of software access on customer-owned compute), restore commercial plate to the purchase passage, and regenerate the first-source hero derivative for essay and Essays-book social previews. Preserve the complete manuscript, editorial aside and all other Press works.
+
+**Governance:** existing Linotype Skill and source-illustration/social-card contract; Chapters 07/08 evidence types; 158 immutable stages; 160 canonical skills. No extra editor prose, image requirement elsewhere, alternate Reader, unrelated service, or production deployment. **Acceptance:** visible semantic legibility, source paragraph anchors, unchanged manuscript SHA, actual mounted illustrations on iPad/phone, exact source/delivery manifest, independent HTTPS/social readback and retained v200 rollback.
+
 ## 13 November 2026 — estate-wide editor presentation, private stage
 
 **Goal:** Apply the author-approved Fountain Press editorial introduction typography consistently to every existing source-declared editorial abstract in the accepted private owner-WLAN estate, preserving original manuscripts, figures, social assets, and collection identities. No new editorial text, invented HTML Reader, or public production release.

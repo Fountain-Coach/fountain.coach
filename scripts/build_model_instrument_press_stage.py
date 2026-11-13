@@ -23,16 +23,16 @@ SOCIAL = "the-model-is-not-the-instrument-social.jpg"
 FIGURES = [
  dict(id="model-instrument.hero", path="01-the-instrument-and-its-place.svg",
       role="hero", after="model-instrument.title",
-      alt="Teatro Score: a separate manuscript source, executable Ubuntu instrument, AI request and composed reading surface."),
+      alt="Teatro Score: an AI request is distinct from execution by the publishing instrument; the resulting book must be opened and checked."),
  dict(id="model-instrument.claim", path="02-the-claim-and-the-browser.svg",
       role="inline", after="model-instrument.intro.p2",
-      alt="Teatro Score: a declared publication faces an empty address with a visible 404, marking the distance between claim and observed result."),
+      alt="An AI report says Published, but opening the book URL returns 404 Not Found. The claim and the observation contradict each other."),
  dict(id="model-instrument.score", path="03-a-score-becomes-sound.svg",
       role="inline", after="model-instrument.s1.p2",
-      alt="Teatro Score: written musical relations pass through an independent sound engine before becoming audible."),
+      alt="Three stages: written music notation, an independent sound-producing instrument, and an audible waveform."),
  dict(id="model-instrument.workshop", path="04-three-machines-one-work.svg",
-      role="inline", after="model-instrument.s2.p2",
-      alt="Teatro Score: a writer's Mac, persistent Ubuntu host, reading tablet and selected mobile image contribute distinct resources."),
+      role="inline", after="model-instrument.s3.p3",
+      alt="Fountain Coach sells access to a governed instrument; the AI service is chosen separately and the instrument executes on the customer's own computer."),
 ]
 BASE_HASHES = {
  "estate-index.html": "f7cedae9efaba21f9d6798fac91932e704e02963f153ab1854f9902d4ee443ae",
