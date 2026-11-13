@@ -81,9 +81,12 @@ def integrate_html(old,template):
  # Other complete signed Reader volumes remain identical; only add one.
  insist(old.count('<template data-reader-volume="essay--if-only">')==0,
   "If Only already in production; refusing duplicate")
- mark='<template data-reader-volume="essay--'
- idx=old.find(mark)
- insist(idx>0,"No existing Reader essay templates")
+ # Reader v201+ derives source order from template iteration, then reverses it.
+ # Consequently the latest essay must be *after* the last historic essay
+ # template, not before the first. Preserve every predecessor template.
+ existing=list(re.finditer(r'<template data-reader-volume="essay--[^"]+">.*?</template>',old,re.S))
+ insist(len(existing)==11,"Unexpected active production essay source inventory")
+ idx=existing[-1].end()
  amended=old[:idx]+template+old[idx:]
  match,g=get_gallery(amended)
  originals=list(g["collections"]["essays"])
@@ -95,6 +98,25 @@ def integrate_html(old,template):
  insist(amended.count('<template data-reader-volume="essay--if-only">')==1,"Duplicate template after composition")
  insist(amended.count("192.168.8.50")==0,"Stage-only address carried into public Reader")
  return amended
+def update_reader_module(predecessor):
+ # The current production JS explicitly guards authorial membership and the
+ # Book gallery with source-owned counts. Admitting precisely one essay changes
+ # 7->8 and 8->9; preserve all ordering/proem/Orange Dot checks unchanged.
+ basename="reading-first-app.233205de4f9ce94289086bb23e31b0df45009818438bc0eff03a4e2688299c68.js"
+ oldrel="estate/assets/linotype/"+basename
+ original=(predecessor/oldrel).read_bytes()
+ insist(sha(original)==basename.split(".")[1],"Unexpected inherited Reader module identity")
+ text=original.decode("utf-8")
+ count_old="if(essaySequence.length!==7||solsticeSequence.length!==32)"
+ gallery_old="if(galleries.essays.length!==8||galleries['first-readings'].length!==30 ||"
+ insist(text.count(count_old)==1 and text.count(gallery_old)==1,"Unexpected Reader admission guard")
+ text=text.replace(count_old,"if(essaySequence.length!==8||solsticeSequence.length!==32)")
+ text=text.replace(gallery_old,"if(galleries.essays.length!==9||galleries['first-readings'].length!==30 ||")
+ insist(text.count("orangeSequence.length!==23")==1,"Orange Dot guard lost")
+ data=text.encode("utf-8")
+ newrel="estate/assets/linotype/reading-first-app."+sha(data)+".js"
+ return "/"+oldrel,"/"+newrel,data
+
 def head_meta(body,revision,kind):
  head,rest=body.split("</head>",1)
  if kind=="direct":
@@ -164,9 +186,12 @@ def main():
   p.parent.mkdir(parents=True,exist_ok=True)
   p.write_bytes(contents if isinstance(contents,bytes) else contents.encode("utf-8"))
   changed.append(dict(path=path,beforeSha256=previous.get(path),afterSha256=digest(p)))
+ old_script,new_script,script_bytes=update_reader_module(predecessor)
  for path in BOOK_ROUTES:
   original=(predecessor/path).read_text()
   htmltext=integrate_html(original,template)
+  insist(htmltext.count(old_script)==1,"Original Reader module not uniquely bound: "+path)
+  htmltext=htmltext.replace(old_script,new_script)
   if path=="estate/books/essays/index.html":
    htmltext=head_meta(htmltext,revision,"essays")
   put(path,htmltext)
@@ -176,7 +201,10 @@ def main():
         "Root and Fountain Press estate Reader entrance drifted")
  direct_base=(predecessor/"estate/read/essays/index.html").read_text()
  direct=head_meta(integrate_html(direct_base,template),revision,"direct")
+ insist(direct.count(old_script)==1,"Direct Reader module not uniquely bound")
+ direct=direct.replace(old_script,new_script)
  put("estate/read/essay--if-only/index.html",direct)
+ put(new_script.lstrip("/"),script_bytes)
  put(HERO_PATH.lstrip("/"),HERO.read_bytes())
  put(ESSAY_SOCIAL.lstrip("/"),SOCIAL.read_bytes())
  put(BOOK_SOCIAL.lstrip("/"),SOCIAL.read_bytes())
@@ -227,7 +255,7 @@ def main():
   "manuscriptSHA256":STAGE_SOURCE_SHA,"heroSha256":STAGE_HERO_SHA,
   "firstSolsticeOriginalPNG_SHA256":STAGE_ORIGINAL_SHA,
   "socialSha256":STAGE_SOCIAL_SHA,"publicProductionAuthorized":True,
-  "readerEngineCSSJavaScriptUnchanged":True,"originalPredecessorFileCount":len(previous),
+  "readerEngineCSSUnchanged":True,"readerMembershipJSChangedByTwoSourceCountAdmissionsOnly":True,"originalPredecessorFileCount":len(previous),
   "finalFileCount":len(current),"changedFiles":changed},ensure_ascii=False,indent=2)+"\n")
  print(json.dumps({"result":"candidate-built-no-publish","revision":revision,
   "predecessorFiles":len(previous),"newFileCount":len(current),"changedFiles":len(changed),
