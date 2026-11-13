@@ -50,7 +50,7 @@ def source_git():
 def normalized(s):
  # A common semantic text comparison: the accepted Reader uses <em>/<code>
  # for original Markdown emphasis/backticks, not verbatim delimiter glyphs.
- plain=html.unescape(re.sub(r'<[^>]+>',' ',s))
+ plain=html.unescape(re.sub(r'<[^>]+>','',s))
  plain=re.sub(r'(?<!\w)[*`]([^*`]+)[*`]',r'\1',plain)
  return re.sub(r'\s+',' ',plain).strip()
 def get_gallery(page):
