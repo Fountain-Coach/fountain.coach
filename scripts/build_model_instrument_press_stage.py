@@ -87,7 +87,17 @@ def new_template(lead,groups):
    f=figures[addr]
    figid=f["id"];path=f["path"]
    ordered.append(f'<figure class="frame-reading-figure" data-source-block="{figid}" data-source-illustration-id="{figid}" data-source-plate-sha256="{file_sha(ART/path)}" data-inline-after-paragraph="{para_index}" data-editorial-role="inline"><img loading="lazy" decoding="async" src="{STAGE_ROUTE}assets/{path}" width="1500" height="980" alt="{html.escape(f["alt"],quote=True)}"/></figure>')
- p("model-instrument.lead",lead,"frame-lead", 'data-editorial-role="proem"')
+ # The author's first published Fountain Press composition treats the short
+ # synopsis as a separate editorial aside, not as a lead paragraph of the
+ # manuscript. Linotype's original text(section) owns its measured placement.
+ editorial_proem=(
+  '<aside class="frame-editorial-proem" data-editorial-role="proem"'
+  ' data-source-block="model-instrument.lead" data-source-from="0"'
+  f' data-source-to="{len(lead)}" role="note" aria-label="Editorial preface">'
+  '<span class="frame-editorial-kicker">From the editor</span>'
+  f'<p>{inline(lead)}</p></aside>'
+ )
+ blocks.append(dict(id="model-instrument.lead",kind="editorial-proem",text=lead))
  for section_id,head,paras in groups:
   if head is not None:p(f"model-instrument.{section_id}.heading",head,"frame-subheading")
   for n,paragraph in enumerate(paras,1):
@@ -97,7 +107,7 @@ def new_template(lead,groups):
  f=FIGURES[0]
  hero=f'<section class="book-art-leaf"><figure class="frame-reading-figure frame-essay-hero" data-source-block="{f["id"]}" data-source-illustration-id="{f["id"]}" data-source-plate-sha256="{file_sha(ART/f["path"])}" data-editorial-role="hero"><img loading="eager" decoding="sync" src="{STAGE_ROUTE}assets/{f["path"]}" width="1500" height="980" alt="{html.escape(f["alt"],quote=True)}"/></figure></section>'
  title=f'<section class="book-chapter" id="work-{SLUG}"><div class="book-chapter-heading"><h2 data-source-block="model-instrument.title">{TITLE}</h2></div></section>'
- body='<section class="book-chapter-text"><article class="book-prose">'+''.join(ordered)+'</article></section>'
+ body='<section class="book-chapter-text">'+editorial_proem+'<article class="book-prose">'+''.join(ordered)+'</article></section>'
  template=f'<template data-reader-volume="{VOLUME}"><div class="book-flow" data-min-leaves="1">{title}{hero}{body}</div></template>'
  return template,blocks
 
