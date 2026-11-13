@@ -84,7 +84,7 @@ def integrate_html(old,template):
  # Reader v201+ derives source order from template iteration, then reverses it.
  # Consequently the latest essay must be *after* the last historic essay
  # template, not before the first. Preserve every predecessor template.
- existing=list(re.finditer(r'<template data-reader-volume="essay--[^"]+">.*?</template>',old,re.S))
+ existing=list(re.finditer(r'<template data-reader-volume="essay--[^"]+"[^>]*>.*?</template>',old,re.S))
  insist(len(existing)==11,"Unexpected active production essay source inventory")
  idx=existing[-1].end()
  amended=old[:idx]+template+old[idx:]
