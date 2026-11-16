@@ -1,0 +1,26 @@
+{
+  "schema": "fountain.press.illustrated-editorial-source.v1",
+  "workID": "essay--the-proof-of-the-page",
+  "title": "The Proof of the Page",
+  "subtitle": "On composition, judgment, and the thousand-page book",
+  "sourceOwner": "Fountain-Coach/fountain.coach",
+  "publicationState": "source-editorial-draft-not-published",
+  "sourceCompanion": "essay--what-makes-a-page-modern",
+  "proofPressSkill": "Fountain-Coach/.github/.codex/skills/linotype-proof-press",
+  "manuscriptSHA256": "3778b007423c2b94a9e3da26b9a4c3f1dd7ff04e7ed53747cff43cb7ebc13647",
+  "illustrations": {
+    "assets/01-source-and-folio.svg": "57809142cd57d67f0b6bd31f65287d47d8d926e12319b0436e4066b073e8df09",
+    "assets/02-abandoned-sentence.svg": "ac1b42e22638d1a53142482af7abd97f71ec469e151cf06ef82ae892f2cab95d",
+    "assets/03-white-space.svg": "7ffc6e2130928e33b7a50fe4bd1adb31bf1aaed4da3e421b49c801c54ddff708",
+    "assets/04-image-and-passage.svg": "f90f7b0bf3704ce70142e85da0943699426779739ce24e74a7afa3b9a1a4348f",
+    "assets/05-thousand-leaf-proof.svg": "9f8860e0851fc51413d9e58510377bc5ae44cd117b4b97bca0ad1c43bf2f6e59",
+    "assets/06-the-returned-proof.svg": "c3350d2ffd24b1301f7b2cfc16ccc8a12d847a1aa8128f9c7bb2b4de1cfbb0c5"
+  },
+  "illustrationType": "original-explanatory-schematics-not-real-failure-photographs",
+  "rights": "authorial editorial draft; source-owner admission and public-image rights remain separate",
+  "precedents": [
+    "Fountain-Coach/fountain.coach@17e32af5b875ec5356ddfa8a9680711d60aaa4eb",
+    "Fountain-Coach/fountain.coach@4a89ae5c2d822a0f594c382748277e2b818d82e4"
+  ],
+  "releaseAuthorization": false
+}
