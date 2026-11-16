@@ -1,0 +1,59 @@
+{
+  "schema": "fountain.press.cms.independent-wlan-readback.v1",
+  "stageReleaseID": "shared-shell-20261116-v216-catalogue-bookshelf",
+  "verifiedAtUTC": "2026-11-16T11:17:21.608650+00:00",
+  "status": "LIVE_STAGE_BYTES_VERIFIED_BROWSER_PENDING",
+  "urls": {
+    "estate/": {
+      "status": 200,
+      "bytes": 719456,
+      "sha256": "92fccdead52d9088be1cc8df2433cb659cd25b352e73c394312cbbb1af161c7d",
+      "contentType": "text/html"
+    },
+    "estate/read/library/": {
+      "status": 200,
+      "bytes": 719456,
+      "sha256": "92fccdead52d9088be1cc8df2433cb659cd25b352e73c394312cbbb1af161c7d",
+      "contentType": "text/html"
+    },
+    "estate/books/essays/": {
+      "status": 200,
+      "bytes": 721965,
+      "sha256": "d84f5996615e728ae91927416acacc67fff07219538c2f680c02897c8acd8aa0",
+      "contentType": "text/html"
+    },
+    "estate/books/first-readings/": {
+      "status": 200,
+      "bytes": 726150,
+      "sha256": "afbe7ba52765c16778dd65c518541e48c456b1d3e374b93bb3a5aa50e83b7232",
+      "contentType": "text/html"
+    },
+    "estate/books/orange-dot/": {
+      "status": 200,
+      "bytes": 724187,
+      "sha256": "d44b8a388db28d43f36092760b683e6a2b741a2567c5e99420d3d8d73b86d9bd",
+      "contentType": "text/html"
+    },
+    "estate/books/catalog.json": {
+      "status": 200,
+      "bytes": 13685,
+      "sha256": "066dbf1d629f6b138c38d1c6702158ceb3cfa8b6150c5db37315c676b5230427",
+      "contentType": "application/json"
+    },
+    "estate/assets/linotype/reading-first-app.68433f5efd6358180ba999cb043f20eaf9fb23e50afa6fa64bd09601e50e3537.js": {
+      "status": 200,
+      "bytes": 47485,
+      "sha256": "68433f5efd6358180ba999cb043f20eaf9fb23e50afa6fa64bd09601e50e3537",
+      "contentType": "text/javascript"
+    },
+    "estate/assets/linotype/reading-first-shell.css": {
+      "status": 200,
+      "bytes": 26601,
+      "sha256": "220d0c43807a606bda40b4787d8586c7d10da12b0d10dc0446c54963fbfc5682",
+      "contentType": "text/css"
+    }
+  },
+  "audioSHA256": "d8a02db7222b25a0dd886c355b23d75b4ba9a38190cf6da622cc80961cee8b27",
+  "productionRootSHA256": "1da8cc4eab4b4baab460dfe754fba262b1633b96d7b1739cd8c3473fcb7a234e",
+  "stageOnly": true
+}

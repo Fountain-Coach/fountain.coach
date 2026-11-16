@@ -1,6 +1,6 @@
 # Fountain Press v216: private WLAN CMS-style Bookshelf stage
 
-**Source-bound candidate only until activated and independently read back.** This resumes the merged deterministic Fountain Press frontend source from `main@3b83455c2f08caae02ed63788e0b866bba734760`; it does not create another CMS, Reader, database, port, or public publication.
+**ACTIVE / source-bound private WLAN stage, independently read back 16 November 2026.** This resumes the merged deterministic Fountain Press frontend source from `main@3b83455c2f08caae02ed63788e0b866bba734760`; it does not create another CMS, Reader, database, port, or public publication.
 
 ## Verified actual predecessor
 
@@ -20,7 +20,7 @@
 
 ## Source candidate tests
 
-- `python3 scenarios/press-books/test_published_frontend_stage.py -q` — 6/6; public mode tests `test_published_frontend.py` — 9/9.
+- `python3 scenarios/press-books/test_published_frontend_stage.py -q` — 7/7 (including the guarded admission schema-shadow regression); public mode tests `test_published_frontend.py` — 9/9.
 - `verify_published_frontend_stage.py` — exact 9-file overlay with all 78 source templates byte-preserved, staged private status and source-lock preservation; passes. Second separate build produced **byte-identical 9-file output and receipt**.
 - Negative cases: private state promoted to public refused, missing book/source proem refused, historical archive relisted refused, source SHA drift refused, non-canonical library page refused even with recalculated checksum, changed catalogue public permission refused even with recalculated checksum.
 - Actual WebKit browser using the **real WLAN origin and all inherited stage assets**, overriding only the exact nine candidate resources, passed desktop 1180×820, iPad-sized portrait 820×1180 and phone 390×844. Three books, 10/32/23 contents, 10/30/23 art, visible source-derived previous/next controls, horizontal transitions and Back, old library route, all three direct book openings, compact contents/illustrations, readable footer and no new JS exceptions were checked. Detailed local JSON/screenshot proof resides outside Git with the private candidate; these are browser-source witnesses, **not** a terminal stage receipt, physical iPad Safari/VoiceOver, or HTTPS WebAudio release acceptance.
@@ -29,4 +29,16 @@
 
 The current release is protected by a version-specific source-lock gate. A direct copy into its active root would be refused; replacing v215 with the public-production build would also wrongly change private source states and destroy stage-specific material. The release procedure must preserve v215 as a complete immutable rollback, admit the v216 file-inventory and source lock through the existing guarded owner-WLAN process, then restart the *same* user-level service under the new gate and verify its actual `current` symlink and rendered pages. Public production must not be touched.
 
-**Not yet established by source tests:** exact native EstatePublisher release receipt for a live v216 stage activation, active on-WLAN HTTPS browser/physical iPad VoiceOver, and separate public authorization. Never call a candidate or Git merge a live stage release. A direct public site link remains an independently released predecessor.
+## Live canonical WLAN release and acceptance — 16 November 2026
+
+**v216 ACTIVE** — inherited v215 provenance gate passed in the inactive directory before activation. Existing `fountain-shell-acceptance-preview.service` is **user-level systemd**, not the identically named nonexistent system-level unit; the same unit was switched to the reviewed `serve_press_cms_v216.py` guard with a rollback trap. `current` now points to `/home/benedikt/estate-shell-acceptance-staging/releases/shared-shell-20261116-v216-catalogue-bookshelf` and v215 remains intact as the immutable rollback. No second port, server or publication authority was created. The generated private stage admission's schema-shadow defect was caught by the real inactive guard, then fixed in source PR #38 (merged `2783f83df09100206657637a38bbd24e082c5dee`) with deterministic `make_stage_guard_admission.py` and a focused negative test; **16/16 source tests pass**.
+
+**Independent active HTTP proof:** `/estate/` and `/estate/read/library/` each returned HTTP 200 with identical SHA-256 `92fccdead52d9088be1cc8df2433cb659cd25b352e73c394312cbbb1af161c7d`. The three direct books, stage catalogue, new content-addressed Reader and retained stylesheet also returned the exact eight expected candidate digests. Three private book states remain `stageOnly=true`, `publicReleaseAuthorized=false`; contents: Essays 10, First Readings 32, Orange Dot 23; art 10/30/23. Source-owned Csound control audio retained SHA-256 `d8a02db7222b25a0dd886c355b23d75b4ba9a38190cf6da622cc80961cee8b27`.
+
+**Independent *live* WebKit:** the browser used `http://192.168.8.50:8200/estate/` **without** substituting any files. All **3/3** journeys passed (1180×820 desktop, 820×1180 portrait, 390×844 phone). They opened the running Bookshelf, verified all three complete collections and both vertical projections, navigated both directions, opened current direct books and the formerly blocked `/estate/read/library/` route, and recorded zero page exceptions. Results and six actual browser screenshots were saved on the owner's external working disk; screenshots remain outside public Git because the source is a private author-WLAN review. The JSON observations and recorded external readbacks are in [live evidence](press-cms-v216-live-evidence/).
+
+**Independent production preservation:** public `https://fountain.coach/estate/` still has the prior SHA-256 `1da8cc4eab4b4baab460dfe754fba262b1633b96d7b1739cd8c3473fcb7a234e`. No public route or private stage rights were promoted.
+
+**Receipt categories:** [owner WLAN terminal observation](press-cms-v216-live-evidence/owner-wlan-terminal-observation.json) is an exact guarded user-systemd stage-activation observation, **not** a native typed EstatePublisher terminal receipt. [Independent HTTP witness](press-cms-v216-live-evidence/independent-http-witness.json) and [WebKit witness](press-cms-v216-live-evidence/live-webkit-witness.json) prove distinct real effects. Do not conflate them.
+
+**Still unverified:** real physical iPad Safari/VoiceOver acceptance and secure HTTPS WebAudio playback (the canonical WLAN origin remains HTTP). Public production requires a separately authorized EstatePublisher release and corresponding independent HTTPS acceptance; this private staged composition provides no public release authority. The canonical local author entrance is `http://192.168.8.50:8200/estate/read/library/` on the owner WLAN.
