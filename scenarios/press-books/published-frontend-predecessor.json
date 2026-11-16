@@ -1,0 +1,29 @@
+{
+  "schema": "fountain.press.frontend-predecessor.v1",
+  "sourceOwner": "Fountain-Coach/fountain.coach",
+  "publicReleaseID": "fountain-press-collection-parity-20261116-9c145b5",
+  "capturedDate": "2026-11-16",
+  "sourceDigestSHA256": {
+    "index.html": "1da8cc4eab4b4baab460dfe754fba262b1633b96d7b1739cd8c3473fcb7a234e",
+    "estate/index.html": "1da8cc4eab4b4baab460dfe754fba262b1633b96d7b1739cd8c3473fcb7a234e",
+    "estate/books/catalog.json": "f91503ae5b3511301d41534eb7f56e5be9e8605661bd6a3c3ed1f6ff482562ee",
+    "estate/assets/linotype/reading-first-app.50bb76f72f280b8381f9f5f7b3ab5d2f79b1f3ab3217503bfee46a1004fbf452.js": "50bb76f72f280b8381f9f5f7b3ab5d2f79b1f3ab3217503bfee46a1004fbf452",
+    "estate/assets/linotype/reading-first-shell.css": "1a94f0d4e0d529e76f32b0454e0dab88866bf0a4c341742ceff6972fb38a2119",
+    "estate/books/essays/index.html": "bd7e99c366cbfad14701483ea557c8a1aa42dc64d68629f50fd346bd4da769c5",
+    "estate/books/first-readings/index.html": "11284ede9c0d153f6055dde8aa1df54d57ddf96bf99de4ede0197c35102cb5e1",
+    "estate/books/orange-dot/index.html": "4bca74d5f344f4a368ee6e85dbd5a68051a3ebda67e2beb02cca4de207a266ea",
+    "estate/read/library/index.html": "2add1dd132cfb3f55e6c2f69d01b4539c6f6d4af3148b83a313305f98d129d21"
+  },
+  "existingPresentation": {
+    "essays": {},
+    "first-readings": {"subtitle": "Reading 01 · First Reading", "contentsCaption": "Reading 01 — First Reading"},
+    "orange-dot": {"subtitle": "Solstice · original post sequence"}
+  },
+  "sourceUnlistedWorkRoles": {
+    "essay--semantic-compilation-the-archive-is-not-the-edition": "historical-public",
+    "essay--the-composable-book": "historical-public",
+    "essay--to-read-is-not-to-remember": "archived-public"
+  },
+  "requiredEditorialProemCounts": {"essays": 9, "first-readings": 30},
+  "legacyLibraryRoute": "/estate/read/library/"
+}
