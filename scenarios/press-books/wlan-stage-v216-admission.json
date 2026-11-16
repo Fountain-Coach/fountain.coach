@@ -1,5 +1,5 @@
 {
-  "schema": "fountain.press.cms.stage-candidate-receipt.v1",
+  "schema": "fountain.press.cms.private-wlan-stage-admission.v1",
   "status": "PREPARED_NOT_ACTIVATED",
   "publicationLane": "private-owner-WLAN-editorial-review",
   "releaseID": "shared-shell-20261116-v216-catalogue-bookshelf",

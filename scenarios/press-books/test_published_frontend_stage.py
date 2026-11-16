@@ -27,6 +27,20 @@ def stage_fixture():
     return html,app,catalog,admission
 
 class StageCatalogueTests(unittest.TestCase):
+    def test_gate_admission_schema_cannot_be_shadowed_by_receipt_schema(self):
+        import json
+        from make_stage_guard_admission import make,ADMISSION,EXPECTED_RECEIPT
+        guard=(Path(__file__).parent/'serve_press_cms_v216.py').read_bytes()
+        original={'schema':EXPECTED_RECEIPT,'status':'PREPARED_NOT_ACTIVATED',
+                  'productionModified':False,'publicationLane':'private-owner-WLAN-editorial-review',
+                  'changedFilesSHA256':{'a':'f'},'addedPaths':['a'],'changedPaths':[],
+                  'releaseID':'example'}
+        new=make(original,guard)
+        self.assertEqual(new['schema'],ADMISSION)
+        self.assertEqual(json.loads((Path(__file__).parent/'wlan-stage-v216-admission.json').read_text())['schema'],ADMISSION)
+        with self.assertRaisesRegex(ValueError,'private-stage receipt'):
+            make({**original,'status':'ACTIVE'},guard)
+
     def test_catalogue_stage_status_and_original_contents(self):
         out=snapshot_stage(*stage_fixture())
         self.assertEqual(out['publicationLane'],'private-owner-WLAN-editorial-review')
