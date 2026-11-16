@@ -13,7 +13,12 @@ const bookById=new Map(books.map(book=>[book.id,book]));
 const contents=Object.fromEntries(books.map(book=>[book.id,book.orderedWorkIDs]));
 const archivedOwners=new Map();
 for(const book of books){
- if(book.publicationState!=='public-production'||book.publicReleaseAuthorized!==true||book.stageOnly!==false)
+ const privatePreview=publication.publicationLane==='private-owner-WLAN-editorial-review';
+ if(privatePreview){
+  if(book.stageOnly!==true||book.publicReleaseAuthorized!==false||book.stagePreviewAuthorized!==true||
+     book.publicationState!=='private-owner-WLAN-editorial-review')
+   throw Error('Unadmitted private preview book: '+book.id);
+ }else if(book.publicationState!=='public-production'||book.publicReleaseAuthorized!==true||book.stageOnly!==false)
   throw Error('Unreleased book admitted to public Bookshelf: '+book.id);
  for(const entry of book.unlistedSourceWorks||[]){
   if(archivedOwners.has(entry.id))throw Error('Duplicate archival identity');
