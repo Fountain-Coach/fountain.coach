@@ -1,0 +1,112 @@
+{
+  "releaseID": "fountain-press-collection-parity-20261116-9c145b5",
+  "checks": "passed",
+  "publicWitnesses": [
+    {
+      "path": "/",
+      "sha256": "1da8cc4eab4b4baab460dfe754fba262b1633b96d7b1739cd8c3473fcb7a234e",
+      "mime": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/estate/",
+      "sha256": "1da8cc4eab4b4baab460dfe754fba262b1633b96d7b1739cd8c3473fcb7a234e",
+      "mime": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/publication-manifest.json",
+      "sha256": "f99ca9424236054e9695e1604b59fc0b118cc7c6ce7ad5a891669a17689ecc2b",
+      "mime": "application/json"
+    },
+    {
+      "path": "/estate/books/catalog.json",
+      "sha256": "f91503ae5b3511301d41534eb7f56e5be9e8605661bd6a3c3ed1f6ff482562ee",
+      "mime": "application/json"
+    },
+    {
+      "path": "/estate/read/essay--a-better-ear-for-fountain-coach/",
+      "sha256": "69f1d595b4a32253e9200215052b060961007b2ca4fa5b57c0a90a883fd5f4c8",
+      "mime": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/estate/read/essay--a-better-ear-for-fountain-coach/edition-manifest.json",
+      "sha256": "e8f23ee35f3cc07d974f050bc5a110cb2a37a1fb32efb95675d0d41c76189a91",
+      "mime": "application/json"
+    },
+    {
+      "path": "/estate/read/essay--a-better-ear-for-fountain-coach/assets/images/a-better-ear-hero.jpg",
+      "sha256": "017f5d09d3abb2a8bed5571747b6a5f8454c801e5cb975734cafb3d18366b4f8",
+      "mime": "image/jpeg"
+    },
+    {
+      "path": "/estate/read/essay--a-better-ear-for-fountain-coach/assets/audio/csound-control.m4a",
+      "sha256": "d8a02db7222b25a0dd886c355b23d75b4ba9a38190cf6da622cc80961cee8b27",
+      "mime": "audio/mp4"
+    },
+    {
+      "path": "/estate/read/essay--a-better-ear-for-fountain-coach/assets/audio/csound-by-ear.m4a",
+      "sha256": "48afe2ca50be06da1a5276413a9b368ca58ff23a826310400462907585bc28e0",
+      "mime": "audio/mp4"
+    },
+    {
+      "path": "/estate/assets/social/a-better-ear-0175fc1d.png",
+      "sha256": "cd650f90e189d1fd7ad4369e6d331de744741cb7a1c7eaa4e49f38f0ab9891fa",
+      "mime": "image/png"
+    },
+    {
+      "path": "/estate/books/essays/",
+      "sha256": "bd7e99c366cbfad14701483ea557c8a1aa42dc64d68629f50fd346bd4da769c5",
+      "mime": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/estate/assets/social/books/essays-better-ear-9c145b5e.jpg",
+      "sha256": "9b0f3203b14b4c5f5e6b9d6a04dd95ef925ab2b1dbcb3c2602bf5c2a5547319b",
+      "mime": "image/jpeg"
+    },
+    {
+      "path": "/estate/books/first-readings/",
+      "sha256": "11284ede9c0d153f6055dde8aa1df54d57ddf96bf99de4ede0197c35102cb5e1",
+      "mime": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/estate/assets/social/books/first-readings-first-chapter.jpg",
+      "sha256": "3358d3a3fbc67c8648f57a85bdf9102a3822b4d9d1315689cfd9ddd369cadad1",
+      "mime": "image/jpeg"
+    },
+    {
+      "path": "/estate/books/orange-dot/",
+      "sha256": "4bca74d5f344f4a368ee6e85dbd5a68051a3ebda67e2beb02cca4de207a266ea",
+      "mime": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/estate/assets/social/books/orange-dot-first-chapter.jpg",
+      "sha256": "040adeafa8c7bee1b0075cfbe297388580c6e8897b9bf08712e8ef3bd5c58115",
+      "mime": "image/jpeg"
+    },
+    {
+      "path": "/estate/assets/linotype/reading-first-app.50bb76f72f280b8381f9f5f7b3ab5d2f79b1f3ab3217503bfee46a1004fbf452.js",
+      "sha256": "50bb76f72f280b8381f9f5f7b3ab5d2f79b1f3ab3217503bfee46a1004fbf452",
+      "mime": "text/javascript; charset=utf-8"
+    },
+    {
+      "crawler": "facebookexternalhit/1.1",
+      "path": "/estate/books/essays/",
+      "staticHTMLMatches": true
+    },
+    {
+      "crawler": "facebookexternalhit/1.1",
+      "path": "/estate/read/essay--a-better-ear-for-fountain-coach/",
+      "staticHTMLMatches": true
+    },
+    {
+      "crawler": "Twitterbot/1.0",
+      "path": "/estate/books/essays/",
+      "staticHTMLMatches": true
+    },
+    {
+      "crawler": "Twitterbot/1.0",
+      "path": "/estate/read/essay--a-better-ear-for-fountain-coach/",
+      "staticHTMLMatches": true
+    }
+  ],
+  "thirdPartyCacheRefresh": "not tested"
+}
