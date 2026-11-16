@@ -22,6 +22,14 @@ class IllustratedProofEssayTests(unittest.TestCase):
             self.assertGreater(len(svg.findall('.//{http://www.w3.org/2000/svg}text')),4)
             self.assertNotIn('http://',''.join(el.attrib.get('href','') for el in svg.iter()))
 
+    def test_proof_instrument_records_real_folio_source_lengths_without_replacing_reader(self):
+        scanner=(ROOT.parents[2]/'scenarios/press-books/proof-press/run.mjs').read_text()
+        for required in ('sourceBlockLengths:', 'trimmedLength:e.textContent.trim().length',
+                         'linotype-sheet', 'sheet.screenshot('):
+            self.assertIn(required,scanner)
+        self.assertIn('const works=admitted.flatMap',scanner)
+        self.assertIn('sourceBlocks:initial.sourceBlocks,sourceBlockLengths:initial.sourceBlockLengths',scanner)
+
     def test_specific_source_and_non_fabrication_boundaries_are_explicit(self):
         text=(ROOT/'combined-essay.md').read_text()
         for fragment in ('What Makes a Page Modern?', 'Client-Centered',

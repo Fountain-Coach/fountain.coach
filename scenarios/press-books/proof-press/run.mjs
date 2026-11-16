@@ -80,9 +80,10 @@ try{
     const initial=await page.evaluate(()=>({total:Number(document.querySelector('#page-viewport').dataset.pages),
      sourceSha:document.querySelector(`template[data-reader-volume="${document.querySelector('#page-viewport').dataset.volume}"]`)?.content.querySelector('[data-source-work-sha256]')?.getAttribute('data-source-work-sha256')||null,
      sourceBlocks:[...document.querySelector(`template[data-reader-volume="${document.querySelector('#page-viewport').dataset.volume}"]`)?.content.querySelectorAll('[data-source-block]')||[]].map(e=>e.dataset.sourceBlock),
+     sourceBlockLengths:[...document.querySelector(`template[data-reader-volume="${document.querySelector('#page-viewport').dataset.volume}"]`)?.content.querySelectorAll('[data-source-block]')||[]].map(e=>({id:e.dataset.sourceBlock,length:e.textContent.length,trimmedLength:e.textContent.trim().length,tag:e.tagName.toLowerCase()})),
      sourceRanges:[...document.querySelector(`template[data-reader-volume="${document.querySelector('#page-viewport').dataset.volume}"]`)?.content.querySelectorAll('[data-source-block][data-source-from][data-source-to]')||[]].map(e=>({id:e.dataset.sourceBlock,from:Number(e.dataset.sourceFrom),to:Number(e.dataset.sourceTo)}))}));
     invariant(Number.isSafeInteger(initial.total)&&initial.total>0,'Uninitialized folio count '+work.id);
-    run.expectedFolios[plat][work.id]={count:initial.total,sourceSha:initial.sourceSha,sourceBlocks:initial.sourceBlocks,sourceRanges:initial.sourceRanges};
+    run.expectedFolios[plat][work.id]={count:initial.total,sourceSha:initial.sourceSha,sourceBlocks:initial.sourceBlocks,sourceBlockLengths:initial.sourceBlockLengths,sourceRanges:initial.sourceRanges};
     const seen=new Set();let turn=0;
     while(seen.size<initial.total){
       const state=await page.evaluate(()=>{
