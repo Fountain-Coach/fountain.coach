@@ -26,7 +26,7 @@ AUDIO = {
 }
 OUTBOUND_STYLE = (
     '<style id="better-ear-outbound-link-style">'
-    '.frame-link-out-mark{font-family:Georgia,"Times New Roman",serif;'
+    '#work-a-better-ear-for-fountain-coach ~ .book-chapter-text .frame-link-out-mark{font-family:Georgia,"Times New Roman",serif;'
     'font-variant-emoji:text;font-size:.48em;font-weight:400;font-style:normal;'
     'line-height:inherit;color:inherit;background:none;border:0;border-radius:0;vertical-align:baseline}'
     '</style>'
@@ -93,7 +93,7 @@ def replace_source_paragraphs(template, paragraphs):
         '<p class="frame-lead" data-editorial-role="proem" data-source-block="better-ear.subtitle"',
         "Reader editorial proem"
     )
-    if result.count('class="frame-link-out"') != 14:
+    if result.count('class="frame-link-out"') != 7:
         raise ValueError("Rendered essay outbound links do not match source")
     return result
 
