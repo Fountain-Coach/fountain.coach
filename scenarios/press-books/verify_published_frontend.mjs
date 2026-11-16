@@ -10,6 +10,9 @@ const output=process.env.PRESS_FRONTEND_CANDIDATE;
 assert.ok(output && fs.statSync(output).isDirectory(),'PRESS_FRONTEND_CANDIDATE must be an existing immutable build');
 const resultPath=process.env.PRESS_FRONTEND_TEST_RESULT || path.join(output,'../browser-proof.json');
 const screenDir=process.env.PRESS_FRONTEND_SCREEN_DIR;
+const base=process.env.PRESS_FRONTEND_BASE_URL||'https://fountain.coach/';
+const origin=new URL(base).origin;
+const previewLane=base.includes('192.168.8.50');
 if(screenDir)fs.mkdirSync(screenDir,{recursive:true});
 const mime={'.html':'text/html;charset=utf-8','.js':'text/javascript;charset=utf-8','.json':'application/json;charset=utf-8','.css':'text/css;charset=utf-8'};
 const scenarios=[['desktop',1180,820],['tablet-portrait',820,1180],['phone',390,844]];
@@ -26,7 +29,7 @@ for(const browserName of configured){
  try{
   for(const [name,width,height] of scenarios){
    const context=await browser.newContext({viewport:{width,height}});
-   await context.route('https://fountain.coach/**',route=>{
+   await context.route(origin+'/**',route=>{
     let pathname=new URL(route.request().url()).pathname;
     if(pathname.endsWith('/'))pathname+='index.html';
     const filename=path.join(output,pathname.replace(/^\//,''));
@@ -37,7 +40,7 @@ for(const browserName of configured){
    });
    const page=await context.newPage(),errors=[];
    page.on('pageerror',err=>errors.push(err.message));
-   const response=await page.goto('https://fountain.coach/',{waitUntil:'domcontentloaded',timeout:30000});
+   const response=await page.goto(base,{waitUntil:'domcontentloaded',timeout:30000});
    assert.equal(response.status(),200);
    await page.waitForFunction(()=>document.querySelector('#page-viewport')?.dataset.layout==='ready',{timeout:25000});
    const first=await page.evaluate(()=>({
@@ -54,6 +57,9 @@ for(const browserName of configured){
     bottom:document.querySelector('.frame-controls')?.getBoundingClientRect().bottom,
   }));
    assert.equal(first.volume,'library');
+   const sourceLane=await page.evaluate(()=>JSON.parse(document.querySelector('#reader-publication-data').textContent).publicationLane||'public-production');
+   assert.equal(sourceLane,previewLane?'private-owner-WLAN-editorial-review':'public-production');
+   if(previewLane)assert.equal(await page.locator('meta[name="robots"]').getAttribute('content'),'noindex,nofollow');
    assert.deepEqual(first.collections.map(x=>x.id),books);
    for(const col of first.collections){
     assert.equal(col.contents,counts[col.id]);assert.equal(col.illustrated,photos[col.id]);
@@ -98,7 +104,7 @@ for(const browserName of configured){
    await page.waitForFunction(()=>document.querySelector('#page-viewport').dataset.collection==='first-readings',{timeout:6000});
    const historical=await context.newPage(),legacyErrors=[];
    historical.on('pageerror',err=>legacyErrors.push(err.message));
-   await historical.goto('https://fountain.coach/estate/read/library/',{waitUntil:'domcontentloaded',timeout:30000});
+   await historical.goto(origin+'/estate/read/library/',{waitUntil:'domcontentloaded',timeout:30000});
    await historical.waitForFunction(()=>document.querySelector('#page-viewport')?.dataset.layout==='ready',{timeout:25000});
    const legacy=await historical.locator('.reader-collection-page').count();
    assert.equal(legacy,3,'legacy library route must carry the complete current Bookshelf');
@@ -109,10 +115,11 @@ for(const browserName of configured){
    for(const book of books){
     const detail=await context.newPage(),detailErrors=[];
     detail.on('pageerror',err=>detailErrors.push(err.message));
-    await detail.goto('https://fountain.coach/estate/books/'+book+'/',{waitUntil:'domcontentloaded',timeout:30000});
+    await detail.goto(origin+'/estate/books/'+book+'/',{waitUntil:'domcontentloaded',timeout:30000});
     await detail.waitForFunction(expected=>document.querySelector('#page-viewport')?.dataset.layout==='ready'&&document.querySelector('#page-viewport')?.dataset.volume===expected,book,{timeout:25000});
     assert.equal(await detail.locator('.reader-contents-entry').count(),counts[book],book+' direct contents');
     assert.deepEqual(detailErrors,[],book+' direct route JS errors');
+    if(previewLane)assert.equal(await detail.locator('meta[name="robots"]').getAttribute('content'),'noindex,nofollow');
     await detail.close();
    }
    assert.deepEqual(errors,[],browserName+' '+name+' runtime errors');

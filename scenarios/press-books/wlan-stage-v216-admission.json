@@ -1,0 +1,60 @@
+{
+  "schema": "fountain.press.cms.stage-candidate-receipt.v1",
+  "status": "PREPARED_NOT_ACTIVATED",
+  "publicationLane": "private-owner-WLAN-editorial-review",
+  "releaseID": "shared-shell-20261116-v216-catalogue-bookshelf",
+  "predecessorReleaseID": "shared-shell-20261116-v215-better-ear-reader-ready",
+  "productionModified": false,
+  "sourceOwnerCommit": "3b83455c2f08caae02ed63788e0b866bba734760",
+  "predecessorSHA256": {
+    "source-lock.json": "018c392afa8f91fa8c77bc7f452b25666820f29d209103d5c73f26fa01d5f638",
+    "estate/index.html": "2f4fd9ca80045594f373e425a03cb1df79965d320545c87d1ad2a2ab1fc4eeaf",
+    "estate/books/catalog.json": "824b61b2f3927549089c964b3ae8fbb4962b5c36af87eef58667920fc5c6c0fa",
+    "estate/assets/linotype/reading-first-app.50bb76f72f280b8381f9f5f7b3ab5d2f79b1f3ab3217503bfee46a1004fbf452.js": "50bb76f72f280b8381f9f5f7b3ab5d2f79b1f3ab3217503bfee46a1004fbf452",
+    "estate/assets/linotype/reading-first-shell.css": "1a94f0d4e0d529e76f32b0454e0dab88866bf0a4c341742ceff6972fb38a2119",
+    "estate/books/essays/index.html": "62a058e9a6c663d4d856a795d0498fb22e01668e7cd2efddf0b1c58917137a09",
+    "estate/books/first-readings/index.html": "bf5cea853f2a6b6e7773393f102a1022cf0d2357fbcfe739522a3679ed92022e",
+    "estate/books/orange-dot/index.html": "05dcb2a016a7c021d8f7acd8d96dbdd60c938374b6dde11f8a99b7b04b74429e"
+  },
+  "snapshotSHA256": "3b1ef768045fbde3e9e9bcd01e9aacdf3ddc3d68db7b41cb0684d1aab7f41fcd",
+  "privateBookOrder": [
+    "essays",
+    "first-readings",
+    "orange-dot"
+  ],
+  "bookWorkCounts": {
+    "essays": 10,
+    "first-readings": 32,
+    "orange-dot": 23
+  },
+  "bookIllustrationCounts": {
+    "essays": 10,
+    "first-readings": 30,
+    "orange-dot": 23
+  },
+  "changedFilesSHA256": {
+    "estate/index.html": "92fccdead52d9088be1cc8df2433cb659cd25b352e73c394312cbbb1af161c7d",
+    "estate/books/essays/index.html": "d84f5996615e728ae91927416acacc67fff07219538c2f680c02897c8acd8aa0",
+    "estate/books/first-readings/index.html": "afbe7ba52765c16778dd65c518541e48c456b1d3e374b93bb3a5aa50e83b7232",
+    "estate/books/orange-dot/index.html": "d44b8a388db28d43f36092760b683e6a2b741a2567c5e99420d3d8d73b86d9bd",
+    "estate/read/library/index.html": "92fccdead52d9088be1cc8df2433cb659cd25b352e73c394312cbbb1af161c7d",
+    "estate/books/catalog.json": "066dbf1d629f6b138c38d1c6702158ceb3cfa8b6150c5db37315c676b5230427",
+    "estate/assets/linotype/reading-first-app.68433f5efd6358180ba999cb043f20eaf9fb23e50afa6fa64bd09601e50e3537.js": "68433f5efd6358180ba999cb043f20eaf9fb23e50afa6fa64bd09601e50e3537",
+    "estate/assets/linotype/reading-first-shell.css": "220d0c43807a606bda40b4787d8586c7d10da12b0d10dc0446c54963fbfc5682",
+    "source-lock.json": "b8afc2666f8d2d4df8f083d7ad2193bd6039d4efa02a2b042eab999f32b21ec9"
+  },
+  "addedPaths": [
+    "estate/assets/linotype/reading-first-app.68433f5efd6358180ba999cb043f20eaf9fb23e50afa6fa64bd09601e50e3537.js",
+    "estate/read/library/index.html"
+  ],
+  "changedPaths": [
+    "estate/assets/linotype/reading-first-shell.css",
+    "estate/books/catalog.json",
+    "estate/books/essays/index.html",
+    "estate/books/first-readings/index.html",
+    "estate/books/orange-dot/index.html",
+    "estate/index.html",
+    "source-lock.json"
+  ],
+  "guardSHA256": "1b52b337af10a25972d5467e41b621416af9510300c61a63ff145610e032ef84"
+}

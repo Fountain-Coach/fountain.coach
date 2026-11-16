@@ -1,0 +1,56 @@
+{
+  "schema": "fountain.press.stage-frontend-predecessor.v1",
+  "lane": "private-owner-WLAN-editorial-review",
+  "sourceOwner": "Fountain-Coach/fountain.coach",
+  "releaseID": "shared-shell-20261116-v215-better-ear-reader-ready",
+  "nextReleaseID": "shared-shell-20261116-v216-catalogue-bookshelf",
+  "sourceDigestSHA256": {
+    "source-lock.json": "018c392afa8f91fa8c77bc7f452b25666820f29d209103d5c73f26fa01d5f638",
+    "estate/index.html": "2f4fd9ca80045594f373e425a03cb1df79965d320545c87d1ad2a2ab1fc4eeaf",
+    "estate/books/catalog.json": "824b61b2f3927549089c964b3ae8fbb4962b5c36af87eef58667920fc5c6c0fa",
+    "estate/assets/linotype/reading-first-app.50bb76f72f280b8381f9f5f7b3ab5d2f79b1f3ab3217503bfee46a1004fbf452.js": "50bb76f72f280b8381f9f5f7b3ab5d2f79b1f3ab3217503bfee46a1004fbf452",
+    "estate/assets/linotype/reading-first-shell.css": "1a94f0d4e0d529e76f32b0454e0dab88866bf0a4c341742ceff6972fb38a2119",
+    "estate/books/essays/index.html": "62a058e9a6c663d4d856a795d0498fb22e01668e7cd2efddf0b1c58917137a09",
+    "estate/books/first-readings/index.html": "bf5cea853f2a6b6e7773393f102a1022cf0d2357fbcfe739522a3679ed92022e",
+    "estate/books/orange-dot/index.html": "05dcb2a016a7c021d8f7acd8d96dbdd60c938374b6dde11f8a99b7b04b74429e"
+  },
+  "expectedCatalogueStatus": "private-owner-WLAN-editorial-review",
+  "expectedBookIDs": [
+    "essays",
+    "first-readings",
+    "orange-dot"
+  ],
+  "unlistedSourceWorkRoles": {
+    "essay--semantic-compilation-the-archive-is-not-the-edition": "historical-public",
+    "essay--the-composable-book": "historical-public",
+    "essay--to-read-is-not-to-remember": "archived-public"
+  },
+  "requiredEditorialProemCounts": {
+    "essays": 9,
+    "first-readings": 30
+  },
+  "existingPresentation": {
+    "essays": {},
+    "first-readings": {
+      "subtitle": "Reading 01 · First Reading",
+      "contentsCaption": "Reading 01 — First Reading"
+    },
+    "orange-dot": {
+      "subtitle": "Solstice · original post sequence"
+    }
+  },
+  "expectedDirectMissingSourceWorks": {
+    "essays": [
+      "essay--a-better-ear-for-fountain-coach"
+    ],
+    "first-readings": [
+      "essay--a-better-ear-for-fountain-coach",
+      "essay--if-only"
+    ],
+    "orange-dot": [
+      "essay--a-better-ear-for-fountain-coach",
+      "essay--if-only"
+    ]
+  },
+  "missingLegacyRoute": "estate/read/library/index.html"
+}
