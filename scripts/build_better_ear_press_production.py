@@ -210,7 +210,7 @@ def build(args):
     new_app.write_bytes(app_bytes)
 
     base_html = require_one(base_html, app_match.group(1), "/" + str(Path("estate/assets/linotype") / app_name), "Content-addressed Reader app")
-    base_html = require_one(base_html, ' <script type="application/json" id="reader-gallery-data">', template + '\n <script type="application/json" id="reader-gallery-data">', "Reader source template injection")
+    base_html = require_one(base_html, '\n<script type="application/json" id="reader-gallery-data">', template + '\n<script type="application/json" id="reader-gallery-data">', "Reader source template injection")
     gallery_match = re.search(r'(<script type="application/json" id="reader-gallery-data">)(.*?)(</script>)', base_html, re.S)
     if not gallery_match:
         raise ValueError("Public Bookshelf gallery JSON is missing")
