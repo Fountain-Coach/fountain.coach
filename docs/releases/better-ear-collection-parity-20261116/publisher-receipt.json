@@ -1,0 +1,61 @@
+{
+  "activated" : true,
+  "detail" : "Exact published bytes verified independently via HTTPS",
+  "previousReleaseID" : "fountain-press-better-ear-20261116-0175fc1-r2",
+  "publicHost" : "fountain.coach",
+  "recordedAt" : 816503065.614062,
+  "releaseID" : "fountain-press-collection-parity-20261116-9c145b5",
+  "sourceInventorySHA256" : "eb1161b64e2489583b591d28332ae37104818e1e3f7ad6242352cd0b242619cc",
+  "sourceRevision" : "9c145b5e9aa83b469306112b91425bf5b7fc02cd",
+  "state" : "active",
+  "verifiedPublicFiles" : [
+    {
+      "path" : "\/index.html",
+      "sha256" : "1da8cc4eab4b4baab460dfe754fba262b1633b96d7b1739cd8c3473fcb7a234e"
+    },
+    {
+      "path" : "\/estate\/index.html",
+      "sha256" : "1da8cc4eab4b4baab460dfe754fba262b1633b96d7b1739cd8c3473fcb7a234e"
+    },
+    {
+      "path" : "\/estate\/books\/essays\/index.html",
+      "sha256" : "bd7e99c366cbfad14701483ea557c8a1aa42dc64d68629f50fd346bd4da769c5"
+    },
+    {
+      "path" : "\/estate\/books\/first-readings\/index.html",
+      "sha256" : "11284ede9c0d153f6055dde8aa1df54d57ddf96bf99de4ede0197c35102cb5e1"
+    },
+    {
+      "path" : "\/estate\/books\/orange-dot\/index.html",
+      "sha256" : "4bca74d5f344f4a368ee6e85dbd5a68051a3ebda67e2beb02cca4de207a266ea"
+    },
+    {
+      "path" : "\/estate\/books\/catalog.json",
+      "sha256" : "f91503ae5b3511301d41534eb7f56e5be9e8605661bd6a3c3ed1f6ff482562ee"
+    },
+    {
+      "path" : "\/estate\/assets\/social\/books\/essays-better-ear-9c145b5e.jpg",
+      "sha256" : "9b0f3203b14b4c5f5e6b9d6a04dd95ef925ab2b1dbcb3c2602bf5c2a5547319b"
+    },
+    {
+      "path" : "\/publication-manifest.json",
+      "sha256" : "f99ca9424236054e9695e1604b59fc0b118cc7c6ce7ad5a891669a17689ecc2b"
+    },
+    {
+      "path" : "\/estate\/read\/essay--a-better-ear-for-fountain-coach\/index.html",
+      "sha256" : "69f1d595b4a32253e9200215052b060961007b2ca4fa5b57c0a90a883fd5f4c8"
+    },
+    {
+      "path" : "\/estate\/read\/essay--a-better-ear-for-fountain-coach\/edition-manifest.json",
+      "sha256" : "e8f23ee35f3cc07d974f050bc5a110cb2a37a1fb32efb95675d0d41c76189a91"
+    },
+    {
+      "path" : "\/estate\/read\/essay--a-better-ear-for-fountain-coach\/assets\/images\/a-better-ear-hero.jpg",
+      "sha256" : "017f5d09d3abb2a8bed5571747b6a5f8454c801e5cb975734cafb3d18366b4f8"
+    },
+    {
+      "path" : "\/estate\/assets\/social\/a-better-ear-0175fc1d.png",
+      "sha256" : "cd650f90e189d1fd7ad4369e6d331de744741cb7a1c7eaa4e49f38f0ab9891fa"
+    }
+  ]
+}

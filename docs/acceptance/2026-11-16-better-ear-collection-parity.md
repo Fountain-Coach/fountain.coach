@@ -1,0 +1,13 @@
+# Better Ear publication parity — accepted 16 November 2026
+
+The earlier release updated the root Reader and work permalink but retained stale direct book shells, Essays social art and catalogue release/latest pointers. Source PR #33 merged as `9c145b5e9aa83b469306112b91425bf5b7fc02cd`. The correction reuses the admitted Reader and existing social-image compositor. Exactly five existing files changed (three book HTML files, catalogue and internal release manifest); one versioned JPEG was added; no existing file was removed.
+
+Native EstatePublisher prepared, preflighted and delivered release `fountain-press-collection-parity-20261116-9c145b5`, terminal state active, preserving `fountain-press-better-ear-20261116-0175fc1-r2` for rollback. Inventory SHA-256: `eb1161b64e2489583b591d28332ae37104818e1e3f7ad6242352cd0b242619cc`.
+
+Candidate and independent public browser tests each passed 18 cases: Chromium and WebKit, 1180×820, 820×1180, 390×844, all three direct books. Every Reader initialized, no page exception or horizontal overflow occurred, and Better Ear opened from Essays. The cloud browser separately observed the direct Essays contents, Bookshelf illustrated contents and successful Better Ear gallery selection.
+
+Independent HTTPS checks matched public bytes with the immutable package for root/estate, all three books, catalogue, publication and essay manifests, Reader module, hero, social images and both audio files. Static canonical, Open Graph, Twitter and JSON-LD image/first-chapter/membership records agree with catalogue. Facebook and Twitter user-agent requests receive the same static HTML for the Essays book and essay permalink: 21 checks passed. Three deliberate corruptions (stale catalogue, old shell, altered art) were rejected before delivery.
+
+Evidence: [native receipt](../releases/better-ear-collection-parity-20261116/publisher-receipt.json), [public HTTPS](../releases/better-ear-collection-parity-20261116/public-https.json), [public browser](../releases/better-ear-collection-parity-20261116/public-browser.json), [candidate browser](../releases/better-ear-collection-parity-20261116/candidate-browser.json), [composition](../releases/better-ear-collection-parity-20261116/composition.json).
+
+Canonical EstatePublisher and Linotype skills now require pre-release and independently repeated live collection/catalogue/social parity before COMPLETE (organization PR #81; canonical merge `5c7f5ad379701c954455fc394385eb4850a5acb4`, plugin projection 0.1.18, 152 source tests passed). Hosted ChatGPT selected version, physical iPad/VoiceOver and third-party social caches are not established by these tests.
