@@ -27,8 +27,10 @@ class PrivateProofPressV217SourceTests(unittest.TestCase):
         self.assertEqual(len(set(p['id'] for p in plates)),6)
         self.assertEqual(template.count('data-source-block="the-proof-of-the-page.plate-'),6)
         self.assertEqual(template.count('<figcaption>'),6)
-        self.assertEqual(template.count('data-source-from="0"'),22)
+        self.assertEqual(template.count('data-source-from="0"'),23)
         self.assertIn('data-source-work-sha256="'+PROOF_SOURCE+'"',template)
+        self.assertIn('data-source-block="the-proof-of-the-page.subtitle"',template)
+        self.assertIn('On composition, judgment, and the thousand-page book',template)
         self.assertIn('data-editorial-role="proem"',template)
         self.assertNotIn('public-production',template)
         for plate in plates:

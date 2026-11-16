@@ -107,7 +107,14 @@ def authored_template():
     if counts!={'paragraphs':15,'subheadings':7,'figures':6}:
         raise ValueError('REFUSED actual manuscript content inventory '+str(counts))
     preface='The printer’s proof becomes a method for examining every addressed page. Six source-owned plates distinguish intentional white space, a stranded heading, the image’s place in prose, and the evidence needed before a thousand-page edition can be accepted.'
-    chapter=f'<section class="book-chapter" id="work-the-proof-of-the-page"><div class="book-chapter-heading"><h2 data-source-block="the-proof-of-the-page.title">The Proof of the Page</h2></div></section>'
+    # The second manuscript line is an authored subtitle, not decorative
+    # metadata. Print it as an addressed source block on the opening leaf.
+    subtitle=lines[1]
+    chapter=(f'<section class="book-chapter" id="work-the-proof-of-the-page"><div class="book-chapter-heading">'
+             f'<h2 data-source-block="the-proof-of-the-page.title">The Proof of the Page</h2>'
+             f'<div class="frame-source" data-source-block="the-proof-of-the-page.subtitle" '
+             f'data-source-from="0" data-source-to="{len(subtitle)}">{html.escape(subtitle)}</div>'
+             f'</div></section>')
     proem=f'<aside class="frame-editorial-proem" data-editorial-role="proem" data-source-block="editorial.proem.the-proof-of-the-page" role="note" aria-label="Editorial preface"><span class="frame-editorial-kicker">From the editor</span><p>{html.escape(preface)}</p></aside>'
     template=f'<template data-reader-volume="{WORK}"><div class="book-flow" data-min-leaves="1" data-source-work-sha256="{PROOF_SOURCE}">{chapter}<section class="book-chapter-text">{proem}<article class="book-prose">'+''.join(result)+'</article></section></div></template>'
     return template,figure_records,counts
