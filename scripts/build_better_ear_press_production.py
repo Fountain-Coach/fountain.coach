@@ -236,7 +236,7 @@ def build(args):
     (output / "estate/index.html").write_text(base_html, "utf-8")
     (output / "index.html").write_text(base_html, "utf-8")
 
-    page = require_one(base_html, 'data-initial-volume="continuity"',
+    page = require_one(base_html, 'data-initial-volume="library"',
                        f'data-initial-volume="essay--{SLUG}"', "Direct essay volume")
     page = re.sub(r"<title>[^<]*</title>", f"<title>{TITLE} · Fountain Coach</title>", page, count=1)
     page = re.sub(r'<meta name="description"[^>]*>\s*', "", page)
