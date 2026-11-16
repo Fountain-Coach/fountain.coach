@@ -1,0 +1,45 @@
+{
+  "schema": "fountain.press.cms.private-wlan-v216-observed-terminal.v1",
+  "recordKind": "guarded-existing-user-systemd-stage-activation-observation—not-native-estatepublisher-typed-receipt",
+  "state": "ACTIVE_PRIVATE_WLAN_STAGE",
+  "releaseID": "shared-shell-20261116-v216-catalogue-bookshelf",
+  "predecessorReleaseID": "shared-shell-20261116-v215-better-ear-reader-ready",
+  "activatedAtUTCObserved": "2026-11-16T11:21:20.110357+00:00",
+  "sourceOwnerCommit": "3b83455c2f08caae02ed63788e0b866bba734760",
+  "guardSHA256": "1b52b337af10a25972d5467e41b621416af9510300c61a63ff145610e032ef84",
+  "service": "fountain-shell-acceptance-preview.service",
+  "serviceScope": "systemd-user",
+  "serviceState": "active",
+  "activeRelease": "/home/benedikt/estate-shell-acceptance-staging/releases/shared-shell-20261116-v216-catalogue-bookshelf",
+  "retainedRollback": "/home/benedikt/estate-shell-acceptance-staging/releases/shared-shell-20261116-v215-better-ear-reader-ready",
+  "predecessorSourceLockSHA256": "018c392afa8f91fa8c77bc7f452b25666820f29d209103d5c73f26fa01d5f638",
+  "changedFilesSHA256": {
+    "estate/index.html": "92fccdead52d9088be1cc8df2433cb659cd25b352e73c394312cbbb1af161c7d",
+    "estate/books/essays/index.html": "d84f5996615e728ae91927416acacc67fff07219538c2f680c02897c8acd8aa0",
+    "estate/books/first-readings/index.html": "afbe7ba52765c16778dd65c518541e48c456b1d3e374b93bb3a5aa50e83b7232",
+    "estate/books/orange-dot/index.html": "d44b8a388db28d43f36092760b683e6a2b741a2567c5e99420d3d8d73b86d9bd",
+    "estate/read/library/index.html": "92fccdead52d9088be1cc8df2433cb659cd25b352e73c394312cbbb1af161c7d",
+    "estate/books/catalog.json": "066dbf1d629f6b138c38d1c6702158ceb3cfa8b6150c5db37315c676b5230427",
+    "estate/assets/linotype/reading-first-app.68433f5efd6358180ba999cb043f20eaf9fb23e50afa6fa64bd09601e50e3537.js": "68433f5efd6358180ba999cb043f20eaf9fb23e50afa6fa64bd09601e50e3537",
+    "estate/assets/linotype/reading-first-shell.css": "220d0c43807a606bda40b4787d8586c7d10da12b0d10dc0446c54963fbfc5682",
+    "source-lock.json": "b8afc2666f8d2d4df8f083d7ad2193bd6039d4efa02a2b042eab999f32b21ec9"
+  },
+  "addedPaths": [
+    "estate/assets/linotype/reading-first-app.68433f5efd6358180ba999cb043f20eaf9fb23e50afa6fa64bd09601e50e3537.js",
+    "estate/read/library/index.html"
+  ],
+  "changedPaths": [
+    "estate/assets/linotype/reading-first-shell.css",
+    "estate/books/catalog.json",
+    "estate/books/essays/index.html",
+    "estate/books/first-readings/index.html",
+    "estate/books/orange-dot/index.html",
+    "estate/index.html",
+    "source-lock.json"
+  ],
+  "publicationLane": "private-owner-WLAN-editorial-review",
+  "productionModified": false,
+  "publicProductionPublicationAuthorized": false,
+  "independentExternalBrowserWitness": "pending-separate-proof",
+  "nativeEstatePublisherTypedReceipt": "not-established"
+}

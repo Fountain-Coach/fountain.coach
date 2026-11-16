@@ -1,0 +1,123 @@
+{
+  "candidate": "/Volumes/DockerDisk/codex-fountain-press-cms-staging-20261116/candidate-01",
+  "verified": 3,
+  "reports": [
+    {
+      "browser": "webkit",
+      "viewport": "desktop",
+      "first": {
+        "volume": "library",
+        "collections": [
+          {
+            "id": "essays",
+            "contents": 10,
+            "illustrated": 10,
+            "next": "Next published book: First Readings",
+            "previous": null,
+            "position": "01 / 03"
+          },
+          {
+            "id": "first-readings",
+            "contents": 32,
+            "illustrated": 30,
+            "next": "Next published book: Orange Dot",
+            "previous": "Previous published book: Essays",
+            "position": "02 / 03"
+          },
+          {
+            "id": "orange-dot",
+            "contents": 23,
+            "illustrated": 23,
+            "next": null,
+            "previous": "Previous published book: First Readings",
+            "position": "03 / 03"
+          }
+        ],
+        "scrollWidth": 3102,
+        "clientWidth": 1034,
+        "bottom": 820
+      },
+      "legacy": 3,
+      "scrollLeft": 2068,
+      "errors": []
+    },
+    {
+      "browser": "webkit",
+      "viewport": "tablet-portrait",
+      "first": {
+        "volume": "library",
+        "collections": [
+          {
+            "id": "essays",
+            "contents": 10,
+            "illustrated": 10,
+            "next": "Next published book: First Readings",
+            "previous": null,
+            "position": "01 / 03"
+          },
+          {
+            "id": "first-readings",
+            "contents": 32,
+            "illustrated": 30,
+            "next": "Next published book: Orange Dot",
+            "previous": "Previous published book: Essays",
+            "position": "02 / 03"
+          },
+          {
+            "id": "orange-dot",
+            "contents": 23,
+            "illustrated": 23,
+            "next": null,
+            "previous": "Previous published book: First Readings",
+            "position": "03 / 03"
+          }
+        ],
+        "scrollWidth": 2130,
+        "clientWidth": 710,
+        "bottom": 1180
+      },
+      "legacy": 3,
+      "scrollLeft": 1420,
+      "errors": []
+    },
+    {
+      "browser": "webkit",
+      "viewport": "phone",
+      "first": {
+        "volume": "library",
+        "collections": [
+          {
+            "id": "essays",
+            "contents": 10,
+            "illustrated": 10,
+            "next": "Next published book: First Readings",
+            "previous": null,
+            "position": "01 / 03"
+          },
+          {
+            "id": "first-readings",
+            "contents": 32,
+            "illustrated": 30,
+            "next": "Next published book: Orange Dot",
+            "previous": "Previous published book: Essays",
+            "position": "02 / 03"
+          },
+          {
+            "id": "orange-dot",
+            "contents": 23,
+            "illustrated": 23,
+            "next": null,
+            "previous": "Previous published book: First Readings",
+            "position": "03 / 03"
+          }
+        ],
+        "scrollWidth": 993,
+        "clientWidth": 331,
+        "bottom": 844
+      },
+      "legacy": 3,
+      "scrollLeft": 662,
+      "errors": []
+    }
+  ]
+}
