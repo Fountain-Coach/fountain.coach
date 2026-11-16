@@ -7,10 +7,12 @@ TARGET='fountain.press.private-v219-subtitle-stage-admission.v1'
 def make(candidate,guard):
  if (candidate.get('schema')!=SOURCE or candidate.get('status')!='PREPARED_NOT_ACTIVATED' or
      candidate.get('stageOnly') is not True or candidate.get('publicReleaseAuthorized') is not False or
-     candidate.get('productionModified') is not False or candidate.get('addedPaths')!=[] or
-     set(candidate.get('changedPaths',[]))!=set(candidate.get('changedFilesSHA256',{})) or
+     candidate.get('productionModified') is not False or
+     len(candidate.get('addedPaths',[]))!=1 or
+     set(candidate.get('changedPaths',[]))|set(candidate.get('addedPaths',[]))!=set(candidate.get('changedFilesSHA256',{})) or
      candidate.get('noOtherWorksAltered') is not True or
-     candidate.get('readerEngineUnchanged') is not True):
+     candidate.get('readerEngineUnchanged') is not False or
+     candidate.get('readerEngineSourceSHA256')!='7e00076b93d69e374d609aa6e3d1760a1b028cb2b796ea25be13a3241170312c') :
     raise ValueError('REFUSED private subtitle candidate admission')
  return {**candidate,'schema':TARGET,'guardSHA256':hashlib.sha256(guard).hexdigest()}
 if __name__=='__main__':

@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Restore the omitted *authored* subtitle, without altering text/art/Reader.
+"""Restore the omitted *authored* subtitle, without altering manuscript, images or Reader identity.
 
 Exact immutable v218 -> v219 private Fountain Press successor. This is a
-proof correction, not an edition rewrite or second compositor.
+two bounded proof corrections on the established Linotype compositor.
 """
 from pathlib import Path
 import argparse,hashlib,html,json,re,sys
@@ -10,11 +10,13 @@ HERE=Path(__file__).resolve().parent
 sys.path.insert(0,str(HERE));sys.path.insert(0,str(HERE.parent))
 from compose_v217_private import authored_template,WORK,PROOF_SOURCE
 from published_frontend import source_templates
+from keep_media_headings_v219 import patch as patch_engine, PRIOR as ENGINE_PRIOR
 PREV='shared-shell-20261116-v218-kino-plates-restored'
 RELEASE='shared-shell-20261116-v219-complete-authored-subtitle'
 PREV_LOCK='b2dc3d053117fbc6a7d71813cb9f3f6b96ffbdd957bfc7b3dbabff229d5dadb8'
 ROUTES=['estate/index.html','estate/read/library/index.html','estate/books/essays/index.html','estate/books/first-readings/index.html','estate/books/orange-dot/index.html','estate/read/essay--the-proof-of-the-page/index.html']
 MANIFEST='estate/read/essay--the-proof-of-the-page/edition-manifest.json'
+ENGINE_OLD='estate/assets/linotype/reading-first-press-engine.'+ENGINE_PRIOR+'.js'
 SUBTITLE='On composition, judgment, and the thousand-page book'
 def sha(data):return hashlib.sha256(data).hexdigest()
 def read(base,name):
@@ -48,14 +50,22 @@ def compose(previous,output,receipt,source_commit):
  if lock.get('pressProofV218KinoAssetAdmission',{}).get('releaseID')!=PREV:raise ValueError('REFUSED missing v218 ancestry')
  template,figures,counts=authored_template()
  assert len(figures)==6 and counts['paragraphs']==15
- changed={};modified={}
+ changed={};modified={};added=[]
  output.mkdir(parents=True)
  def emit(rel,new):
   p=output/rel;p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(new)
   changed[rel]=sha(new);modified[rel]=sha(read(previous,rel))
+ new_engine=patch_engine(read(previous,ENGINE_OLD))
+ engine_sha=sha(new_engine)
+ engine_new='estate/assets/linotype/reading-first-press-engine.'+engine_sha+'.js'
+ engine_path=output/engine_new
+ engine_path.parent.mkdir(parents=True,exist_ok=True);engine_path.write_bytes(new_engine)
+ changed[engine_new]=engine_sha;added.append(engine_new)
  for rel in ROUTES:
   original=read(previous,rel).decode('utf8')
   updated=patch_source(original,template)
+  if updated.count('/'+ENGINE_OLD)!=1:raise ValueError('REFUSED original Reader asset route drift')
+  updated=updated.replace('/'+ENGINE_OLD,'/'+engine_new,1)
   if rel.endswith('essay--the-proof-of-the-page/index.html'):
    original_desc='<meta name="description" content="A source-authored, six-plate essay about traditional page proofing and the thousand-page book."/>'
    changed_desc=f'<meta name="description" content="{html.escape(SUBTITLE)}"/>'
@@ -77,7 +87,9 @@ def compose(previous,output,receipt,source_commit):
   'releaseID':RELEASE,'predecessorReleaseID':PREV,'sourceOwnerCommit':source_commit,
   'originalManuscriptSHA256':PROOF_SOURCE,'originalSubtitleSHA256':sha(SUBTITLE.encode()),
   'sourceAddress':'the-proof-of-the-page.subtitle@0','stageOnly':True,'publicReleaseAuthorized':False,
-  'productionModified':False,'changedWithoutLockSHA256':sha((json.dumps(changed,sort_keys=True,indent=2)+'\n').encode())}
+  'productionModified':False,'addedPaths':sorted(added),
+  'oldReaderEngineSHA256':ENGINE_PRIOR,'newReaderEngineSHA256':engine_sha,
+  'changedWithoutLockSHA256':sha((json.dumps(changed,sort_keys=True,indent=2)+'\n').encode())}
  output.joinpath('source-lock.json').write_text(json.dumps(lock,ensure_ascii=False,indent=2)+'\n')
  changed['source-lock.json']=sha((output/'source-lock.json').read_bytes())
  modified['source-lock.json']=PREV_LOCK
@@ -86,8 +98,9 @@ def compose(previous,output,receipt,source_commit):
    'sourceOwnerCommit':source_commit,'sourceSHA256':PROOF_SOURCE,'originalSubtitleSHA256':sha(SUBTITLE.encode()),
    'stageOnly':True,'publicReleaseAuthorized':False,'productionModified':False,
    'previousSourceLockSHA256':PREV_LOCK,'changedFilesSHA256':changed,'previousSHA256':modified,
-   'addedPaths':[],'changedPaths':sorted(changed),'expectedBooks':{'essays':11,'first-readings':32,'orange-dot':23},
-   'noOtherWorksAltered':True,'originalFiguresUnchanged':True,'readerEngineUnchanged':True}
+   'addedPaths':sorted(added),'changedPaths':sorted(modified),'expectedBooks':{'essays':11,'first-readings':32,'orange-dot':23},
+   'noOtherWorksAltered':True,'originalFiguresUnchanged':True,'readerEngineUnchanged':False,
+   'readerEngineSourceSHA256':ENGINE_PRIOR,'readerEngineSHA256':engine_sha}
  receipt.parent.mkdir(parents=True,exist_ok=True);receipt.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
  return report
 if __name__=='__main__':
