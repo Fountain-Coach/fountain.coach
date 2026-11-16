@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Source-bound private v219 continuation of identical v218/v217 Press Reader."""
+"""Source-bound private v219 continuation of the original v218 Press Reader."""
 from pathlib import Path
 import hashlib,json,sys
 ROOT=Path('/home/benedikt/estate-shell-acceptance-staging')
@@ -11,7 +11,6 @@ PREV='shared-shell-20261116-v218-kino-plates-restored'
 ADMISSION=ROOT/'candidates/press-subtitle-v219-admission.json'
 LOCK='b2dc3d053117fbc6a7d71813cb9f3f6b96ffbdd957bfc7b3dbabff229d5dadb8'
 SOURCE='3778b007423c2b94a9e3da26b9a4c3f1dd7ff04e7ed53747cff43cb7ebc13647'
-SUBTITLE_SHA=''
 def sha_file(path):
     h=hashlib.sha256()
     with open(path,'rb') as f:
@@ -32,21 +31,33 @@ class SubtitleV219Gate:
             a.get('sourceSHA256')!=SOURCE or a.get('publicationLane')!='private-owner-WLAN-editorial-review' or
             a.get('stageOnly') is not True or a.get('publicReleaseAuthorized') is not False or
             a.get('productionModified') is not False or a.get('noOtherWorksAltered') is not True or
-            a.get('originalFiguresUnchanged') is not True or a.get('readerEngineUnchanged') is not True or
+            a.get('originalFiguresUnchanged') is not True or a.get('readerEngineUnchanged') is not False or
+            a.get('readerEngineSourceSHA256')!='7e00076b93d69e374d609aa6e3d1760a1b028cb2b796ea25be13a3241170312c' or
             a.get('previousSourceLockSHA256')!=LOCK or sha_file(self.prior/'source-lock.json')!=LOCK or
             a.get('expectedBooks')!={'essays':11,'first-readings':32,'orange-dot':23}):
             raise original.UnadmittedReaderRoute('Unadmitted source or stage v219 protection')
         self.changed=dict(a['changedFilesSHA256'])
-        if a['changedPaths']!=sorted(self.changed) or a['addedPaths'] or set(self.changed)!=set(a['previousSHA256']):
+        self.added=set(a['addedPaths']);self.modified=set(a['changedPaths'])
+        expected_new='estate/assets/linotype/reading-first-press-engine.'+a['readerEngineSHA256']+'.js'
+        if (self.added!={expected_new} or self.modified!=set(a['previousSHA256']) or
+            self.added&self.modified or self.added|self.modified!=set(self.changed) or
+            a['changedPaths']!=sorted(self.modified)):
             raise original.UnadmittedReaderRoute('Private v219 changed-file declarations drift')
         before={p.relative_to(self.prior).as_posix() for p in self.prior.rglob('*') if p.is_file()}
         after={p.relative_to(self.current).as_posix() for p in self.current.rglob('*') if p.is_file()}
-        if before!=after:raise original.UnadmittedReaderRoute('Private v219 missing or unadmitted extra files')
+        if before-after or after-before!=self.added:
+            raise original.UnadmittedReaderRoute('Private v219 missing files or unadmitted extra routes')
         changed={p for p in before if sha_file(self.prior/p)!=sha_file(self.current/p) or (self.current/p).is_symlink()}
-        if changed!=set(self.changed):raise original.UnadmittedReaderRoute('Private v219 mutated unadmitted route or media')
+        if changed!=self.modified:
+            raise original.UnadmittedReaderRoute('Private v219 mutated unadmitted route or media')
+        old_engine='estate/assets/linotype/reading-first-press-engine.'+a['readerEngineSourceSHA256']+'.js'
+        if sha_file(self.prior/old_engine)!=a['readerEngineSourceSHA256']:
+            raise original.UnadmittedReaderRoute('Private v219 original Reader SHA drift')
         for name,digest in self.changed.items():
-            if (self.current/name).is_symlink() or sha_file(self.current/name)!=digest or sha_file(self.prior/name)!=a['previousSHA256'][name]:
+            if (self.current/name).is_symlink() or not (self.current/name).is_file() or sha_file(self.current/name)!=digest:
                 raise original.UnadmittedReaderRoute('Private v219 named source did not match SHA '+name)
+            if name in self.modified and sha_file(self.prior/name)!=a['previousSHA256'][name]:
+                raise original.UnadmittedReaderRoute('Private v219 predecessor changed '+name)
         lock=json.loads((self.current/'source-lock.json').read_text())
         tag=lock.get('pressProofV219SubtitleAdmission',{})
         remaining={k:v for k,v in self.changed.items() if k!='source-lock.json'}
@@ -59,6 +70,9 @@ class SubtitleV219Gate:
             tag.get('sourceAddress')!='the-proof-of-the-page.subtitle@0' or
             tag.get('stageOnly') is not True or tag.get('publicReleaseAuthorized') is not False or
             tag.get('productionModified') is not False or
+            tag.get('addedPaths')!=sorted(self.added) or
+            tag.get('oldReaderEngineSHA256')!=a['readerEngineSourceSHA256'] or
+            tag.get('newReaderEngineSHA256')!=a['readerEngineSHA256'] or
             tag.get('changedWithoutLockSHA256')!=desired):
             raise original.UnadmittedReaderRoute('Private v219 source-locked subtitle not admitted')
         manifest=json.loads((self.current/'estate/read/essay--the-proof-of-the-page/edition-manifest.json').read_text())
@@ -67,7 +81,7 @@ class SubtitleV219Gate:
             manifest['sourceSHA256']!=SOURCE or manifest['stageOnly'] is not True or
             manifest['publicReleaseAuthorized'] is not False):
             raise original.UnadmittedReaderRoute('Private v219 source manifest/draft role mismatch')
-        print('PRESS_SUBTITLE_V219_ADMITTED exact author subtitle; all 66 original works/Reader preserved; private staging only',flush=True)
+        print('PRESS_SUBTITLE_V219_ADMITTED exact author subtitle, source-locked media heading proof, 66 works and six figures; private only',flush=True)
     def check(self,url):
         rel=original.normalized_request_path(url)
         if rel in self.changed:
