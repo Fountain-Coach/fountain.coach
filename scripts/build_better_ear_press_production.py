@@ -154,7 +154,7 @@ def build(args):
     if template.count('/assets/audio/csound-control.m4a') < 2 or template.count('/assets/audio/csound-by-ear.m4a') < 2:
         raise ValueError("Reader audio controls do not resolve to the source-owned recordings")
 
-    if args.previous_release != "fountain-press-if-only-20261113-4258957":
+    if args.previous_release != "fountain-press-recovery-20261116-4258957":
         raise ValueError("Active production predecessor changed; inspect it before rebuilding")
     if current.is_symlink() or not current.is_dir():
         raise ValueError("Current public snapshot must be a real directory")
@@ -210,7 +210,21 @@ def build(args):
     new_app.write_bytes(app_bytes)
 
     base_html = require_one(base_html, app_match.group(1), "/" + str(Path("estate/assets/linotype") / app_name), "Content-addressed Reader app")
-    base_html = require_one(base_html, '\n<script type="application/json" id="reader-gallery-data">', template + '\n<script type="application/json" id="reader-gallery-data">', "Reader source template injection")
+    # Reader templates are top-level siblings. The gallery JSON lives inside the
+    # inert Bookshelf template, so inserting beside it nests the essay template
+    # in template.content and makes it invisible to the Reader source scan.
+    predecessor_marker = '<template data-reader-volume="essay--if-only">'
+    predecessor = re.search(re.escape(predecessor_marker) + r".*?</template>", base_html, re.S)
+    if not predecessor:
+        raise ValueError("Last current essay template is missing")
+    insertion = predecessor.end()
+    base_html = base_html[:insertion] + "\n" + template + base_html[insertion:]
+    if base_html.count(marker) != 1:
+        raise ValueError("Reader source template was not admitted exactly once")
+    library = re.search(r'<template data-reader-volume="library">.*?</template>', base_html, re.S)
+    added = base_html.find(marker)
+    if not library or added < library.end() or added < predecessor.start():
+        raise ValueError("New essay template is not a top-level sibling after the essay sequence")
     gallery_match = re.search(r'(<script type="application/json" id="reader-gallery-data">)(.*?)(</script>)', base_html, re.S)
     if not gallery_match:
         raise ValueError("Public Bookshelf gallery JSON is missing")
