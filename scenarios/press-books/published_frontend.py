@@ -195,6 +195,35 @@ def add_bookshelf_vertical_cues(app: str) -> str:
     return replace_once(app,anchor,anchor+"\n"+insertion,"two independent Bookshelf vertical continuation cues")
 
 
+def add_latest_essay_link(app: str) -> str:
+    """Expose the last source-admitted Essays work without changing book order.
+
+    The latest placement is derived from the normalized collection snapshot,
+    not an independently authored title or a duplicate work entry.
+    """
+    if 'reader-latest-essay-link' in app:
+        raise ValueError('REFUSED duplicate latest-essay link injection')
+    anchor = "   header.append(direct);\n   if(bookById.get(id).subtitle){"
+    addition = """   header.append(direct);
+   if(id==='essays' && contents[id]?.length){
+    const newestID=contents[id][contents[id].length-1];
+    if(!bookById.get(id).orderedWorkIDs.includes(newestID))
+     throw new Error('Latest essay is not an admitted work');
+    const link=document.createElement('a');link.className='reader-latest-essay-link';
+    link.href='#/read/'+encodeURIComponent(newestID);
+    link.dataset.readerTarget=newestID;
+    link.setAttribute('aria-label','Read latest essay: '+labels.get(newestID));
+    const prefix=document.createElement('span');prefix.className='reader-latest-essay-prefix';
+    prefix.textContent='Latest essay';
+    const title=document.createElement('span');title.textContent=labels.get(newestID);
+    const mark=document.createElement('span');mark.setAttribute('aria-hidden','true');
+    mark.textContent='→';
+    link.append(prefix,title,mark);header.append(link);
+   }
+   if(bookById.get(id).subtitle){"""
+    return replace_once(app, anchor, addition, 'latest Essays work pointer')
+
+
 def compile_app(app:str)->str:
     source=(HERE/'reader-publication-state.js.inc').read_text()
     start=app.find(JS_OLD_START);end=app.find(JS_OLD_END,start)
@@ -243,6 +272,7 @@ def compile_app(app:str)->str:
 '''
     app=replace_once(app,anchor,navi+anchor,'leaf navigation function')
     app=add_bookshelf_vertical_cues(app)
+    app=add_latest_essay_link(app)
     return app
 
 STYLE='''
@@ -290,6 +320,18 @@ STYLE='''
 .reader-shelf-scroll-cue:hover{color:var(--ink);border-color:var(--ink)}
 .reader-shelf-scroll-cue:focus-visible{outline:2px solid var(--focus);outline-offset:2px;color:var(--ink)}
 .reader-shelf-scroll-cue-mark{font:normal 1em/1 "Iowan Old Style",Palatino,Georgia,serif}
+/* Latest admitted essay: a compact editorial signpost, not a duplicate item.
+   The Contents and Gallery remain unchanged and source-ordered. */
+.reader-latest-essay-link{
+ grid-column:1;grid-row:3;display:inline-flex;align-items:baseline;flex-wrap:wrap;
+ gap:4px 9px;justify-self:start;text-decoration:none;color:var(--ink);
+ font:normal clamp(.77rem,1.2vw,.93rem)/1.4 "Iowan Old Style",Palatino,Georgia,serif;
+ margin:5px 0 2px;border-bottom:1px solid var(--line);padding-bottom:3px;
+}
+.reader-latest-essay-link:hover{border-bottom-color:var(--ink)}
+.reader-latest-essay-link:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.reader-latest-essay-prefix{color:var(--muted)}
+.reader-collection-heading:has(.reader-latest-essay-link)>p{grid-row:4}
 @media print{.reader-shelf-leaf-navigation,.reader-shelf-scroll-cue{display:none!important}}
 @media(forced-colors:active){.reader-shelf-leaf-navigation button,.reader-shelf-scroll-cue{border-color:CanvasText}}
 '''
