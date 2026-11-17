@@ -174,6 +174,9 @@ def compile_stage(root:Path,out:Path,admission:dict,receipt:Path):
         updated=preserve_book_meta(current_root,original,book,source_gallery[id]);del book['expectedMissing']
         emit(f'estate/books/{id}/index.html',updated.encode())
     emit(admission['missingLegacyRoute'],current_root.encode(),created=True)
+    # Do not retain an obsolete independent Essays listing on the current stage.
+    # The canonical direct Essays book already has the correct Reader and schema.
+    emit('estate/essays/index.html',(out/'estate/books/essays/index.html').read_bytes())
     for b in catalog['books']:
         found=next(item for item in snap['books'] if item['id']==b['id'])
         b['orderedWorkIDs']=found['orderedWorkIDs']
@@ -214,6 +217,9 @@ def compile_stage(root:Path,out:Path,admission:dict,receipt:Path):
         'addedStageRoutes':sorted(added),
     }
     emit('source-lock.json',json_bytes(lock))
+    # The existing composer must execute closure before any publishable receipt.
+    from publication_closure import verify as verify_publication_closure
+    verify_publication_closure(out, predecessor=root, lane='staging')
     # Only the current v215 source can be the predecessor of a new v216 gate.
     result={'schema':'fountain.press.cms.stage-candidate-receipt.v1',
             'status':'PREPARED_NOT_ACTIVATED',

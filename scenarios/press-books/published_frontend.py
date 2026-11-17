@@ -280,6 +280,9 @@ def build(src:Path,out:Path,admission:dict,receipt:Path):
         item=inputs[f"estate/books/{b['id']}/index.html"].decode()
         item=project(item)
         emit(f"estate/books/{b['id']}/index.html",item.encode())
+    # The historical Essays index is a supported Bookshelf entrance, not a second
+    # independently maintained collection. Reuse the exact composed Essays book.
+    emit('estate/essays/index.html', (out/'estate/books/essays/index.html').read_bytes())
     for output_book in catalog['books']:
         published=next((b for b in snapshot['books'] if b['id']==output_book['id']),None)
         if published:
@@ -292,6 +295,10 @@ def build(src:Path,out:Path,admission:dict,receipt:Path):
     emit('estate/books/catalog.json',json_bytes(catalog))
     emit(new_app.lstrip('/'),newapp)
     emit('estate/assets/linotype/reading-first-shell.css',(css+STYLE).encode())
+    # Fail before writing an admission receipt if ANY current collection route,
+    # catalogue, Reader, social projection or legacy entrance diverges.
+    from publication_closure import verify as verify_publication_closure
+    verify_publication_closure(out, predecessor=src, lane='public')
     result={'schema':'fountain.press.frontend-candidate-receipt.v1','status':'development-candidate-not-published',
         'sourceReleaseID':admission['publicReleaseID'],'snapshotBooks':[
           {'id':b['id'],'works':len(b['orderedWorkIDs']),'illustrations':len(b['illustratedWorkIDs'])} for b in snapshot['books']],

@@ -8,6 +8,7 @@ import argparse,json,re
 from pathlib import Path
 from published_frontend import APP_PATTERN,GALLERY_PATTERN,digest,parse_gallery,source_templates
 from published_frontend_stage import META,LD
+from publication_closure import verify as verify_publication_closure
 
 SNAP=re.compile(r'<script type="application/json" id="reader-publication-data">(.*?)</script>',re.S)
 
@@ -103,11 +104,15 @@ def verify(predecessor:Path,candidate:Path,receipt:dict,admission:dict):
         raise ValueError('Inherited stage source-lock authority mutated')
     if marker['sourceLockPredecessorSHA256']!=admission['sourceDigestSHA256']['source-lock.json'] or marker['candidateReleaseID']!=receipt['releaseID']:
         raise ValueError('Private stage source-lock release identity drift')
+    # Publication closure is compulsory, not an optional post-hoc essay test.
+    # All existing entrances must show the same catalogue before activation.
+    closure=verify_publication_closure(candidate, predecessor=predecessor, lane='staging')
     return {'status':'SOURCE_BOUND_STAGE_CANDIDATE_ACCEPTED_NOT_ACTIVATED',
             'source':receipt['predecessorReleaseID'],'candidate':receipt['releaseID'],
             'books':[(b['id'],len(b['orderedWorkIDs']),len(b['illustratedWorkIDs'])) for b in snap['books']],
             'delta':{'changed':len(receipt['changedPaths']),'added':len(receipt['addedPaths'])},
-            'privateRightsPreserved':True,'originalAuthoredTemplatesPreserved':len(stage_names)}
+            'privateRightsPreserved':True,'originalAuthoredTemplatesPreserved':len(stage_names),
+            'mandatoryPublicationClosure':closure['status']}
 
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('--source',type=Path,required=True);p.add_argument('--candidate',type=Path,required=True);p.add_argument('--receipt',type=Path,required=True);p.add_argument('--predecessor',type=Path,default=Path(__file__).parent/'wlan-stage-v215-predecessor.json')

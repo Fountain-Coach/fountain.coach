@@ -10,10 +10,11 @@ import json
 from pathlib import Path
 import re
 from published_frontend import APP_PATTERN,parse_gallery,source_templates,digest
+from publication_closure import verify as verify_publication_closure
 
 SNAPSHOT=re.compile(r'<script type="application/json" id="reader-publication-data">(.*?)</script>',re.S)
 
-def verify(root:Path, receipt:dict):
+def verify(root:Path, receipt:dict, predecessor:Path|None=None):
     expected=receipt['changedFilesSHA256']
     if receipt['status']!='development-candidate-not-published':
         raise ValueError('Not an unreleased source candidate')
@@ -68,11 +69,14 @@ def verify(root:Path, receipt:dict):
     if set(galleries)!=set(ids):raise ValueError('Source galleries differ from published books')
     if catalog.get('currentReleaseID')!=snap['publicPredecessorReleaseID'] or receipt['sourceReleaseID']!=snap['publicPredecessorReleaseID']:
         raise ValueError('Published predecessor identity is not retained')
+    closure=verify_publication_closure(root, predecessor=predecessor, lane='public')
     return {'state':'CANDIDATE_VERIFIED_NOT_DEPLOYED','books':[(b['id'],len(b['orderedWorkIDs']),len(b['illustratedWorkIDs'])) for b in books],
             'rootEstateLegacyByteIdentical':True,'sourceReleaseID':receipt['sourceReleaseID'],
-            'candidateReaderModule':app[0],'checkedFiles':len(expected)}
+            'candidateReaderModule':app[0],'checkedFiles':len(expected),
+            'mandatoryPublicationClosure':closure['status']}
 
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('--root',required=True,type=Path);p.add_argument('--receipt',required=True,type=Path)
+    p.add_argument('--predecessor',required=True,type=Path,help='exact admitted source root for the immutable overlay')
     a=p.parse_args()
-    print(json.dumps(verify(a.root,json.loads(a.receipt.read_text())),indent=2))
+    print(json.dumps(verify(a.root,json.loads(a.receipt.read_text()),a.predecessor),indent=2))
