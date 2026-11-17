@@ -157,6 +157,44 @@ def replace_once(text,old,new,label):
     if text.count(old)!=1:raise ValueError('REFUSED expected single source anchor '+label+': '+str(text.count(old)))
     return text.replace(old,new,1)
 
+def add_bookshelf_vertical_cues(app: str) -> str:
+    """Decorate the EXISTING two vertical scrollports, never make new pages.
+
+    The visual cue is an accessible control that scrolls only its own region.
+    Its state comes from measured overflow, not historical book counts.
+    """
+    if 'reader-shelf-scroll-cue' in app:
+        raise ValueError('REFUSED duplicate Bookshelf continuation cue injection')
+    anchor = "   vertical.append(tiles);gallery.append(vertical);pair.append(gallery);book.append(pair);scroll.append(book);"
+    insertion = """   for(const [region,panel] of [[list,statement],[vertical,gallery]]){
+    // iPad Safari hides overlay scrollbars. Show a typographic, functional
+    // continuation cue only while this SAME authored collection has overflow.
+    const cue=document.createElement('button');cue.type='button';
+    cue.className='reader-shelf-scroll-cue';cue.dataset.more='false';cue.disabled=true;
+    cue.setAttribute('aria-label','Scroll further down '+labels.get(id)+' '+panel.dataset.presentation);
+    const caption=document.createElement('span');caption.textContent='More below';
+    const mark=document.createElement('span');mark.className='reader-shelf-scroll-cue-mark';
+    mark.setAttribute('aria-hidden','true');mark.textContent='↓';cue.append(caption,mark);
+    cue.addEventListener('click',()=>{
+     region.scrollBy({top:Math.max(80,region.clientHeight*.75),behavior:'smooth'});
+    });
+    const update=()=>{
+     const more=region.clientHeight>0&&region.scrollHeight-region.scrollTop-region.clientHeight>5;
+     cue.dataset.more=String(more);cue.disabled=!more;
+     cue.setAttribute('aria-hidden',String(!more));
+    };
+    region.addEventListener('scroll',update,{passive:true});
+    if(typeof ResizeObserver!=='undefined'){
+     const observer=new ResizeObserver(update);observer.observe(region);
+     if(region.firstElementChild)observer.observe(region.firstElementChild);
+    }
+    panel.append(cue);
+    requestAnimationFrame(()=>requestAnimationFrame(update));
+   }
+"""
+    return replace_once(app,anchor,anchor+"\n"+insertion,"two independent Bookshelf vertical continuation cues")
+
+
 def compile_app(app:str)->str:
     source=(HERE/'reader-publication-state.js.inc').read_text()
     start=app.find(JS_OLD_START);end=app.find(JS_OLD_END,start)
@@ -204,6 +242,7 @@ def compile_app(app:str)->str:
 }
 '''
     app=replace_once(app,anchor,navi+anchor,'leaf navigation function')
+    app=add_bookshelf_vertical_cues(app)
     return app
 
 STYLE='''
@@ -237,8 +276,22 @@ STYLE='''
    width:100%;margin:4px 0 0;font-size:.74rem;min-height:25px}
  .reader-shelf-leaf-navigation button{max-width:43%;white-space:normal;text-align:start}
 }
-@media print{.reader-shelf-leaf-navigation{display:none!important}}
-@media(forced-colors:active){.reader-shelf-leaf-navigation button{border-color:CanvasText}}
+/* Safari overlay scrollbars disappear while resting. Keep a quietly printed,
+   measured continuation action OUTSIDE each independently scrollable column. */
+.reader-shelf-scroll-cue{
+ display:inline-flex;align-items:baseline;justify-content:flex-end;gap:7px;
+ align-self:flex-end;flex:0 0 22px;min-height:22px;max-height:22px;
+ appearance:none;border:0;border-bottom:1px solid var(--line);
+ padding:3px 2px 1px;margin:0;background:none;color:var(--muted);
+ font:normal clamp(.72rem,1vw,.82rem)/1.3 "Iowan Old Style",Palatino,Georgia,serif;
+ letter-spacing:.02em;cursor:pointer;
+}
+.reader-shelf-scroll-cue[data-more="false"]{visibility:hidden}
+.reader-shelf-scroll-cue:hover{color:var(--ink);border-color:var(--ink)}
+.reader-shelf-scroll-cue:focus-visible{outline:2px solid var(--focus);outline-offset:2px;color:var(--ink)}
+.reader-shelf-scroll-cue-mark{font:normal 1em/1 "Iowan Old Style",Palatino,Georgia,serif}
+@media print{.reader-shelf-leaf-navigation,.reader-shelf-scroll-cue{display:none!important}}
+@media(forced-colors:active){.reader-shelf-leaf-navigation button,.reader-shelf-scroll-cue{border-color:CanvasText}}
 '''
 
 def build(src:Path,out:Path,admission:dict,receipt:Path):
