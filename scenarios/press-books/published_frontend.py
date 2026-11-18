@@ -23,6 +23,17 @@ JS_OLD_HEADER='   book.append(header);'
 
 
 def digest(data:bytes)->str:return hashlib.sha256(data).hexdigest()
+
+def content_addressed_shell_path(css_bytes: bytes) -> str:
+    """The navigation stylesheet's URL changes whenever its bytes change."""
+    return 'estate/assets/linotype/reading-first-shell.' + digest(css_bytes) + '.css'
+
+def project_shell_stylesheet(html: str, asset_path: str) -> str:
+    """Fail closed rather than retaining stale unversioned CSS in a public book."""
+    return replace_once(html,
+        'href="/estate/assets/linotype/reading-first-shell.css"',
+        'href="/' + asset_path + '"', 'source-bound navigation stylesheet')
+
 def json_bytes(value):return (json.dumps(value,ensure_ascii=False,indent=2)+'\n').encode('utf8')
 
 def read_pinned(root:Path,path:str,admission:dict)->bytes:
@@ -358,9 +369,12 @@ def build(src:Path,out:Path,admission:dict,receipt:Path):
     snapshot=build_snapshot(page,app,catalog,admission)
     newapp=compile_app(app).encode()
     new_app='/estate/assets/linotype/reading-first-app.'+digest(newapp)+'.js'
+    new_css=(css+STYLE).encode()
+    new_css_path=content_addressed_shell_path(new_css)
     insertion='<script type="application/json" id="reader-publication-data">'+json.dumps(snapshot,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')+'</script>'
     def project(html):
         html=replace_once(html,app_path,new_app.lstrip('/'),'Reader module')
+        html=project_shell_stylesheet(html,new_css_path)
         return replace_once(html,GALLERY_PATTERN.search(html)[0],GALLERY_PATTERN.search(html)[0]+'\n'+insertion,'publication snapshot')
     out.mkdir(parents=True)
     files={}
@@ -389,7 +403,7 @@ def build(src:Path,out:Path,admission:dict,receipt:Path):
     catalog['publicationSnapshotSourceReleaseID']=snapshot['publicPredecessorReleaseID']
     emit('estate/books/catalog.json',json_bytes(catalog))
     emit(new_app.lstrip('/'),newapp)
-    emit('estate/assets/linotype/reading-first-shell.css',(css+STYLE).encode())
+    emit(new_css_path,new_css)
     # Fail before writing an admission receipt if ANY current collection route,
     # catalogue, Reader, social projection or legacy entrance diverges.
     from publication_closure import verify as verify_publication_closure

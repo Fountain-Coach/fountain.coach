@@ -77,6 +77,22 @@ class TestPublishedFrontend(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,'private/unreleased book in public source'):
             pf.build_snapshot(html,app,catalog,admission)
 
+    def test_navigation_stylesheet_path_is_content_addressed_and_refuses_stale_alias(self):
+        old=b'.reader-shelf-scroll-cue { display: block }'
+        new=old+b'\n.reader-latest-essay-link { display: flex }'
+        a=pf.content_addressed_shell_path(old)
+        b=pf.content_addressed_shell_path(new)
+        self.assertNotEqual(a,b)
+        self.assertEqual(a,'estate/assets/linotype/reading-first-shell.'+hashlib.sha256(old).hexdigest()+'.css')
+        source='<link rel="stylesheet" href="/estate/assets/linotype/reading-first-shell.css"/>'
+        projected=pf.project_shell_stylesheet(source,b)
+        self.assertIn('href="/'+b+'"',projected)
+        self.assertNotIn('href="/estate/assets/linotype/reading-first-shell.css"',projected)
+        with self.assertRaisesRegex(ValueError,'source-bound navigation stylesheet'):
+            pf.project_shell_stylesheet(source+source,b)
+        with self.assertRaisesRegex(ValueError,'source-bound navigation stylesheet'):
+            pf.project_shell_stylesheet(projected,b)
+
     def test_source_template_nesting_is_refused(self):
         html,app,catalog,admission=fixture()
         html=html.replace('<template data-reader-volume="orange-dot--one">',
