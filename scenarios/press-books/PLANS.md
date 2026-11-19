@@ -1,5 +1,7 @@
 # Fountain Press Direct Book Publication — Current Source Phase
 
+**ACTIVE 19 November — Figure III second physical-iPad rejection (v224):** The author marked the left Figure III panel again on a 20:22 CET iPad landscape spread. The prior regression explicitly *permitted* 0.95 SVG units of overlap, confusing a historical negative measurement with an acceptable present-day illustration. Correct the present plate so **all visible glyphs remain inside their drawn rectangles with usable right insets**, retaining the original measured failure as historical explanatory data, the complete specimen words, and the same paragraph/figure anchoring. Build an immutable v224→v225 private successor with source-bound closure, 67 works, exact live SVG/Reader hashes and four-viewpoint folio proof. v224 remains rollback; production excluded.
+
 **ACTIVE 19 November — Figure III iPad proof correction:** The author marked a dramatic negative-panel overflow in *Before We Can Work Together*. Preserve the same sentence, source prose and three plates; lineate the left negative specimen so the ink breaches only its own inner frame by a small measured amount (historical evidence ~1.17 SVG units), never the outer plate or positive panel. Prove SVG browser glyph bounds, closed source/digest/collection parity, original Reader/folio continuity and immutable private stage with v223 rollback. No public production or change of historical measured claims.
 
 

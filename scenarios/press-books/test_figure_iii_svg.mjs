@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-/* Source-owned regression: the pictured negative specimen breaches only its internal frame. */
+/* Source-owned regression: the corrected comparison contains all visible ink. */
 import fs from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
@@ -24,21 +24,20 @@ for (const [name,provider] of browsers) {
       return {viewBox:svg.getAttribute('viewBox'),rects,texts};
     });
     const [before,after]=result.rects;
-    const failed=result.texts.find(t=>t.text==='container in which words happen to');
+    const corrected=result.texts.find(t=>t.text==='container in which words');
     const negative=result.texts.filter(t=>t.originX===57);
     const positive=result.texts.filter(t=>t.originX===552);
-    if(!failed||negative.length!==3||positive.length!==3) throw Error(name+' semantic lineation');
-    const overflow=failed.right-before.right;
-    if(!(overflow>=0.25&&overflow<6))throw Error(name+' failed specimen overflow '+overflow);
+    if(!corrected||negative.length!==3||positive.length!==3) throw Error(name+' semantic lineation');
+    const minimumInset=Math.min(...negative.map(t=>before.right-t.right));
+    if(!(minimumInset>=15))throw Error(name+' negative panel has insufficient right inset '+minimumInset);
     for(const t of [...negative,...positive]){
       const box=t.originX===57?before:after;
       if(!(t.x>box.x+5 && t.top>box.top+5 && t.bottom<box.bottom-5))throw Error(name+' text outside panel '+t.text);
-      if(t.originX===552 && t.right>box.right-14)throw Error(name+' positive overfull '+t.text);
-      if(t.originX===57 && t.right>before.right+6)throw Error(name+' negative too far '+t.text);
+      if(t.right>box.right-15)throw Error(name+' panel ink too near border '+t.text);
     }
     if(result.texts.some(t=>t.right>930||t.x<30||t.top<0||t.bottom>405)) throw Error(name+' outer plate overflow');
     const png=process.env.PROOF_DIR?path.join(process.env.PROOF_DIR,'figure-iii-'+name+'.png'):null;
     if(png){fs.mkdirSync(path.dirname(png),{recursive:true});await page.screenshot({path:png,animations:'disabled'});}
-    console.log(JSON.stringify({browser:name,state:'PASS',negativeInkOverrun:overflow,negativeLines:negative.map(x=>x.text),positiveLines:positive.map(x=>x.text),png}));
+    console.log(JSON.stringify({browser:name,state:'PASS',negativeMinimumRightInset:minimumInset,negativeLines:negative.map(x=>x.text),positiveLines:positive.map(x=>x.text),png}));
   } finally {await browser.close();}
 }
