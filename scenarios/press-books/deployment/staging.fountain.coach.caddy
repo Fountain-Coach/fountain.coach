@@ -1,0 +1,12 @@
+# Proposed exact-host Caddy admission; NOT installed by source creation.
+# Only the verified native EstatePublisher host-admission operation may activate.
+staging.fountain.coach {
+  root * /srv/fountain-static-publications/staging.fountain.coach/current
+  encode zstd gzip
+  header {
+    X-Content-Type-Options "nosniff"
+    X-Robots-Tag "noindex, nofollow, noarchive"
+    Referrer-Policy "strict-origin-when-cross-origin"
+  }
+  file_server
+}
